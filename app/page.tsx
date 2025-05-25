@@ -89,13 +89,13 @@ function Navigation() {
   const [activeSection, setActiveSection] = useState("hero")
 
   const navItems = [
-    { id: "hero", label: "About" },
-    { id: "product", label: "Product" },
-    { id: "problem", label: "Problem" },
-    { id: "research", label: "Research" },
-    { id: "vision", label: "Vision" },
-    { id: "team", label: "Team" },
-    { id: "join", label: "Join" },
+    { id: "hero", label: "ABOUT" },
+    { id: "product", label: "PRODUCT" },
+    { id: "problem", label: "PROBLEM" },
+    { id: "research", label: "RESEARCH" },
+    { id: "vision", label: "VISION" },
+    { id: "team", label: "TEAM" },
+    { id: "join", label: "JOIN" },
   ]
 
   useEffect(() => {
@@ -126,55 +126,81 @@ function Navigation() {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-sage-100"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-sage-100"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
-          <div className="text-2xl font-bold text-charcoal-900">
-            Gamma<span className="text-sage-600">Lex</span>
+      <div className="max-w-7xl mx-auto px-8">
+        <div className="flex items-center justify-between h-24">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img src="/gammalex-logo.png" alt="GammaLex" className="h-8 w-auto mr-3" />
+            <span className="text-2xl font-bold text-charcoal-900">
+              GAMMA<span className="text-sage-600">LEX</span>
+            </span>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-lg transition-colors ${
-                  activeSection === item.id ? "text-sage-600 font-medium" : "text-charcoal-600 hover:text-sage-600"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center justify-center flex-1 mx-16">
+            <div className="flex items-center space-x-16">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-sm font-medium tracking-wider transition-colors duration-200 ${
+                    activeSection === item.id ? "text-sage-600" : "text-charcoal-600 hover:text-sage-600"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:block">
+            <Button
+              className="bg-sage-600 hover:bg-sage-700 text-white px-6 py-2 text-sm font-medium"
+              onClick={() => scrollToSection("join")}
+            >
+              JOIN WAITLIST
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X className="w-6 h-6 text-charcoal-600" /> : <Menu className="w-6 h-6 text-charcoal-600" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
           <motion.div
-            className="md:hidden py-4 border-t border-sage-100"
+            className="lg:hidden py-6 border-t border-sage-100"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
           >
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-3 text-lg text-charcoal-600 hover:text-sage-600"
-              >
-                {item.label}
-              </button>
-            ))}
+            <div className="space-y-4">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left py-3 text-sm font-medium tracking-wider text-charcoal-600 hover:text-sage-600 transition-colors"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <div className="pt-4 border-t border-sage-100">
+                <Button
+                  className="w-full bg-sage-600 hover:bg-sage-700 text-white text-sm font-medium"
+                  onClick={() => scrollToSection("join")}
+                >
+                  JOIN WAITLIST
+                </Button>
+              </div>
+            </div>
           </motion.div>
         )}
       </div>

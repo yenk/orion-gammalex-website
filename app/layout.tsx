@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "GammaLex | Malpractice Risk Intelligence, Powered by AI",
   description: "From claim viability to resolution — next-gen legal infrastructure for medical malpractice litigation.",
   generator: "v0.dev",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 }
 
 export default function RootLayout({
