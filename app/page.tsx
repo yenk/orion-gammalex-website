@@ -924,17 +924,17 @@ function ProblemSection() {
       emoji: "🧠",
       stat: "$469,000",
       title: "Avg. payout per neurosurgery malpractice claim",
-      inflationAdjusted: "~$525K today",
       source: "PMC, 2021",
       sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8156516/",
+      inflationAdjusted: "~$525K today",
     },
     {
       emoji: "👶",
       stat: "$488,852",
       title: "Avg. settlement per OB/GYN malpractice case",
-      inflationAdjusted: "~$517K today",
-      source: "JAMA HF, 2023",
+      source: "AJHE, 2020",
       sourceUrl: "https://www.journals.uchicago.edu/doi/10.1162/AJHE_a_00069",
+      inflationAdjusted: "~$517K today",
     },
     {
       emoji: "💰",
@@ -1042,6 +1042,7 @@ function ProblemSection() {
 
                     <div className="text-4xl md:text-5xl font-bold text-sage-600 mb-4">{stake.stat}</div>
 
+                    {/* Inflation-adjusted amount */}
                     {stake.inflationAdjusted && (
                       <div className="inline-flex items-center px-3 py-1 bg-sage-100 text-sage-700 rounded-full text-sm font-medium mb-4">
                         {stake.inflationAdjusted}
