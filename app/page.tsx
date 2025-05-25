@@ -5,7 +5,6 @@ import { useRef, useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Brain, FileText, TrendingUp, Menu, X, ArrowRight, CheckCircle, Target, Clock, DollarSign } from "lucide-react"
 
 export default function GammaLexPage() {
@@ -22,49 +21,52 @@ export default function GammaLexPage() {
     <div ref={containerRef} className="min-h-screen bg-white">
       <Navigation />
 
-      {/* LegalTech Trends Bar */}
-      <TrendsBar />
-
       {/* Hero Section */}
       <motion.section
-        id="about"
+        id="hero"
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity }}
       >
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8"
-          >
-            <Badge className="bg-sage-100 text-sage-800 border-sage-200 text-sm px-4 py-2 mb-8">
-              Pre-Seed • Stanford CodeX Partnership
-            </Badge>
-          </motion.div>
-
           <motion.h1
-            className="text-6xl md:text-8xl font-bold text-charcoal-900 mb-8 leading-tight"
+            className="text-[8rem] md:text-[12rem] lg:text-[16rem] xl:text-[20rem] font-black text-charcoal-900 leading-none tracking-tighter mb-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            The Malpractice Engine for <span className="text-sage-600">Modern Litigators</span>
+            (GAMMA<span className="text-sage-600">LEX</span>)
           </motion.h1>
 
-          <motion.p
-            className="text-2xl md:text-3xl text-charcoal-600 mb-12 max-w-4xl mx-auto leading-relaxed"
+          <motion.div
+            className="flex items-center justify-center space-x-8 mb-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Purpose-built AI to evaluate, draft, and accelerate your caseload with confidence and precision.
+            <div className="text-right">
+              <div className="text-2xl md:text-3xl font-bold text-charcoal-900">EST.</div>
+              <div className="text-2xl md:text-3xl font-bold text-charcoal-900">2024</div>
+            </div>
+            <div className="w-16 h-0.5 bg-sage-600"></div>
+            <div className="text-left">
+              <div className="text-lg md:text-xl text-charcoal-600">LEGAL AI</div>
+              <div className="text-lg md:text-xl text-charcoal-600">PLATFORM</div>
+            </div>
+          </motion.div>
+
+          <motion.p
+            className="text-xl md:text-2xl text-charcoal-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            The Malpractice Engine for Modern Litigators
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1 }}
           >
             <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-12 py-6 text-xl rounded-full">
               Join the Waitlist
@@ -73,6 +75,9 @@ export default function GammaLexPage() {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* About Section */}
+      <AboutSection />
 
       {/* Vision & Mission */}
       <VisionSection />
@@ -97,7 +102,7 @@ export default function GammaLexPage() {
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("about")
+  const [activeSection, setActiveSection] = useState("hero")
   const [isScrolled, setIsScrolled] = useState(false)
 
   const navItems = [
@@ -114,6 +119,7 @@ function Navigation() {
 
       // Get all sections with their positions
       const sections = [
+        { id: "hero", element: document.getElementById("hero") },
         { id: "about", element: document.getElementById("about") },
         { id: "product", element: document.getElementById("product") },
         { id: "problem", element: document.getElementById("problem") },
@@ -180,7 +186,7 @@ function Navigation() {
           {/* Logo */}
           <motion.div
             className="flex items-center cursor-pointer"
-            onClick={() => scrollToSection("about")}
+            onClick={() => scrollToSection("hero")}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -329,38 +335,63 @@ function Navigation() {
   )
 }
 
-function TrendsBar() {
-  const stats = [
-    { label: "LegalTech Market", value: "$28B by 2025" },
-    { label: "AI Adoption in Law", value: "+340% YoY" },
-    { label: "Malpractice Claims", value: "85K annually" },
-  ]
-
+function AboutSection() {
   return (
-    <motion.div
-      className="bg-charcoal-900 text-white py-4 mt-24" // Keep mt-24 for navbar spacing
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, delay: 1 }}
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-center space-x-8 md:space-x-12 text-sm">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-            >
-              <span className="text-terracotta-400 font-semibold">{stat.value}</span>
-              <span className="text-white/70 ml-2 hidden sm:inline">{stat.label}</span>
-              <div className="text-white/70 text-xs sm:hidden">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
+    <section id="about" className="py-32 bg-white">
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-6xl font-bold text-charcoal-900 mb-12 leading-tight">
+            Malpractice Litigation, <span className="text-sage-600">Reengineered</span> for the Modern Lawyer
+          </h2>
+
+          <div className="space-y-8 text-xl text-charcoal-700 leading-relaxed">
+            <p>
+              GammaLex was founded on a simple but urgent idea: medical malpractice litigation is too slow, too complex,
+              and too uncertain. We're building AI that changes that, starting with solutions that help litigators
+              predict claim viability, streamline drafting, and make smarter decisions faster.
+            </p>
+
+            <p>
+              Our mission is to make malpractice litigation more efficient, equitable, and data-driven, giving lawyers
+              the clarity they need from the moment a case lands on their desk.
+            </p>
+
+            <p>
+              While we're focused on empowering litigators first, our AI engine is designed to grow with the malpractice
+              ecosystem — enabling future tools for claimants, insurers, and hospital risk teams.
+            </p>
+          </div>
+
+          <motion.div
+            className="mt-12 pt-8 border-t border-sage-100"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-sage-600 mb-2">2024</div>
+                <div className="text-charcoal-600">Founded</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-sage-600 mb-2">Stanford</div>
+                <div className="text-charcoal-600">CodeX Partnership</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-sage-600 mb-2">AI-First</div>
+                <div className="text-charcoal-600">Legal Platform</div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </motion.div>
+    </section>
   )
 }
 
