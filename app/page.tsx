@@ -98,16 +98,21 @@ export default function GammaLexPage() {
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("about")
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const navItems = [
-    { id: "about", label: "ABOUT" },
-    { id: "product", label: "PRODUCT" },
-    { id: "problem", label: "PROBLEM" },
-    { id: "join", label: "JOIN US" },
+    { id: "about", label: "ABOUT", mobileLabel: "About", icon: "👥" },
+    { id: "product", label: "PRODUCT", mobileLabel: "Product", icon: "🚀" },
+    { id: "problem", label: "PROBLEM", mobileLabel: "Problem", icon: "📊" },
+    { id: "join", label: "JOIN US", mobileLabel: "Join", icon: "✉️" },
   ]
 
   useEffect(() => {
     const handleScroll = () => {
+      // Track scroll position for navbar styling
+      setIsScrolled(window.scrollY > 50)
+
+      // Get all sections with their positions
       const sections = [
         { id: "about", element: document.getElementById("about") },
         { id: "product", element: document.getElementById("product") },
@@ -115,8 +120,9 @@ function Navigation() {
         { id: "join", element: document.getElementById("join") },
       ]
 
-      const scrollPosition = window.scrollY + 200
+      const scrollPosition = window.scrollY + 150 // Offset for navbar height
 
+      // Find the current section based on scroll position
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i]
         if (section.element && section.element.offsetTop <= scrollPosition) {
@@ -127,28 +133,57 @@ function Navigation() {
     }
 
     window.addEventListener("scroll", handleScroll)
+    handleScroll() // Call once to set initial state
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const navbarHeight = 96 // h-24 = 96px
+      const targetPosition = element.offsetTop - navbarHeight
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      })
     }
     setIsOpen(false)
   }
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && !(event.target as Element).closest("nav")) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside)
+    return () => document.removeEventListener("click", handleClickOutside)
+  }, [isOpen])
+
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-sage-100"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md border-b border-sage-200 shadow-sm"
+          : "bg-white/90 backdrop-blur-sm border-b border-sage-100"
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <div className="flex items-center">
+          <motion.div
+            className="flex items-center cursor-pointer"
+            onClick={() => scrollToSection("about")}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <div className="flex items-center mr-4">
               {/* Custom Logo SVG */}
               <svg width="32" height="32" viewBox="0 0 32 32" className="mr-3">
@@ -181,21 +216,32 @@ function Navigation() {
             <span className="text-2xl font-bold text-charcoal-900">
               GAMMA<span className="text-sage-600">LEX</span>
             </span>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden lg:flex items-center justify-center flex-1 mx-16">
-            <div className="flex items-center space-x-16">
+            <div className="flex items-center space-x-12 xl:space-x-16">
               {navItems.map((item) => (
-                <button
+                <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium tracking-wider transition-colors duration-200 ${
+                  className={`relative text-sm font-medium tracking-wider transition-all duration-200 py-2 px-1 ${
                     activeSection === item.id ? "text-sage-600" : "text-charcoal-600 hover:text-sage-600"
                   }`}
+                  whileHover={{ y: -1 }}
+                  whileTap={{ y: 0 }}
                 >
                   {item.label}
-                </button>
+                  {/* Active indicator */}
+                  {activeSection === item.id && (
+                    <motion.div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-sage-600 rounded-full"
+                      layoutId="activeIndicator"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </motion.button>
               ))}
             </div>
           </div>
@@ -203,7 +249,7 @@ function Navigation() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button
-              className="bg-sage-600 hover:bg-sage-700 text-white px-6 py-2 text-sm font-medium"
+              className="bg-sage-600 hover:bg-sage-700 text-white px-6 py-2 text-sm font-medium transition-all duration-200 hover:shadow-lg"
               onClick={() => scrollToSection("join")}
             >
               JOIN WAITLIST
@@ -211,40 +257,73 @@ function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="w-6 h-6 text-charcoal-600" /> : <Menu className="w-6 h-6 text-charcoal-600" />}
-          </button>
+          <motion.button
+            className="lg:hidden p-2 rounded-lg hover:bg-sage-50 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.div
+              animate={isOpen ? "open" : "closed"}
+              variants={{
+                open: { rotate: 180 },
+                closed: { rotate: 0 },
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              {isOpen ? <X className="w-6 h-6 text-charcoal-600" /> : <Menu className="w-6 h-6 text-charcoal-600" />}
+            </motion.div>
+          </motion.button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <motion.div
-            className="lg:hidden py-6 border-t border-sage-100"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className="space-y-4">
+        <motion.div
+          className="lg:hidden overflow-hidden"
+          initial={false}
+          animate={{
+            height: isOpen ? "auto" : 0,
+            opacity: isOpen ? 1 : 0,
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <div className="py-6 border-t border-sage-100">
+            <div className="grid grid-cols-2 gap-4 mb-6">
               {navItems.map((item) => (
-                <button
+                <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left py-3 text-sm font-medium tracking-wider text-charcoal-600 hover:text-sage-600 transition-colors"
+                  className={`flex flex-col items-center p-4 rounded-xl transition-all duration-200 ${
+                    activeSection === item.id
+                      ? "bg-sage-100 text-sage-700"
+                      : "text-charcoal-600 hover:bg-sage-50 hover:text-sage-600"
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  {item.label}
-                </button>
+                  <span className="text-2xl mb-2">{item.icon}</span>
+                  <span className="text-sm font-medium tracking-wider">{item.mobileLabel}</span>
+                  {activeSection === item.id && (
+                    <motion.div
+                      className="w-8 h-0.5 bg-sage-600 rounded-full mt-2"
+                      initial={{ width: 0 }}
+                      animate={{ width: 32 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
+                </motion.button>
               ))}
-              <div className="pt-4 border-t border-sage-100">
-                <Button
-                  className="w-full bg-sage-600 hover:bg-sage-700 text-white text-sm font-medium"
-                  onClick={() => scrollToSection("join")}
-                >
-                  JOIN WAITLIST
-                </Button>
-              </div>
             </div>
-          </motion.div>
-        )}
+
+            <div className="pt-4 border-t border-sage-100">
+              <Button
+                className="w-full bg-sage-600 hover:bg-sage-700 text-white text-sm font-medium py-3"
+                onClick={() => scrollToSection("join")}
+              >
+                <span className="mr-2">✉️</span>
+                JOIN WAITLIST
+              </Button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </motion.nav>
   )
@@ -259,18 +338,25 @@ function TrendsBar() {
 
   return (
     <motion.div
-      className="bg-charcoal-900 text-white py-4 mt-24"
+      className="bg-charcoal-900 text-white py-4 mt-24" // Keep mt-24 for navbar spacing
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1 }}
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-center space-x-12 text-sm">
+        <div className="flex items-center justify-center space-x-8 md:space-x-12 text-sm">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
+            <motion.div
+              key={index}
+              className="text-center"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+            >
               <span className="text-terracotta-400 font-semibold">{stat.value}</span>
-              <span className="text-white/70 ml-2">{stat.label}</span>
-            </div>
+              <span className="text-white/70 ml-2 hidden sm:inline">{stat.label}</span>
+              <div className="text-white/70 text-xs sm:hidden">{stat.label}</div>
+            </motion.div>
           ))}
         </div>
       </div>
