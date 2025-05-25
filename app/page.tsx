@@ -357,16 +357,19 @@ GammaLex isn't just a platform. It's a mission—born from lived experience, pow
       portfolio: "http://yenkha.com/",
     },
     {
-      name: "Michael Rodriguez",
-      role: "Co-Founder & CTO",
-      background: "Ex-Google AI, PhD Computer Science",
-      image: "/placeholder.svg?height=300&width=300&query=professional man CTO headshot",
-    },
-    {
-      name: "Dr. Emily Watson",
-      role: "Chief Medical Advisor",
-      background: "20+ years emergency medicine, malpractice expert",
-      image: "/placeholder.svg?height=300&width=300&query=professional woman doctor headshot",
+      name: "Bruce Cahan",
+      role: "Strategic Advisor & Stanford Lecturer",
+      background: `Bruce Cahan is a recovering Wall Street lawyer (Weil Gotshal & Manges), HK merchant banker, geospatial technology finance pioneer, 9/11 emergency responder and lecturer at Stanford University's School of Engineering's Department of Management Science & Engineering and in the University's Institute of Design (known as the d.school).
+
+Since 2013, Bruce created and taught four courses at Stanford: Understanding Wall Street on the Buy Side (MS&E 449), Redesigning Finance (DESIGN 245), Sustainable Banking (CEE 244A), and the Ethics of Finance & Financial Engineering (MS&E 148). He is also a member of the Center for Legal Informatics (CodeX) at Stanford Law School, the Corporations and Society Initiative at Stanford's Graduate School of Business, and the Center for Human Rights & International Justice.
+
+As CEO of Reimagineering Corporation, a CA corporation, and Urban Logic, Inc., a NY 501(c)(3) nonprofit, Bruce focuses on using design, finance and organizational theories, research methods and prototyping to anticipate how large institutions and the systems in which they operate must change to achieve functional innovation and diversify meaningful inclusion of diverse innovators. Urban Logic's clients include Apple, the U.S. Department of Defense, the Federal Geographic Data Committee, the Environmental Protection Agency and other large organizations.
+
+Bruce graduated with a B.S. in Economics and International Business from The Wharton School at The University of Pennsylvania, and a J.D. from Temple Law School, both in Philadelphia PA. Bruce is licensed as an attorney in CA, NY and PA.
+
+He has twin sons, Jacob (Jake) Cahan, a financial technologist, and Dr. Eli Cahan, a neonatal pediatrician and investigative journalist.`,
+      image: "/images/brucecahan.jpg",
+      linkedin: "https://www.linkedin.com/in/brucecahan/",
     },
   ]
 
