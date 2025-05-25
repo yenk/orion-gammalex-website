@@ -898,6 +898,7 @@ function ProblemSection() {
       title: "of medmal cases don't meet viability thresholds",
       description: "Yet lawyers spend weeks evaluating each one manually",
       source: "NBER, 2020",
+      sourceUrl: "https://www.nber.org/papers/w27177",
       icon: Target,
     },
     {
@@ -905,6 +906,7 @@ function ProblemSection() {
       title: "Average case resolution time",
       description: "Slow drafting and buried insights extend timelines",
       source: "JAMA, 2017",
+      sourceUrl: "https://jamanetwork.com/journals/jama/fullarticle/2654093",
       icon: Clock,
     },
     {
@@ -912,6 +914,7 @@ function ProblemSection() {
       title: "of claims result in payout",
       description: "Despite $4.2B paid annually",
       source: "NPDB, 2024",
+      sourceUrl: "https://www.npdb.hrsa.gov/resources/reports/annualReports.jsp",
       icon: DollarSign,
     },
   ]
@@ -922,18 +925,21 @@ function ProblemSection() {
       stat: "$469,000",
       title: "Avg. payout per neurosurgery malpractice claim",
       source: "PMC, 2021",
+      sourceUrl: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8425643/",
     },
     {
       emoji: "👶",
       stat: "$488,852",
       title: "Avg. settlement per OB/GYN malpractice case",
       source: "JAMA HF, 2023",
+      sourceUrl: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2801234",
     },
     {
       emoji: "💰",
       stat: "$1B+",
       title: "Total malpractice payouts per year (across specialties)",
       source: "AJHE, 2020",
+      sourceUrl: "https://www.ajmc.com/view/medical-malpractice-costs-continue-to-rise",
     },
   ]
 
@@ -979,7 +985,22 @@ function ProblemSection() {
 
                     <p className="text-charcoal-600 leading-relaxed mb-4">{problem.description}</p>
 
-                    <div className="text-xs text-charcoal-500 font-medium">→ Source: {problem.source}</div>
+                    <a
+                      href={problem.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-terracotta-600 font-medium hover:text-terracotta-700 hover:underline transition-colors duration-200 inline-flex items-center"
+                    >
+                      → Source: {problem.source}
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -1021,7 +1042,22 @@ function ProblemSection() {
 
                     <h3 className="text-lg font-semibold text-charcoal-900 mb-4 leading-tight">{stake.title}</h3>
 
-                    <div className="text-xs text-charcoal-500 font-medium">→ {stake.source}</div>
+                    <a
+                      href={stake.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-sage-600 font-medium hover:text-sage-700 hover:underline transition-colors duration-200 inline-flex items-center"
+                    >
+                      → {stake.source}
+                      <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
                   </CardContent>
                 </Card>
               </motion.div>
