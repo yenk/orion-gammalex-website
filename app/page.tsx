@@ -258,80 +258,43 @@ function AboutSection() {
   return (
     <section id="about" className="snap-section min-h-screen flex items-center bg-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-          <div className="lg:col-span-2">
-            <AnimatedText
-              text="Malpractice Litigation, Reengineered for the Modern Lawyer"
-              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-16 leading-tight"
-            />
+        <div className="max-w-6xl">
+          <AnimatedText
+            text="Malpractice Litigation, Reengineered for the Modern Lawyer"
+            className="text-6xl lg:text-7xl font-bold text-gray-900 mb-16 leading-tight"
+          />
 
-            <div className="space-y-12 text-2xl text-gray-700 leading-relaxed">
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                GammaLex was founded on a simple but urgent idea: medical malpractice litigation is too slow, too
-                complex, and too uncertain. We're building AI that changes that, starting with solutions that help
-                litigators predict claim viability, streamline drafting, and make smarter decisions faster.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Our mission is to make malpractice litigation more efficient, equitable, and data-driven, giving lawyers
-                the clarity they need from the moment a case lands on their desk.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                While we're focused on empowering litigators first, our AI engine is designed to grow with the
-                malpractice ecosystem — enabling future tools for claimants, insurers, and hospital risk teams.
-              </motion.p>
-            </div>
-          </div>
-
-          <div className="space-y-12">
-            <motion.div
-              className="text-center p-8 bg-sage-50 rounded-2xl"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+          <div className="space-y-12 text-2xl text-gray-700 leading-relaxed max-w-5xl">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl font-black text-sage-600 mb-4">2024</div>
-              <div className="text-xl text-gray-600">Founded</div>
-            </motion.div>
+              GammaLex was founded on a simple but urgent idea: medical malpractice litigation is too slow, too complex,
+              and too uncertain. We're building AI that changes that, starting with solutions that help litigators
+              predict claim viability, streamline drafting, and make smarter decisions faster.
+            </motion.p>
 
-            <motion.div
-              className="text-center p-8 bg-sage-50 rounded-2xl"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl font-black text-sage-600 mb-4">Stanford</div>
-              <div className="text-xl text-gray-600">CodeX Partnership</div>
-            </motion.div>
+              Our mission is to make malpractice litigation more efficient, equitable, and data-driven, giving lawyers
+              the clarity they need from the moment a case lands on their desk.
+            </motion.p>
 
-            <motion.div
-              className="text-center p-8 bg-sage-50 rounded-2xl"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl font-black text-sage-600 mb-4">AI-First</div>
-              <div className="text-xl text-gray-600">Legal Platform</div>
-            </motion.div>
+              While we're focused on empowering litigators first, our AI engine is designed to grow with the malpractice
+              ecosystem — enabling future tools for claimants, insurers, and hospital risk teams.
+            </motion.p>
           </div>
         </div>
       </div>
