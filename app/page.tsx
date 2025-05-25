@@ -82,9 +82,6 @@ export default function GammaLexPage() {
       {/* Vision & Mission */}
       <VisionSection />
 
-      {/* Team */}
-      <TeamSection />
-
       {/* Product Section */}
       <ProductSection />
 
@@ -107,6 +104,7 @@ function Navigation() {
 
   const navItems = [
     { id: "about", label: "ABOUT", mobileLabel: "About", icon: "👥" },
+    { id: "team", label: "TEAM", mobileLabel: "Team", icon: "👨‍💼" },
     { id: "product", label: "PRODUCT", mobileLabel: "Product", icon: "🚀" },
     { id: "problem", label: "PROBLEM", mobileLabel: "Problem", icon: "📊" },
     { id: "join", label: "JOIN US", mobileLabel: "Join", icon: "✉️" },
@@ -121,6 +119,7 @@ function Navigation() {
       const sections = [
         { id: "hero", element: document.getElementById("hero") },
         { id: "about", element: document.getElementById("about") },
+        { id: "team", element: document.getElementById("team") },
         { id: "product", element: document.getElementById("product") },
         { id: "problem", element: document.getElementById("problem") },
         { id: "join", element: document.getElementById("join") },
@@ -336,6 +335,27 @@ function Navigation() {
 }
 
 function AboutSection() {
+  const team = [
+    {
+      name: "Sarah Chen",
+      role: "Co-Founder & CEO",
+      background: "Former BigLaw partner, Stanford JD/CS",
+      image: "/placeholder.svg?height=300&width=300&query=professional woman CEO headshot",
+    },
+    {
+      name: "Michael Rodriguez",
+      role: "Co-Founder & CTO",
+      background: "Ex-Google AI, PhD Computer Science",
+      image: "/placeholder.svg?height=300&width=300&query=professional man CTO headshot",
+    },
+    {
+      name: "Dr. Emily Watson",
+      role: "Chief Medical Advisor",
+      background: "20+ years emergency medicine, malpractice expert",
+      image: "/placeholder.svg?height=300&width=300&query=professional woman doctor headshot",
+    },
+  ]
+
   return (
     <section id="about" className="py-32 bg-white">
       <div className="max-w-4xl mx-auto px-6">
@@ -391,6 +411,52 @@ function AboutSection() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Team Section */}
+      <div id="team" className="max-w-7xl mx-auto px-6 pt-32">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-6xl font-bold text-charcoal-900 mb-8">
+            Mission-Driven <span className="text-sage-600">Expertise</span>
+          </h2>
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
+            Our team combines deep legal expertise, cutting-edge AI research, and medical domain knowledge to build the
+            future of legal technology.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-12">
+          {team.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="mb-6">
+                <img
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  className="w-48 h-48 rounded-full mx-auto object-cover"
+                />
+              </div>
+
+              <h3 className="text-2xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
+
+              <p className="text-lg text-sage-600 font-medium mb-4">{member.role}</p>
+
+              <p className="text-charcoal-600">{member.background}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -435,78 +501,6 @@ function VisionSection() {
             </div>
           </div>
         </motion.div>
-      </div>
-    </section>
-  )
-}
-
-function TeamSection() {
-  const team = [
-    {
-      name: "Sarah Chen",
-      role: "Co-Founder & CEO",
-      background: "Former BigLaw partner, Stanford JD/CS",
-      image: "/placeholder.svg?height=300&width=300&query=professional woman CEO headshot",
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Co-Founder & CTO",
-      background: "Ex-Google AI, PhD Computer Science",
-      image: "/placeholder.svg?height=300&width=300&query=professional man CTO headshot",
-    },
-    {
-      name: "Dr. Emily Watson",
-      role: "Chief Medical Advisor",
-      background: "20+ years emergency medicine, malpractice expert",
-      image: "/placeholder.svg?height=300&width=300&query=professional woman doctor headshot",
-    },
-  ]
-
-  return (
-    <section className="py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8">
-            Mission-Driven <span className="text-sage-600">Expertise</span>
-          </h2>
-          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-            Our team combines deep legal expertise, cutting-edge AI research, and medical domain knowledge to build the
-            future of legal technology.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-12">
-          {team.map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="mb-6">
-                <img
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  className="w-48 h-48 rounded-full mx-auto object-cover"
-                />
-              </div>
-
-              <h3 className="text-2xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
-
-              <p className="text-lg text-sage-600 font-medium mb-4">{member.role}</p>
-
-              <p className="text-charcoal-600">{member.background}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   )
