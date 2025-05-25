@@ -188,59 +188,64 @@ function HeroSection() {
       className="snap-section h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
     >
       <div className="max-w-none w-full px-8 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
-          <div>
-            <motion.div
-              className="mb-8"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="text-sage-600 font-semibold text-xl tracking-wide">LEGAL AI PLATFORM</span>
-            </motion.div>
+        <div className="max-w-6xl">
+          <motion.div
+            className="mb-8"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-sage-600 font-semibold text-xl tracking-wide">LEGAL AI PLATFORM</span>
+          </motion.div>
 
-            <AnimatedText
-              text="GAMMALEX"
-              className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8"
-              delay={0.3}
-            />
+          <AnimatedText
+            text="GAMMALEX"
+            className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8"
+            delay={0.3}
+          />
 
-            <AnimatedText
-              text="The Malpractice Engine for Modern Litigators"
-              className="text-3xl lg:text-4xl text-gray-600 mb-12 leading-tight"
-              delay={0.8}
-            />
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-12 py-6 text-xl">
-                Join the Waitlist
-                <ArrowRight className="ml-3 w-6 h-6" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-2 border-gray-300 px-12 py-6 text-xl">
-                Schedule Demo
-              </Button>
-            </motion.div>
-          </div>
+          <AnimatedText
+            text="The Malpractice Engine for Modern Litigators"
+            className="text-3xl lg:text-5xl text-gray-600 mb-12 leading-tight max-w-4xl"
+            delay={0.8}
+          />
 
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            className="flex flex-col sm:flex-row gap-6"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <div className="bg-gradient-to-br from-sage-100 to-sage-200 rounded-3xl p-12 shadow-2xl">
-              <div className="text-center">
-                <div className="text-6xl mb-6">⚖️</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">AI-Powered Case Analysis</h3>
-                <p className="text-gray-600 text-lg">
-                  Predict viability, streamline drafting, make smarter decisions faster
-                </p>
-              </div>
+            <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-12 py-6 text-xl">
+              Join the Waitlist
+              <ArrowRight className="ml-3 w-6 h-6" />
+            </Button>
+            <Button variant="outline" size="lg" className="border-2 border-gray-300 px-12 py-6 text-xl">
+              Schedule Demo
+            </Button>
+          </motion.div>
+
+          {/* Key Features Row */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+          >
+            <div className="text-center">
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Viability Prediction</h3>
+              <p className="text-gray-600">AI-powered case assessment</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">📝</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Smart Drafting</h3>
+              <p className="text-gray-600">Instant document generation</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">📊</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Signal Detection</h3>
+              <p className="text-gray-600">Pattern recognition</p>
             </div>
           </motion.div>
         </div>
