@@ -646,29 +646,31 @@ function TeamSection() {
       {/* Bio Modal */}
       {modalMember !== null && (
         <motion.div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-start justify-center p-4 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={closeModal}
         >
           <motion.div
-            className="bg-white rounded-2xl max-w-4xl max-h-[90vh] overflow-y-auto relative"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            className="bg-white rounded-2xl w-full max-w-4xl my-8 relative shadow-2xl"
+            initial={{ scale: 0.9, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
-            <div className="sticky top-0 bg-white border-b border-sage-100 p-6 rounded-t-2xl">
+            {/* Modal Header - Fixed */}
+            <div className="sticky top-0 bg-white border-b border-sage-100 p-6 rounded-t-2xl z-10">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <img
-                    src={team[modalMember].image || "/placeholder.svg"}
-                    alt={team[modalMember].name}
-                    className="w-16 h-16 rounded-full object-cover mr-4"
-                  />
+                  <div className="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                    <img
+                      src={team[modalMember].image || "/placeholder.svg"}
+                      alt={team[modalMember].name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div>
                     <h3 className="text-2xl font-bold text-charcoal-900">{team[modalMember].name}</h3>
                     <p className="text-sage-600 font-medium">{team[modalMember].role}</p>
@@ -676,15 +678,15 @@ function TeamSection() {
                 </div>
                 <button
                   onClick={closeModal}
-                  className="p-2 hover:bg-sage-50 rounded-full transition-colors duration-200"
+                  className="p-2 hover:bg-sage-50 rounded-full transition-colors duration-200 flex-shrink-0"
                 >
                   <X className="w-6 h-6 text-charcoal-600" />
                 </button>
               </div>
             </div>
 
-            {/* Modal Content */}
-            <div className="p-6 space-y-8">
+            {/* Modal Content - Scrollable */}
+            <div className="p-6 space-y-8 max-h-[70vh] overflow-y-auto">
               {team[modalMember].bioSections.map((section, sectionIndex) => (
                 <motion.div
                   key={sectionIndex}
@@ -695,8 +697,10 @@ function TeamSection() {
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <h4 className="text-xl font-semibold text-charcoal-900 mb-3 text-sage-600">{section.title}</h4>
-                  <p className="text-charcoal-700 leading-relaxed">{section.content}</p>
+                  <div className="border-l-4 border-sage-200 pl-6">
+                    <h4 className="text-xl font-semibold text-sage-600 mb-3">{section.title}</h4>
+                    <p className="text-charcoal-700 leading-relaxed text-lg">{section.content}</p>
+                  </div>
                 </motion.div>
               ))}
 
@@ -708,6 +712,7 @@ function TeamSection() {
                 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
+                <span className="text-sm font-medium text-charcoal-600">Connect:</span>
                 {team[modalMember].linkedin && (
                   <a
                     href={team[modalMember].linkedin}
