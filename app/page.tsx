@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, AnimatePresence } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -551,26 +551,90 @@ function TeamSection() {
 }
 
 function ProductSection() {
+  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null)
+  const [demoProgress, setDemoProgress] = useState(0)
+
   const products = [
     {
       icon: Brain,
       title: "Viability Prediction",
       description: "AI-powered case strength assessment in seconds",
       benefit: "Reduce weak case intake by 60%",
+      demoSteps: [
+        { label: "Analyzing medical records...", progress: 25 },
+        { label: "Evaluating liability factors...", progress: 50 },
+        { label: "Calculating settlement probability...", progress: 75 },
+        { label: "Viability Score: 87% - High Merit", progress: 100 },
+      ],
+      mockData: {
+        caseType: "Surgical Error",
+        score: "87%",
+        timeline: "18-24 months",
+        settlement: "85% probability",
+      },
     },
     {
       icon: FileText,
       title: "AI-Powered Drafting",
       description: "Generate timelines, briefs, and summaries instantly",
       benefit: "Cut document prep time by 75%",
+      demoSteps: [
+        { label: "Processing case facts...", progress: 20 },
+        { label: "Structuring timeline...", progress: 40 },
+        { label: "Generating legal arguments...", progress: 70 },
+        { label: "Document ready for review", progress: 100 },
+      ],
+      mockData: {
+        docType: "Medical Timeline",
+        pages: "12 pages",
+        time: "3.2 seconds",
+        accuracy: "98% complete",
+      },
     },
     {
       icon: TrendingUp,
       title: "Litigation Signal Detection",
       description: "Identify patterns and precedents across cases",
       benefit: "Uncover hidden case insights",
+      demoSteps: [
+        { label: "Scanning case database...", progress: 30 },
+        { label: "Identifying patterns...", progress: 60 },
+        { label: "Matching precedents...", progress: 85 },
+        { label: "Found 23 similar cases", progress: 100 },
+      ],
+      mockData: {
+        patterns: "23 matches",
+        precedents: "15 favorable",
+        insights: "3 key factors",
+        confidence: "94% match",
+      },
     },
   ]
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+    if (hoveredProduct !== null) {
+      setDemoProgress(0)
+      interval = setInterval(() => {
+        setDemoProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval)
+            return 100
+          }
+          return prev + 2
+        })
+      }, 50)
+    }
+    return () => {
+      if (interval) clearInterval(interval)
+    }
+  }, [hoveredProduct])
+
+  const getCurrentStep = (productIndex: number) => {
+    if (hoveredProduct !== productIndex) return null
+    const steps = products[productIndex].demoSteps
+    return steps.find((step) => demoProgress <= step.progress) || steps[steps.length - 1]
+  }
 
   return (
     <section id="product" className="snap-section min-h-screen flex items-center bg-white">
@@ -596,25 +660,152 @@ function ProductSection() {
             {products.map((product, index) => (
               <motion.div
                 key={index}
-                className="group p-8 bg-gray-50 rounded-2xl hover:bg-sage-50 transition-all duration-300 cursor-pointer"
+                className="group relative p-8 bg-gray-50 rounded-2xl hover:bg-sage-50 transition-all duration-300 cursor-pointer overflow-hidden"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
+                onMouseEnter={() => setHoveredProduct(index)}
+                onMouseLeave={() => {
+                  setHoveredProduct(null)
+                  setDemoProgress(0)
+                }}
               >
-                <div className="flex items-start space-x-6">
-                  <div className="bg-sage-100 p-4 rounded-xl group-hover:bg-sage-200 transition-colors">
-                    <product.icon className="w-8 h-8 text-sage-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.title}</h3>
-                    <p className="text-lg text-gray-600 mb-4 leading-relaxed">{product.description}</p>
-                    <div className="inline-flex items-center px-4 py-2 bg-sage-100 text-sage-800 rounded-full text-sm font-medium">
-                      <CheckCircle className="w-4 h-4 mr-2" />
-                      {product.benefit}
+                {/* Background Animation */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-sage-100 to-sage-200 opacity-0"
+                  animate={{
+                    opacity: hoveredProduct === index ? 0.3 : 0,
+                    scale: hoveredProduct === index ? 1.05 : 1,
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+
+                <div className="relative z-10">
+                  <div className="flex items-start space-x-6">
+                    <motion.div
+                      className="bg-sage-100 p-4 rounded-xl group-hover:bg-sage-200 transition-colors"
+                      animate={{
+                        scale: hoveredProduct === index ? 1.1 : 1,
+                        rotate: hoveredProduct === index ? 5 : 0,
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <product.icon className="w-8 h-8 text-sage-600" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.title}</h3>
+                      <p className="text-lg text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+
+                      {/* Demo Interface */}
+                      <AnimatePresence>
+                        {hoveredProduct === index && (
+                          <motion.div
+                            className="bg-white rounded-lg p-4 mb-4 border border-sage-200 shadow-lg"
+                            initial={{ opacity: 0, height: 0, y: -20 }}
+                            animate={{ opacity: 1, height: "auto", y: 0 }}
+                            exit={{ opacity: 0, height: 0, y: -20 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            {/* Demo Header */}
+                            <div className="flex items-center justify-between mb-3">
+                              <div className="flex items-center space-x-2">
+                                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                <span className="text-sm font-medium text-gray-700">Live Demo</span>
+                              </div>
+                              <span className="text-xs text-gray-500">AI Processing</span>
+                            </div>
+
+                            {/* Progress Bar */}
+                            <div className="mb-3">
+                              <div className="flex justify-between items-center mb-1">
+                                <span className="text-sm text-gray-600">
+                                  {getCurrentStep(index)?.label || "Initializing..."}
+                                </span>
+                                <span className="text-sm font-medium text-sage-600">{Math.round(demoProgress)}%</span>
+                              </div>
+                              <div className="w-full bg-gray-200 rounded-full h-2">
+                                <motion.div
+                                  className="bg-gradient-to-r from-sage-500 to-sage-600 h-2 rounded-full"
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${demoProgress}%` }}
+                                  transition={{ duration: 0.1 }}
+                                />
+                              </div>
+                            </div>
+
+                            {/* Mock Results */}
+                            {demoProgress === 100 && (
+                              <motion.div
+                                className="grid grid-cols-2 gap-3 mt-4"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                              >
+                                {Object.entries(product.mockData).map(([key, value], i) => (
+                                  <motion.div
+                                    key={key}
+                                    className="bg-sage-50 p-2 rounded text-center"
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.1 * i }}
+                                  >
+                                    <div className="text-xs text-gray-600 capitalize">
+                                      {key.replace(/([A-Z])/g, " $1")}
+                                    </div>
+                                    <div className="text-sm font-semibold text-sage-700">{value}</div>
+                                  </motion.div>
+                                ))}
+                              </motion.div>
+                            )}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+
+                      <motion.div
+                        className="inline-flex items-center px-4 py-2 bg-sage-100 text-sage-800 rounded-full text-sm font-medium"
+                        animate={{
+                          scale: hoveredProduct === index ? 1.05 : 1,
+                          backgroundColor: hoveredProduct === index ? "#10b981" : undefined,
+                          color: hoveredProduct === index ? "#ffffff" : undefined,
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <CheckCircle className="w-4 h-4 mr-2" />
+                        {product.benefit}
+                      </motion.div>
                     </div>
                   </div>
+
+                  {/* Floating Elements */}
+                  <AnimatePresence>
+                    {hoveredProduct === index && (
+                      <>
+                        <motion.div
+                          className="absolute top-4 right-4 w-2 h-2 bg-sage-400 rounded-full"
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0, opacity: 0 }}
+                          transition={{ delay: 0.1 }}
+                        />
+                        <motion.div
+                          className="absolute bottom-4 right-8 w-1 h-1 bg-sage-300 rounded-full"
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0, opacity: 0 }}
+                          transition={{ delay: 0.2 }}
+                        />
+                        <motion.div
+                          className="absolute top-8 right-12 w-1.5 h-1.5 bg-sage-500 rounded-full"
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0, opacity: 0 }}
+                          transition={{ delay: 0.3 }}
+                        />
+                      </>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
             ))}
