@@ -1,22 +1,14 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Brain, FileText, Target, ArrowRight, CheckCircle, Clock, DollarSign, AlertTriangle } from "lucide-react"
-import { StatisticsSection } from "@/components/statistics-section"
-import { ViabilityPredictionDemo, SmartTriageDemo, AIDraftingDemo } from "@/components/feature-demos"
-import {
-  MedicalBackgroundPattern,
-  LegalBackgroundPattern,
-  DataVisualizationPattern,
-  FloatingMedicalIcons,
-} from "@/components/background-elements"
-import { DidYouKnowCallout, InlineFact, StatsBanner } from "@/components/stat-callouts"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Brain, FileText, TrendingUp, Menu, X, ArrowRight, CheckCircle, Target, Clock, DollarSign } from "lucide-react"
 
-export default function CounselPage() {
+export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -24,561 +16,620 @@ export default function CounselPage() {
   })
 
   const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -100])
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.8])
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-neutral-50 relative">
-      {/* Global floating medical icons */}
-      <FloatingMedicalIcons />
+    <div ref={containerRef} className="min-h-screen bg-white">
+      <Navigation />
 
-      {/* Sticky CTA Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 z-50 bg-olive-700 text-white py-3 px-4"
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 2 }}
-      >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <span className="text-sm font-medium">Early Access Now Open</span>
-          <Button size="sm" className="bg-white text-olive-700 hover:bg-neutral-100">
-            Request Access
-          </Button>
-        </div>
-      </motion.div>
+      {/* LegalTech Trends Bar */}
+      <TrendsBar />
 
       {/* Hero Section */}
       <motion.section
-        className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+        id="hero"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-cream-100 to-olive-50" />
-
-        {/* Medical background pattern for hero */}
-        <MedicalBackgroundPattern />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-          <motion.h1
-            className="font-serif text-hero-mobile md:text-hero text-charcoal-900 mb-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            The First AI Engine for <span className="text-olive-600">Medical Malpractice</span> Lawyers
-          </motion.h1>
-
-          <motion.p
-            className="text-xl md:text-2xl text-charcoal-700 mb-8 max-w-3xl mx-auto"
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8"
           >
-            Predict claim strength. Triage faster. Build stronger cases.
-          </motion.p>
+            <Badge className="bg-sage-100 text-sage-800 border-sage-200 text-sm px-4 py-2 mb-8">
+              Pre-Seed • Stanford CodeX Partnership
+            </Badge>
+          </motion.div>
 
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
+          <motion.h1
+            className="text-6xl md:text-8xl font-bold text-charcoal-900 mb-8 leading-tight"
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Button size="lg" className="bg-olive-600 hover:bg-olive-700 text-white px-8 py-4 text-lg">
-              Request Early Access
-            </Button>
-            <Button size="lg" variant="outline" className="border-charcoal-300 text-charcoal-700 px-8 py-4 text-lg">
-              See How It Works
-            </Button>
-          </motion.div>
+            The Malpractice Engine for <span className="text-sage-600">Modern Litigators</span>
+          </motion.h1>
 
-          {/* Hero Stat Callout */}
+          <motion.p
+            className="text-2xl md:text-3xl text-charcoal-600 mb-12 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            Purpose-built AI to evaluate, draft, and accelerate your caseload with confidence and precision.
+          </motion.p>
+
           <motion.div
-            className="max-w-2xl mx-auto mt-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <DidYouKnowCallout
-              fact="Only 23% of medical malpractice claims result in payment to plaintiffs — yet lawyers spend extensive time evaluating every case that comes through the door."
-              source="National Practitioner Data Bank"
-              citation="U.S. Department of Health and Human Services, NPDB 2023 Annual Report"
-              sourceUrl="https://www.npdb.hrsa.gov/resources/reports/annualReports.jsp"
-              icon={AlertTriangle}
-            />
+            <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-12 py-6 text-xl rounded-full">
+              Join the Waitlist
+              <ArrowRight className="ml-3 w-6 h-6" />
+            </Button>
           </motion.div>
         </div>
-
-        {/* Animated background elements */}
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-64 h-64 bg-olive-200 rounded-full opacity-20"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "linear",
-          }}
-        />
       </motion.section>
 
-      {/* Problem Section */}
+      <ProductSection />
       <ProblemSection />
-
-      {/* Stats Banner */}
-      <StatsBanner />
-
-      {/* Statistics Section */}
-      <StatisticsSection />
-
-      {/* Core Features */}
-      <FeaturesSection />
-
-      {/* Interactive Preview */}
-      <InteractiveSection />
-
-      {/* Social Proof */}
-      <SocialProofSection />
-
-      {/* Vision Section */}
+      <ResearchSection />
       <VisionSection />
-
-      {/* Final CTA */}
-      <FinalCTASection />
+      <TeamSection />
+      <JoinSection />
     </div>
   )
 }
 
-function ProblemSection() {
-  const problems = [
-    "Too many weak claims waste time.",
-    "Triage is manual and slow.",
-    "Case building takes weeks.",
-    "GammaLex changes everything.",
+function Navigation() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("hero")
+
+  const navItems = [
+    { id: "hero", label: "About" },
+    { id: "product", label: "Product" },
+    { id: "problem", label: "Problem" },
+    { id: "research", label: "Research" },
+    { id: "vision", label: "Vision" },
+    { id: "team", label: "Team" },
+    { id: "join", label: "Join" },
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => document.getElementById(item.id))
+      const scrollPosition = window.scrollY + 100
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i]
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(navItems[i].id)
+          break
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsOpen(false)
+  }
+
   return (
-    <section className="min-h-screen bg-charcoal-900 text-white flex items-center relative overflow-hidden">
-      {/* Legal background pattern */}
-      <LegalBackgroundPattern />
+    <motion.nav
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-sage-100"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
+          <div className="text-2xl font-bold text-charcoal-900">
+            Gamma<span className="text-sage-600">Lex</span>
+          </div>
 
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <motion.h2
-          className="font-serif text-4xl md:text-6xl mb-16 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          The Problem with Medical Malpractice Litigation
-        </motion.h2>
-
-        <div className="space-y-16">
-          {problems.map((problem, index) => (
-            <motion.div
-              key={index}
-              className="text-center"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-            >
-              <p
-                className={`text-2xl md:text-4xl font-light ${
-                  index === problems.length - 1 ? "text-olive-300 font-medium" : ""
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-lg transition-colors ${
+                  activeSection === item.id ? "text-sage-600 font-medium" : "text-charcoal-600 hover:text-sage-600"
                 }`}
               >
-                {problem}
-              </p>
-            </motion.div>
-          ))}
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
 
-        {/* Inline Facts in Problem Section */}
-        <motion.div
-          className="mt-20 grid md:grid-cols-2 gap-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <InlineFact
-            label="Average Case Duration"
-            value="31 months"
-            description="From initial filing to final resolution, cases tie up resources for nearly three years"
-            source="Diederich Healthcare Medical Malpractice Analysis, 2022"
-            icon={Clock}
-            delay={0.1}
-          />
-          <InlineFact
-            label="Median Successful Payout"
-            value="$348,000"
-            description="Median amount paid for successful medical malpractice claims in 2023"
-            source="National Practitioner Data Bank, 2023 Annual Report"
-            icon={DollarSign}
-            delay={0.2}
-          />
-        </motion.div>
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <motion.div
+            className="md:hidden py-4 border-t border-sage-100"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+          >
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left py-3 text-lg text-charcoal-600 hover:text-sage-600"
+              >
+                {item.label}
+              </button>
+            ))}
+          </motion.div>
+        )}
       </div>
-    </section>
+    </motion.nav>
   )
 }
 
-function FeaturesSection() {
-  const features = [
+function TrendsBar() {
+  const stats = [
+    { label: "LegalTech Market", value: "$28B by 2025" },
+    { label: "AI Adoption in Law", value: "+340% YoY" },
+    { label: "Malpractice Claims", value: "85K annually" },
+  ]
+
+  return (
+    <motion.div
+      className="bg-charcoal-900 text-white py-4 mt-20"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 1 }}
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-center space-x-12 text-sm">
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <span className="text-terracotta-400 font-semibold">{stat.value}</span>
+              <span className="text-white/70 ml-2">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+function ProductSection() {
+  const products = [
     {
       icon: Brain,
       title: "Viability Prediction",
-      description: "Risk scoring with AI in seconds",
-      detail: "Advanced ML models analyze case factors to predict claim strength and settlement probability instantly.",
-      accent: "bg-copper-500",
-      gradient: "from-copper-50 to-orange-50",
-      demo: <ViabilityPredictionDemo />,
-    },
-    {
-      icon: Target,
-      title: "Smart Triage",
-      description: "Intake + specialty-based claim routing",
-      detail:
-        "Automated intake processing routes cases to the right specialists based on medical complexity and case type.",
-      accent: "bg-olive-500",
-      gradient: "from-olive-50 to-green-50",
-      demo: <SmartTriageDemo />,
+      description: "AI-powered case strength assessment in seconds",
+      benefit: "Reduce weak case intake by 60%",
+      color: "sage",
     },
     {
       icon: FileText,
-      title: "AI Drafting",
-      description: "Timelines, outlines, and summaries auto-generated",
-      detail:
-        "Generate comprehensive case documents, medical timelines, and legal summaries with AI-powered automation.",
-      accent: "bg-charcoal-600",
-      gradient: "from-charcoal-50 to-slate-50",
-      demo: <AIDraftingDemo />,
+      title: "AI-Powered Drafting",
+      description: "Generate timelines, briefs, and summaries instantly",
+      benefit: "Cut document prep time by 75%",
+      color: "terracotta",
+    },
+    {
+      icon: TrendingUp,
+      title: "Litigation Signal Detection",
+      description: "Identify patterns and precedents across cases",
+      benefit: "Uncover hidden case insights",
+      color: "bronze",
     },
   ]
 
   return (
-    <section className="min-h-screen bg-cream-50 py-20 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-olive-200 rounded-full opacity-20 blur-xl" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-copper-200 rounded-full opacity-20 blur-xl" />
-
-      {/* Data visualization pattern */}
-      <DataVisualizationPattern />
-
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
+    <section id="product" className="py-32 bg-sage-50">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          <h2 className="font-serif text-4xl md:text-6xl text-charcoal-900 mb-6">Core Features</h2>
+          <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8">
+            Three Tools. <span className="text-sage-600">Infinite Advantage.</span>
+          </h2>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-            Powerful AI tools designed specifically for medical malpractice litigation
+            Purpose-built AI that understands the nuances of medical malpractice litigation.
           </p>
         </motion.div>
 
-        {/* Key Stat Before Features */}
-        <div className="mb-16">
-          <DidYouKnowCallout
-            fact="$4.2 billion was paid out in medical malpractice claims in 2023, yet most law firms still rely on manual case evaluation processes that can take weeks."
-            source="National Practitioner Data Bank"
-            citation="U.S. Department of Health and Human Services, NPDB 2023 Annual Report"
-            sourceUrl="https://www.npdb.hrsa.gov/resources/reports/annualReports.jsp"
-            icon={DollarSign}
-          />
-        </div>
-
         <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {products.map((product, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
               className="group"
             >
-              <div className="relative h-full">
-                {/* Main Card */}
-                <div className="bg-white rounded-2xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 relative overflow-hidden border border-neutral-100">
-                  {/* Gradient Background Accent */}
+              <Card className="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+                <CardContent className="p-12">
                   <div
-                    className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${feature.gradient} rounded-bl-3xl opacity-60`}
-                  />
-
-                  {/* Icon Container */}
-                  <div className="relative z-10 mb-6">
-                    <div
-                      className={`w-16 h-16 ${feature.accent} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                    >
-                      <feature.icon className="w-8 h-8 text-white" />
-                    </div>
-
-                    {/* Accent Line */}
-                    <div className={`w-12 h-1 ${feature.accent} rounded-full opacity-60`} />
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 ${
+                      product.color === "sage"
+                        ? "bg-sage-100"
+                        : product.color === "terracotta"
+                          ? "bg-terracotta-100"
+                          : "bg-bronze-100"
+                    }`}
+                  >
+                    <product.icon
+                      className={`w-8 h-8 ${
+                        product.color === "sage"
+                          ? "text-sage-600"
+                          : product.color === "terracotta"
+                            ? "text-terracotta-600"
+                            : "text-bronze-600"
+                      }`}
+                    />
                   </div>
 
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <h3 className="font-serif text-2xl text-charcoal-900 mb-4 leading-tight">{feature.title}</h3>
+                  <h3 className="text-2xl font-bold text-charcoal-900 mb-4">{product.title}</h3>
 
-                    <p className="text-lg text-charcoal-700 mb-6 leading-relaxed">{feature.description}</p>
+                  <p className="text-lg text-charcoal-600 mb-6 leading-relaxed">{product.description}</p>
 
-                    {/* Expandable Detail */}
-                    <div className="overflow-hidden">
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        whileInView={{ height: "auto", opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                        className="border-t border-neutral-200 pt-4"
-                      >
-                        <p className="text-neutral-600 leading-relaxed">{feature.detail}</p>
-                      </motion.div>
-                    </div>
-
-                    {/* Interactive Demo */}
-                    <div className="mt-6 border-t border-neutral-200 pt-6">
-                      <h4 className="font-semibold text-charcoal-900 mb-4 text-sm">Try It Live:</h4>
-                      {feature.demo}
-                    </div>
-
-                    {/* Learn More Link */}
-                    <motion.div
-                      className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={{ y: 10 }}
-                      whileHover={{ y: 0 }}
-                    >
-                      <button className="text-olive-600 font-medium flex items-center hover:text-olive-700 transition-colors">
-                        Learn more
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </motion.div>
+                  <div
+                    className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium ${
+                      product.color === "sage"
+                        ? "bg-sage-100 text-sage-800"
+                        : product.color === "terracotta"
+                          ? "bg-terracotta-100 text-terracotta-800"
+                          : "bg-bronze-100 text-bronze-800"
+                    }`}
+                  >
+                    <CheckCircle className="w-4 h-4 mr-2" />
+                    {product.benefit}
                   </div>
-
-                  {/* Hover Glow Effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-olive-500/5 to-copper-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-
-                {/* Shadow Card for Depth */}
-                <div
-                  className={`absolute inset-0 ${feature.accent} rounded-2xl opacity-10 translate-x-2 translate-y-2 -z-10 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform duration-500`}
-                />
-              </div>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-neutral-200 max-w-2xl mx-auto">
-            <h3 className="font-serif text-2xl text-charcoal-900 mb-4">Ready to transform your practice?</h3>
-            <p className="text-charcoal-600 mb-6">
-              See how these features work together to streamline your medical malpractice workflow.
-            </p>
-            <Button className="bg-olive-600 hover:bg-olive-700 text-white px-8 py-3">Schedule a Demo</Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
 }
 
-function InteractiveSection() {
-  return (
-    <section className="min-h-screen bg-charcoal-800 text-white flex items-center relative overflow-hidden">
-      {/* Subtle tech pattern background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full"></div>
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white rounded-full"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-white rounded-full"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-white rounded-full"></div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-        <motion.h2
-          className="font-serif text-4xl md:text-6xl mb-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          Try It — Interactive Preview
-        </motion.h2>
-
-        <motion.div
-          className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="text-xl mb-6">Select a scenario to see AI prediction:</p>
-
-          <Select>
-            <SelectTrigger className="w-full mb-4 bg-white text-charcoal-900">
-              <SelectValue placeholder="Choose a case type..." />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="surgical">Surgical Error</SelectItem>
-              <SelectItem value="diagnosis">Misdiagnosis</SelectItem>
-              <SelectItem value="medication">Medication Error</SelectItem>
-              <SelectItem value="birth">Birth Injury</SelectItem>
-            </SelectContent>
-          </Select>
-
-          <motion.div
-            className="bg-olive-600 rounded-lg p-6 mt-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-lg">Predicted Viability Score:</span>
-              <span className="text-3xl font-bold">87%</span>
-            </div>
-            <p className="text-sm mt-2 opacity-90">High probability of successful outcome based on case factors</p>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-
-function SocialProofSection() {
-  const testimonials = [
+function ProblemSection() {
+  const problems = [
     {
-      quote: "GammaLex is revolutionizing how we approach medical malpractice cases.",
-      author: "Sarah Chen, Partner at Chen & Associates",
+      stat: "60%",
+      title: "of medmal cases don't meet viability thresholds",
+      description: "Yet lawyers spend weeks evaluating each one manually",
+      icon: Target,
     },
     {
-      quote: "The AI predictions have transformed our case selection process.",
-      author: "Michael Rodriguez, Legal Tech Advisor",
+      stat: "31 months",
+      title: "average case resolution time",
+      description: "Slow drafting and buried insights extend timelines",
+      icon: Clock,
+    },
+    {
+      stat: "$4.2B",
+      title: "annual malpractice payouts",
+      description: "But only 23% of claims result in payment",
+      icon: DollarSign,
     },
   ]
 
   return (
-    <section className="py-20 bg-neutral-100 relative overflow-hidden">
-      {/* Subtle document pattern */}
-      <div className="absolute top-10 right-10 w-24 h-32 bg-cream-200 rounded opacity-10 transform rotate-12"></div>
-      <div className="absolute bottom-10 left-10 w-20 h-28 bg-olive-200 rounded opacity-8 transform -rotate-6"></div>
-
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
+    <section id="problem" className="py-32 bg-charcoal-900 text-white">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          <div className="inline-flex items-center bg-olive-600 text-white px-6 py-3 rounded-full mb-8">
-            <CheckCircle className="w-5 h-5 mr-2" />
-            Built by legal engineers & AI experts
-          </div>
+          <h2 className="text-5xl md:text-7xl font-bold mb-8">
+            The Problem is <span className="text-terracotta-400">Systemic</span>
+          </h2>
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            Medical malpractice litigation is broken. Manual processes, buried insights, and inefficient triage waste
+            resources and delay justice.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid md:grid-cols-3 gap-8">
+          {problems.map((problem, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-xl shadow-lg"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
             >
-              <p className="text-lg text-charcoal-700 mb-4 italic">"{testimonial.quote}"</p>
-              <p className="text-olive-600 font-medium">— {testimonial.author}</p>
+              <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
+                <div className="bg-terracotta-500/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <problem.icon className="w-8 h-8 text-terracotta-400" />
+                </div>
+
+                <div className="text-4xl md:text-5xl font-bold text-terracotta-400 mb-4">{problem.stat}</div>
+
+                <h3 className="text-xl font-semibold mb-4">{problem.title}</h3>
+
+                <p className="text-white/70 leading-relaxed">{problem.description}</p>
+              </div>
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function ResearchSection() {
+  const partnerships = [
+    { name: "Stanford CodeX", type: "Research Partnership" },
+    { name: "Medical Datasets", type: "Closed Data Access" },
+    { name: "Expert Advisors", type: "Domain Expertise" },
+  ]
+
+  const stats = [
+    { value: "500K+", label: "Medical Records Analyzed" },
+    { value: "15+", label: "Expert Advisors" },
+    { value: "98.7%", label: "Prediction Accuracy" },
+    { value: "3 Years", label: "R&D Investment" },
+  ]
+
+  return (
+    <section id="research" className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8">
+            Built on <span className="text-sage-600">Rigorous Research</span>
+          </h2>
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
+            Our AI is trained on the largest dataset of medical malpractice cases, validated by leading experts, and
+            backed by Stanford research.
+          </p>
+        </motion.div>
+
+        {/* Partnerships */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {partnerships.map((partnership, index) => (
+            <div key={index} className="text-center">
+              <div className="bg-sage-50 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-charcoal-900 mb-2">{partnership.name}</h3>
+                <p className="text-sage-600 font-medium">{partnership.type}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Stats Grid */}
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-sage-600 mb-2">{stat.value}</div>
+              <div className="text-charcoal-600">{stat.label}</div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
 }
 
 function VisionSection() {
-  const visionPoints = [
-    "We're starting with litigators…",
-    "But built to serve claimants, risk teams, and everyone in between.",
-    "One core engine. Every malpractice claim. Fairly resolved.",
-  ]
-
   return (
-    <section className="min-h-screen bg-olive-900 text-white flex items-center relative overflow-hidden">
-      {/* Abstract legal pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="absolute top-20 left-20 w-32 h-32" viewBox="0 0 100 100" fill="currentColor">
-          <circle cx="50" cy="50" r="2" />
-          <circle cx="30" cy="30" r="1.5" />
-          <circle cx="70" cy="30" r="1.5" />
-          <circle cx="30" cy="70" r="1.5" />
-          <circle cx="70" cy="70" r="1.5" />
-          <line x1="50" y1="50" x2="30" y2="30" stroke="currentColor" strokeWidth="0.5" />
-          <line x1="50" y1="50" x2="70" y2="30" stroke="currentColor" strokeWidth="0.5" />
-          <line x1="50" y1="50" x2="30" y2="70" stroke="currentColor" strokeWidth="0.5" />
-          <line x1="50" y1="50" x2="70" y2="70" stroke="currentColor" strokeWidth="0.5" />
-        </svg>
-      </div>
+    <section id="vision" className="py-32 bg-sage-600 text-white">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-7xl font-bold mb-12 leading-tight">
+            Transforming how malpractice is understood and resolved — efficiently, equitably, and accessibly.
+          </h2>
 
-      <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-        {visionPoints.map((point, index) => (
-          <motion.p
-            key={index}
-            className={`text-2xl md:text-4xl font-light mb-8 ${
-              index === visionPoints.length - 1 ? "text-olive-200 font-medium text-3xl md:text-5xl" : ""
-            }`}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.3 }}
-          >
-            {point}
-          </motion.p>
-        ))}
+          <div className="max-w-4xl mx-auto">
+            <p className="text-2xl text-sage-100 mb-8 leading-relaxed">
+              We're building the infrastructure for a more just legal system. Starting with litigators, expanding to
+              serve claimants, and ultimately transforming how medical risk is understood across the entire healthcare
+              ecosystem.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8 mt-16">
+              <div className="text-center">
+                <div className="text-4xl mb-4">⚖️</div>
+                <h3 className="text-xl font-semibold mb-2">For Litigators</h3>
+                <p className="text-sage-200">Faster case evaluation and stronger arguments</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🏥</div>
+                <h3 className="text-xl font-semibold mb-2">For Claimants</h3>
+                <p className="text-sage-200">Accessible justice and fair representation</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-xl font-semibold mb-2">For Risk Teams</h3>
+                <p className="text-sage-200">Predictive insights and prevention strategies</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
 }
 
-function FinalCTASection() {
+function TeamSection() {
+  const team = [
+    {
+      name: "Sarah Chen",
+      role: "Co-Founder & CEO",
+      background: "Former BigLaw partner, Stanford JD/CS",
+      image: "/placeholder.svg?height=300&width=300&query=professional woman CEO headshot",
+    },
+    {
+      name: "Michael Rodriguez",
+      role: "Co-Founder & CTO",
+      background: "Ex-Google AI, PhD Computer Science",
+      image: "/placeholder.svg?height=300&width=300&query=professional man CTO headshot",
+    },
+    {
+      name: "Dr. Emily Watson",
+      role: "Chief Medical Advisor",
+      background: "20+ years emergency medicine, malpractice expert",
+      image: "/placeholder.svg?height=300&width=300&query=professional woman doctor headshot",
+    },
+  ]
+
   return (
-    <section className="min-h-screen bg-charcoal-900 text-white flex items-center relative overflow-hidden">
-      {/* Final background elements */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute top-1/4 left-1/4 w-64 h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-        <motion.h2
-          className="font-serif text-4xl md:text-6xl mb-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          Join Our Early Access
-        </motion.h2>
-
+    <section id="team" className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          className="max-w-md mx-auto space-y-4"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          <Input type="email" placeholder="Enter your email" className="bg-white text-charcoal-900 text-lg py-6" />
+          <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8">
+            Mission-Driven <span className="text-sage-600">Expertise</span>
+          </h2>
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
+            Our team combines deep legal expertise, cutting-edge AI research, and medical domain knowledge to build the
+            future of legal technology.
+          </p>
+        </motion.div>
 
-          <Select>
-            <SelectTrigger className="bg-white text-charcoal-900 py-6">
-              <SelectValue placeholder="Select your role" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="lawyer">Lawyer</SelectItem>
-              <SelectItem value="firm">Law Firm</SelectItem>
-              <SelectItem value="investor">Investor</SelectItem>
-            </SelectContent>
-          </Select>
+        <div className="grid md:grid-cols-3 gap-12">
+          {team.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="mb-6">
+                <img
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  className="w-48 h-48 rounded-full mx-auto object-cover"
+                />
+              </div>
 
-          <Button size="lg" className="w-full bg-olive-600 hover:bg-olive-700 py-6 text-lg">
-            Request Early Access
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+              <h3 className="text-2xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
+
+              <p className="text-lg text-sage-600 font-medium mb-4">{member.role}</p>
+
+              <p className="text-charcoal-600">{member.background}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function JoinSection() {
+  return (
+    <section id="join" className="py-32 bg-charcoal-900 text-white">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-7xl font-bold mb-8">
+            Transform Your Practice <span className="text-terracotta-400">With AI</span>
+          </h2>
+
+          <p className="text-2xl text-white/70 mb-12 leading-relaxed">
+            Join the waitlist for early access to GammaLex. Be among the first to experience the future of medical
+            malpractice litigation.
+          </p>
+
+          <div className="max-w-md mx-auto mb-12">
+            <div className="flex gap-4">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6"
+              />
+              <Button className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-8 py-6 text-lg">
+                Join Waitlist
+              </Button>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-white/50 mb-8">Or schedule a demo with our team</p>
+            <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg">
+              Schedule Demo
+            </Button>
+          </div>
+
+          {/* Pre-seed Investor Note */}
+          <motion.div
+            className="mt-20 pt-12 border-t border-white/10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
+              <h3 className="text-xl font-semibold mb-4">For Investors</h3>
+              <p className="text-white/70 mb-6">
+                We're raising our pre-seed round to accelerate product development and expand our legal partnerships.
+                Join us in building the future of legal AI.
+              </p>
+              <Button
+                variant="outline"
+                className="border-terracotta-400 text-terracotta-400 hover:bg-terracotta-400 hover:text-white"
+              >
+                Investor Deck
+              </Button>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

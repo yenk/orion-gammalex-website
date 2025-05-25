@@ -53,18 +53,42 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom GammaLex colors - Olive/Eucalyptus theme
-        olive: {
-          50: "#f6f7f6",
-          100: "#e8eae7",
-          200: "#d1d6ce",
-          300: "#b0b9ab",
-          400: "#8d9a85",
-          500: "#6a7f64", // Primary olive/eucalyptus
-          600: "#566650",
-          700: "#465342",
-          800: "#3a4437",
-          900: "#31392f",
+        // GammaLex Brand Colors - Sage Green, Terracotta Clay, Dark Bronze
+        sage: {
+          50: "#f6f8f6",
+          100: "#e8ede8",
+          200: "#d1dbd1",
+          300: "#afc0af",
+          400: "#87a087",
+          500: "#6b8a6b", // Primary sage green
+          600: "#557055",
+          700: "#465a46",
+          800: "#3a4a3a",
+          900: "#323e32",
+        },
+        terracotta: {
+          50: "#fdf6f3",
+          100: "#fbeae3",
+          200: "#f6d4c7",
+          300: "#efb59e",
+          400: "#e68d6f",
+          500: "#dc6b47", // Primary terracotta clay
+          600: "#cd5233",
+          700: "#ab4129",
+          800: "#8a3626",
+          900: "#702f24",
+        },
+        bronze: {
+          50: "#f7f5f3",
+          100: "#ede8e3",
+          200: "#ddd2c7",
+          300: "#c7b5a3",
+          400: "#b0947c",
+          500: "#9d7c5f", // Primary dark bronze
+          600: "#8f6b53",
+          700: "#775746",
+          800: "#62493d",
+          900: "#513d33",
         },
         charcoal: {
           50: "#f6f6f6",
@@ -76,40 +100,15 @@ const config: Config = {
           600: "#5d5d5d",
           700: "#4f4f4f",
           800: "#454545",
-          900: "#3d3d3d",
-        },
-        cream: {
-          50: "#fefefe",
-          100: "#fefcf9",
-          200: "#fdf8f1",
-          300: "#fbf2e6",
-          400: "#f8ebd6",
-          500: "#f5e4c1", // Primary cream
-          600: "#f0d49e",
-          700: "#e8c078",
-          800: "#dda94d",
-          900: "#c8941f",
-        },
-        copper: {
-          50: "#fef7f4",
-          100: "#fdeee6",
-          200: "#fadacc",
-          300: "#f6bfa7",
-          400: "#f09b7a",
-          500: "#e87a52", // Primary copper
-          600: "#d85d35",
-          700: "#b64a2a",
-          800: "#943f26",
-          900: "#783624",
+          900: "#3d3d3d", // Primary charcoal
         },
       },
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
-        sans: ["Inter", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       fontSize: {
-        hero: ["4rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-        "hero-mobile": ["2.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "8xl": ["6rem", { lineHeight: "1" }],
+        "9xl": ["8rem", { lineHeight: "1" }],
       },
       keyframes: {
         "accordion-down": {
