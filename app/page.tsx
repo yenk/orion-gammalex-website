@@ -335,48 +335,6 @@ function Navigation() {
 }
 
 function AboutSection() {
-  const team = [
-    {
-      name: "Yen Kha",
-      role: "Founder & CEO",
-      shortBio: "Reimagining justice at the intersection of medicine, law, and artificial intelligence.",
-      highlights: [
-        "Founder of GammaLex and co-founder of Justice For All (J4ALL)",
-        "Led transformative AI efforts across healthcare, legal tech, and enterprise platforms",
-        "Multidisciplinary background combining AI, healthcare, and law",
-        "Systems-level approach to building tools that restore trust and empower professionals",
-      ],
-      personalNote:
-        "Outside of work, Yen finds challenge and calm in equal measure—climbing mountains, cycling long distances, and baking intricate pastries. 'Mountains might as well be my other last name.'",
-      mission:
-        "GammaLex isn't just a platform. It's a mission—born from lived experience, powered by purpose, and grounded in the belief that justice should belong to everyone.",
-      image: "/images/yenkha.jpg",
-      linkedin: "https://www.linkedin.com/in/yenkha/",
-      portfolio: "http://yenkha.com/",
-    },
-    {
-      name: "Bruce Cahan",
-      role: "Strategic Advisor & Stanford Lecturer",
-      shortBio: "Recovering Wall Street lawyer, Stanford lecturer, and pioneer in geospatial technology finance.",
-      highlights: [
-        "Former Wall Street lawyer (Weil Gotshal & Manges) and HK merchant banker",
-        "Stanford lecturer teaching 4 courses including Ethics of Finance & Financial Engineering",
-        "Member of Stanford's Center for Legal Informatics (CodeX)",
-        "CEO of Reimagineering Corporation and Urban Logic, Inc. nonprofit",
-      ],
-      expertise: [
-        "Clients include Apple, U.S. Department of Defense, EPA",
-        "Licensed attorney in CA, NY, and PA",
-        "B.S. Economics from Wharton, J.D. from Temple Law School",
-        "Focus on institutional innovation and diverse inclusion",
-      ],
-      personalNote:
-        "Father of twin sons: Jacob (Jake) Cahan, a financial technologist, and Dr. Eli Cahan, a neonatal pediatrician and investigative journalist.",
-      image: "/images/brucecahan.jpg",
-      linkedin: "https://www.linkedin.com/in/brucecahan/",
-    },
-  ]
-
   return (
     <section id="about" className="py-32 bg-white">
       <div className="max-w-4xl mx-auto px-6">
@@ -434,230 +392,161 @@ function AboutSection() {
       </div>
 
       {/* Team Section */}
-      <div id="team" className="max-w-7xl mx-auto px-6 pt-32">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-5xl md:text-6xl font-bold text-charcoal-900 mb-8">The Minds Behind GammaLex</h2>
-          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-            GammaLex is led by a founder with deep expertise at the intersection of legal tech, AI, and healthcare.
-            Supported by a growing circle of advisors with experience in litigation and medical domains, we are building
-            a visionary platform designed to transform malpractice litigation and justice delivery.
-          </p>
-        </motion.div>
-
-        <div className="space-y-24">
-          {team.map((member, index) => (
-            <TeamMember key={index} member={member} index={index} />
-          ))}
-        </div>
-      </div>
+      <TeamSection />
     </section>
   )
 }
 
-function TeamMember({ member, index }: { member: any; index: number }) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [hoveredSection, setHoveredSection] = useState<string | null>(null)
+function TeamSection() {
+  const [expandedMember, setExpandedMember] = useState<number | null>(null)
+
+  const team = [
+    {
+      name: "Yen Kha",
+      role: "Founder & CEO",
+      bio: "Reimagining justice at the intersection of medicine, law, and AI. Former Fortune 500 AI leader, co-founder of Justice For All (J4ALL). Believes technology should serve people, not just institutions.",
+      image: "/images/yenkha.jpg",
+      linkedin: "https://www.linkedin.com/in/yenkha/",
+      portfolio: "http://yenkha.com/",
+    },
+    {
+      name: "Bruce Cahan",
+      role: "Strategic Advisor",
+      bio: "Stanford lecturer and recovering Wall Street lawyer. Member of Stanford's CodeX, teaches Ethics of Finance & Financial Engineering. CEO of Reimagineering Corporation with clients including Apple and U.S. Department of Defense.",
+      image: "/images/brucecahan.jpg",
+      linkedin: "https://www.linkedin.com/in/brucecahan/",
+    },
+  ]
+
+  const handleMemberClick = (index: number) => {
+    setExpandedMember(expandedMember === index ? null : index)
+  }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
-      viewport={{ once: true }}
-      className="group max-w-5xl mx-auto"
-    >
-      <div className="flex flex-col lg:flex-row gap-12 items-start">
-        {/* Photo and Basic Info */}
-        <div className="flex-shrink-0 text-center lg:text-left">
+    <div id="team" className="max-w-6xl mx-auto px-6 pt-32">
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-5xl md:text-6xl font-bold text-charcoal-900 mb-6">The Minds Behind GammaLex</h2>
+        <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
+          Building the future of legal AI with deep expertise in law, technology, and healthcare.
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-4xl mx-auto">
+        {team.map((member, index) => (
           <motion.div
-            className="relative cursor-pointer"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-            onHoverStart={() => setIsExpanded(true)}
-          >
-            <img
-              src={member.image || "/placeholder.svg"}
-              alt={member.name}
-              className="w-56 h-56 lg:w-64 lg:h-64 rounded-2xl object-cover mx-auto lg:mx-0 shadow-lg"
-            />
-          </motion.div>
-
-          <div className="mt-6 space-y-4">
-            <div>
-              <h3 className="text-3xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
-              <p className="text-lg text-sage-600 font-medium">{member.role}</p>
-            </div>
-
-            {/* Social Links */}
-            {(member.linkedin || member.portfolio) && (
-              <div className="flex items-center justify-center lg:justify-start gap-3">
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center w-10 h-10 bg-sage-100 hover:bg-sage-200 rounded-full transition-colors"
-                  >
-                    <svg className="w-5 h-5 text-sage-700" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                )}
-                {member.portfolio && (
-                  <a
-                    href={member.portfolio}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-charcoal-900 hover:bg-charcoal-800 text-white text-sm font-medium rounded-full transition-colors"
-                  >
-                    Portfolio
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Bio Content - Progressive Disclosure */}
-        <div className="flex-1 space-y-6">
-          {/* Short Bio - Always Visible */}
-          <motion.div
-            className="bg-sage-50 rounded-xl p-6 border border-sage-100"
-            initial={{ opacity: 0, y: 20 }}
+            key={index}
+            className="group"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg text-charcoal-700 leading-relaxed">{member.shortBio}</p>
-          </motion.div>
+            {/* Profile Card */}
+            <div className="text-center">
+              {/* Photo */}
+              <motion.div
+                className="relative mb-6 cursor-pointer"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                onClick={() => handleMemberClick(index)}
+              >
+                <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <img
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </motion.div>
 
-          {/* Expandable Sections */}
-          <div className="space-y-4">
-            {/* Highlights */}
-            <BioSection
-              title="Background & Expertise"
-              content={member.highlights}
-              isVisible={isExpanded || hoveredSection === "highlights"}
-              onHover={() => setHoveredSection("highlights")}
-              onLeave={() => setHoveredSection(null)}
-              delay={0.1}
-            />
+              {/* Name and Title */}
+              <div className="mb-6">
+                <motion.button
+                  onClick={() => handleMemberClick(index)}
+                  className="text-left w-full group/button"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-bold text-charcoal-900 mb-2 group-hover/button:text-sage-600 transition-colors duration-200">
+                    {member.name}
+                  </h3>
+                  <p className="text-lg text-sage-600 font-medium group-hover/button:text-sage-700 transition-colors duration-200">
+                    {member.role}
+                  </p>
+                </motion.button>
 
-            {/* Expertise (for Bruce) */}
-            {member.expertise && (
-              <BioSection
-                title="Professional Experience"
-                content={member.expertise}
-                isVisible={isExpanded || hoveredSection === "expertise"}
-                onHover={() => setHoveredSection("expertise")}
-                onLeave={() => setHoveredSection(null)}
-                delay={0.2}
-              />
-            )}
+                {/* Social Links */}
+                <div className="flex items-center justify-center gap-3 mt-4">
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-10 h-10 bg-sage-100 hover:bg-sage-200 rounded-full transition-colors duration-200"
+                    >
+                      <svg className="w-5 h-5 text-sage-700" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                    </a>
+                  )}
+                  {member.portfolio && (
+                    <a
+                      href={member.portfolio}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-charcoal-900 hover:bg-charcoal-800 text-white text-sm font-medium rounded-full transition-colors duration-200"
+                    >
+                      Portfolio
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
 
-            {/* Personal Note */}
-            <BioSection
-              title="Personal"
-              content={[member.personalNote]}
-              isVisible={isExpanded || hoveredSection === "personal"}
-              onHover={() => setHoveredSection("personal")}
-              onLeave={() => setHoveredSection(null)}
-              delay={0.3}
-              variant="personal"
-            />
-
-            {/* Mission (for Yen) */}
-            {member.mission && (
-              <BioSection
-                title="Mission"
-                content={[member.mission]}
-                isVisible={isExpanded || hoveredSection === "mission"}
-                onHover={() => setHoveredSection("mission")}
-                onLeave={() => setHoveredSection(null)}
-                delay={0.4}
-                variant="mission"
-              />
-            )}
-          </div>
-
-          {/* Expand/Collapse Button */}
-          <motion.button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="text-sage-600 hover:text-sage-700 text-sm font-medium flex items-center gap-2 transition-colors"
-            whileHover={{ x: 5 }}
-          >
-            {isExpanded ? "Show Less" : "Read Full Bio"}
-            <motion.div animate={{ rotate: isExpanded ? 180 : 0 }} transition={{ duration: 0.2 }}>
-              ↓
+            {/* Bio Reveal */}
+            <motion.div
+              className="overflow-hidden"
+              initial={false}
+              animate={{
+                height: expandedMember === index ? "auto" : 0,
+                opacity: expandedMember === index ? 1 : 0,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+            >
+              <motion.div
+                className="bg-sage-50 rounded-xl p-6 border border-sage-100 mt-4"
+                initial={{ y: -20 }}
+                animate={{ y: expandedMember === index ? 0 : -20 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                <p className="text-charcoal-700 leading-relaxed text-lg">{member.bio}</p>
+              </motion.div>
             </motion.div>
-          </motion.button>
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
-function BioSection({
-  title,
-  content,
-  isVisible,
-  onHover,
-  onLeave,
-  delay = 0,
-  variant = "default",
-}: {
-  title: string
-  content: string[]
-  isVisible: boolean
-  onHover: () => void
-  onLeave: () => void
-  delay?: number
-  variant?: "default" | "personal" | "mission"
-}) {
-  const bgColor =
-    variant === "personal"
-      ? "bg-cream-50 border-cream-200"
-      : variant === "mission"
-        ? "bg-sage-100 border-sage-200"
-        : "bg-neutral-50 border-neutral-200"
-
-  return (
-    <motion.div
-      className={`rounded-xl p-6 border cursor-pointer transition-all duration-300 ${bgColor} ${
-        isVisible ? "opacity-100" : "opacity-60 hover:opacity-80"
-      }`}
-      onHoverStart={onHover}
-      onHoverEnd={onLeave}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{
-        opacity: isVisible ? 1 : 0.6,
-        y: isVisible ? 0 : 10,
-        scale: isVisible ? 1 : 0.98,
-      }}
-      transition={{ duration: 0.4, delay }}
-      whileHover={{ scale: 1.01 }}
-    >
-      <h4 className="font-semibold text-charcoal-900 mb-3 text-sm uppercase tracking-wider">{title}</h4>
-      <div className="space-y-3">
-        {content.map((item, index) => (
-          <motion.p
-            key={index}
-            className="text-charcoal-700 leading-relaxed"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isVisible ? 1 : 0.7 }}
-            transition={{ duration: 0.3, delay: delay + index * 0.1 }}
-          >
-            {Array.isArray(content) && content.length > 1 ? `• ${item}` : item}
-          </motion.p>
+          </motion.div>
         ))}
       </div>
-    </motion.div>
+
+      {/* Expand Hint */}
+      <motion.div
+        className="text-center mt-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <p className="text-sage-600 text-sm">Click on names to learn more about our team</p>
+      </motion.div>
+    </div>
   )
 }
 
@@ -687,11 +576,6 @@ function VisionSection() {
                 <div className="text-4xl mb-4">⚖️</div>
                 <h3 className="text-xl font-semibold mb-2">For Litigators</h3>
                 <p className="text-sage-200">Faster case evaluation and stronger arguments</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">🏥</div>
-                <h3 className="text-xl font-semibold mb-2">For Claimants</h3>
-                <p className="text-sage-200">Accessible justice and fair representation</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl mb-4">🏥</div>
