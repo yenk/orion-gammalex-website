@@ -29,12 +29,12 @@ export default function GammaLexPage() {
       >
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h1
-            className="text-[8rem] md:text-[12rem] lg:text-[16rem] xl:text-[20rem] font-black text-charcoal-900 leading-none tracking-tighter mb-8"
+            className="text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black text-charcoal-900 leading-none tracking-tighter mb-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            (GAMMA<span className="text-sage-600">LEX</span>)
+            GAMMA<span className="text-sage-600">LEX</span>
           </motion.h1>
 
           <motion.div
