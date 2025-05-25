@@ -337,10 +337,24 @@ function Navigation() {
 function AboutSection() {
   const team = [
     {
-      name: "Sarah Chen",
-      role: "Co-Founder & CEO",
-      background: "Former BigLaw partner, Stanford JD/CS",
-      image: "/placeholder.svg?height=300&width=300&query=professional woman CEO headshot",
+      name: "Yen Kha",
+      role: "Founder & CEO",
+      background: `Yen Kha didn't set out to build a company—she set out to build what she wished existed.
+
+As the founder of GammaLex and co-founder of Justice For All (J4ALL), Yen is reimagining justice at the intersection of medicine, law, and artificial intelligence. Her work is driven by a belief that technology shouldn't just streamline systems—it should make them more human, more equitable, and more accessible.
+
+Yen's career spans both nimble ventures and Fortune 500 companies, where she led transformative AI efforts across healthcare, legal tech, and enterprise platforms. Over time, she grew increasingly frustrated that the systems most in need of innovation were often the most resistant to change.
+
+With the courage to leave behind stability and the conviction that technology should serve people—not just institutions—Yen took a different path. She co-founded J4ALL to bring legal access to communities long left behind, then launched GammaLex to tackle one of America's most complex and inequitable systems: medical malpractice.
+
+Her multidisciplinary background—combining AI, healthcare, and law—shapes a systems-level approach to building tools that restore trust, empower professionals, and center real people.
+
+Outside of work, Yen looks for challenge and calm in equal measure. She travels to remote places, climbs big mountains, cycles long distances, and runs trails that push her limits. "Mountains," she likes to say, "might as well be my other last name." She also finds joy in stillness—baking intricate pastries and sketching quiet scenes that feel like home.
+
+GammaLex isn't just a platform. It's a mission—born from lived experience, powered by purpose, and grounded in the belief that justice should belong to everyone.`,
+      image: "/images/yenkha.jpg",
+      linkedin: "https://www.linkedin.com/in/yenkha/",
+      portfolio: "http://yenkha.com/",
     },
     {
       name: "Michael Rodriguez",
@@ -456,7 +470,35 @@ function AboutSection() {
 
                   <div className="mt-6">
                     <h3 className="text-2xl md:text-3xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
-                    <p className="text-lg text-sage-600 font-medium">{member.role}</p>
+                    <p className="text-lg text-sage-600 font-medium mb-4">{member.role}</p>
+
+                    {/* Social Links */}
+                    {(member.linkedin || member.portfolio) && (
+                      <div className="flex items-center justify-center md:justify-start gap-3">
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center w-10 h-10 bg-sage-100 hover:bg-sage-200 rounded-full transition-colors"
+                          >
+                            <svg className="w-5 h-5 text-sage-700" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                          </a>
+                        )}
+                        {member.portfolio && (
+                          <a
+                            href={member.portfolio}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 bg-charcoal-900 hover:bg-charcoal-800 text-white text-sm font-medium rounded-full transition-colors"
+                          >
+                            Portfolio
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -479,8 +521,8 @@ function AboutSection() {
                       transition: { duration: 0.3 },
                     }}
                   >
-                    <motion.p
-                      className="text-charcoal-700 leading-relaxed text-lg"
+                    <motion.div
+                      className="text-charcoal-700 leading-relaxed"
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{
@@ -490,8 +532,12 @@ function AboutSection() {
                       }}
                       viewport={{ once: true }}
                     >
-                      {member.background}
-                    </motion.p>
+                      {member.background.split("\n\n").map((paragraph, pIndex) => (
+                        <p key={pIndex} className={`${pIndex > 0 ? "mt-4" : ""} text-base`}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </motion.div>
                   </motion.div>
                 </motion.div>
               </div>
