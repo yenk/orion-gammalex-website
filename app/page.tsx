@@ -421,38 +421,80 @@ function AboutSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-charcoal-900 mb-8">
-            Mission-Driven <span className="text-sage-600">Expertise</span>
-          </h2>
+          <h2 className="text-5xl md:text-6xl font-bold text-charcoal-900 mb-8">The Minds Behind GammaLex</h2>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-            Our team combines deep legal expertise, cutting-edge AI research, and medical domain knowledge to build the
-            future of legal technology.
+            GammaLex is led by a founder with deep expertise at the intersection of legal tech, AI, and healthcare.
+            Supported by a growing circle of advisors with experience in litigation and medical domains, we are building
+            a visionary platform designed to transform malpractice litigation and justice delivery.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="space-y-16">
           {team.map((member, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="group"
             >
-              <div className="mb-6">
-                <img
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  className="w-48 h-48 rounded-full mx-auto object-cover"
-                />
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-8 max-w-4xl mx-auto">
+                {/* Photo and Name */}
+                <div className="flex-shrink-0 text-center md:text-left">
+                  <motion.div
+                    className="relative cursor-pointer"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      className="w-48 h-48 md:w-52 md:h-52 rounded-2xl object-cover mx-auto md:mx-0 shadow-lg"
+                    />
+                  </motion.div>
+
+                  <div className="mt-6">
+                    <h3 className="text-2xl md:text-3xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
+                    <p className="text-lg text-sage-600 font-medium">{member.role}</p>
+                  </div>
+                </div>
+
+                {/* Bio Section - Animated */}
+                <motion.div
+                  className="flex-1"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3 + index * 0.1,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <motion.div
+                    className="bg-sage-50 rounded-2xl p-8 border border-sage-100"
+                    whileHover={{
+                      backgroundColor: "rgb(240 246 240)", // sage-100
+                      transition: { duration: 0.3 },
+                    }}
+                  >
+                    <motion.p
+                      className="text-charcoal-700 leading-relaxed text-lg"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.5 + index * 0.1,
+                        ease: "easeOut",
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      {member.background}
+                    </motion.p>
+                  </motion.div>
+                </motion.div>
               </div>
-
-              <h3 className="text-2xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
-
-              <p className="text-lg text-sage-600 font-medium mb-4">{member.role}</p>
-
-              <p className="text-charcoal-600">{member.background}</p>
             </motion.div>
           ))}
         </div>
