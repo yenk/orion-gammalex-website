@@ -544,7 +544,7 @@ function TeamSection() {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   onClick={() => handleMemberClick(index)}
                 >
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300 mx-auto w-48 h-48">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300 mx-auto w-64 h-64">
                     <img
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
@@ -892,70 +892,168 @@ function ProductSection() {
 }
 
 function ProblemSection() {
-  const problems = [
+  const problemStats = [
     {
       stat: "60%",
       title: "of medmal cases don't meet viability thresholds",
       description: "Yet lawyers spend weeks evaluating each one manually",
+      source: "NBER, 2020",
       icon: Target,
     },
     {
       stat: "31 months",
-      title: "average case resolution time",
+      title: "Average case resolution time",
       description: "Slow drafting and buried insights extend timelines",
+      source: "JAMA, 2017",
       icon: Clock,
     },
     {
-      stat: "$4.2B",
-      title: "annual malpractice payouts",
-      description: "But only 23% of claims result in payment",
+      stat: "Only 23%",
+      title: "of claims result in payout",
+      description: "Despite $4.2B paid annually",
+      source: "NPDB, 2024",
       icon: DollarSign,
     },
   ]
 
+  const stakesStats = [
+    {
+      emoji: "🧠",
+      stat: "$469,000",
+      title: "Avg. payout per neurosurgery malpractice claim",
+      source: "PMC, 2021",
+    },
+    {
+      emoji: "👶",
+      stat: "$488,852",
+      title: "Avg. settlement per OB/GYN malpractice case",
+      source: "JAMA HF, 2023",
+    },
+    {
+      emoji: "💰",
+      stat: "$1B+",
+      title: "Total malpractice payouts per year (across specialties)",
+      source: "AJHE, 2020",
+    },
+  ]
+
   return (
-    <section id="problem" className="py-32 bg-charcoal-900 text-white">
+    <section id="problem" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
+        {/* SECTION 1: The Problem */}
         <motion.div
-          className="text-center mb-20"
+          className="mb-32"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            The Problem is <span className="text-terracotta-400">Systemic</span>
-          </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Medical malpractice litigation is broken. Manual processes, buried insights, and inefficient triage waste
-            resources and delay justice.
-          </p>
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8 leading-tight">
+              Medical Malpractice is <span className="text-terracotta-500">Broken</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-charcoal-600 max-w-4xl mx-auto leading-relaxed">
+              Litigators face time sinks, dropped claims, and manual triage — while justice hangs in the balance.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {problemStats.map((problem, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <Card className="h-full bg-sage-50 border-0 shadow-lg hover:shadow-xl transition-all duration-500 group-hover:-translate-y-2">
+                  <CardContent className="p-8 text-center">
+                    <div className="bg-terracotta-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <problem.icon className="w-8 h-8 text-terracotta-600" />
+                    </div>
+
+                    <div className="text-4xl md:text-5xl font-bold text-terracotta-600 mb-4">{problem.stat}</div>
+
+                    <h3 className="text-xl font-semibold text-charcoal-900 mb-4 leading-tight">{problem.title}</h3>
+
+                    <p className="text-charcoal-600 leading-relaxed mb-4">{problem.description}</p>
+
+                    <div className="text-xs text-charcoal-500 font-medium">→ Source: {problem.source}</div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {problems.map((problem, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
-                <div className="bg-terracotta-500/20 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <problem.icon className="w-8 h-8 text-terracotta-400" />
-                </div>
+        {/* SECTION 2: The Stakes */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8 leading-tight">
+              High Stakes. High Pressure. <span className="text-sage-600">No Room for Error.</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-charcoal-600 max-w-4xl mx-auto leading-relaxed">
+              Neurosurgeons and OB/GYNs face career-defining litigation. GammaLex helps lawyers rise to the moment.
+            </p>
+          </div>
 
-                <div className="text-4xl md:text-5xl font-bold text-terracotta-400 mb-4">{problem.stat}</div>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {stakesStats.map((stake, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <Card className="h-full bg-white border-2 border-sage-100 shadow-lg hover:shadow-2xl hover:border-sage-300 transition-all duration-500 group-hover:-translate-y-2">
+                  <CardContent className="p-8 text-center">
+                    <div className="text-5xl mb-6">{stake.emoji}</div>
 
-                <h3 className="text-xl font-semibold mb-4">{problem.title}</h3>
+                    <div className="text-4xl md:text-5xl font-bold text-sage-600 mb-4">{stake.stat}</div>
 
-                <p className="text-white/70 leading-relaxed">{problem.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                    <h3 className="text-lg font-semibold text-charcoal-900 mb-4 leading-tight">{stake.title}</h3>
+
+                    <div className="text-xs text-charcoal-500 font-medium">→ {stake.source}</div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gradient-to-r from-sage-600 to-sage-700 text-white rounded-2xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                When millions are on the line, every decision matters.
+              </h3>
+              <p className="text-sage-100 text-lg mb-6">
+                GammaLex transforms how you evaluate, triage, and build medical malpractice cases.
+              </p>
+              <motion.button
+                className="bg-white text-sage-700 px-8 py-3 rounded-lg font-semibold hover:bg-sage-50 transition-colors inline-flex items-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                See How GammaLex Helps
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
