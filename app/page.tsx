@@ -27,7 +27,7 @@ export default function GammaLexPage() {
 
       {/* Hero Section */}
       <motion.section
-        id="hero"
+        id="about"
         className="min-h-screen flex items-center justify-center relative overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity }}
       >
@@ -74,11 +74,22 @@ export default function GammaLexPage() {
         </div>
       </motion.section>
 
-      <ProductSection />
-      <ProblemSection />
-      <ResearchSection />
+      {/* Vision & Mission */}
       <VisionSection />
+
+      {/* Team */}
       <TeamSection />
+
+      {/* Product Section */}
+      <ProductSection />
+
+      {/* Problem Section (includes Research & Stats) */}
+      <ProblemSection />
+
+      {/* Research Section */}
+      <ResearchSection />
+
+      {/* Join Section */}
       <JoinSection />
     </div>
   )
@@ -86,27 +97,30 @@ export default function GammaLexPage() {
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("hero")
+  const [activeSection, setActiveSection] = useState("about")
 
   const navItems = [
-    { id: "hero", label: "ABOUT" },
+    { id: "about", label: "ABOUT" },
     { id: "product", label: "PRODUCT" },
     { id: "problem", label: "PROBLEM" },
-    { id: "research", label: "RESEARCH" },
-    { id: "vision", label: "VISION" },
-    { id: "team", label: "TEAM" },
-    { id: "join", label: "JOIN" },
+    { id: "join", label: "JOIN US" },
   ]
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => document.getElementById(item.id))
-      const scrollPosition = window.scrollY + 100
+      const sections = [
+        { id: "about", element: document.getElementById("about") },
+        { id: "product", element: document.getElementById("product") },
+        { id: "problem", element: document.getElementById("problem") },
+        { id: "join", element: document.getElementById("join") },
+      ]
+
+      const scrollPosition = window.scrollY + 200
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i]
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navItems[i].id)
+        if (section.element && section.element.offsetTop <= scrollPosition) {
+          setActiveSection(section.id)
           break
         }
       }
@@ -135,7 +149,35 @@ function Navigation() {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/gammalex-logo.png" alt="GammaLex" className="h-8 w-auto mr-3" />
+            <div className="flex items-center mr-4">
+              {/* Custom Logo SVG */}
+              <svg width="32" height="32" viewBox="0 0 32 32" className="mr-3">
+                {/* Scales of Justice Base */}
+                <rect x="15" y="20" width="2" height="8" fill="#6b8a6b" />
+                <rect x="12" y="27" width="8" height="2" fill="#6b8a6b" />
+
+                {/* Left Scale */}
+                <circle cx="8" cy="16" r="3" fill="none" stroke="#6b8a6b" strokeWidth="1.5" />
+                <line x1="5" y1="16" x2="11" y2="16" stroke="#6b8a6b" strokeWidth="1" />
+                <line x1="8" y1="13" x2="16" y2="20" stroke="#6b8a6b" strokeWidth="1" />
+
+                {/* Right Scale */}
+                <circle cx="24" cy="16" r="3" fill="none" stroke="#6b8a6b" strokeWidth="1.5" />
+                <line x1="21" y1="16" x2="27" y2="16" stroke="#6b8a6b" strokeWidth="1" />
+                <line x1="24" y1="13" x2="16" y2="20" stroke="#6b8a6b" strokeWidth="1" />
+
+                {/* Neural Network Nodes */}
+                <circle cx="6" cy="6" r="1.5" fill="#3d3d3d" />
+                <circle cx="16" cy="4" r="1.5" fill="#3d3d3d" />
+                <circle cx="26" cy="6" r="1.5" fill="#3d3d3d" />
+                <circle cx="16" cy="10" r="1.5" fill="#dc6b47" />
+
+                {/* Neural Connections */}
+                <line x1="6" y1="6" x2="16" y2="10" stroke="#3d3d3d" strokeWidth="0.5" opacity="0.6" />
+                <line x1="16" y1="4" x2="16" y2="10" stroke="#3d3d3d" strokeWidth="0.5" opacity="0.6" />
+                <line x1="26" y1="6" x2="16" y2="10" stroke="#3d3d3d" strokeWidth="0.5" opacity="0.6" />
+              </svg>
+            </div>
             <span className="text-2xl font-bold text-charcoal-900">
               GAMMA<span className="text-sage-600">LEX</span>
             </span>
@@ -217,7 +259,7 @@ function TrendsBar() {
 
   return (
     <motion.div
-      className="bg-charcoal-900 text-white py-4 mt-20"
+      className="bg-charcoal-900 text-white py-4 mt-24"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1 }}
@@ -233,6 +275,123 @@ function TrendsBar() {
         </div>
       </div>
     </motion.div>
+  )
+}
+
+function VisionSection() {
+  return (
+    <section className="py-32 bg-sage-600 text-white">
+      <div className="max-w-7xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-7xl font-bold mb-12 leading-tight">
+            Transforming how malpractice is understood and resolved — efficiently, equitably, and accessibly.
+          </h2>
+
+          <div className="max-w-4xl mx-auto">
+            <p className="text-2xl text-sage-100 mb-8 leading-relaxed">
+              We're building the infrastructure for a more just legal system. Starting with litigators, expanding to
+              serve claimants, and ultimately transforming how medical risk is understood across the entire healthcare
+              ecosystem.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8 mt-16">
+              <div className="text-center">
+                <div className="text-4xl mb-4">⚖️</div>
+                <h3 className="text-xl font-semibold mb-2">For Litigators</h3>
+                <p className="text-sage-200">Faster case evaluation and stronger arguments</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">🏥</div>
+                <h3 className="text-xl font-semibold mb-2">For Claimants</h3>
+                <p className="text-sage-200">Accessible justice and fair representation</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-xl font-semibold mb-2">For Risk Teams</h3>
+                <p className="text-sage-200">Predictive insights and prevention strategies</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function TeamSection() {
+  const team = [
+    {
+      name: "Sarah Chen",
+      role: "Co-Founder & CEO",
+      background: "Former BigLaw partner, Stanford JD/CS",
+      image: "/placeholder.svg?height=300&width=300&query=professional woman CEO headshot",
+    },
+    {
+      name: "Michael Rodriguez",
+      role: "Co-Founder & CTO",
+      background: "Ex-Google AI, PhD Computer Science",
+      image: "/placeholder.svg?height=300&width=300&query=professional man CTO headshot",
+    },
+    {
+      name: "Dr. Emily Watson",
+      role: "Chief Medical Advisor",
+      background: "20+ years emergency medicine, malpractice expert",
+      image: "/placeholder.svg?height=300&width=300&query=professional woman doctor headshot",
+    },
+  ]
+
+  return (
+    <section className="py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8">
+            Mission-Driven <span className="text-sage-600">Expertise</span>
+          </h2>
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
+            Our team combines deep legal expertise, cutting-edge AI research, and medical domain knowledge to build the
+            future of legal technology.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-12">
+          {team.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="mb-6">
+                <img
+                  src={member.image || "/placeholder.svg"}
+                  alt={member.name}
+                  className="w-48 h-48 rounded-full mx-auto object-cover"
+                />
+              </div>
+
+              <h3 className="text-2xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
+
+              <p className="text-lg text-sage-600 font-medium mb-4">{member.role}</p>
+
+              <p className="text-charcoal-600">{member.background}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -422,7 +581,7 @@ function ResearchSection() {
   ]
 
   return (
-    <section id="research" className="py-32 bg-white">
+    <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="text-center mb-20"
@@ -473,123 +632,6 @@ function ResearchSection() {
             </div>
           ))}
         </motion.div>
-      </div>
-    </section>
-  )
-}
-
-function VisionSection() {
-  return (
-    <section id="vision" className="py-32 bg-sage-600 text-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-5xl md:text-7xl font-bold mb-12 leading-tight">
-            Transforming how malpractice is understood and resolved — efficiently, equitably, and accessibly.
-          </h2>
-
-          <div className="max-w-4xl mx-auto">
-            <p className="text-2xl text-sage-100 mb-8 leading-relaxed">
-              We're building the infrastructure for a more just legal system. Starting with litigators, expanding to
-              serve claimants, and ultimately transforming how medical risk is understood across the entire healthcare
-              ecosystem.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <div className="text-center">
-                <div className="text-4xl mb-4">⚖️</div>
-                <h3 className="text-xl font-semibold mb-2">For Litigators</h3>
-                <p className="text-sage-200">Faster case evaluation and stronger arguments</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">🏥</div>
-                <h3 className="text-xl font-semibold mb-2">For Claimants</h3>
-                <p className="text-sage-200">Accessible justice and fair representation</p>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl mb-4">📊</div>
-                <h3 className="text-xl font-semibold mb-2">For Risk Teams</h3>
-                <p className="text-sage-200">Predictive insights and prevention strategies</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-
-function TeamSection() {
-  const team = [
-    {
-      name: "Sarah Chen",
-      role: "Co-Founder & CEO",
-      background: "Former BigLaw partner, Stanford JD/CS",
-      image: "/placeholder.svg?height=300&width=300&query=professional woman CEO headshot",
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Co-Founder & CTO",
-      background: "Ex-Google AI, PhD Computer Science",
-      image: "/placeholder.svg?height=300&width=300&query=professional man CTO headshot",
-    },
-    {
-      name: "Dr. Emily Watson",
-      role: "Chief Medical Advisor",
-      background: "20+ years emergency medicine, malpractice expert",
-      image: "/placeholder.svg?height=300&width=300&query=professional woman doctor headshot",
-    },
-  ]
-
-  return (
-    <section id="team" className="py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-5xl md:text-7xl font-bold text-charcoal-900 mb-8">
-            Mission-Driven <span className="text-sage-600">Expertise</span>
-          </h2>
-          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
-            Our team combines deep legal expertise, cutting-edge AI research, and medical domain knowledge to build the
-            future of legal technology.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-12">
-          {team.map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="mb-6">
-                <img
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  className="w-48 h-48 rounded-full mx-auto object-cover"
-                />
-              </div>
-
-              <h3 className="text-2xl font-bold text-charcoal-900 mb-2">{member.name}</h3>
-
-              <p className="text-lg text-sage-600 font-medium mb-4">{member.role}</p>
-
-              <p className="text-charcoal-600">{member.background}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   )
