@@ -224,17 +224,16 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-600 font-semibold text-xl tracking-wide">MALPRACTICE RE-ENGINEERED™</span>
+            <span className="text-sage-600 font-semibold text-xl tracking-wide">RE-ENGINEERING MALPRACTICE™</span>
           </motion.div>
 
-          <AnimatedText
-            text="GAMMALEX™"
-            className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8 font-satoshi"
-            delay={0.3}
-          />
+          <div className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8 font-satoshi">
+            <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
+            <span className="text-4xl lg:text-6xl align-top">™</span>
+          </div>
 
           <AnimatedText
-            text="Where Malpractice Litigation Meets Modern Intelligence."
+            text="WhereMalpracticeLitigationMeetsModernIntelligence"
             className="text-3xl lg:text-5xl text-gray-600 mb-12 leading-tight max-w-4xl font-satoshi"
             delay={0.8}
           />
