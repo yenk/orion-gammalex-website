@@ -16,7 +16,6 @@ import {
   TrendingUp,
   CheckCircle,
   Scale,
-  Baby,
 } from "lucide-react"
 
 export default function GammaLexPage() {
@@ -874,7 +873,7 @@ function ProductSection() {
 }
 
 function ProblemSection() {
-  const problemStats = [
+  const heroStats = [
     {
       stat: "60%",
       title: "of medical malpractice cases fail viability checks",
@@ -891,21 +890,15 @@ function ProblemSection() {
       sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/23297278/",
       icon: Clock,
     },
-    {
-      stat: "Only 23%",
-      title: "of claims result in payout",
-      description: "Despite billions paid annually",
-      source: "JAMA Internal Medicine, 2016",
-      sourceUrl: "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2612118",
-      icon: DollarSign,
-    },
+  ]
+
+  const payoutStats = [
     {
       stat: "$469,000",
       title: "Avg. payout per neurosurgery malpractice claim",
       description: "~$525K today (inflation adjusted)",
       source: "PMC, 2021",
       sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8156516/",
-      icon: Brain,
       specialty: "Neurosurgery",
     },
     {
@@ -914,23 +907,14 @@ function ProblemSection() {
       description: "~$517K today (inflation adjusted)",
       source: "JAMA HF, 2023",
       sourceUrl: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2801227",
-      icon: Baby,
       specialty: "OB/GYN",
-    },
-    {
-      stat: "$1B+",
-      title: "Total malpractice payouts per year (system-wide)",
-      description: "Billions paid annually across all specialties",
-      source: "AJHE, 2020",
-      sourceUrl: "https://www.journals.uchicago.edu/doi/10.1162/AJHE_a_00069",
-      icon: Scale,
-      specialty: "System-Wide",
     },
   ]
 
   return (
     <section id="problem" className="snap-section min-h-screen flex items-center bg-gray-900 text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
+        {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
           <div>
             <AnimatedText
@@ -950,39 +934,34 @@ function ProblemSection() {
           <div></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {problemStats.map((problem, index) => (
+        {/* Hero Statistics - Large Impact */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          {heroStats.map((stat, index) => (
             <motion.div
               key={index}
-              className="group"
+              className="relative"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gray-800 p-8 rounded-2xl hover:bg-gray-700 transition-all duration-300 h-full">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300">
                 <div className="flex items-center mb-8">
-                  <div className="bg-terracotta-500 p-4 rounded-xl mr-6">
-                    <problem.icon className="w-8 h-8 text-white" />
+                  <div className="bg-terracotta-500 p-6 rounded-2xl mr-8">
+                    <stat.icon className="w-12 h-12 text-white" />
                   </div>
-                  <div className="text-5xl font-black text-terracotta-400">{problem.stat}</div>
+                  <div className="text-8xl font-black text-terracotta-400">{stat.stat}</div>
                 </div>
-
-                {problem.specialty && (
-                  <div className="text-sm font-semibold text-gray-400 mb-2">{problem.specialty}</div>
-                )}
-
-                <h3 className="text-2xl font-bold mb-4 leading-tight">{problem.title}</h3>
-                <p className="text-gray-300 leading-relaxed mb-6 text-lg">{problem.description}</p>
-
+                <h3 className="text-3xl font-bold mb-4 leading-tight">{stat.title}</h3>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">{stat.description}</p>
                 <a
-                  href={problem.sourceUrl}
+                  href={stat.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors"
+                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
                 >
-                  → {problem.source}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  → {stat.source}
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -995,6 +974,131 @@ function ProblemSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Inline Statistic - Success Rate */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-12 border border-gray-700 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center mb-6">
+              <DollarSign className="w-16 h-16 text-terracotta-400 mr-6" />
+              <div className="text-center">
+                <div className="text-6xl font-black text-terracotta-400 mb-2">Only 23%</div>
+                <div className="text-2xl font-bold text-white">of claims result in payout</div>
+              </div>
+            </div>
+            <p className="text-xl text-gray-300 mb-4">Despite billions paid annually</p>
+            <a
+              href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2612118"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors"
+            >
+              → JAMA Internal Medicine, 2016
+              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Specialty Payouts - Side by Side Comparison */}
+        <div className="mb-20">
+          <motion.h3
+            className="text-4xl font-bold text-center mb-12 text-white"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            High-Stakes Specialties: Average Payouts
+          </motion.h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {payoutStats.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="bg-gradient-to-r from-gray-800 to-gray-700 p-8 rounded-2xl border-l-4 border-terracotta-500"
+                initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-sm font-semibold text-terracotta-400 uppercase tracking-wide">
+                    {stat.specialty}
+                  </div>
+                  <Brain className="w-8 h-8 text-terracotta-400" />
+                </div>
+                <div className="text-4xl font-black text-white mb-2">{stat.stat}</div>
+                <h4 className="text-lg font-semibold text-gray-200 mb-3">{stat.title}</h4>
+                <p className="text-gray-300 mb-4">{stat.description}</p>
+                <a
+                  href={stat.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-sm"
+                >
+                  → {stat.source}
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* System-Wide Impact - Full Width Banner */}
+        <motion.div
+          className="bg-gradient-to-r from-terracotta-900 to-terracotta-800 rounded-3xl p-12 text-center border border-terracotta-600"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center justify-center mb-8">
+            <Scale className="w-20 h-20 text-terracotta-200 mr-8" />
+            <div>
+              <div className="text-8xl font-black text-white mb-2">$1B+</div>
+              <div className="text-3xl font-bold text-terracotta-100">Total malpractice payouts per year</div>
+            </div>
+          </div>
+          <p className="text-2xl text-terracotta-100 mb-6">Billions paid annually across all specialties</p>
+          <div className="text-sm font-semibold text-terracotta-200 uppercase tracking-wide mb-4">
+            System-Wide Impact
+          </div>
+          <a
+            href="https://www.journals.uchicago.edu/doi/10.1162/AJHE_a_00069"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-terracotta-200 font-medium hover:text-white transition-colors text-lg"
+          >
+            → AJHE, 2020
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   )
