@@ -438,11 +438,11 @@ function TeamSection() {
     <>
       <section id="team" className="snap-section min-h-screen flex items-center bg-gray-50">
         <div className="max-w-none w-full px-8 lg:px-16 py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <AnimatedText
                 text="The Minds Behind GammaLex"
-                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight font-satoshi"
+                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
               />
               <motion.p
                 className="text-2xl text-gray-600 leading-relaxed"
@@ -454,11 +454,6 @@ function TeamSection() {
                 Building the future of legal AI with deep expertise in law, technology, and healthcare.
               </motion.p>
             </div>
-            <div></div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div></div>
             <div className="space-y-12">
               {team.map((member, index) => (
                 <motion.div
