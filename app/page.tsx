@@ -16,6 +16,8 @@ import {
   TrendingUp,
   CheckCircle,
   Scale,
+  User,
+  Briefcase,
 } from "lucide-react"
 
 export default function GammaLexPage() {
@@ -916,13 +918,13 @@ function ProblemSection() {
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
-          <div>
+          <div className="col-span-full">
             <AnimatedText
               text="Malpractice Litigation Is Broken. Stakes Have Never Been Higher."
-              className="text-6xl lg:text-7xl font-bold mb-12 leading-tight font-satoshi"
+              className="text-6xl lg:text-7xl font-bold mb-8 leading-tight font-satoshi text-center"
             />
             <motion.p
-              className="text-2xl text-gray-300 leading-relaxed"
+              className="text-2xl text-gray-300 leading-relaxed text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -931,7 +933,6 @@ function ProblemSection() {
               Litigators face time sinks, dropped claims, and endless manual triage, while justice hangs in the balance.
             </motion.p>
           </div>
-          <div></div>
         </div>
 
         {/* Hero Statistics - Large Impact */}
@@ -1108,70 +1109,29 @@ function JoinSection() {
   return (
     <section id="join" className="snap-section min-h-screen flex items-center bg-gray-900 text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <AnimatedText
-              text="Transform Your Practice With AI"
-              className="text-6xl lg:text-7xl font-bold mb-12 leading-tight font-satoshi"
-            />
+        <div className="flex flex-col items-center max-w-3xl mx-auto">
+          <AnimatedText
+            text="Lead the Future of Malpractice Litigation"
+            className="text-6xl lg:text-7xl font-bold mb-10 leading-tight font-satoshi text-center"
+          />
 
-            <motion.p
-              className="text-2xl text-gray-300 mb-12 leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Join the waitlist for early access to GammaLex. Be among the first to experience the future of medical
-              malpractice litigation.
-            </motion.p>
+          <p className="text-2xl text-gray-300 mb-14 leading-relaxed text-center">
+            Experience the next generation of legal intelligence. Join the GammaLex waitlist for early access to AI-powered malpractice solutions—built for precision, speed, and results.
+          </p>
 
-            <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6 flex-1"
-                />
-                <Button className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-8 py-6 text-lg">
-                  Join Waitlist
-                </Button>
-              </div>
-
-              <div className="text-center">
-                <p className="text-white/50 mb-4">Or schedule a demo with our team</p>
-                <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg">
-                  Schedule Demo
-                </Button>
-              </div>
-            </motion.div>
+          <div className="bg-white/5 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center">
+            <form className="w-full flex flex-col sm:flex-row gap-6 mb-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6"
+              />
+              <Button className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-10 py-6 text-lg flex items-center gap-2">
+                Request Early Access
+                <ArrowRight className="w-6 h-6" />
+              </Button>
+            </form>
           </div>
-
-          <motion.div
-            className="bg-white/5 backdrop-blur-sm rounded-3xl p-12"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-3xl font-semibold mb-6">For Investors</h3>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              We're raising our pre-seed round to accelerate product development and expand our legal partnerships. Join
-              us in building the future of legal AI.
-            </p>
-            <Button
-              variant="outline"
-              className="border-terracotta-400 text-terracotta-400 hover:bg-terracotta-400 hover:text-white px-8 py-4 text-lg"
-            >
-              Investor Deck
-            </Button>
-          </motion.div>
         </div>
       </div>
     </section>
