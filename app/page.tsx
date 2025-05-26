@@ -878,16 +878,16 @@ function ProblemSection() {
   const heroStats = [
     {
       stat: "60%",
-      title: "of medical malpractice cases fail viability checks",
-      description: "Yet lawyers spend weeks evaluating each one manually",
+      title: "Of medical malpractice cases fail viability checks.",
+      description: "Yet, lawyers spend weeks evaluating each one manually.",
       source: "NEJM, 2006",
       sourceUrl: "https://www.nejm.org/doi/full/10.1056/NEJMsa054479",
       icon: Target,
     },
     {
       stat: "31 months",
-      title: "Average time to resolve a case",
-      description: "Slow drafting and buried insights extend timelines",
+      title: "Average time to resolve a case.",
+      description: "Slow drafting and buried insights extend timelines.",
       source: "Health Affairs, 2013",
       sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/23297278/",
       icon: Clock,
@@ -897,16 +897,16 @@ function ProblemSection() {
   const payoutStats = [
     {
       stat: "$469,000",
-      title: "Avg. payout per neurosurgery malpractice claim",
-      description: "~$525K today (inflation adjusted)",
+      title: "Average payout per neurosurgery malpractice claim.",
+      description: "Approximately $525K today (inflation adjusted).",
       source: "PMC, 2021",
       sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8156516/",
       specialty: "Neurosurgery",
     },
     {
       stat: "$488,852",
-      title: "Avg. settlement per OB/GYN malpractice case",
-      description: "~$517K today (inflation adjusted)",
+      title: "Average settlement per OB/GYN malpractice case.",
+      description: "Approximately $517K today (inflation adjusted).",
       source: "JAMA HF, 2023",
       sourceUrl: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2801227",
       specialty: "OB/GYN",
@@ -989,10 +989,10 @@ function ProblemSection() {
               <DollarSign className="w-16 h-16 text-terracotta-400 mr-6" />
               <div className="text-center">
                 <div className="text-6xl font-black text-terracotta-400 mb-2">Only 23%</div>
-                <div className="text-2xl font-bold text-white">of claims result in payout</div>
+                <div className="text-2xl font-bold text-white">Of claims result in payout.</div>
               </div>
             </div>
-            <p className="text-xl text-gray-300 mb-4">Despite billions paid annually</p>
+            <p className="text-xl text-gray-300 mb-4">Despite billions paid annually.</p>
             <a
               href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2612118"
               target="_blank"
@@ -1076,10 +1076,10 @@ function ProblemSection() {
             <Scale className="w-20 h-20 text-terracotta-200 mr-8" />
             <div>
               <div className="text-8xl font-black text-white mb-2">$1B+</div>
-              <div className="text-3xl font-bold text-terracotta-100">Total malpractice payouts per year</div>
+              <div className="text-3xl font-bold text-terracotta-100">Total malpractice payouts per year.</div>
             </div>
           </div>
-          <p className="text-2xl text-terracotta-100 mb-6">Billions paid annually across all specialties</p>
+          <p className="text-2xl text-terracotta-100 mb-6">Billions paid annually across all specialties.</p>
           <div className="text-sm font-semibold text-terracotta-200 uppercase tracking-wide mb-4">
             System-Wide Impact
           </div>
