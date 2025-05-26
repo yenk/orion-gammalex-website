@@ -224,7 +224,7 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-600 font-semibold text-xl tracking-wide">MALPRACTICE RE-ENGINEERED.</span>
+            <span className="text-sage-600 font-semibold text-xl tracking-wide">MALPRACTICE RE-ENGINEERED™</span>
           </motion.div>
 
           <AnimatedText
