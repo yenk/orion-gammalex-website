@@ -103,7 +103,7 @@ function Navigation() {
             <div className="relative">
               {/* Logo Image */}
               <motion.img
-                src="/images/gammalex-logo-glx-final.png"
+                src="/images/glx-logo.png"
                 alt="GammaLex Logo"
                 className="h-20 relative z-10"
                 initial={{ opacity: 0 }}
@@ -134,7 +134,7 @@ function Navigation() {
                   delay: 0.3,
                 }}
               >
-                <img src="/images/gammalex-logo-glx-final.png" alt="GammaLex Logo" className="h-20" />
+                <img src="/images/glx-logo.png" alt="GammaLex Logo" className="h-20" />
               </motion.div>
             </div>
           </motion.div>
@@ -224,15 +224,14 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-600 font-semibold text-xl tracking-wide">
-              RE-ENGINEERING MALPRACTICE<span className="text-sm align-top">™</span>
-            </span>
+            <span className="text-sage-600 font-semibold text-xl tracking-wide">MALPRACTICE RE-ENGINEERED™</span>
           </motion.div>
 
-          <div className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8 font-satoshi">
-            <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
-            <span className="text-4xl lg:text-6xl align-top">™</span>
-          </div>
+          <AnimatedText
+            text="GAMMALEX™"
+            className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8 font-satoshi"
+            delay={0.3}
+          />
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
@@ -692,7 +691,7 @@ function ProductSection() {
               transition={{ duration: 0.8, delay: 0.7 }}
               viewport={{ once: true }}
             >
-              This isn't automation. It's augmentation with precision at scale.
+              This is beyond automation. It's augmentation with precision at scale.
             </motion.p>
           </div>
 
