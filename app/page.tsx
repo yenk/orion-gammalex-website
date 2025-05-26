@@ -292,7 +292,7 @@ function AboutSection() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
             >
               Our mission is to make malpractice litigation more efficient, equitable, and data-driven, giving lawyers
@@ -302,7 +302,7 @@ function AboutSection() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
               GammaLex is powered by agentic AI — autonomous, adaptive legal intelligence designed to operate like a
@@ -315,7 +315,7 @@ function AboutSection() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
               While we're focused on empowering litigators first, our AI engine is built to scale with the malpractice
