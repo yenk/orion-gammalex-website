@@ -441,7 +441,7 @@ function TeamSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <AnimatedText
-                text="The Minds Behind GammaLex"
+                text="The Minds Behind GammaLex."
                 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
               />
               <motion.p
