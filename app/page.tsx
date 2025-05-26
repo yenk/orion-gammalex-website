@@ -234,7 +234,7 @@ function HeroSection() {
           />
 
           <AnimatedText
-            text="Where Malpractice Litigation Meets Modern Intelligence."
+            text="WhereMalpracticeLitigationMeetsModernIntelligence."
             className="text-3xl lg:text-5xl text-gray-600 mb-12 leading-tight max-w-4xl font-satoshi"
             delay={0.8}
           />
