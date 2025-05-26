@@ -229,7 +229,7 @@ function HeroSection() {
 
           <div className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8 font-satoshi">
             <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
-            <span className="text-4xl lg:text-6xl align-top opacity-70 ml-1">™</span>
+            <span className="text-2xl lg:text-4xl align-top opacity-60 -ml-1 relative top-0 lg:-top-4">™</span>
           </div>
 
           <AnimatedText
