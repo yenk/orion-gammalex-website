@@ -227,9 +227,9 @@ function HeroSection() {
             <span className="text-sage-600 font-semibold text-xl tracking-wide">RE-ENGINEERING MALPRACTICE™</span>
           </motion.div>
 
-          <div className="text-6xl lg:text-8xl font-black text-gray-900 leading-tight mb-8 tracking-normal">
+          <div className="text-[8rem] lg:text-[14rem] font-black text-gray-900 leading-[0.85] mb-8 font-sans tracking-tight">
             <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
-            <span className="text-2xl lg:text-4xl align-top opacity-60 -ml-1 relative top-0 lg:-top-4">™</span>
+            <span className="text-3xl lg:text-5xl align-top opacity-60 -ml-1 relative top-0 lg:-top-8">™</span>
           </div>
 
           <AnimatedText
