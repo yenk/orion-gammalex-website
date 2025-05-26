@@ -277,7 +277,7 @@ function AboutSection() {
             </motion.p>
           </div>
 
-          <div className="space-y-12 text-2xl text-gray-700 leading-relaxed">
+          <div className="space-y-6 text-2xl text-gray-700 leading-relaxed">
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
