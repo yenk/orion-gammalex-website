@@ -226,14 +226,14 @@ function HeroSection() {
             <span className="text-sage-600 font-semibold text-xl tracking-wide">RE-ENGINEERING MALPRACTICE™</span>
           </motion.div>
 
-          <div className="text-[8rem] lg:text-[14rem] font-black text-gray-900 leading-[0.85] mb-8 font-sans tracking-tight">
+          <div className="text-[8rem] lg:text-[14rem] font-black text-gray-900 leading-[0.85] mb-6 font-sans tracking-tight">
             <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
             <span className="text-2xl lg:text-4xl align-top opacity-60 -ml-1 relative top-0 lg:-top-4">™</span>
           </div>
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-3xl lg:text-5xl text-gray-600 mb-12 leading-tight max-w-4xl font-satoshi whitespace-nowrap"
+            className="text-3xl lg:text-5xl text-gray-600 mb-8 leading-tight max-w-4xl font-satoshi whitespace-nowrap"
             delay={0.8}
           />
 
