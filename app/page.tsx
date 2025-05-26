@@ -61,7 +61,6 @@ function Navigation() {
 
   const navItems = [
     { id: "about", label: "ABOUT" },
-    { id: "team", label: "TEAM" },
     { id: "product", label: "PRODUCT" },
     { id: "join", label: "JOIN THE WAITLIST" },
   ]
@@ -227,7 +226,7 @@ function HeroSection() {
             <span className="text-sage-400 font-semibold text-lg lg:text-xl tracking-wide">RE-ENGINEERING MALPRACTICE™</span>
           </motion.div>
 
-          <div className="text-[7rem] lg:text-[12rem] font-black text-gray-900 leading-[0.85] mb-10 font-sans tracking-tight whitespace-nowrap">
+          <div className="text-[10rem] lg:text-[16rem] font-black text-gray-900 leading-[0.85] mb-10 font-sans tracking-tight whitespace-nowrap">
             <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
             <span className="text-2xl lg:text-4xl align-top opacity-60 ml-2">™</span>
           </div>
