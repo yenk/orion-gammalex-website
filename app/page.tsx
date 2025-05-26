@@ -457,60 +457,84 @@ function TeamSection() {
             <div></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                className="group cursor-pointer"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                onClick={() => openModal(index)}
-              >
-                <div className="relative overflow-hidden rounded-3xl mb-8 w-[400px] h-[400px]">
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div></div>
+            <div className="space-y-12">
+              {team.map((member, index) => (
+                <motion.div
+                  key={index}
+                  className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.02 }}
+                  onClick={() => openModal(index)}
+                >
+                  {/* Background Animation */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-sage-100 to-sage-200 opacity-0"
+                    animate={{
+                      opacity: index === 0 ? 0.3 : 0, // You can add hover state logic here if needed
+                      scale: index === 0 ? 1.05 : 1,
+                    }}
+                    transition={{ duration: 0.3 }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-4xl font-bold text-gray-900 group-hover:text-sage-600 transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-xl text-sage-600 font-medium">{member.role}</p>
-                  <p className="text-lg text-gray-600 leading-relaxed">{member.snippet}</p>
+                  <div className="relative z-10">
+                    <div className="flex items-start space-x-6">
+                      <motion.div
+                        className="relative overflow-hidden rounded-2xl w-[200px] h-[200px] flex-shrink-0"
+                        animate={{
+                          scale: index === 0 ? 1.05 : 1, // You can add hover state logic here if needed
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <img
+                          src={member.image || "/placeholder.svg"}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </motion.div>
 
-                  <div className="flex items-center gap-4 pt-4">
-                    {member.linkedin && (
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sage-600 hover:text-sage-700 transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        LinkedIn →
-                      </a>
-                    )}
-                    {member.portfolio && (
-                      <a
-                        href={member.portfolio}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sage-600 hover:text-sage-700 transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Portfolio →
-                      </a>
-                    )}
+                      <div className="flex-1 space-y-4">
+                        <h3 className="text-3xl font-bold text-gray-900 group-hover:text-sage-600 transition-colors">
+                          {member.name}
+                        </h3>
+                        <p className="text-lg text-sage-600 font-medium">{member.role}</p>
+                        <p className="text-base text-gray-600 leading-relaxed">{member.snippet}</p>
+
+                        <div className="flex items-center gap-4 pt-4">
+                          {member.linkedin && (
+                            <a
+                              href={member.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sage-600 hover:text-sage-700 transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              LinkedIn →
+                            </a>
+                          )}
+                          {member.portfolio && (
+                            <a
+                              href={member.portfolio}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sage-600 hover:text-sage-700 transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              Portfolio →
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
