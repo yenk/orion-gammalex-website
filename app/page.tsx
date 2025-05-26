@@ -186,7 +186,7 @@ function Navigation() {
   )
 }
 
-function AnimatedText({ text, className = "", delay = 0 }: { text: string; className?: string; delay?: number }) {
+function AnimatedText({ text, className = "", delay = 0, children }: { text: string; className?: string; delay?: number; children?: React.ReactNode }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
@@ -205,6 +205,7 @@ function AnimatedText({ text, className = "", delay = 0 }: { text: string; class
           {word}
         </motion.span>
       ))}
+      {children}
     </div>
   )
 }
@@ -218,22 +219,22 @@ function HeroSection() {
       <div className="max-w-none w-full px-8 lg:px-16">
         <div className="max-w-6xl">
           <motion.div
-            className="mb-8"
+            className="mb-14"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-600 font-semibold text-xl tracking-wide">RE-ENGINEERING MALPRACTICE™</span>
+            <span className="text-sage-400 font-semibold text-lg lg:text-xl tracking-wide">RE-ENGINEERING MALPRACTICE™</span>
           </motion.div>
 
-          <div className="text-[8rem] lg:text-[14rem] font-black text-gray-900 leading-[0.85] mb-6 font-sans tracking-tight">
+          <div className="text-[7rem] lg:text-[12rem] font-black text-gray-900 leading-[0.85] mb-10 font-sans tracking-tight whitespace-nowrap">
             <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
-            <span className="text-2xl lg:text-4xl align-top opacity-60 relative -top-2 lg:-top-4">™</span>
+            <span className="text-2xl lg:text-4xl align-top opacity-60 ml-2">™</span>
           </div>
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-3xl lg:text-5xl text-gray-600 mb-8 leading-tight max-w-4xl font-satoshi whitespace-nowrap"
+            className="text-3xl lg:text-5xl text-gray-600 mb-14 leading-tight max-w-4xl font-satoshi whitespace-nowrap"
             delay={0.8}
           />
 
