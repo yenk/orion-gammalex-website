@@ -228,7 +228,7 @@ function HeroSection() {
           </motion.div>
 
           <AnimatedText
-            text="GAMMALEX"
+            text="GAMMALEX™"
             className="text-8xl lg:text-[12rem] font-black text-gray-900 leading-none mb-8 font-satoshi"
             delay={0.3}
           />
