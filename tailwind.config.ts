@@ -104,7 +104,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        satoshi: ["Satoshi", "system-ui", "sans-serif"],
       },
       fontSize: {
         "8xl": ["6rem", { lineHeight: "1" }],
