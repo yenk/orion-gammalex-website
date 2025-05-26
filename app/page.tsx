@@ -216,8 +216,8 @@ function HeroSection() {
       id="hero"
       className="snap-section h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
     >
-      <div className="max-w-none w-full px-8 lg:px-16 pt-32">
-        <div className="max-w-7xl">
+      <div className="max-w-none w-full px-8 lg:px-16">
+        <div className="max-w-6xl">
           <motion.div
             className="mb-8"
             initial={{ opacity: 0, x: -50 }}
@@ -227,14 +227,14 @@ function HeroSection() {
             <span className="text-sage-600 font-semibold text-xl tracking-wide">RE-ENGINEERING MALPRACTICE™</span>
           </motion.div>
 
-          <div className="text-[120px] lg:text-[150px] font-black text-gray-900 leading-[0.85] mb-8 tracking-tight">
+          <div className="text-6xl lg:text-8xl font-black text-gray-900 leading-tight mb-8 tracking-normal">
             <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
-            <span className="text-3xl lg:text-4xl align-top opacity-60 -ml-1 relative top-0 lg:-top-6">™</span>
+            <span className="text-2xl lg:text-4xl align-top opacity-60 -ml-1 relative top-0 lg:-top-4">™</span>
           </div>
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-2xl lg:text-3xl text-gray-600 mb-12 leading-tight max-w-4xl whitespace-nowrap"
+            className="text-3xl lg:text-5xl text-gray-600 mb-12 leading-tight max-w-4xl font-satoshi whitespace-nowrap"
             delay={0.8}
           />
 
