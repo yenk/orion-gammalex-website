@@ -38,6 +38,9 @@ export default function GammaLexPage() {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Problem Section */}
+      <ProblemSection />
+
       {/* About Section */}
       <AboutSection />
 
@@ -46,9 +49,6 @@ export default function GammaLexPage() {
 
       {/* Product Section */}
       <ProductSection />
-
-      {/* Problem Section */}
-      <ProblemSection />
 
       {/* Join Section */}
       <JoinSection />
@@ -878,16 +878,29 @@ function ProblemSection() {
   const heroStats = [
     {
       stat: "60%",
-      title: "Of medical malpractice cases fail viability checks.",
-      description: "Yet, lawyers spend weeks evaluating each one manually.",
+      title: "Medical malpractice cases fail viability checks.",
+      description: (
+        <>
+          Today, lawyers dedicate weeks or months to reviewing records and consulting experts, simply to assess claim viability.
+          <br />
+          <a
+            href="https://www.finchmccranie.com/blog/how-long-do-medical-malpractice-cases-really-take-what-causes-delays/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg mt-2"
+          >
+            → Finch McCranie LLP
+          </a>
+        </>
+      ),
       source: "NEJM, 2006",
       sourceUrl: "https://www.nejm.org/doi/full/10.1056/NEJMsa054479",
       icon: Target,
     },
     {
       stat: "31 months",
-      title: "Average time to resolve a case.",
-      description: "Slow drafting and buried insights extend timelines.",
+      title: "Average time to resolve a malpractice case.",
+      description: "Delays in drafting and fragmented insights prolong outcomes.",
       source: "Health Affairs, 2013",
       sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/23297278/",
       icon: Clock,
@@ -914,7 +927,7 @@ function ProblemSection() {
   ]
 
   return (
-    <section id="problem" className="snap-section min-h-screen flex items-center bg-gray-900 text-white">
+    <section id="problem" className="snap-section min-h-screen flex items-center bg-black text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
@@ -923,15 +936,18 @@ function ProblemSection() {
               text="Malpractice Litigation Is Broken. Stakes Have Never Been Higher."
               className="text-6xl lg:text-7xl font-bold mb-8 leading-tight font-satoshi text-center"
             />
-            <motion.p
-              className="text-2xl text-gray-300 leading-relaxed text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Litigators face time sinks, dropped claims, and endless manual triage, while justice hangs in the balance.
-            </motion.p>
+            {/* Supporting Paragraph - Centered */}
+            <div className="flex w-full justify-center">
+              <motion.p
+                className="text-2xl text-gray-300 leading-relaxed text-center mb-16"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                Litigators face scale challenges, not skill gaps. They need better tools. GammaLex delivers.
+              </motion.p>
+            </div>
           </div>
         </div>
 
@@ -946,14 +962,14 @@ function ProblemSection() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300">
                 <div className="flex items-center mb-8">
                   <div className="bg-terracotta-500 p-6 rounded-2xl mr-8">
                     <stat.icon className="w-12 h-12 text-white" />
                   </div>
                   <div className="text-8xl font-black text-terracotta-400">{stat.stat}</div>
                 </div>
-                <h3 className="text-3xl font-bold mb-4 leading-tight">{stat.title}</h3>
+                <h3 className="text-3xl font-bold mb-4 leading-tight text-white">{stat.title}</h3>
                 <p className="text-xl text-gray-300 leading-relaxed mb-6">{stat.description}</p>
                 <a
                   href={stat.sourceUrl}
@@ -984,30 +1000,23 @@ function ProblemSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-12 border border-gray-700 max-w-4xl mx-auto">
+          <div className="bg-black/60 backdrop-blur-sm rounded-2xl p-12 border border-gray-700 max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-6">
-              <DollarSign className="w-16 h-16 text-terracotta-400 mr-6" />
+              <div className="bg-terracotta-500 p-6 rounded-2xl mr-8 flex items-center justify-center">
+                <DollarSign className="w-12 h-12 text-white" />
+              </div>
               <div className="text-center">
                 <div className="text-6xl font-black text-terracotta-400 mb-2">Only 23%</div>
-                <div className="text-2xl font-bold text-white">Of claims result in payout.</div>
               </div>
             </div>
-            <p className="text-xl text-gray-300 mb-4">Despite billions paid annually.</p>
+            <div className="text-2xl font-bold text-white mb-4">Just a fraction of claims result in a payout, as most are dropped, dismissed, or lost at trial, despite total settlements exceeding $4 billion annually.</div>
             <a
-              href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2612118"
+              href="https://www.ama-assn.org/system/files/policy-research-perspective-medical-liability-claim-frequency.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors"
+              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
             >
-              → JAMA Internal Medicine, 2016
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
+              → American Medical Association, 2020
             </a>
           </div>
         </motion.div>
@@ -1028,7 +1037,7 @@ function ProblemSection() {
             {payoutStats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-r from-gray-800 to-gray-700 p-8 rounded-2xl border-l-4 border-terracotta-500"
+                className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-2xl border-l-4 border-terracotta-500"
                 initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -1066,28 +1075,28 @@ function ProblemSection() {
 
         {/* System-Wide Impact - Full Width Banner */}
         <motion.div
-          className="bg-gradient-to-r from-terracotta-900 to-terracotta-800 rounded-3xl p-12 text-center border border-terracotta-600"
+          className="bg-terracotta-700 rounded-3xl p-12 text-center border border-terracotta-200"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <div className="flex items-center justify-center mb-8">
-            <Scale className="w-20 h-20 text-terracotta-200 mr-8" />
+            <Scale className="w-20 h-20 text-white mr-8" />
             <div>
               <div className="text-8xl font-black text-white mb-2">$1B+</div>
-              <div className="text-3xl font-bold text-terracotta-100">Total malpractice payouts per year.</div>
+              <div className="text-3xl font-bold text-white">Total malpractice payouts per year.</div>
             </div>
           </div>
-          <p className="text-2xl text-terracotta-100 mb-6">Billions paid annually across all specialties.</p>
-          <div className="text-sm font-semibold text-terracotta-200 uppercase tracking-wide mb-4">
+          <p className="text-2xl text-white mb-6">Billions paid annually across all specialties.</p>
+          <div className="text-sm font-semibold text-white uppercase tracking-wide mb-4">
             System-Wide Impact
           </div>
           <a
             href="https://www.journals.uchicago.edu/doi/10.1162/AJHE_a_00069"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-terracotta-200 font-medium hover:text-white transition-colors text-lg"
+            className="inline-flex items-center text-white font-medium hover:text-terracotta-100 transition-colors text-lg"
           >
             → AJHE, 2020
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1107,7 +1116,7 @@ function ProblemSection() {
 
 function JoinSection() {
   return (
-    <section id="join" className="snap-section min-h-screen flex items-center bg-gray-900 text-white">
+    <section id="join" className="snap-section min-h-screen flex items-center bg-black text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="flex flex-col items-center max-w-3xl mx-auto">
           <AnimatedText
@@ -1119,12 +1128,12 @@ function JoinSection() {
             Experience the next generation of legal intelligence. Join the GammaLex waitlist for early access to AI-powered malpractice solutions—built for precision, speed, and results.
           </p>
 
-          <div className="bg-white/5 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center">
+          <div className="bg-black/60 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center border border-gray-700">
             <form className="w-full flex flex-col sm:flex-row gap-6 mb-2">
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/50 text-lg py-6"
+                className="flex-1 bg-black/50 border-gray-700 text-white placeholder:text-white/50 text-lg py-6"
               />
               <Button className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-10 py-6 text-lg flex items-center gap-2">
                 Request Early Access
