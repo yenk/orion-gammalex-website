@@ -32,7 +32,10 @@ export default function GammaLexPage() {
   }, [])
 
   return (
-    <div ref={containerRef} className="snap-y snap-mandatory h-screen overflow-y-scroll">
+    <div
+      ref={containerRef}
+      className="snap-y lg:snap-mandatory snap-proximity min-h-screen lg:h-screen overflow-y-scroll"
+    >
       <Navigation />
 
       {/* Hero Section */}
@@ -267,7 +270,7 @@ function AboutSection() {
               className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
             />
             <motion.p
-              className="text-2xl text-gray-600 leading-relaxed whitespace-nowrap"
+              className="text-2xl text-gray-600 leading-relaxed break-words text-center sm:text-left"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -538,24 +541,24 @@ function TeamSection() {
       {/* Bio Modal */}
       {modalMember !== null && (
         <motion.div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-start justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-start justify-center p-2 sm:p-4 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={closeModal}
         >
           <motion.div
-            className="bg-white rounded-3xl w-full max-w-4xl my-8 relative shadow-2xl"
+            className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8"
             initial={{ scale: 0.9, opacity: 0, y: 50 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 50 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="sticky top-0 bg-white border-b border-gray-200 p-8 rounded-t-3xl z-10">
-              <div className="flex items-center justify-between">
+            <div className="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-8 rounded-t-3xl z-10">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center">
-                  <div className="w-24 h-24 rounded-full overflow-hidden mr-6">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mr-4 sm:mr-6">
                     <img
                       src={team[modalMember].image || "/placeholder.svg"}
                       alt={team[modalMember].name}
@@ -563,8 +566,8 @@ function TeamSection() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-gray-900">{team[modalMember].name}</h3>
-                    <p className="text-xl text-sage-600 font-medium">{team[modalMember].role}</p>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{team[modalMember].name}</h3>
+                    <p className="text-lg sm:text-xl text-sage-600 font-medium">{team[modalMember].role}</p>
                   </div>
                 </div>
                 <button onClick={closeModal} className="p-3 hover:bg-gray-100 rounded-full transition-colors">
@@ -573,7 +576,7 @@ function TeamSection() {
               </div>
             </div>
 
-            <div className="p-8 space-y-12 max-h-[70vh] overflow-y-auto">
+            <div className="p-2 sm:p-8 space-y-8 sm:space-y-12 max-h-[80vh] overflow-y-auto">
               {team[modalMember].bioSections.map((section, sectionIndex) => (
                 <motion.div
                   key={sectionIndex}
@@ -584,9 +587,9 @@ function TeamSection() {
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <div className="border-l-4 border-sage-200 pl-8">
-                    <h4 className="text-2xl font-semibold text-sage-600 mb-4">{section.title}</h4>
-                    <p className="text-gray-700 leading-relaxed text-lg">{section.content}</p>
+                  <div className="border-l-4 border-sage-200 pl-4 sm:pl-8">
+                    <h4 className="text-xl sm:text-2xl font-semibold text-sage-600 mb-2 sm:mb-4 break-words">{section.title}</h4>
+                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg break-words">{section.content}</p>
                   </div>
                 </motion.div>
               ))}
@@ -880,9 +883,10 @@ function ProblemSection() {
       stat: "60%",
       title: "Medical malpractice cases fail viability checks.",
       description: (
-        <>
-          Today, lawyers dedicate weeks or months to reviewing records and consulting experts, simply to assess claim viability.
-          <br />
+        <div className="text-center">
+          <span>
+            Today, lawyers dedicate weeks or months to reviewing records and consulting experts, simply to assess claim viability.
+          </span>
           <div className="flex flex-col gap-1 items-center justify-center w-full mt-2">
             <a
               href="https://www.finchmccranie.com/blog/how-long-do-medical-malpractice-cases-really-take-what-causes-delays/"
@@ -917,7 +921,7 @@ function ProblemSection() {
               </svg>
             </a>
           </div>
-        </>
+        </div>
       ),
       source: "",
       sourceUrl: "",
