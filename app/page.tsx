@@ -883,18 +883,44 @@ function ProblemSection() {
         <>
           Today, lawyers dedicate weeks or months to reviewing records and consulting experts, simply to assess claim viability.
           <br />
-          <a
-            href="https://www.finchmccranie.com/blog/how-long-do-medical-malpractice-cases-really-take-what-causes-delays/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg mt-2"
-          >
-            → Finch McCranie LLP
-          </a>
+          <div className="flex flex-col gap-1 items-center justify-center w-full mt-2">
+            <a
+              href="https://www.finchmccranie.com/blog/how-long-do-medical-malpractice-cases-really-take-what-causes-delays/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
+            >
+              → Finch McCranie LLP
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.nejm.org/doi/full/10.1056/NEJMsa054479"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
+            >
+              → NEJM, 2006
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </a>
+          </div>
         </>
       ),
-      source: "NEJM, 2006",
-      sourceUrl: "https://www.nejm.org/doi/full/10.1056/NEJMsa054479",
+      source: "",
+      sourceUrl: "",
       icon: Target,
     },
     {
@@ -904,6 +930,14 @@ function ProblemSection() {
       source: "Health Affairs, 2013",
       sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/23297278/",
       icon: Clock,
+    },
+    {
+      stat: "Over $1 billion",
+      title: "Paid out annually in malpractice claims.",
+      description: "Across all medical specialties.",
+      source: "NCH Stats, 2025",
+      sourceUrl: "https://nchstats.com/medical-malpractice-payouts-by-state/",
+      icon: Scale,
     },
   ]
 
@@ -952,41 +986,50 @@ function ProblemSection() {
         </div>
 
         {/* Hero Statistics - Large Impact */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20">
           {heroStats.map((stat, index) => (
             <motion.div
               key={index}
-              className="relative"
+              className="relative flex flex-col justify-between items-center h-full"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300">
-                <div className="flex items-center mb-8">
-                  <div className="bg-terracotta-500 p-6 rounded-2xl mr-8">
-                    <stat.icon className="w-12 h-12 text-white" />
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300 h-full flex flex-col items-center justify-between min-h-[520px]">
+                {/* Icon */}
+                <div className="flex flex-col items-center mb-8">
+                  <div className="bg-terracotta-500 rounded-xl w-20 h-20 flex items-center justify-center mb-6">
+                    <stat.icon className="w-10 h-10 text-white" />
                   </div>
-                  <div className="text-8xl font-black text-terracotta-400">{stat.stat}</div>
+                  {/* Stat */}
+                  <div className="text-7xl font-black text-terracotta-400 text-center leading-none mb-4">{stat.stat}</div>
                 </div>
-                <h3 className="text-3xl font-bold mb-4 leading-tight text-white">{stat.title}</h3>
-                <p className="text-xl text-gray-300 leading-relaxed mb-6">{stat.description}</p>
-                <a
-                  href={stat.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
-                >
-                  → {stat.source}
-                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </a>
+                {/* Title */}
+                <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center">{stat.title}</h3>
+                {/* Description */}
+                <p className="text-lg text-gray-300 leading-relaxed mb-8 text-center">{stat.description}</p>
+                {/* Source */}
+                {stat.source && stat.sourceUrl && (
+                  <div className="mt-auto w-full flex justify-center">
+                    <a
+                      href={stat.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-base"
+                    >
+                      → {stat.source}
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
@@ -1014,9 +1057,17 @@ function ProblemSection() {
               href="https://www.ama-assn.org/system/files/policy-research-perspective-medical-liability-claim-frequency.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
+              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg justify-center"
             >
               → American Medical Association, 2020
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
             </a>
           </div>
         </motion.div>
@@ -1074,41 +1125,7 @@ function ProblemSection() {
         </div>
 
         {/* System-Wide Impact - Full Width Banner */}
-        <motion.div
-          className="bg-terracotta-700 rounded-3xl p-12 text-center border border-terracotta-200"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-center justify-center mb-8">
-            <Scale className="w-20 h-20 text-white mr-8" />
-            <div>
-              <div className="text-8xl font-black text-white mb-2">$1B+</div>
-              <div className="text-3xl font-bold text-white">Total malpractice payouts per year.</div>
-            </div>
-          </div>
-          <p className="text-2xl text-white mb-6">Billions paid annually across all specialties.</p>
-          <div className="text-sm font-semibold text-white uppercase tracking-wide mb-4">
-            System-Wide Impact
-          </div>
-          <a
-            href="https://www.journals.uchicago.edu/doi/10.1162/AJHE_a_00069"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-white font-medium hover:text-terracotta-100 transition-colors text-lg"
-          >
-            → AJHE, 2020
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-              />
-            </svg>
-          </a>
-        </motion.div>
+        {/* Removed the old $1B+ banner for consistency */}
       </div>
     </section>
   )
