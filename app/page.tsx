@@ -292,7 +292,7 @@ function AboutSection() {
           <div>
             <AnimatedText
               text="The Future of Malpractice Litigation. Starts Here."
-              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
+              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
             />
             <motion.p
               className="text-2xl text-gray-600 leading-relaxed break-words text-center sm:text-left"
@@ -475,7 +475,7 @@ function TeamSection() {
             <div>
               <AnimatedText
                 text="The Minds Behind GammaLex."
-                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
+                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
               />
               <motion.p
                 className="text-2xl text-gray-600 leading-relaxed"
@@ -723,7 +723,7 @@ function ProductSection() {
           <div>
             <AnimatedText
               text={"Three Tools.<br />Infinite Advantage."}
-              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
+              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
             />
             <motion.p
               className="text-2xl text-gray-600 leading-relaxed"
@@ -1029,7 +1029,7 @@ function ProblemSection() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300 h-full flex flex-col items-center justify-between min-h-[520px]">
+              <div className="bg-black p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300 h-full flex flex-col items-center justify-between min-h-[520px]">
                 {/* Icon */}
                 <div className="flex flex-col items-center mb-8">
                   <div className="bg-terracotta-500 rounded-xl w-20 h-20 flex items-center justify-center mb-6">
