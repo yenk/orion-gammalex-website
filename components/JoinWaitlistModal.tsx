@@ -17,13 +17,26 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
   const [success, setSuccess] = useState(false);
   const [duplicate, setDuplicate] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const nameRef = useRef<HTMLInputElement>(null);
+
+  function validate() {
+    const newErrors: { [key: string]: string } = {};
+    if (!form.name.trim()) newErrors.name = "Name is required.";
+    if (!form.email.trim()) newErrors.email = "Email is required.";
+    if (!form.phone.trim()) newErrors.phone = "Phone is required.";
+    if (!form.company.trim()) newErrors.company = "Company is required.";
+    return newErrors;
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setLoading(true);
     setSuccess(false);
     setDuplicate(false);
+    const validationErrors = validate();
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
+    setLoading(true);
     try {
       const res = await fetch("/api/join-waitlist", {
         method: "POST",
@@ -83,37 +96,56 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
           </div>
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
-            <Input
-              ref={nameRef}
-              autoFocus
-              type="text"
-              placeholder="Name (optional)"
-              value={form.name}
-              onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-              disabled={loading}
-            />
-            <Input
-              type="email"
-              placeholder="Email*"
-              value={form.email}
-              onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-              required
-              disabled={loading}
-            />
-            <Input
-              type="tel"
-              placeholder="Phone (optional)"
-              value={form.phone}
-              onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-              disabled={loading}
-            />
-            <Input
-              type="text"
-              placeholder="Company (optional)"
-              value={form.company}
-              onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
-              disabled={loading}
-            />
+            <div>
+              <Input
+                ref={nameRef}
+                autoFocus
+                type="text"
+                placeholder="Name*"
+                value={form.name}
+                onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                disabled={loading}
+                required
+                aria-invalid={!!errors.name}
+              />
+              {errors.name && <div className="text-red-600 text-sm mt-1">{errors.name}</div>}
+            </div>
+            <div>
+              <Input
+                type="email"
+                placeholder="Email*"
+                value={form.email}
+                onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                required
+                disabled={loading}
+                aria-invalid={!!errors.email}
+              />
+              {errors.email && <div className="text-red-600 text-sm mt-1">{errors.email}</div>}
+            </div>
+            <div>
+              <Input
+                type="tel"
+                placeholder="Phone*"
+                value={form.phone}
+                onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                required
+                disabled={loading}
+                aria-invalid={!!errors.phone}
+              />
+              {errors.phone && <div className="text-red-600 text-sm mt-1">{errors.phone}</div>}
+            </div>
+            <div>
+              <Input
+                type="text"
+                placeholder="Company*"
+                value={form.company}
+                onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
+                required
+                disabled={loading}
+                aria-invalid={!!errors.company}
+              />
+              {errors.company && <div className="text-red-600 text-sm mt-1">{errors.company}</div>}
+            </div>
             <textarea
               placeholder="Message (optional)"
               value={form.message}
@@ -125,7 +157,7 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
               <DialogClose asChild>
                 <Button type="button" variant="ghost" disabled={loading}>Cancel</Button>
               </DialogClose>
-              <Button type="submit" disabled={loading || !form.email} className="font-bold">
+              <Button type="submit" disabled={loading} className="font-bold">
                 {loading ? "Joining..." : "Join Waitlist"}
               </Button>
             </div>

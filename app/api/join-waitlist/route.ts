@@ -5,36 +5,40 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, phone, company, user_type } = await req.json();
+    const { name, email, phone, company, message, user_type } = await req.json();
 
+    // Require all fields except message
+    if (!name || typeof name !== 'string' || !name.trim()) {
+      return NextResponse.json({ success: false, message: 'Name is required.' }, { status: 400 });
+    }
     if (!email || typeof email !== 'string' || !email.includes('@')) {
-      return NextResponse.json({ success: false, message: 'Invalid email.' }, { status: 400 });
+      return NextResponse.json({ success: false, message: 'Valid email is required.' }, { status: 400 });
     }
-
-    if (phone && typeof phone !== 'string') {
-      return NextResponse.json({ success: false, message: 'Invalid phone number.' }, { status: 400 });
+    if (!phone || typeof phone !== 'string' || !phone.trim()) {
+      return NextResponse.json({ success: false, message: 'Phone is required.' }, { status: 400 });
     }
-
-    if (company && typeof company !== 'string') {
-      return NextResponse.json({ success: false, message: 'Invalid company name.' }, { status: 400 });
+    if (!company || typeof company !== 'string' || !company.trim()) {
+      return NextResponse.json({ success: false, message: 'Company is required.' }, { status: 400 });
     }
-
     if (user_type && typeof user_type !== 'string') {
       return NextResponse.json({ success: false, message: 'Invalid user type.' }, { status: 400 });
     }
 
     const { error } = await supabase.from('gammalex_waitlist').insert([
       { 
+        name: name.trim(),
         email: email.trim(), 
-        phone: phone?.trim() || null,
-        company: company?.trim() || null,
+        phone: phone.trim(),
+        company: company.trim(),
         user_type: user_type?.trim() || null,
+        message: message?.trim() || null,
       }
     ]);
 
     if (error) {
       console.error('Error storing waitlist entry:', JSON.stringify(error, null, 2));
       if (error.code === '23505') {
+        // Duplicate email error, return 409
         return NextResponse.json(
           { success: false, message: 'This email is already on the waitlist.' },
           { status: 409 }
