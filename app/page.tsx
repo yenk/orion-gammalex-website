@@ -1148,24 +1148,25 @@ function JoinSection() {
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="flex flex-col items-center max-w-3xl mx-auto">
           <AnimatedText
-            text="Lead the Future of Malpractice Litigation"
-            className="text-6xl lg:text-7xl font-bold mb-10 leading-tight font-satoshi text-center"
+            text="Pioneer the Future of Malpractice Litigation"
+            className="text-6xl lg:text-7xl font-bold mb-12 leading-tight font-satoshi text-center"
           />
 
           <p className="text-2xl text-gray-300 mb-14 leading-relaxed text-center">
-            Experience the next generation of legal intelligence. Join the GammaLex waitlist for early access to AI-powered malpractice solutions—built for precision, speed, and results.
+            <span className="block text-4xl sm:text-5xl font-extrabold text-terracotta-400 mb-4">Malpractice, Re-engineered.</span>
+            Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
           </p>
 
-          <div className="bg-black/60 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center border border-gray-700">
-            <form className="w-full flex flex-col sm:flex-row gap-6 mb-2">
+          <div className="bg-terracotta-500 rounded-3xl shadow-2xl p-14 w-full flex flex-col items-center border-4 border-terracotta-400">
+            <form className="w-full flex flex-col sm:flex-row gap-10 mb-2">
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-black/50 border-gray-700 text-white placeholder:text-white/50 text-lg py-6"
+                className="flex-1 bg-white border-2 border-terracotta-400 text-gray-900 placeholder:text-gray-500 text-xl py-8 px-6 rounded-xl font-bold shadow-md focus:ring-4 focus:ring-terracotta-300 transition-all duration-200"
               />
-              <Button className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-10 py-6 text-lg flex items-center gap-2">
+              <Button className="bg-white text-terracotta-600 hover:bg-gray-100 px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
                 Request Early Access
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="w-8 h-8" />
               </Button>
             </form>
           </div>
