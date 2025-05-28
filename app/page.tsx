@@ -236,10 +236,10 @@ function HeroSection() {
       id="hero"
       className="snap-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
     >
-      <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 pt-32 pb-20 sm:pt-40 sm:pb-32">
+      <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-40 sm:pb-32">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <motion.div
-            className="mb-2 sm:mb-4"
+            className="mb-1 sm:mb-4"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -249,7 +249,7 @@ function HeroSection() {
 
           <div className="w-full flex flex-col items-center justify-center">
             <div className="w-full flex justify-center">
-              <div className="font-black text-gray-900 leading-[0.95] mb-2 sm:mb-6 font-sans tracking-tight text-center break-words text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
+              <div className="font-black text-gray-900 leading-[0.95] mb-1 sm:mb-6 font-sans tracking-tight text-center break-words text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
                 <span className="inline-block relative align-baseline">
                   <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
                 </span>
@@ -259,12 +259,12 @@ function HeroSection() {
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-base xs:text-lg sm:text-3xl lg:text-5xl text-gray-600 mb-8 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-normal px-1 sm:px-0"
+            className="text-base xs:text-lg sm:text-3xl lg:text-5xl text-gray-600 mb-6 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-normal px-1 sm:px-0"
             delay={0.8}
           />
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-4"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-2"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
@@ -1197,20 +1197,20 @@ function JoinSection() {
         <div className="flex flex-col items-center max-w-3xl mx-auto">
           <AnimatedText
             text="Pioneer the Future of Malpractice Litigation"
-            className="text-6xl lg:text-7xl font-bold mb-12 leading-tight font-satoshi text-center"
+            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words"
           />
 
-          <p className="text-2xl text-gray-300 mb-14 leading-relaxed text-center">
-            <span className="block text-4xl sm:text-5xl font-extrabold text-terracotta-400 mb-4 whitespace-nowrap">The Future of Malpractice Starts Here.</span>
+          <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center">
+            <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words">The Future of Malpractice Starts Here.</span>
             Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
           </p>
 
-          <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-14 w-full flex flex-col items-center">
+          <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center">
             <JoinWaitlistModal
               trigger={
-                <Button className="bg-terracotta-400 hover:bg-terracotta-500 text-white px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
+                <Button className="bg-terracotta-400 hover:bg-terracotta-500 text-white px-6 sm:px-14 py-5 sm:py-8 text-lg sm:text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
                   Request Early Access
-                  <ArrowRight className="w-8 h-8" />
+                  <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Button>
               }
             />
