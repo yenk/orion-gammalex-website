@@ -75,13 +75,13 @@ export default function WaitlistLiveCount() {
                 '0 0 8px #a3e635, 0 0 16px #bef264, 0 0 32px #a3e635',
             }}
           >
-            🔥
+            🚀
             <span className="mx-2 animate-pulse-glow">
               {count.toLocaleString()}
             </span>
           </span>
           <span className="text-xl sm:text-2xl font-semibold text-gray-700">
-            people have already joined GammaLex.
+            Join early adopters on the GammaLex waitlist!
           </span>
         </div>
       )}
