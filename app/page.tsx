@@ -159,13 +159,6 @@ function Navigation() {
                   {item.label}
                 </motion.button>
               ))}
-              <JoinWaitlistModal
-                trigger={
-                  <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold px-6 py-3 ml-8 text-lg rounded-xl shadow-lg flex items-center gap-2">
-                    Join the Waitlist
-                  </Button>
-                }
-              />
             </div>
           </div>
 
@@ -307,8 +300,9 @@ function AboutSection() {
             </motion.p>
           </div>
 
-          <div className="space-y-6 text-2xl text-gray-700 leading-relaxed">
+          <div className="space-y-2 text-2xl text-gray-700 leading-relaxed">
             <motion.p
+              className="text-2xl text-gray-600 leading-relaxed mb-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -320,6 +314,7 @@ function AboutSection() {
             </motion.p>
 
             <motion.p
+              className="text-2xl text-gray-600 leading-relaxed mb-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -330,6 +325,7 @@ function AboutSection() {
             </motion.p>
 
             <motion.p
+              className="text-2xl text-gray-600 leading-relaxed mb-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -343,6 +339,7 @@ function AboutSection() {
             </motion.p>
 
             <motion.p
+              className="text-2xl text-gray-600 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -1203,10 +1200,10 @@ function JoinSection() {
             Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
           </p>
 
-          <div className="bg-terracotta-500 rounded-3xl shadow-2xl p-14 w-full flex flex-col items-center border-4 border-terracotta-400">
+          <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-14 w-full flex flex-col items-center">
             <JoinWaitlistModal
               trigger={
-                <Button className="bg-white text-terracotta-600 hover:bg-gray-100 px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
+                <Button className="bg-terracotta-400 hover:bg-terracotta-500 text-white px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
                   Request Early Access
                   <ArrowRight className="w-8 h-8" />
                 </Button>
