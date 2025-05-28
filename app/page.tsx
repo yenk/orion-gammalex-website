@@ -108,9 +108,9 @@ function Navigation() {
             <div className="relative">
               {/* Logo Image */}
               <motion.img
-                src="/images/glx-logo.png"
+                src="/gammalexlogo2-transparent.png"
                 alt="GammaLex Logo"
-                className="h-20 relative z-10"
+                className="h-24 relative z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.1, delay: 0.8 }}
@@ -139,7 +139,7 @@ function Navigation() {
                   delay: 0.3,
                 }}
               >
-                <img src="/images/glx-logo.png" alt="GammaLex Logo" className="h-20" />
+                <img src="/gammalexlogo2-transparent.png" alt="GammaLex Logo" className="h-24" />
               </motion.div>
             </div>
           </motion.div>
@@ -700,7 +700,7 @@ function ProductSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <AnimatedText
-              text="Three Tools. Infinite Advantage."
+              text={"Three Tools.\nInfinite Advantage."}
               className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
             />
             <motion.p
