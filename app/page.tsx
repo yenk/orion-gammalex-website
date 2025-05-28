@@ -19,6 +19,8 @@ import {
   User,
   Briefcase,
 } from "lucide-react"
+import { toast } from "@/components/ui/use-toast"
+import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -72,7 +74,7 @@ function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 10)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -88,15 +90,17 @@ function Navigation() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm" : "bg-white/90 backdrop-blur-sm"
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
+          : "bg-white/90 backdrop-blur-sm"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-none px-8 lg:px-16">
-        <div className="flex items-center h-20">
+        <div className="flex items-center h-20 justify-start">
           {/* Logo */}
           <motion.div
             className="flex items-center cursor-pointer relative overflow-hidden"
@@ -106,9 +110,9 @@ function Navigation() {
             <div className="relative">
               {/* Logo Image */}
               <motion.img
-                src="/images/glx-logo.png"
+                src="/gammalexlogo-transparent.png"
                 alt="GammaLex Logo"
-                className="h-20 relative z-10"
+                className="h-24 relative z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.1, delay: 0.8 }}
@@ -137,7 +141,7 @@ function Navigation() {
                   delay: 0.3,
                 }}
               >
-                <img src="/images/glx-logo.png" alt="GammaLex Logo" className="h-20" />
+                <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-24" />
               </motion.div>
             </div>
           </motion.div>
@@ -218,40 +222,49 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="snap-section h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      className="snap-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
     >
-      <div className="max-w-none w-full px-8 lg:px-16">
+      <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 pt-32 pb-20 sm:pt-40 sm:pb-32">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <motion.div
-            className="mb-10"
+            className="mb-2 sm:mb-4"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-400 font-semibold text-lg lg:text-xl tracking-wide text-center block">RE-ENGINEERING MALPRACTICE™</span>
+            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block">MALPRACTICE REENGINEERED™</span>
           </motion.div>
 
-          <div className="text-[10rem] lg:text-[16rem] font-black text-gray-900 leading-[0.85] mb-10 font-sans tracking-tight whitespace-nowrap text-center">
-            <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
-            <span className="text-2xl lg:text-4xl align-top opacity-60 ml-2">™</span>
+          <div className="w-full flex flex-col items-center justify-center">
+            <div className="w-full flex justify-center">
+              <div className="font-black text-gray-900 leading-[0.95] mb-2 sm:mb-6 font-sans tracking-tight text-center break-words text-5xl xs:text-6xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
+                <span className="inline-block relative align-baseline">
+                  <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
+                </span>
+              </div>
+            </div>
           </div>
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-3xl lg:text-5xl text-gray-600 mb-14 leading-tight max-w-4xl font-satoshi whitespace-nowrap text-center"
+            className="text-lg xs:text-xl sm:text-3xl lg:text-5xl text-gray-600 mb-8 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-nowrap"
             delay={0.8}
           />
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-12 py-6 text-xl">
-              Join the Waitlist
-              <ArrowRight className="ml-3 w-6 h-6" />
-            </Button>
+            <JoinWaitlistModal
+              trigger={
+                <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-xl w-full sm:w-auto max-w-xs sm:max-w-none">
+                  Request Early Access
+                  <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
+                </Button>
+              }
+            />
           </motion.div>
         </div>
       </div>
@@ -693,7 +706,7 @@ function ProductSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <AnimatedText
-              text="Three Tools. Infinite Advantage."
+              text={"Three Tools.\nInfinite Advantage."}
               className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
             />
             <motion.p
@@ -1136,31 +1149,55 @@ function ProblemSection() {
 }
 
 function JoinSection() {
+  const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setLoading(true)
+    try {
+      const res = await fetch("/api/join-waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      const data = await res.json()
+      if (res.ok) {
+        toast({ title: "Success!", description: data.message })
+        setEmail("")
+      } else {
+        toast({ title: "Error", description: data.message, variant: "destructive" })
+      }
+    } catch (err) {
+      toast({ title: "Error", description: "Something went wrong.", variant: "destructive" })
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section id="join" className="snap-section min-h-screen flex items-center bg-black text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="flex flex-col items-center max-w-3xl mx-auto">
           <AnimatedText
-            text="Lead the Future of Malpractice Litigation"
-            className="text-6xl lg:text-7xl font-bold mb-10 leading-tight font-satoshi text-center"
+            text="Pioneer the Future of Malpractice Litigation"
+            className="text-6xl lg:text-7xl font-bold mb-12 leading-tight font-satoshi text-center"
           />
 
           <p className="text-2xl text-gray-300 mb-14 leading-relaxed text-center">
-            Experience the next generation of legal intelligence. Join the GammaLex waitlist for early access to AI-powered malpractice solutions—built for precision, speed, and results.
+            <span className="block text-4xl sm:text-5xl font-extrabold text-terracotta-400 mb-4 whitespace-nowrap">The Future of Malpractice Starts Here.</span>
+            Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
           </p>
 
-          <div className="bg-black/60 rounded-2xl shadow-lg p-10 w-full flex flex-col items-center border border-gray-700">
-            <form className="w-full flex flex-col sm:flex-row gap-6 mb-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 bg-black/50 border-gray-700 text-white placeholder:text-white/50 text-lg py-6"
-              />
-              <Button className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-10 py-6 text-lg flex items-center gap-2">
-                Request Early Access
-                <ArrowRight className="w-6 h-6" />
-              </Button>
-            </form>
+          <div className="bg-terracotta-500 rounded-3xl shadow-2xl p-14 w-full flex flex-col items-center border-4 border-terracotta-400">
+            <JoinWaitlistModal
+              trigger={
+                <Button className="bg-white text-terracotta-600 hover:bg-gray-100 px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
+                  Request Early Access
+                  <ArrowRight className="w-8 h-8" />
+                </Button>
+              }
+            />
           </div>
         </div>
       </div>
