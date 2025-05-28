@@ -230,7 +230,7 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block">RE-ENGINEERING MALPRACTICE™</span>
+            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block">MALPRACTICE RE-ENGINEERED™</span>
           </motion.div>
 
           <div className="w-full flex flex-col items-center justify-center">
@@ -245,7 +245,7 @@ function HeroSection() {
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-lg xs:text-xl sm:text-3xl lg:text-5xl text-gray-600 mb-8 sm:mb-10 leading-tight max-w-xs xs:max-w-md sm:max-w-2xl md:max-w-4xl font-satoshi text-center break-words"
+            className="text-lg xs:text-xl sm:text-3xl lg:text-5xl text-gray-600 mb-8 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-nowrap"
             delay={0.8}
           />
 
