@@ -21,6 +21,8 @@ import {
 } from "lucide-react"
 import { toast } from "@/components/ui/use-toast"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
+import WaitlistGrowth from '@/components/WaitlistGrowth'
+import WaitlistLiveCount from '@/components/WaitlistLiveCount'
 
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -89,115 +91,118 @@ function Navigation() {
   }
 
   return (
-    <motion.nav
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
-          : "bg-white/90 backdrop-blur-sm"
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="max-w-none px-8 lg:px-16">
-        <div className="flex items-center h-20 justify-start">
-          {/* Logo */}
-          <motion.div
-            className="flex items-center cursor-pointer relative overflow-hidden"
-            onClick={() => scrollToSection("hero")}
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="relative">
-              {/* Logo Image */}
-              <motion.img
-                src="/gammalexlogo-transparent.png"
-                alt="GammaLex Logo"
-                className="h-24 relative z-10"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.1, delay: 0.8 }}
-              />
+    <>
+      {/* Actual Navigation Bar */}
+      <motion.nav
+        className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
+            : "bg-white/90 backdrop-blur-sm"
+        }`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-none px-8 lg:px-16">
+          <div className="flex items-center h-20 justify-start">
+            {/* Logo */}
+            <motion.div
+              className="flex items-center cursor-pointer relative overflow-hidden"
+              onClick={() => scrollToSection("hero")}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="relative">
+                {/* Logo Image */}
+                <motion.img
+                  src="/gammalexlogo-transparent.png"
+                  alt="GammaLex Logo"
+                  className="h-24 relative z-10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.1, delay: 0.8 }}
+                />
 
-              {/* Sliding Block Overlay */}
-              <motion.div
-                className="absolute inset-0 bg-sage-600 z-20"
-                initial={{ x: "0%" }}
-                animate={{ x: "100%" }}
-                transition={{
-                  duration: 1.8, // Changed from 1.2 to 1.8
-                  ease: [0.76, 0, 0.24, 1], // Custom cubic-bezier for smooth motion
-                  delay: 0.3,
-                }}
-              />
+                {/* Sliding Block Overlay */}
+                <motion.div
+                  className="absolute inset-0 bg-sage-600 z-20"
+                  initial={{ x: "0%" }}
+                  animate={{ x: "100%" }}
+                  transition={{
+                    duration: 1.8, // Changed from 1.2 to 1.8
+                    ease: [0.76, 0, 0.24, 1], // Custom cubic-bezier for smooth motion
+                    delay: 0.3,
+                  }}
+                />
 
-              {/* Logo Reveal Mask */}
-              <motion.div
-                className="absolute inset-0 z-30"
-                initial={{ clipPath: "inset(0 100% 0 0)" }}
-                animate={{ clipPath: "inset(0 0% 0 0)" }}
-                transition={{
-                  duration: 1.8, // Changed from 1.2 to 1.8
-                  ease: [0.76, 0, 0.24, 1],
-                  delay: 0.3,
-                }}
-              >
-                <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-24" />
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-16">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
-                  whileHover={{ y: -2 }}
+                {/* Logo Reveal Mask */}
+                <motion.div
+                  className="absolute inset-0 z-30"
+                  initial={{ clipPath: "inset(0 100% 0 0)" }}
+                  animate={{ clipPath: "inset(0 0% 0 0)" }}
+                  transition={{
+                    duration: 1.8, // Changed from 1.2 to 1.8
+                    ease: [0.76, 0, 0.24, 1],
+                    delay: 0.3,
+                  }}
                 >
-                  {item.label}
-                </motion.button>
-              ))}
+                  <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-24" />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center justify-center flex-1">
+              <div className="flex items-center space-x-16">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
+                    whileHover={{ y: -2 }}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+              </div>
             </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
+              {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
-            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-          </motion.button>
+          {/* Mobile Navigation */}
+          {isOpen && (
+            <motion.div
+              className="lg:hidden py-6 border-t border-gray-200"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+            >
+              <div className="space-y-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left text-xl font-medium text-gray-700 hover:text-sage-600 py-2"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <JoinWaitlistModal
+                  trigger={
+                    <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold w-full py-4 text-lg rounded-xl mt-4">
+                      Join the Waitlist
+                    </Button>
+                  }
+                />
+              </div>
+            </motion.div>
+          )}
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <motion.div
-            className="lg:hidden py-6 border-t border-gray-200"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className="space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-xl font-medium text-gray-700 hover:text-sage-600 py-2"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <JoinWaitlistModal
-                trigger={
-                  <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold w-full py-4 text-lg rounded-xl mt-4">
-                    Join the Waitlist
-                  </Button>
-                }
-              />
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </motion.nav>
+      </motion.nav>
+    </>
   )
 }
 
@@ -278,6 +283,7 @@ function HeroSection() {
               }
             />
           </motion.div>
+          <WaitlistLiveCount />
         </div>
       </div>
     </section>

@@ -15,6 +15,7 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [duplicate, setDuplicate] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
   const nameRef = useRef<HTMLInputElement>(null);
 
@@ -22,6 +23,7 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
     e.preventDefault();
     setLoading(true);
     setSuccess(false);
+    setDuplicate(false);
     try {
       const res = await fetch("/api/join-waitlist", {
         method: "POST",
@@ -35,7 +37,13 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
         setTimeout(() => {
           setOpen(false);
           setSuccess(false);
-        }, 1800); // Show success for 1.8s before closing
+        }, 1800);
+      } else if (res.status === 409 && data.message?.includes('already on the waitlist')) {
+        setDuplicate(true);
+        setTimeout(() => {
+          setOpen(false);
+          setDuplicate(false);
+        }, 1800);
       } else {
         toast({ title: "Error", description: data.message, variant: "destructive" });
       }
@@ -61,6 +69,16 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
             </div>
             <div className="text-gray-500 text-center mt-2">
               We'll keep you updated as we roll out early access.
+            </div>
+          </div>
+        ) : duplicate ? (
+          <div className="flex flex-col items-center justify-center py-8">
+            <div className="text-3xl mb-2">👋</div>
+            <div className="text-lg font-semibold text-sage-600 text-center">
+              Thanks for your interest! We've got you on record.
+            </div>
+            <div className="text-gray-500 text-center mt-2">
+              You're already on the waitlist.
             </div>
           </div>
         ) : (
@@ -116,4 +134,4 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
       </DialogContent>
     </Dialog>
   );
-} 
+}
