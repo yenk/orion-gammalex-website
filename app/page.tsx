@@ -99,7 +99,7 @@ function Navigation() {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-none px-8 lg:px-16">
-        <div className="flex items-center h-20">
+        <div className="flex items-center h-20 justify-start">
           {/* Logo */}
           <motion.div
             className="flex items-center cursor-pointer relative overflow-hidden"
@@ -109,7 +109,7 @@ function Navigation() {
             <div className="relative">
               {/* Logo Image */}
               <motion.img
-                src="/gammalexlogo2-transparent.png"
+                src="/gammalexlogo-transparent.png"
                 alt="GammaLex Logo"
                 className="h-24 relative z-10"
                 initial={{ opacity: 0 }}
@@ -140,7 +140,7 @@ function Navigation() {
                   delay: 0.3,
                 }}
               >
-                <img src="/gammalexlogo2-transparent.png" alt="GammaLex Logo" className="h-24" />
+                <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-24" />
               </motion.div>
             </div>
           </motion.div>
