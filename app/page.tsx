@@ -205,20 +205,25 @@ function AnimatedText({ text, className = "", delay = 0, children }: { text: str
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
-  const words = text.split(" ")
+  // Split on <br /> for line breaks, then split each line into words
+  const lines = text.split(/<br\s*\/?\s*>/i)
 
   return (
     <div ref={ref} className={className}>
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          className="inline-block mr-2"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.5, delay: delay + i * 0.1 }}
-        >
-          {word}
-        </motion.span>
+      {lines.map((line, lineIdx) => (
+        <div key={lineIdx} className="w-full">
+          {line.trim().split(" ").map((word, i) => (
+            <motion.span
+              key={i}
+              className="inline-block mr-2"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.5, delay: delay + (lineIdx * 0.1) + i * 0.1 }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </div>
       ))}
       {children}
     </div>
@@ -505,9 +510,9 @@ function TeamSection() {
                   />
 
                   <div className="relative z-10">
-                    <div className="flex items-start space-x-6">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
                       <motion.div
-                        className="relative overflow-hidden rounded-2xl w-[200px] h-[200px] flex-shrink-0"
+                        className="relative overflow-hidden rounded-2xl w-full sm:w-[200px] h-[200px] flex-shrink-0 mx-auto sm:mx-0"
                         animate={{
                           scale: index === 0 ? 1.05 : 1, // You can add hover state logic here if needed
                         }}
@@ -528,7 +533,7 @@ function TeamSection() {
                         <p className="text-lg text-sage-600 font-medium">{member.role}</p>
                         <p className="text-base text-gray-600 leading-relaxed">{member.snippet}</p>
 
-                        <div className="flex items-center gap-4 pt-4">
+                        <div className="flex items-center gap-4 pt-4 justify-center sm:justify-start">
                           {member.linkedin && (
                             <a
                               href={member.linkedin}
@@ -717,7 +722,7 @@ function ProductSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <AnimatedText
-              text={"Three Tools.\nInfinite Advantage."}
+              text={"Three Tools.<br />Infinite Advantage."}
               className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi"
             />
             <motion.p
