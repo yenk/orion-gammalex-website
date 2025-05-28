@@ -19,6 +19,7 @@ import {
   User,
   Briefcase,
 } from "lucide-react"
+import { toast } from "@/components/ui/use-toast"
 
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -1143,6 +1144,32 @@ function ProblemSection() {
 }
 
 function JoinSection() {
+  const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setLoading(true)
+    try {
+      const res = await fetch("/api/join-waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      const data = await res.json()
+      if (res.ok) {
+        toast({ title: "Success!", description: data.message })
+        setEmail("")
+      } else {
+        toast({ title: "Error", description: data.message, variant: "destructive" })
+      }
+    } catch (err) {
+      toast({ title: "Error", description: "Something went wrong.", variant: "destructive" })
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section id="join" className="snap-section min-h-screen flex items-center bg-black text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
@@ -1158,13 +1185,16 @@ function JoinSection() {
           </p>
 
           <div className="bg-terracotta-500 rounded-3xl shadow-2xl p-14 w-full flex flex-col items-center border-4 border-terracotta-400">
-            <form className="w-full flex flex-col sm:flex-row gap-10 mb-2">
+            <form className="w-full flex flex-col sm:flex-row gap-10 mb-2" onSubmit={handleSubmit}>
               <Input
                 type="email"
                 placeholder="Enter your email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 className="flex-1 bg-white border-2 border-terracotta-400 text-gray-900 placeholder:text-gray-500 text-xl py-8 px-6 rounded-xl font-bold shadow-md focus:ring-4 focus:ring-terracotta-300 transition-all duration-200"
+                disabled={loading}
               />
-              <Button className="bg-white text-terracotta-600 hover:bg-gray-100 px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
+              <Button type="submit" disabled={loading} className="bg-white text-terracotta-600 hover:bg-gray-100 px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
                 Request Early Access
                 <ArrowRight className="w-8 h-8" />
               </Button>
