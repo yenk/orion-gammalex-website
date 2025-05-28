@@ -249,7 +249,7 @@ function HeroSection() {
 
           <div className="w-full flex flex-col items-center justify-center">
             <div className="w-full flex justify-center">
-              <div className="font-black text-gray-900 leading-[0.95] mb-2 sm:mb-6 font-sans tracking-tight text-center break-words text-5xl xs:text-6xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
+              <div className="font-black text-gray-900 leading-[0.95] mb-2 sm:mb-6 font-sans tracking-tight text-center break-words text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
                 <span className="inline-block relative align-baseline">
                   <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
                 </span>
@@ -259,7 +259,7 @@ function HeroSection() {
 
           <AnimatedText
             text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-lg xs:text-xl sm:text-3xl lg:text-5xl text-gray-600 mb-8 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-nowrap"
+            className="text-base xs:text-lg sm:text-3xl lg:text-5xl text-gray-600 mb-8 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-nowrap sm:whitespace-nowrap overflow-x-auto px-1 sm:px-0"
             delay={0.8}
           />
 
