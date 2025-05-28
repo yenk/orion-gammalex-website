@@ -159,6 +159,13 @@ function Navigation() {
                   {item.label}
                 </motion.button>
               ))}
+              <JoinWaitlistModal
+                trigger={
+                  <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold px-6 py-3 ml-8 text-lg rounded-xl shadow-lg flex items-center gap-2">
+                    Join the Waitlist
+                  </Button>
+                }
+              />
             </div>
           </div>
 
@@ -186,6 +193,13 @@ function Navigation() {
                   {item.label}
                 </button>
               ))}
+              <JoinWaitlistModal
+                trigger={
+                  <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold w-full py-4 text-lg rounded-xl mt-4">
+                    Join the Waitlist
+                  </Button>
+                }
+              />
             </div>
           </motion.div>
         )}
@@ -260,7 +274,7 @@ function HeroSection() {
             <JoinWaitlistModal
               trigger={
                 <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-xl w-full sm:w-auto max-w-xs sm:max-w-none">
-                  Request Early Access
+                  Join the Waitlist
                   <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               }
