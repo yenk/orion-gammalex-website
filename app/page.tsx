@@ -20,6 +20,7 @@ import {
   Briefcase,
 } from "lucide-react"
 import { toast } from "@/components/ui/use-toast"
+import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -226,12 +227,12 @@ function HeroSection() {
       <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 pt-32 pb-20 sm:pt-40 sm:pb-32">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           <motion.div
-            className="mb-6 sm:mb-10"
+            className="mb-2 sm:mb-4"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block">MALPRACTICE RE-ENGINEERED™</span>
+            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block">MALPRACTICE REENGINEERED™</span>
           </motion.div>
 
           <div className="w-full flex flex-col items-center justify-center">
@@ -256,10 +257,14 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-xl w-full sm:w-auto max-w-xs sm:max-w-none">
-              Join the Waitlist
-              <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
-            </Button>
+            <JoinWaitlistModal
+              trigger={
+                <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-xl w-full sm:w-auto max-w-xs sm:max-w-none">
+                  Request Early Access
+                  <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
+                </Button>
+              }
+            />
           </motion.div>
         </div>
       </div>
@@ -1180,25 +1185,19 @@ function JoinSection() {
           />
 
           <p className="text-2xl text-gray-300 mb-14 leading-relaxed text-center">
-            <span className="block text-4xl sm:text-5xl font-extrabold text-terracotta-400 mb-4">Malpractice, Re-engineered.</span>
+            <span className="block text-4xl sm:text-5xl font-extrabold text-terracotta-400 mb-4 whitespace-nowrap">The Future of Malpractice Starts Here.</span>
             Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
           </p>
 
           <div className="bg-terracotta-500 rounded-3xl shadow-2xl p-14 w-full flex flex-col items-center border-4 border-terracotta-400">
-            <form className="w-full flex flex-col sm:flex-row gap-10 mb-2" onSubmit={handleSubmit}>
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                className="flex-1 bg-white border-2 border-terracotta-400 text-gray-900 placeholder:text-gray-500 text-xl py-8 px-6 rounded-xl font-bold shadow-md focus:ring-4 focus:ring-terracotta-300 transition-all duration-200"
-                disabled={loading}
-              />
-              <Button type="submit" disabled={loading} className="bg-white text-terracotta-600 hover:bg-gray-100 px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
-                Request Early Access
-                <ArrowRight className="w-8 h-8" />
-              </Button>
-            </form>
+            <JoinWaitlistModal
+              trigger={
+                <Button className="bg-white text-terracotta-600 hover:bg-gray-100 px-14 py-8 text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
+                  Request Early Access
+                  <ArrowRight className="w-8 h-8" />
+                </Button>
+              }
+            />
           </div>
         </div>
       </div>
