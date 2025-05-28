@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
 
     // Store data in Supabase
     const { error } = await supabase
-      .from('waitlist')
+      .from('gammalex_waitlist')
       .insert([{ 
         email, 
         phone: phone || null,
