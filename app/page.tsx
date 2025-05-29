@@ -1241,7 +1241,7 @@ function FooterGV() {
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
           <Link href="/terms" className="hover:underline">Terms of Use</Link>
           <Link href="/gdpr-ccpa-compliance" className="hover:underline">GDPR / CCPA Compliance</Link>
-          <Link href="/news-press" className="hover:underline">News and Press</Link>
+          <Link href="/" className="hover:underline">News and Press</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
           <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
           <div className="text-xs md:text-sm whitespace-nowrap mt-2">
