@@ -86,7 +86,6 @@ export default function GammaLexPage() {
             </div>
           </div>
         </section>
-        <div className="pb-32 min-h-[100px]" />
       </div>
 
       {/* Always show footer for testing */}
