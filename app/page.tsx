@@ -21,9 +21,15 @@ import {
 } from "lucide-react"
 import { toast } from "@/components/ui/use-toast"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
+import WaitlistGrowth from '@/components/WaitlistGrowth'
+import WaitlistLiveCount from '@/components/WaitlistLiveCount'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
+  const isFooterVisible = useInView(ctaRef, { once: false, margin: "0px 0px -40% 0px" })
 
   useEffect(() => {
     // Snap scroll setup
@@ -36,7 +42,7 @@ export default function GammaLexPage() {
   return (
     <div
       ref={containerRef}
-      className="snap-y lg:snap-mandatory snap-proximity min-h-screen lg:h-screen overflow-y-scroll"
+      className="min-h-screen lg:h-screen overflow-y-scroll"
     >
       <Navigation />
 
@@ -56,7 +62,35 @@ export default function GammaLexPage() {
       <ProductSection />
 
       {/* Join Section */}
-      <JoinSection />
+      <div ref={ctaRef}>
+        <section id="join" className="min-h-screen flex items-center bg-black text-white">
+          <div className="max-w-none w-full px-8 lg:px-16 py-32">
+            <div className="flex flex-col items-center max-w-3xl mx-auto">
+              <AnimatedText
+                text="Pioneer the Future of Malpractice Litigation"
+                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words tracking-tight"
+              />
+              <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-satoshi">
+                <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words font-satoshi">The Future of Malpractice Starts Here.</span>
+                Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
+              </p>
+              <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
+                <JoinWaitlistModal
+                  trigger={
+                    <button className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full font-satoshi focus:outline-none">
+                      Join as an Early Partner
+                    </button>
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="pb-32 min-h-[100px]" />
+      </div>
+
+      {/* Always show footer for testing */}
+      <FooterGV />
     </div>
   )
 }
@@ -68,8 +102,9 @@ function Navigation() {
 
   const navItems = [
     { id: "about", label: "ABOUT" },
+    { id: "team", label: "TEAM" },
     { id: "product", label: "PRODUCT" },
-    { id: "join", label: "JOIN THE WAITLIST" },
+    { id: "join", label: "PARTNER WITH US" },
   ]
 
   useEffect(() => {
@@ -89,115 +124,118 @@ function Navigation() {
   }
 
   return (
-    <motion.nav
-      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
-          : "bg-white/90 backdrop-blur-sm"
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="max-w-none px-8 lg:px-16">
-        <div className="flex items-center h-20 justify-start">
-          {/* Logo */}
-          <motion.div
-            className="flex items-center cursor-pointer relative overflow-hidden"
-            onClick={() => scrollToSection("hero")}
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="relative">
-              {/* Logo Image */}
-              <motion.img
-                src="/gammalexlogo-transparent.png"
-                alt="GammaLex Logo"
-                className="h-24 relative z-10"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.1, delay: 0.8 }}
-              />
+    <>
+      {/* Actual Navigation Bar */}
+      <motion.nav
+        className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
+            : "bg-white/90 backdrop-blur-sm"
+        } font-satoshi`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-none px-8 lg:px-16">
+          <div className="flex items-center h-20 justify-start">
+            {/* Logo */}
+            <motion.div
+              className="flex items-center cursor-pointer relative overflow-hidden"
+              onClick={() => scrollToSection("hero")}
+              whileHover={{ scale: 1.02 }}
+            >
+              <div className="relative">
+                {/* Logo Image */}
+                <motion.img
+                  src="/gammalexlogo-transparent.png"
+                  alt="GammaLex Logo"
+                  className="h-24 relative z-10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.1, delay: 0.8 }}
+                />
 
-              {/* Sliding Block Overlay */}
-              <motion.div
-                className="absolute inset-0 bg-sage-600 z-20"
-                initial={{ x: "0%" }}
-                animate={{ x: "100%" }}
-                transition={{
-                  duration: 1.8, // Changed from 1.2 to 1.8
-                  ease: [0.76, 0, 0.24, 1], // Custom cubic-bezier for smooth motion
-                  delay: 0.3,
-                }}
-              />
+                {/* Sliding Block Overlay */}
+                <motion.div
+                  className="absolute inset-0 bg-sage-600 z-20"
+                  initial={{ x: "0%" }}
+                  animate={{ x: "100%" }}
+                  transition={{
+                    duration: 1.8, // Changed from 1.2 to 1.8
+                    ease: [0.76, 0, 0.24, 1], // Custom cubic-bezier for smooth motion
+                    delay: 0.3,
+                  }}
+                />
 
-              {/* Logo Reveal Mask */}
-              <motion.div
-                className="absolute inset-0 z-30"
-                initial={{ clipPath: "inset(0 100% 0 0)" }}
-                animate={{ clipPath: "inset(0 0% 0 0)" }}
-                transition={{
-                  duration: 1.8, // Changed from 1.2 to 1.8
-                  ease: [0.76, 0, 0.24, 1],
-                  delay: 0.3,
-                }}
-              >
-                <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-24" />
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center justify-center flex-1">
-            <div className="flex items-center space-x-16">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
-                  whileHover={{ y: -2 }}
+                {/* Logo Reveal Mask */}
+                <motion.div
+                  className="absolute inset-0 z-30"
+                  initial={{ clipPath: "inset(0 100% 0 0)" }}
+                  animate={{ clipPath: "inset(0 0% 0 0)" }}
+                  transition={{
+                    duration: 1.8, // Changed from 1.2 to 1.8
+                    ease: [0.76, 0, 0.24, 1],
+                    delay: 0.3,
+                  }}
                 >
-                  {item.label}
-                </motion.button>
-              ))}
+                  <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-24" />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center justify-center flex-1">
+              <div className="flex items-center space-x-32">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-2xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
+                    whileHover={{ y: -2 }}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+              </div>
             </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
+              {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
-            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-          </motion.button>
+          {/* Mobile Navigation */}
+          {isOpen && (
+            <motion.div
+              className="lg:hidden py-6 border-t border-gray-200"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+            >
+              <div className="space-y-4">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left text-xl font-medium text-gray-700 hover:text-sage-600 py-2"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+                <JoinWaitlistModal
+                  trigger={
+                    <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold w-full py-4 text-lg rounded-xl mt-4">
+                      Join the Waitlist
+                    </Button>
+                  }
+                />
+              </div>
+            </motion.div>
+          )}
         </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <motion.div
-            className="lg:hidden py-6 border-t border-gray-200"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-          >
-            <div className="space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-xl font-medium text-gray-700 hover:text-sage-600 py-2"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <JoinWaitlistModal
-                trigger={
-                  <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold w-full py-4 text-lg rounded-xl mt-4">
-                    Join the Waitlist
-                  </Button>
-                }
-              />
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </motion.nav>
+      </motion.nav>
+    </>
   )
 }
 
@@ -230,55 +268,73 @@ function AnimatedText({ text, className = "", delay = 0, children }: { text: str
   )
 }
 
+// Slow letter-by-letter animation for hero heading
+type AnimatedLetterByLetterProps = {
+  text: string;
+  className?: string;
+  delay?: number;
+};
+
+function AnimatedLetterByLetter({ text, className = '', delay = 0 }: AnimatedLetterByLetterProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  return (
+    <span ref={ref} className={className}>
+      {text.split('').map((letter: string, i: number) => (
+        <motion.span
+          key={i}
+          className="inline-block"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.7, delay: delay + i * 0.18, ease: [0.76, 0, 0.24, 1] }}
+        >
+          {letter === ' ' ? '\u00A0' : letter}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
 function HeroSection() {
   return (
     <section
       id="hero"
-      className="snap-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-16"
     >
-      <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-40 sm:pb-32">
-        <div className="max-w-6xl mx-auto flex flex-col items-center">
-          <motion.div
-            className="mb-1 sm:mb-4"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block">MALPRACTICE REENGINEERED™</span>
-          </motion.div>
-
-          <div className="w-full flex flex-col items-center justify-center">
-            <div className="w-full flex justify-center">
-              <div className="font-black text-gray-900 leading-[0.95] mb-1 sm:mb-6 font-sans tracking-tight text-center break-words text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
-                <span className="inline-block relative align-baseline">
-                  <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <AnimatedText
-            text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-base xs:text-lg sm:text-3xl lg:text-5xl text-gray-600 mb-6 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-normal px-1 sm:px-0"
-            delay={0.8}
-          />
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-2"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <JoinWaitlistModal
-              trigger={
-                <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-xl w-full sm:w-auto max-w-xs sm:max-w-none">
-                  Join the Waitlist
-                  <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
-                </Button>
-              }
-            />
-          </motion.div>
+      <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pt-6 md:pt-16 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
+        <motion.div
+          className="mb-1 sm:mb-4"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide block font-satoshi text-left">MALPRACTICE REENGINEERED™</span>
+        </motion.div>
+        <div className="font-black text-gray-900 leading-[0.95] mb-3 sm:mb-8 font-sans tracking-tight break-words max-w-full text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline text-left font-satoshi">
+          <span className="inline-block relative align-baseline whitespace-nowrap">
+            <AnimatedLetterByLetter text="GAMMALEX" className="inline" delay={0.3} />
+          </span>
         </div>
+        <AnimatedText
+          text="Where Malpractice Litigation Meets Modern Intelligence."
+          className="text-2xl sm:text-4xl text-gray-600 mb-8 sm:mb-12 leading-tight w-full font-satoshi text-left whitespace-normal break-words max-w-full px-1 sm:px-0"
+          delay={0.8}
+        />
+        <motion.div
+          className="flex flex-col gap-4 items-start mt-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <JoinWaitlistModal
+            trigger={
+              <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl transition-colors w-fit">
+                Join the Waitlist
+                <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
+              </Button>
+            }
+          />
+        </motion.div>
       </div>
     </section>
   )
@@ -286,16 +342,16 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="snap-section min-h-screen flex items-center bg-white">
+    <section id="about" className="min-h-screen flex items-center bg-white font-satoshi">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <AnimatedText
               text="The Future of Malpractice Litigation. Starts Here."
-              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
+              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400 font-satoshi"
             />
             <motion.p
-              className="text-2xl text-gray-600 leading-relaxed break-words text-center sm:text-left"
+              className="text-2xl text-gray-600 leading-relaxed break-words text-left"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -469,13 +525,13 @@ function TeamSection() {
 
   return (
     <>
-      <section id="team" className="snap-section min-h-screen flex items-center bg-gray-50">
+      <section id="team" className="min-h-screen flex items-center bg-gray-50 font-satoshi">
         <div className="max-w-none w-full px-8 lg:px-16 py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <AnimatedText
-                text="The Minds Behind GammaLex."
-                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
+                text={"The Minds Behind<br />the Future."}
+                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 sm:mb-12 leading-tight font-satoshi text-left break-words tracking-tight px-1 sm:px-0 transition-colors duration-200 hover:text-terracotta-400"
               />
               <motion.p
                 className="text-2xl text-gray-600 leading-relaxed"
@@ -484,14 +540,14 @@ function TeamSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                Building the future of legal AI with deep expertise in law, technology, and healthcare.
+                Redefining Legal AI with Real-World Expertise in Law, Healthcare, and Technology.
               </motion.p>
             </div>
             <div className="space-y-12">
               {team.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl"
+                  className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl font-satoshi"
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -577,7 +633,7 @@ function TeamSection() {
           onClick={closeModal}
         >
           <motion.div
-            className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8"
+            className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8 font-satoshi"
             initial={{ scale: 0.9, opacity: 0, y: 50 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 50 }}
@@ -618,7 +674,7 @@ function TeamSection() {
                 >
                   <div className="border-l-4 border-sage-200 pl-4 sm:pl-8">
                     <h4 className="text-xl sm:text-2xl font-semibold text-sage-600 mb-2 sm:mb-4 break-words">{section.title}</h4>
-                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg break-words">{section.content}</p>
+                    <div className="text-gray-700 leading-relaxed text-base sm:text-lg break-words font-satoshi">{section.content}</div>
                   </div>
                 </motion.div>
               ))}
@@ -717,7 +773,7 @@ function ProductSection() {
   }
 
   return (
-    <section id="product" className="snap-section min-h-screen flex items-center bg-white">
+    <section id="product" className="min-h-screen flex items-center bg-white font-satoshi">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -750,7 +806,7 @@ function ProductSection() {
             {products.map((product, index) => (
               <motion.div
                 key={index}
-                className="group relative p-8 bg-gray-50 rounded-2xl hover:bg-sage-50 transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group relative p-8 bg-gray-50 rounded-2xl hover:bg-sage-50 transition-all duration-300 cursor-pointer overflow-hidden font-satoshi"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -994,7 +1050,7 @@ function ProblemSection() {
   ]
 
   return (
-    <section id="problem" className="snap-section min-h-screen flex items-center bg-black text-white">
+    <section id="problem" className="min-h-screen flex items-center bg-black text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
@@ -1006,7 +1062,7 @@ function ProblemSection() {
             {/* Supporting Paragraph - Centered */}
             <div className="flex w-full justify-center">
               <motion.p
-                className="text-2xl text-gray-300 leading-relaxed text-center mb-16"
+                className="text-2xl text-gray-300 leading-relaxed text-center mb-16 font-satoshi"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -1036,12 +1092,12 @@ function ProblemSection() {
                     <stat.icon className="w-10 h-10 text-white" />
                   </div>
                   {/* Stat */}
-                  <div className="text-7xl font-black text-terracotta-400 text-center leading-none mb-4">{stat.stat}</div>
+                  <div className="text-7xl font-black text-terracotta-400 text-center leading-none mb-4 font-satoshi">{stat.stat}</div>
                 </div>
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center">{stat.title}</h3>
+                <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center font-satoshi">{stat.title}</h3>
                 {/* Description */}
-                <p className="text-lg text-gray-300 leading-relaxed mb-8 text-center">{stat.description}</p>
+                <div className="text-lg text-gray-300 leading-relaxed mb-8 text-center font-satoshi">{stat.description}</div>
                 {/* Source */}
                 {stat.source && stat.sourceUrl && (
                   <div className="mt-auto w-full flex justify-center">
@@ -1049,7 +1105,7 @@ function ProblemSection() {
                       href={stat.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-base"
+                      className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-base font-satoshi"
                     >
                       → {stat.source}
                       <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1082,15 +1138,15 @@ function ProblemSection() {
                 <DollarSign className="w-12 h-12 text-white" />
               </div>
               <div className="text-center">
-                <div className="text-6xl font-black text-terracotta-400 mb-2">Only 23%</div>
+                <div className="text-6xl font-black text-terracotta-400 mb-2 font-satoshi">Only 23%</div>
               </div>
             </div>
-            <div className="text-2xl font-bold text-white mb-4">Just a fraction of claims result in a payout, as most are dropped, dismissed, or lost at trial, despite total settlements exceeding $4 billion annually.</div>
+            <div className="text-2xl font-bold text-white mb-4 font-satoshi">Just a fraction of claims result in a payout, as most are dropped, dismissed, or lost at trial, despite total settlements exceeding $4 billion annually.</div>
             <a
               href="https://www.ama-assn.org/system/files/policy-research-perspective-medical-liability-claim-frequency.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg justify-center"
+              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg justify-center font-satoshi"
             >
               → American Medical Association, 2020
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1108,7 +1164,7 @@ function ProblemSection() {
         {/* Specialty Payouts - Side by Side Comparison */}
         <div className="mb-20">
           <motion.h3
-            className="text-4xl font-bold text-center mb-12 text-white"
+            className="text-4xl font-bold text-center mb-12 text-white font-satoshi"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -1121,26 +1177,26 @@ function ProblemSection() {
             {payoutStats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-2xl border-l-4 border-terracotta-500"
+                className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-2xl border-l-4 border-terracotta-500 font-satoshi"
                 initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="text-sm font-semibold text-terracotta-400 uppercase tracking-wide">
+                  <div className="text-sm font-semibold text-terracotta-400 uppercase tracking-wide font-satoshi">
                     {stat.specialty}
                   </div>
                   <Brain className="w-8 h-8 text-terracotta-400" />
                 </div>
-                <div className="text-4xl font-black text-white mb-2">{stat.stat}</div>
-                <h4 className="text-lg font-semibold text-gray-200 mb-3">{stat.title}</h4>
-                <p className="text-gray-300 mb-4">{stat.description}</p>
+                <div className="text-4xl font-black text-white mb-2 font-satoshi">{stat.stat}</div>
+                <h4 className="text-lg font-semibold text-gray-200 mb-3 font-satoshi">{stat.title}</h4>
+                <div className="text-gray-300 mb-4 font-satoshi">{stat.description}</div>
                 <a
                   href={stat.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-sm"
+                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-sm font-satoshi"
                 >
                   → {stat.source}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1164,59 +1220,35 @@ function ProblemSection() {
   )
 }
 
-function JoinSection() {
-  const [email, setEmail] = useState("")
-  const [loading, setLoading] = useState(false)
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      const res = await fetch("/api/join-waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      })
-      const data = await res.json()
-      if (res.ok) {
-        toast({ title: "Success!", description: data.message })
-        setEmail("")
-      } else {
-        toast({ title: "Error", description: data.message, variant: "destructive" })
-      }
-    } catch (err) {
-      toast({ title: "Error", description: "Something went wrong.", variant: "destructive" })
-    } finally {
-      setLoading(false)
-    }
-  }
-
+function FooterGV() {
   return (
-    <section id="join" className="snap-section min-h-screen flex items-center bg-black text-white">
-      <div className="max-w-none w-full px-8 lg:px-16 py-32">
-        <div className="flex flex-col items-center max-w-3xl mx-auto">
-          <AnimatedText
-            text="Pioneer the Future of Malpractice Litigation"
-            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words"
-          />
-
-          <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center">
-            <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words">The Future of Malpractice Starts Here.</span>
-            Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
-          </p>
-
-          <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center">
-            <JoinWaitlistModal
-              trigger={
-                <Button className="bg-terracotta-400 hover:bg-terracotta-500 text-white px-6 sm:px-14 py-5 sm:py-8 text-lg sm:text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
-                  Request Early Access
-                  <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" />
-                </Button>
-              }
+    <footer className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8 ml-4 md:ml-16">
+        {/* Logo */}
+        <div className="w-fit -mt-4">
+          <Link href="/">
+            <Image
+              src="/gammalexlogo-transparent.png"
+              alt="GammaLex"
+              width={96}
+              height={96}
+              className="h-24 relative z-10"
+              priority
             />
+          </Link>
+        </div>
+        {/* All content in one column */}
+        <div className="flex flex-col gap-2 md:ml-12">
+          <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+          <Link href="/terms" className="hover:underline">Terms of Use</Link>
+          <Link href="/news-press" className="hover:underline">News and Press</Link>
+          <Link href="/contact" className="hover:underline">Contact</Link>
+          <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+          <div className="text-xs md:text-sm whitespace-nowrap mt-2">
+            ©{new Date().getFullYear()} GammaLex. All rights reserved.
           </div>
         </div>
       </div>
-    </section>
-  )
+    </footer>
+  );
 }
