@@ -153,12 +153,12 @@ function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center flex-1">
-              <div className="flex items-center space-x-16">
+              <div className="flex items-center space-x-32">
                 {navItems.map((item) => (
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
+                    className="text-2xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
                     whileHover={{ y: -2 }}
                   >
                     {item.label}
