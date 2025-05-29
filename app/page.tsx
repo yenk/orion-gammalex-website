@@ -301,7 +301,7 @@ function AboutSection() {
               className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400 font-satoshi"
             />
             <motion.p
-              className="text-2xl text-gray-600 leading-relaxed break-words text-center sm:text-left"
+              className="text-2xl text-gray-600 leading-relaxed break-words text-left"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
