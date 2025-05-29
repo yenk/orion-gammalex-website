@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GdprCcpaCompliance() {
   return (
-    <div className="max-w-4xl mx-auto p-6 text-gray-800">
+    <div className="max-w-4xl mx-auto p-6 text-gray-800 font-satoshi">
       <h1 className="text-4xl font-bold mb-4">GDPR & CCPA Compliance Statement</h1>
       <p className="text-sm text-gray-500 mb-6">Effective Date: May 29, 2025 | Last Updated: May 29, 2025</p>
 

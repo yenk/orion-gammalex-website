@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TermsOfUse() {
   return (
-    <div className="max-w-4xl mx-auto p-6 text-gray-800">
+    <div className="max-w-4xl mx-auto p-6 text-gray-800 font-satoshi">
       <h1 className="text-4xl font-bold mb-4">Terms of Use</h1>
       <p className="mb-6 text-sm text-gray-500">Effective Date: May 29, 2025 | Last Updated: May 29, 2025</p>
 
