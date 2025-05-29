@@ -625,7 +625,7 @@ function TeamSection() {
                 >
                   <div className="border-l-4 border-sage-200 pl-4 sm:pl-8">
                     <h4 className="text-xl sm:text-2xl font-semibold text-sage-600 mb-2 sm:mb-4 break-words">{section.title}</h4>
-                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg break-words">{section.content}</p>
+                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg break-words font-satoshi">{section.content}</p>
                   </div>
                 </motion.div>
               ))}
@@ -1043,12 +1043,12 @@ function ProblemSection() {
                     <stat.icon className="w-10 h-10 text-white" />
                   </div>
                   {/* Stat */}
-                  <div className="text-7xl font-black text-terracotta-400 text-center leading-none mb-4">{stat.stat}</div>
+                  <div className="text-7xl font-black text-terracotta-400 text-center leading-none mb-4 font-satoshi">{stat.stat}</div>
                 </div>
                 {/* Title */}
                 <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center font-satoshi">{stat.title}</h3>
                 {/* Description */}
-                <p className="text-lg text-gray-300 leading-relaxed mb-8 text-center">{stat.description}</p>
+                <p className="text-lg text-gray-300 leading-relaxed mb-8 text-center font-satoshi">{stat.description}</p>
                 {/* Source */}
                 {stat.source && stat.sourceUrl && (
                   <div className="mt-auto w-full flex justify-center">
@@ -1056,7 +1056,7 @@ function ProblemSection() {
                       href={stat.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-base"
+                      className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-base font-satoshi"
                     >
                       → {stat.source}
                       <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1089,15 +1089,15 @@ function ProblemSection() {
                 <DollarSign className="w-12 h-12 text-white" />
               </div>
               <div className="text-center">
-                <div className="text-6xl font-black text-terracotta-400 mb-2">Only 23%</div>
+                <div className="text-6xl font-black text-terracotta-400 mb-2 font-satoshi">Only 23%</div>
               </div>
             </div>
-            <div className="text-2xl font-bold text-white mb-4">Just a fraction of claims result in a payout, as most are dropped, dismissed, or lost at trial, despite total settlements exceeding $4 billion annually.</div>
+            <div className="text-2xl font-bold text-white mb-4 font-satoshi">Just a fraction of claims result in a payout, as most are dropped, dismissed, or lost at trial, despite total settlements exceeding $4 billion annually.</div>
             <a
               href="https://www.ama-assn.org/system/files/policy-research-perspective-medical-liability-claim-frequency.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg justify-center"
+              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg justify-center font-satoshi"
             >
               → American Medical Association, 2020
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1115,7 +1115,7 @@ function ProblemSection() {
         {/* Specialty Payouts - Side by Side Comparison */}
         <div className="mb-20">
           <motion.h3
-            className="text-4xl font-bold text-center mb-12 text-white"
+            className="text-4xl font-bold text-center mb-12 text-white font-satoshi"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -1128,26 +1128,26 @@ function ProblemSection() {
             {payoutStats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-2xl border-l-4 border-terracotta-500"
+                className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-2xl border-l-4 border-terracotta-500 font-satoshi"
                 initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="text-sm font-semibold text-terracotta-400 uppercase tracking-wide">
+                  <div className="text-sm font-semibold text-terracotta-400 uppercase tracking-wide font-satoshi">
                     {stat.specialty}
                   </div>
                   <Brain className="w-8 h-8 text-terracotta-400" />
                 </div>
-                <div className="text-4xl font-black text-white mb-2">{stat.stat}</div>
-                <h4 className="text-lg font-semibold text-gray-200 mb-3">{stat.title}</h4>
-                <p className="text-gray-300 mb-4">{stat.description}</p>
+                <div className="text-4xl font-black text-white mb-2 font-satoshi">{stat.stat}</div>
+                <h4 className="text-lg font-semibold text-gray-200 mb-3 font-satoshi">{stat.title}</h4>
+                <p className="text-gray-300 mb-4 font-satoshi">{stat.description}</p>
                 <a
                   href={stat.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-sm"
+                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-sm font-satoshi"
                 >
                   → {stat.source}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1213,9 +1213,13 @@ function JoinSection() {
           </p>
 
           <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
-            <div className="flex items-center justify-center w-full">
-              <span className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full">Join as an Early Partner</span>
-            </div>
+            <JoinWaitlistModal
+              trigger={
+                <button className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full font-satoshi focus:outline-none">
+                  Join as an Early Partner
+                </button>
+              }
+            />
           </div>
         </div>
       </div>
