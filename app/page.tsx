@@ -86,7 +86,6 @@ export default function GammaLexPage() {
             </div>
           </div>
         </section>
-        <div className="pb-32 min-h-[100px]" />
       </div>
 
       {/* Always show footer for testing */}
@@ -540,7 +539,7 @@ function TeamSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                Redefining Legal AI with Real-World Expertise in Law, Healthcare, and Technology.
+                Redefining legal AI with real-world expertise in law, healthcare, and technology.
               </motion.p>
             </div>
             <div className="space-y-12">
@@ -1241,7 +1240,8 @@ function FooterGV() {
         <div className="flex flex-col gap-2 md:ml-12">
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
           <Link href="/terms" className="hover:underline">Terms of Use</Link>
-          <Link href="/news-press" className="hover:underline">News and Press</Link>
+          <Link href="/gdpr-ccpa-compliance" className="hover:underline">GDPR / CCPA Compliance</Link>
+          <Link href="/" className="hover:underline">News and Press</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
           <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
           <div className="text-xs md:text-sm whitespace-nowrap mt-2">
