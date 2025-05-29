@@ -249,13 +249,13 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block">MALPRACTICE REENGINEERED™</span>
+            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block font-satoshi">MALPRACTICE REENGINEERED™</span>
           </motion.div>
 
           <div className="w-full flex flex-col items-center justify-center">
             <div className="w-full flex justify-center">
               <div className="font-black text-gray-900 leading-[0.95] mb-1 sm:mb-6 font-sans tracking-tight text-center break-words text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
-                <span className="inline-block relative align-baseline">
+                <span className="inline-block relative align-baseline font-satoshi">
                   <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
                 </span>
               </div>
@@ -292,13 +292,13 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="snap-section min-h-screen flex items-center bg-white">
+    <section id="about" className="snap-section min-h-screen flex items-center bg-white font-satoshi">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <AnimatedText
               text="The Future of Malpractice Litigation. Starts Here."
-              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
+              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400 font-satoshi"
             />
             <motion.p
               className="text-2xl text-gray-600 leading-relaxed break-words text-center sm:text-left"
@@ -475,7 +475,7 @@ function TeamSection() {
 
   return (
     <>
-      <section id="team" className="snap-section min-h-screen flex items-center bg-gray-50">
+      <section id="team" className="snap-section min-h-screen flex items-center bg-gray-50 font-satoshi">
         <div className="max-w-none w-full px-8 lg:px-16 py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -497,7 +497,7 @@ function TeamSection() {
               {team.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl"
+                  className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl font-satoshi"
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -583,7 +583,7 @@ function TeamSection() {
           onClick={closeModal}
         >
           <motion.div
-            className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8"
+            className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8 font-satoshi"
             initial={{ scale: 0.9, opacity: 0, y: 50 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 50 }}
@@ -723,7 +723,7 @@ function ProductSection() {
   }
 
   return (
-    <section id="product" className="snap-section min-h-screen flex items-center bg-white">
+    <section id="product" className="snap-section min-h-screen flex items-center bg-white font-satoshi">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -756,7 +756,7 @@ function ProductSection() {
             {products.map((product, index) => (
               <motion.div
                 key={index}
-                className="group relative p-8 bg-gray-50 rounded-2xl hover:bg-sage-50 transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group relative p-8 bg-gray-50 rounded-2xl hover:bg-sage-50 transition-all duration-300 cursor-pointer overflow-hidden font-satoshi"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -1045,7 +1045,7 @@ function ProblemSection() {
                   <div className="text-7xl font-black text-terracotta-400 text-center leading-none mb-4">{stat.stat}</div>
                 </div>
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center">{stat.title}</h3>
+                <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center font-satoshi">{stat.title}</h3>
                 {/* Description */}
                 <p className="text-lg text-gray-300 leading-relaxed mb-8 text-center">{stat.description}</p>
                 {/* Source */}
@@ -1203,23 +1203,18 @@ function JoinSection() {
         <div className="flex flex-col items-center max-w-3xl mx-auto">
           <AnimatedText
             text="Pioneer the Future of Malpractice Litigation"
-            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words"
+            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words tracking-tight"
           />
 
-          <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center">
-            <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words">The Future of Malpractice Starts Here.</span>
+          <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-satoshi">
+            <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words font-satoshi">The Future of Malpractice Starts Here.</span>
             Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
           </p>
 
-          <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center">
-            <JoinWaitlistModal
-              trigger={
-                <Button className="bg-terracotta-400 hover:bg-terracotta-500 text-white px-6 sm:px-14 py-5 sm:py-8 text-lg sm:text-2xl font-extrabold rounded-xl shadow-lg flex items-center gap-3 transition-all duration-200">
-                  Request Early Access
-                  <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" />
-                </Button>
-              }
-            />
+          <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
+            <div className="flex items-center justify-center w-full">
+              <span className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full">Request Early Access</span>
+            </div>
           </div>
         </div>
       </div>
