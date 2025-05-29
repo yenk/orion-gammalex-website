@@ -267,52 +267,42 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="snap-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+      className="snap-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-16"
     >
-      <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 pt-20 pb-10 sm:pt-40 sm:pb-32">
-        <div className="max-w-6xl mx-auto flex flex-col items-center">
-          <motion.div
-            className="mb-1 sm:mb-4"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide text-center block font-satoshi">MALPRACTICE REENGINEERED™</span>
-          </motion.div>
-
-          <div className="w-full flex flex-col items-center justify-center">
-            <div className="w-full flex justify-center">
-              <div className="font-black text-gray-900 leading-[0.95] mb-1 sm:mb-6 font-sans tracking-tight text-center break-words text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
-                <span className="inline-block relative align-baseline font-satoshi whitespace-nowrap">
-                  <AnimatedLetterByLetter text="GAMMALEX" className="inline" delay={0.3} />
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <AnimatedText
-            text="Where Malpractice Litigation Meets Modern Intelligence."
-            className="text-base xs:text-lg sm:text-3xl lg:text-5xl text-gray-600 mb-6 sm:mb-10 leading-tight w-full font-satoshi text-center whitespace-normal px-1 sm:px-0"
-            delay={0.8}
-          />
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-2"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <JoinWaitlistModal
-              trigger={
-                <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-8 sm:px-12 py-5 sm:py-6 text-base sm:text-xl w-full sm:w-auto max-w-xs sm:max-w-none">
-                  Join the Waitlist
-                  <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
-                </Button>
-              }
-            />
-          </motion.div>
-          <WaitlistLiveCount />
+      <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pt-20 pb-10 sm:pt-40 sm:pb-32 items-start ml-16 break-words max-w-full">
+        <motion.div
+          className="mb-1 sm:mb-4"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide block font-satoshi text-left">MALPRACTICE REENGINEERED™</span>
+        </motion.div>
+        <div className="font-black text-gray-900 leading-[0.95] mb-3 sm:mb-8 font-sans tracking-tight break-words max-w-full text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline text-left font-satoshi">
+          <span className="inline-block relative align-baseline whitespace-nowrap">
+            <AnimatedLetterByLetter text="GAMMALEX" className="inline" delay={0.3} />
+          </span>
         </div>
+        <AnimatedText
+          text="Where Malpractice Litigation Meets Modern Intelligence."
+          className="text-2xl sm:text-4xl text-gray-600 mb-8 sm:mb-12 leading-tight w-full font-satoshi text-left whitespace-normal break-words max-w-full px-1 sm:px-0"
+          delay={0.8}
+        />
+        <motion.div
+          className="flex flex-col gap-4 items-start mt-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <JoinWaitlistModal
+            trigger={
+              <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl transition-colors w-fit">
+                Join the Waitlist
+                <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
+              </Button>
+            }
+          />
+        </motion.div>
       </div>
     </section>
   )
