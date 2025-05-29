@@ -86,10 +86,11 @@ export default function GammaLexPage() {
             </div>
           </div>
         </section>
+        <div className="pb-32 min-h-[100px]" />
       </div>
 
-      {/* Animated Footer */}
-      <FooterGV isVisible={isFooterVisible} />
+      {/* Always show footer for testing */}
+      <FooterGV />
     </div>
   )
 }
@@ -529,8 +530,8 @@ function TeamSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <AnimatedText
-                text="The Minds Behind GammaLex."
-                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
+                text={"The Minds Behind<br />the Future."}
+                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 sm:mb-12 leading-tight font-satoshi text-left break-words tracking-tight px-1 sm:px-0 transition-colors duration-200 hover:text-terracotta-400"
               />
               <motion.p
                 className="text-2xl text-gray-600 leading-relaxed"
@@ -539,7 +540,7 @@ function TeamSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                Building the future of legal AI with deep expertise in law, technology, and healthcare.
+                Redefining Legal AI with Real-World Expertise in Law, Healthcare, and Technology.
               </motion.p>
             </div>
             <div className="space-y-12">
@@ -1219,14 +1220,9 @@ function ProblemSection() {
   )
 }
 
-function FooterGV({ isVisible }: { isVisible?: boolean }) {
+function FooterGV() {
   return (
-    <motion.footer
-      initial={{ opacity: 0, y: 60 }}
-      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-      className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12"
-    >
+    <footer className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8 ml-4 md:ml-16">
         {/* Logo */}
         <div className="w-fit -mt-4">
@@ -1245,7 +1241,6 @@ function FooterGV({ isVisible }: { isVisible?: boolean }) {
         <div className="flex flex-col gap-2 md:ml-12">
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
           <Link href="/terms" className="hover:underline">Terms of Use</Link>
-          <Link href="/gdpr-ccpa-compliance" className="hover:underline">GDPR / CCPA Compliance</Link>
           <Link href="/news-press" className="hover:underline">News and Press</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
           <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
@@ -1254,6 +1249,6 @@ function FooterGV({ isVisible }: { isVisible?: boolean }) {
           </div>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }
