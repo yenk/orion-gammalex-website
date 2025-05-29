@@ -80,7 +80,9 @@ export default function WaitlistLiveCount() {
               {count.toLocaleString()}
             </span>
           </span>
-          <span className="text-xl sm:text-2xl font-semibold text-gray-700">
+          <span
+            className="text-base sm:text-lg text-gray-600 font-satoshi text-center whitespace-normal px-1 sm:px-0"
+          >
             Join early adopters on the GammaLex waitlist!
           </span>
         </div>
