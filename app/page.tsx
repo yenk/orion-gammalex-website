@@ -1245,6 +1245,7 @@ function FooterGV({ isVisible }: { isVisible?: boolean }) {
         <div className="flex flex-col gap-2 md:ml-12">
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
           <Link href="/terms" className="hover:underline">Terms of Use</Link>
+          <Link href="/gdpr-ccpa-compliance" className="hover:underline">GDPR / CCPA Compliance</Link>
           <Link href="/news-press" className="hover:underline">News and Press</Link>
           <Link href="/contact" className="hover:underline">Contact</Link>
           <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
