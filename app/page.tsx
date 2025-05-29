@@ -88,8 +88,8 @@ export default function GammaLexPage() {
         </section>
       </div>
 
-      {/* Always show footer for testing */}
-      <FooterGV />
+      {/* Animated Footer */}
+      <FooterGV isVisible={isFooterVisible} />
     </div>
   )
 }
@@ -1219,9 +1219,14 @@ function ProblemSection() {
   )
 }
 
-function FooterGV() {
+function FooterGV({ isVisible }: { isVisible?: boolean }) {
   return (
-    <footer className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12">
+    <motion.footer
+      initial={{ opacity: 0, y: 60 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+      className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12"
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8 ml-4 md:ml-16">
         {/* Logo */}
         <div className="w-fit -mt-4">
@@ -1248,6 +1253,6 @@ function FooterGV() {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }
