@@ -1223,7 +1223,7 @@ function ProblemSection() {
 function FooterGV() {
   return (
     <footer className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12">
-      <div className="flex flex-col md:flex-row items-start gap-8 ml-4 md:ml-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8 ml-4 md:ml-16">
         {/* Logo */}
         <div className="w-fit -mt-4">
           <Link href="/">
@@ -1237,24 +1237,16 @@ function FooterGV() {
             />
           </Link>
         </div>
-        {/* Social Links */}
-        <div className="flex flex-col gap-2">
-          <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
-          <a href="#" className="hover:underline">X</a>
-          <a href="#" className="hover:underline">YouTube</a>
-          <a href="#" className="hover:underline">Instagram</a>
-          <a href="#" className="hover:underline">Facebook</a>
-        </div>
-        {/* Site Links */}
-        <div className="flex flex-col gap-2">
+        {/* All content in one column */}
+        <div className="flex flex-col gap-2 md:ml-12">
           <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-          <Link href="/news" className="hover:underline">News</Link>
-          <Link href="/press" className="hover:underline">Press</Link>
-          <Link href="/jobs" className="hover:underline">Jobs</Link>
-        </div>
-        {/* Copyright */}
-        <div className="text-xs md:text-sm text-right md:text-left">
-          ©{new Date().getFullYear()} GammaLex. All rights reserved.
+          <Link href="/terms" className="hover:underline">Terms of Use</Link>
+          <Link href="/news-press" className="hover:underline">News and Press</Link>
+          <Link href="/contact" className="hover:underline">Contact</Link>
+          <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+          <div className="text-xs md:text-sm whitespace-nowrap mt-2">
+            ©{new Date().getFullYear()} GammaLex. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
