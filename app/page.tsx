@@ -23,6 +23,8 @@ import { toast } from "@/components/ui/use-toast"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 import WaitlistGrowth from '@/components/WaitlistGrowth'
 import WaitlistLiveCount from '@/components/WaitlistLiveCount'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -40,7 +42,7 @@ export default function GammaLexPage() {
   return (
     <div
       ref={containerRef}
-      className="snap-y lg:snap-mandatory snap-proximity min-h-screen lg:h-screen overflow-y-scroll"
+      className="min-h-screen lg:h-screen overflow-y-scroll"
     >
       <Navigation />
 
@@ -84,30 +86,11 @@ export default function GammaLexPage() {
             </div>
           </div>
         </section>
+        <div className="pb-32 min-h-[100px]" />
       </div>
 
-      <footer className="w-full border-t py-8 px-4 text-sm text-gray-500 font-satoshi">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-6">
-          {/* Left side: GammaLex logo */}
-          <div className="flex items-center">
-            <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-10 w-auto mr-3" />
-            <div>
-              <p className="font-bold text-gray-800">GammaLex</p>
-              <p className="mt-1 text-xs">Malpractice Reengineered™</p>
-              <p className="mt-2 text-xs">© {new Date().getFullYear()} GammaLex, Inc. All rights reserved.</p>
-            </div>
-          </div>
-          {/* Right side: Links */}
-          <div className="flex flex-col md:flex-row gap-4 md:items-center">
-            <a href="/terms" className="hover:underline">Terms</a>
-            <a href="/privacy" className="hover:underline">Privacy</a>
-            <a href="mailto:contact@gammalex.com" className="hover:underline">Contact</a>
-            <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </footer>
+      {/* Always show footer for testing */}
+      <FooterGV />
     </div>
   )
 }
@@ -316,7 +299,7 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="snap-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-16"
+      className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-16"
     >
       <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pt-6 md:pt-16 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
         <motion.div
@@ -359,7 +342,7 @@ function HeroSection() {
 
 function AboutSection() {
   return (
-    <section id="about" className="snap-section min-h-screen flex items-center bg-white font-satoshi">
+    <section id="about" className="min-h-screen flex items-center bg-white font-satoshi">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -542,7 +525,7 @@ function TeamSection() {
 
   return (
     <>
-      <section id="team" className="snap-section min-h-screen flex items-center bg-gray-50 font-satoshi">
+      <section id="team" className="min-h-screen flex items-center bg-gray-50 font-satoshi">
         <div className="max-w-none w-full px-8 lg:px-16 py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -691,7 +674,7 @@ function TeamSection() {
                 >
                   <div className="border-l-4 border-sage-200 pl-4 sm:pl-8">
                     <h4 className="text-xl sm:text-2xl font-semibold text-sage-600 mb-2 sm:mb-4 break-words">{section.title}</h4>
-                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg break-words font-satoshi">{section.content}</p>
+                    <div className="text-gray-700 leading-relaxed text-base sm:text-lg break-words font-satoshi">{section.content}</div>
                   </div>
                 </motion.div>
               ))}
@@ -790,7 +773,7 @@ function ProductSection() {
   }
 
   return (
-    <section id="product" className="snap-section min-h-screen flex items-center bg-white font-satoshi">
+    <section id="product" className="min-h-screen flex items-center bg-white font-satoshi">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
@@ -1067,7 +1050,7 @@ function ProblemSection() {
   ]
 
   return (
-    <section id="problem" className="snap-section min-h-screen flex items-center bg-black text-white">
+    <section id="problem" className="min-h-screen flex items-center bg-black text-white">
       <div className="max-w-none w-full px-8 lg:px-16 py-32">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
@@ -1114,7 +1097,7 @@ function ProblemSection() {
                 {/* Title */}
                 <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center font-satoshi">{stat.title}</h3>
                 {/* Description */}
-                <p className="text-lg text-gray-300 leading-relaxed mb-8 text-center font-satoshi">{stat.description}</p>
+                <div className="text-lg text-gray-300 leading-relaxed mb-8 text-center font-satoshi">{stat.description}</div>
                 {/* Source */}
                 {stat.source && stat.sourceUrl && (
                   <div className="mt-auto w-full flex justify-center">
@@ -1208,7 +1191,7 @@ function ProblemSection() {
                 </div>
                 <div className="text-4xl font-black text-white mb-2 font-satoshi">{stat.stat}</div>
                 <h4 className="text-lg font-semibold text-gray-200 mb-3 font-satoshi">{stat.title}</h4>
-                <p className="text-gray-300 mb-4 font-satoshi">{stat.description}</p>
+                <div className="text-gray-300 mb-4 font-satoshi">{stat.description}</div>
                 <a
                   href={stat.sourceUrl}
                   target="_blank"
@@ -1235,4 +1218,45 @@ function ProblemSection() {
       </div>
     </section>
   )
+}
+
+function FooterGV() {
+  return (
+    <footer className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12">
+      <div className="flex flex-col md:flex-row items-start gap-8 ml-4 md:ml-16">
+        {/* Logo */}
+        <div className="w-fit -mt-4">
+          <Link href="/">
+            <Image
+              src="/gammalexlogo-transparent.png"
+              alt="GammaLex"
+              width={96}
+              height={96}
+              className="h-24 relative z-10"
+              priority
+            />
+          </Link>
+        </div>
+        {/* Social Links */}
+        <div className="flex flex-col gap-2">
+          <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+          <a href="#" className="hover:underline">X</a>
+          <a href="#" className="hover:underline">YouTube</a>
+          <a href="#" className="hover:underline">Instagram</a>
+          <a href="#" className="hover:underline">Facebook</a>
+        </div>
+        {/* Site Links */}
+        <div className="flex flex-col gap-2">
+          <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+          <Link href="/news" className="hover:underline">News</Link>
+          <Link href="/press" className="hover:underline">Press</Link>
+          <Link href="/jobs" className="hover:underline">Jobs</Link>
+        </div>
+        {/* Copyright */}
+        <div className="text-xs md:text-sm text-right md:text-left">
+          ©{new Date().getFullYear()} GammaLex. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
 }
