@@ -70,8 +70,9 @@ function Navigation() {
 
   const navItems = [
     { id: "about", label: "ABOUT" },
+    { id: "team", label: "TEAM" },
     { id: "product", label: "PRODUCT" },
-    { id: "join", label: "JOIN THE WAITLIST" },
+    { id: "join", label: "PARTNER WITH US" },
   ]
 
   useEffect(() => {
@@ -98,7 +99,7 @@ function Navigation() {
           isScrolled
             ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
             : "bg-white/90 backdrop-blur-sm"
-        }`}
+        } font-satoshi`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -1213,7 +1214,7 @@ function JoinSection() {
 
           <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
             <div className="flex items-center justify-center w-full">
-              <span className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full">Request Early Access</span>
+              <span className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full">Join as an Early Partner</span>
             </div>
           </div>
         </div>
