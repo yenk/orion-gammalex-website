@@ -26,6 +26,8 @@ import WaitlistLiveCount from '@/components/WaitlistLiveCount'
 
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
+  const isFooterVisible = useInView(ctaRef, { once: false, margin: "0px 0px -40% 0px" })
 
   useEffect(() => {
     // Snap scroll setup
@@ -58,7 +60,54 @@ export default function GammaLexPage() {
       <ProductSection />
 
       {/* Join Section */}
-      <JoinSection />
+      <div ref={ctaRef}>
+        <section id="join" className="min-h-screen flex items-center bg-black text-white">
+          <div className="max-w-none w-full px-8 lg:px-16 py-32">
+            <div className="flex flex-col items-center max-w-3xl mx-auto">
+              <AnimatedText
+                text="Pioneer the Future of Malpractice Litigation"
+                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words tracking-tight"
+              />
+              <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-satoshi">
+                <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words font-satoshi">The Future of Malpractice Starts Here.</span>
+                Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
+              </p>
+              <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
+                <JoinWaitlistModal
+                  trigger={
+                    <button className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full font-satoshi focus:outline-none">
+                      Join as an Early Partner
+                    </button>
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer className="w-full border-t py-8 px-4 text-sm text-gray-500 font-satoshi">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-6">
+          {/* Left side: GammaLex logo */}
+          <div className="flex items-center">
+            <img src="/gammalexlogo-transparent.png" alt="GammaLex Logo" className="h-10 w-auto mr-3" />
+            <div>
+              <p className="font-bold text-gray-800">GammaLex</p>
+              <p className="mt-1 text-xs">Malpractice Reengineered™</p>
+              <p className="mt-2 text-xs">© {new Date().getFullYear()} GammaLex, Inc. All rights reserved.</p>
+            </div>
+          </div>
+          {/* Right side: Links */}
+          <div className="flex flex-col md:flex-row gap-4 md:items-center">
+            <a href="/terms" className="hover:underline">Terms</a>
+            <a href="/privacy" className="hover:underline">Privacy</a>
+            <a href="mailto:contact@gammalex.com" className="hover:underline">Contact</a>
+            <a href="https://linkedin.com/company/gammalex" target="_blank" rel="noopener noreferrer" className="hover:underline">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
@@ -269,7 +318,7 @@ function HeroSection() {
       id="hero"
       className="snap-section min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-16"
     >
-      <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pt-20 pb-10 sm:pt-40 sm:pb-32 items-start ml-16 break-words max-w-full">
+      <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pt-6 md:pt-16 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
         <motion.div
           className="mb-1 sm:mb-4"
           initial={{ opacity: 0, x: -50 }}
@@ -1030,7 +1079,7 @@ function ProblemSection() {
             {/* Supporting Paragraph - Centered */}
             <div className="flex w-full justify-center">
               <motion.p
-                className="text-2xl text-gray-300 leading-relaxed text-center mb-16"
+                className="text-2xl text-gray-300 leading-relaxed text-center mb-16 font-satoshi"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -1183,62 +1232,6 @@ function ProblemSection() {
 
         {/* System-Wide Impact - Full Width Banner */}
         {/* Removed the old $1B+ banner for consistency */}
-      </div>
-    </section>
-  )
-}
-
-function JoinSection() {
-  const [email, setEmail] = useState("")
-  const [loading, setLoading] = useState(false)
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setLoading(true)
-    try {
-      const res = await fetch("/api/join-waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      })
-      const data = await res.json()
-      if (res.ok) {
-        toast({ title: "Success!", description: data.message })
-        setEmail("")
-      } else {
-        toast({ title: "Error", description: data.message, variant: "destructive" })
-      }
-    } catch (err) {
-      toast({ title: "Error", description: "Something went wrong.", variant: "destructive" })
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  return (
-    <section id="join" className="snap-section min-h-screen flex items-center bg-black text-white">
-      <div className="max-w-none w-full px-8 lg:px-16 py-32">
-        <div className="flex flex-col items-center max-w-3xl mx-auto">
-          <AnimatedText
-            text="Pioneer the Future of Malpractice Litigation"
-            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words tracking-tight"
-          />
-
-          <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-satoshi">
-            <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words font-satoshi">The Future of Malpractice Starts Here.</span>
-            Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
-          </p>
-
-          <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
-            <JoinWaitlistModal
-              trigger={
-                <button className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full font-satoshi focus:outline-none">
-                  Join as an Early Partner
-                </button>
-              }
-            />
-          </div>
-        </div>
       </div>
     </section>
   )
