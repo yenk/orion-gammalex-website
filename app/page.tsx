@@ -539,7 +539,7 @@ function TeamSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                Redefining Legal AI with Real-World Expertise in Law, Healthcare, and Technology.
+                Redefining legal AI with real-world expertise in law, healthcare, and technology.
               </motion.p>
             </div>
             <div className="space-y-12">
