@@ -236,6 +236,33 @@ function AnimatedText({ text, className = "", delay = 0, children }: { text: str
   )
 }
 
+// Slow letter-by-letter animation for hero heading
+type AnimatedLetterByLetterProps = {
+  text: string;
+  className?: string;
+  delay?: number;
+};
+
+function AnimatedLetterByLetter({ text, className = '', delay = 0 }: AnimatedLetterByLetterProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  return (
+    <span ref={ref} className={className}>
+      {text.split('').map((letter: string, i: number) => (
+        <motion.span
+          key={i}
+          className="inline-block"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.7, delay: delay + i * 0.18, ease: [0.76, 0, 0.24, 1] }}
+        >
+          {letter === ' ' ? '\u00A0' : letter}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
+
 function HeroSection() {
   return (
     <section
@@ -256,8 +283,8 @@ function HeroSection() {
           <div className="w-full flex flex-col items-center justify-center">
             <div className="w-full flex justify-center">
               <div className="font-black text-gray-900 leading-[0.95] mb-1 sm:mb-6 font-sans tracking-tight text-center break-words text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline justify-center flex-wrap">
-                <span className="inline-block relative align-baseline font-satoshi">
-                  <AnimatedText text="GAMMALEX" className="inline" delay={0.3} />
+                <span className="inline-block relative align-baseline font-satoshi whitespace-nowrap">
+                  <AnimatedLetterByLetter text="GAMMALEX" className="inline" delay={0.3} />
                 </span>
               </div>
             </div>
