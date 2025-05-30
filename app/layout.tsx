@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import GoogleAnalytics from "@/components/GoogleAnalytics"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -31,7 +32,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.variable}>
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   )
 }
