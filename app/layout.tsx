@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import GoogleAnalytics from "@/components/GoogleAnalytics"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -10,9 +11,9 @@ export const metadata: Metadata = {
   description: "From claim viability to resolution — next-gen legal infrastructure for medical malpractice litigation.",
   generator: "v0.dev",
   icons: {
-    icon: "/gammalexlogo-transparent.png",
-    shortcut: "/gammalexlogo-transparent.png",
-    apple: "/gammalexlogo-transparent.png",
+    icon: "/gammalexlogo.png",
+    shortcut: "/gammalexlogo.png",
+    apple: "/gammalexlogo.png",
   },
 }
 
@@ -31,7 +32,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={inter.variable}>{children}</body>
+      <body className={inter.variable}>
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   )
 }
