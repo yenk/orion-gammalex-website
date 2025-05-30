@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   description: "From claim viability to resolution — next-gen legal infrastructure for medical malpractice litigation.",
   generator: "v0.dev",
   icons: {
-    icon: "/gammalexlogo-transparent.png",
-    shortcut: "/gammalexlogo-transparent.png",
-    apple: "/gammalexlogo-transparent.png",
+    icon: "/gammalexlogo.png",
+    shortcut: "/gammalexlogo.png",
+    apple: "/gammalexlogo.png",
   },
 }
 
