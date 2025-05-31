@@ -502,6 +502,50 @@ function TeamSection() {
       image: "/images/brucecahan.jpg",
       linkedin: "https://www.linkedin.com/in/brucecahan/",
     },
+    {
+      name: "MeiMei Kha",
+      role: "Chief Adventure Officer",
+      snippet:
+        "11-year-old explorer, athlete, and survivor. From hiking Yosemite peaks to surfing Ocean Beach waves, living life to the fullest and inspiring others to do the same.",
+      bioSections: [
+        {
+          title: "The Introduction",
+          content:
+            "Hi, I'm MeiMei. I'm 11 years old, and I've lived more lives than most humans. At just 3 months old, I scaled my very first summit — the highest peak above 8,000 feet at Crater Lake. No baby steps for me. I was born for adventure.",
+        },
+        {
+          title: "The Explorer",
+          content:
+            "I've flown across the world — a full 10-hour flight to Europe — and landed in Geneva like a pro. No stress, no drama, just ready to play. I've strolled the banks of the Seine in Paris and taken trains from Geneva to Basel to Lyon to Paris to Barcelona (I almost got an EU Pet Passport — but apparently I'm too fabulous for red tape).",
+        },
+        {
+          title: "The Athlete",
+          content:
+            "I've hiked legendary peaks in Yosemite and Squamish (The Chief? Crushed it), and run 10-mile trails with my mom all the way up to 11,000 feet like it's no big deal. I've surfed waves at Ocean Beach that towered over me and swam in cold, wild ocean water just because my heart told me to. No fear. Just joy.",
+        },
+        {
+          title: "The Survivor",
+          content:
+            "I've survived three pit bull attacks — not because I provoked them, but because I was just too adorable and they were clearly jealous of my life of adventure. I came out of it with over 20 stitches, and even more grit.",
+        },
+        {
+          title: "The Foodie",
+          content:
+            "I once ate an entire raw frozen pie dough and 75% of a bag of Hershey's Kisses. Dangerous? Maybe. Regrets? None. I'm still here, still standing, still thriving.",
+        },
+        {
+          title: "The Inspiration",
+          content:
+            "At 11, I walk several miles a day, healthy, sound, and full of life. I don't just go places — I live them. And I believe everyone deserves the chance to live fully, just like me.",
+        },
+        {
+          title: "The Purpose",
+          content:
+            "That's why I'm proud my mom is building GammaLex — using AI to help people hurt by medical malpractice get the justice they deserve. Because no one should be left behind when life gets hard. I'm MeiMei. I'm just here for the adventure, the love, and whatever snack might fall off the counter next. Dog. Explorer. Survivor. Athlete. Queen. Let's go live a little.",
+        },
+      ],
+      image: "/images/meigirl_purpleshirt.jpg",
+    },
   ]
 
   const openModal = (index: number) => {
