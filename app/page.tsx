@@ -298,9 +298,15 @@ function HeroSection() {
   return (
     <section
       id="hero"
+
+      className="min-h-[calc(100vh-5rem)] flex items-start bg-gradient-to-br from-gray-50 to-white relative overflow-hidden pt-12 md:pt-24"
+    >
+      <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
+
       className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-8 sm:py-16"
     >
       <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pt-2 sm:pt-16 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
+
         <motion.div
           className="mb-1 sm:mb-4"
           initial={{ opacity: 0, x: -50 }}
