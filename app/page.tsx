@@ -574,7 +574,7 @@ function TeamSection() {
             <div>
               <AnimatedText
                 text={"The Minds Behind<br />the Future."}
-                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 sm:mb-12 leading-tight font-satoshi text-left break-words tracking-tight px-1 sm:px-0 transition-colors duration-200 hover:text-terracotta-400"
+                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
               />
               <motion.p
                 className="text-2xl text-gray-600 leading-relaxed"
