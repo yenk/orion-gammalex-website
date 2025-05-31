@@ -136,7 +136,7 @@ function Navigation() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-none px-8 lg:px-16">
-          <div className="flex items-center h-20 justify-start">
+          <div className="flex items-center h-20 justify-between">
             {/* Logo */}
             <motion.div
               className="flex items-center cursor-pointer relative overflow-hidden"
@@ -160,8 +160,8 @@ function Navigation() {
                   initial={{ x: "0%" }}
                   animate={{ x: "100%" }}
                   transition={{
-                    duration: 1.8, // Changed from 1.2 to 1.8
-                    ease: [0.76, 0, 0.24, 1], // Custom cubic-bezier for smooth motion
+                    duration: 1.8,
+                    ease: [0.76, 0, 0.24, 1],
                     delay: 0.3,
                   }}
                 />
@@ -172,7 +172,7 @@ function Navigation() {
                   initial={{ clipPath: "inset(0 100% 0 0)" }}
                   animate={{ clipPath: "inset(0 0% 0 0)" }}
                   transition={{
-                    duration: 1.8, // Changed from 1.2 to 1.8
+                    duration: 1.8,
                     ease: [0.76, 0, 0.24, 1],
                     delay: 0.3,
                   }}
@@ -199,7 +199,7 @@ function Navigation() {
             </div>
 
             {/* Mobile Menu Button */}
-            <motion.button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
+            <motion.button className="lg:hidden p-2 ml-auto" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
               {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </motion.button>
           </div>
@@ -298,9 +298,15 @@ function HeroSection() {
   return (
     <section
       id="hero"
+
       className="min-h-[calc(100vh-5rem)] flex items-start bg-gradient-to-br from-gray-50 to-white relative overflow-hidden pt-12 md:pt-24"
     >
       <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
+
+      className="min-h-screen flex items-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden py-8 sm:py-16"
+    >
+      <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pt-2 sm:pt-16 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
+
         <motion.div
           className="mb-1 sm:mb-4"
           initial={{ opacity: 0, x: -50 }}
