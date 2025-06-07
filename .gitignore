@@ -10,7 +10,7 @@
 # production
 /build
 
-# debug
+# debugecho
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -25,3 +25,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.DS_Store
