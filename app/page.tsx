@@ -18,6 +18,9 @@ import {
   Scale,
   User,
   Briefcase,
+  Shield,
+  Zap,
+  MessageCircle,
 } from "lucide-react"
 import { toast } from "@/components/ui/use-toast"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
@@ -25,7 +28,15 @@ import WaitlistGrowth from '@/components/WaitlistGrowth'
 import WaitlistLiveCount from '@/components/WaitlistLiveCount'
 import Image from 'next/image'
 import Link from 'next/link'
+import { CopilotHero } from "@/components/CopilotHero"
+import { FeatureHighlights } from "@/components/FeatureHighlights"
+import { ProductFeaturesDemo, ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma } from "@/components/ProductFeaturesDemo"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 
+/**
+ * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
+ * Uses modular hero and toolkit sections, keeping layout, navigation, and join waitlist CTA.
+ */
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
@@ -47,13 +58,7 @@ export default function GammaLexPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <HeroSection />
-
-      {/* Problem Section */}
-      <ProblemSection />
-
-      {/* About Section */}
-      <AboutSection />
+      <CopilotHero />
 
       {/* Team Section */}
       <TeamSection />
@@ -61,17 +66,23 @@ export default function GammaLexPage() {
       {/* Product Section */}
       <ProductSection />
 
+      {/* Problem Section */}
+      <ProblemSection />
+
+      {/* About Section */}
+      <AboutSection />
+
       {/* Join Section */}
       <div ref={ctaRef}>
         <section id="join" className="min-h-screen flex items-center bg-black text-white">
           <div className="max-w-none w-full px-8 lg:px-16 py-32">
             <div className="flex flex-col items-center max-w-3xl mx-auto">
               <AnimatedText
-                text="Pioneer the Future of Malpractice Litigation"
+                text="Pioneer the Future of Pre-Authorization and Denial Intelligence."
                 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words tracking-tight"
               />
               <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-satoshi">
-                <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words font-satoshi">The Future of Malpractice Starts Here.</span>
+                <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words font-satoshi">The future of clinical and legal risk starts here—with GammaLex.</span>
                 Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
               </p>
               <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
@@ -118,6 +129,15 @@ function Navigation() {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
+    }
+    setIsOpen(false)
+  }
+
+  const handleNavClick = (item: any) => {
+    if (item.external) {
+      window.location.href = `/${item.id}`
+    } else {
+      scrollToSection(item.id)
     }
     setIsOpen(false)
   }
@@ -188,7 +208,7 @@ function Navigation() {
                 {navItems.map((item) => (
                   <motion.button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => handleNavClick(item)}
                     className="text-2xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
                     whileHover={{ y: -2 }}
                   >
@@ -216,7 +236,7 @@ function Navigation() {
                 {navItems.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => handleNavClick(item)}
                     className="block w-full text-left text-xl font-medium text-gray-700 hover:text-sage-600 py-2"
                   >
                     {item.label}
@@ -294,51 +314,6 @@ function AnimatedLetterByLetter({ text, className = '', delay = 0 }: AnimatedLet
   );
 }
 
-function HeroSection() {
-  return (
-    <section
-      id="hero"
-      className="min-h-[calc(100vh-5rem)] flex items-start bg-gradient-to-br from-gray-50 to-white relative overflow-hidden pt-12 md:pt-24"
-    >
-      <div className="max-w-screen-xl mx-auto w-full flex flex-col gap-6 px-0 pb-10 sm:pb-32 items-start ml-16 break-words max-w-full">
-        <motion.div
-          className="mb-1 sm:mb-4"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="text-sage-400 font-semibold text-base sm:text-lg lg:text-xl tracking-wide block font-satoshi text-left">MALPRACTICE REENGINEERED™</span>
-        </motion.div>
-        <div className="font-black text-gray-900 leading-[0.95] mb-3 sm:mb-8 font-sans tracking-tight break-words max-w-full text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[16rem] flex items-baseline text-left font-satoshi">
-          <span className="inline-block relative align-baseline whitespace-nowrap">
-            <AnimatedLetterByLetter text="GAMMALEX" className="inline" delay={0.3} />
-          </span>
-        </div>
-        <AnimatedText
-          text="Where Malpractice Litigation Meets Modern Intelligence."
-          className="text-2xl sm:text-4xl text-gray-600 mb-8 sm:mb-12 leading-tight w-full font-satoshi text-left whitespace-normal break-words max-w-full px-1 sm:px-0"
-          delay={0.8}
-        />
-        <motion.div
-          className="flex flex-col gap-4 items-start mt-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <JoinWaitlistModal
-            trigger={
-              <Button size="lg" className="bg-sage-600 hover:bg-sage-700 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl transition-colors w-fit">
-                Join the Waitlist
-                <ArrowRight className="ml-3 w-5 h-5 sm:w-6 sm:h-6" />
-              </Button>
-            }
-          />
-        </motion.div>
-      </div>
-    </section>
-  )
-}
-
 function AboutSection() {
   return (
     <section id="about" className="min-h-screen flex items-center bg-white font-satoshi">
@@ -346,17 +321,17 @@ function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <AnimatedText
-              text="The Future of Malpractice Litigation. Starts Here."
+              text="The Future of Pre-Auth & Legal Risk Intelligence. Starts Here."
               className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400 font-satoshi"
             />
             <motion.p
               className="text-2xl text-gray-600 leading-relaxed break-words text-left"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Building AI that transforms medical malpractice litigation from the ground up.
+              Building AI that transforms medical pre-authorization, denial risk, and legal justification from the ground up.
             </motion.p>
           </div>
 
@@ -368,9 +343,7 @@ function AboutSection() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              GammaLex was founded on a simple but urgent idea: medical malpractice litigation is too slow, too complex,
-              and too uncertain. We're building AI that changes that, starting with tools that help litigators predict
-              claim viability, streamline drafting, and make smarter decisions, faster.
+              GammaLex is the AI Copilot for Medical Pre-Auth and Denial Risk. We automate the paperwork battle—matching CPT codes to payer policy, surfacing clinical and legal gaps, and generating compliant justifications in real time.
             </motion.p>
 
             <motion.p
@@ -380,8 +353,7 @@ function AboutSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Our mission is to make malpractice litigation more efficient, equitable, and data-driven, giving lawyers
-              the clarity they need from first intake to an informed outcome.
+              Our mission: help clinicians, billers, and legal professionals beat denials, reduce malpractice risk, and get patients the care they need—faster and with less friction.
             </motion.p>
 
             <motion.p
@@ -391,11 +363,7 @@ function AboutSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              GammaLex is powered by agentic AI — autonomous, adaptive legal intelligence designed to operate like a
-              litigation teammate. Unlike static automation, our system understands malpractice cases, reasons through
-              medical-legal complexity, and improves with expert feedback. It evaluates viability using precedent,
-              structured and unstructured data, triages by merit and specialty, drafts tailored documents, and surfaces
-              hidden risks — all in minutes, not weeks.
+              GammaLex combines LLM intelligence, legal context, and policy understanding into one platform. Our AI reviews clinical documentation, flags missing evidence, scores denial and malpractice risk, and drafts legal-ready notes—so you can focus on care, not paperwork.
             </motion.p>
 
             <motion.p
@@ -405,8 +373,7 @@ function AboutSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              While we're focused on empowering litigators first, our AI engine is built to scale with the malpractice
-              ecosystem — enabling future tools for claimants, insurers, and hospital risk teams.
+              Built for the entire pre-auth ecosystem, GammaLex empowers clinicians, billers, legal teams, and payers to work smarter, reduce risk, and deliver better outcomes—one authorization at a time.
             </motion.p>
           </div>
         </div>
@@ -730,274 +697,71 @@ function TeamSection() {
 }
 
 function ProductSection() {
-  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null)
-  const [demoProgress, setDemoProgress] = useState(0)
-
-  const products = [
+  const features = [
     {
-      icon: Brain,
-      title: "Viability Prediction",
-      description: "AI-powered case strength assessment in seconds",
-      benefit: "Reduce weak case intake by 60%",
-      demoSteps: [
-        { label: "Analyzing medical records...", progress: 25 },
-        { label: "Evaluating liability factors...", progress: 50 },
-        { label: "Calculating settlement probability...", progress: 75 },
-        { label: "Viability Score: 87% - High Merit", progress: 100 },
-      ],
-      mockData: {
-        caseType: "Surgical Error",
-        score: "87%",
-        timeline: "18-24 months",
-        settlement: "85% probability",
-      },
+      key: "viability",
+      title: "Viability Scoring (beta)",
+      desc: "Instantly score approval likelihood for pre-auth requests. Enter CPT, ICD-10, and a brief note to see risk, red flags, and confidence—all with mock data for now.",
+      icon: <Scale className="w-8 h-8 text-sage-600" />,
+      Demo: ViabilityScoring
     },
     {
-      icon: FileText,
-      title: "AI-Powered Drafting",
-      description: "Generate timelines, briefs, and summaries instantly",
-      benefit: "Cut document prep time by 75%",
-      demoSteps: [
-        { label: "Processing case facts...", progress: 20 },
-        { label: "Structuring timeline...", progress: 40 },
-        { label: "Generating legal arguments...", progress: 70 },
-        { label: "Document ready for review", progress: 100 },
-      ],
-      mockData: {
-        docType: "Medical Timeline",
-        pages: "12 pages",
-        time: "3.2 seconds",
-        accuracy: "98% complete",
-      },
+      key: "writer",
+      title: "Pre-Auth Writer",
+      desc: "Generate structured, policy-aligned medical necessity statements. Inputs: CPT, ICD-10, payer, and rationale. Output: a compliant justification, ready for review.",
+      icon: <FileText className="w-8 h-8 text-terracotta-600" />,
+      Demo: PreAuthWriter
     },
     {
-      icon: TrendingUp,
-      title: "Litigation Signal Detection",
-      description: "Identify patterns and precedents across cases",
-      benefit: "Uncover hidden case insights",
-      demoSteps: [
-        { label: "Scanning case database...", progress: 30 },
-        { label: "Identifying patterns...", progress: 60 },
-        { label: "Matching precedents...", progress: 85 },
-        { label: "Found 23 similar cases", progress: 100 },
-      ],
-      mockData: {
-        patterns: "23 matches",
-        precedents: "15 favorable",
-        insights: "3 key factors",
-        confidence: "94% match",
-      },
+      key: "comply",
+      title: "Comply Draft",
+      desc: "Wraps Pre-Auth Writer output into a user-friendly format for clinicians and legal teams. Ready for pre-auth forms, appeals, or legal review.",
+      icon: <Shield className="w-8 h-8 text-bronze-600" />,
+      Demo: ComplyDraft
     },
+    {
+      key: "policy",
+      title: "Policy Lookup",
+      desc: "Look up NCD/LCD policy info by CPT or keyword. Get summarized coverage rules, frequency, documentation needs, and source links—mocked for demo.",
+      icon: <Brain className="w-8 h-8 text-sage-600" />,
+      Demo: PolicyLookup
+    },
+    {
+      key: "gamma",
+      title: "Ask Gamma (Chatbot)",
+      desc: "Ask any question about CPT coverage or denial reasons. Get a plain-English answer with a mock source, simulating the AI copilot experience.",
+      icon: <MessageCircle className="w-8 h-8 text-sage-600" />,
+      Demo: AskGamma
+    }
   ]
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout
-    if (hoveredProduct !== null) {
-      setDemoProgress(0)
-      interval = setInterval(() => {
-        setDemoProgress((prev) => {
-          if (prev >= 100) {
-            clearInterval(interval)
-            return 100
-          }
-          return prev + 2
-        })
-      }, 50)
-    }
-    return () => {
-      if (interval) clearInterval(interval)
-    }
-  }, [hoveredProduct])
-
-  const getCurrentStep = (productIndex: number) => {
-    if (hoveredProduct !== productIndex) return null
-    const steps = products[productIndex].demoSteps
-    return steps.find((step) => demoProgress <= step.progress) || steps[steps.length - 1]
-  }
-
   return (
     <section id="product" className="min-h-screen flex items-center bg-white font-satoshi">
-      <div className="max-w-none w-full px-8 lg:px-16 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <AnimatedText
-              text={"Three Tools.<br />Infinite Advantage."}
-              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
-            />
-            <motion.p
-              className="text-2xl text-gray-600 leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              Purpose-built AI that understands the nuances of medical malpractice litigation.
-            </motion.p>
-
-            <motion.p
-              className="text-2xl text-gray-600 leading-relaxed mt-6"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              viewport={{ once: true }}
-            >
-              This is beyond automation. It's augmentation with precision at scale.
-            </motion.p>
-          </div>
-
-          <div className="space-y-12">
-            {products.map((product, index) => (
-              <motion.div
-                key={index}
-                className="group relative p-8 bg-gray-50 rounded-2xl hover:bg-sage-50 transition-all duration-300 cursor-pointer overflow-hidden font-satoshi"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                onMouseEnter={() => setHoveredProduct(index)}
-                onMouseLeave={() => {
-                  setHoveredProduct(null)
-                  setDemoProgress(0)
-                }}
-              >
-                {/* Background Animation */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-sage-100 to-sage-200 opacity-0"
-                  animate={{
-                    opacity: hoveredProduct === index ? 0.3 : 0,
-                    scale: hoveredProduct === index ? 1.05 : 1,
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                <div className="relative z-10">
-                  <div className="flex items-start space-x-6">
-                    <motion.div
-                      className="bg-sage-100 p-4 rounded-xl group-hover:bg-sage-200 transition-colors"
-                      animate={{
-                        scale: hoveredProduct === index ? 1.1 : 1,
-                        rotate: hoveredProduct === index ? 5 : 0,
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <product.icon className="w-8 h-8 text-sage-600" />
-                    </motion.div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.title}</h3>
-                      <p className="text-lg text-gray-600 mb-4 leading-relaxed">{product.description}</p>
-
-                      {/* Demo Interface */}
-                      <AnimatePresence>
-                        {hoveredProduct === index && (
-                          <motion.div
-                            className="bg-white rounded-lg p-4 mb-4 border border-sage-200 shadow-lg"
-                            initial={{ opacity: 0, height: 0, y: -20 }}
-                            animate={{ opacity: 1, height: "auto", y: 0 }}
-                            exit={{ opacity: 0, height: 0, y: -20 }}
-                            transition={{ duration: 0.3 }}
-                          >
-                            {/* Demo Header */}
-                            <div className="flex items-center justify-between mb-3">
-                              <div className="flex items-center space-x-2">
-                                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                                <span className="text-sm font-medium text-gray-700">Live Demo</span>
-                              </div>
-                              <span className="text-xs text-gray-500">AI Processing</span>
-                            </div>
-
-                            {/* Progress Bar */}
-                            <div className="mb-3">
-                              <div className="flex justify-between items-center mb-1">
-                                <span className="text-sm text-gray-600">
-                                  {getCurrentStep(index)?.label || "Initializing..."}
-                                </span>
-                                <span className="text-sm font-medium text-sage-600">{Math.round(demoProgress)}%</span>
-                              </div>
-                              <div className="w-full bg-gray-200 rounded-full h-2">
-                                <motion.div
-                                  className="bg-gradient-to-r from-sage-500 to-sage-600 h-2 rounded-full"
-                                  initial={{ width: 0 }}
-                                  animate={{ width: `${demoProgress}%` }}
-                                  transition={{ duration: 0.1 }}
-                                />
-                              </div>
-                            </div>
-
-                            {/* Mock Results */}
-                            {demoProgress === 100 && (
-                              <motion.div
-                                className="grid grid-cols-2 gap-3 mt-4"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
-                              >
-                                {Object.entries(product.mockData).map(([key, value], i) => (
-                                  <motion.div
-                                    key={key}
-                                    className="bg-sage-50 p-2 rounded text-center"
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.1 * i }}
-                                  >
-                                    <div className="text-xs text-gray-600 capitalize">
-                                      {key.replace(/([A-Z])/g, " $1")}
-                                    </div>
-                                    <div className="text-sm font-semibold text-sage-700">{value}</div>
-                                  </motion.div>
-                                ))}
-                              </motion.div>
-                            )}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-
-                      <motion.div
-                        className="inline-flex items-center px-4 py-2 bg-sage-100 text-sage-800 rounded-full text-sm font-medium"
-                        animate={{
-                          scale: hoveredProduct === index ? 1.05 : 1,
-                          backgroundColor: hoveredProduct === index ? "#10b981" : undefined,
-                          color: hoveredProduct === index ? "#ffffff" : undefined,
-                        }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <CheckCircle className="w-4 h-4 mr-2" />
-                        {product.benefit}
-                      </motion.div>
+      <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 py-32">
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+          <h2 className="text-5xl font-bold text-gray-900 mb-8 font-satoshi text-center">One Copilot. Every Step of Pre-Auth.</h2>
+          <p className="text-2xl text-gray-600 leading-relaxed mb-12 font-satoshi text-center" style={{maxWidth: '48rem'}}>
+            From policy matching to justification drafting, GammaLex replaces app clutter with clarity—so you can move faster with less risk.
+          </p>
+          <div className="w-full overflow-x-auto pb-4">
+            <div className="flex flex-row gap-8 min-w-[700px] sm:min-w-0">
+              {features.map(f => {
+                const Demo = f.Demo
+                return (
+                  <div key={f.key} className="bg-sage-50/60 rounded-2xl p-8 shadow-sm flex flex-col items-center min-w-[340px] max-w-[400px] w-full flex-shrink-0 h-[540px] justify-between">
+                    <div className="flex flex-col items-center w-full flex-1">
+                      <div className="flex items-center gap-4 mb-3">
+                        <span className="inline-flex items-center justify-center rounded-full bg-white p-3 shadow">{f.icon}</span>
+                        <span className="text-2xl font-bold text-gray-900 font-satoshi">{f.title}</span>
+                      </div>
+                      <p className="text-lg text-gray-700 text-center mb-6 font-satoshi" style={{maxWidth: '32rem'}}>{f.desc}</p>
+                      <div className="w-full flex-1 flex flex-col justify-center items-center">
+                        <Demo buttonClassName="w-full mt-4" />
+                      </div>
                     </div>
                   </div>
-
-                  {/* Floating Elements */}
-                  <AnimatePresence>
-                    {hoveredProduct === index && (
-                      <>
-                        <motion.div
-                          className="absolute top-4 right-4 w-2 h-2 bg-sage-400 rounded-full"
-                          initial={{ scale: 0, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          exit={{ scale: 0, opacity: 0 }}
-                          transition={{ delay: 0.1 }}
-                        />
-                        <motion.div
-                          className="absolute bottom-4 right-8 w-1 h-1 bg-sage-300 rounded-full"
-                          initial={{ scale: 0, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          exit={{ scale: 0, opacity: 0 }}
-                          transition={{ delay: 0.2 }}
-                        />
-                        <motion.div
-                          className="absolute top-8 right-12 w-1.5 h-1.5 bg-sage-500 rounded-full"
-                          initial={{ scale: 0, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          exit={{ scale: 0, opacity: 0 }}
-                          transition={{ delay: 0.3 }}
-                        />
-                      </>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </motion.div>
-            ))}
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -1099,7 +863,7 @@ function ProblemSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
           <div className="col-span-full">
             <AnimatedText
-              text="Malpractice Litigation Is Broken. Stakes Have Never Been Higher."
+              text="Pre-Authorization Is Broken. <br /> Denials Are Rising."
               className="text-6xl lg:text-7xl font-bold mb-8 leading-tight font-satoshi text-center"
             />
             {/* Supporting Paragraph - Centered */}
@@ -1111,7 +875,8 @@ function ProblemSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                Litigators face scale challenges, not skill gaps. They need better tools. GammaLex delivers.
+                Clinicians and legal teams don't need more paperwork—they need precision tools. <br />
+                GammaLex is the AI copilot that connects policy, risk, and action in real time.
               </motion.p>
             </div>
           </div>
