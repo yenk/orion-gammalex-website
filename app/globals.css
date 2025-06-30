@@ -157,3 +157,15 @@ html {
     line-height: 1;
   }
 }
+
+.hero-heading span {
+  opacity: 0;
+  color: #dc6b47; /* terracotta-500 */
+  transition: color 0.6s, opacity 0.2s;
+}
+.hero-heading span.revealed {
+  opacity: 1;
+}
+.hero-heading span.final {
+  color: #181c20; /* your black */
+}
