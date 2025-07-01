@@ -61,19 +61,111 @@ export default function GammaLexPage() {
       {/* Hero Section */}
       <CopilotHero />
 
-      {/* Team Section */}
-      <TeamSection />
+      {/* Why GammaLex Section */}
+      <section id="why-gammalex" className="bg-white py-20 px-4 font-satoshi">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi text-center">Because Denials Are Just the Symptom — We're Solving the Root Cause.</h1>
+        </div>
+      </section>
 
-      {/* Product Section */}
-      <ProductFeaturesDemo />
+      <section className="bg-sage-50 py-14 px-4 font-satoshi">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 font-satoshi text-left">The Problem</h3>
+          <ul className="space-y-8">
+            <li className="flex items-start gap-4">
+              <span role="img" aria-label="Burnout" className="text-2xl">🔥</span>
+              <div>
+                <span className="font-bold text-gray-900 text-xl font-satoshi">Physicians complete ~40 pre-auths/week, 13+ hours admin</span>
+                <p className="text-2xl text-gray-600 leading-relaxed font-satoshi mt-1">93% report care delays, 89% say PA causes burnout</p>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span role="img" aria-label="Adverse events" className="text-2xl">⚠️</span>
+              <div>
+                <span className="font-bold text-gray-900 text-xl font-satoshi">82–94% of doctors: PAs lead to treatment abandonment or serious events</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-      {/* Problem Section */}
-      <ProblemSection />
+      <section className="bg-white py-14 px-4 font-satoshi">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 font-satoshi text-left">The Solution</h3>
+          <ul className="space-y-4 text-left">
+            <li className="text-2xl text-gray-600 leading-relaxed font-satoshi">
+              <span className="font-bold text-gray-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.
+            </li>
+            <li className="text-2xl text-gray-600 leading-relaxed font-satoshi">
+              Understands pre-auths, CPT codes, coverage policies, and clinical documentation.
+            </li>
+            <li className="text-2xl text-gray-600 leading-relaxed font-satoshi">
+              Generates real-time, evidence-backed justification and flags legal risk before care is denied.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-sage-50 py-14 px-4 font-satoshi">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-10 font-satoshi text-left">What We're Solving</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: "🤖",
+                title: "Real-time AI Justifications",
+                desc: "AI-generated, policy-aligned justifications in real time."
+              },
+              {
+                icon: "📄",
+                title: "Documentation Synthesis",
+                desc: "Synthesizes CPTs, policies, and notes into one legal-ready narrative."
+              },
+              {
+                icon: "🔍",
+                title: "Legal Risk Prediction",
+                desc: "Predictive risk signals for med-mal and coverage disputes."
+              },
+              {
+                icon: "⚡",
+                title: "Instant Defense",
+                desc: "AI-powered defense—before escalation or denial."
+              }
+            ].map(({icon, title, desc}) => (
+              <div key={title} className="bg-white rounded-3xl shadow p-8 flex flex-col items-start text-left h-full">
+                <span className="text-3xl mb-4" role="img" aria-label={title}>{icon}</span>
+                <div className="text-xl font-bold text-gray-900 mb-2 font-satoshi">{title}</div>
+                <div className="text-2xl text-gray-600 leading-relaxed font-satoshi">{desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-14 px-4 font-satoshi">
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 font-satoshi text-left">Benefits</h3>
+          <ul className="flex flex-wrap justify-start gap-6 mb-10">
+            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Less denial</li>
+            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Less burnout</li>
+            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Reduced legal risk</li>
+            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Faster care</li>
+          </ul>
+          <a href="#cta" className="inline-block bg-sage-600 text-white text-lg font-bold rounded-3xl px-10 py-5 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition font-satoshi">See GammaLex in Action</a>
+        </div>
+      </section>
+
+      <div className="w-full bg-sage-50 border-b border-sage-100">
+        <ProductFeaturesDemo />
+      </div>
 
       {/* About Section */}
       <AboutSection />
 
-      {/* Join Section */}
+      {/* Team Section */}
+      <TeamSection />
+
+      {/* Join Section (Partner With Us) */}
       <div ref={ctaRef}>
         <section id="join" className="min-h-screen flex items-center bg-black text-white">
           <div className="max-w-none w-full px-8 lg:px-16 py-32">
@@ -113,9 +205,10 @@ function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   const navItems = [
+    { id: "why-gammalex", label: "WHY GAMMALEX" },
+    { id: "product", label: "PRODUCT" },
     { id: "about", label: "ABOUT" },
     { id: "team", label: "TEAM" },
-    { id: "product", label: "PRODUCT" },
     { id: "join", label: "PARTNER WITH US" },
   ]
 
