@@ -64,7 +64,7 @@ export function CopilotHero() {
         />
         <RevealWords
           text={subheading}
-          className="w-full text-xl sm:text-2xl md:text-3xl text-gray-700 font-normal mb-10 md:mb-14 font-satoshi text-center break-words whitespace-normal"
+          className="w-full text-lg sm:text-xl md:text-2xl text-gray-700 font-normal mb-10 md:mb-14 font-satoshi text-center break-words whitespace-normal"
           delay={0.8}
         />
         <div className="flex flex-col gap-4 items-center mt-2">

@@ -147,8 +147,8 @@ function AskGamma({ buttonClassName = "" }: { buttonClassName?: string }) {
 export function ProductFeaturesDemo() {
   return (
     <section id="product" className="w-full max-w-7xl mx-auto py-28 px-2 sm:px-8">
-      <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 font-satoshi">One Copilot. Every Step of Pre-Auth.</h2>
-      <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto font-satoshi">
+      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-center mb-4 font-satoshi">One Copilot. Every Step of Pre-Auth.</h2>
+      <p className="text-2xl sm:text-3xl text-slate-600 text-center mb-12 max-w-3xl mx-auto font-satoshi">
         From policy matching to justification drafting, GammaLex replaces app clutter with clarity—so you can move faster with less risk.
       </p>
       <div className="flex flex-row gap-12 overflow-x-auto pb-6 snap-x snap-mandatory md:pb-0 w-full">

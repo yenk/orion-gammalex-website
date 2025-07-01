@@ -21,6 +21,7 @@ import {
   Shield,
   Zap,
   MessageCircle,
+  Info,
 } from "lucide-react"
 import { toast } from "@/components/ui/use-toast"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
@@ -33,6 +34,8 @@ import { FeatureHighlights } from "@/components/FeatureHighlights"
 import { ProductFeaturesDemo, ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma } from "@/components/ProductFeaturesDemo"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import AnimatedText from "@/components/ui/AnimatedText"
+import { Progress } from '@/components/ui/progress'
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -62,98 +65,48 @@ export default function GammaLexPage() {
       <CopilotHero />
 
       {/* Why GammaLex Section */}
-      <section id="why-gammalex" className="bg-white py-20 px-4 font-satoshi">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi text-center">Because Denials Are Just the Symptom — We're Solving the Root Cause.</h1>
-        </div>
-      </section>
-
-      <section className="bg-sage-50 py-14 px-4 font-satoshi">
-        <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 font-satoshi text-left">The Problem</h3>
-          <ul className="space-y-8">
-            <li className="flex items-start gap-4">
-              <span role="img" aria-label="Burnout" className="text-2xl">🔥</span>
-              <div>
-                <span className="font-bold text-gray-900 text-xl font-satoshi">Physicians complete ~40 pre-auths/week, 13+ hours admin</span>
-                <p className="text-2xl text-gray-600 leading-relaxed font-satoshi mt-1">93% report care delays, 89% say PA causes burnout</p>
+      <section id="why-gammalex" className="py-20 px-4 font-satoshi flex justify-center items-center bg-white">
+        <div className="w-full max-w-6xl bg-slate-50 rounded-3xl shadow-xl px-6 sm:px-12 py-16 flex flex-col gap-10 items-center">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 leading-tight text-center">Because Denials Are Just the Symptom —<br className='hidden sm:inline'/> We're Solving the Root Cause.</h1>
+          <p className="text-lg sm:text-xl text-slate-600 text-center max-w-3xl mb-6">GammaLex exists to address the real reasons behind medical denials—by empowering clinicians and legal teams with AI that understands both the clinical and legal landscape.</p>
+          <div className="w-full flex flex-col md:flex-row gap-10 md:gap-16">
+            {/* Why It Matters */}
+            <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col gap-6 items-start border border-slate-100">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-2xl">🧩</span>
+                <h3 className="text-2xl font-bold text-slate-900">Why It Matters</h3>
               </div>
-            </li>
-            <li className="flex items-start gap-4">
-              <span role="img" aria-label="Adverse events" className="text-2xl">⚠️</span>
-              <div>
-                <span className="font-bold text-gray-900 text-xl font-satoshi">82–94% of doctors: PAs lead to treatment abandonment or serious events</span>
+              <ul className="space-y-4">
+                <li className="text-slate-700">Pre-authorization isn't just paperwork—it's the root cause of delays, burnout, and legal risk in healthcare. Fixing it means better care, less stress, and fewer denials for everyone.</li>
+              </ul>
+            </div>
+            {/* Solution */}
+            <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col gap-6 items-start border border-slate-100">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-2xl">💡</span>
+                <h3 className="text-2xl font-bold text-slate-900">The Solution</h3>
               </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="bg-white py-14 px-4 font-satoshi">
-        <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 font-satoshi text-left">The Solution</h3>
-          <ul className="space-y-4 text-left">
-            <li className="text-2xl text-gray-600 leading-relaxed font-satoshi">
-              <span className="font-bold text-gray-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.
-            </li>
-            <li className="text-2xl text-gray-600 leading-relaxed font-satoshi">
-              Understands pre-auths, CPT codes, coverage policies, and clinical documentation.
-            </li>
-            <li className="text-2xl text-gray-600 leading-relaxed font-satoshi">
-              Generates real-time, evidence-backed justification and flags legal risk before care is denied.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="bg-sage-50 py-14 px-4 font-satoshi">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 mb-10 font-satoshi text-left">What We're Solving</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: "🤖",
-                title: "Real-time AI Justifications",
-                desc: "AI-generated, policy-aligned justifications in real time."
-              },
-              {
-                icon: "📄",
-                title: "Documentation Synthesis",
-                desc: "Synthesizes CPTs, policies, and notes into one legal-ready narrative."
-              },
-              {
-                icon: "🔍",
-                title: "Legal Risk Prediction",
-                desc: "Predictive risk signals for med-mal and coverage disputes."
-              },
-              {
-                icon: "⚡",
-                title: "Instant Defense",
-                desc: "AI-powered defense—before escalation or denial."
-              }
-            ].map(({icon, title, desc}) => (
-              <div key={title} className="bg-white rounded-3xl shadow p-8 flex flex-col items-start text-left h-full">
-                <span className="text-3xl mb-4" role="img" aria-label={title}>{icon}</span>
-                <div className="text-xl font-bold text-gray-900 mb-2 font-satoshi">{title}</div>
-                <div className="text-2xl text-gray-600 leading-relaxed font-satoshi">{desc}</div>
-              </div>
-            ))}
+              <ul className="space-y-4">
+                <li className="text-slate-700"><span className="font-bold text-slate-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.</li>
+                <li className="text-slate-700">Understands pre-auths, CPT codes, coverage policies, and clinical documentation.</li>
+                <li className="text-slate-700">Generates real-time, evidence-backed justification and flags legal risk before care is denied.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="w-full flex flex-col items-center gap-6 mt-6">
+            <div className="flex flex-wrap justify-center gap-4 mb-2">
+              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Less denial</span>
+              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Less burnout</span>
+              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Reduced legal risk</span>
+              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Faster care</span>
+            </div>
+            <a href="#cta" className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">See GammaLex in Action</a>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-14 px-4 font-satoshi">
-        <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 font-satoshi text-left">Benefits</h3>
-          <ul className="flex flex-wrap justify-start gap-6 mb-10">
-            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Less denial</li>
-            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Less burnout</li>
-            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Reduced legal risk</li>
-            <li className="bg-sage-100 rounded-3xl px-6 py-3 text-sage-700 font-bold text-lg font-satoshi">Faster care</li>
-          </ul>
-          <a href="#cta" className="inline-block bg-sage-600 text-white text-lg font-bold rounded-3xl px-10 py-5 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition font-satoshi">See GammaLex in Action</a>
-        </div>
-      </section>
+      {/* The Problem Stat Strips Section */}
+      <ProblemStatStrips />
 
       <div className="w-full bg-sage-50 border-b border-sage-100">
         <ProductFeaturesDemo />
@@ -738,263 +691,130 @@ function TeamSection() {
   )
 }
 
-function ProblemSection() {
-  const heroStats = [
+function ProblemStatStrips() {
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const stats = [
     {
-      stat: "60%",
-      title: "Medical malpractice cases fail viability checks.",
-      description: (
-        <div className="text-center">
-          <span>
-            Today, lawyers dedicate weeks or months to reviewing records and consulting experts, simply to assess claim viability.
-          </span>
-          <div className="flex flex-col gap-1 items-center justify-center w-full mt-2">
-            <a
-              href="https://www.finchmccranie.com/blog/how-long-do-medical-malpractice-cases-really-take-what-causes-delays/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
-            >
-              → Finch McCranie LLP
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://www.nejm.org/doi/full/10.1056/NEJMsa054479"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg"
-            >
-              → NEJM, 2006
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      ),
-      source: "",
-      sourceUrl: "",
-      icon: Target,
+      icon: '📄',
+      label: 'Avg. Pre-Auths per Physician per Week',
+      stat: 40,
+      subtext: 'Pre-authorization requests weekly',
+      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+      sourceLabel: 'AJMC',
     },
     {
-      stat: "31 months",
-      title: "Average time to resolve a malpractice case.",
-      description: "Delays in drafting and fragmented insights prolong outcomes.",
-      source: "Health Affairs, 2013",
-      sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/23297278/",
-      icon: Clock,
+      icon: '⏱️',
+      label: 'Hours Spent on Pre-Auth per Week',
+      stat: 13,
+      statSuffix: '+',
+      subtext: 'Hours physicians & staff spend weekly',
+      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+      sourceLabel: 'AJMC',
     },
     {
-      stat: "Over $1 billion",
-      title: "Paid out annually in malpractice claims.",
-      description: "Across all medical specialties.",
-      source: "NCH Stats, 2025",
-      sourceUrl: "https://nchstats.com/medical-malpractice-payouts-by-state/",
-      icon: Scale,
+      icon: '🚫',
+      label: 'Care Delays Due to Pre-Auth',
+      stat: 93,
+      statSuffix: '%',
+      subtext: 'Physicians report delayed patient care',
+      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+      sourceLabel: 'AMA',
+    },
+    {
+      icon: '💥',
+      label: 'Burnout Linked to Pre-Auth',
+      stat: 89,
+      statSuffix: '%',
+      subtext: 'Physicians say PA contributes to burnout',
+      source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
+      sourceLabel: 'AZMed',
+    },
+    {
+      icon: '⚠️',
+      label: 'Treatment Abandonment or Harm',
+      stat: 94,
+      statDisplay: '82–94%',
+      subtext: 'PAs linked to serious adverse events',
+      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+      sourceLabel: 'AMA',
     },
   ]
-
-  const payoutStats = [
-    {
-      stat: "$469,000",
-      title: "Average payout per neurosurgery malpractice claim.",
-      description: "Approximately $525K today (inflation adjusted).",
-      source: "PMC, 2021",
-      sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8156516/",
-      specialty: "Neurosurgery",
-    },
-    {
-      stat: "$488,852",
-      title: "Average settlement per OB/GYN malpractice case.",
-      description: "Approximately $517K today (inflation adjusted).",
-      source: "JAMA HF, 2023",
-      sourceUrl: "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2801227",
-      specialty: "OB/GYN",
-    },
-  ]
-
   return (
-    <section id="problem" className="min-h-screen flex items-center bg-black text-white">
-      <div className="max-w-none w-full px-8 lg:px-16 py-32">
-        {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-20">
-          <div className="col-span-full">
-            <AnimatedText
-              text="Pre-Authorization Is Broken. <br /> Denials Are Rising."
-              className="text-6xl lg:text-7xl font-bold mb-8 leading-tight font-satoshi text-center"
-            />
-            {/* Supporting Paragraph - Centered */}
-            <div className="flex w-full justify-center">
-              <motion.p
-                className="text-2xl text-gray-300 leading-relaxed text-center mb-16 font-satoshi"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                viewport={{ once: true }}
+    <section className="w-full bg-sage-50 py-20 px-2 sm:px-6 font-satoshi">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 text-center">How Pre-Auth Became a Systemic Risk.</h2>
+        <p className="text-lg sm:text-xl text-slate-600 text-center mb-12 max-w-2xl mx-auto">Pre-authorizations are creating a crisis of delays, burnout, and legal risk.</p>
+        <TooltipProvider>
+          <div ref={ref} className="flex flex-col divide-y divide-slate-200 rounded-2xl overflow-hidden shadow-md">
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={`flex flex-col sm:flex-row items-center gap-4 sm:gap-8 py-8 px-4 sm:px-8 transition-colors duration-200 ${i % 2 === 0 ? 'bg-white' : 'bg-sage-100'}`}
               >
-                Clinicians and legal teams don't need more paperwork—they need precision tools. <br />
-                GammaLex is the AI copilot that connects policy, risk, and action in real time.
-              </motion.p>
-            </div>
-          </div>
-        </div>
-
-        {/* Hero Statistics - Large Impact */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20">
-          {heroStats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="relative flex flex-col justify-between items-center h-full"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-black p-12 rounded-3xl border border-gray-700 hover:border-terracotta-500/50 transition-all duration-300 h-full flex flex-col items-center justify-between min-h-[520px]">
-                {/* Icon */}
-                <div className="flex flex-col items-center mb-8">
-                  <div className="bg-terracotta-500 rounded-xl w-20 h-20 flex items-center justify-center mb-6">
-                    <stat.icon className="w-10 h-10 text-white" />
+                <span className="text-3xl sm:text-4xl flex-shrink-0">{s.icon}</span>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 flex-1 w-full">
+                  <div className="flex items-end gap-2 min-w-[90px]">
+                    <span className="text-4xl sm:text-5xl font-extrabold text-slate-900">
+                      {isInView ? (
+                        s.statDisplay ? (
+                          <span>{s.statDisplay}</span>
+                        ) : (
+                          <AnimatedNumber value={s.stat} suffix={s.statSuffix} />
+                        )
+                      ) : (
+                        s.statDisplay ? <span>--</span> : <span>--</span>
+                      )}
+                    </span>
                   </div>
-                  {/* Stat */}
-                  <div className="text-7xl font-black text-terracotta-400 text-center leading-none mb-4 font-satoshi">{stat.stat}</div>
+                  <div className="flex flex-col items-start sm:items-start flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-lg font-bold text-slate-900 leading-tight">{s.label}</span>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <a href={s.source} target="_blank" rel="noopener noreferrer" className="ml-1 text-slate-400 hover:text-slate-600">
+                            <Info className="w-4 h-4 inline align-text-bottom" />
+                          </a>
+                        </TooltipTrigger>
+                        <TooltipContent side="top">
+                          <span className="text-xs font-medium">Source: {s.sourceLabel}</span>
+                        </TooltipContent>
+                      </Tooltip>
+                    </div>
+                    <div className="text-base text-slate-600 font-medium">{s.subtext}</div>
+                  </div>
                 </div>
-                {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 leading-tight text-white text-center font-satoshi">{stat.title}</h3>
-                {/* Description */}
-                <div className="text-lg text-gray-300 leading-relaxed mb-8 text-center font-satoshi">{stat.description}</div>
-                {/* Source */}
-                {stat.source && stat.sourceUrl && (
-                  <div className="mt-auto w-full flex justify-center">
-                    <a
-                      href={stat.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-base font-satoshi"
-                    >
-                      → {stat.source}
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                )}
               </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Inline Statistic - Success Rate */}
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-black/60 backdrop-blur-sm rounded-2xl p-12 border border-gray-700 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <div className="bg-terracotta-500 p-6 rounded-2xl mr-8 flex items-center justify-center">
-                <DollarSign className="w-12 h-12 text-white" />
-              </div>
-              <div className="text-center">
-                <div className="text-6xl font-black text-terracotta-400 mb-2 font-satoshi">Only 23%</div>
-              </div>
-            </div>
-            <div className="text-2xl font-bold text-white mb-4 font-satoshi">Just a fraction of claims result in a payout, as most are dropped, dismissed, or lost at trial, despite total settlements exceeding $4 billion annually.</div>
-            <a
-              href="https://www.ama-assn.org/system/files/policy-research-perspective-medical-liability-claim-frequency.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-lg justify-center font-satoshi"
-            >
-              → American Medical Association, 2020
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Specialty Payouts - Side by Side Comparison */}
-        <div className="mb-20">
-          <motion.h3
-            className="text-4xl font-bold text-center mb-12 text-white font-satoshi"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            High-Stakes Specialties: Average Payouts
-          </motion.h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {payoutStats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-2xl border-l-4 border-terracotta-500 font-satoshi"
-                initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-sm font-semibold text-terracotta-400 uppercase tracking-wide font-satoshi">
-                    {stat.specialty}
-                  </div>
-                  <Brain className="w-8 h-8 text-terracotta-400" />
-                </div>
-                <div className="text-4xl font-black text-white mb-2 font-satoshi">{stat.stat}</div>
-                <h4 className="text-lg font-semibold text-gray-200 mb-3 font-satoshi">{stat.title}</h4>
-                <div className="text-gray-300 mb-4 font-satoshi">{stat.description}</div>
-                <a
-                  href={stat.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-terracotta-400 font-medium hover:text-terracotta-300 transition-colors text-sm font-satoshi"
-                >
-                  → {stat.source}
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </a>
-              </motion.div>
             ))}
           </div>
+        </TooltipProvider>
+        <div className="flex justify-center mt-12">
+          <a href="#cta" className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">See how GammaLex helps prevent this</a>
         </div>
-
-        {/* System-Wide Impact - Full Width Banner */}
-        {/* Removed the old $1B+ banner for consistency */}
       </div>
     </section>
   )
+}
+
+// Animated number component
+function AnimatedNumber({ value, suffix }: { value: number, suffix?: string }) {
+  const [display, setDisplay] = useState(0)
+  useEffect(() => {
+    let start = 0
+    let end = value
+    let duration = 900
+    let startTime: number | null = null
+    function animate(ts: number) {
+      if (!startTime) startTime = ts
+      const progress = Math.min((ts - startTime) / duration, 1)
+      setDisplay(Math.floor(progress * (end - start) + start))
+      if (progress < 1) requestAnimationFrame(animate)
+      else setDisplay(end)
+    }
+    requestAnimationFrame(animate)
+    // eslint-disable-next-line
+  }, [value])
+  return <span>{display}{suffix}</span>
 }
 
 function FooterGV() {
