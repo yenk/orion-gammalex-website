@@ -32,6 +32,7 @@ import { CopilotHero } from "@/components/CopilotHero"
 import { FeatureHighlights } from "@/components/FeatureHighlights"
 import { ProductFeaturesDemo, ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma } from "@/components/ProductFeaturesDemo"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import AnimatedText from "@/components/ui/AnimatedText"
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -64,7 +65,7 @@ export default function GammaLexPage() {
       <TeamSection />
 
       {/* Product Section */}
-      <ProductSection />
+      <ProductFeaturesDemo />
 
       {/* Problem Section */}
       <ProblemSection />
@@ -78,11 +79,12 @@ export default function GammaLexPage() {
           <div className="max-w-none w-full px-8 lg:px-16 py-32">
             <div className="flex flex-col items-center max-w-3xl mx-auto">
               <AnimatedText
-                text="Pioneer the Future of Pre-Authorization and Denial Intelligence."
+                text={[
+                  "The future of clinical and legal risk starts here—with GammaLex."
+                ]}
                 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words tracking-tight"
               />
               <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-satoshi">
-                <span className="block text-2xl xs:text-3xl sm:text-4xl font-extrabold text-terracotta-400 mb-2 sm:mb-4 whitespace-normal break-words font-satoshi">The future of clinical and legal risk starts here—with GammaLex.</span>
                 Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
               </p>
               <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
@@ -258,62 +260,6 @@ function Navigation() {
   )
 }
 
-function AnimatedText({ text, className = "", delay = 0, children }: { text: string; className?: string; delay?: number; children?: React.ReactNode }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
-
-  // Split on <br /> for line breaks, then split each line into words
-  const lines = text.split(/<br\s*\/?\s*>/i)
-
-  return (
-    <div ref={ref} className={className}>
-      {lines.map((line, lineIdx) => (
-        <div key={lineIdx} className="w-full">
-          {line.trim().split(" ").map((word, i) => (
-            <motion.span
-              key={i}
-              className="inline-block mr-2"
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.5, delay: delay + (lineIdx * 0.1) + i * 0.1 }}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </div>
-      ))}
-      {children}
-    </div>
-  )
-}
-
-// Slow letter-by-letter animation for hero heading
-type AnimatedLetterByLetterProps = {
-  text: string;
-  className?: string;
-  delay?: number;
-};
-
-function AnimatedLetterByLetter({ text, className = '', delay = 0 }: AnimatedLetterByLetterProps) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  return (
-    <span ref={ref} className={className}>
-      {text.split('').map((letter: string, i: number) => (
-        <motion.span
-          key={i}
-          className="inline-block"
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={{ duration: 0.7, delay: delay + i * 0.18, ease: [0.76, 0, 0.24, 1] }}
-        >
-          {letter === ' ' ? '\u00A0' : letter}
-        </motion.span>
-      ))}
-    </span>
-  );
-}
-
 function AboutSection() {
   return (
     <section id="about" className="min-h-screen flex items-center bg-white font-satoshi">
@@ -321,7 +267,10 @@ function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div>
             <AnimatedText
-              text="The Future of Pre-Auth & Legal Risk Intelligence. Starts Here."
+              text={[
+                "The Future of Pre-Auth & Legal Risk Intelligence.",
+                "Starts Here."
+              ]}
               className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400 font-satoshi"
             />
             <motion.p
@@ -693,79 +642,6 @@ function TeamSection() {
         </motion.div>
       )}
     </>
-  )
-}
-
-function ProductSection() {
-  const features = [
-    {
-      key: "viability",
-      title: "Viability Scoring (beta)",
-      desc: "Instantly score approval likelihood for pre-auth requests. Enter CPT, ICD-10, and a brief note to see risk, red flags, and confidence—all with mock data for now.",
-      icon: <Scale className="w-8 h-8 text-sage-600" />,
-      Demo: ViabilityScoring
-    },
-    {
-      key: "writer",
-      title: "Pre-Auth Writer",
-      desc: "Generate structured, policy-aligned medical necessity statements. Inputs: CPT, ICD-10, payer, and rationale. Output: a compliant justification, ready for review.",
-      icon: <FileText className="w-8 h-8 text-terracotta-600" />,
-      Demo: PreAuthWriter
-    },
-    {
-      key: "comply",
-      title: "Comply Draft",
-      desc: "Wraps Pre-Auth Writer output into a user-friendly format for clinicians and legal teams. Ready for pre-auth forms, appeals, or legal review.",
-      icon: <Shield className="w-8 h-8 text-bronze-600" />,
-      Demo: ComplyDraft
-    },
-    {
-      key: "policy",
-      title: "Policy Lookup",
-      desc: "Look up NCD/LCD policy info by CPT or keyword. Get summarized coverage rules, frequency, documentation needs, and source links—mocked for demo.",
-      icon: <Brain className="w-8 h-8 text-sage-600" />,
-      Demo: PolicyLookup
-    },
-    {
-      key: "gamma",
-      title: "Ask Gamma (Chatbot)",
-      desc: "Ask any question about CPT coverage or denial reasons. Get a plain-English answer with a mock source, simulating the AI copilot experience.",
-      icon: <MessageCircle className="w-8 h-8 text-sage-600" />,
-      Demo: AskGamma
-    }
-  ]
-  return (
-    <section id="product" className="min-h-screen flex items-center bg-white font-satoshi">
-      <div className="max-w-none w-full px-4 sm:px-8 lg:px-16 py-32">
-        <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <h2 className="text-5xl font-bold text-gray-900 mb-8 font-satoshi text-center">One Copilot. Every Step of Pre-Auth.</h2>
-          <p className="text-2xl text-gray-600 leading-relaxed mb-12 font-satoshi text-center" style={{maxWidth: '48rem'}}>
-            From policy matching to justification drafting, GammaLex replaces app clutter with clarity—so you can move faster with less risk.
-          </p>
-          <div className="w-full overflow-x-auto pb-4">
-            <div className="flex flex-row gap-8 min-w-[700px] sm:min-w-0">
-              {features.map(f => {
-                const Demo = f.Demo
-                return (
-                  <div key={f.key} className="bg-sage-50/60 rounded-2xl p-8 shadow-sm flex flex-col items-center min-w-[340px] max-w-[400px] w-full flex-shrink-0 h-[540px] justify-between">
-                    <div className="flex flex-col items-center w-full flex-1">
-                      <div className="flex items-center gap-4 mb-3">
-                        <span className="inline-flex items-center justify-center rounded-full bg-white p-3 shadow">{f.icon}</span>
-                        <span className="text-2xl font-bold text-gray-900 font-satoshi">{f.title}</span>
-                      </div>
-                      <p className="text-lg text-gray-700 text-center mb-6 font-satoshi" style={{maxWidth: '32rem'}}>{f.desc}</p>
-                      <div className="w-full flex-1 flex flex-col justify-center items-center">
-                        <Demo buttonClassName="w-full mt-4" />
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   )
 }
 

@@ -5,6 +5,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { Scale, FileText, Shield } from "lucide-react"
 
 function ViabilityScoring({ buttonClassName = "" }: { buttonClassName?: string }) {
   const [cpt, setCpt] = useState("77080")
@@ -145,21 +146,77 @@ function AskGamma({ buttonClassName = "" }: { buttonClassName?: string }) {
 
 export function ProductFeaturesDemo() {
   return (
-    <section className="w-full max-w-3xl mx-auto py-12 px-2 sm:px-0">
-      <Tabs defaultValue="viability" className="w-full">
-        <TabsList className="w-full flex flex-wrap gap-2 mb-8">
-          <TabsTrigger value="viability">Viability Scoring</TabsTrigger>
-          <TabsTrigger value="writer">Pre-Auth Writer</TabsTrigger>
-          <TabsTrigger value="comply">Comply Draft</TabsTrigger>
-          <TabsTrigger value="policy">Policy Lookup</TabsTrigger>
-          <TabsTrigger value="gamma">Ask Gamma</TabsTrigger>
-        </TabsList>
-        <TabsContent value="viability"><ViabilityScoring /></TabsContent>
-        <TabsContent value="writer"><PreAuthWriter /></TabsContent>
-        <TabsContent value="comply"><ComplyDraft /></TabsContent>
-        <TabsContent value="policy"><PolicyLookup /></TabsContent>
-        <TabsContent value="gamma"><AskGamma /></TabsContent>
-      </Tabs>
+    <section id="product" className="w-full max-w-7xl mx-auto py-28 px-2 sm:px-8">
+      <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 font-satoshi">One Copilot. Every Step of Pre-Auth.</h2>
+      <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto font-satoshi">
+        From policy matching to justification drafting, GammaLex replaces app clutter with clarity—so you can move faster with less risk.
+      </p>
+      <div className="space-y-12">
+        {/* First row: 3 cards, horizontally scrollable on small screens */}
+        <div className="flex flex-row gap-10 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-10 md:overflow-x-visible md:pb-0">
+          {/* Step 1 */}
+          <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-center bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
+            <div className="flex items-center mb-6">
+              <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-lg mr-3 border-2 border-sage-200">1</div>
+              <Scale className="w-8 h-8 text-sage-600" />
+              <span className="ml-3 text-2xl font-bold font-satoshi">Viability Scoring <span className="text-base font-normal">(beta)</span></span>
+            </div>
+            <div className="text-gray-700 text-base mb-6 text-center">
+              Instantly score approval likelihood for pre-auth requests. Enter CPT, ICD-10, and a brief note to see risk, red flags, and confidence—all with mock data for now.
+            </div>
+            <ViabilityScoring buttonClassName="w-full mt-4" />
+          </div>
+          {/* Step 2 */}
+          <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-center bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
+            <div className="flex items-center mb-6">
+              <div className="w-10 h-10 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 font-bold text-lg mr-3 border-2 border-terracotta-200">2</div>
+              <FileText className="w-8 h-8 text-terracotta-600" />
+              <span className="ml-3 text-2xl font-bold font-satoshi">Pre-Auth Writer</span>
+            </div>
+            <div className="text-gray-700 text-base mb-6 text-center">
+              Generate structured, policy-aligned medical necessity statements. Inputs: CPT, ICD-10, payer, and rationale. Output: a compliant justification, ready for review.
+            </div>
+            <PreAuthWriter buttonClassName="w-full mt-4" />
+          </div>
+          {/* Step 3 */}
+          <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-center bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
+            <div className="flex items-center mb-6">
+              <div className="w-10 h-10 rounded-full bg-bronze-100 flex items-center justify-center text-bronze-600 font-bold text-lg mr-3 border-2 border-bronze-200">3</div>
+              <Shield className="w-8 h-8 text-bronze-600" />
+              <span className="ml-3 text-2xl font-bold font-satoshi">Comply Draft</span>
+            </div>
+            <div className="text-gray-700 text-base mb-6 text-center">
+              Wraps Pre-Auth Writer output into a user-friendly format for clinicians and legal teams. Ready for pre-auth forms, appeals, or legal review.
+            </div>
+            <ComplyDraft buttonClassName="w-full mt-4" />
+          </div>
+        </div>
+        {/* Second row: 2 cards, horizontally scrollable on small screens */}
+        <div className="flex flex-row gap-10 overflow-x-auto pb-4 snap-x snap-mandatory md:grid md:grid-cols-2 md:gap-10 md:overflow-x-visible md:pb-0">
+          {/* Step 4 */}
+          <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-center bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
+            <div className="flex items-center mb-6">
+              <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-lg mr-3 border-2 border-sage-200">4</div>
+              <span className="ml-3 text-2xl font-bold font-satoshi">Policy Lookup</span>
+            </div>
+            <div className="text-gray-700 text-base mb-6 text-center">
+              Look up NCD/LCD policy info by CPT or keyword. Get summarized coverage rules, frequency, documentation needs, and source links—mocked for demo.
+            </div>
+            <PolicyLookup buttonClassName="w-full mt-4" />
+          </div>
+          {/* Step 5 */}
+          <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-center bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
+            <div className="flex items-center mb-6">
+              <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-lg mr-3 border-2 border-sage-200">5</div>
+              <span className="ml-3 text-2xl font-bold font-satoshi">Ask Gamma (Chatbot)</span>
+            </div>
+            <div className="text-gray-700 text-base mb-6 text-center">
+              Ask any question about CPT coverage or denial reasons. Get a plain-English answer with a mock source, simulating the AI copilot experience.
+            </div>
+            <AskGamma buttonClassName="w-full mt-4" />
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
