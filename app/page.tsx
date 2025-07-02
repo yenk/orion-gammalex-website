@@ -620,15 +620,18 @@ function TeamSection() {
 function DotGrid({ highlighted = [] }: { highlighted?: [number, number][] }) {
   // 5x5 grid, highlighted is array of [row, col] (0-indexed)
   return (
-    <div className="grid grid-cols-5 grid-rows-5 gap-1 w-16 h-16 mx-auto">
+    <div className="grid grid-cols-5 grid-rows-5 gap-2 w-24 h-24 mx-auto">
       {Array.from({ length: 25 }).map((_, i) => {
         const row = Math.floor(i / 5)
         const col = i % 5
         const isOrange = highlighted.some(([r, c]: [number, number]) => r === row && c === col)
         return (
-          <div
+          <motion.div
             key={i}
-            className={`w-2.5 h-2.5 rounded-full ${isOrange ? 'bg-orange-500' : 'bg-slate-200'}`}
+            className={`w-4 h-4 rounded-full ${isOrange ? 'bg-gammalex-orange' : 'bg-slate-200'}`}
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.05 * i }}
           />
         )
       })}
@@ -676,26 +679,30 @@ function SystemicRiskStats() {
   ]
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
   return (
-    <section className="w-full bg-sage-50 py-20 px-2 sm:px-6 font-inter">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold font-inter text-center my-12">How Pre-Auth Became a <span className="text-orange-500">Systemic Risk</span>.</h2>
-        <p className="text-lg sm:text-xl text-slate-600 text-center mb-12 max-w-2xl mx-auto">Pre-authorizations are creating a crisis of delays, burnout, and legal risk.</p>
-        <div className="flex flex-col divide-y divide-slate-200 rounded-2xl overflow-hidden shadow-md bg-white">
+    <section className="w-full bg-sage-50 py-24 px-2 sm:px-6 font-inter">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-center mb-12 font-inter leading-tight text-slate-900">
+          How Pre-Auth Became a <span className="text-gammalex-orange font-normal">Systemic Risk</span>.
+        </h2>
+        <p className="text-3xl sm:text-4xl font-inter text-center mb-24 max-w-4xl mx-auto text-black leading-snug">
+          Pre-authorizations are creating a crisis of delays, burnout, and legal risk.
+        </p>
+        <div className="flex flex-col gap-20 w-full py-4" style={{ minHeight: '600px' }}>
           {statRows.map((row, i) => (
-            <div key={row.label} className="flex flex-col sm:flex-row items-center py-10 px-4 sm:px-10 gap-6 sm:gap-0">
+            <div key={row.label} className="flex flex-col sm:flex-row items-center py-12 sm:py-20 px-0 sm:px-8 gap-12 sm:gap-24 w-full">
               {/* Left: Label */}
-              <div className="w-full sm:w-1/4 flex justify-center sm:justify-start mb-2 sm:mb-0">
-                <span className="text-xs font-bold tracking-widest text-slate-500 uppercase whitespace-nowrap">{row.label}</span>
+              <div className="w-full sm:w-1/4 flex justify-center sm:justify-start mb-4 sm:mb-0 px-2">
+                <span className="text-lg font-bold tracking-widest text-slate-500 uppercase whitespace-nowrap font-inter letter-spacing-wide">{row.label}</span>
               </div>
               {/* Center: DotGrid */}
-              <div className="w-full sm:w-1/4 flex justify-center mb-4 sm:mb-0">
+              <div className="w-full sm:w-1/4 flex justify-center mb-8 sm:mb-0 px-2">
                 <DotGrid highlighted={row.highlighted} />
               </div>
               {/* Right: Stats */}
-              <div className="w-full sm:w-2/4 flex flex-col sm:flex-row sm:justify-end gap-6">
+              <div className="w-full sm:w-2/4 flex flex-col sm:flex-row sm:justify-end gap-10 px-2">
                 {row.stats.map((s, j) => (
                   <div key={s.label} className="flex flex-col items-center sm:items-start">
-                    <span className="text-4xl sm:text-5xl font-extrabold text-orange-500">
+                    <span className="text-5xl sm:text-6xl font-extrabold text-gammalex-orange font-inter">
                       {typeof window !== 'undefined' ? (
                         s.statDisplay ? (
                           <span>{s.statDisplay}</span>
@@ -706,17 +713,23 @@ function SystemicRiskStats() {
                         s.statDisplay ? <span>--</span> : <span>--</span>
                       )}
                     </span>
-                    <span className="text-base font-bold text-slate-900 text-center sm:text-left leading-tight mt-1">{s.label}</span>
-                    <span className="text-sm text-slate-600 text-center sm:text-left">{s.subtext}</span>
-                    <a href={s.source} target="_blank" rel="noopener noreferrer" className="text-xs text-orange-500 mt-1 hover:underline">{s.sourceLabel}</a>
+                    <span className="text-xl font-bold text-slate-900 text-center sm:text-left leading-tight mt-2 font-inter">{s.label}</span>
+                    <span className="text-lg text-slate-600 text-center sm:text-left font-inter">{s.subtext}</span>
+                    <a href={s.source} target="_blank" rel="noopener noreferrer" className="text-base text-gammalex-orange mt-2 hover:underline font-inter">{s.sourceLabel}</a>
                   </div>
                 ))}
               </div>
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-12">
-          <a href="#cta" className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">See how GammaLex helps prevent this</a>
+        <div className="flex justify-center mt-16">
+          <JoinWaitlistModal
+            trigger={
+              <button className="inline-block bg-sage-600 text-white text-xl font-bold rounded-2xl px-12 py-6 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition font-inter">
+                See how GammaLex helps prevent this
+              </button>
+            }
+          />
         </div>
       </div>
     </section>
