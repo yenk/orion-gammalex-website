@@ -65,37 +65,50 @@ export default function GammaLexPage() {
       <CopilotHero />
 
       {/* Why GammaLex Section */}
-      <section id="why-gammalex" className="py-20 px-4 font-inter flex justify-center items-center bg-white">
-        <div className="w-full max-w-6xl bg-slate-50 rounded-3xl shadow-xl px-6 sm:px-12 py-16 flex flex-col gap-10 items-center">
+      <section id="why-gammalex" className="py-24 px-2 sm:px-0 font-inter flex justify-center items-center bg-gray-50">
+        <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-normal leading-tight text-center mb-10">
             Because real <span className="text-orange-500">prior auth decisions</span> live at the intersection of medicine, policy, and law. <br />
           </h1>
           <p className="text-3xl sm:text-4xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-20">
             GammaLex exists to address the real reasons behind medical denials—by empowering clinicians and legal teams with AI that understands both the clinical and legal landscape.
           </p>
-          <div className="w-full flex flex-col md:flex-row gap-10 md:gap-16">
-            {/* Why It Matters */}
-            <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col gap-6 items-start border border-slate-100">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl">🧩</span>
-                <h3 className="text-2xl font-semibold font-inter my-6">Why <span className="text-orange-500">It Matters</span></h3>
+          <div className="w-full flex flex-col gap-0">
+            {/* Why It Matters Row */}
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-20 gap-16">
+              {/* Left: Heading */}
+              <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
+                <h3 className="text-4xl sm:text-5xl font-bold font-inter text-slate-900 text-center sm:text-right leading-tight">
+                  Why <span className="text-gammalex-orange">It Matters</span>
+                </h3>
               </div>
-              <ul className="space-y-4">
-                <li className="text-slate-700">Pre-authorization isn't just paperwork—it's the root cause of delays, burnout, and legal risk in healthcare. Fixing it means better care, less stress, and fewer denials for everyone.</li>
-              </ul>
-            </div>
-            {/* Solution */}
-            <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col gap-6 items-start border border-slate-100">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl">💡</span>
-                <h3 className="text-2xl font-semibold font-inter my-6">The Solution</h3>
+              {/* Right: Supporting Text */}
+              <div className="w-full sm:w-1/2 flex items-center justify-center px-4 sm:px-0">
+                <p className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed max-w-2xl">
+                  Pre-authorization isn't just paperwork—it's the root cause of <span className="text-gammalex-orange font-semibold">delays</span>, <span className="text-gammalex-orange font-semibold">burnout</span>, and <span className="text-gammalex-orange font-semibold">legal risk</span> in healthcare. Fixing it means <span className="text-gammalex-orange font-semibold">better care</span>, <span className="text-gammalex-orange font-semibold">less stress</span>, and <span className="text-gammalex-orange font-semibold">fewer denials</span> for everyone.
+                </p>
               </div>
-              <ul className="space-y-4">
-                <li className="text-slate-700"><span className="font-bold text-slate-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.</li>
-                <li className="text-slate-700">Understands pre-auths, CPT codes, coverage policies, and clinical documentation.</li>
-                <li className="text-slate-700">Generates real-time, evidence-backed justification and flags legal risk before care is denied.</li>
-              </ul>
             </div>
+            <div className="w-full border-t border-slate-100" />
+            {/* The Solution Row */}
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-20 gap-16">
+              {/* Left: Heading */}
+              <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
+                <h3 className="text-4xl sm:text-5xl font-bold font-inter text-slate-900 text-center sm:text-right leading-tight">
+                  The <span className="text-gammalex-orange">Solution</span>
+                </h3>
+              </div>
+              {/* Right: Supporting Text */}
+              <div className="w-full sm:w-1/2 flex items-center justify-center px-4 sm:px-0">
+                <ul className="space-y-6 max-w-2xl">
+                  <li className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed"><span className="font-bold text-slate-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.</li>
+                  <li className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed">
+                    Understands <span className="text-gammalex-orange font-semibold">pre-auths</span>. It decodes medical billing codes, coverage rules, and physician notes to generate <span className="text-gammalex-orange font-semibold">bulletproof justifications</span>—and it flags legal vulnerabilities before they become <span className="text-gammalex-orange font-semibold">liability</span>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="w-full border-t border-slate-100" />
           </div>
           <div className="w-full flex flex-col items-center gap-6 mt-6">
             <div className="flex flex-wrap justify-center gap-4 mb-2">
@@ -640,44 +653,107 @@ function DotGrid({ highlighted = [] }: { highlighted?: [number, number][] }) {
 }
 // --- End DotGrid ---
 
+function AnimatedMetric({ value, max = 100, statDisplay, label, subtext, source, sourceLabel }: { value: number, max?: number, statDisplay?: string, label: string, subtext: string, source: string, sourceLabel: React.ReactNode }) {
+  // Calculate how many dots to fill (e.g., 93% of 25 = 23)
+  const totalDots = 25;
+  const percent = statDisplay ? parseInt((statDisplay.match(/\d+/g) || ["0"])[0]) : value;
+  const filledDots = Math.round((percent / max) * totalDots);
+  // Animated number state
+  const [display, setDisplay] = useState(0);
+  useEffect(() => {
+    let start = 0;
+    let end = percent;
+    let duration = 900;
+    let startTime: number | null = null;
+    function animate(ts: number) {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - (startTime as number)) / duration, 1);
+      setDisplay(Math.floor(progress * (end - start) + start));
+      if (progress < 1) requestAnimationFrame(animate);
+      else setDisplay(end);
+    }
+    requestAnimationFrame(animate);
+  }, [percent]);
+  return (
+    <div className="flex flex-col items-center w-full py-16">
+      {/* Animated Dots */}
+      <div className="mb-8">
+        <div className="grid grid-cols-5 grid-rows-5 gap-2 w-28 h-28">
+          {Array.from({ length: totalDots }).map((_, i) => (
+            <motion.div
+              key={i}
+              className={`w-5 h-5 rounded-full ${i < filledDots ? "bg-gammalex-orange" : "bg-slate-200"}`}
+              initial={{ scale: 0.7, opacity: 0.3 }}
+              animate={{ scale: i < filledDots ? 1.1 : 1, opacity: 1 }}
+              transition={{ delay: 0.03 * i, duration: 0.3 }}
+            />
+          ))}
+        </div>
+      </div>
+      {/* Animated Number */}
+      <motion.div
+        className="text-7xl font-extrabold text-gammalex-orange mb-4 drop-shadow font-inter"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: [0.8, 1.1, 1], opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        {statDisplay ? statDisplay : `${display}${typeof value === 'number' ? '%' : ''}`}
+      </motion.div>
+      <div className="text-2xl font-bold text-slate-900 mb-2 text-center font-inter">{label}</div>
+      <div className="text-lg text-slate-600 mb-2 text-center font-inter">{subtext}</div>
+      <a href={source} target="_blank" rel="noopener noreferrer" className="text-base text-gammalex-orange hover:underline font-inter">{sourceLabel}</a>
+    </div>
+  );
+}
+
+// Add a reusable ImpactBlock component
+function ImpactBlock({ icon, heading, bullets }: { icon: string, heading: string, bullets: (string | React.ReactNode)[] }) {
+  return (
+    <div className="flex flex-col items-start sm:items-end w-full max-w-xl mx-auto mt-8 sm:mt-0">
+      <div className="text-3xl mb-2">{icon}</div>
+      <div className="text-xl font-bold text-slate-900 mb-3 font-inter">{heading}</div>
+      <ul className="text-base text-slate-700 font-inter list-disc list-inside space-y-2">
+        {bullets.map((b, i) => <li key={i}>{b}</li>)}
+      </ul>
+    </div>
+  )
+}
+
 function SystemicRiskStats() {
-  // Group stats into 3 rows for the new layout
-  const statRows = [
+  // All key stats grouped for each section
+  const statGroups = [
     {
       label: 'DELAYS & BURDEN',
-      highlighted: [[0,2],[1,2],[2,2],[3,2],[4,2]] as [number,number][], // vertical orange line
       stats: [
-        {
-          ...stats[0], // Avg. Pre-Auths per Physician per Week
-        },
-        {
-          ...stats[1], // Hours Spent on Pre-Auth per Week
-        },
+        { value: 93, label: 'Physicians reporting care delays', subtext: 'Prior auth delays patient care', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: 89, label: 'Physicians reporting burnout', subtext: 'Prior auth contributes to burnout', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: '39–43', label: 'Avg. PA requests per physician', subtext: 'Per week', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: '12–16', label: 'Avg. hours per week on PA', subtext: 'Physicians & staff', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: 75, label: 'Physicians rating PA burden high', subtext: 'High or extremely high', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: 95, label: 'PA increases burnout', subtext: 'Physicians: PA increases burnout', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
       ],
+      summary: 'Physicians face overwhelming administrative burden from prior auth, with most reporting delays, burnout, and excessive paperwork.'
     },
     {
       label: 'PATIENT IMPACT',
-      highlighted: [[2,0],[2,1],[2,2],[2,3],[2,4]] as [number,number][], // horizontal orange line
       stats: [
-        {
-          ...stats[2], // Care Delays Due to Pre-Auth
-        },
-        {
-          ...stats[4], // Treatment Abandonment or Harm
-        },
+        { value: 94, label: 'Physicians: PA delays care', subtext: 'PA leads to care delays', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: '82–93', label: 'Physicians: PA affects outcomes', subtext: 'Negatively affects clinical outcomes', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: 78, label: 'Patients abandon treatment', subtext: 'Due to PA barriers', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: 24, label: 'Serious adverse events', subtext: 'Hospitalization, impairment, or death', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
       ],
+      summary: 'Patients experience delays, worse outcomes, and even serious harm due to prior authorization barriers.'
     },
     {
       label: 'BURNOUT & RISK',
-      highlighted: [[0,0],[1,1],[2,2],[3,3],[4,4]] as [number,number][], // diagonal orange line
       stats: [
-        {
-          ...stats[3], // Burnout Linked to Pre-Auth
-        },
+        { value: 80, label: 'Increased resource use', subtext: 'Extra visits or hospitalizations', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: '60–65', label: 'Patients: delays or non-adherence', subtext: 'Due to PA processes', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
+        { value: 80, label: 'Patients frustrated by PA', subtext: 'PA process leaves patients frustrated', source: 'AMA 2024', sourceUrl: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf' },
       ],
+      summary: 'Prior auth increases system-wide costs, delays, and patient frustration.'
     },
-  ]
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+  ];
   return (
     <section className="w-full bg-sage-50 py-24 px-2 sm:px-6 font-inter">
       <div className="max-w-6xl mx-auto">
@@ -687,42 +763,35 @@ function SystemicRiskStats() {
         <p className="text-3xl sm:text-4xl font-inter text-center mb-24 max-w-4xl mx-auto text-black leading-snug">
           Pre-authorizations are creating a crisis of delays, burnout, and legal risk.
         </p>
-        <div className="flex flex-col gap-20 w-full py-4" style={{ minHeight: '600px' }}>
-          {statRows.map((row, i) => (
-            <div key={row.label} className="flex flex-col sm:flex-row items-center py-12 sm:py-20 px-0 sm:px-8 gap-12 sm:gap-24 w-full">
-              {/* Left: Label */}
-              <div className="w-full sm:w-1/4 flex justify-center sm:justify-start mb-4 sm:mb-0 px-2">
-                <span className="text-lg font-bold tracking-widest text-slate-500 uppercase whitespace-nowrap font-inter letter-spacing-wide">{row.label}</span>
+        <div className="flex flex-col gap-24 w-full">
+          {statGroups.map((group, i) => (
+            <div key={group.label} className="flex flex-col gap-8 w-full">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-xs sm:text-sm font-bold tracking-widest text-slate-500 uppercase font-inter letter-spacing-wide">
+                  {group.label}
+                </span>
+                <span className="flex-1 h-px bg-slate-200" />
               </div>
-              {/* Center: DotGrid */}
-              <div className="w-full sm:w-1/4 flex justify-center mb-8 sm:mb-0 px-2">
-                <DotGrid highlighted={row.highlighted} />
-              </div>
-              {/* Right: Stats */}
-              <div className="w-full sm:w-2/4 flex flex-col sm:flex-row sm:justify-end gap-10 px-2">
-                {row.stats.map((s, j) => (
-                  <div key={s.label} className="flex flex-col items-center sm:items-start">
-                    <span className="text-5xl sm:text-6xl font-extrabold text-gammalex-orange font-inter">
-                      {typeof window !== 'undefined' ? (
-                        s.statDisplay ? (
-                          <span>{s.statDisplay}</span>
-                        ) : (
-                          <AnimatedNumber value={s.stat} suffix={s.statSuffix} />
-                        )
-                      ) : (
-                        s.statDisplay ? <span>--</span> : <span>--</span>
-                      )}
-                    </span>
-                    <span className="text-xl font-bold text-slate-900 text-center sm:text-left leading-tight mt-2 font-inter">{s.label}</span>
-                    <span className="text-lg text-slate-600 text-center sm:text-left font-inter">{s.subtext}</span>
-                    <a href={s.source} target="_blank" rel="noopener noreferrer" className="text-base text-gammalex-orange mt-2 hover:underline font-inter">{s.sourceLabel}</a>
-                  </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
+                {group.stats.map((s, j) => (
+                  <AnimatedMetric
+                    key={s.label}
+                    value={typeof s.value === 'number' ? s.value : 0}
+                    statDisplay={typeof s.value === 'string' ? s.value : undefined}
+                    label={s.label}
+                    subtext={s.subtext}
+                    source={s.source}
+                    sourceLabel={<a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-gammalex-orange hover:underline">{s.source}</a>}
+                  />
                 ))}
+              </div>
+              <div className="text-lg text-slate-700 font-inter mt-4 max-w-3xl mx-auto text-center">
+                {group.summary}
               </div>
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-16">
+        <div className="flex justify-center mt-20">
           <JoinWaitlistModal
             trigger={
               <button className="inline-block bg-sage-600 text-white text-xl font-bold rounded-2xl px-12 py-6 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition font-inter">
@@ -734,27 +803,6 @@ function SystemicRiskStats() {
       </div>
     </section>
   )
-}
-
-// Animated number component
-function AnimatedNumber({ value, suffix }: { value: number, suffix?: string }) {
-  const [display, setDisplay] = useState(0)
-  useEffect(() => {
-    let start = 0
-    let end = value
-    let duration = 900
-    let startTime: number | null = null
-    function animate(ts: number) {
-      if (!startTime) startTime = ts
-      const progress = Math.min((ts - startTime) / duration, 1)
-      setDisplay(Math.floor(progress * (end - start) + start))
-      if (progress < 1) requestAnimationFrame(animate)
-      else setDisplay(end)
-    }
-    requestAnimationFrame(animate)
-    // eslint-disable-next-line
-  }, [value])
-  return <span>{display}{suffix}</span>
 }
 
 function FooterGV() {
@@ -792,49 +840,49 @@ function FooterGV() {
 }
 
 // Move stats array to module scope for reuse
-const stats = [
-  {
-    icon: '📄',
-    label: 'Avg. Pre-Auths per Physician per Week',
-    stat: 40,
-    subtext: 'Pre-authorization requests weekly',
-    source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-    sourceLabel: 'AJMC',
-  },
-  {
-    icon: '⏱️',
-    label: 'Hours Spent on Pre-Auth per Week',
-    stat: 13,
-    statSuffix: '+',
-    subtext: 'Hours physicians & staff spend weekly',
-    source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-    sourceLabel: 'AJMC',
-  },
-  {
-    icon: '🚫',
-    label: 'Care Delays Due to Pre-Auth',
-    stat: 93,
-    statSuffix: '%',
-    subtext: 'Physicians report delayed patient care',
-    source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-    sourceLabel: 'AMA',
-  },
-  {
-    icon: '💥',
-    label: 'Burnout Linked to Pre-Auth',
-    stat: 89,
-    statSuffix: '%',
-    subtext: 'Physicians say PA contributes to burnout',
-    source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
-    sourceLabel: 'AZMed',
-  },
-  {
-    icon: '⚠️',
-    label: 'Treatment Abandonment or Harm',
-    stat: 94,
-    statDisplay: '82–94%',
-    subtext: 'PAs linked to serious adverse events',
-    source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-    sourceLabel: 'AMA',
-  },
-]
+  const stats = [
+    {
+      icon: '📄',
+      label: 'Avg. Pre-Auths per Physician per Week',
+      stat: 40,
+      subtext: 'Pre-authorization requests weekly',
+      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+      sourceLabel: 'AJMC',
+    },
+    {
+      icon: '⏱️',
+      label: 'Hours Spent on Pre-Auth per Week',
+      stat: 13,
+      statSuffix: '+',
+      subtext: 'Hours physicians & staff spend weekly',
+      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+      sourceLabel: 'AJMC',
+    },
+    {
+      icon: '🚫',
+      label: 'Care Delays Due to Pre-Auth',
+      stat: 93,
+      statSuffix: '%',
+      subtext: 'Physicians report delayed patient care',
+      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+      sourceLabel: 'AMA',
+    },
+    {
+      icon: '💥',
+      label: 'Burnout Linked to Pre-Auth',
+      stat: 89,
+      statSuffix: '%',
+      subtext: 'Physicians say PA contributes to burnout',
+      source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
+      sourceLabel: 'AZMed',
+    },
+    {
+      icon: '⚠️',
+      label: 'Treatment Abandonment or Harm',
+      stat: 94,
+      statDisplay: '82–94%',
+      subtext: 'PAs linked to serious adverse events',
+      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+      sourceLabel: 'AMA',
+    },
+  ]
