@@ -368,7 +368,7 @@ function AboutSection() {
     {
       icon: <UsersThree className="text-gammalex-orange" size={56} weight="regular" />,
       title: "Expert-Built, Always Evolving",
-      description: "Our platform is built by clinicians, legal experts, and AI researchers—constantly learning from new payer rules and real-world outcomes.",
+      description: "Our platform is built by AI researchers—constantly learning from new payer rules and real-world outcomes.",
     },
     {
       icon: <ChartBar className="text-gammalex-orange" size={56} weight="regular" />,
