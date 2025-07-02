@@ -42,8 +42,8 @@ export function FeatureHighlights() {
               <div className={`rounded-full p-4 mb-4 ${f.bg} flex items-center justify-center`}>
                 {f.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2 text-center font-satoshi">{f.title}</h3>
-              <p className="text-gray-600 text-center text-base font-satoshi">{f.desc}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 text-center font-inter">{f.title}</h3>
+              <p className="text-gray-600 text-center text-base font-inter">{f.desc}</p>
             </Card>
           </motion.div>
         ))}

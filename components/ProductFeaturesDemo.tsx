@@ -148,7 +148,7 @@ export function ProductFeaturesDemo() {
   return (
     <section id="product" className="w-full max-w-[1600px] mx-auto py-36 px-2 sm:px-12">
       {/* Headline with orange emphasis only */}
-      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-center mb-8 font-satoshi leading-tight text-slate-900">
+      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-center mb-8 font-inter leading-tight text-slate-900">
         End-to-end clinical-legal <span className="text-gammalex-orange">AI</span> for pre-auth, <br />
         denial risk, and compliance
       </h2>
@@ -160,9 +160,9 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
           <div className="flex items-center gap-5 mb-6">
             <Zap className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-extrabold font-satoshi text-gammalex-orange">Inference</span>
+            <span className="text-3xl font-extrabold font-inter text-gammalex-orange">Inference</span>
           </div>
-          <div className="text-2xl text-slate-700 mb-6 font-bold font-satoshi">Real-time <span className="text-gammalex-orange">clinical-legal</span> intelligence for every pre-auth and denial:</div>
+          <div className="text-2xl text-slate-700 mb-6 font-bold font-inter">Real-time <span className="text-gammalex-orange">clinical-legal</span> intelligence for every pre-auth and denial:</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
             <li>Policy Lookup: Instantly match clinical scenarios to payer rules and coverage policies.</li>
             <li>Risk Scoring: Quantify denial and compliance risk before care is delayed or denied.</li>
@@ -174,9 +174,9 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
           <div className="flex items-center gap-5 mb-6">
             <Settings className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-extrabold font-satoshi text-gammalex-orange">Fine-Tuning</span>
+            <span className="text-3xl font-extrabold font-inter text-gammalex-orange">Fine-Tuning</span>
           </div>
-          <div className="text-2xl text-slate-700 mb-6 font-bold font-satoshi">Custom <span className="text-gammalex-orange">AI</span> for your clinical and legal workflows:</div>
+          <div className="text-2xl text-slate-700 mb-6 font-bold font-inter">Custom <span className="text-gammalex-orange">AI</span> for your clinical and legal workflows:</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
             <li>Adapt to payer-specific rules, specialties, and evolving regulations.</li>
             <li>Generate compliant, evidence-backed documentation for pre-auths and appeals.</li>
@@ -188,9 +188,9 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
           <div className="flex items-center gap-5 mb-6">
             <Bot className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-extrabold font-satoshi text-gammalex-orange">AI Copilot</span>
+            <span className="text-3xl font-extrabold font-inter text-gammalex-orange">AI Copilot</span>
           </div>
-          <div className="text-2xl text-slate-700 mb-6 font-bold font-satoshi">Your always-on assistant for <span className="text-gammalex-orange">Copilot</span> teams:</div>
+          <div className="text-2xl text-slate-700 mb-6 font-bold font-inter">Your always-on assistant for <span className="text-gammalex-orange">Copilot</span> teams:</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
             <li>Surface missing evidence, flag legal risk, and draft justifications in real time.</li>
             <li>Answer complex policy, coding, and compliance questions instantly.</li>

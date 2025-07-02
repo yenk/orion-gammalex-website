@@ -111,10 +111,10 @@ export function PreAuthForm() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-charcoal-900 mb-6 font-satoshi">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-charcoal-900 mb-6 font-inter">
               Check Authorization Viability
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-satoshi">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-inter">
               Enter your procedure details and let our AI analyze the authorization requirements and potential outcomes.
             </p>
           </motion.div>
@@ -129,7 +129,7 @@ export function PreAuthForm() {
             >
               <Card className="shadow-lg border-sage-100">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-satoshi text-charcoal-900 flex items-center">
+                  <CardTitle className="text-2xl font-inter text-charcoal-900 flex items-center">
                     <FileText className="mr-3 h-6 w-6 text-sage-600" />
                     Procedure Information
                   </CardTitle>
@@ -138,7 +138,7 @@ export function PreAuthForm() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* CPT Code */}
                     <div className="space-y-2">
-                      <Label htmlFor="procedureCode" className="text-sm font-medium font-satoshi">
+                      <Label htmlFor="procedureCode" className="text-sm font-medium font-inter">
                         CPT Code
                       </Label>
                       <Input
@@ -146,13 +146,13 @@ export function PreAuthForm() {
                         placeholder="e.g., 99213"
                         value={formData.procedureCode}
                         onChange={(e) => setFormData(prev => ({ ...prev, procedureCode: e.target.value }))}
-                        className="font-satoshi"
+                        className="font-inter"
                       />
                     </div>
 
                     {/* Procedure Description */}
                     <div className="space-y-2">
-                      <Label htmlFor="procedureDescription" className="text-sm font-medium font-satoshi">
+                      <Label htmlFor="procedureDescription" className="text-sm font-medium font-inter">
                         Procedure Description
                       </Label>
                       <Textarea
@@ -160,18 +160,18 @@ export function PreAuthForm() {
                         placeholder="Describe the procedure in detail..."
                         value={formData.procedureDescription}
                         onChange={(e) => setFormData(prev => ({ ...prev, procedureDescription: e.target.value }))}
-                        className="font-satoshi"
+                        className="font-inter"
                         rows={3}
                       />
                     </div>
 
                     {/* Payer Selection */}
                     <div className="space-y-2">
-                      <Label htmlFor="payer" className="text-sm font-medium font-satoshi">
+                      <Label htmlFor="payer" className="text-sm font-medium font-inter">
                         Insurance Payer
                       </Label>
                       <Select value={formData.payer} onValueChange={(value) => setFormData(prev => ({ ...prev, payer: value }))}>
-                        <SelectTrigger className="font-satoshi">
+                        <SelectTrigger className="font-inter">
                           <SelectValue placeholder="Select insurance payer" />
                         </SelectTrigger>
                         <SelectContent>
@@ -186,7 +186,7 @@ export function PreAuthForm() {
 
                     {/* Patient Age */}
                     <div className="space-y-2">
-                      <Label htmlFor="patientAge" className="text-sm font-medium font-satoshi">
+                      <Label htmlFor="patientAge" className="text-sm font-medium font-inter">
                         Patient Age
                       </Label>
                       <Input
@@ -195,13 +195,13 @@ export function PreAuthForm() {
                         placeholder="e.g., 45"
                         value={formData.patientAge}
                         onChange={(e) => setFormData(prev => ({ ...prev, patientAge: e.target.value }))}
-                        className="font-satoshi"
+                        className="font-inter"
                       />
                     </div>
 
                     {/* Diagnosis */}
                     <div className="space-y-2">
-                      <Label htmlFor="diagnosis" className="text-sm font-medium font-satoshi">
+                      <Label htmlFor="diagnosis" className="text-sm font-medium font-inter">
                         Primary Diagnosis (ICD-10)
                       </Label>
                       <Input
@@ -209,18 +209,18 @@ export function PreAuthForm() {
                         placeholder="e.g., M79.3 - Sciatica"
                         value={formData.diagnosis}
                         onChange={(e) => setFormData(prev => ({ ...prev, diagnosis: e.target.value }))}
-                        className="font-satoshi"
+                        className="font-inter"
                       />
                     </div>
 
                     {/* Document Upload */}
                     <div className="space-y-2">
-                      <Label className="text-sm font-medium font-satoshi">
+                      <Label className="text-sm font-medium font-inter">
                         Supporting Documents
                       </Label>
                       <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                         <Upload className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-                        <p className="text-sm text-gray-600 mb-2 font-satoshi">
+                        <p className="text-sm text-gray-600 mb-2 font-inter">
                           Upload clinical notes, imaging, lab reports, etc.
                         </p>
                         <input
@@ -232,17 +232,17 @@ export function PreAuthForm() {
                           id="file-upload"
                         />
                         <label htmlFor="file-upload">
-                          <Button type="button" variant="outline" className="font-satoshi">
+                          <Button type="button" variant="outline" className="font-inter">
                             Choose Files
                           </Button>
                         </label>
                       </div>
                       {formData.documents.length > 0 && (
                         <div className="mt-2">
-                          <p className="text-sm text-gray-600 font-satoshi">Uploaded files:</p>
+                          <p className="text-sm text-gray-600 font-inter">Uploaded files:</p>
                           <ul className="text-sm text-gray-500 mt-1">
                             {formData.documents.map((file, index) => (
-                              <li key={index} className="font-satoshi">{file.name}</li>
+                              <li key={index} className="font-inter">{file.name}</li>
                             ))}
                           </ul>
                         </div>
@@ -253,7 +253,7 @@ export function PreAuthForm() {
                     <Button
                       type="submit"
                       disabled={isAnalyzing}
-                      className="w-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-satoshi font-semibold py-3"
+                      className="w-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-inter font-semibold py-3"
                     >
                       {isAnalyzing ? (
                         <>
@@ -284,7 +284,7 @@ export function PreAuthForm() {
                   <CardContent className="flex items-center justify-center h-64">
                     <div className="text-center">
                       <Brain className="mx-auto h-16 w-16 text-gray-300 mb-4" />
-                      <p className="text-gray-500 font-satoshi">
+                      <p className="text-gray-500 font-inter">
                         Enter procedure details and submit to get AI-powered authorization insights.
                       </p>
                     </div>
@@ -295,21 +295,21 @@ export function PreAuthForm() {
                   {/* Risk Assessment */}
                   <Card className="shadow-lg border-sage-100">
                     <CardHeader>
-                      <CardTitle className="text-xl font-satoshi text-charcoal-900 flex items-center">
+                      <CardTitle className="text-xl font-inter text-charcoal-900 flex items-center">
                         <Shield className="mr-3 h-5 w-5 text-sage-600" />
                         Risk Assessment
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-sm font-medium font-satoshi">Risk Level:</span>
-                        <span className={`px-3 py-1 rounded-full text-sm font-semibold font-satoshi ${getRiskColor(analysisResult.riskLevel)}`}>
+                        <span className="text-sm font-medium font-inter">Risk Level:</span>
+                        <span className={`px-3 py-1 rounded-full text-sm font-semibold font-inter ${getRiskColor(analysisResult.riskLevel)}`}>
                           {analysisResult.riskLevel}
                         </span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium font-satoshi">Approval Probability:</span>
-                        <span className="text-lg font-bold text-sage-600 font-satoshi">
+                        <span className="text-sm font-medium font-inter">Approval Probability:</span>
+                        <span className="text-lg font-bold text-sage-600 font-inter">
                           {analysisResult.approvalProbability}%
                         </span>
                       </div>
@@ -319,13 +319,13 @@ export function PreAuthForm() {
                   {/* Processing Time */}
                   <Card className="shadow-lg border-sage-100">
                     <CardHeader>
-                      <CardTitle className="text-xl font-satoshi text-charcoal-900 flex items-center">
+                      <CardTitle className="text-xl font-inter text-charcoal-900 flex items-center">
                         <Clock className="mr-3 h-5 w-5 text-terracotta-600" />
                         Processing Timeline
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-lg font-semibold text-charcoal-900 font-satoshi">
+                      <p className="text-lg font-semibold text-charcoal-900 font-inter">
                         {analysisResult.estimatedProcessingTime}
                       </p>
                     </CardContent>
@@ -334,7 +334,7 @@ export function PreAuthForm() {
                   {/* Coverage Insights */}
                   <Card className="shadow-lg border-sage-100">
                     <CardHeader>
-                      <CardTitle className="text-xl font-satoshi text-charcoal-900 flex items-center">
+                      <CardTitle className="text-xl font-inter text-charcoal-900 flex items-center">
                         <CheckCircle className="mr-3 h-5 w-5 text-bronze-600" />
                         Coverage Analysis
                       </CardTitle>
@@ -343,14 +343,14 @@ export function PreAuthForm() {
                       <div className="space-y-3">
                         <div className="flex items-center">
                           <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-                          <span className="font-satoshi">Covered under plan</span>
+                          <span className="font-inter">Covered under plan</span>
                         </div>
-                        <p className="text-sm text-gray-600 font-satoshi">
+                        <p className="text-sm text-gray-600 font-inter">
                           {analysisResult.coverageInsights.notes}
                         </p>
                         {analysisResult.coverageInsights.limitations && (
                           <div className="bg-yellow-50 p-3 rounded-lg">
-                            <p className="text-sm text-yellow-800 font-satoshi">
+                            <p className="text-sm text-yellow-800 font-inter">
                               <strong>Note:</strong> {analysisResult.coverageInsights.limitations}
                             </p>
                           </div>
@@ -362,7 +362,7 @@ export function PreAuthForm() {
                   {/* Recommendations */}
                   <Card className="shadow-lg border-sage-100">
                     <CardHeader>
-                      <CardTitle className="text-xl font-satoshi text-charcoal-900 flex items-center">
+                      <CardTitle className="text-xl font-inter text-charcoal-900 flex items-center">
                         <TrendingUp className="mr-3 h-5 w-5 text-sage-600" />
                         Recommendations
                       </CardTitle>
@@ -372,7 +372,7 @@ export function PreAuthForm() {
                         {analysisResult.recommendations.map((rec: string, index: number) => (
                           <li key={index} className="flex items-start">
                             <CheckCircle className="h-4 w-4 text-sage-600 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-700 font-satoshi">{rec}</span>
+                            <span className="text-sm text-gray-700 font-inter">{rec}</span>
                           </li>
                         ))}
                       </ul>

@@ -4,7 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" })
 
 export const metadata: Metadata = {
   title: "GammaLex | Malpractice Risk Intelligence, Powered by AI",
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -32,7 +32,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={inter.variable}>
+      <body className="min-h-screen bg-white font-sans antialiased">
         <GoogleAnalytics />
         {children}
       </body>

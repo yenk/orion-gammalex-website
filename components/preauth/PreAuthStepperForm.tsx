@@ -28,7 +28,7 @@ export function PreAuthStepperForm() {
           {["Procedure Info", "Insurer Info", "Upload Evidence"].map((label, i) => (
             <div key={label} className={`flex flex-col items-center ${step === i ? "text-terracotta-600" : "text-gray-400"}`}>
               <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold border-2 ${step === i ? "border-terracotta-500 bg-terracotta-100" : "border-gray-300 bg-gray-100"}`}>{i+1}</div>
-              <span className="text-xs mt-1 font-satoshi">{label}</span>
+              <span className="text-xs mt-1 font-inter">{label}</span>
             </div>
           ))}
         </div>

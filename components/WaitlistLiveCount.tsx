@@ -81,7 +81,7 @@ export default function WaitlistLiveCount() {
             </span>
           </span>
           <span
-            className="text-base sm:text-lg text-gray-600 font-satoshi text-center whitespace-normal px-1 sm:px-0"
+            className="text-base sm:text-lg text-gray-600 font-inter text-center whitespace-normal px-1 sm:px-0"
           >
             Join early adopters on the GammaLex waitlist!
           </span>

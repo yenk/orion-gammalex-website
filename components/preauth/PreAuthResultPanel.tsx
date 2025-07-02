@@ -21,7 +21,7 @@ export function PreAuthResultPanel() {
       <div className="bg-white rounded-2xl shadow-lg p-8 border border-sage-100">
         <div className="flex items-center mb-6 gap-4">
           <Shield className="h-7 w-7 text-terracotta-600" />
-          <h2 className="text-2xl font-bold font-satoshi text-charcoal-900">AI Results</h2>
+          <h2 className="text-2xl font-bold font-inter text-charcoal-900">AI Results</h2>
         </div>
         <div className="mb-4 flex items-center gap-3">
           <span className="font-medium text-gray-700">Risk of Denial:</span>

@@ -213,7 +213,7 @@ function Navigation() {
 
   const navItems = [
     { id: "why-gammalex", label: "WHY GAMMALEX" },
-    { id: "product", label: "PRODUCT" },
+    { id: "product", label: "SOLUTIONS" },
     { id: "about", label: "ABOUT" },
     { id: "team", label: "TEAM" },
     { id: "join", label: "PARTNER WITH US" },
