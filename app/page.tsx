@@ -105,7 +105,7 @@ export default function GammaLexPage() {
                 <ul className="space-y-6 max-w-2xl">
                   <li className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed"><span className="font-bold text-slate-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.</li>
                   <li className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed">
-                    Understands <span className="text-gammalex-orange font-semibold">pre-auths</span>. It decodes medical billing codes, coverage rules, and physician notes to generate <span className="text-gammalex-orange font-semibold">bulletproof justifications</span>—and it flags legal vulnerabilities before they become <span className="text-gammalex-orange font-semibold">liability</span>.
+                    Understands <span className="text-gammalex-orange font-semibold">pre-auths</span>. It deciphers medical billing codes, coverage rules, and physician notes to generate <span className="text-gammalex-orange font-semibold">bulletproof justifications</span>—and it flags legal vulnerabilities before they become <span className="text-gammalex-orange font-semibold">liability</span>.
                   </li>
               </ul>
               </div>
@@ -157,23 +157,19 @@ export default function GammaLexPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <TeamSection />
-
       {/* Join Section (Partner With Us) */}
       <div ref={ctaRef}>
-        <section id="join" className="min-h-screen flex items-center bg-black text-white">
-          <div className="max-w-none w-full px-8 lg:px-16 py-32">
+        <section id="join" className="min-h-screen flex items- bg-black text-white">
+          <div className="max-w-none w-full px-8 lg:px-16 py-8">
             <div className="flex flex-col items-center max-w-3xl mx-auto">
-              <AnimatedText
-                text={[
-                  "The future of clinical and legal risk starts here—with GammaLex."
-                ]}
-                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-inter text-center break-words tracking-tight"
-              />
-              <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-inter">
-                Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
-              </p>
+              <div className="flex flex-col items-center gap-4 w-full mb-8 sm:mb-12">
+                <span className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight font-inter text-center break-words tracking-tight">
+                  Be the first to experience GammaLex.
+                </span>
+                <span className="text-2xl sm:text-3xl font-bold leading-tight font-inter text-center break-words tracking-tight">
+                  AI-built for speed, accuracy, and outcomes that matter.
+                </span>
+              </div>
               <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-inter">
                 <JoinWaitlistModal
                   trigger={
@@ -203,7 +199,6 @@ function Navigation() {
     { id: "why-gammalex", label: "WHY GAMMALEX" },
     { id: "product", label: "SOLUTIONS" },
     { id: "about", label: "ABOUT" },
-    { id: "team", label: "TEAM" },
     { id: "join", label: "PARTNER WITH US" },
   ]
 
@@ -401,7 +396,7 @@ function AboutSection() {
           {features.map((f, i) => (
             <div key={i} className="flex flex-col items-center text-center px-6">
               <div className="mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-orange', width: 56, height: 56 })}</div>
-              <div className="text-2xl sm:text-3xl font-bold mb-3 text-gammalex-orange font-inter">{f.title}</div>
+              <div className="text-2xl sm:text-3xl mb-3 text-gammalex-orange font-inter">{f.title}</div>
               <div className="text-base sm:text-lg text-slate-700 leading-relaxed font-inter">{f.description}</div>
             </div>
           ))}
@@ -409,374 +404,6 @@ function AboutSection() {
       </div>
     </section>
   );
-}
-
-function TeamSection() {
-  const [expandedMember, setExpandedMember] = useState<number | null>(null)
-  const [modalMember, setModalMember] = useState<number | null>(null)
-  const [visibleSections, setVisibleSections] = useState<number[]>([])
-
-  const team = [
-    {
-      name: "Yen Kha",
-      role: "Founder & CEO",
-      snippet:
-        "Reimagining justice at the intersection of medicine, law, and AI. Former Fortune 500 AI leader turned legal tech founder with a mission to make justice accessible to everyone.",
-      bioSections: [
-        {
-          title: "The Mission",
-          content:
-            "Yen Kha didn't set out to build a company—she set out to build what she wished existed. As the founder of GammaLex and co-founder of Justice For All (J4ALL), Yen is reimagining justice at the intersection of medicine, law, and artificial intelligence.",
-        },
-        {
-          title: "The Vision",
-          content:
-            "Her work is driven by a belief that technology shouldn't just streamline systems—it should make them more human, more equitable, and more accessible. Yen's career spans both nimble ventures and Fortune 500 companies, where she led transformative AI efforts across healthcare, legal tech, and enterprise platforms.",
-        },
-        {
-          title: "The Journey",
-          content:
-            "Over time, she grew increasingly frustrated that the systems most in need of innovation were often the most resistant to change. With the courage to leave behind stability and the conviction that technology should serve people—not just institutions—Yen took a different path.",
-        },
-        {
-          title: "The Impact",
-          content:
-            "She co-founded J4ALL to bring legal access to communities long left behind, then launched GammaLex to tackle one of America's most complex and inequitable systems: medical malpractice. Her multidisciplinary background—combining AI, healthcare, and law—shapes a systems-level approach to building tools that restore trust, empower professionals, and center real people.",
-        },
-        {
-          title: "Beyond Work",
-          content:
-            "Outside of work, Yen looks for challenge and calm in equal measure. She travels to remote places, climbs big mountains, cycles long distances, and runs trails that push her limits. 'Mountains,' she likes to say, 'might as well be my other last name.' She also finds joy in stillness—baking intricate pastries and sketching quiet scenes that feel like home.",
-        },
-        {
-          title: "The Purpose",
-          content:
-            "GammaLex isn't just a platform. It's a mission—born from lived experience, powered by purpose, and grounded in the belief that justice should belong to everyone.",
-        },
-      ],
-      image: "/images/yenkha.jpg",
-      linkedin: "https://www.linkedin.com/in/yenkha/",
-      portfolio: "http://yenkha.com/",
-    },
-    {
-      name: "Bruce Cahan",
-      role: "Strategic Advisor",
-      snippet:
-        "Recovering Wall Street lawyer, Stanford lecturer, and 9/11 emergency responder. Leading expert in legal innovation, design thinking, and institutional transformation at the intersection of law and technology.",
-      bioSections: [
-        {
-          title: "Background",
-          content:
-            "Bruce Cahan is a recovering Wall Street lawyer (Weil Gotshal & Manges), HK merchant banker, geospatial technology finance pioneer, 9/11 emergency responder and lecturer at Stanford University's School of Engineering.",
-        },
-        {
-          title: "Stanford Leadership",
-          content:
-            "Since 2013, Bruce created and taught four courses at Stanford: Understanding Wall Street on the Buy Side (MS&E 449), Redesigning Finance (DESIGN 245), Sustainable Banking (CEE 244A), and the Ethics of Finance & Financial Engineering (MS&E 148).",
-        },
-        {
-          title: "Research & Innovation",
-          content:
-            "He is a member of the Center for Legal Informatics (CodeX) at Stanford Law School, the Corporations and Society Initiative at Stanford's Graduate School of Business, and the Center for Human Rights & International Justice.",
-        },
-        {
-          title: "Current Work",
-          content:
-            "As CEO of Reimagineering Corporation and Urban Logic, Inc., Bruce focuses on using design, finance and organizational theories to anticipate how large institutions must change to achieve functional innovation and diversify meaningful inclusion of diverse innovators.",
-        },
-        {
-          title: "Client Impact",
-          content:
-            "Urban Logic's clients include Apple, the U.S. Department of Defense, the Federal Geographic Data Committee, the Environmental Protection Agency and other large organizations requiring institutional transformation.",
-        },
-        {
-          title: "Education & Family",
-          content:
-            "Bruce graduated with a B.S. in Economics and International Business from The Wharton School and a J.D. from Temple Law School. He is licensed as an attorney in CA, NY and PA. He has twin sons: Jacob (Jake) Cahan, a financial technologist, and Dr. Eli Cahan, a neonatal pediatrician and investigative journalist.",
-        },
-      ],
-      image: "/images/brucecahan.jpg",
-      linkedin: "https://www.linkedin.com/in/brucecahan/",
-    },
-    {
-      name: "MeiMei Kha",
-      role: "Chief Adventure Officer",
-      snippet:
-        "11-year-old explorer, athlete, and survivor. From hiking Yosemite peaks to surfing Ocean Beach waves, living life to the fullest and inspiring others to do the same.",
-      bioSections: [
-        {
-          title: "The Introduction",
-          content:
-            "Hi, I'm MeiMei. I'm 11 years old, and I've lived more lives than most humans. At just 3 months old, I scaled my very first summit — the highest peak above 8,000 feet at Crater Lake. No baby steps for me. I was born for adventure.",
-        },
-        {
-          title: "The Explorer",
-          content:
-            "I've flown across the world — a full 10-hour flight to Europe — and landed in Geneva like a pro. No stress, no drama, just ready to play. I've strolled the banks of the Seine in Paris and taken trains from Geneva to Basel to Lyon to Paris to Barcelona (I almost got an EU Pet Passport — but apparently I'm too fabulous for red tape).",
-        },
-        {
-          title: "The Athlete",
-          content:
-            "I've hiked legendary peaks in Yosemite and Squamish (The Chief? Crushed it), and run 10-mile trails with my mom all the way up to 11,000 feet like it's no big deal. I've surfed waves at Ocean Beach that towered over me and swam in cold, wild ocean water just because my heart told me to. No fear. Just joy.",
-        },
-        {
-          title: "The Survivor",
-          content:
-            "I've survived three pit bull attacks — not because I provoked them, but because I was just too adorable and they were clearly jealous of my life of adventure. I came out of it with over 20 stitches, and even more grit.",
-        },
-        {
-          title: "The Foodie",
-          content:
-            "I once ate an entire raw frozen pie dough and 75% of a bag of Hershey's Kisses. Dangerous? Maybe. Regrets? None. I'm still here, still standing, still thriving.",
-        },
-        {
-          title: "The Inspiration",
-          content:
-            "At 11, I walk several miles a day, healthy, sound, and full of life. I don't just go places — I live them. And I believe everyone deserves the chance to live fully, just like me.",
-        },
-        {
-          title: "The Purpose",
-          content:
-            "That's why I'm proud my mom is building GammaLex — using AI to help people hurt by medical malpractice get the justice they deserve. Because no one should be left behind when life gets hard. I'm MeiMei. I'm just here for the adventure, the love, and whatever snack might fall off the counter next. Dog. Explorer. Survivor. Athlete. Queen. Let's go live a little.",
-        },
-      ],
-      image: "/images/meigirl_purpleshirt.jpg",
-    },
-  ]
-
-  const openModal = (index: number) => {
-    setModalMember(index)
-    setVisibleSections([])
-    setTimeout(() => {
-      const member = team[index]
-      member.bioSections.forEach((_, sectionIndex) => {
-        setTimeout(() => {
-          setVisibleSections((prev) => [...prev, sectionIndex])
-        }, sectionIndex * 800)
-      })
-    }, 300)
-  }
-
-  const closeModal = () => {
-    setModalMember(null)
-    setVisibleSections([])
-  }
-
-  return (
-    <>
-      <section id="team" className="min-h-screen flex flex-col justify-center items-center bg-gray-50 font-inter py-24">
-        <h2 className="text-4xl font-bold font-inter text-center my-12">The Minds Behind the Future.</h2>
-        <p className="text-xl font-inter text-center mb-6 max-w-2xl">Redefining legal AI with real-world expertise in law, healthcare, and technology.</p>
-        <div className="flex flex-col items-center w-full max-w-4xl space-y-8">
-          {team.map((member, index) => (
-            <motion.div
-              key={index}
-              className="w-full flex justify-center"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              onClick={() => openModal(index)}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl font-inter w-full max-w-2xl">
-                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
-                  <div className="relative overflow-hidden rounded-2xl w-full sm:w-[200px] h-[200px] flex-shrink-0 mx-auto sm:mx-0">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <div className="flex-1 space-y-4">
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors text-center sm:text-left">
-                      {member.name}
-                    </h3>
-                    <p className="text-lg text-gray-600 font-medium text-center sm:text-left">{member.role}</p>
-                    <p className="text-base text-gray-600 leading-relaxed text-center sm:text-left">{member.snippet}</p>
-                    <div className="flex items-center gap-4 pt-4 justify-center sm:justify-start">
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-orange-500 hover:text-orange-600 transition-colors"
-                          onClick={e => e.stopPropagation()}
-                        >
-                          LinkedIn →
-                        </a>
-                      )}
-                      {member.portfolio && (
-                        <a
-                          href={member.portfolio}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-orange-500 hover:text-orange-600 transition-colors"
-                          onClick={e => e.stopPropagation()}
-                        >
-                          Portfolio →
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-          {/* Bio Modal */}
-          {modalMember !== null && (
-            <motion.div
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-start justify-center p-2 sm:p-4 overflow-y-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeModal}
-            >
-              <motion.div
-                className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8 font-inter"
-                initial={{ scale: 0.9, opacity: 0, y: 50 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.9, opacity: 0, y: 50 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                onClick={e => e.stopPropagation()}
-              >
-                <div className="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-8 rounded-t-3xl z-10">
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div className="flex items-center">
-                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mr-4 sm:mr-6">
-                        <img
-                          src={team[modalMember].image || "/placeholder.svg"}
-                          alt={team[modalMember].name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{team[modalMember].name}</h3>
-                        <p className="text-lg sm:text-xl text-gray-600 font-medium">{team[modalMember].role}</p>
-                      </div>
-                    </div>
-                    <button onClick={closeModal} className="p-3 hover:bg-gray-100 rounded-full transition-colors">
-                      <X className="w-7 h-7 text-gray-600" />
-                    </button>
-                  </div>
-                </div>
-                <div className="p-2 sm:p-8 space-y-8 sm:space-y-12 max-h-[80vh] overflow-y-auto">
-                  {team[modalMember].bioSections.map((section, sectionIndex) => (
-                    <motion.div
-                      key={sectionIndex}
-                      className="opacity-0"
-                      animate={{
-                        opacity: visibleSections.includes(sectionIndex) ? 1 : 0,
-                        y: visibleSections.includes(sectionIndex) ? 0 : 20,
-                      }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                      <div className="border-l-4 border-orange-200 pl-4 sm:pl-8">
-                        <h4 className="text-xl sm:text-2xl font-semibold text-orange-500 mb-2 sm:mb-4 break-words">{section.title}</h4>
-                        <div className="text-gray-700 leading-relaxed text-base sm:text-lg break-words font-inter">{section.content}</div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </div>
-      </section>
-    </>
-  )
-}
-
-// --- DotGrid component for center visual ---
-function DotGrid({ highlighted = [] }: { highlighted?: [number, number][] }) {
-  // 5x5 grid, highlighted is array of [row, col] (0-indexed)
-  return (
-    <div className="grid grid-cols-5 grid-rows-5 gap-2 w-24 h-24 mx-auto">
-      {Array.from({ length: 25 }).map((_, i) => {
-        const row = Math.floor(i / 5)
-        const col = i % 5
-        const isOrange = highlighted.some(([r, c]: [number, number]) => r === row && c === col)
-        return (
-          <motion.div
-            key={i}
-            className={`w-4 h-4 rounded-full ${isOrange ? 'bg-gammalex-orange' : 'bg-slate-200'}`}
-            initial={{ scale: 0.7, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.05 * i }}
-          />
-        )
-      })}
-    </div>
-  )
-}
-// --- End DotGrid ---
-
-function AnimatedMetric({ value, max = 100, statDisplay, label, subtext, source, sourceLabel }: { value: number, max?: number, statDisplay?: string, label: string, subtext: string, source: string, sourceLabel: React.ReactNode }) {
-  // Calculate how many dots to fill (e.g., 93% of 25 = 23)
-  const totalDots = 25;
-  const percent = statDisplay ? parseInt((statDisplay.match(/\d+/g) || ["0"])[0]) : value;
-  const filledDots = Math.round((percent / max) * totalDots);
-  // Animated number state
-  const [display, setDisplay] = useState(0);
-  useEffect(() => {
-    let start = 0;
-    let end = percent;
-    let duration = 900;
-    let startTime: number | null = null;
-    function animate(ts: number) {
-      if (!startTime) startTime = ts;
-      const progress = Math.min((ts - (startTime as number)) / duration, 1);
-      setDisplay(Math.floor(progress * (end - start) + start));
-      if (progress < 1) requestAnimationFrame(animate);
-      else setDisplay(end);
-    }
-    requestAnimationFrame(animate);
-  }, [percent]);
-  return (
-    <div className="flex flex-col items-center w-full py-16">
-      {/* Animated Dots */}
-      <div className="mb-8">
-        <div className="grid grid-cols-5 grid-rows-5 gap-2 w-28 h-28">
-          {Array.from({ length: totalDots }).map((_, i) => (
-            <motion.div
-              key={i}
-              className={`w-5 h-5 rounded-full ${i < filledDots ? "bg-gammalex-orange" : "bg-slate-200"}`}
-              initial={{ scale: 0.7, opacity: 0.3 }}
-              animate={{ scale: i < filledDots ? 1.1 : 1, opacity: 1 }}
-              transition={{ delay: 0.03 * i, duration: 0.3 }}
-            />
-          ))}
-        </div>
-      </div>
-      {/* Animated Number */}
-      <motion.div
-        className="text-7xl font-extrabold text-gammalex-orange mb-4 drop-shadow font-inter"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: [0.8, 1.1, 1], opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        {statDisplay ? statDisplay : `${display}${typeof value === 'number' ? '%' : ''}`}
-      </motion.div>
-      <div className="text-2xl font-bold text-slate-900 mb-2 text-center font-inter">{label}</div>
-      <div className="text-lg text-slate-600 mb-2 text-center font-inter">{subtext}</div>
-      <a href={source} target="_blank" rel="noopener noreferrer" className="text-base text-gammalex-orange hover:underline font-inter">{sourceLabel}</a>
-    </div>
-  );
-}
-
-// Add a reusable ImpactBlock component
-function ImpactBlock({ icon, heading, bullets }: { icon: string, heading: string, bullets: (string | React.ReactNode)[] }) {
-  return (
-    <div className="flex flex-col items-start sm:items-end w-full max-w-xl mx-auto mt-8 sm:mt-0">
-      <div className="text-3xl mb-2">{icon}</div>
-      <div className="text-xl font-bold text-slate-900 mb-3 font-inter">{heading}</div>
-      <ul className="text-base text-slate-700 font-inter list-disc list-inside space-y-2">
-        {bullets.map((b, i) => <li key={i}>{b}</li>)}
-      </ul>
-    </div>
-  )
 }
 
 function SystemicRiskStats() {
@@ -821,11 +448,12 @@ function SystemicRiskStats() {
           <div className="mb-6">
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#FF8800" opacity="0.15"/><path d="M28 16v12" stroke="#FF8800" strokeWidth="3.5" strokeLinecap="round"/><circle cx="28" cy="38" r="2.5" fill="#FF8800"/></svg>
           </div>
-          <h2 className="text-5xl sm:text-6xl font-inter font-normal text-gammalex-orange text-center mb-4 leading-tight">
+          <h2 className="text-5xl sm:text-6xl font-normal text-gammalex-orange text-center mb-4 leading-tight">
             Pre-Auth is a Healthcare Crisis
           </h2>
-          <p className="text-5xl sm:text-6xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight">
-            Delays. Burnout. Harm. The system is broken—and the numbers prove it.
+          <p className="text-3xl sm:text-4xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight">
+            The data is clear: delays, burnout, <br /> and denials are symptoms of a broken system.
+    
           </p>
         
           <div className="text-sm text-slate-500 text-center mb-4">
