@@ -102,9 +102,12 @@ const config: Config = {
           800: "#454545",
           900: "#3d3d3d", // Primary charcoal
         },
+        'gammalex-blue': '#1877FF',
+        'gammalex-orange': '#FF8800',
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        inter: ["Inter", "system-ui", "sans-serif"],
         satoshi: ["Satoshi", "system-ui", "sans-serif"],
       },
       fontSize: {

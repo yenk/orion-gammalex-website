@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Scale, FileText, Shield } from "lucide-react"
+import { Scale, FileText, Shield, MessageCircle, Zap, Settings, Bot } from "lucide-react"
 
 function ViabilityScoring({ buttonClassName = "" }: { buttonClassName?: string }) {
   const [cpt, setCpt] = useState("77080")
@@ -146,69 +146,64 @@ function AskGamma({ buttonClassName = "" }: { buttonClassName?: string }) {
 
 export function ProductFeaturesDemo() {
   return (
-    <section id="product" className="w-full max-w-7xl mx-auto py-28 px-2 sm:px-8">
-      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-center mb-4 font-satoshi">One Copilot. Every Step of Pre-Auth.</h2>
-      <p className="text-2xl sm:text-3xl text-slate-600 text-center mb-12 max-w-3xl mx-auto font-satoshi">
-        From policy matching to justification drafting, GammaLex replaces app clutter with clarity—so you can move faster with less risk.
+    <section id="product" className="w-full max-w-[1600px] mx-auto py-36 px-2 sm:px-12">
+      {/* Headline with orange emphasis only */}
+      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-center mb-8 font-satoshi leading-tight text-slate-900">
+        End-to-end clinical-legal <span className="text-gammalex-orange">AI</span> for pre-auth, <br />
+        denial risk, and compliance
+      </h2>
+      <p className="text-3xl sm:text-4xl font-inter text-center mb-20 max-w-4xl mx-auto text-black leading-snug">
+        Pre-auth, automated. Denials, reduced. Compliance, covered. <span className="text-gammalex-orange">GammaLex</span> empowers faster, safer care.
       </p>
-      <div className="flex flex-row gap-12 overflow-x-auto pb-6 snap-x snap-mandatory md:pb-0 w-full">
-        {/* Step 1: Policy Lookup */}
-        <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-start bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-lg mr-3 border-2 border-sage-200">1</div>
-            <span className="ml-3 text-2xl font-bold font-satoshi">Policy Lookup</span>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
+        {/* Inference Card */}
+        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
+          <div className="flex items-center gap-5 mb-6">
+            <Zap className="w-14 h-14 text-slate-400" />
+            <span className="text-3xl font-extrabold font-satoshi text-gammalex-orange">Inference</span>
           </div>
-          <div className="text-gray-700 text-base mb-6 text-left">
-            Look up NCD/LCD policy info by CPT or keyword. Get summarized coverage rules, frequency, documentation needs, and source links—mocked for demo.
-          </div>
-          <PolicyLookup buttonClassName="w-full mt-4" />
+          <div className="text-2xl text-slate-700 mb-6 font-bold font-satoshi">Real-time <span className="text-gammalex-orange">clinical-legal</span> intelligence for every pre-auth and denial:</div>
+          <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
+            <li>Policy Lookup: Instantly match clinical scenarios to payer rules and coverage policies.</li>
+            <li>Risk Scoring: Quantify denial and compliance risk before care is delayed or denied.</li>
+            <li>Compliance Checks: Ensure documentation meets clinical and legal standards.</li>
+            <li>Enterprise-grade security and privacy (SOC 2, HIPAA).</li>
+          </ul>
         </div>
-        {/* Step 2: Viability Scoring */}
-        <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-start bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-lg mr-3 border-2 border-sage-200">2</div>
-            <Scale className="w-8 h-8 text-sage-600" />
-            <span className="ml-3 text-2xl font-bold font-satoshi">Viability Scoring <span className="text-base font-normal">(beta)</span></span>
+        {/* Fine-Tuning Card */}
+        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
+          <div className="flex items-center gap-5 mb-6">
+            <Settings className="w-14 h-14 text-slate-400" />
+            <span className="text-3xl font-extrabold font-satoshi text-gammalex-orange">Fine-Tuning</span>
           </div>
-          <div className="text-gray-700 text-base mb-6 text-left">
-            Instantly score approval likelihood for pre-auth requests. Enter CPT, ICD-10, and a brief note to see risk, red flags, and confidence—all with mock data for now.
-          </div>
-          <ViabilityScoring buttonClassName="w-full mt-4" />
+          <div className="text-2xl text-slate-700 mb-6 font-bold font-satoshi">Custom <span className="text-gammalex-orange">AI</span> for your clinical and legal workflows:</div>
+          <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
+            <li>Adapt to payer-specific rules, specialties, and evolving regulations.</li>
+            <li>Generate compliant, evidence-backed documentation for pre-auths and appeals.</li>
+            <li>Full model ownership and control for your organization.</li>
+            <li>Seamless API integration with EHR and legal systems.</li>
+          </ul>
         </div>
-        {/* Step 3: Pre-Auth Writer */}
-        <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-start bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-terracotta-100 flex items-center justify-center text-terracotta-600 font-bold text-lg mr-3 border-2 border-terracotta-200">3</div>
-            <FileText className="w-8 h-8 text-terracotta-600" />
-            <span className="ml-3 text-2xl font-bold font-satoshi">Pre-Auth Writer</span>
+        {/* AI Copilot Card */}
+        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
+          <div className="flex items-center gap-5 mb-6">
+            <Bot className="w-14 h-14 text-slate-400" />
+            <span className="text-3xl font-extrabold font-satoshi text-gammalex-orange">AI Copilot</span>
           </div>
-          <div className="text-gray-700 text-base mb-6 text-left">
-            Generate structured, policy-aligned medical necessity statements. Inputs: CPT, ICD-10, payer, and rationale. Output: a compliant justification, ready for review.
-          </div>
-          <PreAuthWriter buttonClassName="w-full mt-4" />
+          <div className="text-2xl text-slate-700 mb-6 font-bold font-satoshi">Your always-on assistant for <span className="text-gammalex-orange">Copilot</span> teams:</div>
+          <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
+            <li>Surface missing evidence, flag legal risk, and draft justifications in real time.</li>
+            <li>Answer complex policy, coding, and compliance questions instantly.</li>
+            <li>Empower clinicians, billers, and legal teams to work smarter and reduce burnout.</li>
+          </ul>
         </div>
-        {/* Step 4: Comply Draft */}
-        <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-start bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-bronze-100 flex items-center justify-center text-bronze-600 font-bold text-lg mr-3 border-2 border-bronze-200">4</div>
-            <Shield className="w-8 h-8 text-bronze-600" />
-            <span className="ml-3 text-2xl font-bold font-satoshi">Comply Draft</span>
-          </div>
-          <div className="text-gray-700 text-base mb-6 text-left">
-            Wraps Pre-Auth Writer output into a user-friendly format for clinicians and legal teams. Ready for pre-auth forms, appeals, or legal review.
-          </div>
-          <ComplyDraft buttonClassName="w-full mt-4" />
-        </div>
-        {/* Step 5: Ask Gamma (Chatbot) */}
-        <div className="snap-center min-w-[320px] max-w-[400px] w-full flex flex-col items-start bg-white rounded-3xl shadow-lg border border-gray-100 p-10 min-h-[520px] justify-between transition-all">
-          <div className="flex items-center mb-6">
-            <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center text-sage-600 font-bold text-lg mr-3 border-2 border-sage-200">5</div>
-            <span className="ml-3 text-2xl font-bold font-satoshi">Ask Gamma (Chatbot)</span>
-          </div>
-          <div className="text-gray-700 text-base mb-6 text-left">
-            Ask any question about CPT coverage or denial reasons. Get a plain-English answer with a mock source, simulating the AI copilot experience.
-          </div>
-          <AskGamma buttonClassName="w-full mt-4" />
+      </div>
+      {/* Flow Arrow */}
+      <div className="flex flex-col items-center mt-24">
+        <div className="flex items-center w-full justify-center">
+          <span className="text-2xl font-extrabold mr-6 text-gammalex-orange">Automate</span>
+          <div className="flex-1 h-1 bg-sage-200 rounded-full mx-4 max-w-xl" />
+          <span className="text-2xl font-extrabold ml-6 text-gammalex-orange">Defend & Comply</span>
         </div>
       </div>
     </section>

@@ -65,16 +65,20 @@ export default function GammaLexPage() {
       <CopilotHero />
 
       {/* Why GammaLex Section */}
-      <section id="why-gammalex" className="py-20 px-4 font-satoshi flex justify-center items-center bg-white">
+      <section id="why-gammalex" className="py-20 px-4 font-inter flex justify-center items-center bg-white">
         <div className="w-full max-w-6xl bg-slate-50 rounded-3xl shadow-xl px-6 sm:px-12 py-16 flex flex-col gap-10 items-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 leading-tight text-center">Because Denials Are Just the Symptom —<br className='hidden sm:inline'/> We're Solving the Root Cause.</h1>
-          <p className="text-lg sm:text-xl text-slate-600 text-center max-w-3xl mb-6">GammaLex exists to address the real reasons behind medical denials—by empowering clinicians and legal teams with AI that understands both the clinical and legal landscape.</p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-normal leading-tight text-center mb-10">
+            Because real <span className="text-orange-500">prior auth decisions</span> live at the intersection of medicine, policy, and law. <br />
+          </h1>
+          <p className="text-3xl sm:text-4xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-20">
+            GammaLex exists to address the real reasons behind medical denials—by empowering clinicians and legal teams with AI that understands both the clinical and legal landscape.
+          </p>
           <div className="w-full flex flex-col md:flex-row gap-10 md:gap-16">
             {/* Why It Matters */}
             <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col gap-6 items-start border border-slate-100">
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-2xl">🧩</span>
-                <h3 className="text-2xl font-bold text-slate-900">Why It Matters</h3>
+                <h3 className="text-2xl font-semibold font-inter my-6">Why <span className="text-orange-500">It Matters</span></h3>
               </div>
               <ul className="space-y-4">
                 <li className="text-slate-700">Pre-authorization isn't just paperwork—it's the root cause of delays, burnout, and legal risk in healthcare. Fixing it means better care, less stress, and fewer denials for everyone.</li>
@@ -84,7 +88,7 @@ export default function GammaLexPage() {
             <div className="flex-1 bg-white rounded-2xl shadow p-8 flex flex-col gap-6 items-start border border-slate-100">
               <div className="flex items-center gap-3 mb-2">
                 <span className="text-2xl">💡</span>
-                <h3 className="text-2xl font-bold text-slate-900">The Solution</h3>
+                <h3 className="text-2xl font-semibold font-inter my-6">The Solution</h3>
               </div>
               <ul className="space-y-4">
                 <li className="text-slate-700"><span className="font-bold text-slate-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.</li>
@@ -106,7 +110,7 @@ export default function GammaLexPage() {
       </section>
 
       {/* The Problem Stat Strips Section */}
-      <ProblemStatStrips />
+      <SystemicRiskStats />
 
       <div className="w-full bg-sage-50 border-b border-sage-100">
         <ProductFeaturesDemo />
@@ -127,15 +131,15 @@ export default function GammaLexPage() {
                 text={[
                   "The future of clinical and legal risk starts here—with GammaLex."
                 ]}
-                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-satoshi text-center break-words tracking-tight"
+                className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 leading-tight font-inter text-center break-words tracking-tight"
               />
-              <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-satoshi">
+              <p className="text-lg xs:text-xl sm:text-2xl text-gray-300 mb-10 sm:mb-14 leading-relaxed text-center font-inter">
                 Be the first to experience GammaLex. AI-built for speed, accuracy, and outcomes that matter.
               </p>
-              <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-satoshi">
+              <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-inter">
                 <JoinWaitlistModal
                   trigger={
-                    <button className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full font-satoshi focus:outline-none">
+                    <button className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full font-inter focus:outline-none">
                       Join as an Early Partner
                     </button>
                   }
@@ -198,7 +202,7 @@ function Navigation() {
           isScrolled
             ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
             : "bg-white/90 backdrop-blur-sm"
-        } font-satoshi`}
+        } font-inter`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -308,70 +312,27 @@ function Navigation() {
 
 function AboutSection() {
   return (
-    <section id="about" className="min-h-screen flex items-center bg-white font-satoshi">
-      <div className="max-w-none w-full px-8 lg:px-16 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <AnimatedText
-              text={[
-                "The Future of Pre-Auth & Legal Risk Intelligence.",
-                "Starts Here."
-              ]}
-              className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400 font-satoshi"
-            />
-            <motion.p
-              className="text-2xl text-gray-600 leading-relaxed break-words text-left"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Building AI that transforms medical pre-authorization, denial risk, and legal justification from the ground up.
-            </motion.p>
-          </div>
-
-          <div className="space-y-2 text-2xl text-gray-700 leading-relaxed">
-            <motion.p
-              className="text-2xl text-gray-600 leading-relaxed mb-1"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              GammaLex is the AI Copilot for Medical Pre-Auth and Denial Risk. We automate the paperwork battle—matching CPT codes to payer policy, surfacing clinical and legal gaps, and generating compliant justifications in real time.
-            </motion.p>
-
-            <motion.p
-              className="text-2xl text-gray-600 leading-relaxed mb-1"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              Our mission: help clinicians, billers, and legal professionals beat denials, reduce malpractice risk, and get patients the care they need—faster and with less friction.
-            </motion.p>
-
-            <motion.p
-              className="text-2xl text-gray-600 leading-relaxed mb-1"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              GammaLex combines LLM intelligence, legal context, and policy understanding into one platform. Our AI reviews clinical documentation, flags missing evidence, scores denial and malpractice risk, and drafts legal-ready notes—so you can focus on care, not paperwork.
-            </motion.p>
-
-            <motion.p
-              className="text-2xl text-gray-600 leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              Built for the entire pre-auth ecosystem, GammaLex empowers clinicians, billers, legal teams, and payers to work smarter, reduce risk, and deliver better outcomes—one authorization at a time.
-            </motion.p>
-          </div>
-        </div>
+    <section id="about" className="min-h-screen flex flex-col justify-center items-center bg-white font-inter py-24">
+      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal font-inter text-center my-12">
+        The new standard in <span className="text-orange-500">pre-auth</span> <br />
+        and legal risk. <br /> Starts <span className="text-orange-500">here</span>.
+      </h2>
+      <p className="text-3xl sm:text-4xl font-inter text-center mb-6 max-w-2xl">
+        Building AI that transforms medical pre-authorization, denial risk, and legal justification from the ground up.
+      </p>
+      <div className="text-base font-inter text-center max-w-3xl mx-auto space-y-4">
+        <p>
+          GammaLex is the AI Copilot for Medical Pre-Auth and Denial Risk. We automate the paperwork battle—matching CPT codes to payer policy, surfacing clinical and legal gaps, and generating compliant justifications in real time.
+        </p>
+        <p>
+          Our mission: help clinicians, billers, and legal professionals beat denials, reduce malpractice risk, and get patients the care they need—faster and with less friction.
+        </p>
+        <p>
+          GammaLex combines LLM intelligence, legal context, and policy understanding into one platform. Our AI reviews clinical documentation, flags missing evidence, scores denial and malpractice risk, and drafts legal-ready notes—so you can focus on care, not paperwork.
+        </p>
+        <p>
+          Built for the entire pre-auth ecosystem, GammaLex empowers clinicians, billers, legal teams, and payers to work smarter, reduce risk, and deliver better outcomes—one authorization at a time.
+        </p>
       </div>
     </section>
   )
@@ -530,233 +491,212 @@ function TeamSection() {
 
   return (
     <>
-      <section id="team" className="min-h-screen flex items-center bg-gray-50 font-satoshi">
-        <div className="max-w-none w-full px-8 lg:px-16 py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <AnimatedText
-                text={"The Minds Behind<br />the Future."}
-                className="text-6xl lg:text-7xl font-bold text-gray-900 mb-12 leading-tight font-satoshi transition-colors duration-200 hover:text-terracotta-400"
-              />
-              <motion.p
-                className="text-2xl text-gray-600 leading-relaxed"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                viewport={{ once: true }}
-              >
-                Redefining legal AI with real-world expertise in law, healthcare, and technology.
-              </motion.p>
-            </div>
-            <div className="space-y-12">
-              {team.map((member, index) => (
-                <motion.div
-                  key={index}
-                  className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl font-satoshi"
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  onClick={() => openModal(index)}
-                >
-                  {/* Background Animation */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-sage-100 to-sage-200 opacity-0"
-                    animate={{
-                      opacity: index === 0 ? 0.3 : 0, // You can add hover state logic here if needed
-                      scale: index === 0 ? 1.05 : 1,
-                    }}
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  <div className="relative z-10">
-                    <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
-                      <motion.div
-                        className="relative overflow-hidden rounded-2xl w-full sm:w-[200px] h-[200px] flex-shrink-0 mx-auto sm:mx-0"
-                        animate={{
-                          scale: index === 0 ? 1.05 : 1, // You can add hover state logic here if needed
-                        }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img
-                          src={member.image || "/placeholder.svg"}
-                          alt={member.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </motion.div>
-
-                      <div className="flex-1 space-y-4">
-                        <h3 className="text-3xl font-bold text-gray-900 group-hover:text-sage-600 transition-colors">
-                          {member.name}
-                        </h3>
-                        <p className="text-lg text-sage-600 font-medium">{member.role}</p>
-                        <p className="text-base text-gray-600 leading-relaxed">{member.snippet}</p>
-
-                        <div className="flex items-center gap-4 pt-4 justify-center sm:justify-start">
-                          {member.linkedin && (
-                            <a
-                              href={member.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-sage-600 hover:text-sage-700 transition-colors"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              LinkedIn →
-                            </a>
-                          )}
-                          {member.portfolio && (
-                            <a
-                              href={member.portfolio}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-sage-600 hover:text-sage-700 transition-colors"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              Portfolio →
-                            </a>
-                          )}
-                        </div>
-                      </div>
+      <section id="team" className="min-h-screen flex flex-col justify-center items-center bg-gray-50 font-inter py-24">
+        <h2 className="text-4xl font-bold font-inter text-center my-12">The Minds Behind the Future.</h2>
+        <p className="text-xl font-inter text-center mb-6 max-w-2xl">Redefining legal AI with real-world expertise in law, healthcare, and technology.</p>
+        <div className="flex flex-col items-center w-full max-w-4xl space-y-8">
+          {team.map((member, index) => (
+            <motion.div
+              key={index}
+              className="w-full flex justify-center"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              onClick={() => openModal(index)}
+              style={{ cursor: 'pointer' }}
+            >
+              <div className="group relative p-8 bg-white rounded-2xl hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden shadow-lg hover:shadow-xl font-inter w-full max-w-2xl">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6 text-center sm:text-left">
+                  <div className="relative overflow-hidden rounded-2xl w-full sm:w-[200px] h-[200px] flex-shrink-0 mx-auto sm:mx-0">
+                    <img
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <div className="flex-1 space-y-4">
+                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors text-center sm:text-left">
+                      {member.name}
+                    </h3>
+                    <p className="text-lg text-gray-600 font-medium text-center sm:text-left">{member.role}</p>
+                    <p className="text-base text-gray-600 leading-relaxed text-center sm:text-left">{member.snippet}</p>
+                    <div className="flex items-center gap-4 pt-4 justify-center sm:justify-start">
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-orange-500 hover:text-orange-600 transition-colors"
+                          onClick={e => e.stopPropagation()}
+                        >
+                          LinkedIn →
+                        </a>
+                      )}
+                      {member.portfolio && (
+                        <a
+                          href={member.portfolio}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-orange-500 hover:text-orange-600 transition-colors"
+                          onClick={e => e.stopPropagation()}
+                        >
+                          Portfolio →
+                        </a>
+                      )}
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bio Modal */}
-      {modalMember !== null && (
-        <motion.div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-start justify-center p-2 sm:p-4 overflow-y-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={closeModal}
-        >
-          <motion.div
-            className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8 font-satoshi"
-            initial={{ scale: 0.9, opacity: 0, y: 50 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.9, opacity: 0, y: 50 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-8 rounded-t-3xl z-10">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mr-4 sm:mr-6">
-                    <img
-                      src={team[modalMember].image || "/placeholder.svg"}
-                      alt={team[modalMember].name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{team[modalMember].name}</h3>
-                    <p className="text-lg sm:text-xl text-sage-600 font-medium">{team[modalMember].role}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+          {/* Bio Modal */}
+          {modalMember !== null && (
+            <motion.div
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9999] flex items-start justify-center p-2 sm:p-4 overflow-y-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeModal}
+            >
+              <motion.div
+                className="bg-white rounded-3xl w-full max-w-full sm:max-w-2xl my-8 relative shadow-2xl p-4 sm:p-8 font-inter"
+                initial={{ scale: 0.9, opacity: 0, y: 50 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 50 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                onClick={e => e.stopPropagation()}
+              >
+                <div className="sticky top-0 bg-white border-b border-gray-200 p-4 sm:p-8 rounded-t-3xl z-10">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex items-center">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mr-4 sm:mr-6">
+                        <img
+                          src={team[modalMember].image || "/placeholder.svg"}
+                          alt={team[modalMember].name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">{team[modalMember].name}</h3>
+                        <p className="text-lg sm:text-xl text-gray-600 font-medium">{team[modalMember].role}</p>
+                      </div>
+                    </div>
+                    <button onClick={closeModal} className="p-3 hover:bg-gray-100 rounded-full transition-colors">
+                      <X className="w-7 h-7 text-gray-600" />
+                    </button>
                   </div>
                 </div>
-                <button onClick={closeModal} className="p-3 hover:bg-gray-100 rounded-full transition-colors">
-                  <X className="w-7 h-7 text-gray-600" />
-                </button>
-              </div>
-            </div>
-
-            <div className="p-2 sm:p-8 space-y-8 sm:space-y-12 max-h-[80vh] overflow-y-auto">
-              {team[modalMember].bioSections.map((section, sectionIndex) => (
-                <motion.div
-                  key={sectionIndex}
-                  className="opacity-0"
-                  animate={{
-                    opacity: visibleSections.includes(sectionIndex) ? 1 : 0,
-                    y: visibleSections.includes(sectionIndex) ? 0 : 20,
-                  }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <div className="border-l-4 border-sage-200 pl-4 sm:pl-8">
-                    <h4 className="text-xl sm:text-2xl font-semibold text-sage-600 mb-2 sm:mb-4 break-words">{section.title}</h4>
-                    <div className="text-gray-700 leading-relaxed text-base sm:text-lg break-words font-satoshi">{section.content}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
+                <div className="p-2 sm:p-8 space-y-8 sm:space-y-12 max-h-[80vh] overflow-y-auto">
+                  {team[modalMember].bioSections.map((section, sectionIndex) => (
+                    <motion.div
+                      key={sectionIndex}
+                      className="opacity-0"
+                      animate={{
+                        opacity: visibleSections.includes(sectionIndex) ? 1 : 0,
+                        y: visibleSections.includes(sectionIndex) ? 0 : 20,
+                      }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
+                      <div className="border-l-4 border-orange-200 pl-4 sm:pl-8">
+                        <h4 className="text-xl sm:text-2xl font-semibold text-orange-500 mb-2 sm:mb-4 break-words">{section.title}</h4>
+                        <div className="text-gray-700 leading-relaxed text-base sm:text-lg break-words font-inter">{section.content}</div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </div>
+      </section>
     </>
   )
 }
 
-function ProblemStatStrips() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const stats = [
+// --- DotGrid component for center visual ---
+function DotGrid({ highlighted = [] }: { highlighted?: [number, number][] }) {
+  // 5x5 grid, highlighted is array of [row, col] (0-indexed)
+  return (
+    <div className="grid grid-cols-5 grid-rows-5 gap-1 w-16 h-16 mx-auto">
+      {Array.from({ length: 25 }).map((_, i) => {
+        const row = Math.floor(i / 5)
+        const col = i % 5
+        const isOrange = highlighted.some(([r, c]: [number, number]) => r === row && c === col)
+        return (
+          <div
+            key={i}
+            className={`w-2.5 h-2.5 rounded-full ${isOrange ? 'bg-orange-500' : 'bg-slate-200'}`}
+          />
+        )
+      })}
+    </div>
+  )
+}
+// --- End DotGrid ---
+
+function SystemicRiskStats() {
+  // Group stats into 3 rows for the new layout
+  const statRows = [
     {
-      icon: '📄',
-      label: 'Avg. Pre-Auths per Physician per Week',
-      stat: 40,
-      subtext: 'Pre-authorization requests weekly',
-      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-      sourceLabel: 'AJMC',
+      label: 'DELAYS & BURDEN',
+      highlighted: [[0,2],[1,2],[2,2],[3,2],[4,2]] as [number,number][], // vertical orange line
+      stats: [
+        {
+          ...stats[0], // Avg. Pre-Auths per Physician per Week
+        },
+        {
+          ...stats[1], // Hours Spent on Pre-Auth per Week
+        },
+      ],
     },
     {
-      icon: '⏱️',
-      label: 'Hours Spent on Pre-Auth per Week',
-      stat: 13,
-      statSuffix: '+',
-      subtext: 'Hours physicians & staff spend weekly',
-      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-      sourceLabel: 'AJMC',
+      label: 'PATIENT IMPACT',
+      highlighted: [[2,0],[2,1],[2,2],[2,3],[2,4]] as [number,number][], // horizontal orange line
+      stats: [
+        {
+          ...stats[2], // Care Delays Due to Pre-Auth
+        },
+        {
+          ...stats[4], // Treatment Abandonment or Harm
+        },
+      ],
     },
     {
-      icon: '🚫',
-      label: 'Care Delays Due to Pre-Auth',
-      stat: 93,
-      statSuffix: '%',
-      subtext: 'Physicians report delayed patient care',
-      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-      sourceLabel: 'AMA',
-    },
-    {
-      icon: '💥',
-      label: 'Burnout Linked to Pre-Auth',
-      stat: 89,
-      statSuffix: '%',
-      subtext: 'Physicians say PA contributes to burnout',
-      source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
-      sourceLabel: 'AZMed',
-    },
-    {
-      icon: '⚠️',
-      label: 'Treatment Abandonment or Harm',
-      stat: 94,
-      statDisplay: '82–94%',
-      subtext: 'PAs linked to serious adverse events',
-      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-      sourceLabel: 'AMA',
+      label: 'BURNOUT & RISK',
+      highlighted: [[0,0],[1,1],[2,2],[3,3],[4,4]] as [number,number][], // diagonal orange line
+      stats: [
+        {
+          ...stats[3], // Burnout Linked to Pre-Auth
+        },
+      ],
     },
   ]
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
   return (
-    <section className="w-full bg-sage-50 py-20 px-2 sm:px-6 font-satoshi">
+    <section className="w-full bg-sage-50 py-20 px-2 sm:px-6 font-inter">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 text-center">How Pre-Auth Became a Systemic Risk.</h2>
+        <h2 className="text-4xl font-bold font-inter text-center my-12">How Pre-Auth Became a <span className="text-orange-500">Systemic Risk</span>.</h2>
         <p className="text-lg sm:text-xl text-slate-600 text-center mb-12 max-w-2xl mx-auto">Pre-authorizations are creating a crisis of delays, burnout, and legal risk.</p>
-        <TooltipProvider>
-          <div ref={ref} className="flex flex-col divide-y divide-slate-200 rounded-2xl overflow-hidden shadow-md">
-            {stats.map((s, i) => (
-              <div
-                key={s.label}
-                className={`flex flex-col sm:flex-row items-center gap-4 sm:gap-8 py-8 px-4 sm:px-8 transition-colors duration-200 ${i % 2 === 0 ? 'bg-white' : 'bg-sage-100'}`}
-              >
-                <span className="text-3xl sm:text-4xl flex-shrink-0">{s.icon}</span>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 flex-1 w-full">
-                  <div className="flex items-end gap-2 min-w-[90px]">
-                    <span className="text-4xl sm:text-5xl font-extrabold text-slate-900">
-                      {isInView ? (
+        <div className="flex flex-col divide-y divide-slate-200 rounded-2xl overflow-hidden shadow-md bg-white">
+          {statRows.map((row, i) => (
+            <div key={row.label} className="flex flex-col sm:flex-row items-center py-10 px-4 sm:px-10 gap-6 sm:gap-0">
+              {/* Left: Label */}
+              <div className="w-full sm:w-1/4 flex justify-center sm:justify-start mb-2 sm:mb-0">
+                <span className="text-xs font-bold tracking-widest text-slate-500 uppercase whitespace-nowrap">{row.label}</span>
+              </div>
+              {/* Center: DotGrid */}
+              <div className="w-full sm:w-1/4 flex justify-center mb-4 sm:mb-0">
+                <DotGrid highlighted={row.highlighted} />
+              </div>
+              {/* Right: Stats */}
+              <div className="w-full sm:w-2/4 flex flex-col sm:flex-row sm:justify-end gap-6">
+                {row.stats.map((s, j) => (
+                  <div key={s.label} className="flex flex-col items-center sm:items-start">
+                    <span className="text-4xl sm:text-5xl font-extrabold text-orange-500">
+                      {typeof window !== 'undefined' ? (
                         s.statDisplay ? (
                           <span>{s.statDisplay}</span>
                         ) : (
@@ -766,28 +706,15 @@ function ProblemStatStrips() {
                         s.statDisplay ? <span>--</span> : <span>--</span>
                       )}
                     </span>
+                    <span className="text-base font-bold text-slate-900 text-center sm:text-left leading-tight mt-1">{s.label}</span>
+                    <span className="text-sm text-slate-600 text-center sm:text-left">{s.subtext}</span>
+                    <a href={s.source} target="_blank" rel="noopener noreferrer" className="text-xs text-orange-500 mt-1 hover:underline">{s.sourceLabel}</a>
                   </div>
-                  <div className="flex flex-col items-start sm:items-start flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-lg font-bold text-slate-900 leading-tight">{s.label}</span>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <a href={s.source} target="_blank" rel="noopener noreferrer" className="ml-1 text-slate-400 hover:text-slate-600">
-                            <Info className="w-4 h-4 inline align-text-bottom" />
-                          </a>
-                        </TooltipTrigger>
-                        <TooltipContent side="top">
-                          <span className="text-xs font-medium">Source: {s.sourceLabel}</span>
-                        </TooltipContent>
-                      </Tooltip>
-                    </div>
-                    <div className="text-base text-slate-600 font-medium">{s.subtext}</div>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </TooltipProvider>
+            </div>
+          ))}
+        </div>
         <div className="flex justify-center mt-12">
           <a href="#cta" className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">See how GammaLex helps prevent this</a>
         </div>
@@ -819,7 +746,7 @@ function AnimatedNumber({ value, suffix }: { value: number, suffix?: string }) {
 
 function FooterGV() {
   return (
-    <footer className="w-full bg-[#f9f9f7] text-sm text-black font-satoshi py-12">
+    <footer className="w-full bg-[#f9f9f7] text-sm text-black font-inter py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8 ml-4 md:ml-16">
         {/* Logo */}
         <div className="w-fit -mt-4">
@@ -850,3 +777,51 @@ function FooterGV() {
     </footer>
   );
 }
+
+// Move stats array to module scope for reuse
+const stats = [
+  {
+    icon: '📄',
+    label: 'Avg. Pre-Auths per Physician per Week',
+    stat: 40,
+    subtext: 'Pre-authorization requests weekly',
+    source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+    sourceLabel: 'AJMC',
+  },
+  {
+    icon: '⏱️',
+    label: 'Hours Spent on Pre-Auth per Week',
+    stat: 13,
+    statSuffix: '+',
+    subtext: 'Hours physicians & staff spend weekly',
+    source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+    sourceLabel: 'AJMC',
+  },
+  {
+    icon: '🚫',
+    label: 'Care Delays Due to Pre-Auth',
+    stat: 93,
+    statSuffix: '%',
+    subtext: 'Physicians report delayed patient care',
+    source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+    sourceLabel: 'AMA',
+  },
+  {
+    icon: '💥',
+    label: 'Burnout Linked to Pre-Auth',
+    stat: 89,
+    statSuffix: '%',
+    subtext: 'Physicians say PA contributes to burnout',
+    source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
+    sourceLabel: 'AZMed',
+  },
+  {
+    icon: '⚠️',
+    label: 'Treatment Abandonment or Harm',
+    stat: 94,
+    statDisplay: '82–94%',
+    subtext: 'PAs linked to serious adverse events',
+    source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+    sourceLabel: 'AMA',
+  },
+]
