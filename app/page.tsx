@@ -65,12 +65,12 @@ export default function GammaLexPage() {
       <CopilotHero />
 
       {/* Why GammaLex Section */}
-      <section id="why-gammalex" className="py-24 px-2 sm:px-0 font-inter flex justify-center items-center bg-gray-50">
+      <section id="why-gammalex" className="py-24 px-2 sm:px-0 font-inter flex justify-center items-center bg-slate-100">
         <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-normal leading-tight text-center mb-10">
-            Because real <span className="text-orange-500">prior auth decisions</span> live at the intersection of medicine, policy, and law. <br />
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-normal leading-tight text-center mb-8 pt-8">
+            Because real <span className="text-orange-500">prior auth decisions</span> live at the intersection of medicine, policy, and law <br />
           </h1>
-          <p className="text-3xl sm:text-4xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-20">
+          <p className="text-2xl sm:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-20">
             GammaLex exists to address the real reasons behind medical denials—by empowering clinicians and legal teams with AI that understands both the clinical and legal landscape.
           </p>
           <div className="w-full flex flex-col gap-0">
@@ -78,7 +78,7 @@ export default function GammaLexPage() {
             <div className="w-full flex flex-col sm:flex-row items-center justify-between py-20 gap-16">
               {/* Left: Heading */}
               <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
-                <h3 className="text-4xl sm:text-5xl font-bold font-inter text-slate-900 text-center sm:text-right leading-tight">
+                <h3 className="text-4xl sm:text-5xl font-normal font-inter text-slate-900 text-center sm:text-right leading-tight">
                   Why <span className="text-gammalex-orange">It Matters</span>
                 </h3>
               </div>
@@ -94,7 +94,7 @@ export default function GammaLexPage() {
             <div className="w-full flex flex-col sm:flex-row items-center justify-between py-20 gap-16">
               {/* Left: Heading */}
               <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
-                <h3 className="text-4xl sm:text-5xl font-bold font-inter text-slate-900 text-center sm:text-right leading-tight">
+                <h3 className="text-4xl sm:text-5xl font-normal font-inter text-slate-900 text-center sm:text-right leading-tight">
                   The <span className="text-gammalex-orange">Solution</span>
                 </h3>
               </div>
@@ -105,7 +105,7 @@ export default function GammaLexPage() {
                   <li className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed">
                     Understands <span className="text-gammalex-orange font-semibold">pre-auths</span>. It decodes medical billing codes, coverage rules, and physician notes to generate <span className="text-gammalex-orange font-semibold">bulletproof justifications</span>—and it flags legal vulnerabilities before they become <span className="text-gammalex-orange font-semibold">liability</span>.
                   </li>
-                </ul>
+              </ul>
               </div>
             </div>
             <div className="w-full border-t border-slate-100" />
@@ -131,6 +131,43 @@ export default function GammaLexPage() {
 
       {/* About Section */}
       <AboutSection />
+
+      {/* GammaLex AI Copilot Cloud Section */}
+      <section className="relative w-full min-h-[60vh] py-[8vw] px-2 sm:px-0 bg-sage-50 flex flex-col justify-between overflow-hidden">
+        {/* Fine-line circular background */}
+        <div className="absolute left-1/2 top-[38%] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
+          <svg width="700" height="700" viewBox="0 0 700 700" fill="none">
+            <g opacity="0.18">
+              {[...Array(80)].map((_, i) => (
+                <ellipse key={i} cx="350" cy="350" rx={280 - i * 3} ry={280 - i * 3} stroke="#B0B6BB" strokeWidth="0.7" fill="none" />
+              ))}
+            </g>
+          </svg>
+        </div>
+        {/* Diagonal headline/subheadline */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-stretch min-h-[340px] gap-0" style={{height:'32vw', minHeight:'340px'}}>
+          {/* Headline: top left */}
+          <div className="w-full md:w-1/2 flex flex-col justify-start items-start md:pt-8">
+            <h2 className="font-inter font-normal text-slate-900 text-left text-[clamp(2.5rem,7vw,6rem)] leading-[1.05] tracking-tight" style={{letterSpacing:'-0.01em'}}>
+              AI Copilot<br />for Pre-Auth &<br />Compliance
+            </h2>
+          </div>
+          {/* Subheadline: bottom right */}
+          <div className="w-full md:w-1/2 flex flex-col justify-end items-end md:pb-8 mt-2 md:mt-0">
+            <h3 className="font-inter font-normal text-gammalex-orange text-right text-[clamp(2rem,5vw,4rem)] leading-[1.1] tracking-tight" style={{letterSpacing:'-0.01em'}}>
+              BUILT ON THE FRONTIER OF CLINICAL-LEGAL INTELLIGENCE.
+            </h3>
+          </div>
+        </div>
+        {/* Subheading row with extra spacing */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-row items-start justify-between mt-20 mb-20 gap-64">
+          <div className="text-4xl font-inter text-slate-900 font-normal text-left">Innovations</div>
+          <div className="text-4xl font-inter text-slate-900 font-normal text-left max-w-4xl">
+            AI models, datasets, and compliance tools—built for the complexity of real-world care and coverage.
+          </div>
+        </div>
+        {/* Bottom row: left and right, spaced further from above */}
+      </section>
 
       {/* Team Section */}
       <TeamSection />
@@ -755,10 +792,10 @@ function SystemicRiskStats() {
     },
   ];
   return (
-    <section className="w-full bg-sage-50 py-24 px-2 sm:px-6 font-inter">
+    <section className="w-full bg-sage-100 py-24 px-2 sm:px-6 font-inter">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-center mb-12 font-inter leading-tight text-slate-900">
-          How Pre-Auth Became a <span className="text-gammalex-orange font-normal">Systemic Risk</span>.
+          How pre-auth became a <span className="text-gammalex-orange font-normal">systemic risk</span>.
         </h2>
         <p className="text-3xl sm:text-4xl font-inter text-center mb-24 max-w-4xl mx-auto text-black leading-snug">
           Pre-authorizations are creating a crisis of delays, burnout, and legal risk.
@@ -840,49 +877,49 @@ function FooterGV() {
 }
 
 // Move stats array to module scope for reuse
-  const stats = [
-    {
-      icon: '📄',
-      label: 'Avg. Pre-Auths per Physician per Week',
-      stat: 40,
-      subtext: 'Pre-authorization requests weekly',
-      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-      sourceLabel: 'AJMC',
-    },
-    {
-      icon: '⏱️',
-      label: 'Hours Spent on Pre-Auth per Week',
-      stat: 13,
-      statSuffix: '+',
-      subtext: 'Hours physicians & staff spend weekly',
-      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-      sourceLabel: 'AJMC',
-    },
-    {
-      icon: '🚫',
-      label: 'Care Delays Due to Pre-Auth',
-      stat: 93,
-      statSuffix: '%',
-      subtext: 'Physicians report delayed patient care',
-      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-      sourceLabel: 'AMA',
-    },
-    {
-      icon: '💥',
-      label: 'Burnout Linked to Pre-Auth',
-      stat: 89,
-      statSuffix: '%',
-      subtext: 'Physicians say PA contributes to burnout',
-      source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
-      sourceLabel: 'AZMed',
-    },
-    {
-      icon: '⚠️',
-      label: 'Treatment Abandonment or Harm',
-      stat: 94,
-      statDisplay: '82–94%',
-      subtext: 'PAs linked to serious adverse events',
-      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-      sourceLabel: 'AMA',
-    },
-  ]
+const stats = [
+  {
+    icon: '📄',
+    label: 'Avg. Pre-Auths per Physician per Week',
+    stat: 40,
+    subtext: 'Pre-authorization requests weekly',
+    source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+    sourceLabel: 'AJMC',
+  },
+  {
+    icon: '⏱️',
+    label: 'Hours Spent on Pre-Auth per Week',
+    stat: 13,
+    statSuffix: '+',
+    subtext: 'Hours physicians & staff spend weekly',
+    source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
+    sourceLabel: 'AJMC',
+  },
+  {
+    icon: '🚫',
+    label: 'Care Delays Due to Pre-Auth',
+    stat: 93,
+    statSuffix: '%',
+    subtext: 'Physicians report delayed patient care',
+    source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+    sourceLabel: 'AMA',
+  },
+  {
+    icon: '💥',
+    label: 'Burnout Linked to Pre-Auth',
+    stat: 89,
+    statSuffix: '%',
+    subtext: 'Physicians say PA contributes to burnout',
+    source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
+    sourceLabel: 'AZMed',
+  },
+  {
+    icon: '⚠️',
+    label: 'Treatment Abandonment or Harm',
+    stat: 94,
+    statDisplay: '82–94%',
+    subtext: 'PAs linked to serious adverse events',
+    source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
+    sourceLabel: 'AMA',
+  },
+]

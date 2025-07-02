@@ -10,7 +10,7 @@ import { useEffect, useRef } from "react"
  * Displays main heading, subheading, and CTA with subtle motion.
  */
 
-const heading = "The First Clinical-Legal AI Copilot Built for Pre-Authorization."
+const heading = "AI Copilot\nfor Pre-Auth &\nCompliance"
 const subheading = "Smarter pre-auth.\nSafer care.\nLegal foresight."
 
 // Split by space, but keep multi-word orange phrases
