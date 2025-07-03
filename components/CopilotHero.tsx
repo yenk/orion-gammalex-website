@@ -42,32 +42,14 @@ export function CopilotHero() {
         </svg>
       </div>
       <div className="relative z-10 w-full flex flex-col px-8 md:px-16 break-words overflow-visible items-center">
-        <h1 className="w-full text-5xl sm:text-7xl lg:text-8xl xl:text-8xl font-normal text-center mb-24 font-inter leading-tight text-white whitespace-pre-line">
-          {headingWords.map((item, i) => (
-            <motion.span
-              key={i}
-              className={item.orange ? "text-gammalex-orange" : ""}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + i * 0.35, duration: 0.7, ease: "easeOut" }}
-              style={{ display: "inline-block", marginRight: item.word === "for" ? 12 : 8 }}
-            >
-              {item.word + (i === 3 ? "\n" : " ")}
-            </motion.span>
-          ))}
+        <h1 className="w-full text-5xl sm:text-7xl lg:text-8xl xl:text-8xl font-normal text-center mb-24 font-inter leading-tight text-white break-words">
+          The <span className="text-gammalex-orange">AI Copilot</span> <br />
+          for <span className="text-gammalex-orange">Pre-Auth</span> and <span className="text-gammalex-orange">Compliance</span>
         </h1>
-        <h2 className="w-full text-3xl sm:text-4xl lg:text-5xl font-inter text-center mb-20 max-w-4xl mx-auto text-white leading-snug whitespace-pre-line font-normal">
-          {subheadingWords.map((word, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5 + i * 0.18, duration: 0.6, ease: "easeOut" }}
-              style={{ display: "inline-block", marginRight: 6 }}
-            >
-              {word + " "}
-            </motion.span>
-          ))}
+        <h2 className="w-full text-3xl sm:text-4xl lg:text-5xl font-inter text-center mb-20 max-w-4xl mx-auto text-white leading-snug font-normal">
+          Smarter pre-auth.<br />
+          Safer care.<br />
+          Legal foresight.
         </h2>
         <div className="flex flex-col gap-4 items-center mt-2">
           <JoinWaitlistModal

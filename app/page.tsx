@@ -147,24 +147,26 @@ export default function GammaLexPage() {
       <AboutSection />
 
       {/* GammaLex AI Copilot Cloud Section */}
-      <section id="copilot-cloud" className="w-full min-h-[80vh] flex flex-col justify-center items-center bg-black py-32 px-2 sm:px-0 font-inter">
+      <section id="copilot-cloud" className="w-full min-h-[80vh] flex flex-col justify-center items-center bg-black py-32 px-2 sm:px-4 md:px-8 font-inter">
         <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-0 lg:gap-64">
           <div className="flex-1 flex flex-col justify-center items-start">
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-left font-inter leading-tight text-white">
-              AI COPILOT<br />FOR PRE-AUTH AND <br />COMPLIANCE
+            <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-normal text-left font-inter leading-tight text-white break-words">
+              AI COPILOT <br /> FOR PRE-AUTH AND COMPLIANCE
             </h2>
           </div>
-          <div className="flex-1 flex flex-col justify-center items-end mt-48 lg:mt-64">
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-right font-inter leading-tight text-gammalex-orange">
-              BUILT ON THE<br />FRONTIER OF<br />CLINICAL-LEGAL<br />INTELLIGENCE.
+          <div className="flex-1 flex flex-col justify-center items-end mt-12 sm:mt-24 md:mt-36 lg:mt-64">
+            <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-normal text-right font-inter leading-tight text-gammalex-orange break-words">
+              BUILT ON THE <br /> FRONTIER OF <br /> <span className="whitespace-nowrap">CLINICAL-LEGAL</span> <br /> INTELLIGENCE.
             </h2>
           </div>
         </div>
         {/* Bottom row: left and right, spaced further from above */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-row items-start justify-between mt-20 mb-20 gap-64">
-          <div className="text-4xl font-inter text-white font-normal text-left">Innovations</div>
-          <div className="text-4xl font-inter text-white font-normal text-left max-w-4xl">
-            Source-grounded AI models and datasets—designed for the complex realities of care, coverage, and compliance.
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between mt-10 md:mt-20 mb-10 md:mb-20 gap-8 md:gap-64">
+          <div className="text-2xl sm:text-3xl md:text-4xl font-inter text-white font-normal text-left">
+            <span className="whitespace-nowrap">Innovations</span>
+          </div>
+          <div className="text-2xl sm:text-3xl md:text-4xl font-inter text-white font-normal text-left md:text-right max-w-4xl">
+            Source-grounded AI models and datasets<span className="whitespace-nowrap">—</span>designed for the complex realities of care, coverage, and compliance.
           </div>
         </div>
       </section>
