@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -145,6 +145,47 @@ function AskGamma({ buttonClassName = "" }: { buttonClassName?: string }) {
   )
 }
 
+function AnimatedMilestoneFlow() {
+  const labels = ["Ingest Data", "Infer & Score", "Fine-Tune", "Deploy Copilot"];
+  const [active, setActive] = useState(0);
+  // Animation timing: 0, 1, 2, 3, 2, 1, 0 (back and forth)
+  const positions = [0, 1, 2, 3, 2, 1, 0];
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setActive(positions[i % positions.length]);
+      i++;
+    }, 570); // 4s total for 7 steps
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div className="w-full flex flex-col items-center my-24">
+      <div className="relative w-full flex flex-row items-center justify-between max-w-5xl mx-auto" style={{ minHeight: 80 }}>
+        {/* Arrowed line behind dots */}
+        <svg className="absolute left-0 right-0 top-1/2 -translate-y-1/2 w-full h-8 z-0" viewBox="0 0 1000 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="24" y1="16" x2="976" y2="16" stroke="#23232B" strokeWidth="2" />
+          <polyline points="40,4 24,16 40,28" fill="none" stroke="#23232B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="960,4 976,16 960,28" fill="none" stroke="#23232B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        {/* Milestone columns */}
+        {labels.map((label, i) => (
+          <div key={label} className="flex flex-col items-center flex-1 z-10">
+            <span className={`text-lg sm:text-xl font-medium font-inter mb-2 transition-colors duration-200 ${active === i ? "text-gammalex-orange" : "text-slate-900"}`}>{label}</span>
+            <span className={`w-4 h-4 rounded-full border-2 border-white shadow transition-colors duration-200 ${active === i ? "bg-gammalex-orange" : "bg-slate-300"}`} style={{ position: 'relative', top: 0 }} />
+          </div>
+        ))}
+        {/* Animated orange dot */}
+        <motion.span
+          className="w-4 h-4 bg-gammalex-orange rounded-full border-2 border-white shadow absolute z-20"
+          animate={{ left: ["0%", "33.33%", "66.66%", "100%", "66.66%", "33.33%", "0%"] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          style={{ top: "calc(50% + 22px)", transform: "translate(-50%, -50%)" }}
+        />
+      </div>
+    </div>
+  );
+}
+
 export function ProductFeaturesDemo() {
   return (
     <section id="product" className="w-full max-w-[1600px] mx-auto py-36 px-2 sm:px-12">
@@ -161,7 +202,7 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
           <div className="flex items-center gap-5 mb-6">
             <Zap className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-extrabold font-inter text-gammalex-orange">Inference</span>
+            <span className="text-3xl font-inter text-gammalex-orange">Inference</span>
           </div>
           <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
@@ -175,7 +216,7 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
           <div className="flex items-center gap-5 mb-6">
             <Settings className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-extrabold font-inter text-gammalex-orange">Fine-Tuning</span>
+            <span className="text-3xl font-inter text-gammalex-orange">Fine-Tuning</span>
           </div>
           <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Custom AI for your clinical and legal workflows</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
@@ -188,7 +229,7 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
           <div className="flex items-center gap-5 mb-6">
             <Bot className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-extrabold font-inter text-gammalex-orange">AI Copilot</span>
+            <span className="text-3xl font-inter text-gammalex-orange">AI Copilot</span>
           </div>
           <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Your always-on assistant for Copilot teams</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
@@ -199,13 +240,7 @@ export function ProductFeaturesDemo() {
         </div>
       </div>
       {/* Flow Arrow */}
-      <div className="w-full relative flex items-center justify-center my-24">
-        <svg className="w-full h-8" viewBox="0 0 1000 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="24" y1="16" x2="976" y2="16" stroke="#23232B" strokeWidth="2" />
-          <polyline points="40,4 24,16 40,28" fill="none" stroke="#23232B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <polyline points="960,4 976,16 960,28" fill="none" stroke="#23232B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
+      <AnimatedMilestoneFlow />
     </section>
   )
 }
