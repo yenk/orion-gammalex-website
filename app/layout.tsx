@@ -7,8 +7,8 @@ import GoogleAnalytics from "@/components/GoogleAnalytics"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" })
 
 export const metadata: Metadata = {
-  title: "GammaLex | Malpractice Risk Intelligence, Powered by AI",
-  description: "From claim viability to resolution — next-gen legal infrastructure for medical malpractice litigation.",
+  title: "GammaLex | Clinical-Legal Intelligence for Malpractice, Denials & Compliance",
+  description: "From claim viability to compliance—source-backed AI for the realities of care, coverage, and legal risk.",
   generator: "v0.dev",
   icons: {
     icon: "/gammalexlogo.png",
