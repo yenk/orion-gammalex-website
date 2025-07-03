@@ -342,7 +342,7 @@ function Navigation() {
                 <JoinWaitlistModal
                   trigger={
                     <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold w-full py-4 text-lg rounded-xl mt-4">
-                      Join the Waitlist
+                      Request a Demo
                     </Button>
                   }
                 />

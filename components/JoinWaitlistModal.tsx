@@ -72,7 +72,7 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogContent className={className}>
         <DialogHeader>
-          <DialogTitle>Join the Waitlist</DialogTitle>
+          <DialogTitle>Request a Demo</DialogTitle>
         </DialogHeader>
         {success ? (
           <div className="flex flex-col items-center justify-center py-8">
@@ -158,7 +158,7 @@ export function JoinWaitlistModal({ trigger, className }: { trigger: React.React
                 <Button type="button" variant="ghost" disabled={loading}>Cancel</Button>
               </DialogClose>
               <Button type="submit" disabled={loading} className="font-bold">
-                {loading ? "Joining..." : "Join Waitlist"}
+                {loading ? "Requesting..." : "Request a Demo"}
               </Button>
             </div>
           </form>
