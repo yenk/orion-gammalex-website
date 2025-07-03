@@ -191,8 +191,8 @@ export function ProductFeaturesDemo() {
     <section id="product" className="w-full max-w-[1600px] mx-auto py-36 px-2 sm:px-12">
       {/* Headline with orange emphasis only */}
       <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-center mb-8 font-inter leading-tight text-slate-900">
-        End-to-end clinical-legal <span className="text-gammalex-orange">AI</span> for pre-auth, <br />
-        denial risk, and compliance
+        End-to-end <span className="text-gammalex-orange">clinical-legal</span> <span className="text-gammalex-orange">AI</span> for pre-auth, <br />
+        denial risk, and <span className="text-gammalex-orange">compliance</span>
       </h2>
       <p className="text-2xl sm:text-3xl font-inter text-center mb-20 max-w-4xl mx-auto text-black leading-snug">
         Faster care. Fewer denials. No black boxes. <span className="text-gammalex-orange">GammaLex</span> delivers source-backed AI you can trust.

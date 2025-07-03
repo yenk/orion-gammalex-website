@@ -72,7 +72,7 @@ export default function GammaLexPage() {
         <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-8 items-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal leading-[1.1] text-slate-900 text-center max-w-5xl mx-auto mb-4">
             <span className="block">Because real <span className="text-gammalex-orange">pre-auth</span></span>
-            <span className="block"><span className="text-gammalex-orange">decisions</span> live at the intersection of medicine, policy, and law.</span>
+            <span className="block"><span className="text-gammalex-orange">decisions</span> live at the intersection of medicine, policy, and law</span>
           </h1>
           <p className="text-2xl sm:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-10">
             GammaLex exists to address the real reasons behind medical denials—by empowering clinicians and legal teams with AI that understands both the clinical and legal landscape.
@@ -394,13 +394,13 @@ function AboutSection() {
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-8">
           <span className="text-slate-900">Forge the </span>
-          <span className="text-gammalex-orange">AI frontier</span>
-          <span className="text-slate-900">. Train on </span>
+          <span className="text-gammalex-orange">AI frontier.</span> <br />
+          <span className="text-slate-900">Train on </span>
           <span className="text-gammalex-orange">expert-built</span>
-          <span className="text-slate-900"> healthcare LLMs</span>
+          <span className="text-slate-900"> healthcare LLMs.</span>
         </h2>
         <p className="text-2xl sm:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-20">
-          GammaLex delivers payer-specific, policy-aware AI built for medical pre-auth and denial risk. <br />
+          GammaLex delivers payer-specific, policy-aware AI recommendations built to improve medical pre-auths, and reduce pre-auth denial risks. <br />
           <br />
           Our platform fine-tunes large language models to reflect real-world data, payer rules, and compliance demands—empowering care and compliance teams to outsmart denials and accelerate treatment.
         </p>
