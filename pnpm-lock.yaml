@@ -134,6 +134,9 @@ importers:
       node-fetch:
         specifier: ^2.7.0
         version: 2.7.0
+      phosphor-react:
+        specifier: ^1.4.1
+        version: 1.4.1(react@19.0.0)
       react:
         specifier: ^19
         version: 19.0.0
@@ -1661,6 +1664,12 @@ packages:
 
   peberminta@0.9.0:
     resolution: {integrity: sha512-XIxfHpEuSJbITd1H3EeQwpcZbTLHc+VVr8ANI9t5sit565tsI4/xK3KWTUFE2e6QiangUkh3B0jihzmGnNrRsQ==}
+
+  phosphor-react@1.4.1:
+    resolution: {integrity: sha512-gO5j7U0xZrdglTAYDYPACU4xDOFBTJmptrrB/GeR+tHhCZF3nUMyGmV/0hnloKjuTrOmpSFlbfOY78H39rgjUQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
@@ -3498,6 +3507,10 @@ snapshots:
       minipass: 7.1.2
 
   peberminta@0.9.0: {}
+
+  phosphor-react@1.4.1(react@19.0.0):
+    dependencies:
+      react: 19.0.0
 
   picocolors@1.1.1: {}
 
