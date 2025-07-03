@@ -418,6 +418,60 @@ function AboutSection() {
   );
 }
 
+function AnimatedCounter({ value, inView }: { value: string, inView: boolean }) {
+  const [display, setDisplay] = useState(value.startsWith('0') ? 0 : 0)
+  const isPercent = value.includes('%')
+  const num = parseInt(value.replace(/[^0-9]/g, ''))
+  useEffect(() => {
+    let raf: number | null = null
+    if (inView) {
+      let start = 0
+      let end = num
+      let duration = 1200
+      let startTime: number | null = null
+      function animateCounter(ts: number) {
+        if (!startTime) startTime = ts
+        const progress = Math.min((ts - startTime) / duration, 1)
+        setDisplay(Math.floor(progress * (end - start) + start))
+        if (progress < 1) raf = requestAnimationFrame(animateCounter)
+        else setDisplay(end)
+      }
+      raf = requestAnimationFrame(animateCounter)
+    } else {
+      setDisplay(0)
+    }
+    return () => {
+      if (raf) cancelAnimationFrame(raf)
+    }
+  }, [inView, value])
+  return <span>{display}{isPercent ? '%' : ''}</span>
+}
+
+function StatBlock({ stat, i, fadeUp }: { stat: { value: string, label: string, description: string }, i: number, fadeUp: any }) {
+  const statRef = useRef(null)
+  const inView = useInView(statRef, { once: false, margin: "-20% 0px" })
+  return (
+    <motion.div
+      key={i}
+      ref={statRef}
+      className="flex flex-col items-start px-2 py-6 sm:px-4 transition-all cursor-pointer group text-left"
+      whileHover={{ scale: 1.06 }}
+      variants={fadeUp}
+      style={{ borderBottom: (i === 1 || i === 3) ? '1px solid #e5e7eb' : 'none' }}
+    >
+      <div className="text-6xl sm:text-7xl font-semibold mb-2 font-inter leading-tight group-hover:text-orange-500 transition-colors text-left">
+        <AnimatedCounter value={stat.value} inView={inView} />
+      </div>
+      <div className="text-2xl font-medium text-slate-900 mb-1 font-inter leading-snug group-hover:text-gammalex-orange transition-colors text-left">
+        {stat.label}
+      </div>
+      <div className="text-lg text-slate-700 font-inter leading-normal group-hover:text-slate-900 transition-colors text-left">
+        {stat.description}
+      </div>
+    </motion.div>
+  )
+}
+
 function SystemicRiskStats() {
   // Most urgent, deduplicated stats
   const stats = [
@@ -453,23 +507,59 @@ function SystemicRiskStats() {
     },
   ];
 
+  // Animation variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  }
+
   return (
-    <section className="w-full bg-sage-100 py-32 px-2 sm:px-0 font-inter flex justify-center items-center">
-      <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center">
+    <section className="w-full bg-sage-100 py-32 px-2 sm:px-0 font-inter flex justify-center items-center relative overflow-hidden">
+      {/* Subtle animated radial gradient background */}
+      <motion.div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 0.18, scale: [0.9, 1.05, 0.95, 1] }}
+        transition={{ duration: 12, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+        style={{ width: 900, height: 900, borderRadius: '50%', background: 'radial-gradient(circle, #FF8800 0%, #fffbe6 60%, #f6faf6 100%)' }}
+      />
+      <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center relative z-10">
         <div className="flex flex-col items-center mb-8">
-          <div className="mb-6">
+          <motion.div
+            className="mb-6"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: [0.8, 1.1, 1], opacity: [0, 1, 1] }}
+            transition={{ duration: 1.2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+          >
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#FF8800" opacity="0.15"/><path d="M28 16v12" stroke="#FF8800" strokeWidth="3.5" strokeLinecap="round"/><circle cx="28" cy="38" r="2.5" fill="#FF8800"/></svg>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-gammalex-orange text-center mb-4 leading-tight">
+          </motion.div>
+          <motion.h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-normal text-gammalex-orange text-center mb-4 leading-tight"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true }}
+          >
             Pre-Auth is a Healthcare Crisis
-          </h2>
-          <p className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight">
+          </motion.h2>
+          <motion.p
+            className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            viewport={{ once: true }}
+          >
             The data is clear: delays, burnout, <br /> and denials are symptoms of a broken system.
-          </p>
-        
-          <div className="text-sm text-slate-500 text-center mb-4">
+          </motion.p>
+          <motion.div
+            className="text-sm text-slate-500 text-center mb-4"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            viewport={{ once: true }}
+          >
             Source: <a href="https://www.ama-assn.org/system/files/prior-authorization-survey.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange">AMA 2024 Prior Authorization Physician Survey</a>
-          </div>
+          </motion.div>
         </div>
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-x-24 gap-y-14 w-full max-w-4xl mb-12"
@@ -478,36 +568,12 @@ function SystemicRiskStats() {
           viewport={{ once: true, amount: 0.2 }}
           variants={{
             hidden: {},
-            visible: { transition: { staggerChildren: 0.12 } },
+            visible: { transition: { staggerChildren: 0.14 } },
           }}
         >
-          {stats.map((s, i) => {
-            const statRef = React.useRef(null)
-            const inView = useInView(statRef, { once: false, margin: "-20% 0px" })
-            return (
-              <motion.div
-                key={i}
-                ref={statRef}
-                className="flex flex-col items-start px-2 py-6 sm:px-4 transition-all cursor-pointer group text-left"
-                whileHover={{ scale: 1.04 }}
-                variants={{
-                  hidden: { opacity: 0, y: 40 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-                }}
-                style={{ borderBottom: (i === 1 || i === 3) ? '1px solid #e5e7eb' : 'none' }}
-              >
-                <div className="text-6xl sm:text-7xl font-semibold mb-2 font-inter leading-tight group-hover:text-orange-500 transition-colors text-left">
-                  <Counter value={s.value} inView={inView} />
-                </div>
-                <div className="text-2xl font-medium text-slate-900 mb-1 font-inter leading-snug group-hover:text-gammalex-orange transition-colors text-left">
-                  {s.label}
-                </div>
-                <div className="text-lg text-slate-700 font-inter leading-normal group-hover:text-slate-900 transition-colors text-left">
-                  {s.description}
-                </div>
-              </motion.div>
-            )
-          })}
+          {stats.map((s, i) => (
+            <StatBlock key={i} stat={s} i={i} fadeUp={fadeUp} />
+          ))}
         </motion.div>
         <div className="w-full flex flex-col items-center mt-2">
           {/* Button removed as requested */}
@@ -550,97 +616,6 @@ function FooterGV() {
     </footer>
   );
 }
-
-function Counter({ value, inView }: { value: string, inView: boolean }) {
-  const isPercent = value.includes('%')
-  const num = parseInt(value.replace(/[^0-9]/g, ''))
-  const [display, setDisplay] = useState(num)
-  const rafRef = React.useRef<number | null>(null)
-  useEffect(() => {
-    let direction = 1
-    let current = num
-    function animate() {
-      if (inView) return
-      current += direction * 0.5
-      if (current >= num + 3) direction = -1
-      if (current <= num - 3) direction = 1
-      setDisplay(Math.round(current))
-      rafRef.current = requestAnimationFrame(animate)
-    }
-    if (!inView) {
-      rafRef.current = requestAnimationFrame(animate)
-    } else {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
-      setDisplay(num)
-    }
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current)
-    }
-  }, [inView, num])
-  return (
-    <motion.span
-      className="inline-block"
-      animate={!inView ? { scale: [1, 1.12, 1], y: [0, -8, 0] } : { scale: 1, y: 0 }}
-      transition={{ repeat: !inView ? Infinity : 0, duration: 1.2, ease: "easeInOut" }}
-      style={{
-        background: "linear-gradient(90deg, #FF8800 0%, #FFB347 100%)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        filter: "drop-shadow(0 2px 8px rgba(255,136,0,0.18))"
-      }}
-    >
-      {display}{isPercent ? "%" : ""}
-    </motion.span>
-  )
-}
-
-// Move stats array to module scope for reuse
-  const stats = [
-    {
-      icon: '📄',
-      label: 'Avg. Pre-Auths per Physician per Week',
-      stat: 40,
-      subtext: 'Pre-authorization requests weekly',
-      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-      sourceLabel: 'AJMC',
-    },
-    {
-      icon: '⏱️',
-      label: 'Hours Spent on Pre-Auth per Week',
-      stat: 13,
-      statSuffix: '+',
-      subtext: 'Hours physicians & staff spend weekly',
-      source: 'https://www.ajmc.com/view/ama-survey-highlights-growing-burden-of-prior-authorization-on-physicians-patients?utm_source=chatgpt.com',
-      sourceLabel: 'AJMC',
-    },
-    {
-      icon: '🚫',
-      label: 'Care Delays Due to Pre-Auth',
-      stat: 93,
-      statSuffix: '%',
-      subtext: 'Physicians report delayed patient care',
-      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-      sourceLabel: 'AMA',
-    },
-    {
-      icon: '💥',
-      label: 'Burnout Linked to Pre-Auth',
-      stat: 89,
-      statSuffix: '%',
-      subtext: 'Physicians say PA contributes to burnout',
-      source: 'https://www.azmed.org/news/694951/AMA-Releases-its-2024-Prior-Authorization-Physician-Survey-.htm?utm_source=chatgpt.com',
-      sourceLabel: 'AZMed',
-    },
-    {
-      icon: '⚠️',
-      label: 'Treatment Abandonment or Harm',
-      stat: 94,
-      statDisplay: '82–94%',
-      subtext: 'PAs linked to serious adverse events',
-      source: 'https://www.ama-assn.org/system/files/prior-authorization-survey.pdf?utm_source=chatgpt.com',
-      sourceLabel: 'AMA',
-    },
-  ]
 
 // SectionBlock: DRY, bold, adaptive block for heading + content
 function SectionBlock({ heading, highlight, content, renderHeading }: { heading: string, highlight: string, content: React.ReactNode, renderHeading?: () => React.ReactNode }) {
