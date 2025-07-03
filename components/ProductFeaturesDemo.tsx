@@ -199,44 +199,92 @@ export function ProductFeaturesDemo() {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
         {/* Inference Card */}
-        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
+        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 h-[500px]">
           <div className="flex items-center gap-5 mb-6">
             <Zap className="w-14 h-14 text-slate-400" />
             <span className="text-3xl font-inter text-gammalex-orange">Inference</span>
           </div>
           <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
-          <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
-            <li>Policy Lookup: Instantly match clinical scenarios to payer rules and coverage policies.</li>
-            <li>Risk Scoring: Quantify denial and compliance risk before care is delayed or denied.</li>
-            <li>Compliance Checks: Ensure documentation meets clinical and legal standards.</li>
-            <li>Enterprise-grade security and privacy (SOC 2, HIPAA).</li>
-          </ul>
+          <div className="flex-1 overflow-y-auto pr-2">
+            <ul className="space-y-4 text-lg text-slate-700">
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Policy Lookup: Instantly match clinical scenarios to payer rules and coverage policies.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Risk Scoring: Quantify denial and compliance risk before care is delayed or denied.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Compliance Checks: Ensure documentation meets clinical and legal standards.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Enterprise-grade security and privacy (SOC 2, HIPAA).</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Instantly provides sources for every policy answer—so you can verify and trust results, just like Perplexity AI.</span>
+              </li>
+            </ul>
+          </div>
         </div>
         {/* Fine-Tuning Card */}
-        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
+        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 h-[500px]">
           <div className="flex items-center gap-5 mb-6">
             <Settings className="w-14 h-14 text-slate-400" />
             <span className="text-3xl font-inter text-gammalex-orange">Fine-Tuning</span>
           </div>
           <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Custom AI for your clinical and legal workflows</div>
-          <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
-            <li>Adapt to payer-specific rules, specialties, and evolving regulations.</li>
-            <li>Generate compliant, evidence-backed documentation for pre-auths and appeals.</li>
-            <li>Fine-tune LLM capabilities for GammaLex-specific medical, legal, and compliance contexts.</li>
-          </ul>
+          <div className="flex-1 overflow-y-auto pr-2">
+            <ul className="space-y-4 text-lg text-slate-700">
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Adapt models to payer-specific rules, specialties, and evolving regulations.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Fine-tune LLMs for your organization's real-world data and compliance needs.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Generate compliant, evidence-backed documentation for pre-auths and appeals.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Maintain full control and transparency over your AI models.</span>
+              </li>
+            </ul>
+          </div>
         </div>
         {/* AI Copilot Card */}
-        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 min-h-[420px]">
+        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-14 border border-sage-100 h-[500px]">
           <div className="flex items-center gap-5 mb-6">
             <Bot className="w-14 h-14 text-slate-400" />
             <span className="text-3xl font-inter text-gammalex-orange">AI Copilot</span>
           </div>
           <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Your always-on assistant for Copilot teams</div>
-          <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
-            <li>Surface missing evidence, flag legal risk, and draft justifications in real time.</li>
-            <li>Answer complex policy, coding, and compliance questions instantly.</li>
-            <li>Empower clinicians, billers, and legal teams to work smarter and reduce burnout.</li>
-          </ul>
+          <div className="flex-1 overflow-y-auto pr-2">
+            <ul className="space-y-4 text-lg text-slate-700">
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Surface missing evidence, flag legal risk, and draft justifications in real time.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Answer complex policy, coding, and compliance questions instantly.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Empower clinicians, billers, and legal teams to work smarter and reduce burnout.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-green-600 mt-1">✓</span>
+                <span>Seamlessly integrate with EHR and legal systems for workflow automation.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       {/* Flow Arrow */}
