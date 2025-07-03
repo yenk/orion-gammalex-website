@@ -513,6 +513,22 @@ function SystemicRiskStats() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
   }
 
+  // Group stats by category (for rows)
+  const categories = [
+    {
+      title: "Systemic Risk",
+      stats: [stats[0], stats[1]],
+    },
+    {
+      title: "Delays and Burden",
+      stats: [stats[2], stats[3]],
+    },
+    {
+      title: "Patient Impact",
+      stats: [stats[4], stats[5]],
+    },
+  ];
+
   return (
     <section className="w-full bg-sage-100 py-32 px-2 sm:px-0 font-inter flex justify-center items-center relative overflow-hidden">
       {/* Subtle animated radial gradient background */}
@@ -523,7 +539,7 @@ function SystemicRiskStats() {
         transition={{ duration: 12, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
         style={{ width: 900, height: 900, borderRadius: '50%', background: 'radial-gradient(circle, #FF8800 0%, #fffbe6 60%, #f6faf6 100%)' }}
       />
-      <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center relative z-10">
+      <div className="w-full max-w-5xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center relative z-10">
         <div className="flex flex-col items-center mb-8">
           <motion.div
             className="mb-6"
@@ -561,20 +577,29 @@ function SystemicRiskStats() {
             Source: <a href="https://www.ama-assn.org/system/files/prior-authorization-survey.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange">AMA 2024 Prior Authorization Physician Survey</a>
           </motion.div>
         </div>
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-x-24 gap-y-14 w-full max-w-4xl mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.14 } },
-          }}
-        >
-          {stats.map((s, i) => (
-            <StatBlock key={i} stat={s} i={i} fadeUp={fadeUp} />
-          ))}
-        </motion.div>
+        <div className="w-full flex flex-col items-center gap-8">
+          <div className="w-full grid grid-cols-[minmax(10rem,14rem)_1fr_1fr] gap-x-10 gap-y-0 items-stretch">
+            {categories.map((cat, catIdx) => (
+              <React.Fragment key={cat.title}>
+                {/* Category label, vertically centered between two stats */}
+                <div className="flex flex-col items-end pr-4 justify-center h-full row-span-2" style={{ gridRow: `${catIdx*2+1} / span 2` }}>
+                  <h3 className="text-lg sm:text-xl font-semibold text-slate-700 uppercase tracking-wide text-right whitespace-nowrap">{cat.title}</h3>
+                </div>
+                {/* First stat block */}
+                <div className="flex flex-col items-start">
+                  <StatBlock stat={cat.stats[0]} i={catIdx * 2} fadeUp={fadeUp} />
+                </div>
+                <div className="flex flex-col items-start">
+                  <StatBlock stat={cat.stats[1]} i={catIdx * 2 + 1} fadeUp={fadeUp} />
+                </div>
+                {/* Second stat row: empty label cell, but keep grid structure */}
+                <div className="hidden" />
+                <div className="flex flex-col items-start" style={{ gridColumn: 2 }} />
+                <div className="flex flex-col items-start" style={{ gridColumn: 3 }} />
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
         <div className="w-full flex flex-col items-center mt-2">
           {/* Button removed as requested */}
         </div>
