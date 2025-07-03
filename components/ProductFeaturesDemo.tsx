@@ -195,7 +195,7 @@ export function ProductFeaturesDemo() {
         denial risk, and compliance
       </h2>
       <p className="text-2xl sm:text-3xl font-inter text-center mb-20 max-w-4xl mx-auto text-black leading-snug">
-        Pre-auth, automated. Denials, reduced. Compliance, covered. <span className="text-gammalex-orange">GammaLex</span> empowers faster, safer care.
+        Faster care. Fewer denials. No black boxes. <span className="text-gammalex-orange">GammaLex</span> delivers source-backed AI you can trust.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
         {/* Inference Card */}

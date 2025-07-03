@@ -79,59 +79,50 @@ export default function GammaLexPage() {
           </p>
           <div className="w-full flex flex-col gap-0">
             {/* Why It Matters Row */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-10 gap-16">
-              {/* Left: Heading */}
-              <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
+            <SectionBlock
+              heading="Why It Matters"
+              highlight="It"
+              renderHeading={() => (
                 <h3 className="text-4xl sm:text-5xl font-normal font-inter text-slate-900 text-center sm:text-right leading-tight">
-                  Why <span className="text-gammalex-orange">It Matters</span>
+                  <span className="text-gammalex-orange font-bold">Why</span> <span className="text-gammalex-orange font-bold">It</span> Matters
                 </h3>
-              </div>
-              {/* Right: Supporting Text */}
-              <div className="w-full sm:w-1/2 flex items-center justify-center px-4 sm:px-0">
-                <p className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed max-w-2xl">
+              )}
+              content={
+                <>
                   Pre-authorization isn't just paperwork—it's the root cause of <span className="text-gammalex-orange font-semibold">delays</span>, <span className="text-gammalex-orange font-semibold">burnout</span>, and <span className="text-gammalex-orange font-semibold">legal risk</span> in healthcare. Fixing it means <span className="text-gammalex-orange font-semibold">better care</span>, <span className="text-gammalex-orange font-semibold">less stress</span>, and <span className="text-gammalex-orange font-semibold">fewer denials</span> for everyone.
-                </p>
-              </div>
-            </div>
+                </>
+              }
+            />
             <div className="w-full border-t border-slate-100" />
             {/* The Solution Row */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-10 gap-16">
-              {/* Left: Heading */}
-              <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
-                <h3 className="text-4xl sm:text-5xl font-normal font-inter text-slate-900 text-center sm:text-right leading-tight">
-                  The <span className="text-gammalex-orange">Solution</span>
-                </h3>
-              </div>
-              {/* Right: Supporting Text */}
-              <div className="w-full sm:w-1/2 flex items-center justify-center px-4 sm:px-0">
+            <SectionBlock
+              heading="The Solution"
+              highlight="Solution"
+              content={
                 <ul className="space-y-6 max-w-2xl">
                   <li className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed"><span className="font-bold text-slate-900">GammaLex</span> is the world's first clinical-legal AI built to defend care before it's denied.</li>
                   <li className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed">
                     Understands <span className="text-gammalex-orange font-semibold">pre-auths</span>. It deciphers medical billing codes, coverage rules, and physician notes to generate <span className="text-gammalex-orange font-semibold">bulletproof justifications</span>—and it flags legal vulnerabilities before they become <span className="text-gammalex-orange font-semibold">liability</span>.
                   </li>
-              </ul>
-              </div>
-            </div>
+                </ul>
+              }
+            />
             <div className="w-full border-t border-slate-100" />
           </div>
           <div className="w-full flex flex-col items-center gap-6 mt-6">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-3xl mb-2">
+            <div className="flex flex-row justify-center items-center gap-10 py-8 w-full bg-slate-100">
               {[
-                { label: "Less denial", icon: <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
-                { label: "Less burnout", icon: <Brain className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
-                { label: "Reduced legal risk", icon: <Scale className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
-                { label: "Faster care", icon: <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
+                { label: "Less denial", icon: <CheckCircle className="w-10 h-10 text-gammalex-orange" /> },
+                { label: "Less burnout", icon: <Brain className="w-10 h-10 text-gammalex-orange" /> },
+                { label: "Reduced legal risk", icon: <Scale className="w-10 h-10 text-gammalex-orange" /> },
+                { label: "Faster care", icon: <Zap className="w-10 h-10 text-gammalex-orange" /> },
               ].map((item, i) => (
-                <motion.div
-                  key={item.label}
-                  whileHover={{ scale: 1.08, boxShadow: "0 8px 32px 0 rgba(255,136,0,0.18)" }}
-                  className="flex flex-col items-center justify-center bg-white rounded-2xl px-4 py-6 sm:px-6 sm:py-8 shadow-md border border-sage-200 transition-all cursor-pointer group"
-                >
-                  <div className="mb-3">{item.icon}</div>
-                  <span className="text-xl sm:text-2xl font-bold text-sage-700 font-inter group-hover:text-gammalex-orange transition-colors text-center">
+                <div key={item.label} className="flex flex-col items-center">
+                  <div className="mb-2">{item.icon}</div>
+                  <span className="text-xl sm:text-2xl font-normal text-slate-800 font-inter text-center">
                     {item.label}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
             <JoinWaitlistModal
@@ -173,7 +164,7 @@ export default function GammaLexPage() {
         <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-row items-start justify-between mt-20 mb-20 gap-64">
           <div className="text-4xl font-inter text-white font-normal text-left">Innovations</div>
           <div className="text-4xl font-inter text-white font-normal text-left max-w-4xl">
-            AI models, datasets, and compliance tools—built for the complexity of real-world care and coverage.
+            Source-grounded AI models and datasets—designed for the complex realities of care, coverage, and compliance.
           </div>
         </div>
       </section>
@@ -648,3 +639,27 @@ function Counter({ value, inView }: { value: string, inView: boolean }) {
       sourceLabel: 'AMA',
     },
   ]
+
+// SectionBlock: DRY, bold, adaptive block for heading + content
+function SectionBlock({ heading, highlight, content, renderHeading }: { heading: string, highlight: string, content: React.ReactNode, renderHeading?: () => React.ReactNode }) {
+  return (
+    <div className="w-full flex flex-col sm:flex-row items-center justify-between py-10 gap-16">
+      {/* Left: Heading */}
+      <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
+        {renderHeading ? renderHeading() : (
+          <h3 className="text-4xl sm:text-5xl font-normal font-inter text-slate-900 text-center sm:text-right leading-tight">
+            {heading.split(highlight)[0]}
+            <span className="text-gammalex-orange font-bold">{highlight}</span>
+            {heading.split(highlight)[1]}
+          </h3>
+        )}
+      </div>
+      {/* Right: Supporting Text */}
+      <div className="w-full sm:w-1/2 flex items-center justify-center px-4 sm:px-0">
+        <div className="text-2xl sm:text-3xl text-slate-700 font-inter text-center sm:text-left leading-relaxed max-w-2xl">
+          {content}
+        </div>
+      </div>
+    </div>
+  );
+}
