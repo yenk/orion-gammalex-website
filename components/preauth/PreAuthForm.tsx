@@ -80,7 +80,7 @@ export function PreAuthForm() {
         ],
         coverageInsights: {
           covered: true,
-          limitations: "May require prior authorization for certain modifiers",
+          limitations: "May require pre authorization for certain modifiers",
           notes: "Procedure appears to meet medical necessity criteria"
         }
       }

@@ -19,7 +19,7 @@ function ViabilityScoring({ buttonClassName = "" }: { buttonClassName?: string }
     } else if (cpt === "77080") {
       setResult({ likelihood: "High", confidence: 0.92, red_flags: [] })
     } else {
-      setResult({ likelihood: "Medium", confidence: 0.75, red_flags: ["Missing prior auth history"] })
+      setResult({ likelihood: "Medium", confidence: 0.75, red_flags: ["Missing pre auth history"] })
     }
   }
   return (

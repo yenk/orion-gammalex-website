@@ -70,8 +70,8 @@ export default function GammaLexPage() {
       {/* Why GammaLex Section */}
       <section id="why-gammalex" className="py-24 px-2 sm:px-0 font-inter flex justify-center items-center bg-slate-100">
         <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-8 items-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-normal leading-[1.1] text-slate-900 text-center max-w-5xl mx-auto mb-4">
-            <span className="block">Because real <span className="text-gammalex-orange">prior auth</span></span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal leading-[1.1] text-slate-900 text-center max-w-5xl mx-auto mb-4">
+            <span className="block">Because real <span className="text-gammalex-orange">pre-auth</span></span>
             <span className="block"><span className="text-gammalex-orange">decisions</span> live at the intersection of medicine, policy, and law.</span>
           </h1>
           <p className="text-2xl sm:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-10">
@@ -424,12 +424,12 @@ function SystemicRiskStats() {
     {
       value: '93%',
       label: 'Physicians report care delays',
-      description: 'Prior auth delays patient care',
+      description: 'Pre-auth delays patient care',
     },
     {
       value: '89%',
       label: 'Physicians: burnout',
-      description: 'Prior auth contributes to burnout',
+      description: 'Pre-auth contributes to burnout',
     },
     {
       value: '43',

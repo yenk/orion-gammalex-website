@@ -10,7 +10,7 @@ const mockResult = {
   weaknesses: [
     "Missing clinical notes",
     "Outdated lab results",
-    "No prior authorization on file"
+    "No pre authorization on file"
   ],
   malpracticeRelevant: true,
 }
