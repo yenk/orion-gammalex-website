@@ -251,8 +251,8 @@ export function CopilotHero() {
         </motion.svg>
       </div>
       {/* Heading and subheading: classic, unconstrained, centered block */}
-      <div className="relative w-full flex flex-col items-center justify-center min-h-[600px] py-16 md:py-28 z-10">
-        <h1 className="w-full max-w-screen-xl text-6xl sm:text-8xl lg:text-9xl font-normal text-center mb-12 font-inter leading-[1.08] text-white break-words mx-auto">
+      <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[600px] py-10 sm:py-16 md:py-28 z-10">
+        <h1 className="w-full max-w-screen-xl text-3xl xs:text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-normal text-center mb-6 sm:mb-12 font-inter leading-[1.15] sm:leading-[1.08] text-white break-words mx-auto px-2 sm:px-0">
           {headingLines.map((line, i) => (
             line.map((item, j) => (
               <motion.span
@@ -268,7 +268,7 @@ export function CopilotHero() {
             ))
           ))}
         </h1>
-        <h2 className="w-full max-w-4xl sm:max-w-5xl lg:max-w-6xl text-4xl sm:text-5xl lg:text-6xl font-inter text-center mb-10 mx-auto text-white leading-snug font-normal">
+        <h2 className="w-full max-w-xs xs:max-w-md sm:max-w-4xl md:max-w-5xl lg:max-w-6xl text-lg xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-inter text-center mb-6 sm:mb-10 mx-auto text-white leading-snug font-normal px-2 sm:px-0">
           {subheadingLines.map((line, i) => (
             line.map((word, j) => {
               if (word === 'Legal' && i === subheadingLines.length - 1 && j === 0) {

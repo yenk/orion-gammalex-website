@@ -459,13 +459,13 @@ function StatBlock({ stat, i, fadeUp }: { stat: { value: string, label: string, 
       variants={fadeUp}
       style={{ borderBottom: (i === 1 || i === 3) ? '1px solid #e5e7eb' : 'none' }}
     >
-      <div className="text-6xl sm:text-7xl font-semibold mb-2 font-inter leading-tight group-hover:text-orange-500 transition-colors text-left">
+      <div className="text-4xl xs:text-5xl sm:text-6xl font-semibold mb-2 font-inter leading-tight group-hover:text-orange-500 transition-colors text-left">
         <AnimatedCounter value={stat.value} inView={inView} />
       </div>
-      <div className="text-2xl font-medium text-slate-900 mb-1 font-inter leading-snug group-hover:text-gammalex-orange transition-colors text-left">
+      <div className="text-lg xs:text-xl sm:text-2xl font-medium text-slate-900 mb-1 font-inter leading-snug group-hover:text-gammalex-orange transition-colors text-left">
         {stat.label}
       </div>
-      <div className="text-lg text-slate-700 font-inter leading-normal group-hover:text-slate-900 transition-colors text-left">
+      <div className="text-base xs:text-lg sm:text-lg text-slate-700 font-inter leading-normal group-hover:text-slate-900 transition-colors text-left">
         {stat.description}
       </div>
     </motion.div>
@@ -578,12 +578,12 @@ function SystemicRiskStats() {
           </motion.div>
         </div>
         <div className="w-full flex flex-col items-center gap-8">
-          <div className="w-full grid grid-cols-[minmax(10rem,14rem)_1fr_1fr] gap-x-10 gap-y-0 items-stretch">
+          <div className="w-full grid grid-cols-1 gap-y-8 sm:grid-cols-[minmax(10rem,14rem)_1fr_1fr] sm:gap-x-10 sm:gap-y-0 items-stretch">
             {categories.map((cat, catIdx) => (
               <React.Fragment key={cat.title}>
                 {/* Category label, vertically centered between two stats */}
-                <div className="flex flex-col items-end pr-4 justify-center h-full row-span-2" style={{ gridRow: `${catIdx*2+1} / span 2` }}>
-                  <h3 className="text-lg sm:text-xl font-semibold text-slate-700 uppercase tracking-wide text-right whitespace-nowrap">{cat.title}</h3>
+                <div className="flex flex-col items-end pr-4 justify-center h-full row-span-2 sm:block" style={{ gridRow: `auto` }}>
+                  <h3 className="text-base xs:text-lg sm:text-xl font-semibold text-slate-700 uppercase tracking-wide text-right whitespace-nowrap mb-2 sm:mb-0">{cat.title}</h3>
                 </div>
                 {/* First stat block */}
                 <div className="flex flex-col items-start">
@@ -593,7 +593,7 @@ function SystemicRiskStats() {
                   <StatBlock stat={cat.stats[1]} i={catIdx * 2 + 1} fadeUp={fadeUp} />
                 </div>
                 {/* Second stat row: empty label cell, but keep grid structure */}
-                <div className="hidden" />
+                <div className="hidden sm:block" />
                 <div className="flex flex-col items-start" style={{ gridColumn: 2 }} />
                 <div className="flex flex-col items-start" style={{ gridColumn: 3 }} />
               </React.Fragment>
