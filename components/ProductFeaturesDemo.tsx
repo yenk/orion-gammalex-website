@@ -163,7 +163,7 @@ export function ProductFeaturesDemo() {
             <Zap className="w-14 h-14 text-slate-400" />
             <span className="text-3xl font-extrabold font-inter text-gammalex-orange">Inference</span>
           </div>
-          <div className="text-2xl sm:text-3xl mb-6 text-gammalex-orange font-inter">Real-time <span className="text-gammalex-orange">clinical-legal</span> intelligence for every pre-auth and denial:</div>
+          <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
             <li>Policy Lookup: Instantly match clinical scenarios to payer rules and coverage policies.</li>
             <li>Risk Scoring: Quantify denial and compliance risk before care is delayed or denied.</li>
@@ -177,7 +177,7 @@ export function ProductFeaturesDemo() {
             <Settings className="w-14 h-14 text-slate-400" />
             <span className="text-3xl font-extrabold font-inter text-gammalex-orange">Fine-Tuning</span>
           </div>
-          <div className="text-2xl sm:text-3xl mb-6 text-gammalex-orange font-inter">Custom <span className="text-gammalex-orange">AI</span> for your clinical and legal workflows:</div>
+          <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Custom AI for your clinical and legal workflows</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
             <li>Adapt to payer-specific rules, specialties, and evolving regulations.</li>
             <li>Generate compliant, evidence-backed documentation for pre-auths and appeals.</li>
@@ -190,7 +190,7 @@ export function ProductFeaturesDemo() {
             <Bot className="w-14 h-14 text-slate-400" />
             <span className="text-3xl font-extrabold font-inter text-gammalex-orange">AI Copilot</span>
           </div>
-          <div className="text-2xl sm:text-3xl mb-6 text-gammalex-orange font-inter">Your always-on assistant for <span className="text-gammalex-orange">Copilot</span> teams:</div>
+          <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Your always-on assistant for Copilot teams</div>
           <ul className="list-disc pl-7 space-y-4 text-lg text-slate-700">
             <li>Surface missing evidence, flag legal risk, and draft justifications in real time.</li>
             <li>Answer complex policy, coding, and compliance questions instantly.</li>
@@ -200,25 +200,11 @@ export function ProductFeaturesDemo() {
       </div>
       {/* Flow Arrow */}
       <div className="w-full relative flex items-center justify-center my-24">
-        <div className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-2 rounded-full bg-sage-100 w-full z-0" />
-        <motion.span
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl sm:text-3xl font-extrabold text-gammalex-orange font-inter z-10 bg-slate-100 px-4"
-          style={{ left: 0, position: 'absolute', transform: 'translateY(-50%)' }}
-        >
-          Automate
-        </motion.span>
-        <motion.span
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-2xl sm:text-3xl font-extrabold text-gammalex-orange font-inter z-10 bg-slate-100 px-4"
-          style={{ right: 0, position: 'absolute', transform: 'translateY(-50%)' }}
-        >
-          Defend and Comply
-        </motion.span>
+        <svg className="w-full h-8" viewBox="0 0 1000 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="24" y1="16" x2="976" y2="16" stroke="#23232B" strokeWidth="2" />
+          <polyline points="40,4 24,16 40,28" fill="none" stroke="#23232B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="960,4 976,16 960,28" fill="none" stroke="#23232B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
     </section>
   )
