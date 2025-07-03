@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Scale, FileText, Shield, MessageCircle, Zap, Settings, Bot } from "lucide-react"
+import { motion } from "framer-motion"
 
 function ViabilityScoring({ buttonClassName = "" }: { buttonClassName?: string }) {
   const [cpt, setCpt] = useState("77080")
@@ -148,11 +149,11 @@ export function ProductFeaturesDemo() {
   return (
     <section id="product" className="w-full max-w-[1600px] mx-auto py-36 px-2 sm:px-12">
       {/* Headline with orange emphasis only */}
-      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-normal text-center mb-8 font-inter leading-tight text-slate-900">
+      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-center mb-8 font-inter leading-tight text-slate-900">
         End-to-end clinical-legal <span className="text-gammalex-orange">AI</span> for pre-auth, <br />
         denial risk, and compliance
       </h2>
-      <p className="text-3xl sm:text-4xl font-inter text-center mb-20 max-w-4xl mx-auto text-black leading-snug">
+      <p className="text-2xl sm:text-3xl font-inter text-center mb-20 max-w-4xl mx-auto text-black leading-snug">
         Pre-auth, automated. Denials, reduced. Compliance, covered. <span className="text-gammalex-orange">GammaLex</span> empowers faster, safer care.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
@@ -198,12 +199,26 @@ export function ProductFeaturesDemo() {
         </div>
       </div>
       {/* Flow Arrow */}
-      <div className="flex flex-col items-center mt-24">
-        <div className="flex items-center w-full justify-center">
-          <span className="text-2xl font-extrabold mr-6 text-gammalex-orange">Automate</span>
-          <div className="flex-1 h-1 bg-sage-200 rounded-full mx-4 max-w-xl" />
-          <span className="text-2xl font-extrabold ml-6 text-gammalex-orange">Defend & Comply</span>
-        </div>
+      <div className="w-full relative flex items-center justify-center my-24">
+        <div className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-2 rounded-full bg-sage-100 w-full z-0" />
+        <motion.span
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-2xl sm:text-3xl font-extrabold text-gammalex-orange font-inter z-10 bg-slate-100 px-4"
+          style={{ left: 0, position: 'absolute', transform: 'translateY(-50%)' }}
+        >
+          Automate
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-2xl sm:text-3xl font-extrabold text-gammalex-orange font-inter z-10 bg-slate-100 px-4"
+          style={{ right: 0, position: 'absolute', transform: 'translateY(-50%)' }}
+        >
+          Defend and Comply
+        </motion.span>
       </div>
     </section>
   )

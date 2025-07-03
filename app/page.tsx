@@ -38,6 +38,7 @@ import { Progress } from '@/components/ui/progress'
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
 import React from 'react'
 import { Brain as BrainIcon, Lightning, ShieldCheck, UsersThree, ChartBar, Scales } from 'phosphor-react'
+import { useAnimation, useMotionValue, useMotionValueEvent } from "framer-motion"
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -68,16 +69,20 @@ export default function GammaLexPage() {
 
       {/* Why GammaLex Section */}
       <section id="why-gammalex" className="py-24 px-2 sm:px-0 font-inter flex justify-center items-center bg-slate-100">
-        <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-normal leading-tight text-center mb-8 pt-8">
-            Because real <span className="text-orange-500">prior auth decisions</span> live at the intersection of medicine, policy, and law <br />
+        <div className="w-full max-w-6xl px-0 sm:px-0 py-0 flex flex-col gap-8 items-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal leading-tight text-center max-w-3xl mx-auto mb-4">
+            <span>Because real</span>
+            <br className="hidden sm:block" />
+            <span>
+              <span className="text-orange-500">prior auth decisions</span> live at the intersection of medicine, policy, and law
+            </span>
           </h1>
-          <p className="text-2xl sm:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-20">
+          <p className="text-2xl sm:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-10">
             GammaLex exists to address the real reasons behind medical denials—by empowering clinicians and legal teams with AI that understands both the clinical and legal landscape.
           </p>
           <div className="w-full flex flex-col gap-0">
             {/* Why It Matters Row */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-20 gap-16">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-10 gap-16">
               {/* Left: Heading */}
               <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
                 <h3 className="text-4xl sm:text-5xl font-normal font-inter text-slate-900 text-center sm:text-right leading-tight">
@@ -93,7 +98,7 @@ export default function GammaLexPage() {
             </div>
             <div className="w-full border-t border-slate-100" />
             {/* The Solution Row */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-20 gap-16">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between py-10 gap-16">
               {/* Left: Heading */}
               <div className="w-full sm:w-1/2 flex justify-center sm:justify-end px-4 sm:px-0">
                 <h3 className="text-4xl sm:text-5xl font-normal font-inter text-slate-900 text-center sm:text-right leading-tight">
@@ -113,13 +118,32 @@ export default function GammaLexPage() {
             <div className="w-full border-t border-slate-100" />
           </div>
           <div className="w-full flex flex-col items-center gap-6 mt-6">
-            <div className="flex flex-wrap justify-center gap-4 mb-2">
-              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Less denial</span>
-              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Less burnout</span>
-              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Reduced legal risk</span>
-              <span className="bg-sage-100 rounded-2xl px-6 py-2 text-sage-700 font-bold text-base">Faster care</span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-3xl mb-2">
+              {[
+                { label: "Less denial", icon: <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
+                { label: "Less burnout", icon: <Brain className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
+                { label: "Reduced legal risk", icon: <Scale className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
+                { label: "Faster care", icon: <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-gammalex-orange" /> },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  whileHover={{ scale: 1.08, boxShadow: "0 8px 32px 0 rgba(255,136,0,0.18)" }}
+                  className="flex flex-col items-center justify-center bg-white rounded-2xl px-4 py-6 sm:px-6 sm:py-8 shadow-md border border-sage-200 transition-all cursor-pointer group"
+                >
+                  <div className="mb-3">{item.icon}</div>
+                  <span className="text-xl sm:text-2xl font-bold text-sage-700 font-inter group-hover:text-gammalex-orange transition-colors text-center">
+                    {item.label}
+                  </span>
+                </motion.div>
+              ))}
             </div>
-            <a href="#cta" className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">See GammaLex in Action</a>
+            <JoinWaitlistModal
+              trigger={
+                <button className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">
+                  See GammaLex in Action
+                </button>
+              }
+            />
           </div>
         </div>
       </section>
@@ -158,22 +182,20 @@ export default function GammaLexPage() {
       </section>
 
       {/* Join Section (Partner With Us) */}
-      <div ref={ctaRef}>
-        <section id="join" className="min-h-screen flex items- bg-black text-white">
+      <div ref={ctaRef} className="mt-0">
+        <section id="join" className="min-h-screen flex items-center bg-sage-100 text-black">
           <div className="max-w-none w-full px-8 lg:px-16 py-8">
             <div className="flex flex-col items-center max-w-3xl mx-auto">
-              <div className="flex flex-col items-center gap-4 w-full mb-8 sm:mb-12">
-                <span className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight font-inter text-center break-words tracking-tight">
-                  Be the first to experience GammaLex.
-                </span>
-                <span className="text-2xl sm:text-3xl font-bold leading-tight font-inter text-center break-words tracking-tight">
-                  AI-built for speed, accuracy, and outcomes that matter.
-                </span>
-              </div>
-              <div className="bg-black rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-inter">
+              <span className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter text-center break-words tracking-tight mb-4">
+                Be the first to experience GammaLex.
+              </span>
+              <span className="text-2xl sm:text-3xl font-inter text-center break-words tracking-tight mb-8">
+                AI-built for speed, accuracy, and outcomes that matter.
+              </span>
+              <div className="bg-white rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-inter">
                 <JoinWaitlistModal
                   trigger={
-                    <button className="text-2xl sm:text-4xl font-extrabold text-terracotta-400 text-center w-full font-inter focus:outline-none">
+                    <button className="text-2xl sm:text-4xl text-gammalex-orange text-center w-full font-inter focus:outline-none">
                       Join as an Early Partner
                     </button>
                   }
@@ -380,7 +402,7 @@ function AboutSection() {
   return (
     <section id="about" className="py-28 px-4 bg-white font-inter text-slate-900">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-inter font-normal text-center leading-tight mb-8">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-8">
           <span className="text-slate-900">Forge the </span>
           <span className="text-gammalex-orange">AI frontier</span>
           <span className="text-slate-900">. Train on </span>
@@ -394,10 +416,10 @@ function AboutSection() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16 w-full mt-4">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-center text-center px-6">
+            <div key={i} className="flex flex-col items-start text-left px-6">
               <div className="mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-orange', width: 56, height: 56 })}</div>
-              <div className="text-2xl sm:text-3xl mb-3 text-gammalex-orange font-inter">{f.title}</div>
-              <div className="text-base sm:text-lg text-slate-700 leading-relaxed font-inter">{f.description}</div>
+              <div className="text-2xl sm:text-3xl mb-3 text-gammalex-orange font-inter text-left">{f.title}</div>
+              <div className="text-base sm:text-lg text-slate-700 leading-relaxed font-inter text-left">{f.description}</div>
             </div>
           ))}
         </div>
@@ -448,29 +470,57 @@ function SystemicRiskStats() {
           <div className="mb-6">
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#FF8800" opacity="0.15"/><path d="M28 16v12" stroke="#FF8800" strokeWidth="3.5" strokeLinecap="round"/><circle cx="28" cy="38" r="2.5" fill="#FF8800"/></svg>
           </div>
-          <h2 className="text-5xl sm:text-6xl font-normal text-gammalex-orange text-center mb-4 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-gammalex-orange text-center mb-4 leading-tight">
             Pre-Auth is a Healthcare Crisis
           </h2>
-          <p className="text-3xl sm:text-4xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight">
+          <p className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight">
             The data is clear: delays, burnout, <br /> and denials are symptoms of a broken system.
-    
           </p>
         
           <div className="text-sm text-slate-500 text-center mb-4">
             Source: <a href="https://www.ama-assn.org/system/files/prior-authorization-survey.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange">AMA 2024 Prior Authorization Physician Survey</a>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-x-24 gap-y-14 w-full max-w-4xl mb-12">
-          {stats.map((s, i) => (
-            <div key={i} className="flex flex-col items-start">
-              <div className="text-5xl sm:text-6xl font-black text-gammalex-orange mb-2 font-inter leading-tight">{s.value}</div>
-              <div className="text-2xl font-bold text-slate-900 mb-1 font-inter leading-snug">{s.label}</div>
-              <div className="text-lg text-slate-700 font-inter leading-normal">{s.description}</div>
-            </div>
-          ))}
-        </div>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-x-24 gap-y-14 w-full max-w-4xl mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12 } },
+          }}
+        >
+          {stats.map((s, i) => {
+            const statRef = React.useRef(null)
+            const inView = useInView(statRef, { once: false, margin: "-20% 0px" })
+            return (
+              <motion.div
+                key={i}
+                ref={statRef}
+                className="flex flex-col items-start px-2 py-6 sm:px-4 transition-all cursor-pointer group text-left"
+                whileHover={{ scale: 1.04 }}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                }}
+                style={{ borderBottom: (i === 1 || i === 3) ? '1px solid #e5e7eb' : 'none' }}
+              >
+                <div className="text-6xl sm:text-7xl font-semibold mb-2 font-inter leading-tight group-hover:text-orange-500 transition-colors text-left">
+                  <Counter value={s.value} inView={inView} />
+                </div>
+                <div className="text-2xl font-medium text-slate-900 mb-1 font-inter leading-snug group-hover:text-gammalex-orange transition-colors text-left">
+                  {s.label}
+                </div>
+                <div className="text-lg text-slate-700 font-inter leading-normal group-hover:text-slate-900 transition-colors text-left">
+                  {s.description}
+                </div>
+              </motion.div>
+            )
+          })}
+        </motion.div>
         <div className="w-full flex flex-col items-center mt-2">
-          <div className="inline-block bg-gammalex-orange text-white text-2xl font-bold rounded-2xl px-10 py-4 shadow font-inter tracking-wide">GammaLex exists to fix this.</div>
+          {/* Button removed as requested */}
         </div>
       </div>
     </section>
@@ -509,6 +559,49 @@ function FooterGV() {
       </div>
     </footer>
   );
+}
+
+function Counter({ value, inView }: { value: string, inView: boolean }) {
+  const isPercent = value.includes('%')
+  const num = parseInt(value.replace(/[^0-9]/g, ''))
+  const [display, setDisplay] = useState(num)
+  const rafRef = React.useRef<number | null>(null)
+  useEffect(() => {
+    let direction = 1
+    let current = num
+    function animate() {
+      if (inView) return
+      current += direction * 0.5
+      if (current >= num + 3) direction = -1
+      if (current <= num - 3) direction = 1
+      setDisplay(Math.round(current))
+      rafRef.current = requestAnimationFrame(animate)
+    }
+    if (!inView) {
+      rafRef.current = requestAnimationFrame(animate)
+    } else {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      setDisplay(num)
+    }
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+  }, [inView, num])
+  return (
+    <motion.span
+      className="inline-block"
+      animate={!inView ? { scale: [1, 1.12, 1], y: [0, -8, 0] } : { scale: 1, y: 0 }}
+      transition={{ repeat: !inView ? Infinity : 0, duration: 1.2, ease: "easeInOut" }}
+      style={{
+        background: "linear-gradient(90deg, #FF8800 0%, #FFB347 100%)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        filter: "drop-shadow(0 2px 8px rgba(255,136,0,0.18))"
+      }}
+    >
+      {display}{isPercent ? "%" : ""}
+    </motion.span>
+  )
 }
 
 // Move stats array to module scope for reuse
