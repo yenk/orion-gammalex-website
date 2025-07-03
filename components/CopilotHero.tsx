@@ -27,6 +27,7 @@ const subheadingWords = subheading.split(/\s+/);
 export function CopilotHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [skipAnimation, setSkipAnimation] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const headingLines = [
@@ -84,11 +85,23 @@ export function CopilotHero() {
     };
   }, []);
 
+  useEffect(() => {
+    function skip() { setSkipAnimation(true); }
+    window.addEventListener('scroll', skip, { passive: true });
+    window.addEventListener('keydown', skip, { passive: true });
+    window.addEventListener('touchstart', skip, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', skip);
+      window.removeEventListener('keydown', skip);
+      window.removeEventListener('touchstart', skip);
+    };
+  }, []);
+
   // Update generateAnimatedDots for larger SVG
   const generateAnimatedDots = () => {
     const dots = [];
-    const rows = 36;
-    const cols = 36;
+    const rows = 16;
+    const cols = 16;
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < cols; j++) {
         const delay = (i + j) * 0.012;
@@ -119,7 +132,8 @@ export function CopilotHero() {
               ease: "easeInOut"
             }}
             style={{
-              filter: `drop-shadow(0 0 5px ${color}60)`
+              filter: `drop-shadow(0 0 5px ${color}60)`,
+              willChange: 'transform, opacity',
             }}
           />
         );
@@ -252,19 +266,29 @@ export function CopilotHero() {
       </div>
       {/* Heading and subheading: classic, unconstrained, centered block */}
       <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[600px] py-10 sm:py-16 md:py-28 z-10">
-        <h1 className="w-full max-w-screen-xl text-3xl xs:text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-normal text-center mb-6 sm:mb-12 font-inter leading-[1.15] sm:leading-[1.08] text-white break-words mx-auto px-2 sm:px-0">
+        <h1 className="w-full max-w-screen-xl text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal text-center mb-6 sm:mb-12 font-inter leading-[1.12] sm:leading-[1.08] text-white break-words mx-auto">
           {headingLines.map((line, i) => (
             line.map((item, j) => (
-              <motion.span
-                key={`${i}-${j}`}
-                className={item.orange ? "text-gammalex-orange" : ""}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + (i * 0.5) + j * 0.25, duration: 0.7, ease: "easeOut" }}
-                style={{ display: "inline-block", marginRight: 8 }}
-              >
-                {item.word + " "}
-              </motion.span>
+              skipAnimation ? (
+                <span
+                  key={`${i}-${j}`}
+                  className={item.orange ? "text-gammalex-orange" : ""}
+                  style={{ display: "inline-block", marginRight: 8 }}
+                >
+                  {item.word + " "}
+                </span>
+              ) : (
+                <motion.span
+                  key={`${i}-${j}`}
+                  className={item.orange ? "text-gammalex-orange" : ""}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + (i * 0.5) + j * 0.25, duration: 0.7, ease: "easeOut" }}
+                  style={{ display: "inline-block", marginRight: 8, willChange: 'transform, opacity' }}
+                >
+                  {item.word + " "}
+                </motion.span>
+              )
             ))
           ))}
         </h1>
@@ -272,25 +296,43 @@ export function CopilotHero() {
           {subheadingLines.map((line, i) => (
             line.map((word, j) => {
               if (word === 'Legal' && i === subheadingLines.length - 1 && j === 0) {
-                return <><br key="break-legal" /><motion.span
+                return skipAnimation ? (
+                  <><br key="break-legal" /><span
+                    key={`${i}-${j}`}
+                    style={{ display: "inline-block", marginRight: 6 }}
+                  >
+                    {word + " "}
+                  </span></>
+                ) : (
+                  <><br key="break-legal" /><motion.span
+                    key={`${i}-${j}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.5 + (i * 0.4) + j * 0.18, duration: 0.6, ease: "easeOut" }}
+                    style={{ display: "inline-block", marginRight: 6, willChange: 'transform, opacity' }}
+                  >
+                    {word + " "}
+                  </motion.span></>
+                );
+              }
+              return skipAnimation ? (
+                <span
+                  key={`${i}-${j}`}
+                  style={{ display: "inline-block", marginRight: 6 }}
+                >
+                  {word + " "}
+                </span>
+              ) : (
+                <motion.span
                   key={`${i}-${j}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.5 + (i * 0.4) + j * 0.18, duration: 0.6, ease: "easeOut" }}
-                  style={{ display: "inline-block", marginRight: 6 }}
+                  style={{ display: "inline-block", marginRight: 6, willChange: 'transform, opacity' }}
                 >
                   {word + " "}
-                </motion.span></>;
-              }
-              return <motion.span
-                key={`${i}-${j}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.5 + (i * 0.4) + j * 0.18, duration: 0.6, ease: "easeOut" }}
-                style={{ display: "inline-block", marginRight: 6 }}
-              >
-                {word + " "}
-              </motion.span>;
+                </motion.span>
+              );
             })
           ))}
         </h2>

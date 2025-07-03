@@ -50,11 +50,7 @@ export default function GammaLexPage() {
   const isFooterVisible = useInView(ctaRef, { once: false, margin: "0px 0px -40% 0px" })
 
   useEffect(() => {
-    // Snap scroll setup
-    const sections = document.querySelectorAll(".snap-section")
-    sections.forEach((section) => {
-      section.classList.add("snap-start")
-    })
+    // (Removed scroll snap setup for smoother scrolling)
   }, [])
 
   return (
@@ -578,25 +574,19 @@ function SystemicRiskStats() {
           </motion.div>
         </div>
         <div className="w-full flex flex-col items-center gap-8">
-          <div className="w-full grid grid-cols-1 gap-y-8 sm:grid-cols-[minmax(10rem,14rem)_1fr_1fr] sm:gap-x-10 sm:gap-y-0 items-stretch">
+          <div className="w-full flex flex-col gap-10 sm:grid sm:grid-cols-[minmax(10rem,14rem)_1fr_1fr] sm:gap-x-10 sm:gap-y-0 items-stretch">
             {categories.map((cat, catIdx) => (
-              <React.Fragment key={cat.title}>
-                {/* Category label, vertically centered between two stats */}
-                <div className="flex flex-col items-end pr-4 justify-center h-full row-span-2 sm:block" style={{ gridRow: `auto` }}>
-                  <h3 className="text-base xs:text-lg sm:text-xl font-semibold text-slate-700 uppercase tracking-wide text-right whitespace-nowrap mb-2 sm:mb-0">{cat.title}</h3>
+              <div key={cat.title} className="flex flex-col sm:contents w-full">
+                <div className="flex flex-col items-start sm:items-end pr-0 sm:pr-4 justify-center mb-2 sm:mb-0">
+                  <h3 className="text-base xs:text-lg sm:text-xl font-semibold text-slate-700 uppercase tracking-wide text-left sm:text-right whitespace-nowrap">{cat.title}</h3>
                 </div>
-                {/* First stat block */}
-                <div className="flex flex-col items-start">
+                <div className="flex flex-col sm:col-start-2">
                   <StatBlock stat={cat.stats[0]} i={catIdx * 2} fadeUp={fadeUp} />
                 </div>
-                <div className="flex flex-col items-start">
+                <div className="flex flex-col sm:col-start-3">
                   <StatBlock stat={cat.stats[1]} i={catIdx * 2 + 1} fadeUp={fadeUp} />
                 </div>
-                {/* Second stat row: empty label cell, but keep grid structure */}
-                <div className="hidden sm:block" />
-                <div className="flex flex-col items-start" style={{ gridColumn: 2 }} />
-                <div className="flex flex-col items-start" style={{ gridColumn: 3 }} />
-              </React.Fragment>
+              </div>
             ))}
           </div>
         </div>
