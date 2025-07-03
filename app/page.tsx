@@ -42,7 +42,7 @@ import { useAnimation, useMotionValue, useMotionValueEvent } from "framer-motion
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
- * Uses modular hero and toolkit sections, keeping layout, navigation, and join waitlist CTA.
+ * Uses modular hero and toolkit sections, keeping layout, navigation, and request a demo CTA.
  */
 export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
