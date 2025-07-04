@@ -39,6 +39,7 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/comp
 import React from 'react'
 import { Brain as BrainIcon, Lightning, ShieldCheck, UsersThree, ChartBar, Scales } from 'phosphor-react'
 import { useAnimation, useMotionValue, useMotionValueEvent } from "framer-motion"
+import { FlaggingOverlay } from "@/components/ProductFeaturesDemo"
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -134,6 +135,84 @@ export default function GammaLexPage() {
 
       {/* The Problem Stat Strips Section */}
       <SystemicRiskStats />
+
+      {/* Legal Heat Index Section */}
+      <LegalHeatIndex />
+
+      {/* Legal Foresight Bridge Section */}
+      <section className="w-full bg-white py-24 px-4 font-inter">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-6">
+              <span className="text-slate-900">From </span>
+              <span className="text-gammalex-orange">Legal Risk</span>
+              <span className="text-slate-900"> to </span>
+              <span className="text-gammalex-orange">Legal Foresight</span>
+            </h2>
+            <AnimatedText
+              text="The lawsuits show a pattern: denials become liability when clinical evidence contradicts payer decisions. GammaLex's AI doesn't just react—it anticipates legal vulnerabilities before they become lawsuits."
+              className="text-2xl sm:text-3xl font-inter text-center text-slate-700 max-w-5xl mx-auto leading-relaxed"
+            />
+            <div className="flex justify-center my-8">
+              <FlaggingOverlay />
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <motion.div 
+              className="bg-slate-50 rounded-2xl p-8 border border-slate-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-4xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 font-inter">Pattern Recognition</h3>
+              <p className="text-slate-700 leading-relaxed">
+                AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-slate-50 rounded-2xl p-8 border border-slate-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-4xl mb-4">⚖️</div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 font-inter">Legal Compliance</h3>
+              <p className="text-slate-700 leading-relaxed">
+                Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-slate-50 rounded-2xl p-8 border border-slate-200"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-4xl mb-4">🛡️</div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 font-inter">Risk Mitigation</h3>
+              <p className="text-slate-700 leading-relaxed">
+                Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.
+              </p>
+            </motion.div>
+          </div>
+          
+          <div className="text-center">
+            <AnimatedText
+              text="The best defense is foresight. GammaLex doesn't just respond to denials—it flags risk early, so you can avoid them altogether."
+              className="text-xl sm:text-2xl font-inter text-slate-600 italic mb-8"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* FlaggingOverlay Button Section */}
+      // Button section removed as requested
 
       <div className="w-full bg-sage-50 border-b border-sage-100">
         <ProductFeaturesDemo />
@@ -592,6 +671,109 @@ function SystemicRiskStats() {
         </div>
         <div className="w-full flex flex-col items-center mt-2">
           {/* Button removed as requested */}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LegalHeatIndex() {
+  const cases = [
+    {
+      caseName: "Dwyer v. UnitedHealthcare",
+      year: "2023",
+      jurisdiction: "5th U.S. Circuit Court of Appeals",
+      summary: "Denial of mental health care overturned. Court found denial \"unsupported by medical evidence\" and \"contradicted by the record.\"",
+      tag: "Mental Health",
+      source: "https://www.propublica.org/article/mental-health-insurance-denials-unitedhealthcare-cigna-doctors"
+    },
+    {
+      caseName: "Cunningham v. Aetna",
+      year: "2023",
+      jurisdiction: "Oklahoma",
+      summary: "$92K cancer treatment denied. Patient died. Court exposed rushed reviews and unqualified reviewers.",
+      tag: "Oncology, Malpractice",
+      source: "https://www.propublica.org/article/malpractice-settlements-doctors-working-for-insurance-companies"
+    },
+    {
+      caseName: "Salim v. Blue Cross and Blue Shield",
+      year: "2023",
+      jurisdiction: "Federal Court",
+      summary: "Proton therapy for cancer denied. Attorney-patient sued BCBS; spotlight on insurer bias against advanced treatment.",
+      tag: "Advanced Care",
+      source: "https://www.propublica.org/article/blue-cross-proton-therapy-cancer-lawyer-denial"
+    },
+    {
+      caseName: "UnitedHealthcare & Cigna",
+      year: "2022–2024",
+      jurisdiction: "Multiple Federal Courts",
+      summary: "Dozens of cases found wrongful mental health denials using \"dishonest\" reviews. Courts ruled this violated federal parity law.",
+      tag: "Mental Health Parity",
+      source: "https://news.wttw.com/2025/01/03/insurers-continue-rely-doctors-whose-judgments-have-been-criticized-courts"
+    },
+    {
+      caseName: "Class Action: AI Denials by UnitedHealthcare",
+      year: "2024–2025",
+      jurisdiction: "National Class Action",
+      summary: "AI-driven auto-denials triggered a national class-action lawsuit and federal scrutiny. Patients denied without human review.",
+      tag: "AI Denial",
+      source: "https://www.nbcnews.com/health/health-care/prior-authorization-insurance-denials-patients-treatment-rcna212068"
+    }
+  ];
+
+  return (
+    <section className="w-full bg-white py-24 px-4 font-inter">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-4">
+            <span className="text-gammalex-orange">When denials become lawsuits</span>
+          </h2>
+          <p className="text-xl sm:text-2xl text-slate-600 font-inter italic">
+            The warning signs <span className="text-gammalex-orange font-semibold">GammaLex</span> is built to catch—before it's too late.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          {cases.map((caseItem, index) => (
+            <motion.div
+              key={index}
+              className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              whileHover={{ y: -4, scale: 1.02 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-gammalex-orange transition-colors">
+                  {caseItem.caseName}
+                </h3>
+                <span className="text-sm font-medium text-gammalex-orange bg-gammalex-orange/10 px-3 py-1 rounded-full">
+                  {caseItem.tag}
+                </span>
+              </div>
+              
+              <div className="text-sm text-slate-600 mb-3">
+                {caseItem.year}, {caseItem.jurisdiction}
+              </div>
+              
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
+                {caseItem.summary}
+              </p>
+              
+              <a
+                href={caseItem.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm font-medium text-gammalex-orange hover:text-gammalex-orange/80 transition-colors group/link"
+              >
+                Read Source ↗
+                <span className="ml-1 group-hover/link:translate-x-1 transition-transform">
+                  →
+                </span>
+              </a>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

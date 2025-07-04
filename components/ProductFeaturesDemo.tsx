@@ -5,8 +5,135 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Scale, FileText, Shield, MessageCircle, Zap, Settings, Bot } from "lucide-react"
-import { motion } from "framer-motion"
+import { Scale, FileText, Shield, MessageCircle, Zap, Settings, Bot, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+
+function FlaggingOverlay() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const riskFlags = [
+    {
+      flag: "Denial justification contradicts medical evidence",
+      source: "Dwyer v. UnitedHealthcare",
+      sourceUrl: "https://www.propublica.org/article/mental-health-insurance-denials-unitedhealthcare-cigna-doctors"
+    },
+    {
+      flag: "Reviewer lacked specialty training in oncology",
+      source: "Cunningham v. Aetna",
+      sourceUrl: "https://www.propublica.org/article/malpractice-settlements-doctors-working-for-insurance-companies"
+    },
+    {
+      flag: "Use of copy-paste language and templated rejections",
+      source: "Salim v. BCBS",
+      sourceUrl: "https://www.propublica.org/article/blue-cross-proton-therapy-cancer-lawyer-denial"
+    },
+    {
+      flag: "AI denial issued without human review",
+      source: "Class-action lawsuit",
+      sourceUrl: "https://www.nbcnews.com/health/health-care/prior-authorization-insurance-denials-patients-treatment-rcna212068"
+    }
+  ]
+
+  return (
+    <>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.div
+              className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-8">
+                {/* Header */}
+                <div className="flex justify-between items-start mb-8">
+                  <div>
+                    <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 font-inter">
+                      🚩 GammaLex Risk Detection
+                    </h3>
+                    <p className="text-lg text-slate-600 font-inter">
+                      How AI identifies legal vulnerabilities in denial letters
+                    </p>
+                  </div>
+                  <Button
+                    onClick={() => setIsOpen(false)}
+                    variant="ghost"
+                    size="sm"
+                    className="text-slate-500 hover:text-slate-700"
+                  >
+                    <X className="w-6 h-6" />
+                  </Button>
+                </div>
+
+                {/* Sample Denial Letter */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-slate-900 mb-4 font-inter">📄 Sample Denial Letter</h4>
+                  <pre className="bg-slate-100 rounded-xl p-6 text-sm sm:text-base font-mono text-slate-800 whitespace-pre-wrap border border-slate-200">
+{`We regret to inform you that your request has been denied. The treatment is considered investigational and not medically necessary based on our guidelines.`}
+                  </pre>
+                </div>
+
+                {/* Risk Flags */}
+                <div>
+                  <h4 className="text-xl font-bold text-slate-900 mb-4 font-inter">🚨 Legal Risk Flags Detected</h4>
+                  <div className="space-y-4">
+                    {riskFlags.map((item, index) => (
+                      <motion.div
+                        key={index}
+                        className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-200"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <div className="flex-shrink-0 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mt-1">
+                          <span className="text-white text-sm font-bold">{index + 1}</span>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-slate-900 font-semibold mb-2">
+                            "{item.flag}"
+                          </p>
+                          <p className="text-sm text-slate-600 mb-2">
+                            Based on: <span className="font-medium">{item.source}</span>
+                          </p>
+                          <a
+                            href={item.sourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-gammalex-orange hover:text-gammalex-orange/80 font-medium inline-flex items-center gap-1"
+                          >
+                            Read Source ↗
+                          </a>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Close Button */}
+                <div className="flex justify-center mt-8">
+                  <Button
+                    onClick={() => setIsOpen(false)}
+                    className="bg-sage-600 hover:bg-sage-700 text-white font-bold px-8 py-3 rounded-xl text-lg transition-all duration-300"
+                  >
+                    Close
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}
 
 function ViabilityScoring({ buttonClassName = "" }: { buttonClassName?: string }) {
   const [cpt, setCpt] = useState("77080")
@@ -197,6 +324,12 @@ export function ProductFeaturesDemo() {
       <p className="text-2xl sm:text-3xl font-inter text-center mb-20 max-w-4xl mx-auto text-black leading-snug">
         Faster care. Fewer denials. No black boxes. <span className="text-gammalex-orange">GammaLex</span> delivers source-backed AI you can trust.
       </p>
+      
+      {/* Flagging Overlay Demo */}
+      <div className="flex justify-center mb-16">
+        <FlaggingOverlay />
+      </div>
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
         {/* Inference Card */}
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-6 sm:p-14 border border-sage-100 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden">
@@ -209,23 +342,19 @@ export function ProductFeaturesDemo() {
             <ul className="space-y-4 text-lg text-slate-700">
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Policy Lookup: Instantly match clinical scenarios to payer rules and coverage policies.</span>
+                <span><strong>Policy Lookup:</strong> Instantly match clinical scenarios to payer rules and coverage policies with source verification.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Risk Scoring: Quantify denial and compliance risk before care is delayed or denied.</span>
+                <span><strong>Risk Scoring:</strong> Quantify denial and compliance risk before care is delayed or denied, helping prevent denials and legal issues.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Compliance Checks: Ensure documentation meets clinical and legal standards.</span>
+                <span><strong>Compliance Checks:</strong> Ensure documentation meets both clinical and legal standards to prevent successful appeals.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Enterprise-grade security and privacy (SOC 2, HIPAA).</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
-                <span>Instantly provides sources for every policy answer—so you can verify and trust results, just like Perplexity AI.</span>
+                <span><strong>Enterprise Security:</strong> SOC 2, HIPAA compliance with full audit trails for defensibility.</span>
               </li>
             </ul>
           </div>
@@ -241,19 +370,19 @@ export function ProductFeaturesDemo() {
             <ul className="space-y-4 text-lg text-slate-700">
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Adapt models to payer-specific rules, specialties, and evolving regulations.</span>
+                <span><strong>Legal Pattern Learning:</strong> Adapt models to recognize denial patterns from real lawsuits and case law.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Fine-tune LLMs for your organization's real-world data and compliance needs.</span>
+                <span><strong>Payer-Specific Training:</strong> Fine-tune for each insurer's unique denial patterns and legal vulnerabilities.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Generate compliant, evidence-backed documentation for pre-auths and appeals.</span>
+                <span><strong>Compliance Documentation:</strong> Generate bulletproof justifications that withstand legal scrutiny and appeals.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Maintain full control and transparency over your AI models.</span>
+                <span><strong>Transparent AI:</strong> Full audit trails and explainable decisions for legal defensibility in court.</span>
               </li>
             </ul>
           </div>
@@ -269,19 +398,19 @@ export function ProductFeaturesDemo() {
             <ul className="space-y-4 text-lg text-slate-700">
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Surface missing evidence, flag legal risk, and draft justifications in real time.</span>
+                <span><strong>Legal Risk Surfacing:</strong> Flag vulnerabilities from real lawsuits before they become denials or liability.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Answer complex policy, coding, and compliance questions instantly.</span>
+                <span><strong>Policy Intelligence:</strong> Answer complex clinical and legal questions with source-backed accuracy.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Empower clinicians, billers, and legal teams to work smarter and reduce burnout.</span>
+                <span><strong>Team Empowerment:</strong> Reduce burnout by automating research and compliance checks.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-green-600 mt-1">✓</span>
-                <span>Seamlessly integrate with EHR and legal systems for workflow automation.</span>
+                <span><strong>Clinical Integration:</strong> Seamlessly connect to EHR and care systems to automate workflows—while layering in legal intelligence to flag risks, prevent denials, and reduce lawsuit exposure.</span>
               </li>
             </ul>
           </div>
@@ -293,4 +422,4 @@ export function ProductFeaturesDemo() {
   )
 }
 
-export { ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma } 
+export { ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma, FlaggingOverlay } 
