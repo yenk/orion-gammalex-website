@@ -315,9 +315,9 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-6 sm:p-14 border border-sage-100 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden">
           <div className="flex items-center gap-5 mb-6">
             <Zap className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-inter text-gammalex-orange">Inference</span>
+            <span className="text-3xl sm:text-4xl font-inter text-gammalex-orange">Inference</span>
           </div>
-          <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
+          <div className="text-lg sm:text-xl mb-6 text-slate-900 font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
           <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100" style={{ WebkitOverflowScrolling: 'touch' }}>
             <ul className="space-y-4 text-lg text-slate-700">
               <li className="flex items-start gap-3">
@@ -343,9 +343,9 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-6 sm:p-14 border border-sage-100 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden">
           <div className="flex items-center gap-5 mb-6">
             <Settings className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-inter text-gammalex-orange">Fine-Tuning</span>
+            <span className="text-3xl sm:text-4xl font-inter text-gammalex-orange">Fine-Tuning</span>
           </div>
-          <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Custom AI for your clinical and legal workflows</div>
+          <div className="text-lg sm:text-xl mb-6 text-slate-900 font-inter">Custom AI for your clinical and legal workflows</div>
           <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100" style={{ WebkitOverflowScrolling: 'touch' }}>
             <ul className="space-y-4 text-lg text-slate-700">
               <li className="flex items-start gap-3">
@@ -371,9 +371,9 @@ export function ProductFeaturesDemo() {
         <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-6 sm:p-14 border border-sage-100 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden">
           <div className="flex items-center gap-5 mb-6">
             <Bot className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl font-inter text-gammalex-orange">AI Copilot</span>
+            <span className="text-3xl sm:text-4xl font-inter text-gammalex-orange">AI Copilot</span>
           </div>
-          <div className="text-xl sm:text-2xl mb-6 text-slate-900 font-inter">Your always-on assistant for Copilot teams</div>
+          <div className="text-lg sm:text-xl mb-6 text-slate-900 font-inter">Your always-on assistant for Copilot teams</div>
           <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100" style={{ WebkitOverflowScrolling: 'touch' }}>
             <ul className="space-y-4 text-lg text-slate-700">
               <li className="flex items-start gap-3">
