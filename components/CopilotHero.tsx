@@ -4,6 +4,7 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 import { useEffect, useRef, useState } from "react"
+import React from "react"
 
 /**
  * CopilotHero - Homepage hero section for GammaLex AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -297,22 +298,28 @@ export function CopilotHero() {
             line.map((word, j) => {
               if (word === 'Legal' && i === subheadingLines.length - 1 && j === 0) {
                 return skipAnimation ? (
-                  <><br key="break-legal" /><span
-                    key={`${i}-${j}`}
-                    style={{ display: "inline-block", marginRight: 6 }}
-                  >
-                    {word + " "}
-                  </span></>
+                  <React.Fragment key={`break-legal-${i}-${j}`}>
+                    <br />
+                    <span
+                      key={`${i}-${j}`}
+                      style={{ display: "inline-block", marginRight: 6 }}
+                    >
+                      {word + " "}
+                    </span>
+                  </React.Fragment>
                 ) : (
-                  <><br key="break-legal" /><motion.span
-                    key={`${i}-${j}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.5 + (i * 0.4) + j * 0.18, duration: 0.6, ease: "easeOut" }}
-                    style={{ display: "inline-block", marginRight: 6, willChange: 'transform, opacity' }}
-                  >
-                    {word + " "}
-                  </motion.span></>
+                  <React.Fragment key={`break-legal-${i}-${j}`}>
+                    <br />
+                    <motion.span
+                      key={`${i}-${j}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1.5 + (i * 0.4) + j * 0.18, duration: 0.6, ease: "easeOut" }}
+                      style={{ display: "inline-block", marginRight: 6, willChange: 'transform, opacity' }}
+                    >
+                      {word + " "}
+                    </motion.span>
+                  </React.Fragment>
                 );
               }
               return skipAnimation ? (

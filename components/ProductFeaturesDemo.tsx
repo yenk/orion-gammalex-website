@@ -326,9 +326,9 @@ export function ProductFeaturesDemo() {
       </p>
       
       {/* Flagging Overlay Demo */}
-      <div className="flex justify-center mb-16">
+      {/* <div className="flex justify-center mb-16">
         <FlaggingOverlay />
-      </div>
+      </div> */}
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
         {/* Inference Card */}

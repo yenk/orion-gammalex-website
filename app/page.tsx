@@ -145,9 +145,9 @@ export default function GammaLexPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-6">
               <span className="text-slate-900">From </span>
-              <span className="text-gammalex-orange">Legal Risk</span>
+              <span className="text-gammalex-orange">legal risk</span>
               <span className="text-slate-900"> to </span>
-              <span className="text-gammalex-orange">Legal Foresight</span>
+              <span className="text-gammalex-orange">legal foresight</span>
             </h2>
             <AnimatedText
               text="The lawsuits show a pattern: denials become liability when clinical evidence contradicts payer decisions. GammaLex's AI doesn't just react—it anticipates legal vulnerabilities before they become lawsuits."
@@ -166,8 +166,10 @@ export default function GammaLexPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 font-inter">Pattern Recognition</h3>
+              <div className="flex items-center gap-5 mb-6">
+                <Zap className="w-14 h-14 text-slate-400" />
+                <span className="text-3xl font-inter text-gammalex-orange">Pattern Recognition</span>
+              </div>
               <p className="text-slate-700 leading-relaxed">
                 AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.
               </p>
@@ -180,8 +182,10 @@ export default function GammaLexPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl mb-4">⚖️</div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 font-inter">Legal Compliance</h3>
+              <div className="flex items-center gap-5 mb-6">
+                <Scale className="w-14 h-14 text-slate-400" />
+                <span className="text-3xl font-inter text-gammalex-orange">Legal Compliance</span>
+              </div>
               <p className="text-slate-700 leading-relaxed">
                 Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.
               </p>
@@ -194,12 +198,18 @@ export default function GammaLexPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-4xl mb-4">🛡️</div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4 font-inter">Risk Mitigation</h3>
+              <div className="flex items-center gap-5 mb-6">
+                <Shield className="w-14 h-14 text-slate-400" />
+                <span className="text-3xl font-inter text-gammalex-orange">Risk Mitigation</span>
+              </div>
               <p className="text-slate-700 leading-relaxed">
                 Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.
               </p>
             </motion.div>
+          </div>
+          
+          <div className="flex justify-center my-8">
+            <FlaggingOverlay />
           </div>
           
           <div className="text-center">
@@ -210,9 +220,6 @@ export default function GammaLexPage() {
           </div>
         </div>
       </section>
-
-      {/* FlaggingOverlay Button Section */}
-      // Button section removed as requested
 
       <div className="w-full bg-sage-50 border-b border-sage-100">
         <ProductFeaturesDemo />
@@ -631,7 +638,7 @@ function SystemicRiskStats() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            Pre-Auth is a Healthcare Crisis
+            Pre-Auth is a healthcare crisis
           </motion.h2>
           <motion.p
             className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight"
@@ -712,7 +719,7 @@ function LegalHeatIndex() {
       source: "https://news.wttw.com/2025/01/03/insurers-continue-rely-doctors-whose-judgments-have-been-criticized-courts"
     },
     {
-      caseName: "Class Action: AI Denials by UnitedHealthcare",
+      caseName: "Class Action: Algorithmic Denials by UnitedHealthcare",
       year: "2024–2025",
       jurisdiction: "National Class Action",
       summary: "AI-driven auto-denials triggered a national class-action lawsuit and federal scrutiny. Patients denied without human review.",
@@ -728,7 +735,7 @@ function LegalHeatIndex() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-4">
             <span className="text-gammalex-orange">When denials become lawsuits</span>
           </h2>
-          <p className="text-xl sm:text-2xl text-slate-600 font-inter italic">
+          <p className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight">
             The warning signs <span className="text-gammalex-orange font-semibold">GammaLex</span> is built to catch—before it's too late.
           </p>
         </div>
