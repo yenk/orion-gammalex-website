@@ -74,7 +74,7 @@ export default function GammaLexPage() {
             {/* Why It Matters Row */}
             <div className="w-full flex flex-col md:flex-row items-start justify-between py-10 gap-12 md:gap-24">
               <div className="w-full md:w-1/3 flex-shrink-0 flex justify-center md:justify-end mb-6 md:mb-0">
-                <h3 className="text-3xl sm:text-4xl font-bold font-inter text-gammalex-orange text-left md:text-right leading-tight">
+                <h3 className="text-3xl sm:text-4xl font-normal font-inter text-slate-900 text-left md:text-right leading-tight">
                   Why It Matters
                 </h3>
               </div>
@@ -88,7 +88,7 @@ export default function GammaLexPage() {
             {/* The Solution Row */}
             <div className="w-full flex flex-col md:flex-row items-start justify-between py-10 gap-12 md:gap-24">
               <div className="w-full md:w-1/3 flex-shrink-0 flex justify-center md:justify-end mb-6 md:mb-0">
-                <h3 className="text-3xl sm:text-4xl font-bold font-inter text-gammalex-orange text-left md:text-right leading-tight">
+                <h3 className="text-3xl sm:text-4xl font-normal font-inter text-slate-900 text-left md:text-right leading-tight">
                   The Solution
                 </h3>
               </div>
@@ -274,7 +274,7 @@ function Navigation() {
 
   const navItems = [
     { id: "why-gammalex", label: "WHY GAMMALEX" },
-    { id: "product", label: "SOLUTIONS" },
+    { id: "product", label: "SOLUTION" },
     { id: "about", label: "ABOUT" },
     { id: "join", label: "PARTNER WITH US" },
   ]
