@@ -31,7 +31,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { CopilotHero } from "@/components/CopilotHero"
 import { FeatureHighlights } from "@/components/FeatureHighlights"
-import { ProductFeaturesDemo, ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma } from "@/components/ProductFeaturesDemo"
+import { ProductFeaturesDemo, ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma, FlaggingOverlay } from "@/components/ProductFeaturesDemo"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import AnimatedText from "@/components/ui/AnimatedText"
 import { Progress } from '@/components/ui/progress'
@@ -39,7 +39,6 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/comp
 import React from 'react'
 import { Brain as BrainIcon, Lightning, ShieldCheck, UsersThree, ChartBar, Scales } from 'phosphor-react'
 import { useAnimation, useMotionValue, useMotionValueEvent } from "framer-motion"
-import { FlaggingOverlay } from "@/components/ProductFeaturesDemo"
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -107,28 +106,17 @@ export default function GammaLexPage() {
             <div className="w-full border-t border-slate-100" />
           </div>
           <div className="w-full flex flex-col items-center gap-6 mt-6">
-            <div className="flex flex-row justify-center items-center gap-10 py-8 w-full bg-slate-100">
-              {[
-                { label: "Less denial", icon: <CheckCircle className="w-10 h-10 text-gammalex-orange" /> },
-                { label: "Less burnout", icon: <Brain className="w-10 h-10 text-gammalex-orange" /> },
-                { label: "Reduced legal risk", icon: <Scale className="w-10 h-10 text-gammalex-orange" /> },
-                { label: "Faster care", icon: <Zap className="w-10 h-10 text-gammalex-orange" /> },
-              ].map((item, i) => (
-                <div key={item.label} className="flex flex-col items-center">
-                  <div className="mb-2">{item.icon}</div>
-                  <span className="text-xl sm:text-2xl font-normal text-slate-800 font-inter text-center">
-                    {item.label}
-                  </span>
-                </div>
-              ))}
+            {/* Interactive Benefits Bar */}
+            <InteractiveBenefitsBar />
+            <div className="w-full flex justify-center mt-10 sm:mt-12">
+              <JoinWaitlistModal
+                trigger={
+                  <button className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">
+                    See GammaLex in Action
+                  </button>
+                }
+              />
             </div>
-            <JoinWaitlistModal
-              trigger={
-                <button className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">
-                  See GammaLex in Action
-                </button>
-              }
-            />
           </div>
         </div>
       </section>
@@ -157,66 +145,63 @@ export default function GammaLexPage() {
               <FlaggingOverlay />
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-8 border border-slate-200"
+              className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col items-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-5 mb-6">
-                <Zap className="w-14 h-14 text-slate-400" />
-                <span className="text-3xl font-inter text-gammalex-orange">Pattern Recognition</span>
+                <Zap className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
+                <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Pattern Recognition</span>
               </div>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
                 AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.
               </p>
             </motion.div>
-            
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-8 border border-slate-200"
+              className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col items-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-5 mb-6">
-                <Scale className="w-14 h-14 text-slate-400" />
-                <span className="text-3xl font-inter text-gammalex-orange">Legal Compliance</span>
+                <Scale className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
+                <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Legal Compliance</span>
               </div>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
                 Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.
               </p>
             </motion.div>
-            
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-8 border border-slate-200"
+              className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col items-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
               <div className="flex items-center gap-5 mb-6">
-                <Shield className="w-14 h-14 text-slate-400" />
-                <span className="text-3xl font-inter text-gammalex-orange">Risk Mitigation</span>
+                <Shield className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
+                <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Risk Mitigation</span>
               </div>
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
                 Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.
               </p>
             </motion.div>
           </div>
-          
-          <div className="flex justify-center my-8">
-            <FlaggingOverlay />
-          </div>
-          
           <div className="text-center">
-            <AnimatedText
-              text="The best defense is foresight. GammaLex doesn't just respond to denials—it flags risk early, so you can avoid them altogether."
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.1, ease: 'easeOut' }}
+              viewport={{ once: true }}
               className="text-xl sm:text-2xl font-inter text-slate-600 italic mb-8"
-            />
+            >
+              The best defense is foresight. GammaLex doesn't just respond to denials—it flags risk early, so you can avoid them altogether.
+            </motion.p>
           </div>
         </div>
       </section>
@@ -638,7 +623,7 @@ function SystemicRiskStats() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            Pre-Auth is a healthcare crisis
+            Pre-auth is a healthcare crisis
           </motion.h2>
           <motion.p
             className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight"
@@ -740,11 +725,11 @@ function LegalHeatIndex() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {cases.map((caseItem, index) => (
             <motion.div
               key={index}
-              className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300 cursor-pointer group flex flex-col h-full"
               whileHover={{ y: -4, scale: 1.02 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -843,4 +828,112 @@ function SectionBlock({ heading, highlight, content, renderHeading }: { heading:
       </div>
     </div>
   );
+}
+
+const benefits = [
+  {
+    label: "Less denial",
+    icon: CheckCircle,
+    description: "Fewer denials with proactive AI."
+  },
+  {
+    label: "Less burnout",
+    icon: Brain,
+    description: "Reduce staff burnout."
+  },
+  {
+    label: "Reduced legal risk",
+    icon: Scale,
+    description: "Spot legal risks early."
+  },
+  {
+    label: "Faster care",
+    icon: Zap,
+    description: "Accelerate approvals."
+  }
+]
+
+function InteractiveBenefitsBar() {
+  const [active, setActive] = React.useState(0)
+  // Responsive check for mobile
+  const [isMobile, setIsMobile] = React.useState(false)
+  React.useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 640)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+  return (
+    <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center px-2 sm:px-0">
+      {/* Horizontal bar */}
+      <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-2 bg-slate-200 rounded-full z-0" style={{height:8}} />
+      {/* Animated dot */}
+      <motion.div
+        className="absolute z-10 top-1/2 -translate-y-1/2"
+        animate={{ left: `calc(${active * 25}% + 12.5%)` }}
+        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+        style={{ width: 24, height: 24, background: '#FF8800', borderRadius: '50%', boxShadow: '0 2px 8px #ff880033' }}
+      />
+      {/* Segments */}
+      <div className={`relative z-20 w-full flex flex-row justify-between items-end ${isMobile ? 'gap-2' : ''}`}>
+        {benefits.map((b, i) => {
+          const Icon = b.icon
+          const isActive = i === active
+          return (
+            <button
+              key={b.label}
+              className={`flex flex-col items-center flex-1 focus:outline-none group bg-transparent border-none cursor-pointer py-2 transition-all duration-200 ${isActive ? 'text-gammalex-orange' : 'text-slate-800'} ${isMobile ? 'min-w-0 px-1' : ''}`}
+              onMouseEnter={() => setActive(i)}
+              onFocus={() => setActive(i)}
+              onClick={() => setActive(i)}
+              tabIndex={0}
+              aria-label={b.label}
+              style={{ position: 'relative' }}
+            >
+              <motion.div
+                animate={isActive ? { scale: 1.25, color: '#FF8800' } : { scale: 1, color: '#23232B' }}
+                transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                className="mb-2"
+              >
+                <Icon className={`w-9 h-9 sm:w-10 sm:h-10 ${isActive ? 'text-gammalex-orange' : 'text-gammalex-orange/70'} transition-colors`} />
+              </motion.div>
+              <span className="text-base sm:text-lg font-inter font-normal text-center transition-colors">
+                {b.label}
+              </span>
+              {/* Tooltip/description */}
+              <AnimatePresence>
+                {isActive && (
+                  isMobile ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="fixed left-1/2 top-4 -translate-x-1/2 bg-white shadow-xl rounded-xl px-4 py-2 text-base text-slate-700 font-inter z-[100] border border-slate-200 max-w-xs w-[90vw] text-left break-words whitespace-normal"
+                    >
+                      {b.description}
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute left-1/2 -translate-x-1/2 -top-20 bg-white shadow-lg rounded-xl px-3 py-2 text-base text-slate-700 font-inter z-30 border border-slate-200 break-words whitespace-normal text-left"
+                      style={{ minWidth: '140px', maxWidth: '200px' }}
+                    >
+                      <div className="relative">
+                        {b.description}
+                        <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white" />
+                      </div>
+                    </motion.div>
+                  )
+                )}
+              </AnimatePresence>
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
