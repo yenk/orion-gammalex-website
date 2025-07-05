@@ -282,7 +282,7 @@ export function CopilotHero() {
           </motion.g>
         </motion.svg>
       </div>
-      {/* Heading and subheading: classic, unconstrained, centered block */}
+      {/* Hero section main container */}
       <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[600px] py-10 sm:py-16 md:py-28 z-10">
         <h1 className="w-full max-w-screen-xl text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal text-center mb-6 sm:mb-12 font-inter leading-[1.12] sm:leading-[1.08] text-white break-words mx-auto">
           {headingLines.map((line, i) => (
@@ -360,15 +360,17 @@ export function CopilotHero() {
             })
           ))}
         </h2>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-          <JoinWaitlistModal
-            trigger={
-              <Button size="lg" className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl transition-colors w-fit">
-                Launch the Copilot
-              </Button>
-            }
-          />
-          <HeroDataSources />
+        <HeroDataSources />
+        <div className="flex flex-col gap-4 items-center mt-12">
+          <a
+            href="https://cal.com/yenkha"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl transition-colors w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange"
+            style={{ textDecoration: 'none', display: 'inline-block' }}
+          >
+            See it in Action
+          </a>
         </div>
       </div>
     </section>
