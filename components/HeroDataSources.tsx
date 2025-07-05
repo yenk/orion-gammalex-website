@@ -130,7 +130,7 @@ const sources = [
         </g>
       </svg>
     ),
-    link: "https://www.i2b2.org/",
+    link: "https://portal.dbmi.hms.harvard.edu/",
   },
 ];
 
@@ -143,22 +143,22 @@ export default function HeroDataSources() {
   return (
     <div className="w-full flex flex-col items-center mt-10 mb-10">
       <div className="w-full overflow-x-auto">
-        <div className="flex flex-row justify-center items-end gap-x-24 gap-y-0 max-w-none min-w-[1100px] px-8 pb-2">
+        <div className="flex flex-row justify-center items-end gap-x-8 sm:gap-x-16 lg:gap-x-24 gap-y-0 max-w-none min-w-0 px-2 sm:px-8 pb-2">
           {sources.map((src, i) => (
             <a
               key={src.label}
               href={src.link || undefined}
               target={src.link ? "_blank" : undefined}
               rel={src.link ? "noopener noreferrer" : undefined}
-              className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 animate-float`}
+              className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 animate-float min-w-0`}
               tabIndex={0}
               aria-label={src.label}
-              style={{ minWidth: 180 }}
+              style={{ minWidth: 140, maxWidth: 200 }}
             >
-              <span className="mb-3 drop-shadow-md transition-opacity duration-300 opacity-80 group-hover:opacity-100 flex items-center justify-center">
+              <span className="mb-3 drop-shadow-md transition-opacity duration-300 opacity-80 group-hover:opacity-100 flex items-center justify-center w-full">
                 {src.icon}
               </span>
-              <span className="text-base sm:text-lg text-white font-inter text-center max-w-[200px] sm:max-w-[220px] break-words">
+              <span className="text-xs sm:text-base md:text-lg text-white font-inter text-center max-w-xs whitespace-normal break-words w-full">
                 {src.label}
               </span>
             </a>
