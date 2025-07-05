@@ -136,7 +136,7 @@ export default function GammaLexPage() {
               <span className="text-gammalex-orange">legal foresight</span>
             </h2>
             <AnimatedText
-              text="The lawsuits show a pattern: denials become liability when clinical evidence contradicts payer decisions. GammaLex's AI doesn't just react—it anticipates legal vulnerabilities before they become lawsuits."
+              text="Lawsuits show the pattern: denials become liability when clinical evidence is ignored. GammaLex anticipates legal risk <br /> before it escalates."
               className="text-2xl sm:text-3xl font-inter text-center text-slate-700 max-w-5xl mx-auto leading-relaxed"
             />
             <div className="flex justify-center my-8">

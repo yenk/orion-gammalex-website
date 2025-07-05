@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Scale, FileText, Shield, MessageCircle, Zap, Settings, Bot, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import GammaLexInteractiveStepper from './GammaLexCareSwimlane'
 
 function ViabilityScoring({ buttonClassName = "" }: { buttonClassName?: string }) {
   const [cpt, setCpt] = useState("77080")
@@ -396,6 +397,7 @@ export function ProductFeaturesDemo() {
           </div>
         </div>
       </div>
+      <GammaLexInteractiveStepper />
       {/* Flow Arrow */}
       <AnimatedMilestoneFlow />
     </section>
