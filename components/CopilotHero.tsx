@@ -21,9 +21,15 @@ const headingWords = [
   { word: "Compliance", orange: true },
 ];
 
-const subheading = "Smarter pre-auth.\nSafer care.\nLegal foresight."
+const subheading = "Smarter pre-auth. Stronger care.\nLegal foresight."
 
 const subheadingWords = subheading.split(/\s+/);
+
+const subheadingLines = [
+  ["Smarter", "pre-auth."],
+  ["Stronger", "care."],
+  ["Legal", "foresight."],
+];
 
 export function CopilotHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -43,11 +49,6 @@ export function CopilotHero() {
       { word: "and", orange: false },
       { word: "Compliance", orange: true },
     ],
-  ];
-  const subheadingLines = [
-    ["Smarter", "pre-auth."],
-    ["Safer", "care."],
-    ["Legal", "foresight."],
   ];
 
   // Update all relevant constants for larger circle
