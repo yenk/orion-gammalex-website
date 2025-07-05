@@ -137,6 +137,8 @@ const sources = [
 const mainSources = sources.slice(0, 6);
 const researchSource = sources[6];
 
+export const heroDataSources = sources;
+
 export default function HeroDataSources() {
   return (
     <div className="w-full flex flex-col items-center mt-10 mb-10">
@@ -148,7 +150,7 @@ export default function HeroDataSources() {
               href={src.link || undefined}
               target={src.link ? "_blank" : undefined}
               rel={src.link ? "noopener noreferrer" : undefined}
-              className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 ${animateClass}`}
+              className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 animate-float`}
               tabIndex={0}
               aria-label={src.label}
               style={{ minWidth: 180 }}
@@ -163,8 +165,15 @@ export default function HeroDataSources() {
           ))}
         </div>
       </div>
-      <p className="text-center text-slate-200 mt-8 text-base sm:text-lg max-w-2xl">
-        Built on trusted clinical and legal data. Powered by open sources. Auditable by design.
+      <p className="text-center mt-10 mb-2 text-white text-xl sm:text-2xl md:text-3xl tracking-tight drop-shadow-lg"
+         style={{
+           textShadow: '0 0 12px #FF6B35AA, 0 2px 8px #000A',
+           maxWidth: '100%',
+           whiteSpace: 'nowrap',
+           overflow: 'hidden',
+           textOverflow: 'ellipsis',
+         }}>
+        AI powered by trusted open sources. Moving healthcare forward.
       </p>
     </div>
   );

@@ -38,6 +38,7 @@ export function CopilotHero() {
   const [skipAnimation, setSkipAnimation] = useState(false);
   const [dotRadii, setDotRadii] = useState<number[][] | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [hasMounted, setHasMounted] = useState(false);
 
   const headingLines = [
     [
@@ -103,6 +104,7 @@ export function CopilotHero() {
 
   // Precompute random radii for dots on client only
   useEffect(() => {
+    setHasMounted(true);
     const rows = 16;
     const cols = 16;
     const radii: number[][] = [];
@@ -115,11 +117,22 @@ export function CopilotHero() {
     setDotRadii(radii);
   }, []);
 
+  // Store random radius and duration for inner dots to avoid hydration error
+  const [innerDotParams, setInnerDotParams] = useState<{ r: number; duration: number }[]>([]);
+  useEffect(() => {
+    setInnerDotParams(
+      Array.from({ length: 24 }, () => ({
+        r: 3 + Math.random() * 2,
+        duration: 2.5 + Math.random() * 1,
+      }))
+    );
+  }, []);
+
   const generateAnimatedDots = () => {
     if (!dotRadii) return null; // Don't render until client
     const dots = [];
-    const rows = 16;
-    const cols = 16;
+    const rows = 12; // reduce from 16 for fewer dots
+    const cols = 12;
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < cols; j++) {
         const delay = (i + j) * 0.012;
@@ -135,12 +148,12 @@ export function CopilotHero() {
             key={`${i}-${j}`}
             cx={x}
             cy={y}
-            r={dotRadii[i][j]}
+            r={dotRadii[i]?.[j] ?? 2}
             fill={color}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ 
-              opacity: [0, 0.9, 0.2, 0.9, 0.1, 0.8],
-              scale: [0, 1.2, 0.7, 1.1, 0.8, 1],
+              opacity: [0, 0.25, 0.1, 0.2, 0.08, 0.18], // much lower opacity
+              scale: [0, 1.1, 0.8, 1, 0.9, 1],
             }}
             transition={{
               duration: 2 + Math.random() * 3,
@@ -150,7 +163,7 @@ export function CopilotHero() {
               ease: "easeInOut"
             }}
             style={{
-              filter: `drop-shadow(0 0 5px ${color}60)`,
+              filter: `drop-shadow(0 0 2px ${color}30)`, // much softer glow
               willChange: 'transform, opacity',
             }}
           />
@@ -195,93 +208,95 @@ export function CopilotHero() {
       className="relative w-full bg-black overflow-hidden min-h-[80vh] flex items-center justify-center px-0"
     >
       {/* Animated circle absolutely centered in the hero section, not constraining heading width */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
-        <motion.svg 
-          width={SVG_SIZE} 
-          height={SVG_SIZE} 
-          style={{zIndex: 1}}
-          animate={{ rotate: [0, 360] }}
-          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-        >
-          <defs>
-            <clipPath id="dotgrid-circle">
-              <circle cx={CENTER} cy={CENTER} r={MAIN_RADIUS} />
-            </clipPath>
-            {/* Radial gradient for depth */}
-            <radialGradient id="dotGradient" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#FF6B35" stopOpacity="1" />
-              <stop offset="100%" stopColor="#90A4AE" stopOpacity="0.3" />
-            </radialGradient>
-            {/* Glow filter */}
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge> 
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          
-          {/* Pulsing rings */}
-          {generatePulsingRings()}
-          
-          {/* Main animated dots */}
-          <g clipPath="url(#dotgrid-circle)">
-            {generateAnimatedDots()}
-          </g>
-          
-          {/* Interactive mouse-following dot */}
-          <motion.circle
-            cx={mousePosition.x}
-            cy={mousePosition.y}
-            r={isHovering ? 12 : 0}
-            fill="url(#dotGradient)"
-            filter="url(#glow)"
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            style={{ pointerEvents: "none" }}
-          />
-          
-          {/* Rotating outer ring */}
-          <motion.circle
-            cx={CENTER}
-            cy={CENTER}
-            r={MAIN_RADIUS - 20}
-            fill="none"
-            stroke="#90A4AE"
-            strokeWidth="2"
-            opacity="0.25"
-            strokeDasharray="28,14"
-            animate={{ strokeDashoffset: [0, -40] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-          />
-          
-          {/* Inner rotating dots */}
-          <motion.g
+      {hasMounted && (
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
+          <motion.svg 
+            width={SVG_SIZE} 
+            height={SVG_SIZE} 
+            style={{zIndex: 1}}
             animate={{ rotate: [0, 360] }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
           >
-            {Array.from({ length: 24 }, (_, i) => (
-              <motion.circle
-                key={`inner-${i}`}
-                cx={CENTER + Math.cos((i * 15) * Math.PI / 180) * (MAIN_RADIUS - 180)}
-                cy={CENTER + Math.sin((i * 15) * Math.PI / 180) * (MAIN_RADIUS - 180)}
-                r={3 + Math.random() * 2}
-                fill={i % 3 === 0 ? "#FF6B35" : i % 3 === 1 ? "#FF8A65" : "#90A4AE"}
-                animate={{
-                  scale: [1, 1.8, 0.7, 1.4, 1],
-                  opacity: [0.4, 1, 0.2, 0.9, 0.4],
-                }}
-                transition={{
-                  duration: 2.5 + Math.random() * 1,
-                  delay: i * 0.12,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-            ))}
-          </motion.g>
-        </motion.svg>
-      </div>
+            <defs>
+              <clipPath id="dotgrid-circle">
+                <circle cx={CENTER} cy={CENTER} r={MAIN_RADIUS} />
+              </clipPath>
+              {/* Radial gradient for depth */}
+              <radialGradient id="dotGradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#FF6B35" stopOpacity="1" />
+                <stop offset="100%" stopColor="#90A4AE" stopOpacity="0.3" />
+              </radialGradient>
+              {/* Glow filter */}
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge> 
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            
+            {/* Pulsing rings */}
+            {generatePulsingRings()}
+            
+            {/* Main animated dots */}
+            <g clipPath="url(#dotgrid-circle)">
+              {generateAnimatedDots()}
+            </g>
+            
+            {/* Interactive mouse-following dot */}
+            <motion.circle
+              cx={mousePosition.x}
+              cy={mousePosition.y}
+              r={isHovering ? 12 : 0}
+              fill="url(#dotGradient)"
+              filter="url(#glow)"
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              style={{ pointerEvents: "none" }}
+            />
+            
+            {/* Rotating outer ring */}
+            <motion.circle
+              cx={CENTER}
+              cy={CENTER}
+              r={MAIN_RADIUS - 20}
+              fill="none"
+              stroke="#90A4AE"
+              strokeWidth="2"
+              opacity="0.25"
+              strokeDasharray="28,14"
+              animate={{ strokeDashoffset: [0, -40] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+            />
+            
+            {/* Inner rotating dots */}
+            <motion.g
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            >
+              {Array.from({ length: 24 }, (_, i) => (
+                <motion.circle
+                  key={`inner-${i}`}
+                  cx={CENTER + Math.cos((i * 15) * Math.PI / 180) * (MAIN_RADIUS - 180)}
+                  cy={CENTER + Math.sin((i * 15) * Math.PI / 180) * (MAIN_RADIUS - 180)}
+                  r={innerDotParams[i]?.r ?? 4}
+                  fill={i % 3 === 0 ? "#FF6B35" : i % 3 === 1 ? "#FF8A65" : "#90A4AE"}
+                  animate={{
+                    scale: [1, 1.8, 0.7, 1.4, 1],
+                    opacity: [0.4, 1, 0.2, 0.9, 0.4],
+                  }}
+                  transition={{
+                    duration: innerDotParams[i]?.duration ?? 3,
+                    delay: i * 0.12,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+            </motion.g>
+          </motion.svg>
+        </div>
+      )}
       {/* Hero section main container */}
       <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[600px] py-10 sm:py-16 md:py-28 z-10">
         <h1 className="w-full max-w-screen-xl text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal text-center mb-6 sm:mb-12 font-inter leading-[1.12] sm:leading-[1.08] text-white break-words mx-auto">
@@ -360,7 +375,9 @@ export function CopilotHero() {
             })
           ))}
         </h2>
-        <HeroDataSources />
+        <div className="mt-32 w-full">
+          <HeroDataSources />
+        </div>
         <div className="flex flex-col gap-4 items-center mt-12">
           <a
             href="https://cal.com/yenkha"

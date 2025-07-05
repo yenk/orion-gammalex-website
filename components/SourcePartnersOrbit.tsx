@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+import { motion, useAnimation } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { MedicalBackgroundPattern } from "@/components/background-elements"
 
@@ -125,115 +125,34 @@ const partners = [
   },
 ]
 
-const orbitPositions = [
-  { angle: 0 },
-  { angle: 360 / 7 },
-  { angle: 2 * 360 / 7 },
-  { angle: 3 * 360 / 7 },
-  { angle: 4 * 360 / 7 },
-  { angle: 5 * 360 / 7 },
-  { angle: 6 * 360 / 7 },
-]
-
 export default function SourcePartnersOrbit() {
-  const [mode, setMode] = useState<'orbit' | 'grid'>("orbit")
-  const radius = 160
-  const center = 0
-
   return (
     <div className="relative w-full min-h-[420px] flex flex-col items-center justify-center bg-black overflow-hidden py-12">
       <MedicalBackgroundPattern />
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Glowing particles background (optional: add more for stars) */}
-        {Array.from({ length: 32 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-gammalex-orange/40 blur-md"
-            style={{
-              width: Math.random() * 4 + 2,
-              height: Math.random() * 4 + 2,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              opacity: Math.random() * 0.5 + 0.2,
-            }}
-            animate={{
-              y: [0, Math.random() * 20 - 10, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-            }}
-            transition={{
-              duration: 8 + Math.random() * 6,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: "easeInOut",
-              delay: Math.random() * 4,
-            }}
-          />
-        ))}
-      </div>
-      <div className="mb-6 z-10">
-        <Button variant="secondary" onClick={() => setMode(mode === 'orbit' ? 'grid' : 'orbit')}>
-          {mode === 'orbit' ? 'Grid Mode' : 'Orbit Mode'}
-        </Button>
+        {/* You may want to use the same useRandomParticles hook as in SourceTicker for hydration safety */}
       </div>
       <div className="relative w-full flex items-center justify-center z-10">
-        {mode === 'orbit' ? (
-          <motion.div
-            className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] mx-auto"
-            animate={{ x: [0, 40, 0, -40, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          >
-            {/* Center subtle glow */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-3xl mx-auto">
+          {partners.map((partner, i) => (
             <motion.div
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-sage-400/20 blur-2xl z-0"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            {partners.map((partner, i) => {
-              const angle = (orbitPositions[i].angle + Date.now() / 4000 * 360) % 360
-              const rad = (angle * Math.PI) / 180
-              const x = Math.cos(rad) * radius + 200
-              const y = Math.sin(rad) * radius + 320
-              return (
-                <motion.div
-                  key={partner.label}
-                  className="absolute flex flex-col items-center group"
-                  style={{ left: x, top: y, width: 120 }}
-                  whileHover={{ scale: 1.13, filter: "drop-shadow(0 0 16px #FF6B35)" }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.7, delay: i * 0.1 }}
-                >
-                  <span className="block mb-2 transition-all">
-                    {partner.icon}
-                  </span>
-                  <span className="text-xs md:text-sm text-white text-center font-inter max-w-[120px] drop-shadow-md">
-                    {partner.label}
-                  </span>
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-3xl mx-auto">
-            {partners.map((partner, i) => (
-              <motion.div
-                key={partner.label}
-                className="flex flex-col items-center group"
-                whileHover={{ scale: 1.13, filter: "drop-shadow(0 0 16px #FF6B35)" }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-              >
-                <span className="block mb-2 transition-all">
-                  {partner.icon}
-                </span>
-                <span className="text-xs md:text-sm text-white text-center font-inter max-w-[120px] drop-shadow-md">
-                  {partner.label}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        )}
+              key={partner.label}
+              className="flex flex-col items-center group"
+              whileHover={{ scale: 1.13, filter: "drop-shadow(0 0 16px #FF6B35)" }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
+            >
+              <span className="block mb-2 transition-all">
+                {partner.icon}
+              </span>
+              <span className="text-xs md:text-sm text-white text-center font-inter max-w-[120px] drop-shadow-md">
+                {partner.label}
+              </span>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   )
