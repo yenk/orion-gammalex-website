@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 import { useEffect, useRef, useState } from "react"
 import React from "react"
+import HeroDataSources from './HeroDataSources'
 
 /**
  * CopilotHero - Homepage hero section for GammaLex AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -35,6 +36,7 @@ export function CopilotHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [skipAnimation, setSkipAnimation] = useState(false);
+  const [dotRadii, setDotRadii] = useState<number[][] | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const headingLines = [
@@ -99,8 +101,22 @@ export function CopilotHero() {
     };
   }, []);
 
-  // Update generateAnimatedDots for larger SVG
+  // Precompute random radii for dots on client only
+  useEffect(() => {
+    const rows = 16;
+    const cols = 16;
+    const radii: number[][] = [];
+    for (let i = 0; i < rows; i++) {
+      radii[i] = [];
+      for (let j = 0; j < cols; j++) {
+        radii[i][j] = 1.5 + Math.random() * 2;
+      }
+    }
+    setDotRadii(radii);
+  }, []);
+
   const generateAnimatedDots = () => {
+    if (!dotRadii) return null; // Don't render until client
     const dots = [];
     const rows = 16;
     const cols = 16;
@@ -119,7 +135,7 @@ export function CopilotHero() {
             key={`${i}-${j}`}
             cx={x}
             cy={y}
-            r={1.5 + Math.random() * 2}
+            r={dotRadii[i][j]}
             fill={color}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ 
@@ -344,7 +360,7 @@ export function CopilotHero() {
             })
           ))}
         </h2>
-        <div className="flex flex-col gap-4 items-center mt-2">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
           <JoinWaitlistModal
             trigger={
               <Button size="lg" className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl transition-colors w-fit">
@@ -352,6 +368,7 @@ export function CopilotHero() {
               </Button>
             }
           />
+          <HeroDataSources />
         </div>
       </div>
     </section>
