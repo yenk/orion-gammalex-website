@@ -897,7 +897,7 @@ function InteractiveBenefitsBar() {
               >
                 <Icon className={`w-9 h-9 sm:w-10 sm:h-10 ${isActive ? 'text-gammalex-orange' : 'text-gammalex-orange/70'} transition-colors`} />
               </motion.div>
-              <span className="text-base sm:text-lg font-inter font-normal text-center transition-colors">
+              <span className="text-xs sm:text-base font-inter font-normal text-center transition-colors break-words max-w-[70px] sm:max-w-none truncate">
                 {b.label}
               </span>
               {/* Tooltip/description */}
