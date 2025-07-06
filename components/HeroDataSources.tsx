@@ -37,14 +37,14 @@ const sources = [
       <svg viewBox={ICON_VIEWBOX} className={ICON_CLASS} aria-hidden="true">
         <rect x="2" y="2" width="156" height="92" rx="12" fill="#fff" stroke="#e5e7eb" strokeWidth="2" />
         <polygon points="142,2 154,22 134,2" fill="#346699" />
-        <circle cx="32" cy="32" r="7" fill="#e4572e" />
-        <rect x="46" y="26" width="70" height="10" rx="4" fill="#e4572e" />
-        <circle cx="32" cy="52" r="7" fill="#4285f4" />
-        <rect x="46" y="46" width="70" height="10" rx="4" fill="#4285f4" />
-        <circle cx="32" cy="72" r="7" fill="#34a853" />
-        <rect x="46" y="66" width="70" height="10" rx="4" fill="#34a853" />
-        <circle cx="32" cy="92" r="7" fill="#fbbc04" />
-        <rect x="46" y="86" width="70" height="10" rx="4" fill="#fbbc04" />
+        <circle cx="32" cy="28" r="7" fill="#e4572e" />
+        <rect x="46" y="22" width="70" height="10" rx="4" fill="#e4572e" />
+        <circle cx="32" cy="46" r="7" fill="#4285f4" />
+        <rect x="46" y="40" width="70" height="10" rx="4" fill="#4285f4" />
+        <circle cx="32" cy="64" r="7" fill="#34a853" />
+        <rect x="46" y="58" width="70" height="10" rx="4" fill="#34a853" />
+        <circle cx="32" cy="82" r="7" fill="#fbbc04" />
+        <rect x="46" y="76" width="70" height="10" rx="4" fill="#fbbc04" />
       </svg>
     ),
     link: "https://mimic.mit.edu/",
@@ -54,22 +54,41 @@ const sources = [
     icon: (
       <svg viewBox={ICON_VIEWBOX} className={ICON_CLASS} aria-hidden="true">
         <rect x="2" y="2" width="156" height="92" rx="12" fill="#fff" stroke="#888" strokeWidth="4" />
-        <g stroke="#888" strokeWidth="7" fill="none">
-          <line x1="40" y1="90" x2="40" y2="40" />
-          <line x1="120" y1="90" x2="120" y2="40" />
-          <line x1="40" y1="40" x2="16" y2="40" />
-          <line x1="120" y1="40" x2="144" y2="40" />
-          <ellipse cx="40" cy="90" rx="20" ry="7" fill="#888" />
-          <ellipse cx="120" cy="90" rx="20" ry="7" fill="#888" />
+        {/* Left scale */}
+        <g stroke="#888" strokeWidth="3" fill="none">
+          <line x1="25" y1="75" x2="25" y2="45" />
+          <line x1="25" y1="45" x2="15" y2="45" />
+          <line x1="25" y1="45" x2="35" y2="45" />
+          <path d="M15 45 L12 50 L18 50 Z" fill="#888" />
+          <path d="M35 45 L32 50 L38 50 Z" fill="#888" />
+          <ellipse cx="25" cy="75" rx="12" ry="4" fill="#888" />
         </g>
-        <g stroke="#B33" strokeWidth="9" fill="none">
-          <line x1="80" y1="20" x2="80" y2="90" />
-          <circle cx="80" cy="20" r="9" fill="#B33" />
+        
+        {/* Center vertical bars */}
+        <g fill="#888">
+          <rect x="50" y="25" width="4" height="50" />
+          <rect x="60" y="15" width="4" height="60" />
+          <rect x="70" y="35" width="4" height="40" />
         </g>
-        <g stroke="#888" strokeWidth="7" fill="none">
-          <circle cx="40" cy="40" r="9" fill="#fff" />
-          <circle cx="120" cy="40" r="9" fill="#fff" />
-          <circle cx="80" cy="20" r="9" fill="#fff" />
+        
+        {/* Red center bar */}
+        <rect x="80" y="15" width="4" height="60" fill="#B33" />
+        <circle cx="82" cy="15" r="3" fill="#B33" />
+        
+        {/* More gray bars */}
+        <g fill="#888">
+          <rect x="90" y="25" width="4" height="50" />
+          <rect x="100" y="45" width="4" height="30" />
+        </g>
+        
+        {/* Right scale */}
+        <g stroke="#888" strokeWidth="3" fill="none">
+          <line x1="135" y1="75" x2="135" y2="45" />
+          <line x1="135" y1="45" x2="125" y2="45" />
+          <line x1="135" y1="45" x2="145" y2="45" />
+          <path d="M125 45 L122 50 L128 50 Z" fill="#888" />
+          <path d="M145 45 L142 50 L148 50 Z" fill="#888" />
+          <ellipse cx="135" cy="75" rx="12" ry="4" fill="#888" />
         </g>
       </svg>
     ),
