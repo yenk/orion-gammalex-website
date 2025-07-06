@@ -190,16 +190,16 @@ html {
     line-height: 1;
   }
   
-  /* Optimize scroll animation speed for mobile */
+  /* Optimize scroll animation speed for mobile - much faster */
   .animate-scroll-left {
-    animation: scroll-left 60s linear infinite;
+    animation: scroll-left 20s linear infinite;
   }
 }
 
 /* Tablet optimization */
 @media (min-width: 641px) and (max-width: 1024px) {
   .animate-scroll-left {
-    animation: scroll-left 35s linear infinite;
+    animation: scroll-left 25s linear infinite;
   }
 }
 
@@ -267,9 +267,9 @@ html {
     color: #ffffff !important;
   }
   
-  /* Slow down animation even more for better readability */
+  /* Fast mobile animation for better engagement */
   .animate-scroll-left {
-    animation: scroll-left 60s linear infinite;
+    animation: scroll-left 20s linear infinite;
   }
 }
 
@@ -283,6 +283,11 @@ html {
   
   .hero-data-sources .flex.animate-scroll-left {
     gap: 1rem !important;
+  }
+  
+  /* Even faster for very small screens */
+  .animate-scroll-left {
+    animation: scroll-left 18s linear infinite;
   }
 }
 

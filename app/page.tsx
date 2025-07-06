@@ -861,25 +861,34 @@ function InteractiveBenefitsBar() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
   return (
-    <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center px-2 sm:px-0">
-      {/* Horizontal bar */}
-      <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-2 bg-slate-200 rounded-full z-0" style={{height:8}} />
-      {/* Animated dot */}
-      <motion.div
-        className="absolute z-10 top-1/2 -translate-y-1/2"
-        animate={{ left: `calc(${active * 25}% + 12.5%)` }}
-        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-        style={{ width: 24, height: 24, background: '#FF8800', borderRadius: '50%', boxShadow: '0 2px 8px #ff880033' }}
-      />
-      {/* Segments */}
-      <div className={`relative z-20 w-full flex flex-row justify-between items-end ${isMobile ? 'gap-2' : ''}`}>
+    <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center px-4 sm:px-2 lg:px-0 pb-12">
+      {/* Horizontal bar with labels */}
+      <div className="relative w-full">
+        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 bg-black rounded-full z-0" style={{height: isMobile ? 3 : 4}} />
+        {/* Animated dot */}
+        <motion.div
+          className="absolute z-10 top-1/2 -translate-y-1/2"
+          animate={{ left: `calc(${active * 25}% + 12.5%)` }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          style={{ 
+            width: isMobile ? 20 : 24, 
+            height: isMobile ? 20 : 24, 
+            background: '#FF8800', 
+            borderRadius: '50%', 
+            boxShadow: '0 2px 8px #ff880033' 
+          }}
+        />
+
+      </div>
+      {/* Segments - Icons only */}
+      <div className="relative z-20 w-full flex flex-row justify-between items-center mt-6 sm:mt-8">
         {benefits.map((b, i) => {
           const Icon = b.icon
           const isActive = i === active
           return (
             <button
               key={b.label}
-              className={`flex flex-col items-center flex-1 focus:outline-none group bg-transparent border-none cursor-pointer py-2 transition-all duration-200 ${isActive ? 'text-gammalex-orange' : 'text-slate-800'} ${isMobile ? 'min-w-0 px-1' : ''}`}
+              className="flex flex-col items-center flex-1 focus:outline-none group bg-transparent border-none cursor-pointer py-3 sm:py-2 px-1 transition-all duration-200 min-h-[48px] sm:min-h-auto"
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               onClick={() => setActive(i)}
@@ -888,15 +897,11 @@ function InteractiveBenefitsBar() {
               style={{ position: 'relative' }}
             >
               <motion.div
-                animate={isActive ? { scale: 1.25, color: '#FF8800' } : { scale: 1, color: '#23232B' }}
+                animate={isActive ? { scale: isMobile ? 1.15 : 1.25, color: '#FF8800' } : { scale: 1, color: '#23232B' }}
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                className="mb-2"
               >
-                <Icon className={`w-9 h-9 sm:w-10 sm:h-10 ${isActive ? 'text-gammalex-orange' : 'text-gammalex-orange/70'} transition-colors`} />
+                <Icon className={`w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 ${isActive ? 'text-gammalex-orange' : 'text-gammalex-orange/70'} transition-colors`} />
               </motion.div>
-              <span className="text-xs sm:text-base font-inter font-normal text-center transition-colors break-words max-w-[70px] sm:max-w-none truncate">
-                {b.label}
-              </span>
               {/* Tooltip/description */}
               <AnimatePresence>
                 {isActive && (
@@ -905,7 +910,7 @@ function InteractiveBenefitsBar() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="fixed left-1/2 top-4 -translate-x-1/2 bg-white shadow-xl rounded-xl px-4 py-2 text-base text-slate-700 font-inter z-[100] border border-slate-200 max-w-xs w-[90vw] text-left break-words whitespace-normal"
+                      className="fixed left-1/2 top-6 -translate-x-1/2 bg-white shadow-xl rounded-xl px-3 py-2 text-sm text-slate-700 font-inter z-[100] border border-slate-200 max-w-[280px] w-[85vw] text-center break-words whitespace-normal"
                     >
                       {b.description}
                     </motion.div>
@@ -914,7 +919,7 @@ function InteractiveBenefitsBar() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute left-1/2 -translate-x-1/2 -top-20 bg-white shadow-lg rounded-xl px-3 py-2 text-base text-slate-700 font-inter z-30 border border-slate-200 break-words whitespace-normal text-left"
+                      className="absolute left-1/2 -translate-x-1/2 -top-16 bg-white shadow-lg rounded-xl px-3 py-2 text-base text-slate-700 font-inter z-30 border border-slate-200 break-words whitespace-normal text-left"
                       style={{ minWidth: '140px', maxWidth: '200px' }}
                     >
                       <div className="relative">

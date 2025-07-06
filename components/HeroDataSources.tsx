@@ -1,7 +1,7 @@
 import React from "react";
 import IconGrid, { IconGridItem } from "./IconGrid";
 
-const ICON_CLASS = "w-20 h-12 sm:w-24 sm:h-16 md:w-32 md:h-20 lg:w-40 lg:h-24";
+const ICON_CLASS = "w-16 h-10 sm:w-20 sm:h-12 md:w-24 md:h-16 lg:w-32 lg:h-20 xl:w-40 xl:h-24";
 const ICON_VIEWBOX = "0 0 160 96";
 
 const sources = [
@@ -168,13 +168,13 @@ export default function HeroDataSources() {
     <div className="w-full flex flex-col items-center mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 hero-data-sources overflow-hidden">
       {/* Horizontal scrolling ticker */}
       <div className="w-full overflow-hidden relative">
-        <div className="flex animate-scroll-left hover:animation-paused gap-x-6 sm:gap-x-8 md:gap-x-12 lg:gap-x-20 px-4 sm:px-0">
+        <div className="flex animate-scroll-left hover:animation-paused gap-x-4 sm:gap-x-6 md:gap-x-8 lg:gap-x-12 xl:gap-x-20 px-2 sm:px-4">
           {/* First set of icons */}
           {heroDataSources.map((src, i) => (
             <div
               key={`first-${src.label}`}
               className="flex flex-col flex-shrink-0 min-w-0"
-              style={{ minWidth: 140, maxWidth: 200 }}
+              style={{ minWidth: 120, maxWidth: 180 }}
             >
               <a
                 href={src.link || undefined}
@@ -184,11 +184,11 @@ export default function HeroDataSources() {
                 tabIndex={0}
                 aria-label={src.label}
               >
-                <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center w-full">
+                <div className="h-12 sm:h-16 md:h-20 lg:h-24 flex items-center justify-center w-full">
                   {src.icon}
                 </div>
               </a>
-              <div className="h-12 sm:h-14 md:h-16 lg:h-18 flex items-center justify-center w-full mt-2 px-2">
+              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-1 sm:mt-2 px-1 sm:px-2">
                 <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight overflow-hidden">
                   {src.label}
                 </span>
@@ -200,7 +200,7 @@ export default function HeroDataSources() {
             <div
               key={`second-${src.label}`}
               className="flex flex-col flex-shrink-0 min-w-0"
-              style={{ minWidth: 140, maxWidth: 200 }}
+              style={{ minWidth: 120, maxWidth: 180 }}
             >
               <a
                 href={src.link || undefined}
@@ -210,11 +210,11 @@ export default function HeroDataSources() {
                 tabIndex={0}
                 aria-label={src.label}
               >
-                <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center w-full">
+                <div className="h-12 sm:h-16 md:h-20 lg:h-24 flex items-center justify-center w-full">
                   {src.icon}
                 </div>
               </a>
-              <div className="h-12 sm:h-14 md:h-16 lg:h-18 flex items-center justify-center w-full mt-2 px-2">
+              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-1 sm:mt-2 px-1 sm:px-2">
                 <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight overflow-hidden">
                   {src.label}
                 </span>
