@@ -758,9 +758,6 @@ function LegalHeatIndex() {
                 className="inline-flex items-center text-sm font-medium text-gammalex-orange hover:text-gammalex-orange/80 transition-colors group/link"
               >
                 Read Source ↗
-                <span className="ml-1 group-hover/link:translate-x-1 transition-transform">
-                  →
-                </span>
               </a>
             </motion.div>
           ))}
