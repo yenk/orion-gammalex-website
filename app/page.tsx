@@ -155,7 +155,7 @@ export default function GammaLexPage() {
                 <Zap className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
                 <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Pattern Recognition</span>
               </div>
-              <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
+              <p className="text-slate-900 leading-relaxed text-base sm:text-lg">
                 AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.
               </p>
             </motion.div>
@@ -170,7 +170,7 @@ export default function GammaLexPage() {
                 <Scale className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
                 <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Legal Compliance</span>
               </div>
-              <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
+              <p className="text-slate-900 leading-relaxed text-base sm:text-lg">
                 Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.
               </p>
             </motion.div>
@@ -185,7 +185,7 @@ export default function GammaLexPage() {
                 <Shield className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
                 <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Risk Mitigation</span>
               </div>
-              <p className="text-slate-700 leading-relaxed text-base sm:text-lg">
+              <p className="text-slate-900 leading-relaxed text-base sm:text-lg">
                 Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.
               </p>
             </motion.div>
@@ -474,7 +474,7 @@ function AboutSection() {
             <div key={i} className="flex flex-col items-start text-left px-6">
               <div className="mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-orange', width: 56, height: 56 })}</div>
               <div className="text-2xl sm:text-3xl mb-3 text-gammalex-orange font-inter text-left">{f.title}</div>
-              <div className="text-lg sm:text-xl text-slate-700 leading-relaxed font-inter text-left">{f.description}</div>
+              <div className="text-lg sm:text-xl text-slate-900 leading-relaxed font-inter text-left">{f.description}</div>
             </div>
           ))}
         </div>
@@ -747,7 +747,7 @@ function LegalHeatIndex() {
                 {caseItem.year}, {caseItem.jurisdiction}
               </div>
               
-              <p className="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
+              <p className="text-slate-900 text-sm sm:text-base leading-relaxed mb-4">
                 {caseItem.summary}
               </p>
               

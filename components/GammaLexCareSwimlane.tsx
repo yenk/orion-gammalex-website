@@ -208,14 +208,14 @@ export default function GammaLexInteractiveStepper() {
                   <p className="text-base sm:text-lg text-slate-600 mb-3 sm:mb-4">
                     {currentStepData?.subtitle}
                   </p>
-                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-900 leading-relaxed">
                     {currentStepData?.description}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-4 sm:mt-6">
                   {currentStepData?.features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                    <div key={index} className="flex items-start gap-2 text-xs sm:text-sm text-slate-900">
                       <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0 mt-0.5" />
                       <span className="leading-relaxed">{feature}</span>
                     </div>
@@ -229,7 +229,7 @@ export default function GammaLexInteractiveStepper() {
         {/* Progress Bar - Mobile Optimized */}
         <div className="mt-6 sm:mt-8 bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg border border-sage-100">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-xs sm:text-sm font-medium text-slate-700">Progress</span>
+            <span className="text-xs sm:text-sm font-medium text-slate-900">Progress</span>
             <span className="text-xs sm:text-sm text-slate-600">{currentStep} of {steps.length}</span>
           </div>
           <div className="w-full bg-slate-200 rounded-full h-1.5 sm:h-2">
