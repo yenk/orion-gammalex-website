@@ -205,7 +205,7 @@ export function CopilotHero() {
     <section 
       ref={containerRef}
       id="hero" 
-      className="relative w-full bg-black overflow-hidden min-h-[80vh] flex items-center justify-center px-0"
+      className="relative w-full bg-black overflow-hidden min-h-[90vh] flex flex-col items-center justify-center px-0"
     >
       {/* Animated circle absolutely centered in the hero section, not constraining heading width */}
       {hasMounted && (
@@ -298,8 +298,8 @@ export function CopilotHero() {
         </div>
       )}
       {/* Hero section main container */}
-      <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[600px] py-10 sm:py-16 md:py-28 z-10">
-        <h1 className="w-full max-w-screen-xl text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal text-center mb-6 sm:mb-12 font-inter leading-[1.12] sm:leading-[1.08] text-white break-words mx-auto">
+      <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[600px] py-16 sm:py-24 md:py-32 z-10">
+        <h1 className="w-full max-w-screen-xl text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal text-center mb-8 font-inter leading-[1.08] text-white break-words mx-auto">
           {headingLines.map((line, i) => (
             line.map((item, j) => (
               skipAnimation ? (
@@ -325,57 +325,16 @@ export function CopilotHero() {
             ))
           ))}
         </h1>
-        <h2 className="w-full max-w-xs xs:max-w-md sm:max-w-4xl md:max-w-5xl lg:max-w-6xl text-lg xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-inter text-center mb-6 sm:mb-10 mx-auto text-white leading-snug font-normal px-2 sm:px-0">
+        <h2 className="w-full max-w-xs xs:max-w-md sm:max-w-4xl md:max-w-5xl lg:max-w-6xl text-lg xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-inter text-center mb-16 tracking-wide mx-auto text-white leading-[1.2] font-normal px-2 sm:px-0">
           {subheadingLines.map((line, i) => (
-            line.map((word, j) => {
-              if (word === 'Legal' && i === subheadingLines.length - 1 && j === 0) {
-                return skipAnimation ? (
-                  <React.Fragment key={`break-legal-${i}-${j}`}>
-                    <br />
-                    <span
-                      key={`${i}-${j}`}
-                      style={{ display: "inline-block", marginRight: 6 }}
-                    >
-                      {word + " "}
-                    </span>
-                  </React.Fragment>
-                ) : (
-                  <React.Fragment key={`break-legal-${i}-${j}`}>
-                    <br />
-                    <motion.span
-                      key={`${i}-${j}`}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 1.5 + (i * 0.4) + j * 0.18, duration: 0.6, ease: "easeOut" }}
-                      style={{ display: "inline-block", marginRight: 6, willChange: 'transform, opacity' }}
-                    >
-                      {word + " "}
-                    </motion.span>
-                  </React.Fragment>
-                );
-              }
-              return skipAnimation ? (
-                <span
-                  key={`${i}-${j}`}
-                  style={{ display: "inline-block", marginRight: 6 }}
-                >
-                  {word + " "}
-                </span>
-              ) : (
-                <motion.span
-                  key={`${i}-${j}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.5 + (i * 0.4) + j * 0.18, duration: 0.6, ease: "easeOut" }}
-                  style={{ display: "inline-block", marginRight: 6, willChange: 'transform, opacity' }}
-                >
-                  {word + " "}
-                </motion.span>
-              );
-            })
+            <div key={i} className="mb-2">
+              {line.map((word, j) => (
+                <span key={j} className="inline-block mr-2">{word}</span>
+              ))}
+            </div>
           ))}
         </h2>
-        <div className="mt-32 w-full">
+        <div className="mt-16 w-full">
           <HeroDataSources />
         </div>
         <div className="flex flex-col gap-4 items-center mt-12">

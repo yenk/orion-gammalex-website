@@ -146,6 +146,33 @@ html {
   animation: fadeInUp 0.6s ease-out;
 }
 
+/* Hero Data Sources Animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 /* Responsive text scaling */
 @media (max-width: 640px) {
   .text-8xl {
@@ -174,4 +201,8 @@ html {
 }
 .hero-heading span.final {
   color: #181c20; /* your black */
+}
+
+.hover\:animation-paused:hover {
+  animation-play-state: paused;
 }

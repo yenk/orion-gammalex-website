@@ -1,15 +1,14 @@
 import React from "react";
+import IconGrid, { IconGridItem } from "./IconGrid";
 
-const animateClass = "animate-float";
-
-const ICON_CLASS = "w-40 h-24";
+const ICON_CLASS = "w-24 h-16 sm:w-32 sm:h-20 md:w-40 md:h-24";
 const ICON_VIEWBOX = "0 0 160 96";
 
 const sources = [
   {
     label: "Centers for Medicare & Medicaid Services",
     icon: (
-      <svg viewBox="0 0 160 96" className="w-40 h-24" aria-hidden="true">
+      <svg viewBox={ICON_VIEWBOX} className={ICON_CLASS} aria-hidden="true">
         <rect x="2" y="2" width="156" height="92" rx="12" fill="#fff" stroke="#153A8C" strokeWidth="4" />
         <text x="10" y="72" fontSize="56" fontFamily="Inter,Arial,sans-serif" fontWeight="bold" fill="#153A8C">CMS</text>
       </svg>
@@ -77,19 +76,21 @@ const sources = [
     link: "https://www.courtlistener.com/",
   },
   {
-    label: "CaseLaw Access Project By Harvard Law School",
+    label: "CaseLaw Access Project\nby Harvard Law School",
     icon: (
       <svg viewBox={ICON_VIEWBOX} className={ICON_CLASS} aria-hidden="true">
         <rect x="2" y="2" width="156" height="92" rx="12" fill="#0096FF" stroke="#0096FF" strokeWidth="4" />
-        <rect x="20" y="16" width="12" height="40" fill="#222" />
-        <rect x="36" y="16" width="12" height="40" fill="#222" />
-        <rect x="52" y="16" width="12" height="40" fill="#222" />
-        <rect x="68" y="16" width="12" height="40" fill="#222" />
-        <rect x="84" y="16" width="12" height="40" fill="#222" />
-        <rect x="20" y="60" width="12" height="12" fill="#222" />
-        <rect x="36" y="60" width="12" height="12" fill="#222" />
-        <rect x="52" y="60" width="56" height="12" fill="#222" />
-        <rect x="20" y="80" width="88" height="12" fill="#222" />
+        <g>
+          <rect x="20" y="16" width="8" height="40" fill="#222" />
+          <rect x="36" y="16" width="8" height="40" fill="#222" />
+          <rect x="52" y="16" width="8" height="40" fill="#222" />
+          <rect x="68" y="16" width="8" height="40" fill="#222" />
+          <rect x="84" y="16" width="8" height="40" fill="#222" />
+          <rect x="20" y="60" width="8" height="8" fill="#222" />
+          <rect x="36" y="60" width="8" height="8" fill="#222" />
+          <rect x="52" y="60" width="40" height="8" fill="#222" />
+          <rect x="20" y="76" width="72" height="8" fill="#222" />
+        </g>
       </svg>
     ),
     link: "https://case.law/",
@@ -107,7 +108,7 @@ const sources = [
     link: "https://www.nlm.nih.gov/",
   },
   {
-    label: "Biomedical and Clinical Research by i2b2",
+    label: "Biomedical and Clinical Research by i2b2s",
     icon: (
       <svg viewBox={ICON_VIEWBOX} className={ICON_CLASS} aria-hidden="true">
         {/* 3x3 grid of squares */}
@@ -137,28 +138,64 @@ const sources = [
 const mainSources = sources.slice(0, 6);
 const researchSource = sources[6];
 
-export const heroDataSources = sources;
+export const heroDataSources: IconGridItem[] = sources.map((src): IconGridItem => ({
+  label: src.label,
+  icon: src.icon,
+  link: src.link,
+}));
 
 export default function HeroDataSources() {
   return (
     <div className="w-full flex flex-col items-center mt-10 mb-10">
-      <div className="w-full overflow-x-auto">
-        <div className="flex flex-row justify-center items-end gap-x-8 sm:gap-x-16 lg:gap-x-24 gap-y-0 max-w-none min-w-0 px-2 sm:px-8 pb-2">
-          {sources.map((src, i) => (
+      {/* Horizontal scrolling ticker */}
+      <div className="w-full overflow-hidden relative">
+        <div className="flex animate-scroll-left hover:animation-paused gap-x-12 lg:gap-x-20">
+          {/* First set of icons */}
+          {heroDataSources.map((src, i) => (
             <a
-              key={src.label}
+              key={`first-${src.label}`}
               href={src.link || undefined}
               target={src.link ? "_blank" : undefined}
               rel={src.link ? "noopener noreferrer" : undefined}
-              className={`flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 animate-float min-w-0`}
+              className="flex flex-col items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 flex-shrink-0 leading-none"
               tabIndex={0}
               aria-label={src.label}
-              style={{ minWidth: 140, maxWidth: 200 }}
+              style={{ minWidth: 160, maxWidth: 200 }}
             >
-              <span className="mb-3 drop-shadow-md transition-opacity duration-300 opacity-80 group-hover:opacity-100 flex items-center justify-center w-full">
-                {src.icon}
+              <span className="aspect-[5/3] h-20 md:h-24 flex items-center justify-center w-full leading-none">
+                {React.isValidElement(src.icon) && (src.icon.type === 'svg' || (src.icon as any).type === 'svg')
+                  ? React.cloneElement(src.icon as React.ReactElement<any>, {
+                      className: ((src.icon as React.ReactElement<any>).props.className || '') + ' block',
+                      style: { display: 'block', ...((src.icon as React.ReactElement<any>).props.style || {}) },
+                    })
+                  : src.icon}
               </span>
-              <span className="text-xs sm:text-base md:text-lg text-white font-inter text-center max-w-xs whitespace-normal break-words w-full">
+              <span className="text-xs sm:text-base md:text-lg text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-none mt-2">
+                {src.label}
+              </span>
+            </a>
+          ))}
+          {/* Duplicate set for seamless loop */}
+          {heroDataSources.map((src, i) => (
+            <a
+              key={`second-${src.label}`}
+              href={src.link || undefined}
+              target={src.link ? "_blank" : undefined}
+              rel={src.link ? "noopener noreferrer" : undefined}
+              className="flex flex-col items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 flex-shrink-0 leading-none"
+              tabIndex={0}
+              aria-label={src.label}
+              style={{ minWidth: 160, maxWidth: 200 }}
+            >
+              <span className="aspect-[5/3] h-20 md:h-24 flex items-center justify-center w-full leading-none">
+                {React.isValidElement(src.icon) && (src.icon.type === 'svg' || (src.icon as any).type === 'svg')
+                  ? React.cloneElement(src.icon as React.ReactElement<any>, {
+                      className: ((src.icon as React.ReactElement<any>).props.className || '') + ' block',
+                      style: { display: 'block', ...((src.icon as React.ReactElement<any>).props.style || {}) },
+                    })
+                  : src.icon}
+              </span>
+              <span className="text-xs sm:text-base md:text-lg text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-none mt-2">
                 {src.label}
               </span>
             </a>
@@ -178,7 +215,3 @@ export default function HeroDataSources() {
     </div>
   );
 }
-
-// Add to your global CSS (e.g., globals.css):
-// @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-// .animate-float { animation: float 3s ease-in-out infinite; } 
