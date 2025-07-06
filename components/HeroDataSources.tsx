@@ -165,16 +165,16 @@ export const heroDataSources: IconGridItem[] = sources.map((src): IconGridItem =
 
 export default function HeroDataSources() {
   return (
-    <div className="w-full flex flex-col items-center mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 hero-data-sources">
+    <div className="w-full flex flex-col items-center mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 hero-data-sources overflow-hidden">
       {/* Horizontal scrolling ticker */}
-      <div className="w-full overflow-hidden relative px-2 sm:px-0">
-        <div className="flex animate-scroll-left hover:animation-paused gap-x-8 sm:gap-x-12 lg:gap-x-20">
+      <div className="w-full overflow-hidden relative">
+        <div className="flex animate-scroll-left hover:animation-paused gap-x-6 sm:gap-x-8 md:gap-x-12 lg:gap-x-20 px-4 sm:px-0">
           {/* First set of icons */}
           {heroDataSources.map((src, i) => (
             <div
               key={`first-${src.label}`}
-              className="flex flex-col flex-shrink-0"
-              style={{ minWidth: 120, maxWidth: 160 }}
+              className="flex flex-col flex-shrink-0 min-w-0"
+              style={{ minWidth: 140, maxWidth: 200 }}
             >
               <a
                 href={src.link || undefined}
@@ -188,8 +188,8 @@ export default function HeroDataSources() {
                   {src.icon}
                 </div>
               </a>
-              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-2 px-1">
-                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight">
+              <div className="h-12 sm:h-14 md:h-16 lg:h-18 flex items-center justify-center w-full mt-2 px-2">
+                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight overflow-hidden">
                   {src.label}
                 </span>
               </div>
@@ -199,8 +199,8 @@ export default function HeroDataSources() {
           {heroDataSources.map((src, i) => (
             <div
               key={`second-${src.label}`}
-              className="flex flex-col flex-shrink-0"
-              style={{ minWidth: 120, maxWidth: 160 }}
+              className="flex flex-col flex-shrink-0 min-w-0"
+              style={{ minWidth: 140, maxWidth: 200 }}
             >
               <a
                 href={src.link || undefined}
@@ -214,8 +214,8 @@ export default function HeroDataSources() {
                   {src.icon}
                 </div>
               </a>
-              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-2 px-1">
-                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight">
+              <div className="h-12 sm:h-14 md:h-16 lg:h-18 flex items-center justify-center w-full mt-2 px-2">
+                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight overflow-hidden">
                   {src.label}
                 </span>
               </div>

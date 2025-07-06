@@ -192,7 +192,7 @@ html {
   
   /* Optimize scroll animation speed for mobile */
   .animate-scroll-left {
-    animation: scroll-left 45s linear infinite;
+    animation: scroll-left 60s linear infinite;
   }
 }
 
@@ -236,4 +236,59 @@ html {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Mobile text label fixes */
+@media (max-width: 640px) {
+  .hero-data-sources {
+    /* Ensure proper container handling */
+    min-height: 120px;
+    padding: 0 10px;
+  }
+  
+  .hero-data-sources .flex.animate-scroll-left {
+    /* Ensure proper spacing and no text cutoff */
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 120px;
+  }
+  
+  .hero-data-sources span {
+    /* Ensure text is visible and properly sized */
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    color: #ffffff !important;
+  }
+  
+  /* Slow down animation even more for better readability */
+  .animate-scroll-left {
+    animation: scroll-left 60s linear infinite;
+  }
+}
+
+/* Extra small screens (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  .hero-data-sources span {
+    font-size: 0.7rem !important;
+    line-height: 1.1 !important;
+    min-height: 2rem;
+  }
+  
+  .hero-data-sources .flex.animate-scroll-left {
+    gap: 1rem !important;
+  }
+}
+
+/* Tablet specific fixes */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-data-sources span {
+    font-size: 0.875rem !important;
+  }
 }
