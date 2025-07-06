@@ -189,6 +189,18 @@ html {
     font-size: 3rem;
     line-height: 1;
   }
+  
+  /* Optimize scroll animation speed for mobile */
+  .animate-scroll-left {
+    animation: scroll-left 45s linear infinite;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .animate-scroll-left {
+    animation: scroll-left 35s linear infinite;
+  }
 }
 
 .hero-heading span {
@@ -205,4 +217,23 @@ html {
 
 .hover\:animation-paused:hover {
   animation-play-state: paused;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+  
+  /* Ensure ticker continues on touch devices */
+  .hover\:animation-paused:hover {
+    animation-play-state: running;
+  }
+}
+
+/* Ensure icons maintain aspect ratio */
+.hero-data-sources svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

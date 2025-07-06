@@ -1,7 +1,7 @@
 import React from "react";
 import IconGrid, { IconGridItem } from "./IconGrid";
 
-const ICON_CLASS = "w-24 h-16 sm:w-32 sm:h-20 md:w-40 md:h-24";
+const ICON_CLASS = "w-20 h-12 sm:w-24 sm:h-16 md:w-32 md:h-20 lg:w-40 lg:h-24";
 const ICON_VIEWBOX = "0 0 160 96";
 
 const sources = [
@@ -165,16 +165,16 @@ export const heroDataSources: IconGridItem[] = sources.map((src): IconGridItem =
 
 export default function HeroDataSources() {
   return (
-    <div className="w-full flex flex-col items-center mt-10 mb-10">
+    <div className="w-full flex flex-col items-center mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 hero-data-sources">
       {/* Horizontal scrolling ticker */}
-      <div className="w-full overflow-hidden relative">
-        <div className="flex animate-scroll-left hover:animation-paused gap-x-12 lg:gap-x-20">
+      <div className="w-full overflow-hidden relative px-2 sm:px-0">
+        <div className="flex animate-scroll-left hover:animation-paused gap-x-8 sm:gap-x-12 lg:gap-x-20">
           {/* First set of icons */}
           {heroDataSources.map((src, i) => (
             <div
               key={`first-${src.label}`}
               className="flex flex-col flex-shrink-0"
-              style={{ minWidth: 180, maxWidth: 220 }}
+              style={{ minWidth: 120, maxWidth: 160 }}
             >
               <a
                 href={src.link || undefined}
@@ -184,11 +184,11 @@ export default function HeroDataSources() {
                 tabIndex={0}
                 aria-label={src.label}
               >
-                <div className="h-20 md:h-24 flex items-center justify-center w-full">
+                <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center w-full">
                   {src.icon}
                 </div>
               </a>
-              <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center w-full mt-2 px-1">
+              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-2 px-1">
                 <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight">
                   {src.label}
                 </span>
@@ -200,7 +200,7 @@ export default function HeroDataSources() {
             <div
               key={`second-${src.label}`}
               className="flex flex-col flex-shrink-0"
-              style={{ minWidth: 180, maxWidth: 220 }}
+              style={{ minWidth: 120, maxWidth: 160 }}
             >
               <a
                 href={src.link || undefined}
@@ -210,11 +210,11 @@ export default function HeroDataSources() {
                 tabIndex={0}
                 aria-label={src.label}
               >
-                <div className="h-20 md:h-24 flex items-center justify-center w-full">
+                <div className="h-16 sm:h-20 md:h-24 flex items-center justify-center w-full">
                   {src.icon}
                 </div>
               </a>
-              <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center w-full mt-2 px-1">
+              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-2 px-1">
                 <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight">
                   {src.label}
                 </span>
@@ -223,13 +223,12 @@ export default function HeroDataSources() {
           ))}
         </div>
       </div>
-      <p className="text-center mt-10 mb-2 text-white text-xl sm:text-2xl md:text-3xl tracking-tight drop-shadow-lg"
+      <p className="text-center mt-8 mb-2 text-white text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight drop-shadow-lg px-4"
          style={{
            textShadow: '0 0 12px #FF6B35AA, 0 2px 8px #000A',
            maxWidth: '100%',
-           whiteSpace: 'nowrap',
-           overflow: 'hidden',
-           textOverflow: 'ellipsis',
+           wordWrap: 'break-word',
+           hyphens: 'auto',
          }}>
         AI powered by trusted open sources. Moving healthcare forward.
       </p>
