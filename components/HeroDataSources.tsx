@@ -81,15 +81,15 @@ const sources = [
       <svg viewBox={ICON_VIEWBOX} className={ICON_CLASS} aria-hidden="true">
         <rect x="2" y="2" width="156" height="92" rx="12" fill="#0096FF" stroke="#0096FF" strokeWidth="4" />
         <g>
-          <rect x="20" y="16" width="8" height="40" fill="#222" />
-          <rect x="36" y="16" width="8" height="40" fill="#222" />
-          <rect x="52" y="16" width="8" height="40" fill="#222" />
-          <rect x="68" y="16" width="8" height="40" fill="#222" />
-          <rect x="84" y="16" width="8" height="40" fill="#222" />
-          <rect x="20" y="60" width="8" height="8" fill="#222" />
-          <rect x="36" y="60" width="8" height="8" fill="#222" />
-          <rect x="52" y="60" width="40" height="8" fill="#222" />
-          <rect x="20" y="76" width="72" height="8" fill="#222" />
+          <rect x="20" y="24" width="8" height="32" fill="#222" />
+          <rect x="36" y="24" width="8" height="32" fill="#222" />
+          <rect x="52" y="24" width="8" height="32" fill="#222" />
+          <rect x="68" y="24" width="8" height="32" fill="#222" />
+          <rect x="84" y="24" width="8" height="32" fill="#222" />
+          <rect x="20" y="64" width="8" height="6" fill="#222" />
+          <rect x="36" y="64" width="8" height="6" fill="#222" />
+          <rect x="52" y="64" width="40" height="6" fill="#222" />
+          <rect x="20" y="76" width="72" height="6" fill="#222" />
         </g>
       </svg>
     ),
@@ -152,53 +152,55 @@ export default function HeroDataSources() {
         <div className="flex animate-scroll-left hover:animation-paused gap-x-12 lg:gap-x-20">
           {/* First set of icons */}
           {heroDataSources.map((src, i) => (
-            <a
+            <div
               key={`first-${src.label}`}
-              href={src.link || undefined}
-              target={src.link ? "_blank" : undefined}
-              rel={src.link ? "noopener noreferrer" : undefined}
-              className="flex flex-col items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 flex-shrink-0 leading-none"
-              tabIndex={0}
-              aria-label={src.label}
-              style={{ minWidth: 160, maxWidth: 200 }}
+              className="flex flex-col flex-shrink-0"
+              style={{ minWidth: 180, maxWidth: 220 }}
             >
-              <span className="aspect-[5/3] h-20 md:h-24 flex items-center justify-center w-full leading-none">
-                {React.isValidElement(src.icon) && (src.icon.type === 'svg' || (src.icon as any).type === 'svg')
-                  ? React.cloneElement(src.icon as React.ReactElement<any>, {
-                      className: ((src.icon as React.ReactElement<any>).props.className || '') + ' block',
-                      style: { display: 'block', ...((src.icon as React.ReactElement<any>).props.style || {}) },
-                    })
-                  : src.icon}
-              </span>
-              <span className="text-xs sm:text-base md:text-lg text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-none mt-2">
-                {src.label}
-              </span>
-            </a>
+              <a
+                href={src.link || undefined}
+                target={src.link ? "_blank" : undefined}
+                rel={src.link ? "noopener noreferrer" : undefined}
+                className="flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110"
+                tabIndex={0}
+                aria-label={src.label}
+              >
+                <div className="h-20 md:h-24 flex items-center justify-center w-full">
+                  {src.icon}
+                </div>
+              </a>
+              <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center w-full mt-2 px-1">
+                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight">
+                  {src.label}
+                </span>
+              </div>
+            </div>
           ))}
           {/* Duplicate set for seamless loop */}
           {heroDataSources.map((src, i) => (
-            <a
+            <div
               key={`second-${src.label}`}
-              href={src.link || undefined}
-              target={src.link ? "_blank" : undefined}
-              rel={src.link ? "noopener noreferrer" : undefined}
-              className="flex flex-col items-center justify-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 flex-shrink-0 leading-none"
-              tabIndex={0}
-              aria-label={src.label}
-              style={{ minWidth: 160, maxWidth: 200 }}
+              className="flex flex-col flex-shrink-0"
+              style={{ minWidth: 180, maxWidth: 220 }}
             >
-              <span className="aspect-[5/3] h-20 md:h-24 flex items-center justify-center w-full leading-none">
-                {React.isValidElement(src.icon) && (src.icon.type === 'svg' || (src.icon as any).type === 'svg')
-                  ? React.cloneElement(src.icon as React.ReactElement<any>, {
-                      className: ((src.icon as React.ReactElement<any>).props.className || '') + ' block',
-                      style: { display: 'block', ...((src.icon as React.ReactElement<any>).props.style || {}) },
-                    })
-                  : src.icon}
-              </span>
-              <span className="text-xs sm:text-base md:text-lg text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-none mt-2">
-                {src.label}
-              </span>
-            </a>
+              <a
+                href={src.link || undefined}
+                target={src.link ? "_blank" : undefined}
+                rel={src.link ? "noopener noreferrer" : undefined}
+                className="flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110"
+                tabIndex={0}
+                aria-label={src.label}
+              >
+                <div className="h-20 md:h-24 flex items-center justify-center w-full">
+                  {src.icon}
+                </div>
+              </a>
+              <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center w-full mt-2 px-1">
+                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight">
+                  {src.label}
+                </span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
