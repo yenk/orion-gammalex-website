@@ -459,47 +459,15 @@ function Navigation() {
           <div className="flex items-center h-20 justify-between">
             {/* Logo */}
             <motion.div
-              className="flex items-center cursor-pointer relative overflow-hidden"
+              className="flex items-center cursor-pointer"
               onClick={() => scrollToSection("hero")}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="relative">
-                {/* Logo Image */}
-                <motion.img
-                  src="/gammalexlogo-transparent.png"
-                  alt="GammaLex Logo"
-                  className="h-24 relative z-10"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.1, delay: 0.8 }}
-                />
-
-                {/* Sliding Block Overlay */}
-                <motion.div
-                  className="absolute inset-0 bg-sage-600 z-20"
-                  initial={{ x: "0%" }}
-                  animate={{ x: "100%" }}
-                  transition={{
-                    duration: 1.8,
-                    ease: [0.76, 0, 0.24, 1],
-                    delay: 0.3,
-                  }}
-                />
-
-                {/* Logo Reveal Mask */}
-                <motion.div
-                  className="absolute inset-0 z-30"
-                  initial={{ clipPath: "inset(0 100% 0 0)" }}
-                  animate={{ clipPath: "inset(0 0% 0 0)" }}
-                  transition={{
-                    duration: 1.8,
-                    ease: [0.76, 0, 0.24, 1],
-                    delay: 0.3,
-                  }}
-                >
-                  <img src="/gammalexlogo-see.png" alt="GammaLex Logo" className="h-24" />
-                </motion.div>
-              </div>
+              <img
+                src="/gammalexlogo.png"
+                alt="GammaLex Logo"
+                className="h-24"
+              />
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -1048,7 +1016,7 @@ function InteractiveBenefitsBar() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="fixed left-1/2 top-6 -translate-x-1/2 bg-white shadow-xl rounded-xl px-3 py-2 text-sm text-slate-700 font-inter z-[100] border border-slate-200 max-w-[280px] w-[85vw] text-center break-words whitespace-normal"
+                      className="fixed left-1/2 top-28 -translate-x-1/2 bg-white shadow-xl rounded-xl px-3 py-2 text-sm text-slate-700 font-inter z-[100] border border-slate-200 max-w-[280px] w-[85vw] text-center break-words whitespace-normal"
                     >
                       {b.description}
                     </motion.div>

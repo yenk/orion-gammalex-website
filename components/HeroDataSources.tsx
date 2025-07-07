@@ -188,11 +188,7 @@ export default function HeroDataSources() {
                   {src.icon}
                 </div>
               </a>
-              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-1 sm:mt-2 px-1 sm:px-2">
-                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight overflow-hidden">
-                  {src.label}
-                </span>
-              </div>
+              {/* Remove text labels to prevent overlap with logo */}
             </div>
           ))}
           {/* Duplicate set for seamless loop */}
@@ -214,11 +210,7 @@ export default function HeroDataSources() {
                   {src.icon}
                 </div>
               </a>
-              <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center justify-center w-full mt-1 sm:mt-2 px-1 sm:px-2">
-                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center w-full whitespace-normal break-words leading-tight overflow-hidden">
-                  {src.label}
-                </span>
-              </div>
+              {/* Remove text labels to prevent overlap with logo */}
             </div>
           ))}
         </div>
