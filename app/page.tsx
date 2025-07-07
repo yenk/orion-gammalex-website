@@ -64,7 +64,7 @@ export default function GammaLexPage() {
       <CopilotHero />
 
       {/* Main Section: Pre-Auth at the Intersection */}
-      <section id="pre-auth-intersection" className="py-32 px-4 sm:px-8 font-inter bg-white">
+      <section id="why-gammalex" className="py-32 px-4 sm:px-8 font-inter bg-white">
         <div className="w-full max-w-7xl mx-auto">
           
           {/* Main Section Heading */}
