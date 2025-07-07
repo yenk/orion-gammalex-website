@@ -223,15 +223,6 @@ export default function HeroDataSources() {
           ))}
         </div>
       </div>
-      <p className="text-center mt-8 mb-2 text-white text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight drop-shadow-lg px-4"
-         style={{
-           textShadow: '0 0 12px #FF6B35AA, 0 2px 8px #000A',
-           maxWidth: '100%',
-           wordWrap: 'break-word',
-           hyphens: 'auto',
-         }}>
-        AI powered by trusted open sources. Moving healthcare forward.
-      </p>
     </div>
   );
 }

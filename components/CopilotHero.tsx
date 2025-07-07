@@ -12,24 +12,27 @@ import HeroDataSources from './HeroDataSources'
  * Displays main heading, subheading, and CTA with subtle motion.
  */
 
-const headingWords = [
-  { word: "The", orange: false },
-  { word: "AI", orange: true },
-  { word: "Copilot", orange: true },
-  { word: "for", orange: false },
-  { word: "Pre-Auth", orange: true },
-  { word: "and", orange: false },
-  { word: "Compliance", orange: true },
+const headingLines = [
+  [
+    { word: "The", orange: false },
+    { word: "AI", orange: true },
+    { word: "Engine", orange: true },
+    { word: "for", orange: false },
+    { word: "Faster", orange: true },
+  ],
+  [
+    { word: "Pre-Auths", orange: true },
+    { word: "and", orange: false },
+    { word: "Smarter", orange: false },
+  ],
+  [
+    { word: "Compliance", orange: true },
+  ],
 ];
 
-const subheading = "Smarter pre-auth. Stronger care.\nLegal foresight."
-
-const subheadingWords = subheading.split(/\s+/);
-
 const subheadingLines = [
-  ["Smarter", "pre-auth."],
-  ["Stronger", "care."],
-  ["Legal", "foresight."],
+  ["Fine‑tuned", "on", "policy,", "powered", "by", "open", "sources,"],
+  ["and", "built", "to", "accelerate", "care", "with", "legal", "confidence."],
 ];
 
 export function CopilotHero() {
@@ -37,24 +40,11 @@ export function CopilotHero() {
   const [isHovering, setIsHovering] = useState(false);
   const [skipAnimation, setSkipAnimation] = useState(false);
   const [dotRadii, setDotRadii] = useState<number[][] | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [innerDotParams, setInnerDotParams] = useState<{ r: number; duration: number }[]>([]);
   const [hasMounted, setHasMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const headingLines = [
-    [
-      { word: "The", orange: false },
-      { word: "AI", orange: true },
-      { word: "Copilot", orange: true },
-    ],
-    [
-      { word: "for", orange: false },
-      { word: "Pre-Auth", orange: true },
-      { word: "and", orange: false },
-      { word: "Compliance", orange: true },
-    ],
-  ];
-
-  // Update all relevant constants for larger circle
+  // SVG animation constants
   const SVG_SIZE = 1400;
   const CENTER = 700;
   const MAIN_RADIUS = 700;
@@ -118,7 +108,6 @@ export function CopilotHero() {
   }, []);
 
   // Store random radius and duration for inner dots to avoid hydration error
-  const [innerDotParams, setInnerDotParams] = useState<{ r: number; duration: number }[]>([]);
   useEffect(() => {
     setInnerDotParams(
       Array.from({ length: 24 }, () => ({
@@ -205,7 +194,12 @@ export function CopilotHero() {
     <section 
       ref={containerRef}
       id="hero" 
-      className="relative w-full bg-black overflow-hidden min-h-[90vh] flex flex-col items-center justify-center px-0"
+      className="relative w-full bg-black overflow-hidden min-h-screen flex flex-col items-center justify-center py-8 sm:py-12 md:py-16 lg:py-20 px-0"
+      style={{ 
+        paddingTop: 'max(8vh, 4rem)', 
+        paddingBottom: 'max(8vh, 4rem)',
+        minHeight: 'calc(100vh - 8rem)' // Account for potential header/footer
+      }}
     >
       {/* Animated circle absolutely centered in the hero section, not constraining heading width */}
       {hasMounted && (
@@ -298,51 +292,62 @@ export function CopilotHero() {
         </div>
       )}
       {/* Hero section main container */}
-      <div className="relative w-full flex flex-col items-center justify-center min-h-[400px] sm:min-h-[600px] py-16 sm:py-24 md:py-32 z-10">
-        <h1 className="w-full max-w-screen-xl text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal text-center mb-8 font-inter leading-[1.08] text-white break-words mx-auto">
-          {headingLines.map((line, i) => (
-            line.map((item, j) => (
-              skipAnimation ? (
-                <span
-                  key={`${i}-${j}`}
-                  className={item.orange ? "text-gammalex-orange" : ""}
-                  style={{ display: "inline-block", marginRight: 8 }}
-                >
-                  {item.word + " "}
-                </span>
-              ) : (
-                <motion.span
-                  key={`${i}-${j}`}
-                  className={item.orange ? "text-gammalex-orange" : ""}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + (i * 0.5) + j * 0.25, duration: 0.7, ease: "easeOut" }}
-                  style={{ display: "inline-block", marginRight: 8, willChange: 'transform, opacity' }}
-                >
-                  {item.word + " "}
-                </motion.span>
-              )
-            ))
-          ))}
-        </h1>
-        <h2 className="w-full max-w-xs xs:max-w-md sm:max-w-4xl md:max-w-5xl lg:max-w-6xl text-lg xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-inter text-center mb-16 tracking-wide mx-auto text-white leading-[1.2] font-normal px-2 sm:px-0">
-          {subheadingLines.map((line, i) => (
-            <div key={i} className="mb-2">
-              {line.map((word, j) => (
-                <span key={j} className="inline-block mr-2">{word}</span>
-              ))}
-            </div>
-          ))}
-        </h2>
-        <div className="mt-16 w-full">
+      <div className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 z-10 py-4 sm:py-6 md:py-8">
+        {/* Main Hero Heading */}
+        <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto">
+            {headingLines.map((line, i) => (
+              <div key={i} className="mb-2 sm:mb-3 md:mb-4 lg:mb-6">
+                {line.map((item, j) => (
+                  skipAnimation ? (
+                    <span
+                      key={`${i}-${j}`}
+                      className={`inline-block mr-3 sm:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
+                    >
+                      {item.word}
+                    </span>
+                  ) : (
+                    <motion.span
+                      key={`${i}-${j}`}
+                      className={`inline-block mr-3 sm:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.3 + (i * 0.3) + j * 0.15, duration: 0.7, ease: "easeOut" }}
+                      style={{ willChange: 'transform, opacity' }}
+                    >
+                      {item.word}
+                    </motion.span>
+                  )
+                ))}
+              </div>
+            ))}
+          </h1>
+        </div>
+
+        {/* Subhero Heading */}
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-inter font-light text-white leading-[1.5] tracking-wide max-w-4xl mx-auto">
+            {subheadingLines.map((line, i) => (
+              <div key={i} className="mb-1 sm:mb-2 md:mb-3">
+                {line.map((word, j) => (
+                  <span key={j} className="inline-block mr-2">{word}</span>
+                ))}
+              </div>
+            ))}
+          </h2>
+        </div>
+        
+        {/* Hero Data Sources and CTA */}
+        <div className="w-full mb-6 sm:mb-8 md:mb-12">
           <HeroDataSources />
         </div>
-        <div className="flex flex-col gap-4 items-center mt-12">
+        
+        <div className="flex flex-col gap-4 items-center">
           <a
             href="https://cal.com/yenkha"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl transition-colors w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange"
+            className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             style={{ textDecoration: 'none', display: 'inline-block' }}
           >
             See it in Action
