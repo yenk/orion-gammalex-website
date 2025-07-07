@@ -258,10 +258,10 @@ export default function GammaLexPage() {
       <LegalHeatIndex />
 
       {/* Legal Foresight Bridge Section */}
-      <section className="w-full bg-white py-24 px-4 font-inter">
+      <section className="w-full bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 font-inter">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-6">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-6 sm:mb-8 px-2">
               <span className="text-slate-900">From </span>
               <span className="text-gammalex-orange">legal risk</span>
               <span className="text-slate-900"> to </span>
@@ -275,47 +275,47 @@ export default function GammaLexPage() {
               <FlaggingOverlay />
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col items-start"
+              className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col items-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-5 mb-6">
-                <Zap className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
-                <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Pattern Recognition</span>
+              <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
+                <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-slate-400" />
+                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-orange">Pattern Recognition</span>
               </div>
-              <p className="text-slate-900 leading-relaxed text-base sm:text-lg">
+              <p className="text-slate-900 leading-relaxed text-sm xs:text-base sm:text-lg">
                 AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.
               </p>
             </motion.div>
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col items-start"
+              className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col items-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-5 mb-6">
-                <Scale className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
-                <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Legal Compliance</span>
+              <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
+                <Scale className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-slate-400" />
+                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-orange">Legal Compliance</span>
               </div>
-              <p className="text-slate-900 leading-relaxed text-base sm:text-lg">
+              <p className="text-slate-900 leading-relaxed text-sm xs:text-base sm:text-lg">
                 Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.
               </p>
             </motion.div>
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col items-start"
+              className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col items-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center gap-5 mb-6">
-                <Shield className="w-12 h-12 sm:w-14 sm:h-14 text-slate-400" />
-                <span className="text-2xl sm:text-3xl font-inter text-gammalex-orange">Risk Mitigation</span>
+              <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
+                <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-slate-400" />
+                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-orange">Risk Mitigation</span>
               </div>
               <p className="text-slate-900 leading-relaxed text-base sm:text-lg">
                 Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.
@@ -328,7 +328,7 @@ export default function GammaLexPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="text-xl sm:text-2xl font-inter text-slate-600 italic mb-8"
+              className="text-lg xs:text-xl sm:text-2xl font-inter text-slate-600 italic mb-6 sm:mb-8 px-2"
             >
               The best defense is foresight. GammaLex doesn't just respond to denials—it flags risk early, so you can avoid them altogether.
             </motion.p>
@@ -693,7 +693,7 @@ function SystemicRiskStats() {
   ];
 
   return (
-    <section className="w-full bg-sage-100 py-32 px-2 sm:px-0 font-inter flex justify-center items-center relative overflow-hidden">
+    <section className="w-full bg-sage-100 py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 font-inter flex justify-center items-center relative overflow-hidden">
       {/* Subtle animated radial gradient background */}
       <motion.div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
@@ -713,7 +713,7 @@ function SystemicRiskStats() {
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#FF8800" opacity="0.15"/><path d="M28 16v12" stroke="#FF8800" strokeWidth="3.5" strokeLinecap="round"/><circle cx="28" cy="38" r="2.5" fill="#FF8800"/></svg>
           </motion.div>
           <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-normal text-gammalex-orange text-center mb-4 leading-tight"
+            className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-normal text-gammalex-orange text-center mb-3 sm:mb-4 leading-tight px-2"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -722,7 +722,7 @@ function SystemicRiskStats() {
             Pre-auth is a healthcare crisis
           </motion.h2>
           <motion.p
-            className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight"
+            className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-slate-900 text-center mb-6 sm:mb-8 leading-tight px-2"
             initial="hidden"
             whileInView="visible"
             variants={fadeUp}
