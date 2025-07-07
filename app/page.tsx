@@ -134,7 +134,7 @@ export default function GammaLexPage() {
             {/* Row 1: Open Source Data Foundation */}
             <div className="flex flex-col lg:flex-row border-b border-slate-300">
               <div className="lg:w-1/3 p-6 lg:p-8 border-r border-slate-300 bg-slate-50">
-                <div className="text-xs uppercase tracking-wider text-slate-600 font-medium mb-4">
+                <div className="text-sm uppercase tracking-wider text-black font-medium mb-4">
                   POWERED BY OPEN SOURCE<br />DATA FOUNDATION
                 </div>
                 <div className="flex items-center gap-2">
@@ -145,16 +145,16 @@ export default function GammaLexPage() {
               </div>
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
-                  <span className="text-lg font-medium text-gammalex-orange">Open Source Data Foundation: </span>
-                  <span className="text-slate-700 text-lg">Builds and fine-tunes LLMs using a diverse set of </span>
-                  <span className="text-slate-900 font-medium underline">open source datasets</span>
-                  <span className="text-slate-700 text-lg">, including insurance, legal, and clinical corpora.</span>
+                  <span className="text-xl font-medium text-gammalex-orange">Open Source Data Foundation: </span>
+                  <span className="text-black text-xl">Builds and fine-tunes LLMs using a diverse set of </span>
+                  <span className="text-black font-medium underline text-xl">open source datasets</span>
+                  <span className="text-black text-xl">, including insurance, legal, and clinical corpora.</span>
                 </div>
                 <div>
-                  <span className="text-lg font-medium text-gammalex-orange">Transparent Data Lineage: </span>
-                  <span className="text-slate-700 text-lg">Provides clear documentation and traceability of all source datasets used for model training with advances such as </span>
-                  <span className="text-slate-900 font-medium underline">audit trails</span>
-                  <span className="text-slate-700 text-lg">.</span>
+                  <span className="text-xl font-medium text-gammalex-orange">Transparent Data Lineage: </span>
+                  <span className="text-black text-xl">Provides clear documentation and traceability of all source datasets used for model training with advances such as </span>
+                  <span className="text-black font-medium underline text-xl">audit trails</span>
+                  <span className="text-black text-xl">.</span>
                 </div>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function GammaLexPage() {
             {/* Row 2: Multi-Domain Integration */}
             <div className="flex flex-col lg:flex-row border-b border-slate-300">
               <div className="lg:w-1/3 p-6 lg:p-8 border-r border-slate-300 bg-slate-50">
-                <div className="text-xs uppercase tracking-wider text-slate-600 font-medium mb-4">
+                <div className="text-sm uppercase tracking-wider text-black font-medium mb-4">
                   CLINICAL-LEGAL-PAYER<br />INTELLIGENCE INTEGRATION
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
@@ -175,22 +175,22 @@ export default function GammaLexPage() {
               </div>
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
-                  <span className="text-lg font-medium text-gammalex-orange">Multi-Domain Integration: </span>
-                  <span className="text-slate-700 text-lg">Combines open source </span>
-                  <span className="text-slate-900 font-medium underline">clinical</span>
-                  <span className="text-slate-700 text-lg">, </span>
-                  <span className="text-slate-900 font-medium underline">legal</span>
-                  <span className="text-slate-700 text-lg">, and </span>
-                  <span className="text-slate-900 font-medium underline">insurance data</span>
-                  <span className="text-slate-700 text-lg"> for holistic decision support.</span>
+                  <span className="text-xl font-medium text-gammalex-orange">Multi-Domain Integration: </span>
+                  <span className="text-black text-xl">Combines open source </span>
+                  <span className="text-black font-medium underline text-xl">clinical</span>
+                  <span className="text-black text-xl">, </span>
+                  <span className="text-black font-medium underline text-xl">legal</span>
+                  <span className="text-black text-xl">, and </span>
+                  <span className="text-black font-medium underline text-xl">insurance data</span>
+                  <span className="text-black text-xl"> for holistic decision support.</span>
                 </div>
                 <div>
-                  <span className="text-lg font-medium text-gammalex-orange">Continuous Model Updating: </span>
-                  <span className="text-slate-700 text-lg">Regularly incorporates new </span>
-                  <span className="text-slate-900 font-medium underline">open datasets</span>
-                  <span className="text-slate-700 text-lg"> and </span>
-                  <span className="text-slate-900 font-medium underline">payer policy updates</span>
-                  <span className="text-slate-700 text-lg"> to stay current with industry changes.</span>
+                  <span className="text-xl font-medium text-gammalex-orange">Continuous Model Updating: </span>
+                  <span className="text-black text-xl">Regularly incorporates new </span>
+                  <span className="text-black font-medium underline text-xl">open datasets</span>
+                  <span className="text-black text-xl"> and </span>
+                  <span className="text-black font-medium underline text-xl">payer policy updates</span>
+                  <span className="text-black text-xl"> to stay current with industry changes.</span>
                 </div>
               </div>
             </div>
@@ -198,7 +198,7 @@ export default function GammaLexPage() {
             {/* Row 3: Payer-Specific Adaptation */}
             <div className="flex flex-col lg:flex-row">
               <div className="lg:w-1/3 p-6 lg:p-8 border-r border-slate-300 bg-slate-50">
-                <div className="text-xs uppercase tracking-wider text-slate-600 font-medium mb-4">
+                <div className="text-sm uppercase tracking-wider text-black font-medium mb-4">
                   ENTERPRISE-GRADE PAYER<br />POLICY ADAPTATION
                 </div>
                 <div className="grid grid-cols-5 gap-1">
@@ -226,12 +226,12 @@ export default function GammaLexPage() {
               </div>
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
-                  <span className="text-lg font-medium text-gammalex-orange">Payer-Specific Policy Adaptation: </span>
-                  <span className="text-slate-700 text-lg">Fine-tunes models on datasets relevant to </span>
-                  <span className="text-slate-900 font-medium underline">major payer policies</span>
-                  <span className="text-slate-700 text-lg"> (e.g., Aetna, UnitedHealthcare), ensuring up-to-date, </span>
-                  <span className="text-slate-900 font-medium underline">payer-aligned recommendations</span>
-                  <span className="text-slate-700 text-lg">.</span>
+                  <span className="text-xl font-medium text-gammalex-orange">Payer-Specific Policy Adaptation: </span>
+                  <span className="text-black text-xl">Fine-tunes models on datasets relevant to </span>
+                  <span className="text-black font-medium underline text-xl">major payer policies</span>
+                  <span className="text-black text-xl"> (e.g., Aetna, UnitedHealthcare), ensuring up-to-date, </span>
+                  <span className="text-black font-medium underline text-xl">payer-aligned recommendations</span>
+                  <span className="text-black text-xl">.</span>
                 </div>
               </div>
             </div>

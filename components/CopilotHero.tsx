@@ -194,19 +194,20 @@ export function CopilotHero() {
     <section 
       ref={containerRef}
       id="hero" 
-      className="relative w-full bg-black overflow-hidden min-h-screen flex flex-col items-center justify-center py-8 sm:py-12 md:py-16 lg:py-20 px-0"
+      className="relative w-full bg-black overflow-hidden min-h-screen flex flex-col items-center justify-center py-4 sm:py-8 md:py-12 lg:py-16 px-0"
       style={{ 
-        paddingTop: 'max(8vh, 4rem)', 
-        paddingBottom: 'max(8vh, 4rem)',
-        minHeight: 'calc(100vh - 8rem)' // Account for potential header/footer
+        paddingTop: 'max(4vh, 2rem)', 
+        paddingBottom: 'max(4vh, 2rem)',
+        minHeight: 'calc(100vh - 5rem)' // Account for potential header/footer
       }}
     >
       {/* Animated circle absolutely centered in the hero section, not constraining heading width */}
       {hasMounted && (
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 opacity-80 sm:opacity-100">
           <motion.svg 
             width={SVG_SIZE} 
             height={SVG_SIZE} 
+            className="max-w-[120vw] max-h-[120vh] sm:max-w-none sm:max-h-none"
             style={{zIndex: 1}}
             animate={{ rotate: [0, 360] }}
             transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
@@ -292,24 +293,24 @@ export function CopilotHero() {
         </div>
       )}
       {/* Hero section main container */}
-      <div className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 z-10 py-4 sm:py-6 md:py-8">
+      <div className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 z-10 py-2 sm:py-4 md:py-6 lg:py-8">
         {/* Main Hero Heading */}
-        <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto">
+        <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-0">
             {headingLines.map((line, i) => (
-              <div key={i} className="mb-2 sm:mb-3 md:mb-4 lg:mb-6">
+              <div key={i} className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-6">
                 {line.map((item, j) => (
                   skipAnimation ? (
                     <span
                       key={`${i}-${j}`}
-                      className={`inline-block mr-3 sm:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
+                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
                     >
                       {item.word}
                     </span>
                   ) : (
                     <motion.span
                       key={`${i}-${j}`}
-                      className={`inline-block mr-3 sm:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
+                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + (i * 0.3) + j * 0.15, duration: 0.7, ease: "easeOut" }}
@@ -325,12 +326,12 @@ export function CopilotHero() {
         </div>
 
         {/* Subhero Heading */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-inter font-light text-white leading-[1.5] tracking-wide max-w-4xl mx-auto">
+        <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-inter font-light text-white leading-[1.5] tracking-wide max-w-4xl mx-auto px-2 sm:px-0">
             {subheadingLines.map((line, i) => (
               <div key={i} className="mb-1 sm:mb-2 md:mb-3">
                 {line.map((word, j) => (
-                  <span key={j} className="inline-block mr-2">{word}</span>
+                  <span key={j} className="inline-block mr-1 sm:mr-2">{word}</span>
                 ))}
               </div>
             ))}
@@ -338,16 +339,16 @@ export function CopilotHero() {
         </div>
         
         {/* Hero Data Sources and CTA */}
-        <div className="w-full mb-6 sm:mb-8 md:mb-12">
+        <div className="w-full mb-4 sm:mb-6 md:mb-8 lg:mb-12">
           <HeroDataSources />
         </div>
         
-        <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col gap-4 items-center px-4 sm:px-0">
           <a
             href="https://cal.com/yenkha"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-6 py-3 text-base sm:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+            className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base md:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             style={{ textDecoration: 'none', display: 'inline-block' }}
           >
             See it in Action
