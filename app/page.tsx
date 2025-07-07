@@ -269,7 +269,7 @@ export default function GammaLexPage() {
             </h2>
             <AnimatedText
               text="Lawsuits show the pattern: denials become liability when clinical evidence is ignored. GammaLex anticipates legal risk <br /> before it escalates."
-              className="text-2xl sm:text-3xl font-inter text-center text-slate-700 max-w-5xl mx-auto leading-relaxed"
+              className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-slate-900 text-center max-w-5xl mx-auto leading-tight px-2"
             />
             <div className="flex justify-center my-8">
               <FlaggingOverlay />
@@ -555,26 +555,24 @@ function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-28 px-4 bg-white font-inter text-slate-900">
+    <section id="about" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white font-inter text-slate-900">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-8">
+        <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-6 sm:mb-8 px-2">
           <span className="text-slate-900">Forge the </span>
           <span className="text-gammalex-orange">AI frontier.</span> <br />
           <span className="text-slate-900">Train on </span>
           <span className="text-gammalex-orange">expert-built</span>
           <span className="text-slate-900"> healthcare LLMs.</span>
         </h2>
-        <p className="text-2xl sm:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-snug mb-20">
-          GammaLex delivers payer-specific, policy-aware AI recommendations built to improve medical pre-auths, and reduce pre-auth denial risks. <br />
-          <br />
-          Our platform fine-tunes large language models to reflect real-world data, payer rules, and compliance demands—empowering care and compliance teams to outsmart denials and accelerate treatment.
+        <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter text-center text-black max-w-4xl mx-auto leading-relaxed sm:leading-snug mb-12 sm:mb-16 md:mb-20 px-2">
+          GammaLex delivers policy-aware AI to improve pre-auths and reduce denial risk—fine-tuned on real-world data and payer rules to accelerate care.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16 w-full mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 md:gap-x-16 md:gap-y-16 w-full">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-start text-left px-6">
-              <div className="mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-orange', width: 56, height: 56 })}</div>
-              <div className="text-2xl sm:text-3xl mb-3 text-gammalex-orange font-inter text-left">{f.title}</div>
-              <div className="text-lg sm:text-xl text-slate-900 leading-relaxed font-inter text-left">{f.description}</div>
+            <div key={i} className="flex flex-col items-start text-left px-2 sm:px-4 md:px-6">
+              <div className="mb-4 sm:mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-orange', width: 48, height: 48, 'data-mobile-size': '40' })}</div>
+              <div className="text-xl xs:text-2xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 text-gammalex-orange font-inter text-left leading-tight">{f.title}</div>
+              <div className="text-base xs:text-lg sm:text-lg md:text-xl text-slate-900 leading-relaxed font-inter text-left">{f.description}</div>
             </div>
           ))}
         </div>

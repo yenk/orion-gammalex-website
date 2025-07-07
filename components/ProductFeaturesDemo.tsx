@@ -301,13 +301,13 @@ function FlaggingOverlay() {
 
 export function ProductFeaturesDemo() {
   return (
-    <section id="product" className="w-full max-w-[1600px] mx-auto py-36 px-2 sm:px-12">
+    <section id="product" className="w-full max-w-[1600px] mx-auto py-16 sm:py-24 md:py-36 px-4 sm:px-8 lg:px-12">
       {/* Headline with orange emphasis only */}
-      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-center mb-8 font-inter leading-tight text-slate-900">
+      <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-normal text-center mb-6 sm:mb-8 font-inter leading-tight text-slate-900 px-2">
         End-to-end <span className="text-gammalex-orange">clinical-legal</span> <span className="text-gammalex-orange">AI</span> for pre-auth, <br />
         denial risk, and <span className="text-gammalex-orange">compliance</span>
       </h2>
-      <p className="text-2xl sm:text-3xl font-inter text-center mb-20 max-w-4xl mx-auto text-black leading-snug">
+      <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-center mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto text-slate-900 leading-tight px-2">
         Faster care. Fewer denials. No black boxes. <span className="text-gammalex-orange">GammaLex</span> delivers source-backed AI you can trust.
       </p>
       
