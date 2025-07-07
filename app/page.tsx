@@ -128,6 +128,174 @@ export default function GammaLexPage() {
               </div>
             </div>
 
+            {/* What Makes Us Different Section */}
+            <div className="my-20">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl sm:text-4xl font-inter font-normal text-slate-900 leading-tight mb-4">
+                  What Makes Us <span className="text-gammalex-orange">Different</span>
+                </h3>
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                  Built on transparency, precision, and open innovation
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div 
+                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                      Transparency
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 leading-relaxed font-inter">
+                    Users can see exactly which open datasets informed GammaLex's models, supporting regulatory compliance and trust.
+                  </p>
+                </motion.div>
+
+                <motion.div 
+                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                      Payer-Specific Accuracy
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 leading-relaxed font-inter">
+                    Fine-tuning on real-world, payer-relevant data (like Aetna's policies) delivers more precise and actionable recommendations for denial mitigation and risk management.
+                  </p>
+                </motion.div>
+
+                <motion.div 
+                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                      Open Source Ethos
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 leading-relaxed font-inter">
+                    GammaLex's commitment to open data and transparent model development sets it apart in a field often dominated by closed, black-box solutions.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* What Makes Us Different Section */}
+            <div className="my-20">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl sm:text-4xl font-inter font-normal text-slate-900 leading-tight mb-4">
+                  What Makes Us <span className="text-gammalex-orange">Different</span>
+                </h3>
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                  Built on transparency, precision, and open innovation
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div 
+                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                      Transparency
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 leading-relaxed font-inter">
+                    Users can see exactly which open datasets informed GammaLex's models, supporting regulatory compliance and trust.
+                  </p>
+                </motion.div>
+
+                <motion.div 
+                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                      Payer-Specific Accuracy
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 leading-relaxed font-inter">
+                    Fine-tuning on real-world, payer-relevant data (like Aetna's policies) delivers more precise and actionable recommendations for denial mitigation and risk management.
+                  </p>
+                </motion.div>
+
+                <motion.div 
+                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                      Open Source Ethos
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 leading-relaxed font-inter">
+                    GammaLex's commitment to open data and transparent model development sets it apart in a field often dominated by closed, black-box solutions.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
             {/* Main Content Grid - Matching Reference Image */}
             <div className="space-y-0">
             
@@ -237,6 +405,98 @@ export default function GammaLexPage() {
             </div>
 
           </div>
+
+          {/* Competitive Differentiation Section */}
+          <div className="mt-24 mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-slate-900 leading-tight mb-4">
+                Beyond automation. <span className="text-gammalex-orange">Beyond compliance.</span>
+              </h3>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                While others automate workflows, GammaLex prevents lawsuits.
+              </p>
+            </div>
+            
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/50">
+              {/* Header */}
+              <div className="grid grid-cols-2 border-b border-slate-200">
+                <div className="p-6 lg:p-8 border-r border-slate-200 bg-slate-50/50">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-6 h-6 rounded-full bg-slate-400 flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">🧩</span>
+                    </div>
+                    <h4 className="text-xl font-semibold text-black font-inter">Competitors</h4>
+                  </div>
+                  <p className="text-sm text-slate-600 font-inter">Traditional pre-auth automation</p>
+                </div>
+                <div className="p-6 lg:p-8 bg-gradient-to-r from-gammalex-orange/5 to-gammalex-orange/10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-6 h-6 rounded-full bg-gammalex-orange flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">🚀</span>
+                    </div>
+                    <h4 className="text-xl font-semibold text-gammalex-orange font-inter">GammaLex</h4>
+                  </div>
+                  <p className="text-sm text-slate-600 font-inter">Clinical-legal AI for risk prevention</p>
+                </div>
+              </div>
+
+              {/* Comparison Rows */}
+              <div className="divide-y divide-slate-200">
+                {[
+                  {
+                    competitor: "Automate prior auth forms and workflows",
+                    gammalex: "Interprets pre-auths with legal-grade precision"
+                  },
+                  {
+                    competitor: "Focus on throughput and payer compliance",
+                    gammalex: "Focuses on defensibility, approval, and litigation prevention"
+                  },
+                  {
+                    competitor: "Use basic rules or standard LLMs",
+                    gammalex: "Combines billing codes, medical records, and coverage rules with expert-trained models"
+                  },
+                  {
+                    competitor: "Focus primarily on workflow efficiency",
+                    gammalex: "Flags contract breaches, policy violations, and lawsuit triggers in real time"
+                  },
+                  {
+                    competitor: "Serve payer operations or revenue cycle teams",
+                    gammalex: "Empowers providers, plaintiff-side litigators, and progressive payers alike"
+                  },
+                  {
+                    competitor: "Offer static policy libraries or appeals toolkits",
+                    gammalex: "Runs a dynamic clinical-legal engine that predicts denials and drafts source-backed justifications"
+                  }
+                ].map((row, index) => (
+                  <motion.div 
+                    key={index}
+                    className="grid grid-cols-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="p-6 lg:p-8 border-r border-slate-200 bg-white">
+                      <p className="text-black leading-relaxed font-inter">{row.competitor}</p>
+                    </div>
+                    <div className="p-6 lg:p-8 bg-gradient-to-r from-gammalex-orange/5 to-gammalex-orange/10 relative">
+                      <p className="text-black font-medium leading-relaxed font-inter">{row.gammalex}</p>
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gammalex-orange"></div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Bottom highlight */}
+              <div className="p-6 lg:p-8 bg-gradient-to-r from-gammalex-orange/10 to-gammalex-orange/20 text-center">
+                <p className="text-lg font-medium text-black font-inter">
+                  The difference: <span className="text-gammalex-orange font-bold">Legal foresight</span> prevents what automation can't fix.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
           <div className="w-full flex justify-center mt-10 sm:mt-12">
             <JoinWaitlistModal
               trigger={
