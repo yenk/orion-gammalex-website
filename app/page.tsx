@@ -620,7 +620,7 @@ function Navigation() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-none px-8 lg:px-16">
-          <div className="flex items-center h-20 justify-between">
+          <div className="flex items-center h-16 sm:h-20 justify-between">
             {/* Logo */}
             <motion.div
               className="flex items-center cursor-pointer"
@@ -628,9 +628,13 @@ function Navigation() {
               whileHover={{ scale: 1.02 }}
             >
               <img
-                src="/gammalexlogo.png"
+                src="/gammalexlogo-transparent.png"
                 alt="GammaLex Logo"
-                className="h-24"
+                className={`transition-all duration-300 ${
+                  isScrolled 
+                    ? "h-14 sm:h-16" 
+                    : "h-20 sm:h-24"
+                } max-w-none`}
               />
             </motion.div>
 
