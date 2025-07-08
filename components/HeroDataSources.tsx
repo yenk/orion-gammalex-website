@@ -1,5 +1,4 @@
 import React from "react";
-import IconGrid, { IconGridItem } from "./IconGrid";
 
 const ICON_CLASS = "w-16 h-10 sm:w-20 sm:h-12 md:w-24 md:h-16 lg:w-32 lg:h-20 xl:w-40 xl:h-24";
 const ICON_VIEWBOX = "0 0 160 96";
@@ -95,7 +94,7 @@ const sources = [
     link: "https://www.courtlistener.com/",
   },
   {
-    label: "CaseLaw Access Project\nby Harvard Law School",
+    label: "CaseLaw Access Project by Harvard Law School",
     icon: (
       <svg viewBox={ICON_VIEWBOX} className={ICON_CLASS} aria-hidden="true">
         <rect x="2" y="2" width="156" height="92" rx="12" fill="#0096FF" stroke="#0096FF" strokeWidth="4" />
@@ -154,15 +153,6 @@ const sources = [
   },
 ];
 
-const mainSources = sources.slice(0, 6);
-const researchSource = sources[6];
-
-export const heroDataSources: IconGridItem[] = sources.map((src): IconGridItem => ({
-  label: src.label,
-  icon: src.icon,
-  link: src.link,
-}));
-
 export default function HeroDataSources() {
   return (
     <div className="w-full flex flex-col items-center mt-6 sm:mt-8 md:mt-10 mb-6 sm:mb-8 md:mb-10 hero-data-sources overflow-hidden">
@@ -170,47 +160,51 @@ export default function HeroDataSources() {
       <div className="w-full overflow-hidden relative">
         <div className="flex animate-scroll-left hover:animation-paused gap-x-4 sm:gap-x-6 md:gap-x-8 lg:gap-x-12 xl:gap-x-20 px-2 sm:px-4">
           {/* First set of icons */}
-          {heroDataSources.map((src, i) => (
+          {sources.map((src, i) => (
             <div
               key={`first-${src.label}`}
               className="flex flex-col flex-shrink-0 min-w-0"
-              style={{ minWidth: 120, maxWidth: 180 }}
+              style={{ minWidth: 140, maxWidth: 200 }}
             >
               <a
                 href={src.link || undefined}
                 target={src.link ? "_blank" : undefined}
                 rel={src.link ? "noopener noreferrer" : undefined}
-                className="flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110"
+                className="flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 min-w-0 flex-shrink-0"
                 tabIndex={0}
                 aria-label={src.label}
               >
-                <div className="h-12 sm:h-16 md:h-20 lg:h-24 flex items-center justify-center w-full">
+                <span className="mb-3 drop-shadow-md transition-opacity duration-300 opacity-80 group-hover:opacity-100 flex items-center justify-center w-full h-full min-h-0">
                   {src.icon}
-                </div>
+                </span>
+                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-tight">
+                  {src.label}
+                </span>
               </a>
-              {/* Remove text labels to prevent overlap with logo */}
             </div>
           ))}
           {/* Duplicate set for seamless loop */}
-          {heroDataSources.map((src, i) => (
+          {sources.map((src, i) => (
             <div
               key={`second-${src.label}`}
               className="flex flex-col flex-shrink-0 min-w-0"
-              style={{ minWidth: 120, maxWidth: 180 }}
+              style={{ minWidth: 140, maxWidth: 200 }}
             >
               <a
                 href={src.link || undefined}
                 target={src.link ? "_blank" : undefined}
                 rel={src.link ? "noopener noreferrer" : undefined}
-                className="flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110"
+                className="flex flex-col items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange transition-transform duration-200 hover:scale-110 min-w-0 flex-shrink-0"
                 tabIndex={0}
                 aria-label={src.label}
               >
-                <div className="h-12 sm:h-16 md:h-20 lg:h-24 flex items-center justify-center w-full">
+                <span className="mb-3 drop-shadow-md transition-opacity duration-300 opacity-80 group-hover:opacity-100 flex items-center justify-center w-full h-full min-h-0">
                   {src.icon}
-                </div>
+                </span>
+                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-tight">
+                  {src.label}
+                </span>
               </a>
-              {/* Remove text labels to prevent overlap with logo */}
             </div>
           ))}
         </div>
