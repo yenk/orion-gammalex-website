@@ -327,14 +327,26 @@ export function CopilotHero() {
 
         {/* Subhero Heading */}
         <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-inter font-light text-white leading-[1.5] tracking-wide max-w-4xl mx-auto px-2 sm:px-0">
-            {subheadingLines.map((line, i) => (
-              <div key={i} className="mb-1 sm:mb-2 md:mb-3">
-                {line.map((word, j) => (
-                  <span key={j} className="inline-block mr-1 sm:mr-2">{word}</span>
-                ))}
-              </div>
-            ))}
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-2 sm:px-0">
+            <div className="mb-1 sm:mb-2 md:mb-3">
+              <span className="inline-block mr-1 sm:mr-2">Fine‑tuned</span>
+              <span className="inline-block mr-1 sm:mr-2">on</span>
+              <span className="inline-block mr-1 sm:mr-2">policy,</span>
+              <span className="inline-block mr-1 sm:mr-2">powered</span>
+              <span className="inline-block mr-1 sm:mr-2">by</span>
+              <span className="inline-block mr-1 sm:mr-2">open</span>
+              <span className="inline-block mr-1 sm:mr-2">sources,</span>
+            </div>
+            <div className="mb-1 sm:mb-2 md:mb-3">
+              <span className="inline-block mr-1 sm:mr-2">and</span>
+              <span className="inline-block mr-1 sm:mr-2">built</span>
+              <span className="inline-block mr-1 sm:mr-2">to</span>
+              <span className="inline-block mr-1 sm:mr-2">accelerate</span>
+              <span className="inline-block mr-1 sm:mr-2">care</span>
+              <span className="inline-block mr-1 sm:mr-2">with</span>
+              <span className="inline-block mr-1 sm:mr-2">legal</span>
+              <span className="inline-block mr-1 sm:mr-2">confidence.</span>
+            </div>
           </h2>
         </div>
         
