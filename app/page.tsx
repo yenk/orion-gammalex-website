@@ -39,6 +39,12 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/comp
 import React from 'react'
 import { Brain as BrainIcon, Lightning, ShieldCheck, UsersThree, ChartBar, Scales } from 'phosphor-react'
 import { useAnimation, useMotionValue, useMotionValueEvent } from "framer-motion"
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu"
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -71,6 +77,8 @@ export default function GammaLexPage() {
         
         <div className="w-full max-w-7xl mx-auto relative z-10">
           
+          {/* Anchor: What We Do */}
+          <div id="what-we-do" className="absolute -top-32" aria-hidden="true" />
           {/* Main Section Heading */}
           <div className="text-center mb-20">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-inter font-normal text-white leading-tight mb-6">
@@ -78,6 +86,8 @@ export default function GammaLexPage() {
             </h1>
           </div>
 
+          {/* Anchor: Problems We Solve */}
+          <div id="problems-we-solve" className="absolute -top-32" aria-hidden="true" />
           {/* Why It Matters Subsection */}
           <div className="mb-24">
             <div className="flex flex-col lg:flex-row items-start justify-between mb-0 pb-0">
@@ -116,6 +126,8 @@ export default function GammaLexPage() {
             </div>
           </div>
 
+          {/* Anchor: How We Do It */}
+          <div id="how-we-do-it" className="absolute -top-32" aria-hidden="true" />
           {/* Why GammaLex Subsection */}
           <div className="mb-24">
             <div className="flex flex-col lg:flex-row items-start justify-between mb-16 pb-8 border-b border-white/20">
@@ -137,43 +149,65 @@ export default function GammaLexPage() {
             </div>
 
             {/* Core Values Row */}
-            <div className="mb-10 flex flex-col items-center">
-              <h3 className="text-xl sm:text-2xl font-bold font-inter text-white mb-2 tracking-wide uppercase">Our Core Values</h3>
-              <p className="text-base sm:text-lg text-white/80 font-inter mb-6 text-center max-w-2xl">GammaLex is built on values that drive every decision, every model, and every outcome.</p>
-              <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-2">
-                <div className="flex flex-col items-center">
-                  <span className="bg-gammalex-purple/30 text-gammalex-purple rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" /></svg></span>
-                  <span className="font-semibold text-white text-sm sm:text-base">Transparency</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="bg-gammalex-orange/30 text-gammalex-orange rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z" /><path d="M12 12V4" /></svg></span>
-                  <span className="font-semibold text-white text-sm sm:text-base">Accuracy</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="bg-gammalex-purple/30 text-gammalex-purple rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg></span>
-                  <span className="font-semibold text-white text-sm sm:text-base">Open Innovation</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="bg-gammalex-purple/30 text-gammalex-purple rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-                  <span className="font-semibold text-white text-sm sm:text-base">Trust</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="bg-gammalex-orange/30 text-gammalex-orange rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" /><circle cx="12" cy="12" r="10" /></svg></span>
-                  <span className="font-semibold text-white text-sm sm:text-base">Accountability</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="bg-gammalex-orange/30 text-gammalex-orange rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l2 2 4-4" /></svg></span>
-                  <span className="font-semibold text-white text-sm sm:text-base">Empowerment</span>
+            <section className="w-full py-20 px-4 sm:px-8 bg-gradient-to-br from-[#1a102a] via-[#2d1850] to-[#1a102a] rounded-3xl shadow-2xl border border-gammalex-purple/40 mb-16 relative overflow-hidden font-inter">
+              <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[60vw] h-32 bg-gradient-to-r from-gammalex-purple/40 via-transparent to-gammalex-orange/30 blur-2xl opacity-40 pointer-events-none" />
+              <div className="max-w-4xl mx-auto flex flex-col items-center z-10 relative">
+                <h2 className="text-4xl sm:text-5xl font-inter font-normal text-white leading-tight mb-4 uppercase tracking-widest text-center drop-shadow-lg relative">
+                  OUR CORE VALUES
+                  <span className="block h-1 w-24 mx-auto mt-3 bg-gradient-to-r from-gammalex-orange via-gammalex-purple to-gammalex-orange rounded-full animate-pulse" />
+                </h2>
+                <p className="text-lg sm:text-2xl text-white/90 text-center mb-8 max-w-2xl drop-shadow-md font-inter">
+                  GammaLex is built on values that drive every decision, every model, and every outcome. <span className="text-gammalex-orange font-inter">Radically transparent. Relentlessly accurate. Always accountable.</span>
+                </p>
+                <div className="flex flex-wrap justify-center gap-8 sm:gap-12 mt-4 font-inter">
+                  {/* Value Card */}
+                  <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-purple/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
+                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg">
+                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" /></svg>
+                    </span>
+                    <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Transparency</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-orange/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
+                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg">
+                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z" /><path d="M12 12V4" /></svg>
+                    </span>
+                    <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Accuracy</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-purple/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
+                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg">
+                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
+                    </span>
+                    <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Open Innovation</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-purple/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
+                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg">
+                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </span>
+                    <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Trust</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-orange/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
+                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg">
+                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" /><circle cx="12" cy="12" r="10" /></svg>
+                    </span>
+                    <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Accountability</span>
+                  </div>
+                  <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-orange/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
+                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg">
+                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l2 2 4-4" /></svg>
+                    </span>
+                    <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Empowerment</span>
+                  </div>
                 </div>
               </div>
+            </section>
 
             {/* What Makes Us Different Section */}
             <div className="my-20">
               <div className="text-center mb-12">
-                <h3 className="text-3xl sm:text-4xl font-inter font-normal text-white leading-tight mb-4">
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight mb-4">
                   What Makes Us <span className="gradient-text">Different</span>
                 </h3>
-                <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
+                <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
                   Built on transparency, precision, and open innovation
                 </p>
               </div>
@@ -350,7 +384,6 @@ export default function GammaLexPage() {
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                 </div>
               </div>
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
@@ -367,14 +400,16 @@ export default function GammaLexPage() {
 
           </div>
 
+          {/* Anchor: Impact */}
+          <div id="impact" className="absolute -top-32" aria-hidden="true" />
           {/* Competitive Differentiation Section */}
           <div className="mt-24 mb-16">
             <div className="text-center mb-12">
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight mb-4">
                 Beyond automation. <span className="gradient-text">Beyond compliance.</span>
                 </h3>
-              <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
-                While others automate workflows, GammaLex prevents lawsuits.
+              <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 max-w-3xl mx-auto leading-[1.4] sm:leading-[1.5] px-4 sm:px-0">
+                While others focus on efficiency, <span className="gradient-text">GammaLex protects lives</span> — preventing care denials that lead to tragedy and legal action.
               </p>
             </div>
             
@@ -630,6 +665,14 @@ function Navigation() {
     { id: "join", label: "PARTNER WITH US" },
   ]
 
+  // GammaLex-specific dropdown items (contextually accurate)
+  const whyDropdown = [
+    { id: "what-we-do", label: "The GammaLex Difference" },
+    { id: "problems-we-solve", label: "Why Prior Auth is Broken" },
+    { id: "how-we-do-it", label: "How Our AI Works" },
+    { id: "impact", label: "Proof & Outcomes" },
+  ]
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -679,27 +722,45 @@ function Navigation() {
               <img
                 src="/gammalexlogo-transparent.png"
                 alt="GammaLex Logo"
-                className={`transition-all duration-300 ${
-                  isScrolled 
-                    ? "h-14 sm:h-16" 
-                    : "h-20 sm:h-24"
-                } max-w-none`}
+                style={{ filter: 'brightness(0) invert(1)' }}
+                className={`transition-all duration-300 h-24 sm:h-32 max-w-none`}
               />
             </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-32">
-                {navItems.map((item) => (
-                  <motion.button
-                    key={item.id}
-                    onClick={() => handleNavClick(item)}
-                    className="text-2xl font-medium text-white transition-colors"
-                    whileHover={{ y: -2 }}
-                  >
-                    {item.label}
-                  </motion.button>
-                ))}
+                {navItems.map((item) =>
+                  item.label === "WHY GAMMALEX" ? (
+                    <DropdownMenu key={item.id}>
+                      <DropdownMenuTrigger asChild>
+                        <button className="text-2xl font-medium text-white font-inter transition-colors focus:outline-none">
+                          {item.label}
+                        </button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="bg-black/90 glass-dark border border-white/10 mt-2 min-w-[220px]">
+                        {whyDropdown.map((drop) => (
+                          <DropdownMenuItem
+                            key={drop.id}
+                            className="text-lg font-inter text-white hover:text-gammalex-orange cursor-pointer px-6 py-3"
+                            onClick={() => setTimeout(() => scrollToSection(drop.id), 20)}
+                          >
+                            {drop.label}
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  ) : (
+                    <motion.button
+                      key={item.id}
+                      onClick={() => handleNavClick(item)}
+                      className="text-2xl font-medium text-white font-inter transition-colors"
+                      whileHover={{ y: -2 }}
+                    >
+                      {item.label}
+                    </motion.button>
+                  )
+                )}
               </div>
             </div>
 
@@ -722,7 +783,7 @@ function Navigation() {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item)}
-                    className="block w-full text-left text-xl font-medium text-white py-2 transition-colors"
+                    className="block w-full text-left text-xl font-medium text-white font-inter py-2 transition-colors"
                   >
                     {item.label}
                   </button>

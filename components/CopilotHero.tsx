@@ -307,14 +307,14 @@ export function CopilotHero() {
                   skipAnimation ? (
                     <span
                       key={`${i}-${j}`}
-                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'text-gammalex-orange' : 'text-white'}`}
+                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'gradient-text' : 'text-white'}`}
                     >
                       {item.word}
                     </span>
                   ) : (
                     <motion.span
                       key={`${i}-${j}`}
-                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'text-gammalex-orange' : 'text-white'}`}
+                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'gradient-text' : 'text-white'}`}
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + (i * 0.3) + j * 0.15, duration: 0.7, ease: "easeOut" }}
