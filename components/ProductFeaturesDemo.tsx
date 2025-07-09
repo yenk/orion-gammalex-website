@@ -319,8 +319,8 @@ export function ProductFeaturesDemo() {
             <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Inference</span>
           </div>
           <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
-          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80">
+          <div className="flex-1">
+            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80 max-h-56 overflow-y-auto scrollbar scrollbar-thumb-gammalex-purple/70 scrollbar-track-black/30 scrollbar-w-2 pr-2">
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Policy Lookup:</strong> Instantly match clinical scenarios to payer rules and coverage policies with source verification.</span>
@@ -347,8 +347,8 @@ export function ProductFeaturesDemo() {
             <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Fine-Tuning</span>
           </div>
           <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Custom AI for your clinical and legal workflows</div>
-          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80">
+          <div className="flex-1">
+            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80 max-h-56 overflow-y-auto scrollbar scrollbar-thumb-gammalex-purple/70 scrollbar-track-black/30 scrollbar-w-2 pr-2">
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Legal Pattern Learning:</strong> Adapt models to recognize denial patterns from real lawsuits and case law.</span>
@@ -375,8 +375,8 @@ export function ProductFeaturesDemo() {
             <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">AI Copilot</span>
           </div>
           <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Your always-on assistant for Copilot teams</div>
-          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80">
+          <div className="flex-1">
+            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80 max-h-56 overflow-y-auto scrollbar scrollbar-thumb-gammalex-purple/70 scrollbar-track-black/30 scrollbar-w-2 pr-2">
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Legal Risk Surfacing:</strong> Flag vulnerabilities from real lawsuits before they become denials or liability.</span>
