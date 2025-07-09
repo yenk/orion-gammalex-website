@@ -139,10 +139,13 @@ export default function GammaLexPage() {
               <div className="lg:w-2/3 lg:pl-16">
                 <div className="glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300">
                   <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6 font-inter">
-                    <span className="multi-gradient-text">GammaLex</span> is the first clinical-legal AI built to defend care before it's denied—using <span className="text-white">source-backed intelligence</span> to stop pre-auth delays and denials at the root.
+                    GammaLex is the first clinical-legal AI built to defend care before it's denied — using source-backed, <span className="text-gammalex-orange font-medium">policy-aware intelligence</span> to eliminate pre-auth delays, prevent harmful triage failures, and stop denials at the root.
+                  </p>
+                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6 font-inter">
+                    GammaLex parses and interprets <span className="text-gammalex-orange font-medium">medical billing codes</span>, <span className="text-gammalex-orange font-medium">payer policies</span>, and <span className="text-gammalex-orange font-medium">physician documentation</span> to create defensible care rationales for providers, surface risk to patients early, and equip payers with insights to reduce avoidable denials and legal exposure.
                   </p>
                   <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] font-inter">
-                    Understands pre-auths. It deciphers <span className="text-gammalex-orange">medical billing codes, coverage rules, and physician notes</span> to generate bulletproof justifications—and it flags <span className="text-gammalex-orange">legal vulnerabilities</span> before they become liability.
+                    By bridging <span className="text-gammalex-orange font-medium">medicine, law, and policy</span>, GammaLex protects all three sides of the care equation — ensuring care is delivered, not denied.
                   </p>
                 </div>
               </div>
