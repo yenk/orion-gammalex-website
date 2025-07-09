@@ -10,74 +10,85 @@ html, body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Dark Futuristic Theme - GammaLex */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263 70% 50%;
+    --radius: 0.5rem;
+    --chart-1: 263 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 263 70% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 263 70% 50%;
+    
+    /* GammaLex Brand Colors - Dark Theme */
+    --gammalex-purple: 263 70% 50%;
+    --gammalex-purple-light: 263 70% 60%;
+    --gammalex-purple-dark: 263 70% 40%;
+    --gammalex-orange: 25 95% 53%;
+    --gammalex-orange-light: 25 95% 63%;
+    --gammalex-orange-dark: 25 95% 43%;
+    --gammalex-neon: 263 70% 70%;
+    --gammalex-glow: 263 70% 60%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263 70% 50%;
+    --chart-1: 263 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 263 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 263 70% 50%;
   }
 }
 
@@ -87,12 +98,68 @@ html, body {
   }
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 10% 8%) 50%, hsl(263 20% 15%) 100%);
+    min-height: 100vh;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Glassmorphism effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Glowing effects */
+  .glow {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3), inset 0 0 10px rgba(139, 92, 246, 0.1);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(263 70% 70%), hsl(25 95% 63%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Neon effects */
+  .neon {
+    text-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  
+  /* Hover effects */
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -107,22 +174,22 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Dark theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: hsl(240 10% 3.9%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6b8a6b;
+  background: hsl(263 70% 50%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #557055;
+  background: hsl(263 70% 60%);
 }
 
 /* Typography improvements */
@@ -142,8 +209,34 @@ html {
   }
 }
 
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 /* Hero Data Sources Animations */
@@ -198,102 +291,114 @@ html {
 
 /* Tablet optimization */
 @media (min-width: 641px) and (max-width: 1024px) {
-  .animate-scroll-left {
-    animation: scroll-left 25s linear infinite;
+  .text-8xl {
+    font-size: 5rem;
+    line-height: 1;
+  }
+
+  .text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .text-6xl {
+    font-size: 4rem;
+    line-height: 1;
   }
 }
 
+/* Hero heading animations */
 .hero-heading span {
   opacity: 0;
-  color: #dc6b47; /* terracotta-500 */
-  transition: color 0.6s, opacity 0.2s;
-}
-.hero-heading span.revealed {
-  opacity: 1;
-}
-.hero-heading span.final {
-  color: #181c20; /* your black */
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
 }
 
+.hero-heading span.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-heading span.final {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pause animations on hover */
 .hover\:animation-paused:hover {
   animation-play-state: paused;
 }
 
-/* Touch device optimizations */
+/* Disable hover effects on touch devices */
 @media (hover: none) and (pointer: coarse) {
   .hover\:scale-110:hover {
     transform: none;
   }
-  
-  /* Ensure ticker continues on touch devices */
+
   .hover\:animation-paused:hover {
     animation-play-state: running;
   }
 }
 
-/* Ensure icons maintain aspect ratio */
+/* Hero data sources styling */
 .hero-data-sources svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
 }
 
-/* Mobile text label fixes */
 @media (max-width: 640px) {
   .hero-data-sources {
-    /* Ensure proper container handling */
-    min-height: 120px;
-    padding: 0 10px;
+    margin-top: 2rem;
   }
-  
+
   .hero-data-sources .flex.animate-scroll-left {
-    /* Ensure proper spacing and no text cutoff */
-    padding-left: 20px;
-    padding-right: 20px;
-    min-height: 120px;
+    animation-duration: 20s;
   }
-  
+
   .hero-data-sources span {
-    /* Ensure text is visible and properly sized */
-    font-size: 0.75rem !important;
-    line-height: 1.2 !important;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    min-height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-    color: #ffffff !important;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 9999px;
+    color: hsl(263 70% 70%);
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
   }
-  
-  /* Fast mobile animation for better engagement */
+
   .animate-scroll-left {
     animation: scroll-left 20s linear infinite;
   }
 }
 
-/* Extra small screens (iPhone SE, etc.) */
 @media (max-width: 375px) {
   .hero-data-sources span {
-    font-size: 0.7rem !important;
-    line-height: 1.1 !important;
-    min-height: 2rem;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
   }
-  
+
   .hero-data-sources .flex.animate-scroll-left {
-    gap: 1rem !important;
+    animation-duration: 15s;
   }
-  
-  /* Even faster for very small screens */
+
   .animate-scroll-left {
-    animation: scroll-left 18s linear infinite;
+    animation: scroll-left 15s linear infinite;
   }
 }
 
-/* Tablet specific fixes */
 @media (min-width: 641px) and (max-width: 1024px) {
   .hero-data-sources span {
-    font-size: 0.875rem !important;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
   }
+}
+
+.multi-gradient-text {
+  background: linear-gradient(90deg, #6EC3F4 0%, #8B5CF6 30%, #EC6EAD 60%, #FFB88C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  /* Do not combine with font-weight for headings. */
 }

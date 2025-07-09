@@ -32,7 +32,7 @@ function ViabilityScoring({ buttonClassName = "" }: { buttonClassName?: string }
       <Textarea value={note} onChange={e=>setNote(e.target.value)} placeholder="Brief Clinical Note" rows={2} />
       <Button onClick={handleScore} className={`w-full sm:w-auto ${buttonClassName}`}>Score Viability</Button>
       {result && (
-        <div className="rounded-xl bg-sage-50 p-4 mt-2">
+        <div className="rounded-xl glass-dark p-4 mt-2">
           <div className="text-lg font-bold mb-1">Approval Likelihood: {result.likelihood}</div>
           <div className="text-gray-700 mb-1">Confidence: {Math.round(result.confidence*100)}%</div>
           {result.red_flags.length ? (
@@ -72,7 +72,7 @@ function PreAuthWriter({ buttonClassName = "" }: { buttonClassName?: string }) {
       </div>
       <Textarea value={rationale} onChange={e=>setRationale(e.target.value)} placeholder="Clinical Rationale" rows={2} />
       <Button onClick={handleGen} className={`w-full sm:w-auto ${buttonClassName}`}>Generate Statement</Button>
-      {output && <div className="rounded-xl bg-sage-50 p-4 mt-2 font-mono whitespace-pre-wrap">{output}</div>}
+      {output && <div className="rounded-xl glass-dark p-4 mt-2 font-mono whitespace-pre-wrap">{output}</div>}
     </div>
   )
 }
@@ -87,7 +87,7 @@ function ComplyDraft({ buttonClassName = "" }: { buttonClassName?: string }) {
     <div className="space-y-4">
       <Textarea value={input} onChange={e=>setInput(e.target.value)} rows={3} />
       <Button onClick={handleWrap} className={`w-full sm:w-auto ${buttonClassName}`}>Wrap for Submission</Button>
-      {output && <div className="rounded-xl bg-sage-50 p-4 mt-2 whitespace-pre-line">{output}</div>}
+      {output && <div className="rounded-xl glass-dark p-4 mt-2 whitespace-pre-line">{output}</div>}
     </div>
   )
 }
@@ -117,7 +117,7 @@ function PolicyLookup({ buttonClassName = "" }: { buttonClassName?: string }) {
       <Input value={cpt} onChange={e=>setCpt(e.target.value)} placeholder="CPT Code or Keyword" className="max-w-xs" />
       <Button onClick={handleLookup} className={`w-full sm:w-auto ${buttonClassName}`}>Lookup Policy</Button>
       {info && (
-        <div className="rounded-xl bg-sage-50 p-4 mt-2">
+        <div className="rounded-xl glass-dark p-4 mt-2">
           <div className="font-bold mb-1">Coverage Summary</div>
           <div className="mb-1">{info.summary}</div>
           <div className="mb-1 text-gray-700">Frequency: {info.frequency}</div>
@@ -141,7 +141,7 @@ function AskGamma({ buttonClassName = "" }: { buttonClassName?: string }) {
     <div className="space-y-4">
       <Input value={q} onChange={e=>setQ(e.target.value)} placeholder="Ask about CPT coverage or denials" />
       <Button onClick={handleAsk} className={`w-full sm:w-auto ${buttonClassName}`}>Ask Gamma</Button>
-      {a && <div className="rounded-xl bg-sage-50 p-4 mt-2">{a}</div>}
+      {a && <div className="rounded-xl glass-dark p-4 mt-2">{a}</div>}
     </div>
   )
 }
@@ -229,16 +229,16 @@ function FlaggingOverlay() {
             onClick={() => setIsOpen(false)}
           >
             <motion.div
-              className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-sage-200"
+              className="glass-dark rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-sage-200"
               initial={{ scale: 0.9, opacity: 0, y: 20 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               onClick={e => e.stopPropagation()}
             >
-              <div className="p-8 bg-sage-50 rounded-3xl">
+              <div className="p-8 glass-dark rounded-3xl">
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2 font-inter">
+                    <h3 className="text-3xl sm:text-4xl font-normal text-slate-900 mb-2 font-inter">
                       🚩 GammaLex Risk Detection
                     </h3>
                     <p className="text-lg text-slate-600 font-inter">
@@ -255,19 +255,19 @@ function FlaggingOverlay() {
                   </Button>
                 </div>
                 <div className="mb-8">
-                  <h4 className="text-xl font-bold text-slate-900 mb-4 font-inter">📄 Sample Denial Letter</h4>
+                  <h4 className="text-xl font-normal text-slate-900 mb-4 font-inter">📄 Sample Denial Letter</h4>
                   <pre className="bg-slate-100 rounded-xl p-6 text-base sm:text-lg font-mono text-slate-800 whitespace-pre-wrap border border-slate-200">
 {`We regret to inform you that your request has been denied. The treatment is considered investigational and not medically necessary based on our guidelines.`}
                   </pre>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-4 font-inter">🚩 Legal Risk Flags Detected</h4>
+                  <h4 className="text-xl font-normal text-slate-900 mb-4 font-inter">🚩 Legal Risk Flags Detected</h4>
                   <ul className="space-y-4">
                     {riskFlags.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-200">
                         <span className="mt-1 text-red-500 text-xl">•</span>
                         <div>
-                          <span className="text-slate-900 font-semibold">"{item.flag}"</span>
+                          <span className="text-slate-900">"{item.flag}"</span>
                           <span className="block text-sm text-slate-600 mt-1">from <span className="font-medium">{item.source}</span></span>
                           <a
                             href={item.sourceUrl}
@@ -301,96 +301,96 @@ function FlaggingOverlay() {
 
 export function ProductFeaturesDemo() {
   return (
-    <section id="product" className="w-full max-w-[1600px] mx-auto py-16 sm:py-24 md:py-36 px-4 sm:px-8 lg:px-12">
-      {/* Headline with orange emphasis only */}
-      <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-normal text-center mb-6 sm:mb-8 font-inter leading-tight text-slate-900 px-2">
-        End-to-end <span className="text-gammalex-orange">clinical-legal</span> <span className="text-gammalex-orange">AI</span> for pre-auth, <br />
-        denial risk, and <span className="text-gammalex-orange">compliance</span>
+    <section id="product" className="w-full py-16 sm:py-24 md:py-36 px-4 sm:px-8 lg:px-12 bg-gradient-to-br from-black via-[#1a102a] to-black">
+      {/* Headline with neon/gradient emphasis */}
+      <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center mb-6 sm:mb-8 leading-tight px-2">
+        End-to-end clinical-legal AI for pre-auth, <br />
+        denial risk, and <span className="gradient-text">compliance</span>
       </h2>
-      <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-center mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto text-slate-900 leading-tight px-2">
-        Faster care. Fewer denials. No black boxes. <span className="text-gammalex-orange">GammaLex</span> delivers source-backed AI you can trust.
+      <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-center mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto text-white leading-tight px-2">
+        Faster care. Fewer denials. No black boxes. <span className="gradient-text">GammaLex</span> delivers source-backed AI you can trust.
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
         {/* Inference Card */}
-        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-6 sm:p-14 border border-sage-100 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden">
+        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-6 sm:p-14 border border-white/10 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
           <div className="flex items-center gap-5 mb-6">
-            <Zap className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl sm:text-4xl font-inter text-gammalex-orange">Inference</span>
+            <Zap className="w-14 h-14 text-gammalex-purple neon-text animate-pulse-glow" />
+            <span className="text-3xl sm:text-4xl font-inter gradient-text">Inference</span>
           </div>
-          <div className="text-lg sm:text-xl mb-6 text-slate-900 font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
-          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-4 text-lg text-slate-700">
+          <div className="text-lg sm:text-xl mb-6 text-white font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
+          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <ul className="space-y-4 text-lg text-white/80">
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Policy Lookup:</strong> Instantly match clinical scenarios to payer rules and coverage policies with source verification.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Risk Scoring:</strong> Quantify denial and compliance risk before care is delayed or denied, helping prevent denials and legal issues.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Compliance Checks:</strong> Ensure documentation meets both clinical and legal standards to prevent successful appeals.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Enterprise Security:</strong> SOC 2, HIPAA compliance with full audit trails for defensibility.</span>
               </li>
             </ul>
           </div>
         </div>
         {/* Fine-Tuning Card */}
-        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-6 sm:p-14 border border-sage-100 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden">
+        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-6 sm:p-14 border border-white/10 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
           <div className="flex items-center gap-5 mb-6">
-            <Settings className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl sm:text-4xl font-inter text-gammalex-orange">Fine-Tuning</span>
+            <Settings className="w-14 h-14 text-gammalex-purple-light neon-text animate-pulse-glow" />
+            <span className="text-3xl sm:text-4xl font-inter gradient-text">Fine-Tuning</span>
           </div>
-          <div className="text-lg sm:text-xl mb-6 text-slate-900 font-inter">Custom AI for your clinical and legal workflows</div>
-          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-4 text-lg text-slate-700">
+          <div className="text-lg sm:text-xl mb-6 text-white font-inter">Custom AI for your clinical and legal workflows</div>
+          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <ul className="space-y-4 text-lg text-white/80">
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Legal Pattern Learning:</strong> Adapt models to recognize denial patterns from real lawsuits and case law.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Payer-Specific Training:</strong> Fine-tune for each insurer's unique denial patterns and legal vulnerabilities.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Compliance Documentation:</strong> Generate bulletproof justifications that withstand legal scrutiny and appeals.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Transparent AI:</strong> Full audit trails and explainable decisions for legal defensibility in court.</span>
               </li>
             </ul>
           </div>
         </div>
         {/* AI Copilot Card */}
-        <div className="flex flex-col items-start bg-white rounded-3xl shadow-2xl p-6 sm:p-14 border border-sage-100 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden">
+        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-6 sm:p-14 border border-white/10 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
           <div className="flex items-center gap-5 mb-6">
-            <Bot className="w-14 h-14 text-slate-400" />
-            <span className="text-3xl sm:text-4xl font-inter text-gammalex-orange">AI Copilot</span>
+            <Bot className="w-14 h-14 text-gammalex-purple neon-text animate-pulse-glow" />
+            <span className="text-3xl sm:text-4xl font-inter gradient-text">AI Copilot</span>
           </div>
-          <div className="text-lg sm:text-xl mb-6 text-slate-900 font-inter">Your always-on assistant for Copilot teams</div>
-          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-4 text-lg text-slate-700">
+          <div className="text-lg sm:text-xl mb-6 text-white font-inter">Your always-on assistant for Copilot teams</div>
+          <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <ul className="space-y-4 text-lg text-white/80">
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Legal Risk Surfacing:</strong> Flag vulnerabilities from real lawsuits before they become denials or liability.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Policy Intelligence:</strong> Answer complex clinical and legal questions with source-backed accuracy.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Team Empowerment:</strong> Reduce burnout by automating research and compliance checks.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-600 mt-1">✓</span>
+                <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Clinical Integration:</strong> Seamlessly connect to EHR and care systems to automate workflows—while layering in legal intelligence to flag risks, prevent denials, and reduce lawsuit exposure.</span>
               </li>
             </ul>

@@ -53,7 +53,23 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // GammaLex Brand Colors - Sage Green, Terracotta Clay, Dark Bronze
+        // GammaLex Brand Colors - Dark Futuristic Theme
+        gammalex: {
+          purple: "hsl(263 70% 50%)",
+          "purple-light": "hsl(263 70% 60%)",
+          "purple-dark": "hsl(263 70% 40%)",
+          orange: "hsl(25 95% 53%)",
+          "orange-light": "hsl(25 95% 63%)",
+          "orange-dark": "hsl(25 95% 43%)",
+          neon: "hsl(263 70% 70%)",
+          glow: "hsl(263 70% 60%)",
+          "neon-purple": "#8b5cf6",
+          "neon-orange": "#ff6b35",
+          "dark-bg": "hsl(240 10% 3.9%)",
+          "card-bg": "hsl(240 10% 5%)",
+          "border-dark": "hsl(240 10% 8%)",
+        },
+        // Legacy colors for backward compatibility
         sage: {
           50: "#f6f8f6",
           100: "#e8ede8",
@@ -135,6 +151,35 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
         },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 5px rgba(139, 92, 246, 0.3)" },
+          "50%": { boxShadow: "0 0 20px rgba(139, 92, 246, 0.6)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
+        },
+        "neon-pulse": {
+          "0%, 100%": { 
+            boxShadow: "0 0 5px rgba(139, 92, 246, 0.3), 0 0 10px rgba(139, 92, 246, 0.2)" 
+          },
+          "50%": { 
+            boxShadow: "0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.3)" 
+          },
+        },
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "cyber-glow": {
+          "0%, 100%": { 
+            textShadow: "0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.4)" 
+          },
+          "50%": { 
+            textShadow: "0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6)" 
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -142,6 +187,20 @@ const config: Config = {
         "scroll-left": "scroll-left 30s linear infinite",
         "scroll-left-mobile": "scroll-left-mobile 45s linear infinite",
         "float": "float 3s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 3s ease-in-out infinite",
+        "cyber-glow": "cyber-glow 2s ease-in-out infinite",
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'cyber-gradient': 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%)',
+        'neon-gradient': 'linear-gradient(135deg, #ff6b35 0%, #ff8a65 50%, #ffb74d 100%)',
       },
     },
   },

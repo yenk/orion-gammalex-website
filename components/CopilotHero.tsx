@@ -194,13 +194,17 @@ export function CopilotHero() {
     <section 
       ref={containerRef}
       id="hero" 
-      className="relative w-full bg-black overflow-hidden min-h-screen flex flex-col items-center justify-center py-4 sm:py-8 md:py-12 lg:py-16 px-0"
+      className="relative w-full overflow-hidden min-h-screen flex flex-col items-center justify-center py-4 sm:py-8 md:py-12 lg:py-16 px-0"
       style={{ 
         paddingTop: 'max(4vh, 2rem)', 
         paddingBottom: 'max(4vh, 2rem)',
-        minHeight: 'calc(100vh - 5rem)' // Account for potential header/footer
+        minHeight: 'calc(100vh - 5rem)', // Account for potential header/footer
+        background: 'linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 10% 8%) 50%, hsl(263 20% 15%) 100%)'
       }}
     >
+      {/* Futuristic background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/20 to-black/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_70%)] pointer-events-none" />
       {/* Animated circle absolutely centered in the hero section, not constraining heading width */}
       {hasMounted && (
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 opacity-80 sm:opacity-100">
@@ -303,14 +307,14 @@ export function CopilotHero() {
                   skipAnimation ? (
                     <span
                       key={`${i}-${j}`}
-                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
+                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'text-gammalex-orange' : 'text-white'}`}
                     >
                       {item.word}
                     </span>
                   ) : (
                     <motion.span
                       key={`${i}-${j}`}
-                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? "text-gammalex-orange" : ""}`}
+                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'text-gammalex-orange' : 'text-white'}`}
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3 + (i * 0.3) + j * 0.15, duration: 0.7, ease: "easeOut" }}
@@ -360,7 +364,7 @@ export function CopilotHero() {
             href="https://cal.com/yenkha"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-terracotta-500 hover:bg-terracotta-600 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base md:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-orange shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+            className="bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 neon-glow hover:neon-glow"
             style={{ textDecoration: 'none', display: 'inline-block' }}
           >
             See it in Action

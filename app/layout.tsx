@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} dark`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -32,9 +32,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-white font-sans antialiased">
-        <GoogleAnalytics />
-        {children}
+      <body className="min-h-screen bg-background text-foreground font-sans antialiased relative">
+        {/* Futuristic background gradient */}
+        <div className="fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-purple-900/20 pointer-events-none z-0" />
+        <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.1),transparent_50%)] pointer-events-none z-0" />
+        
+        <div className="relative z-10">
+          <GoogleAnalytics />
+          {children}
+        </div>
       </body>
     </html>
   )

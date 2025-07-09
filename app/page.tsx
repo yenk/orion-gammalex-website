@@ -64,13 +64,17 @@ export default function GammaLexPage() {
       <CopilotHero />
 
       {/* Main Section: Pre-Auth at the Intersection */}
-      <section id="why-gammalex" className="py-32 px-4 sm:px-8 font-inter bg-white">
-        <div className="w-full max-w-7xl mx-auto">
+      <section id="why-gammalex" className="py-32 px-4 sm:px-8 font-inter relative">
+        {/* Futuristic background elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-purple-900/20 to-black/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(139,92,246,0.1),transparent_50%)] pointer-events-none" />
+        
+        <div className="w-full max-w-7xl mx-auto relative z-10">
           
           {/* Main Section Heading */}
           <div className="text-center mb-20">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-inter font-normal text-slate-900 leading-tight mb-6">
-              Because real <span className="text-gammalex-orange">pre-auth decisions</span> live at the intersection of medicine, policy, and law
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-inter font-normal text-white leading-tight mb-6">
+              Because real <span className="gradient-text">pre-auth decisions</span> live at the intersection of medicine, policy, and law
             </h1>
           </div>
 
@@ -78,70 +82,105 @@ export default function GammaLexPage() {
           <div className="mb-24">
             <div className="flex flex-col lg:flex-row items-start justify-between mb-0 pb-0">
               <div className="lg:w-1/3 mb-6 lg:mb-0">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-slate-900 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight">
                   Why It Matters
                 </h2>
               </div>
               <div className="lg:w-2/3 lg:pl-16">
-                <p className="text-lg sm:text-xl text-slate-700 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6">
-                  Prior authorization isn't just administrative paperwork—it's a major driver of care delays, patient harm, and provider burnout across healthcare.
-                </p>
-                <ul className="text-base sm:text-lg text-slate-700 leading-[1.5] sm:leading-[1.6] mb-6 space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-gammalex-orange mr-3">•</span>
-                    <span><span className="text-gammalex-orange font-medium">92% of care delays</span> are linked to prior authorization issues, leading many patients to abandon treatment and experience worse health outcomes.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gammalex-orange mr-3">•</span>
-                    <span>Physicians and staff spend up to <span className="text-gammalex-orange font-medium">15 hours per week</span> on prior authorization requests, with many practices dedicating full-time employees solely to managing these tasks.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gammalex-orange mr-3">•</span>
-                    <span>The process fuels frustration, increases costs, and in some cases, leads to <span className="text-gammalex-orange font-medium">serious adverse events or hospitalizations</span> for patients.</span>
-                  </li>
-                </ul>
-                <p className="text-lg sm:text-xl text-slate-700 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-4">
-                  Fixing prior authorization means <span className="text-gammalex-orange font-medium">faster access to care</span>, <span className="text-gammalex-orange font-medium">reduced administrative burden</span>, and <span className="text-gammalex-orange font-medium">fewer denials and legal risks</span> for everyone involved.
-                </p>
-                <p className="text-sm text-slate-400 font-normal">
-                  Source: <a href="https://www.ama-assn.org/practice-management/prior-authorization/fixing-prior-auth-nearly-40-prior-authorizations-week-way" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange">AMA 2024 Prior Authorization Physician Survey</a>
-                </p>
+                <div className="glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300">
+                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6">
+                    Prior authorization isn't just administrative paperwork—it's a major driver of care delays, patient harm, and provider burnout across healthcare.
+                  </p>
+                  <ul className="text-base sm:text-lg text-white/80 leading-[1.5] sm:leading-[1.6] mb-6 space-y-3">
+                    <li className="flex items-start">
+                      <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
+                      <span><span className="text-gammalex-orange font-medium">92% of care delays</span> are linked to prior authorization issues, leading many patients to abandon treatment and experience worse health outcomes.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
+                      <span>Physicians and staff spend up to <span className="text-gammalex-orange font-medium">15 hours per week</span> on prior authorization requests, with many practices dedicating full-time employees solely to managing these tasks.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
+                      <span>The process fuels frustration, increases costs, and in some cases, leads to <span className="text-gammalex-orange font-medium">serious adverse events or hospitalizations</span> for patients.</span>
+                    </li>
+                  </ul>
+                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-4">
+                    Fixing prior authorization means <span className="text-gammalex-orange font-medium">faster access to care</span>, <span className="text-gammalex-orange font-medium">reduced administrative burden</span>, and <span className="text-gammalex-orange font-medium">fewer denials and legal risks</span> for everyone involved.
+                  </p>
+                  <p className="text-sm text-white/60 font-normal">
+                    Source: <a href="https://www.ama-assn.org/practice-management/prior-authorization/fixing-prior-auth-nearly-40-prior-authorizations-week-way" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">AMA 2024 Prior Authorization Physician Survey</a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Why GammaLex Subsection */}
           <div className="mb-24">
-            <div className="flex flex-col lg:flex-row items-start justify-between mb-16 pb-8 border-b border-slate-300">
+            <div className="flex flex-col lg:flex-row items-start justify-between mb-16 pb-8 border-b border-white/20">
               <div className="lg:w-1/3 mb-6 lg:mb-0">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-slate-900 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight">
                   Why GammaLex
                 </h2>
               </div>
               <div className="lg:w-2/3 lg:pl-16">
-                <p className="text-lg sm:text-xl text-black leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6 font-inter">
-                  <span className="text-gammalex-orange font-bold">GammaLex</span> is the first clinical-legal AI built to defend care before it's denied—using <span className="text-gammalex-orange">source-backed intelligence</span> to stop pre-auth delays and denials at the root.
-                </p>
-                <p className="text-lg sm:text-xl text-black leading-[1.5] sm:leading-[1.6] md:leading-[1.7] font-inter">
-                  Understands pre-auths. It deciphers <span className="text-gammalex-orange">medical billing codes, coverage rules, and physician notes</span> to generate bulletproof justifications—and it flags <span className="text-gammalex-orange">legal vulnerabilities</span> before they become liability.
-                </p>
+                <div className="glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300">
+                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6 font-inter">
+                    <span className="multi-gradient-text">GammaLex</span> is the first clinical-legal AI built to defend care before it's denied—using <span className="text-white">source-backed intelligence</span> to stop pre-auth delays and denials at the root.
+                  </p>
+                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] font-inter">
+                    Understands pre-auths. It deciphers <span className="text-gammalex-orange">medical billing codes, coverage rules, and physician notes</span> to generate bulletproof justifications—and it flags <span className="text-gammalex-orange">legal vulnerabilities</span> before they become liability.
+                  </p>
+                </div>
               </div>
             </div>
+
+            {/* Core Values Row */}
+            <div className="mb-10 flex flex-col items-center">
+              <h3 className="text-xl sm:text-2xl font-bold font-inter text-white mb-2 tracking-wide uppercase">Our Core Values</h3>
+              <p className="text-base sm:text-lg text-white/80 font-inter mb-6 text-center max-w-2xl">GammaLex is built on values that drive every decision, every model, and every outcome.</p>
+              <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-2">
+                <div className="flex flex-col items-center">
+                  <span className="bg-gammalex-purple/30 text-gammalex-purple rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" /></svg></span>
+                  <span className="font-semibold text-white text-sm sm:text-base">Transparency</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="bg-gammalex-orange/30 text-gammalex-orange rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z" /><path d="M12 12V4" /></svg></span>
+                  <span className="font-semibold text-white text-sm sm:text-base">Accuracy</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="bg-gammalex-purple/30 text-gammalex-purple rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg></span>
+                  <span className="font-semibold text-white text-sm sm:text-base">Open Innovation</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="bg-gammalex-purple/30 text-gammalex-purple rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                  <span className="font-semibold text-white text-sm sm:text-base">Trust</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="bg-gammalex-orange/30 text-gammalex-orange rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" /><circle cx="12" cy="12" r="10" /></svg></span>
+                  <span className="font-semibold text-white text-sm sm:text-base">Accountability</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="bg-gammalex-orange/30 text-gammalex-orange rounded-full p-3 mb-1"><svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l2 2 4-4" /></svg></span>
+                  <span className="font-semibold text-white text-sm sm:text-base">Empowerment</span>
+                </div>
+              </div>
 
             {/* What Makes Us Different Section */}
             <div className="my-20">
               <div className="text-center mb-12">
-                <h3 className="text-3xl sm:text-4xl font-inter font-normal text-slate-900 leading-tight mb-4">
-                  What Makes Us <span className="text-gammalex-orange">Different</span>
+                <h3 className="text-3xl sm:text-4xl font-inter font-normal text-white leading-tight mb-4">
+                  What Makes Us <span className="gradient-text">Different</span>
                 </h3>
-                <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
+                <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
                   Built on transparency, precision, and open innovation
                 </p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <motion.div 
-                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  className="group glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/50 hover:shadow-lg hover-glow transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
@@ -149,23 +188,23 @@ export default function GammaLexPage() {
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
-                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                    <h4 className="text-xl font-semibold text-white font-inter group-hover:text-gammalex-purple-light transition-colors">
                       Transparency
                     </h4>
                   </div>
-                  <p className="text-slate-700 leading-relaxed font-inter">
+                  <p className="text-white/80 leading-relaxed font-inter">
                     Users can see exactly which open datasets informed GammaLex's models, supporting regulatory compliance and trust.
                   </p>
                 </motion.div>
 
                 <motion.div 
-                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  className="group glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/50 hover:shadow-lg hover-glow transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
@@ -173,22 +212,22 @@ export default function GammaLexPage() {
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
-                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                    <h4 className="text-xl font-semibold text-white font-inter group-hover:text-gammalex-purple-light transition-colors">
                       Payer-Specific Accuracy
                     </h4>
                   </div>
-                  <p className="text-slate-700 leading-relaxed font-inter">
+                  <p className="text-white/80 leading-relaxed font-inter">
                     Fine-tuning on real-world, payer-relevant data (like Aetna's policies) delivers more precise and actionable recommendations for denial mitigation and risk management.
                   </p>
                 </motion.div>
 
                 <motion.div 
-                  className="group bg-gradient-to-br from-white to-slate-50/50 rounded-2xl p-8 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300"
+                  className="group glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/50 hover:shadow-lg hover-glow transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
@@ -196,16 +235,16 @@ export default function GammaLexPage() {
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-orange/20 to-gammalex-orange/10 flex items-center justify-center group-hover:from-gammalex-orange/30 group-hover:to-gammalex-orange/20 transition-all">
-                      <svg className="w-6 h-6 text-gammalex-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
+                      <svg className="w-6 h-6 text-gammalex-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-semibold text-slate-900 font-inter group-hover:text-gammalex-orange transition-colors">
+                    <h4 className="text-xl font-semibold text-white font-inter group-hover:text-gammalex-purple-light transition-colors">
                       Open Source Ethos
                     </h4>
                   </div>
-                  <p className="text-slate-700 leading-relaxed font-inter">
+                  <p className="text-white/80 leading-relaxed font-inter">
                     GammaLex's commitment to open data and transparent model development sets it apart in a field often dominated by closed, black-box solutions.
                   </p>
                 </motion.div>
@@ -216,109 +255,112 @@ export default function GammaLexPage() {
             <div className="space-y-0">
             
             {/* Row 1: Open Source Data Foundation */}
-            <div className="flex flex-col lg:flex-row border-b border-slate-300">
-              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-slate-300 bg-slate-50">
-                <div className="text-sm uppercase tracking-wider text-black font-medium mb-4">
+            <div className="flex flex-col lg:flex-row border-b border-white/20">
+              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-white/20 glass-dark">
+                <div className="text-sm uppercase tracking-wider text-white font-medium mb-4">
                   POWERED BY OPEN SOURCE<br />DATA FOUNDATION
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
                 </div>
               </div>
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Open Source Data Foundation: </span>
-                  <span className="text-black text-lg sm:text-xl">Builds and fine-tunes LLMs using a diverse set of </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">open source datasets</span>
-                  <span className="text-black text-lg sm:text-xl">, including insurance, legal, and clinical corpora.</span>
+                  <span className="text-white text-lg sm:text-xl">Builds and fine-tunes LLMs using a diverse set of </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">open source datasets</span>
+                  <span className="text-white text-lg sm:text-xl">, including insurance, legal, and clinical corpora.</span>
                 </div>
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Transparent Data Lineage: </span>
-                  <span className="text-black text-lg sm:text-xl">Provides clear documentation and traceability of all source datasets used for model training with advances such as </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">audit trails</span>
-                  <span className="text-black text-lg sm:text-xl">.</span>
+                  <span className="text-white text-lg sm:text-xl">Provides clear documentation and traceability of all source datasets used for model training with advances such as </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">audit trails</span>
+                  <span className="text-white text-lg sm:text-xl">.</span>
                 </div>
               </div>
             </div>
 
             {/* Row 2: Multi-Domain Integration */}
-            <div className="flex flex-col lg:flex-row border-b border-slate-300">
-              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-slate-300 bg-slate-50">
-                <div className="text-sm uppercase tracking-wider text-black font-medium mb-4">
+            <div className="flex flex-col lg:flex-row border-b border-white/20">
+              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-white/20 glass-dark">
+                <div className="text-sm uppercase tracking-wider text-white font-medium mb-4">
                   CLINICAL-LEGAL-PAYER<br />INTELLIGENCE INTEGRATION
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
                 </div>
               </div>
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Multi-Domain Integration: </span>
-                  <span className="text-black text-lg sm:text-xl">Combines open source </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">clinical</span>
-                  <span className="text-black text-lg sm:text-xl">, </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">legal</span>
-                  <span className="text-black text-lg sm:text-xl">, and </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">insurance data</span>
-                  <span className="text-black text-lg sm:text-xl"> for holistic decision support.</span>
+                  <span className="text-white text-lg sm:text-xl">Combines open source </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">clinical</span>
+                  <span className="text-white text-lg sm:text-xl">, </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">legal</span>
+                  <span className="text-white text-lg sm:text-xl">, and </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">insurance data</span>
+                  <span className="text-white text-lg sm:text-xl"> for holistic decision support.</span>
                 </div>
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Continuous Model Updating: </span>
-                  <span className="text-black text-lg sm:text-xl">Regularly incorporates new </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">open datasets</span>
-                  <span className="text-black text-lg sm:text-xl"> and </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">payer policy updates</span>
-                  <span className="text-black text-lg sm:text-xl"> to stay current with industry changes.</span>
+                  <span className="text-white text-lg sm:text-xl">Regularly incorporates new </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">open datasets</span>
+                  <span className="text-white text-lg sm:text-xl"> and </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">payer policy updates</span>
+                  <span className="text-white text-lg sm:text-xl"> to stay current with industry changes.</span>
                 </div>
               </div>
             </div>
 
             {/* Row 3: Payer-Specific Adaptation */}
             <div className="flex flex-col lg:flex-row">
-              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-slate-300 bg-slate-50">
-                <div className="text-sm uppercase tracking-wider text-black font-medium mb-4">
+              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-white/20 glass-dark">
+                <div className="text-sm uppercase tracking-wider text-white font-medium mb-4">
                   ENTERPRISE-GRADE PAYER<br />POLICY ADAPTATION
                 </div>
                 <div className="grid grid-cols-5 gap-1">
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 radius-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-slate-300"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-orange"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                 </div>
               </div>
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Payer-Specific Policy Adaptation: </span>
-                  <span className="text-black text-lg sm:text-xl">Fine-tunes models on datasets relevant to </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">major payer policies</span>
-                  <span className="text-black text-lg sm:text-xl"> (e.g., Aetna, UnitedHealthcare), ensuring up-to-date, </span>
-                  <span className="text-black font-medium underline text-lg sm:text-xl">payer-aligned recommendations</span>
-                  <span className="text-black text-lg sm:text-xl">.</span>
+                  <span className="text-white text-lg sm:text-xl">Fine-tunes models on datasets relevant to </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">major payer policies</span>
+                  <span className="text-white text-lg sm:text-xl"> (e.g., Aetna, UnitedHealthcare), ensuring up-to-date, </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">payer-aligned recommendations</span>
+                  <span className="text-white text-lg sm:text-xl">.</span>
                 </div>
               </div>
             </div>
@@ -328,33 +370,33 @@ export default function GammaLexPage() {
           {/* Competitive Differentiation Section */}
           <div className="mt-24 mb-16">
             <div className="text-center mb-12">
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-slate-900 leading-tight mb-4">
-                Beyond automation. <span className="text-gammalex-orange">Beyond compliance.</span>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight mb-4">
+                Beyond automation. <span className="gradient-text">Beyond compliance.</span>
                 </h3>
-              <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
+              <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
                 While others automate workflows, GammaLex prevents lawsuits.
               </p>
             </div>
             
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/50">
+            <div className="relative overflow-hidden rounded-2xl border border-white/20 glass neon-glow">
               {/* Header */}
-              <div className="grid grid-cols-1 md:grid-cols-2 border-b border-slate-200">
-                <div className="p-8 lg:p-12 border-r-0 md:border-r border-slate-200 bg-slate-50/50 border-b md:border-b-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 border-b border-white/20">
+                <div className="p-8 lg:p-12 border-r-0 md:border-r border-white/20 glass-dark border-b md:border-b-0">
                   <div className="mb-3">
-                    <h4 className="text-2xl lg:text-3xl font-semibold text-black font-inter">Competitors</h4>
+                    <h4 className="text-2xl lg:text-3xl font-semibold text-white font-inter neon-text">Competitors</h4>
                   </div>
-                  <p className="text-lg lg:text-xl text-slate-600 font-inter">Traditional pre-auth automation</p>
+                  <p className="text-lg lg:text-xl text-white/80 font-inter">Traditional pre-auth automation</p>
                 </div>
-                <div className="p-8 lg:p-12 bg-gradient-to-r from-gammalex-orange/5 to-gammalex-orange/10">
+                <div className="p-8 lg:p-12 bg-gradient-to-r from-gammalex-purple/20 to-gammalex-purple/30 border-l border-gammalex-purple/30">
                   <div className="mb-3">
-                    <h4 className="text-2xl lg:text-3xl font-semibold text-gammalex-orange font-inter">GammaLex</h4>
+                    <h4 className="text-2xl lg:text-3xl font-semibold text-gammalex-purple font-inter neon-text">GammaLex</h4>
                   </div>
-                  <p className="text-lg lg:text-xl text-slate-600 font-inter">Clinical-legal AI for risk prevention</p>
+                  <p className="text-lg lg:text-xl text-white/90 font-inter">Clinical-legal AI for risk prevention</p>
                 </div>
               </div>
 
               {/* Comparison Rows */}
-              <div className="divide-y divide-slate-200">
+              <div className="divide-y divide-white/20">
                 {[
                   {
                     competitor: "Automate prior auth forms and workflows",
@@ -389,21 +431,21 @@ export default function GammaLexPage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="p-8 lg:p-12 border-r-0 md:border-r border-slate-200 bg-white border-b md:border-b-0">
-                      <p className="text-lg lg:text-xl text-black leading-relaxed font-inter">{row.competitor}</p>
+                    <div className="p-8 lg:p-12 border-r-0 md:border-r border-white/20 glass border-b md:border-b-0">
+                      <p className="text-lg lg:text-xl text-white/90 leading-relaxed font-inter">{row.competitor}</p>
                     </div>
-                    <div className="p-8 lg:p-12 bg-gradient-to-r from-gammalex-orange/5 to-gammalex-orange/10 relative">
-                      <p className="text-lg lg:text-xl text-black font-medium leading-relaxed font-inter">{row.gammalex}</p>
-                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gammalex-orange"></div>
+                    <div className="p-8 lg:p-12 bg-gradient-to-r from-gammalex-purple/20 to-gammalex-purple/30 relative border-l border-gammalex-purple/30">
+                      <p className="text-lg lg:text-xl text-white font-medium leading-relaxed font-inter">{row.gammalex}</p>
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gammalex-purple neon-glow"></div>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
               {/* Bottom highlight */}
-              <div className="p-8 lg:p-12 bg-gradient-to-r from-gammalex-orange/10 to-gammalex-orange/20 text-center">
-                <p className="text-xl lg:text-2xl font-medium text-black font-inter">
-                  The difference: <span className="text-gammalex-orange font-bold">Legal foresight</span> prevents what automation can't fix.
+              <div className="p-8 lg:p-12 bg-gradient-to-r from-gammalex-purple/30 to-gammalex-purple/40 text-center border-t border-gammalex-purple/30">
+                <p className="text-xl lg:text-2xl font-medium text-white font-inter neon-text">
+                  The difference: <span className="text-gammalex-purple font-bold neon-text">Legal foresight</span> prevents what automation can't fix.
                 </p>
               </div>
             </div>
@@ -413,7 +455,7 @@ export default function GammaLexPage() {
           <div className="w-full flex justify-center mt-10 sm:mt-12">
             <JoinWaitlistModal
               trigger={
-                <button className="inline-block bg-sage-600 text-white text-lg font-bold rounded-2xl px-10 py-4 shadow hover:bg-sage-700 focus:outline-none focus:ring-2 focus:ring-sage-400 focus:ring-offset-2 transition">
+                <button className="inline-block bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white text-lg font-bold rounded-2xl px-10 py-4 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-gammalex-purple focus:ring-offset-2 transition-all duration-300 neon-glow hover:neon-glow transform hover:scale-105">
                   See GammaLex in Action
                 </button>
               }
@@ -431,18 +473,19 @@ export default function GammaLexPage() {
       <LegalHeatIndex />
 
       {/* Legal Foresight Bridge Section */}
-      <section className="w-full bg-white py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 font-inter">
-        <div className="max-w-6xl mx-auto">
+      <section className="w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 font-inter relative">
+        {/* Futuristic background elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-purple-900/15 to-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.12),transparent_50%)] pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-6 sm:mb-8 px-2">
-              <span className="text-slate-900">From </span>
-              <span className="text-gammalex-orange">legal risk</span>
-              <span className="text-slate-900"> to </span>
-              <span className="text-gammalex-orange">legal foresight</span>
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-6 sm:mb-8 px-2">
+              From <span className="gradient-text">legal risk</span> to <span className="gradient-text">legal foresight</span>
             </h2>
             <AnimatedText
               text="Lawsuits show the pattern: denials become liability when clinical evidence is ignored. GammaLex anticipates legal risk <br /> before it escalates."
-              className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-slate-900 text-center max-w-5xl mx-auto leading-tight px-2"
+              className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-white/90 text-center max-w-5xl mx-auto leading-tight px-2"
             />
             <div className="flex justify-center my-8">
               <FlaggingOverlay />
@@ -450,47 +493,50 @@ export default function GammaLexPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col items-start"
+              className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              whileHover={{ y: -4 }}
             >
               <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
-                <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-slate-400" />
-                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-orange">Pattern Recognition</span>
+                <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
+                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Pattern Recognition</span>
               </div>
-              <div className="text-slate-900 leading-relaxed text-sm xs:text-base sm:text-lg">
+              <div className="text-white/90 leading-relaxed text-sm xs:text-base sm:text-lg">
                 AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.
               </div>
             </motion.div>
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col items-start"
+              className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -4 }}
             >
               <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
-                <Scale className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-slate-400" />
-                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-orange">Legal Compliance</span>
+                <Scale className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
+                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Legal Compliance</span>
               </div>
-              <div className="text-slate-900 leading-relaxed text-sm xs:text-base sm:text-lg">
+              <div className="text-white/90 leading-relaxed text-sm xs:text-base sm:text-lg">
                 Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.
               </div>
             </motion.div>
             <motion.div 
-              className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col items-start"
+              className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
+              whileHover={{ y: -4 }}
             >
               <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
-                <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-slate-400" />
-                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-orange">Risk Mitigation</span>
+                <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
+                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Risk Mitigation</span>
               </div>
-              <div className="text-slate-900 leading-relaxed text-base sm:text-lg">
+              <div className="text-white/90 leading-relaxed text-base sm:text-lg">
                 Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.
               </div>
             </motion.div>
@@ -501,7 +547,7 @@ export default function GammaLexPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1, ease: 'easeOut' }}
               viewport={{ once: true }}
-              className="text-lg xs:text-xl sm:text-2xl font-inter text-slate-600 italic mb-6 sm:mb-8 px-2"
+              className="text-lg xs:text-xl sm:text-2xl font-inter text-white/70 italic mb-6 sm:mb-8 px-2"
             >
               The best defense is foresight. GammaLex doesn't just respond to denials—it flags risk early, so you can avoid them altogether.
             </motion.p>
@@ -517,11 +563,11 @@ export default function GammaLexPage() {
       <AboutSection />
 
       {/* GammaLex AI Copilot Cloud Section */}
-      <section id="copilot-cloud" className="w-full min-h-[80vh] flex flex-col justify-center items-center bg-black py-32 px-2 sm:px-4 md:px-8 font-inter">
+      <section id="copilot-cloud" className="w-full min-h-[80vh] flex flex-col justify-center items-center bg-gradient-to-br from-black via-[#1a102a] to-black py-32 px-2 sm:px-4 md:px-8 font-inter">
         <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-0 lg:gap-64">
           <div className="flex-1 flex flex-col justify-center items-start">
             <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-normal text-left font-inter leading-tight text-white break-words">
-              AI COPILOT <br /> FOR PRE-AUTH AND COMPLIANCE
+              AI ENGINE <br /> FOR PRE-AUTH AND COMPLIANCE
             </h2>
           </div>
           <div className="flex-1 flex flex-col justify-center items-end mt-12 sm:mt-24 md:mt-36 lg:mt-64">
@@ -543,16 +589,16 @@ export default function GammaLexPage() {
 
       {/* Join Section (Partner With Us) */}
       <div ref={ctaRef} className="mt-0">
-        <section id="join" className="min-h-screen flex items-center bg-sage-100 text-black">
+        <section id="join" className="min-h-screen flex items-center bg-gradient-to-br from-[#181028] via-[#221a36] to-[#23232b] text-white">
           <div className="max-w-none w-full px-8 lg:px-16 py-8">
             <div className="flex flex-col items-center max-w-3xl mx-auto">
-              <span className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter text-center break-words tracking-tight mb-4">
+              <span className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter text-center break-words tracking-tight mb-4 text-white">
                 Be the first to experience GammaLex.
               </span>
-              <span className="text-2xl sm:text-3xl font-inter text-center break-words tracking-tight mb-8">
+              <span className="text-2xl sm:text-3xl font-inter text-center break-words tracking-tight mb-8 text-white/80">
                 AI-built for transparency, accuracy and outcomes that matter.
               </span>
-              <div className="bg-white rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-inter">
+              <div className="glass rounded-3xl shadow-lg border border-gammalex-purple/30 p-6 sm:p-14 w-full flex flex-col items-center font-inter">
                 <JoinWaitlistModal
                   trigger={
                     <button className="text-2xl sm:text-4xl text-gammalex-orange text-center w-full font-inter focus:outline-none">
@@ -615,8 +661,8 @@ function Navigation() {
       <motion.nav
         className={`sticky top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-white shadow-md border-b border-gray-200 backdrop-blur-md"
-            : "bg-white/90 backdrop-blur-sm"
+            ? "glass border-b border-white/10 backdrop-blur-md"
+            : "glass-dark backdrop-blur-sm"
         } font-inter`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -648,7 +694,7 @@ function Navigation() {
                   <motion.button
                     key={item.id}
                     onClick={() => handleNavClick(item)}
-                    className="text-2xl font-medium text-gray-700 hover:text-sage-600 transition-colors"
+                    className="text-2xl font-medium text-white transition-colors"
                     whileHover={{ y: -2 }}
                   >
                     {item.label}
@@ -658,7 +704,7 @@ function Navigation() {
             </div>
 
             {/* Mobile Menu Button */}
-            <motion.button className="lg:hidden p-2 ml-auto" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
+            <motion.button className="lg:hidden p-2 ml-auto text-white" onClick={() => setIsOpen(!isOpen)} whileTap={{ scale: 0.95 }}>
               {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </motion.button>
           </div>
@@ -666,7 +712,7 @@ function Navigation() {
           {/* Mobile Navigation */}
           {isOpen && (
             <motion.div
-              className="lg:hidden py-6 border-t border-gray-200"
+              className="lg:hidden py-6 border-t border-white/10"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -676,14 +722,14 @@ function Navigation() {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item)}
-                    className="block w-full text-left text-xl font-medium text-gray-700 hover:text-sage-600 py-2"
+                    className="block w-full text-left text-xl font-medium text-white py-2 transition-colors"
                   >
                     {item.label}
                   </button>
                 ))}
                 <JoinWaitlistModal
                   trigger={
-                    <Button className="bg-sage-600 hover:bg-sage-700 text-white font-bold w-full py-4 text-lg rounded-xl mt-4">
+                    <Button className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white font-bold w-full py-4 text-lg rounded-xl mt-4 hover-glow transition-all">
                       Request a Demo
                     </Button>
                   }
@@ -700,57 +746,71 @@ function Navigation() {
 function AboutSection() {
   const features = [
     {
-      icon: <BrainIcon className="text-gammalex-orange" size={56} weight="regular" />,
+      icon: <BrainIcon className="text-gammalex-purple" size={56} weight="regular" />,
       title: "Top-Tier LLMs for Healthcare",
       description: "GammaLex leverages the latest large language models, fine-tuned for medical and legal data, ensuring accuracy and compliance for every payer and policy.",
     },
     {
-      icon: <Lightning className="text-gammalex-orange" size={56} weight="regular" />,
+      icon: <Lightning className="text-gammalex-purple" size={56} weight="regular" />,
       title: "Accelerated Pre-Auth Decisions",
       description: "AI-powered justifications and instant policy matching reduce delays, denials, and manual work for clinicians and legal teams.",
     },
     {
-      icon: <ShieldCheck className="text-gammalex-orange" size={56} weight="regular" />,
+      icon: <ShieldCheck className="text-gammalex-purple" size={56} weight="regular" />,
       title: "Built for Real-World Risk",
       description: "GammaLex flags legal and clinical vulnerabilities before they become denials or liability, supporting faster, stronger appeals.",
     },
     {
-      icon: <UsersThree className="text-gammalex-orange" size={56} weight="regular" />,
+      icon: <UsersThree className="text-gammalex-purple" size={56} weight="regular" />,
       title: "Expert-Built, Always Evolving",
       description: "Our platform is built by AI researchers—constantly learning from new payer rules and real-world outcomes.",
     },
     {
-      icon: <ChartBar className="text-gammalex-orange" size={56} weight="regular" />,
+      icon: <ChartBar className="text-gammalex-purple" size={56} weight="regular" />,
       title: "Highly Scalable & Reliable",
       description: "From solo practices to health systems, GammaLex scales securely with 99.9% uptime and enterprise-grade compliance.",
     },
     {
-      icon: <Scales className="text-gammalex-orange" size={56} weight="regular" />,
+      icon: <Scales className="text-gammalex-purple" size={56} weight="regular" />,
       title: "Uniquely GammaLex",
       description: "Purpose-built for the intersection of medicine, law, and policy—no other platform brings together clinical, legal, and payer expertise like GammaLex.",
     },
   ];
 
   return (
-    <section id="about" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white font-inter text-slate-900">
-      <div className="max-w-6xl mx-auto flex flex-col items-center">
+    <section id="about" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 font-inter relative">
+      {/* Futuristic background elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-purple-900/10 to-black/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(139,92,246,0.08),transparent_50%)] pointer-events-none" />
+      
+      <div className="max-w-6xl mx-auto flex flex-col items-center relative z-10">
         <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-6 sm:mb-8 px-2">
-          <span className="text-slate-900">Forge the </span>
-          <span className="text-gammalex-orange">AI frontier.</span> <br />
-          <span className="text-slate-900">Train on </span>
-          <span className="text-gammalex-orange">expert-built</span>
-          <span className="text-slate-900"> healthcare LLMs.</span>
+          <span className="text-white">Forge the </span>
+          <span className="multi-gradient-text">AI frontier.</span> <br />
+          <span className="text-white">Train on </span>
+          <span className="multi-gradient-text">expert-built</span>
+          <span className="text-white"> healthcare LLMs.</span>
         </h2>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-inter text-center text-black max-w-4xl mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-12 sm:mb-16 md:mb-20 px-2">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-inter text-center text-white max-w-4xl mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-12 sm:mb-16 md:mb-20 px-2">
           GammaLex delivers policy-aware AI to improve pre-auths and reduce denial risk—fine-tuned on real-world data and payer rules to accelerate care.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 md:gap-x-16 md:gap-y-16 w-full">
           {features.map((f, i) => (
-            <div key={i} className="flex flex-col items-start text-left px-2 sm:px-4 md:px-6">
-              <div className="mb-4 sm:mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-orange', width: 48, height: 48, 'data-mobile-size': '40' })}</div>
-              <div className="text-xl xs:text-2xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 text-gammalex-orange font-inter text-left leading-tight">{f.title}</div>
-              <div className="text-base sm:text-lg md:text-xl text-slate-900 leading-[1.5] sm:leading-[1.6] font-inter text-left">{f.description}</div>
-            </div>
+            <motion.div 
+              key={i} 
+              className="flex flex-col items-start text-left px-2 sm:px-4 md:px-6 group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -4 }}
+            >
+              <div className="glass rounded-2xl p-6 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 w-full">
+                <div className="mb-4 sm:mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors', width: 48, height: 48, 'data-mobile-size': '40' })}</div>
+                <div className="text-xl xs:text-2xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 text-gammalex-purple font-inter text-left leading-tight group-hover:text-gammalex-purple-light transition-colors">{f.title}</div>
+                <div className="text-base sm:text-lg md:text-xl text-white/80 leading-[1.5] sm:leading-[1.6] font-inter text-left">{f.description}</div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -802,10 +862,10 @@ function StatBlock({ stat, i, fadeUp }: { stat: { value: string, label: string, 
       <div className="text-4xl xs:text-5xl sm:text-6xl font-semibold mb-2 font-inter leading-tight group-hover:text-orange-500 transition-colors text-left">
         <AnimatedCounter value={stat.value} inView={inView} />
       </div>
-      <div className="text-lg xs:text-xl sm:text-2xl font-medium text-slate-900 mb-1 font-inter leading-snug group-hover:text-gammalex-orange transition-colors text-left">
+      <div className="text-lg xs:text-xl sm:text-2xl font-medium text-white/90 mb-1 font-inter leading-snug text-left">
         {stat.label}
       </div>
-      <div className="text-base xs:text-lg sm:text-lg text-slate-700 font-inter leading-normal group-hover:text-slate-900 transition-colors text-left">
+      <div className="text-base xs:text-lg sm:text-lg text-white/80 font-inter leading-normal text-left">
         {stat.description}
       </div>
     </motion.div>
@@ -870,14 +930,14 @@ function SystemicRiskStats() {
   ];
 
   return (
-    <section className="w-full bg-sage-100 py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 font-inter flex justify-center items-center relative overflow-hidden">
-      {/* Subtle animated radial gradient background */}
+    <section className="w-full py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 font-inter flex justify-center items-center relative overflow-hidden bg-gradient-to-br from-black via-gammalex-purple/20 to-black">
+      {/* Futuristic animated radial gradient background */}
       <motion.div
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 0.18, scale: [0.9, 1.05, 0.95, 1] }}
         transition={{ duration: 12, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-        style={{ width: 900, height: 900, borderRadius: '50%', background: 'radial-gradient(circle, #FF8800 0%, #fffbe6 60%, #f6faf6 100%)' }}
+        style={{ width: 900, height: 900, borderRadius: '50%', background: 'radial-gradient(circle, #8b5cf6 0%, #23232b 100%)' }}
       />
       <div className="w-full max-w-5xl px-0 sm:px-0 py-0 flex flex-col gap-16 items-center relative z-10">
         <div className="flex flex-col items-center mb-8">
@@ -887,19 +947,19 @@ function SystemicRiskStats() {
             animate={{ scale: [0.8, 1.1, 1], opacity: [0, 1, 1] }}
             transition={{ duration: 1.2, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
           >
-            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#FF8800" opacity="0.15"/><path d="M28 16v12" stroke="#FF8800" strokeWidth="3.5" strokeLinecap="round"/><circle cx="28" cy="38" r="2.5" fill="#FF8800"/></svg>
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="#8b5cf6" opacity="0.15"/><path d="M28 16v12" stroke="#8b5cf6" strokeWidth="3.5" strokeLinecap="round"/><circle cx="28" cy="38" r="2.5" fill="#8b5cf6"/></svg>
           </motion.div>
           <motion.h2
-            className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-normal text-gammalex-orange text-center mb-3 sm:mb-4 leading-tight px-2"
+            className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center leading-tight mb-3 sm:mb-4 px-2"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            Pre-auth is a healthcare crisis
+            Pre-auth is a healthcare <span className="gradient-text">crisis</span>
           </motion.h2>
           <motion.p
-            className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-slate-900 text-center mb-6 sm:mb-8 leading-tight px-2"
+            className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-white text-center mb-6 sm:mb-8 leading-tight px-2"
             initial="hidden"
             whileInView="visible"
             variants={fadeUp}
@@ -908,13 +968,13 @@ function SystemicRiskStats() {
             The data is clear: delays, burnout, <br /> and denials are symptoms of a broken system.
           </motion.p>
           <motion.div
-            className="text-sm text-slate-500 text-center mb-4"
+            className="text-sm text-white/60 text-center mb-4"
             initial="hidden"
             whileInView="visible"
             variants={fadeUp}
             viewport={{ once: true }}
           >
-            Source: <a href="https://www.ama-assn.org/system/files/prior-authorization-survey.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange">AMA 2024 Prior Authorization Physician Survey</a>
+            Source: <a href="https://www.ama-assn.org/system/files/prior-authorization-survey.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">AMA 2024 Prior Authorization Physician Survey</a>
           </motion.div>
         </div>
         <div className="w-full flex flex-col items-center gap-8">
@@ -922,7 +982,9 @@ function SystemicRiskStats() {
             {categories.map((cat, catIdx) => (
               <div key={cat.title} className="flex flex-col sm:contents w-full">
                 <div className="flex flex-col items-start sm:items-end pr-0 sm:pr-4 justify-center mb-2 sm:mb-0">
-                  <h3 className="text-base xs:text-lg sm:text-xl font-semibold text-slate-700 uppercase tracking-wide text-left sm:text-right whitespace-nowrap">{cat.title}</h3>
+                  <h3 className="text-base xs:text-lg sm:text-xl font-bold text-gammalex-purple uppercase tracking-wide text-left sm:text-right">
+                    {cat.title}
+                  </h3>
                 </div>
                 <div className="flex flex-col sm:col-start-2">
                   <StatBlock stat={cat.stats[0]} i={catIdx * 2} fadeUp={fadeUp} />
@@ -986,55 +1048,63 @@ function LegalHeatIndex() {
     }
   ];
 
+  const caseHeadlines = [
+    "Mental Health Denied, Justice Delivered",
+    "Cancer Patient Dies After $92K Denial",
+    "Advanced Care Blocked, Lawsuit Follows",
+    "Dozens of Mental Health Denials Ruled Dishonest",
+    "AI Auto-Denials Spark National Class Action",
+  ];
+
   return (
-    <section className="w-full bg-white py-24 px-4 font-inter">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-24 px-4 font-inter bg-gradient-to-br from-black via-gammalex-purple/20 to-black">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-slate-900 mb-4">
-            <span className="text-gammalex-orange">When denials become lawsuits</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center mb-4">
+            When denials become <span className="gradient-text">lawsuits</span>
           </h2>
-          <p className="text-2xl sm:text-3xl font-inter font-normal text-slate-900 text-center mb-8 leading-tight">
-            The warning signs <span className="text-gammalex-orange font-semibold">GammaLex</span> is built to catch—before it's too late.
+          <p className="text-2xl sm:text-3xl font-inter font-normal text-white text-center mb-8 leading-tight">
+            The warning signs GammaLex is built to catch—before it's too late.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {cases.map((caseItem, index) => (
-            <motion.div
-              key={index}
-              className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-gammalex-orange/30 hover:shadow-lg transition-all duration-300 cursor-pointer group flex flex-col h-full"
-              whileHover={{ y: -4, scale: 1.02 }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-gammalex-orange transition-colors">
-                  {caseItem.caseName}
-                </h3>
-                <span className="text-sm font-medium text-gammalex-orange bg-gammalex-orange/10 px-3 py-1 rounded-full">
-                  {caseItem.tag}
-                </span>
+        <div className="relative flex flex-col gap-20 pl-8 sm:pl-12">
+          {/* Vertical timeline line */}
+          <div className="absolute left-3 sm:left-5 top-0 bottom-0 w-1 bg-gradient-to-b from-gammalex-purple/40 via-gammalex-purple/60 to-gammalex-orange/40 rounded-full z-0" />
+          {cases.map((c, idx) => (
+            <div key={c.caseName} className="relative flex items-start gap-6">
+              {/* Timeline dot */}
+              <div className="flex flex-col items-center z-10">
+                <span className={`w-5 h-5 rounded-full border-4 border-white ${idx === 0 ? 'bg-gammalex-orange' : 'bg-gammalex-purple'}`}></span>
+                {idx < cases.length - 1 && (
+                  <span className="flex-1 w-px bg-gradient-to-b from-gammalex-purple/60 to-gammalex-orange/30" />
+                )}
               </div>
-              
-              <div className="text-sm text-slate-600 mb-3">
-                {caseItem.year}, {caseItem.jurisdiction}
+              {/* Event content */}
+              <div className="flex-1 pb-2">
+                <div className="mb-2">
+                  <span className="block text-2xl sm:text-3xl md:text-4xl font-bold font-inter text-white mb-1">
+                    {caseHeadlines[idx]}
+                  </span>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="text-lg sm:text-xl font-semibold font-inter text-white/80 mr-2">
+                      {c.caseName}
+                    </span>
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-gammalex-purple/30 text-gammalex-purple uppercase tracking-wide">
+                      {c.tag}
+                    </span>
+                  </div>
+                  <div className="text-sm text-white/60 font-inter mt-1">
+                    {c.year}, {c.jurisdiction}
+                  </div>
+                </div>
+                <div className="text-lg sm:text-xl font-inter text-white/90 mb-2 mt-2">
+                  {c.summary}
+                </div>
+                <a href={c.source} target="_blank" rel="noopener noreferrer" className="text-gammalex-purple underline underline-offset-2 text-base font-inter hover:text-gammalex-orange transition-colors">
+                  Read Source ↗
+                </a>
               </div>
-              
-              <p className="text-slate-900 text-sm sm:text-base leading-relaxed mb-4">
-                {caseItem.summary}
-              </p>
-              
-              <a
-                href={caseItem.source}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-sm font-medium text-gammalex-orange hover:text-gammalex-orange/80 transition-colors group/link"
-              >
-                Read Source ↗
-              </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

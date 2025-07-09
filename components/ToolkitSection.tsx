@@ -45,7 +45,7 @@ export function ToolkitSection() {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
           {/* Unified content block */}
           <div className="flex-1 w-full">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 font-inter">
+            <h2 className="text-4xl sm:text-5xl font-inter">
               Everything You Need to Beat Denials
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-xl font-inter">
@@ -73,7 +73,7 @@ export function ToolkitSection() {
                 transition={{ duration: 0.4 }}
               >
                 <div className="rounded-2xl bg-gray-50/60 p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center font-inter">{demo.heading}</h3>
+                  <h3 className="text-2xl font-inter">{demo.heading}</h3>
                   <p className="text-base text-gray-700 mb-4 text-center font-inter">{demo.content}</p>
                   <div className="bg-white rounded-xl px-4 py-3 text-gray-800 text-center text-base font-mono border border-gray-100 font-inter">
                     {demo.example}
