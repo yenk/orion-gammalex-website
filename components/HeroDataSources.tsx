@@ -177,7 +177,7 @@ export default function HeroDataSources() {
                 <span className="mb-3 drop-shadow-md transition-opacity duration-300 opacity-80 group-hover:opacity-100 flex items-center justify-center w-full h-full min-h-0">
                   {src.icon}
                 </span>
-                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-tight">
+                <span className="pt-2 text-xs sm:text-sm md:text-base text-white font-inter text-center max-w-full whitespace-normal break-words w-full leading-tight">
                   {src.label}
                 </span>
               </a>
@@ -201,7 +201,7 @@ export default function HeroDataSources() {
                 <span className="mb-3 drop-shadow-md transition-opacity duration-300 opacity-80 group-hover:opacity-100 flex items-center justify-center w-full h-full min-h-0">
                   {src.icon}
                 </span>
-                <span className="text-xs sm:text-sm md:text-base text-white font-inter text-center max-w-xs whitespace-normal break-words w-full leading-tight">
+                <span className="pt-2 text-xs sm:text-sm md:text-base text-white font-inter text-center max-w-full whitespace-normal break-words w-full leading-tight">
                   {src.label}
                 </span>
               </a>

@@ -118,38 +118,38 @@ export default function GammaLexInteractiveStepper() {
   const currentStepData = steps.find(step => step.id === currentStep);
 
   return (
-    <section className="w-full flex flex-col items-center py-6 sm:py-8 md:py-16 px-2 sm:px-4 bg-gradient-to-b from-gammalex-purple-dark/80 via-black/90 to-black/95">
-      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-inter text-center gradient-text neon-text mb-6 sm:mb-8 md:mb-12 max-w-2xl mx-auto px-2 sm:px-4">
+    <section className="w-full flex flex-col items-center py-10 sm:py-16 md:py-24 px-2 sm:px-8 bg-gradient-to-b from-gammalex-purple-dark/80 via-black/90 to-black/95">
+      <h2 className="whitespace-nowrap overflow-x-auto text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-inter text-center gradient-text neon-text mb-10 sm:mb-14 md:mb-20 max-w-full mx-auto px-2 sm:px-4 leading-[1.2] pb-2">
         Inside the GammaLex Engine
       </h2>
       
-      <div className="w-full max-w-6xl mx-auto px-2 sm:px-4">
-        {/* Step Indicators - Mobile Optimized */}
-        <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
-          <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-2 glass-dark rounded-xl sm:rounded-2xl p-1.5 sm:p-2 md:p-3 shadow-lg border border-gammalex-purple/30 max-w-full overflow-x-auto">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4">
+        {/* Step Indicators - Larger & Responsive */}
+        <div className="flex justify-center mb-8 sm:mb-10 md:mb-14">
+          <div className="flex flex-nowrap justify-center items-center gap-2 sm:gap-4 glass-dark rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 shadow-2xl border border-gammalex-purple/30 w-full">
             {steps.map((step, index) => (
               <button
                 key={step.id}
                 onClick={() => goToStep(step.id)}
-                className={`flex items-center gap-1 sm:gap-2 px-1.5 sm:px-2 md:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl transition-all duration-200 min-w-0 flex-shrink-0 ${
+                className={`flex-1 flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl transition-all duration-200 min-w-0 flex-shrink-0 text-lg sm:text-xl md:text-2xl font-inter font-semibold ${
                   currentStep === step.id
-                    ? 'bg-gammalex-purple/30 text-white neon-text'
+                    ? 'bg-gammalex-purple/30 text-white neon-text shadow-lg'
                     : 'text-gammalex-neon hover:text-white hover:bg-gammalex-purple/10'
                 }`}
               >
-                <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0 ${
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-base sm:text-lg md:text-xl flex-shrink-0 ${
                   currentStep === step.id ? 'bg-gammalex-purple neon-text' : 'bg-gammalex-purple-dark text-gammalex-neon'
                 }`}>
                   {step.id}
                 </div>
-                <span className="hidden sm:inline text-xs sm:text-sm md:text-base truncate max-w-16 sm:max-w-20 md:max-w-none gradient-text">{step.title}</span>
+                <span className="hidden sm:inline text-base sm:text-lg md:text-xl gradient-text leading-tight break-words">{step.title}</span>
               </button>
             ))}
           </div>
         </div>
 
-        {/* Main Content - Mobile Optimized */}
-        <div className="glass-dark rounded-2xl md:rounded-3xl neon-glow p-3 sm:p-4 md:p-6 lg:p-8 border border-gammalex-purple/30">
+        {/* Main Content - Larger & Responsive */}
+        <div className="glass-dark rounded-3xl md:rounded-4xl neon-glow p-6 sm:p-10 md:p-14 lg:p-20 border border-gammalex-purple/30">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -157,49 +157,49 @@ export default function GammaLexInteractiveStepper() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="flex flex-col md:flex-row lg:flex-row items-center gap-4 sm:gap-6 md:gap-8"
+              className="flex flex-col md:flex-row lg:flex-row items-center gap-8 sm:gap-12 md:gap-16"
             >
-              {/* Left: Icon and Navigation - Mobile Optimized */}
-              <div className="flex flex-col items-center md:items-start gap-3 sm:gap-4 md:gap-6">
+              {/* Left: Icon and Navigation - Larger */}
+              <div className="flex flex-col items-center md:items-start gap-6 sm:gap-8 md:gap-10">
                 <div 
-                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center neon-glow shadow-lg"
+                  className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-2xl flex items-center justify-center neon-glow shadow-2xl"
                   style={{ background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%)' }}
                 >
                   {currentStepData?.icon}
                 </div>
                 
-                <div className="flex gap-2">
+                <div className="flex gap-4">
                   <button
                     onClick={prevStep}
-                    className="p-1.5 sm:p-2 rounded-lg glass-dark text-gammalex-neon hover:bg-gammalex-purple/20 transition-colors"
+                    className="p-3 sm:p-4 rounded-xl glass-dark text-gammalex-neon hover:bg-gammalex-purple/20 transition-colors text-xl sm:text-2xl"
                     aria-label="Previous step"
                   >
-                    <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <ArrowLeft className="w-6 h-6 sm:w-8 sm:h-8" />
                   </button>
                   <button
                     onClick={nextStep}
-                    className="p-1.5 sm:p-2 rounded-lg glass-dark text-gammalex-neon hover:bg-gammalex-purple/20 transition-colors"
+                    className="p-3 sm:p-4 rounded-xl glass-dark text-gammalex-neon hover:bg-gammalex-purple/20 transition-colors text-xl sm:text-2xl"
                     aria-label="Next step"
                   >
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8" />
                   </button>
                 </div>
               </div>
 
-              {/* Right: Content - Mobile Optimized */}
+              {/* Right: Content - Larger */}
               <div className="flex-1 text-center md:text-left">
-                <div className="mb-3 sm:mb-4 md:mb-6">
-                  <h3 className="text-lg sm:text-xl md:text-2xl gradient-text neon-text mb-2">
+                <div className="mb-6 sm:mb-8 md:mb-10">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl gradient-text neon-text mb-4">
                     {currentStepData?.title}
                   </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gammalex-neon mb-2 sm:mb-3 md:mb-4">
+                  <p className="text-lg sm:text-xl md:text-2xl text-gammalex-neon mb-4 sm:mb-6 md:mb-8">
                     {currentStepData?.subtitle}
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
                     {currentStepData?.description}
                   </p>
                 </div>
-                <ul className="list-disc pl-5 space-y-2 text-white/80">
+                <ul className="list-disc pl-8 space-y-4 text-white/80 text-lg sm:text-xl md:text-2xl">
                   {currentStepData?.features.map((feature, idx) => (
                     <li key={idx} className="gradient-text">
                       {feature}
@@ -211,15 +211,15 @@ export default function GammaLexInteractiveStepper() {
           </AnimatePresence>
         </div>
 
-        {/* Progress Bar - Mobile Optimized */}
-        <div className="mt-4 sm:mt-6 md:mt-8 glass-dark rounded-lg sm:rounded-xl md:rounded-2xl p-2.5 sm:p-3 md:p-4 shadow-lg border border-gammalex-purple/30">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-xs sm:text-sm md:text-base font-medium text-white/90">Progress</span>
-            <span className="text-xs sm:text-sm md:text-base text-white/60">{currentStep} of {steps.length}</span>
+        {/* Progress Bar - Larger & Responsive */}
+        <div className="mt-8 sm:mt-10 md:mt-14 glass-dark rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gammalex-purple/30">
+          <div className="flex justify-between items-center mb-4 sm:mb-6 md:mb-8">
+            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white/90">Progress</span>
+            <span className="text-lg sm:text-xl md:text-2xl text-white/60">{currentStep} of {steps.length}</span>
           </div>
-          <div className="w-full bg-[#23232b] rounded-full h-1.5 sm:h-2">
+          <div className="w-full bg-[#23232b] rounded-full h-0.5 sm:h-1 md:h-1.5">
             <motion.div
-              className="bg-gammalex-orange h-1.5 sm:h-2 rounded-full"
+              className="bg-gammalex-orange h-0.5 sm:h-1 md:h-1.5 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${(currentStep / steps.length) * 100}%` }}
               transition={{ duration: 0.3 }}

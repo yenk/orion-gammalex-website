@@ -15,24 +15,26 @@ import HeroDataSources from './HeroDataSources'
 const headingLines = [
   [
     { word: "The", orange: false },
+    { word: "First", orange: true },
     { word: "AI", orange: true },
-    { word: "Engine", orange: true },
-    { word: "for", orange: false },
-    { word: "Faster", orange: true },
+    { word: "Built", orange: false },
+    { word: "to", orange: false },
+    { word: "Defend", orange: true },
+    { word: "Care,", orange: false },
   ],
   [
-    { word: "Pre-Auths", orange: true },
+    { word: "Prevent", orange: true },
+    { word: "Denials,", orange: false },
     { word: "and", orange: false },
-    { word: "Smarter", orange: false },
-  ],
-  [
-    { word: "Compliance", orange: true },
+    { word: "Protect", orange: true },
+    { word: "Lives", orange: true },
   ],
 ];
 
 const subheadingLines = [
-  ["Fine‑tuned", "on", "policy,", "powered", "by", "open", "sources,"],
-  ["and", "built", "to", "accelerate", "care", "with", "legal", "confidence."],
+  ["Trained", "on", "real", "policy."],
+  ["Powered", "by", "open", "source."],
+  ["Built", "to", "deliver", "care", "without", "legal", "risk."]
 ];
 
 export function CopilotHero() {
@@ -302,27 +304,17 @@ export function CopilotHero() {
         <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-0">
             {headingLines.map((line, i) => (
-              <div key={i} className="mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-6">
+              <div
+                key={i}
+                className="mb-2 sm:mb-4 md:mb-5 last:mb-0 flex flex-wrap justify-center"
+              >
                 {line.map((item, j) => (
-                  skipAnimation ? (
-                    <span
-                      key={`${i}-${j}`}
-                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'gradient-text' : 'text-white'}`}
-                    >
-                      {item.word}
-                    </span>
-                  ) : (
-                    <motion.span
-                      key={`${i}-${j}`}
-                      className={`inline-block mr-2 sm:mr-3 md:mr-4 ${item.orange ? 'gradient-text' : 'text-white'}`}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 + (i * 0.3) + j * 0.15, duration: 0.7, ease: "easeOut" }}
-                      style={{ willChange: 'transform, opacity' }}
-                    >
-                      {item.word}
-                    </motion.span>
-                  )
+                  <span
+                    key={`${i}-${j}`}
+                    className={`inline-block ${j !== line.length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'gradient-text' : 'text-white'}`}
+                  >
+                    {item.word}
+                  </span>
                 ))}
               </div>
             ))}
@@ -333,23 +325,25 @@ export function CopilotHero() {
         <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-2 sm:px-0">
             <div className="mb-1 sm:mb-2 md:mb-3">
-              <span className="inline-block mr-1 sm:mr-2">Fine‑tuned</span>
+              <span className="inline-block mr-1 sm:mr-2">Trained</span>
               <span className="inline-block mr-1 sm:mr-2">on</span>
-              <span className="inline-block mr-1 sm:mr-2">policy,</span>
-              <span className="inline-block mr-1 sm:mr-2">powered</span>
-              <span className="inline-block mr-1 sm:mr-2">by</span>
-              <span className="inline-block mr-1 sm:mr-2">open</span>
-              <span className="inline-block mr-1 sm:mr-2">sources,</span>
+              <span className="inline-block mr-1 sm:mr-2">real</span>
+              <span className="inline-block mr-1 sm:mr-2">policy.</span>
             </div>
             <div className="mb-1 sm:mb-2 md:mb-3">
-              <span className="inline-block mr-1 sm:mr-2">and</span>
-              <span className="inline-block mr-1 sm:mr-2">built</span>
+              <span className="inline-block mr-1 sm:mr-2">Powered</span>
+              <span className="inline-block mr-1 sm:mr-2">by</span>
+              <span className="inline-block mr-1 sm:mr-2">open</span>
+              <span className="inline-block mr-1 sm:mr-2">source.</span>
+            </div>
+            <div className="mb-1 sm:mb-2 md:mb-3">
+              <span className="inline-block mr-1 sm:mr-2">Built</span>
               <span className="inline-block mr-1 sm:mr-2">to</span>
-              <span className="inline-block mr-1 sm:mr-2">accelerate</span>
+              <span className="inline-block mr-1 sm:mr-2">deliver</span>
               <span className="inline-block mr-1 sm:mr-2">care</span>
-              <span className="inline-block mr-1 sm:mr-2">with</span>
+              <span className="inline-block mr-1 sm:mr-2">without</span>
               <span className="inline-block mr-1 sm:mr-2">legal</span>
-              <span className="inline-block mr-1 sm:mr-2">confidence.</span>
+              <span className="inline-block mr-1 sm:mr-2">risk.</span>
             </div>
           </h2>
         </div>

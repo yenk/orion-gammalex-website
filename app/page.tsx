@@ -159,7 +159,7 @@ export default function GammaLexPage() {
                 <p className="text-lg sm:text-2xl text-white/90 text-center mb-8 max-w-2xl drop-shadow-md font-inter">
                   GammaLex is built on values that drive every decision, every model, and every outcome. <span className="text-gammalex-orange font-inter">Radically transparent. Relentlessly accurate. Always accountable.</span>
                 </p>
-                <div className="flex flex-wrap justify-center gap-8 sm:gap-12 mt-4 font-inter">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-4 font-inter">
                   {/* Value Card */}
                   <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-purple/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
                     <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg">

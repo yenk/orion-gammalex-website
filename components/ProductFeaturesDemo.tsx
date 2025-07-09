@@ -313,14 +313,14 @@ export function ProductFeaturesDemo() {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-full">
         {/* Inference Card */}
-        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-6 sm:p-14 border border-white/10 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-          <div className="flex items-center gap-5 mb-6">
-            <Zap className="w-14 h-14 text-gammalex-purple neon-text animate-pulse-glow" />
-            <span className="text-3xl sm:text-4xl font-inter gradient-text">Inference</span>
+        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-4 sm:p-8 md:p-10 border border-white/10 h-auto min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
+          <div className="flex items-center gap-4 mb-4">
+            <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple neon-text animate-pulse-glow" />
+            <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Inference</span>
           </div>
-          <div className="text-lg sm:text-xl mb-6 text-white font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
+          <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
           <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-4 text-lg text-white/80">
+            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80">
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Policy Lookup:</strong> Instantly match clinical scenarios to payer rules and coverage policies with source verification.</span>
@@ -341,14 +341,14 @@ export function ProductFeaturesDemo() {
           </div>
         </div>
         {/* Fine-Tuning Card */}
-        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-6 sm:p-14 border border-white/10 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-          <div className="flex items-center gap-5 mb-6">
-            <Settings className="w-14 h-14 text-gammalex-purple-light neon-text animate-pulse-glow" />
-            <span className="text-3xl sm:text-4xl font-inter gradient-text">Fine-Tuning</span>
+        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-4 sm:p-8 md:p-10 border border-white/10 h-auto min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
+          <div className="flex items-center gap-4 mb-4">
+            <Settings className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple-light neon-text animate-pulse-glow" />
+            <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Fine-Tuning</span>
           </div>
-          <div className="text-lg sm:text-xl mb-6 text-white font-inter">Custom AI for your clinical and legal workflows</div>
+          <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Custom AI for your clinical and legal workflows</div>
           <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-4 text-lg text-white/80">
+            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80">
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Legal Pattern Learning:</strong> Adapt models to recognize denial patterns from real lawsuits and case law.</span>
@@ -369,14 +369,14 @@ export function ProductFeaturesDemo() {
           </div>
         </div>
         {/* AI Copilot Card */}
-        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-6 sm:p-14 border border-white/10 h-[420px] sm:h-[500px] min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-          <div className="flex items-center gap-5 mb-6">
-            <Bot className="w-14 h-14 text-gammalex-purple neon-text animate-pulse-glow" />
-            <span className="text-3xl sm:text-4xl font-inter gradient-text">AI Copilot</span>
+        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-4 sm:p-8 md:p-10 border border-white/10 h-auto min-w-0 max-w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
+          <div className="flex items-center gap-4 mb-4">
+            <Bot className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple neon-text animate-pulse-glow" />
+            <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">AI Copilot</span>
           </div>
-          <div className="text-lg sm:text-xl mb-6 text-white font-inter">Your always-on assistant for Copilot teams</div>
+          <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Your always-on assistant for Copilot teams</div>
           <div className="flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gammalex-purple/30 scrollbar-track-black/20" style={{ WebkitOverflowScrolling: 'touch' }}>
-            <ul className="space-y-4 text-lg text-white/80">
+            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80">
               <li className="flex items-start gap-3">
                 <span className="text-green-400 mt-1 animate-pulse">✓</span>
                 <span><strong>Legal Risk Surfacing:</strong> Flag vulnerabilities from real lawsuits before they become denials or liability.</span>
