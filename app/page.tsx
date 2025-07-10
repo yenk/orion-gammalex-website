@@ -39,12 +39,6 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/comp
 import React from 'react'
 import { Brain as BrainIcon, Lightning, ShieldCheck, UsersThree, ChartBar, Scales } from 'phosphor-react'
 import { useAnimation, useMotionValue, useMotionValueEvent } from "framer-motion"
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu"
 
 /**
  * GammaLexPage - Homepage for GammaLex: Your AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -668,14 +662,6 @@ function Navigation() {
     { id: "join", label: "PARTNER WITH US" },
   ]
 
-  // GammaLex-specific dropdown items (contextually accurate)
-  const whyDropdown = [
-    { id: "what-we-do", label: "The GammaLex Difference" },
-    { id: "problems-we-solve", label: "Why Prior Auth is Broken" },
-    { id: "how-we-do-it", label: "How Our AI Works" },
-    { id: "impact", label: "Proof & Outcomes" },
-  ]
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -733,37 +719,16 @@ function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center flex-1">
               <div className="flex items-center space-x-32">
-                {navItems.map((item) =>
-                  item.label === "WHY GAMMALEX" ? (
-                    <DropdownMenu key={item.id}>
-                      <DropdownMenuTrigger asChild>
-                        <button className="text-2xl font-medium text-white font-inter transition-colors focus:outline-none">
-                          {item.label}
-                        </button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-black/90 glass-dark border border-white/10 mt-2 min-w-[220px]">
-                        {whyDropdown.map((drop) => (
-                          <DropdownMenuItem
-                            key={drop.id}
-                            className="text-lg font-inter text-white hover:text-gammalex-orange cursor-pointer px-6 py-3"
-                            onClick={() => setTimeout(() => scrollToSection(drop.id), 20)}
-                          >
-                            {drop.label}
-                          </DropdownMenuItem>
-                        ))}
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  ) : (
-                    <motion.button
-                      key={item.id}
-                      onClick={() => handleNavClick(item)}
-                      className="text-2xl font-medium text-white font-inter transition-colors"
-                      whileHover={{ y: -2 }}
-                    >
-                      {item.label}
-                    </motion.button>
-                  )
-                )}
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.id}
+                    onClick={() => handleNavClick(item)}
+                    className="text-2xl font-medium text-white font-inter transition-colors"
+                    whileHover={{ y: -2 }}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
               </div>
             </div>
 
