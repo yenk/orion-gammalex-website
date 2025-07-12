@@ -805,21 +805,25 @@ function AboutSection() {
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-inter text-center text-white max-w-4xl mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-12 sm:mb-16 md:mb-20 px-2">
           GammaLex delivers policy-aware AI to improve pre-auths and reduce denial risk—fine-tuned on real-world data and payer rules to accelerate care.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 md:gap-x-16 md:gap-y-16 w-full">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
           {features.map((f, i) => (
-            <motion.div 
-              key={i} 
-              className="flex flex-col items-start text-left px-2 sm:px-4 md:px-6 group"
+            <motion.div
+              key={i}
+              className="flex flex-col flex-1 h-full max-w-lg w-full p-8 rounded-3xl mx-auto group bg-[#181028]/80 backdrop-blur-lg border border-white/10 shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-gammalex-orange/60 hover:neon-glow min-h-[260px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -4 }}
             >
-              <div className="glass rounded-2xl p-6 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 w-full">
-                <div className="mb-4 sm:mb-6">{React.cloneElement(f.icon, { className: 'text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors', width: 48, height: 48, 'data-mobile-size': '40' })}</div>
-                <div className="text-xl xs:text-2xl sm:text-2xl md:text-3xl mb-2 sm:mb-3 text-gammalex-purple font-inter text-left leading-tight group-hover:text-gammalex-purple-light transition-colors">{f.title}</div>
-                <div className="text-base sm:text-lg md:text-xl text-white/80 leading-[1.5] sm:leading-[1.6] font-inter text-left">{f.description}</div>
+              <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-gammalex-orange to-gammalex-purple shadow-lg mb-6">
+                {React.cloneElement(f.icon, { className: 'text-white drop-shadow-lg', width: 32, height: 32 })}
+              </div>
+              <div className="text-2xl font-bold font-inter mb-2 text-white text-left leading-tight group-hover:text-gammalex-orange transition-colors">
+                {f.title}
+              </div>
+              <div className="text-base sm:text-lg md:text-xl font-inter text-left text-white/80 leading-[1.5] sm:leading-[1.6]">
+                {f.description}
               </div>
             </motion.div>
           ))}
