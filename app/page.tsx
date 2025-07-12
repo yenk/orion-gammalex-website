@@ -89,9 +89,7 @@ export default function GammaLexPage() {
           {/* Main Section Heading */}
           <div className="text-center mb-20">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-inter font-normal text-white leading-tight mb-6">
-              Forge the <span className="gradient-text">AI frontier.</span>
-              <br />
-              Trained on Care. Tuned for Coverage. Built for Defense.
+              Because real pre-auth decisions live at the <span className="gradient-text">intersection of medicine, policy, and law</span>
             </h1>
           </div>
 
