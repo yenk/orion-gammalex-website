@@ -225,13 +225,9 @@ export default function GammaLexPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-semibold text-white font-inter group-hover:text-gammalex-purple-light transition-colors">
-                      Transparency
-                    </h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Transparency</h4>
                   </div>
-                  <p className="text-white/80 leading-relaxed font-inter">
-                    Users can see exactly which open datasets informed GammaLex's models, supporting regulatory compliance and trust.
-                  </p>
+                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Users can see exactly which open datasets informed GammaLex's models, supporting regulatory compliance and trust.</p>
                 </motion.div>
 
                 <motion.div 
@@ -248,13 +244,9 @@ export default function GammaLexPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-semibold text-white font-inter group-hover:text-gammalex-purple-light transition-colors">
-                      Payer-Specific Accuracy
-                    </h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Payer-Specific Accuracy</h4>
                   </div>
-                  <p className="text-white/80 leading-relaxed font-inter">
-                    Fine-tuning on real-world, payer-relevant data (like Aetna's policies) delivers more precise and actionable recommendations for denial mitigation and risk management.
-                  </p>
+                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Fine-tuning on real-world, payer-relevant data (like Aetna's policies) delivers more precise and actionable recommendations for denial mitigation and risk management.</p>
                 </motion.div>
 
                 <motion.div 
@@ -271,13 +263,9 @@ export default function GammaLexPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                       </svg>
                     </div>
-                    <h4 className="text-xl font-semibold text-white font-inter group-hover:text-gammalex-purple-light transition-colors">
-                      Open Source Ethos
-                    </h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Open Source Ethos</h4>
                   </div>
-                  <p className="text-white/80 leading-relaxed font-inter">
-                    GammaLex's commitment to open data and transparent model development sets it apart in a field often dominated by closed, black-box solutions.
-                  </p>
+                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">GammaLex's commitment to open data and transparent model development sets it apart in a field often dominated by closed, black-box solutions.</p>
                 </motion.div>
               </div>
             </div>
@@ -534,11 +522,9 @@ export default function GammaLexPage() {
             >
               <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
                 <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
-                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Pattern Recognition</span>
+                <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Pattern Recognition</span>
               </div>
-              <div className="text-white/90 leading-relaxed text-sm xs:text-base sm:text-lg">
-                AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.
-              </div>
+              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.</div>
             </motion.div>
             <motion.div 
               className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
@@ -550,11 +536,9 @@ export default function GammaLexPage() {
             >
               <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
                 <Scale className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
-                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Legal Compliance</span>
+                <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Legal Compliance</span>
               </div>
-              <div className="text-white/90 leading-relaxed text-sm xs:text-base sm:text-lg">
-                Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.
-              </div>
+              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.</div>
             </motion.div>
             <motion.div 
               className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
@@ -566,11 +550,9 @@ export default function GammaLexPage() {
             >
               <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
                 <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
-                <span className="text-xl xs:text-2xl sm:text-2xl md:text-3xl font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Risk Mitigation</span>
+                <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Risk Mitigation</span>
               </div>
-              <div className="text-white/90 leading-relaxed text-base sm:text-lg">
-                Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.
-              </div>
+              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.</div>
             </motion.div>
           </div>
           <div className="text-center">
