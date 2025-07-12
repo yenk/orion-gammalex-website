@@ -276,7 +276,7 @@ export default function GammaLexPage() {
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
                       <Code2 className="w-6 h-6 text-gammalex-purple" />
                     </div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Open-Source, Explainable by Design</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Open-Source Ethos</h4>
                   </div>
                   <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">GammaLex champions open models and open data — combining public medical datasets, legal sources, and transparent logic chains to stand apart from black-box systems that obscure the basis for coverage decisions.</p>
                 </motion.div>
@@ -367,6 +367,7 @@ export default function GammaLexPage() {
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
