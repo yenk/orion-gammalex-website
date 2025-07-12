@@ -89,7 +89,9 @@ export default function GammaLexPage() {
           {/* Main Section Heading */}
           <div className="text-center mb-20">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-inter font-normal text-white leading-tight mb-6">
-              Because real <span className="gradient-text">pre-auth decisions</span> live at the intersection of medicine, policy, and law
+              Forge the <span className="gradient-text">AI frontier.</span>
+              <br />
+              Trained on Care. Tuned for Coverage. Built for Defense.
             </h1>
           </div>
 
@@ -242,7 +244,7 @@ export default function GammaLexPage() {
                     </div>
                     <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Transparent Policy Intelligence</h4>
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Users can see which payer policies, coverage rules, and medical guidelines inform GammaLex’s predictions — ensuring explainable AI, regulatory alignment, and stakeholder trust.</p>
+                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Users can see which payer policies, coverage rules, and medical guidelines inform GammaLex's predictions — ensuring explainable AI, regulatory alignment, and stakeholder trust.</p>
                 </motion.div>
 
                 <motion.div 
@@ -807,14 +809,12 @@ function AboutSection() {
       
       <div className="max-w-6xl mx-auto flex flex-col items-center relative z-10">
         <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-6 sm:mb-8 px-2">
-          <span className="text-white">Forge the </span>
-          <span className="multi-gradient-text">AI frontier.</span> <br />
-          <span className="text-white">Train on </span>
-          <span className="multi-gradient-text">expert-built</span>
-          <span className="text-white"> healthcare LLMs.</span>
+          Forge the <span className="multi-gradient-text">AI frontier.</span><br />
+          Trained on care. Tuned for coverage. Built for defense.
         </h2>
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-inter text-center text-white max-w-4xl mx-auto leading-[1.4] sm:leading-[1.5] md:leading-[1.6] mb-12 sm:mb-16 md:mb-20 px-2">
-          GammaLex delivers policy-aware AI to improve pre-auths and reduce denial risk—fine-tuned on real-world data and payer rules to accelerate care.
+          Because coverage decisions shouldn't be a black box.<br />
+          We're building GammaLex to bring clarity to coverage, predict denials before they happen, and protect patients, providers, and payers from the downstream risks of broken authorization systems.
         </p>
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
           {features.map((f, i) => (
