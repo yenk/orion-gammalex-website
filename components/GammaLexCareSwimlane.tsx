@@ -119,7 +119,7 @@ export default function GammaLexInteractiveStepper() {
 
   return (
     <section className="w-full flex flex-col items-center py-10 sm:py-16 md:py-24 px-2 sm:px-8 bg-gradient-to-b from-gammalex-purple-dark/80 via-black/90 to-black/95">
-      <h2 className="whitespace-nowrap overflow-x-auto text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-inter text-center gradient-text neon-text mb-10 sm:mb-14 md:mb-20 max-w-full mx-auto px-2 sm:px-4 leading-[1.2] pb-2">
+      <h2 className="whitespace-normal break-words overflow-visible text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-inter text-center gradient-text neon-text mb-10 sm:mb-14 md:mb-20 max-w-full mx-auto px-2 sm:px-4 leading-[1.2] pb-2">
         Inside the GammaLex Engine
       </h2>
       
@@ -142,7 +142,9 @@ export default function GammaLexInteractiveStepper() {
                 }`}>
                   {step.id}
                 </div>
-                <span className="hidden sm:inline text-base sm:text-lg md:text-xl gradient-text leading-tight break-words">{step.title}</span>
+                <span className="hidden sm:inline text-base sm:text-lg md:text-xl gradient-text leading-tight break-words whitespace-normal max-w-[7.5rem] md:max-w-[10rem] lg:max-w-[12rem] xl:max-w-[14rem]">
+                  {step.title}
+                </span>
               </button>
             ))}
           </div>
@@ -187,21 +189,21 @@ export default function GammaLexInteractiveStepper() {
               </div>
 
               {/* Right: Content - Larger */}
-              <div className="flex-1 text-center md:text-left">
+              <div className="flex-1 text-center md:text-left min-w-0 break-words">
                 <div className="mb-6 sm:mb-8 md:mb-10">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl gradient-text neon-text mb-4">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl gradient-text neon-text mb-4 break-words whitespace-normal">
                     {currentStepData?.title}
                   </h3>
-                  <p className="text-lg sm:text-xl md:text-2xl text-gammalex-neon mb-4 sm:mb-6 md:mb-8">
+                  <p className="text-lg sm:text-xl md:text-2xl text-gammalex-neon mb-4 sm:mb-6 md:mb-8 break-words whitespace-normal">
                     {currentStepData?.subtitle}
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed break-words whitespace-normal">
                     {currentStepData?.description}
                   </p>
                 </div>
-                <ul className="list-disc pl-8 space-y-4 text-white/80 text-lg sm:text-xl md:text-2xl">
+                <ul className="list-disc pl-8 space-y-4 text-white/80 text-lg sm:text-xl md:text-2xl break-words whitespace-normal">
                   {currentStepData?.features.map((feature, idx) => (
-                    <li key={idx} className="gradient-text">
+                    <li key={idx} className="gradient-text break-words whitespace-normal">
                       {feature}
                     </li>
                   ))}
