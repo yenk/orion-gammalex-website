@@ -23,6 +23,18 @@ import {
   MessageCircle,
   Info,
   BarChart2,
+  BrainCircuit,
+  UserRound,
+  BarChart3,
+  Eye,
+  Code2,
+  Users,
+  HeartHandshake,
+  Lightbulb,
+  Star,
+  Lock,
+  ThumbsUp,
+  UserCheck,
 } from "lucide-react"
 import { toast } from "@/components/ui/use-toast"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
@@ -38,7 +50,7 @@ import AnimatedText from "@/components/ui/AnimatedText"
 import { Progress } from '@/components/ui/progress'
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip'
 import React from 'react'
-import { Brain as BrainIcon, Lightning, ShieldCheck, UsersThree, ChartBar, Scales } from 'phosphor-react'
+import { Brain as BrainIcon, Lightning, ShieldCheck, ChartBar, Scales } from 'phosphor-react'
 import { useAnimation, useMotionValue, useMotionValueEvent } from "framer-motion"
 
 /**
@@ -158,40 +170,45 @@ export default function GammaLexPage() {
                   GammaLex is built on values that drive every decision, every model, and every outcome. <span className="text-gammalex-orange font-inter">Radically transparent. Relentlessly accurate. Always accountable.</span>
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-4 font-inter">
-                  {/* Value Card */}
+                  {/* Transparency */}
                   <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-purple/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
-                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg">
-                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="3" /></svg>
+                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg flex items-center justify-center">
+                      <Eye size={24} strokeWidth={2} color="currentColor" />
                     </span>
                     <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Transparency</span>
                   </div>
+                  {/* Accuracy */}
                   <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-orange/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
-                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg">
-                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z" /><path d="M12 12V4" /></svg>
+                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg flex items-center justify-center">
+                      <Target size={24} strokeWidth={2} color="currentColor" />
                     </span>
                     <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Accuracy</span>
                   </div>
+                  {/* Open Innovation */}
                   <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-purple/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
-                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg">
-                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
+                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg flex items-center justify-center">
+                      <Code2 size={24} strokeWidth={2} color="currentColor" />
                     </span>
                     <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Open Innovation</span>
                   </div>
+                  {/* Trust */}
                   <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-purple/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
-                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg">
-                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span className="bg-gammalex-purple/80 text-white rounded-full p-4 mb-2 shadow-lg flex items-center justify-center">
+                      <Shield size={24} strokeWidth={2} color="currentColor" />
                     </span>
                     <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Trust</span>
                   </div>
+                  {/* Accountability */}
                   <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-orange/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
-                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg">
-                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" /><circle cx="12" cy="12" r="10" /></svg>
+                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg flex items-center justify-center">
+                      <CheckCircle size={24} strokeWidth={2} color="currentColor" />
                     </span>
                     <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Accountability</span>
                   </div>
+                  {/* Empowerment */}
                   <div className="flex flex-col items-center bg-white/5 glass-dark border border-gammalex-orange/40 rounded-2xl px-6 py-6 shadow-xl neon-glow hover:scale-105 transition-transform font-inter">
-                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg">
-                      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M8 12l2 2 4-4" /></svg>
+                    <span className="bg-gammalex-orange/80 text-white rounded-full p-4 mb-2 shadow-lg flex items-center justify-center">
+                      <UserCheck size={24} strokeWidth={2} color="currentColor" />
                     </span>
                     <span className="font-bold text-lg sm:text-xl text-white mt-1 font-inter">Empowerment</span>
                   </div>
@@ -206,7 +223,7 @@ export default function GammaLexPage() {
                   What Makes Us <span className="gradient-text">Different</span>
                 </h3>
                 <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
-                  Built on transparency, precision, and open innovation
+                  Built on transparency, policy-aware precision, and open innovation.
                 </p>
               </div>
               
@@ -221,14 +238,11 @@ export default function GammaLexPage() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
-                      <svg className="w-6 h-6 text-gammalex-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
+                      <Eye className="w-6 h-6 text-gammalex-purple" />
                     </div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Transparency</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Transparent Policy Intelligence</h4>
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Users can see exactly which open datasets informed GammaLex's models, supporting regulatory compliance and trust.</p>
+                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Users can see which payer policies, coverage rules, and medical guidelines inform GammaLex’s predictions — ensuring explainable AI, regulatory alignment, and stakeholder trust.</p>
                 </motion.div>
 
                 <motion.div 
@@ -241,13 +255,11 @@ export default function GammaLexPage() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
-                      <svg className="w-6 h-6 text-gammalex-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <Target className="w-6 h-6 text-gammalex-purple" />
                     </div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Payer-Specific Accuracy</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Payer-Specific Coverage Prediction</h4>
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Fine-tuning on real-world, payer-relevant data (like Aetna's policies) delivers more precise and actionable recommendations for denial mitigation and risk management.</p>
+                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">GammaLex is fine-tuned on real-world, payer-specific coverage criteria (e.g., Aetna, Cigna, Medicare LCDs), enabling accurate, policy-aligned denial prediction and actionable insights for coverage justification and litigation avoidance.</p>
                 </motion.div>
 
                 <motion.div 
@@ -260,13 +272,11 @@ export default function GammaLexPage() {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
-                      <svg className="w-6 h-6 text-gammalex-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
+                      <Code2 className="w-6 h-6 text-gammalex-purple" />
                     </div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Open Source Ethos</h4>
+                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Open-Source, Explainable by Design</h4>
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">GammaLex's commitment to open data and transparent model development sets it apart in a field often dominated by closed, black-box solutions.</p>
+                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">GammaLex champions open models and open data — combining public medical datasets, legal sources, and transparent logic chains to stand apart from black-box systems that obscure the basis for coverage decisions.</p>
                 </motion.div>
               </div>
             </div>
@@ -758,7 +768,7 @@ function Navigation() {
 function AboutSection() {
   const features = [
     {
-      icon: <Brain className="text-white" size={32} />, // Top-Tier LLMs for Healthcare
+      icon: <BrainCircuit className="text-white" size={32} />, // Top-Tier LLMs for Healthcare
       title: "Top-Tier LLMs for Healthcare",
       description: "GammaLex leverages the latest large language models, fine-tuned for medical and legal data, ensuring accuracy and compliance for every payer and policy.",
     },
@@ -773,12 +783,12 @@ function AboutSection() {
       description: "GammaLex flags legal and clinical vulnerabilities before they become denials or liability, supporting faster, stronger appeals.",
     },
     {
-      icon: <User className="text-white" size={32} />, // Expert-Built, Always Evolving
+      icon: <UserRound className="text-white" size={32} />, // Expert-Built, Always Evolving
       title: "Expert-Built, Always Evolving",
       description: "Our platform is built by AI researchers—constantly learning from new payer rules and real-world outcomes.",
     },
     {
-      icon: <BarChart2 className="text-white" size={32} />, // Highly Scalable & Reliable
+      icon: <BarChart3 className="text-white" size={32} />, // Highly Scalable & Reliable
       title: "Highly Scalable & Reliable",
       description: "From solo practices to health systems, GammaLex scales securely with 99.9% uptime and enterprise-grade compliance.",
     },
