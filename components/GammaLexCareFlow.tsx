@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, AlertTriangle, RefreshCcw, Stethoscope, Bot, FileText } from 'lucide-react';
+import AnimatedText from './ui/AnimatedText'
 
 // Define the step type
 interface Step {
@@ -114,9 +115,13 @@ export default function GammaLexCareFlow() {
           Without GammaLex
         </button>
       </div>
-      <h2 className="text-3xl sm:text-4xl font-inter text-center gradient-text neon-text mb-12 max-w-2xl mx-auto">
-        How GammaLex helps prevent medical denials
+      <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-6 sm:mb-8 px-2">
+        From <span className="gradient-text">legal risk</span> to <span className="gradient-text">legal foresight</span>
       </h2>
+      <AnimatedText
+        text="Lawsuits show the pattern: denials become liability when clinical evidence or policy coverage is ignored. GammaLex anticipates legal and policy risk before it escalates."
+        className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-white/90 text-center max-w-5xl mx-auto leading-tight px-2"
+      />
       {/* Flow: horizontal on desktop, vertical on mobile */}
       <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-6 max-w-6xl mx-auto relative">
         <AnimatePresence initial={false} mode="wait">

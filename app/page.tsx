@@ -516,7 +516,7 @@ export default function GammaLexPage() {
               From <span className="gradient-text">legal risk</span> to <span className="gradient-text">legal foresight</span>
             </h2>
             <AnimatedText
-              text="Lawsuits show the pattern: denials become liability when clinical evidence is ignored. GammaLex anticipates legal risk <br /> before it escalates."
+              text="Lawsuits show the pattern: denials become liability when clinical evidence or policy coverage is ignored. GammaLex anticipates legal and policy risk before it escalates."
               className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-white/90 text-center max-w-5xl mx-auto leading-tight px-2"
             />
             <div className="flex justify-center my-8">
