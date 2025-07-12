@@ -92,25 +92,25 @@ export default function GammaLexPage() {
               </div>
               <div className="lg:w-2/3 lg:pl-16">
                 <div className="glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300">
-                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6">
-                    Prior authorization isn't just administrative paperwork—it's a major driver of care delays, patient harm, and provider burnout across healthcare.
+                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6 font-inter">
+                    Prior authorization isn't just paperwork — it's a leading cause of delayed care, denied coverage, and systemic harm across healthcare.
                   </p>
-                  <ul className="text-base sm:text-lg text-white/80 leading-[1.5] sm:leading-[1.6] mb-6 space-y-3">
+                  <ul className="text-lg sm:text-xl text-white/80 leading-[1.5] sm:leading-[1.6] mb-6 space-y-3 font-inter">
                     <li className="flex items-start">
                       <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
-                      <span><span className="text-gammalex-orange font-medium">92% of care delays</span> are linked to prior authorization issues, leading many patients to abandon treatment and experience worse health outcomes.</span>
+                      <span><span className="text-gammalex-orange font-medium">92% of care delays</span> are tied to prior authorization problems, often driven by policy-based coverage denials that cause patients to abandon treatment and worsen health outcomes.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
-                      <span>Physicians and staff spend up to <span className="text-gammalex-orange font-medium">15 hours per week</span> on prior authorization requests, with many practices dedicating full-time employees solely to managing these tasks.</span>
+                      <span>Physicians and staff spend up to <span className="text-gammalex-orange font-medium">15 hours per week</span> wrangling prior auth requests, with many practices assigning full-time employees just to manage approvals.</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
-                      <span>The process fuels frustration, increases costs, and in some cases, leads to <span className="text-gammalex-orange font-medium">serious adverse events or hospitalizations</span> for patients.</span>
+                      <span>The result: <span className="text-gammalex-orange font-medium">higher costs, overwhelmed clinicians</span>, and in some cases, <span className="text-gammalex-orange font-medium">serious adverse events or preventable hospitalizations</span> when care gets blocked.</span>
                     </li>
                   </ul>
-                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-4">
-                    Fixing prior authorization means <span className="text-gammalex-orange font-medium">faster access to care</span>, <span className="text-gammalex-orange font-medium">reduced administrative burden</span>, and <span className="text-gammalex-orange font-medium">fewer denials and legal risks</span> for everyone involved.
+                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-4 font-inter">
+                    Fixing prior authorization means more than efficiency — it means <span className="text-gammalex-orange font-medium">restoring access to care</span>, <span className="text-gammalex-orange font-medium">reducing denied coverage</span>, and <span className="text-gammalex-orange font-medium">protecting patients and providers from legal and medical risk</span>.
                   </p>
                   <p className="text-sm text-white/60 font-normal">
                     Source: <a href="https://www.ama-assn.org/practice-management/prior-authorization/fixing-prior-auth-nearly-40-prior-authorizations-week-way" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">AMA 2024 Prior Authorization Physician Survey</a>
