@@ -593,7 +593,7 @@ export default function GammaLexPage() {
         <div className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-0 lg:gap-64">
           <div className="flex-1 flex flex-col justify-center items-start">
             <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-normal text-left font-inter leading-tight text-white break-words">
-              AI ENGINE <br /> FOR PRE-AUTH AND COMPLIANCE
+              AI ENGINE FOR COVERAGE, COMPLIANCE, AND <span className="gradient-text">CARE</span>
             </h2>
           </div>
           <div className="flex-1 flex flex-col justify-center items-end mt-12 sm:mt-24 md:mt-36 lg:mt-64">
