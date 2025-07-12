@@ -192,6 +192,9 @@ export function CopilotHero() {
     ));
   };
 
+  // At the top of the return statement, gate all rendering on hasMounted
+  if (!hasMounted) return null;
+
   return (
     <section 
       ref={containerRef}

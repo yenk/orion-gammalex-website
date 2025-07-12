@@ -22,6 +22,7 @@ import {
   Zap,
   MessageCircle,
   Info,
+  BarChart2,
 } from "lucide-react"
 import { toast } from "@/components/ui/use-toast"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
@@ -757,32 +758,32 @@ function Navigation() {
 function AboutSection() {
   const features = [
     {
-      icon: <BrainIcon className="text-gammalex-purple" size={56} weight="regular" />,
+      icon: <Brain className="text-white" size={32} />, // Top-Tier LLMs for Healthcare
       title: "Top-Tier LLMs for Healthcare",
       description: "GammaLex leverages the latest large language models, fine-tuned for medical and legal data, ensuring accuracy and compliance for every payer and policy.",
     },
     {
-      icon: <Lightning className="text-gammalex-purple" size={56} weight="regular" />,
+      icon: <Zap className="text-white" size={32} />, // Accelerated Pre-Auth Decisions
       title: "Accelerated Pre-Auth Decisions",
       description: "AI-powered justifications and instant policy matching reduce delays, denials, and manual work for clinicians and legal teams.",
     },
     {
-      icon: <ShieldCheck className="text-gammalex-purple" size={56} weight="regular" />,
+      icon: <Shield className="text-white" size={32} />, // Built for Real-World Risk
       title: "Built for Real-World Risk",
       description: "GammaLex flags legal and clinical vulnerabilities before they become denials or liability, supporting faster, stronger appeals.",
     },
     {
-      icon: <UsersThree className="text-gammalex-purple" size={56} weight="regular" />,
+      icon: <User className="text-white" size={32} />, // Expert-Built, Always Evolving
       title: "Expert-Built, Always Evolving",
       description: "Our platform is built by AI researchers—constantly learning from new payer rules and real-world outcomes.",
     },
     {
-      icon: <ChartBar className="text-gammalex-purple" size={56} weight="regular" />,
+      icon: <BarChart2 className="text-white" size={32} />, // Highly Scalable & Reliable
       title: "Highly Scalable & Reliable",
       description: "From solo practices to health systems, GammaLex scales securely with 99.9% uptime and enterprise-grade compliance.",
     },
     {
-      icon: <Scales className="text-gammalex-purple" size={56} weight="regular" />,
+      icon: <Scale className="text-white" size={32} />, // Uniquely GammaLex
       title: "Uniquely GammaLex",
       description: "Purpose-built for the intersection of medicine, law, and policy—no other platform brings together clinical, legal, and payer expertise like GammaLex.",
     },
