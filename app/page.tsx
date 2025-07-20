@@ -98,36 +98,114 @@ export default function GammaLexPage() {
           {/* Why It Matters Subsection */}
           <div className="mb-24">
             <div className="flex flex-col lg:flex-row items-start justify-between mb-0 pb-0">
-              <div className="lg:w-1/3 mb-6 lg:mb-0">
+              <div className="lg:w-1/3 mb-8 lg:mb-0">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight">
                   Why It Matters
                 </h2>
               </div>
               <div className="lg:w-2/3 lg:pl-16">
-                <div className="glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300">
-                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-6 font-inter">
-                    Prior authorization isn't just paperwork — it's a leading cause of delayed care, denied coverage, and systemic harm across healthcare.
-                  </p>
-                  <ul className="text-lg sm:text-xl text-white/80 leading-[1.5] sm:leading-[1.6] mb-6 space-y-3 font-inter">
-                    <li className="flex items-start">
-                      <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
-                      <span><span className="text-gammalex-orange font-medium">92% of care delays</span> are tied to prior authorization problems, often driven by policy-based coverage denials that cause patients to abandon treatment and worsen health outcomes.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
-                      <span>Physicians and staff spend up to <span className="text-gammalex-orange font-medium">15 hours per week</span> wrangling prior auth requests, with many practices assigning full-time employees just to manage approvals.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gammalex-orange mr-3 animate-pulse">•</span>
-                      <span>The result: <span className="text-gammalex-orange font-medium">higher costs, overwhelmed clinicians</span>, and in some cases, <span className="text-gammalex-orange font-medium">serious adverse events or preventable hospitalizations</span> when care gets blocked.</span>
-                    </li>
-                  </ul>
-                  <p className="text-lg sm:text-xl text-white/90 leading-[1.5] sm:leading-[1.6] md:leading-[1.7] mb-4 font-inter">
-                    Fixing prior authorization means more than efficiency — it means <span className="text-gammalex-orange font-medium">restoring access to care</span>, <span className="text-gammalex-orange font-medium">reducing denied coverage</span>, and <span className="text-gammalex-orange font-medium">protecting patients and providers from legal and medical risk</span>.
-                  </p>
-                  <p className="text-sm text-white/60 font-normal">
-                    Source: <a href="https://www.ama-assn.org/practice-management/prior-authorization/fixing-prior-auth-nearly-40-prior-authorizations-week-way" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">AMA 2024 Prior Authorization Physician Survey</a>
-                  </p>
+                {/* Interactive Scrollable Experience */}
+                <div className="glass rounded-2xl border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 overflow-hidden">
+                  <div className="max-h-[700px] sm:max-h-[800px] overflow-y-auto custom-scrollbar">
+                    {/* Problem Statement */}
+                    <motion.div 
+                      className="p-8 sm:p-10 lg:p-12 border-b border-white/10"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-4 h-4 rounded-full bg-red-500 animate-pulse"></div>
+                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Crisis</h3>
+                      </div>
+                      <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter">
+                        Prior authorization isn't just paperwork — it's a leading cause of delayed care, denied coverage, and systemic harm across healthcare.
+                      </p>
+                    </motion.div>
+
+                    {/* Interactive Stats */}
+                    <div className="p-8 sm:p-10 lg:p-12 border-b border-white/10">
+                      <div className="flex items-center gap-4 mb-8">
+                        <div className="w-4 h-4 rounded-full bg-gammalex-orange animate-pulse"></div>
+                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Numbers</h3>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                        {[
+                          { stat: "92%", label: "of care delays", desc: "are tied to prior authorization problems" },
+                          { stat: "15", label: "hours per week", desc: "physicians spend on prior auth requests" },
+                          { stat: "78%", label: "of patients", desc: "abandon treatment due to PA barriers" },
+                          { stat: "43", label: "requests per week", desc: "average per physician" }
+                        ].map((item, index) => (
+                          <motion.div
+                            key={index}
+                            className="group cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            whileHover={{ scale: 1.02 }}
+                          >
+                            <div className="bg-white/5 rounded-xl p-6 sm:p-8 border border-white/10 group-hover:border-gammalex-orange/30 transition-all duration-300 min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
+                              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-2">{item.stat}</div>
+                              <div className="text-base sm:text-lg font-medium text-white/80 mb-2">{item.label}</div>
+                              <div className="text-sm sm:text-base text-white/60">{item.desc}</div>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Impact Stories */}
+                    <div className="p-8 sm:p-10 lg:p-12 border-b border-white/10">
+                      <div className="flex items-center gap-4 mb-8">
+                        <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
+                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Impact</h3>
+                      </div>
+                      <div className="space-y-6">
+                        {[
+                          "Higher costs and overwhelmed clinicians",
+                          "Serious adverse events when care gets blocked", 
+                          "Preventable hospitalizations due to delays",
+                          "Legal and medical risk for providers"
+                        ].map((impact, index) => (
+                          <motion.div
+                            key={index}
+                            className="flex items-start gap-4 group cursor-pointer"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            whileHover={{ x: 5 }}
+                          >
+                            <div className="w-3 h-3 rounded-full bg-gammalex-purple mt-3 group-hover:bg-gammalex-orange transition-colors flex-shrink-0"></div>
+                            <p className="text-lg sm:text-xl text-white/80 group-hover:text-white transition-colors font-inter leading-relaxed">{impact}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Solution Preview */}
+                    <motion.div 
+                      className="p-8 sm:p-10 lg:p-12 bg-gradient-to-r from-gammalex-purple/10 to-gammalex-orange/10"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-4 h-4 rounded-full bg-green-500 animate-pulse"></div>
+                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Solution</h3>
+                      </div>
+                      <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter mb-6">
+                        Fixing prior authorization means more than efficiency — it means <span className="text-gammalex-orange font-medium">restoring access to care</span>, <span className="text-gammalex-orange font-medium">reducing denied coverage</span>, and <span className="text-gammalex-orange font-medium">protecting patients and providers from legal and medical risk</span>.
+                      </p>
+                      <div className="flex items-center gap-2 text-sm sm:text-base text-white/60">
+                        <span>Source:</span>
+                        <a href="https://www.ama-assn.org/practice-management/prior-authorization/fixing-prior-auth-nearly-40-prior-authorizations-week-way" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">AMA 2024 Prior Authorization Physician Survey</a>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -365,7 +443,6 @@ export default function GammaLexPage() {
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
-                  <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
