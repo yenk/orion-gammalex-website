@@ -1113,12 +1113,12 @@ function SystemicRiskStats() {
       description: 'Despite billions in healthcare AI',
     },
     {
-      value: '<1%',
-      label: 'Denials are appealed',
-      description: 'Vast majority go unappealed by patients or providers',
+      value: '99%',
+      label: 'Appeals upheld for insurers',
+      description: 'Most appeals favor the insurer, not the patient',
     },
     {
-      value: '99%+',
+      value: '99%',
       label: 'Appeals upheld for insurers',
       description: 'Most appeals favor the insurer, not the patient',
     },
@@ -1144,10 +1144,6 @@ function SystemicRiskStats() {
     {
       title: "System Failure",
       stats: [stats[4], stats[5]],
-    },
-    {
-      title: "Appeal System",
-      stats: [stats[5], stats[6]],
     },
   ];
 
