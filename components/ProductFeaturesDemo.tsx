@@ -397,7 +397,9 @@ export function ProductFeaturesDemo() {
           </div>
         </div>
       </div>
-      <GammaLexInteractiveStepper />
+      <section id="gammalex-engine">
+        <GammaLexInteractiveStepper />
+      </section>
       {/* Flow Arrow */}
       <AnimatedMilestoneFlow />
     </section>
