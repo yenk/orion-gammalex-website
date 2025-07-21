@@ -207,9 +207,9 @@ export default function GammaLexPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
               >
-                <p className="text-xl sm:text-2xl md:text-3xl font-inter text-white/90 leading-relaxed text-center">
-                  To defend care—before it's questioned, delayed, or denied.
-                  </p>
+                                <p className="text-xl sm:text-2xl md:text-3xl font-inter text-white/90 leading-relaxed text-center">
+                  To build the first vertical AI engine that makes care equitable, explainable, and covered—by design, not by exception.
+                </p>
                     </motion.div>
                             </div>
                           </motion.div>
@@ -1165,143 +1165,226 @@ function GammaLexIllustration({ active }: { active: number }) {
 }
 
 function AboutSection() {
-  const values = [
-    {
-      title: "Democratizing Clinical and Legal Reasoning",
-      desc: "Making complex clinical and legal policies accessible and interpretable for all stakeholders.",
-      chat: [
-        { from: "user", text: "How do I justify this treatment for coverage?" },
-        { from: "ai", text: "GammaLex finds the right policy and legal language for you." }
+  const [activeTab, setActiveTab] = useState(0);
+  
+  const tabs = [
+    { id: "origin", label: "Our Origin", icon: <Target className="w-6 h-6" /> },
+    { id: "what-we-do", label: "What We Do", icon: <Zap className="w-6 h-6" /> },
+    { id: "what-sets-us-apart", label: "What Sets Us Apart", icon: <Star className="w-6 h-6" /> }
+  ];
+
+  const content = {
+    origin: {
+      title: "Born from the Front Lines",
+      subtitle: "Why should revenue and patient care hinge on a system no one can fully decode?",
+      description: "As physicians, attorneys, and technologists, we spent years fighting for approvals, watching innovation stall at the intersection of opaque payer algorithms and clinical intent. So, we built the engine we always wished existed. GammaLex fuses policy-aware AI with deep clinical and legal expertise to make reimbursement as precise—and defensible—as medicine itself.",
+      highlight: "We built the engine we always wished existed."
+    },
+    "what-we-do": {
+      title: "What We Do",
+      subtitle: "Three core capabilities that transform healthcare delivery",
+      items: [
+        {
+          icon: <FileText className="w-8 h-8 text-gammalex-purple" />,
+          title: "Translate & Automate",
+          description: "Translate fragmented medical records, payer criteria, and legal standards into actionable, machine-interpreted data—automating the creation of bulletproof, source-backed documentation at pre-auth and appeal."
+        },
+        {
+          icon: <Shield className="w-8 h-8 text-gammalex-orange" />,
+          title: "Predict & Protect",
+          description: "Deliver real-time denial risk prediction and compliance surveillance, cutting waste and unlocking revenue otherwise lost to administrative deadlock."
+        },
+        {
+          icon: <Brain className="w-8 h-8 text-gammalex-purple" />,
+          title: "Learn & Adapt",
+          description: "Continuously update our intelligence stack with the latest rules and legal guidance, ensuring health systems are never caught off-guard."
+        }
       ]
     },
-    {
-      title: "Transparent Decision Making",
-      desc: "Every decision is source-backed and auditable.",
-      chat: [
-        { from: "user", text: "Why was this denied?" },
-        { from: "ai", text: "Here's the exact guideline and audit trail." }
-      ]
-    },
-    {
-      title: "Protecting More Care",
-      desc: "Prevent denials before they happen.",
-      chat: [
-        { from: "user", text: "Will this get denied?" },
-        { from: "ai", text: "GammaLex flags risks and suggests fixes before you submit." }
+    "what-sets-us-apart": {
+      title: "What Sets Us Apart",
+      subtitle: "The GammaLex difference",
+      items: [
+        {
+          icon: <Users className="w-8 h-8 text-gammalex-orange" />,
+          title: "Founder-Led Team",
+          description: "Founder-led team with a bias for truth, transparency, and solving problems others ignore."
+        },
+        {
+          icon: <Eye className="w-8 h-8 text-gammalex-purple" />,
+          title: "Relentless Pursuit",
+          description: "Relentless pursuit of market leverage—leveraging open, auditable models that regulators, payers, and providers trust."
+        },
+        {
+          icon: <Heart className="w-8 h-8 text-gammalex-orange" />,
+          title: "Dedicated to Impact",
+          description: "Dedicated to impact: Our north star is restoring billions in lost revenue and, more importantly, patient access to life-changing care."
+        }
       ]
     }
-  ];
-  const [active, setActive] = useState(0);
+  };
+
   return (
     <section id="about" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 font-inter relative bg-gradient-to-br from-black/30 via-purple-900/10 to-black/30">
-      <div className="max-w-4xl mx-auto flex flex-col items-center text-center mb-16">
-        <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter font-normal text-center leading-tight mb-6 sm:mb-8 px-2">
-          <span className="multi-gradient-text">Defensible care</span>, by design.
-        </h2>
-        <p className="text-xl sm:text-2xl text-white/90 font-inter mb-6 max-w-2xl leading-relaxed">
-          At GammaLex, we believe the future of care is transparent, accountable, and built on trust.
-        </p>
-        <p className="text-xl sm:text-2xl font-bold text-gammalex-orange font-inter mb-10 max-w-2xl leading-relaxed">
-          "Is this covered—and can we prove it?"
-        </p>
-        <div className="flex flex-col sm:flex-row gap-8 w-full justify-center items-stretch mb-10">
-          {[
-            {
-              icon: <Scale className="w-10 h-10 text-gammalex-orange" />,
-              title: "Vertical AI for care delivery",
-              desc: "Born from real-world experience in utilization management, medical policy, and regulatory strategy."
-            },
-            {
-              icon: <Eye className="w-10 h-10 text-gammalex-purple" />,
-              title: "Clarity and foresight",
-              desc: "We translate complex payer rules into clear, actionable logic—and flag risk before it becomes a denial."
-            },
-            {
-              icon: <Brain className="w-10 h-10 text-gammalex-orange" />,
-              title: "Transparent, source-backed explanations",
-              desc: "Every decision is defensible, ethical, and policy-aligned—so you can focus on what matters most: care."
-            }
-          ].map((item, i) => (
-            <motion.div
-              key={item.title}
-              className="flex-1 bg-white/5 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:scale-105 transition-all min-w-[220px]"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="mb-4">{item.icon}</div>
-              <div className="text-lg sm:text-xl font-bold text-white mb-2">{item.title}</div>
-              <div className="text-base sm:text-lg text-white/80">{item.desc}</div>
-            </motion.div>
-          ))}
-              </div>
-        <p className="text-base sm:text-lg text-white/80 font-inter max-w-2xl leading-relaxed mt-4">
-          Built from real-world experience in utilization management, medical policy, and regulatory strategy, GammaLex introduces vertical AI purpose-built for care delivery.
-        </p>
-              </div>
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-20 relative z-10">
-        {/* Left: Accordion/Tab List */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
-          <motion.h2 
-            className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center lg:text-left leading-tight mb-8 px-2 hidden"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            GammaLex is advancing a more <span className="gradient-text">equitable, transparent</span> healthcare system.
-          </motion.h2>
-          <div className="w-full max-w-xl">
-            {values.map((v, i) => (
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Hero Section */}
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter font-normal text-center leading-tight mb-8 px-2">
+            <span className="multi-gradient-text">Defensible care</span>, by design.
+          </h2>
+          <p className="text-xl sm:text-2xl text-white/90 font-inter mb-8 max-w-4xl mx-auto leading-relaxed">
+            We're building GammaLex not just for operational efficiency, but to reset the rules of the game—one where technological clarity and legal defensibility are the default, not the exception.
+          </p>
+        </motion.div>
+
+        {/* Interactive Tab Navigation */}
+        <motion.div 
+          className="flex justify-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex bg-white/5 rounded-2xl p-2 border border-white/10">
+            {tabs.map((tab, index) => (
               <button
-                key={v.title}
-                className={`w-full text-left rounded-2xl px-6 py-5 mb-4 transition-all duration-200 font-inter shadow-sm border-2 focus:outline-none ${active === i ? 'bg-gammalex-purple/10 border-gammalex-orange text-gammalex-orange' : 'bg-white/5 border-white/10 text-white/90 hover:bg-gammalex-purple/5'}`}
-                onClick={() => setActive(i)}
-                aria-expanded={active === i}
-                aria-controls={`about-panel-${i}`}
+                key={tab.id}
+                onClick={() => setActiveTab(index)}
+                className={`flex items-center gap-3 px-6 py-3 rounded-xl font-inter font-medium transition-all duration-300 ${
+                  activeTab === index 
+                    ? 'bg-gammalex-purple/20 text-gammalex-orange border border-gammalex-purple/30' 
+                    : 'text-white/70 hover:text-white hover:bg-white/5'
+                }`}
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl font-bold font-inter">{v.title}</span>
-                  <span className={`ml-auto transition-transform ${active === i ? 'rotate-180' : ''}`}>↑</span>
-              </div>
-                {active === i && (
-                  <motion.div
-                    id={`about-panel-${i}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="mt-2 text-base sm:text-lg text-white/80"
-                  >
-                    {v.desc}
-            </motion.div>
-                )}
+                {tab.icon}
+                {tab.label}
               </button>
             ))}
           </div>
-        </div>
-        {/* Right: Illustration/Animation + Chat UI */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
-          <GammaLexIllustration active={active} />
-          <div className="mt-6 w-full max-w-md">
-            <div className="bg-white/5 rounded-2xl p-4 flex flex-col gap-3">
-              <AnimatePresence initial={false} mode="wait">
-                {values[active].chat.map((msg, idx) => (
-                  <motion.div
-                    key={msg.text}
-                    initial={{ opacity: 0, x: msg.from === 'ai' ? 30 : -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: msg.from === 'ai' ? 30 : -30 }}
-                    transition={{ duration: 0.3, delay: idx * 0.1 }}
-                    className={`flex ${msg.from === 'ai' ? 'justify-end' : 'justify-start'}`}
-                  >
-                    <span className={`inline-block px-4 py-2 rounded-xl font-inter text-base sm:text-lg ${msg.from === 'ai' ? 'bg-gammalex-orange/80 text-white ml-8' : 'bg-white/20 text-white mr-8'}`}>{msg.text}</span>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
+        </motion.div>
+
+        {/* Content Area */}
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="min-h-[400px]"
+        >
+          {activeTab === 0 && (
+            <motion.div 
+              className="text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                {content.origin.title}
+              </h3>
+              <p className="text-xl sm:text-2xl text-gammalex-orange font-semibold mb-8">
+                {content.origin.subtitle}
+              </p>
+              <div className="glass rounded-3xl p-8 border border-white/10 mb-8">
+                <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-6">
+                  {content.origin.description}
+                </p>
+                <div className="bg-gradient-to-r from-gammalex-purple/20 to-gammalex-orange/20 rounded-2xl p-6 border border-gammalex-purple/30">
+                  <p className="text-xl sm:text-2xl font-bold text-gammalex-orange">
+                    "{content.origin.highlight}"
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {activeTab === 1 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-center mb-12">
+                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                  {content["what-we-do"].title}
+                </h3>
+                <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                  {content["what-we-do"].subtitle}
+                </p>
+              </div>
+                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                 {content["what-we-do"].items.map((item, index) => (
+                   <motion.div
+                     key={index}
+                     className="glass rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group min-h-[280px] lg:min-h-[320px]"
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                     whileHover={{ y: -4 }}
+                   >
+                     <div className="flex items-center gap-4 mb-8">
+                       <div className="p-4 lg:p-5 rounded-xl bg-white/5 group-hover:bg-gammalex-purple/10 transition-colors">
+                         {item.icon}
+                       </div>
+                       <h4 className="text-2xl lg:text-3xl font-bold text-gammalex-purple group-hover:text-gammalex-orange transition-colors">
+                         {item.title}
+                       </h4>
+                     </div>
+                     <p className="text-lg lg:text-xl text-white/80 leading-relaxed">
+                       {item.description}
+                     </p>
+                   </motion.div>
+                 ))}
+               </div>
+            </motion.div>
+          )}
+
+          {activeTab === 2 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-center mb-12">
+                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                  {content["what-sets-us-apart"].title}
+                </h3>
+                <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                  {content["what-sets-us-apart"].subtitle}
+                </p>
+              </div>
+                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                 {content["what-sets-us-apart"].items.map((item, index) => (
+                   <motion.div
+                     key={index}
+                     className="glass rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group min-h-[280px] lg:min-h-[320px]"
+                     initial={{ opacity: 0, y: 20 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ duration: 0.5, delay: index * 0.1 }}
+                     whileHover={{ y: -4 }}
+                   >
+                     <div className="flex items-center gap-4 mb-8">
+                       <div className="p-4 lg:p-5 rounded-xl bg-white/5 group-hover:bg-gammalex-purple/10 transition-colors">
+                         {item.icon}
+                       </div>
+                       <h4 className="text-2xl lg:text-3xl font-bold text-gammalex-purple group-hover:text-gammalex-orange transition-colors">
+                         {item.title}
+                       </h4>
+                     </div>
+                     <p className="text-lg lg:text-xl text-white/80 leading-relaxed">
+                       {item.description}
+                     </p>
+                   </motion.div>
+                 ))}
+               </div>
+            </motion.div>
+          )}
+        </motion.div>
       </div>
     </section>
   );
