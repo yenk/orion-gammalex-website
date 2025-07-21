@@ -93,6 +93,211 @@ export default function GammaLexPage() {
       {/* Legal Heat Index Section (When denials become lawsuits) */}
       <LegalHeatIndex />
 
+      {/* The Mission Section */}
+      <section id="the-mission" className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter relative">
+        {/* Background elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-purple-900/20 to-black/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(139,92,246,0.1),transparent_50%)] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Main Heading */}
+          <motion.div 
+            className="text-center mb-16 sm:mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter font-normal text-white text-center leading-tight mb-6">
+              The <span className="gradient-text">Mission</span>
+            </h2>
+            <p className="text-xl sm:text-2xl md:text-3xl font-inter text-white/90 text-center max-w-4xl mx-auto leading-relaxed">
+              To defend care—before it's questioned, delayed, or denied.
+            </p>
+          </motion.div>
+
+          {/* Mission Statement Card */}
+          <motion.div 
+            className="glass rounded-3xl p-8 sm:p-12 mb-16 border border-white/10"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-lg sm:text-xl md:text-2xl font-inter text-white/90 leading-relaxed text-center">
+              GammaLex is the first vertical AI built to unite clinical precision with legal rigor. We bring real-time, source-backed intelligence to every frontline decision—eliminating pre-auth bottlenecks, guiding ethically sound care, and protecting providers with policy-aligned, defensible logic.
+            </p>
+          </motion.div>
+
+          {/* Core Capabilities Grid */}
+          <motion.div 
+            className="mb-16 sm:mb-20"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-inter font-normal text-white text-center mb-12">
+              Core <span className="gradient-text">Capabilities</span>
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {/* Capability Cards */}
+              <motion.div 
+                className="glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group"
+                whileHover={{ y: -4 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gammalex-purple/20 flex items-center justify-center group-hover:bg-gammalex-purple/30 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gammalex-purple">
+                      <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-white group-hover:text-gammalex-purple transition-colors">
+                    Instant Policy Intelligence
+                  </h4>
+                </div>
+                <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                  Real-time answers to complex clinical and legal questions, precisely matched to payer rules and coverage policies—with transparent, source-backed accuracy.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group"
+                whileHover={{ y: -4 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gammalex-purple/20 flex items-center justify-center group-hover:bg-gammalex-purple/30 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gammalex-purple">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-white group-hover:text-gammalex-purple transition-colors">
+                    Proactive Denial & Risk Defense
+                  </h4>
+                </div>
+                <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                  Automated risk scoring and legal foresight flag denial, compliance, and litigation risks before they affect patient care or finances—empowering smarter, faster decisions.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group"
+                whileHover={{ y: -4 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gammalex-purple/20 flex items-center justify-center group-hover:bg-gammalex-purple/30 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gammalex-purple">
+                      <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-white group-hover:text-gammalex-purple transition-colors">
+                    Frictionless Compliance & Ethics
+                  </h4>
+                </div>
+                <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                  Embedded compliance checks and ethical standards ensure documentation is bulletproof and every recommendation prioritizes both regulatory and ethical care for patients.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group"
+                whileHover={{ y: -4 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gammalex-purple/20 flex items-center justify-center group-hover:bg-gammalex-purple/30 transition-colors">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gammalex-purple">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-white group-hover:text-gammalex-purple transition-colors">
+                    Enterprise-Grade Security & Vulnerability Monitoring
+                  </h4>
+                </div>
+                <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                  SOC 2 and HIPAA compliance with advanced, continuous vulnerability checks—protecting sensitive data, detecting system risks in real time, and ensuring ironclad trust at scale.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Three Pillars Section */}
+          <motion.div 
+            className="mb-16 sm:mb-20"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-inter font-normal text-white text-center mb-12">
+              The Three <span className="gradient-text">Pillars</span>
+            </h3>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+              {[
+                { title: "Medicine", description: "Clinical expertise and medical knowledge", icon: "🏥" },
+                { title: "Law", description: "Legal compliance and regulatory understanding", icon: "⚖️" },
+                { title: "Policy", description: "Payer policies and coverage requirements", icon: "📋" }
+              ].map((pillar, index) => (
+                <motion.div 
+                  key={pillar.title}
+                  className="glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group text-center"
+                  whileHover={{ y: -4 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="text-4xl sm:text-5xl mb-4">{pillar.icon}</div>
+                  <h4 className="text-xl sm:text-2xl font-bold text-white group-hover:text-gammalex-purple transition-colors mb-2">
+                    {pillar.title}
+                  </h4>
+                  <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* The Promise Section */}
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-inter font-normal text-white text-center mb-6">
+              The <span className="gradient-text">Promise</span>
+            </h3>
+            <div className="glass rounded-3xl p-8 sm:p-12 border border-white/10 max-w-4xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl font-inter text-white/90 leading-relaxed">
+                By bridging medicine, law, and policy, GammaLex protects all three sides of the care equation — ensuring care is delivered, not denied.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Legal Foresight Bridge Section (From legal risk to legal foresight) */}
       <section id="predict-protect" className="w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 font-inter relative">
         {/* Futuristic background elements */}
@@ -180,332 +385,12 @@ export default function GammaLexPage() {
           
           {/* Anchor: What We Do */}
           <div id="what-we-do" className="absolute -top-32" aria-hidden="true" />
-          {/* Main Section Heading */}
-          <div className="text-center mb-20">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-inter font-normal text-white leading-tight mb-6">
-              Because real pre-auth decisions live at the <span className="gradient-text">intersection of medicine, policy, and law</span>
-            </h1>
-          </div>
 
           {/* Anchor: Problems We Solve */}
           <div id="problems-we-solve" className="absolute -top-32" aria-hidden="true" />
-          {/* Why It Matters Subsection */}
-          <div className="mb-24">
-            <div className="flex flex-col lg:flex-row items-start justify-between mb-0 pb-0">
-              <div className="lg:w-1/3 mb-8 lg:mb-0">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight">
-                  Why It Matters
-                </h2>
-              </div>
-              <div className="lg:w-2/3 lg:pl-16">
-                {/* Interactive Scrollable Experience */}
-                <div className="glass rounded-2xl border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 overflow-hidden">
-                  <div className="max-h-[700px] sm:max-h-[800px] overflow-y-auto custom-scrollbar">
-                    {/* Problem Statement */}
-                    <motion.div 
-                      className="p-8 sm:p-10 lg:p-12 border-b border-white/10"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-4 h-4 rounded-full bg-red-500 animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Crisis</h3>
-                      </div>
-                      <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter">
-                    Prior authorization isn't just paperwork — it's a leading cause of delayed care, denied coverage, and systemic harm across healthcare.
-                  </p>
-                    </motion.div>
-
-                    {/* Interactive Stats */}
-                    <div className="p-8 sm:p-10 lg:p-12 border-b border-white/10">
-                      <div className="flex items-center gap-4 mb-8">
-                        <div className="w-4 h-4 rounded-full bg-gammalex-orange animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Numbers</h3>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-                        {[
-                          { stat: "92%", label: "of care delays", desc: "are tied to prior authorization problems" },
-                          { stat: "15", label: "hours per week", desc: "physicians spend on prior auth requests" },
-                          { stat: "78%", label: "of patients", desc: "abandon treatment due to PA barriers" },
-                          { stat: "43", label: "requests per week", desc: "average per physician" }
-                        ].map((item, index) => (
-                          <motion.div
-                            key={index}
-                            className="group cursor-pointer"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ scale: 1.02 }}
-                          >
-                            <div className="bg-white/5 rounded-xl p-6 sm:p-8 border border-white/10 group-hover:border-gammalex-orange/30 transition-all duration-300 min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
-                              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-2">{item.stat}</div>
-                              <div className="text-base sm:text-lg font-medium text-white/80 mb-2">{item.label}</div>
-                              <div className="text-sm sm:text-base text-white/60">{item.desc}</div>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Impact Stories */}
-                    <div className="p-8 sm:p-10 lg:p-12 border-b border-white/10">
-                      <div className="flex items-center gap-4 mb-8">
-                        <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Impact</h3>
-                      </div>
-                      <div className="space-y-6">
-                        {[
-                          "Higher costs and overwhelmed clinicians",
-                          "Serious adverse events when care gets blocked", 
-                          "Preventable hospitalizations due to delays",
-                          "Legal and medical risk for providers"
-                        ].map((impact, index) => (
-                          <motion.div
-                            key={index}
-                            className="flex items-start gap-4 group cursor-pointer"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ x: 5 }}
-                          >
-                            <div className="w-3 h-3 rounded-full bg-gammalex-purple mt-3 group-hover:bg-gammalex-orange transition-colors flex-shrink-0"></div>
-                            <p className="text-lg sm:text-xl text-white/80 group-hover:text-white transition-colors font-inter leading-relaxed">{impact}</p>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Solution Preview */}
-                    <motion.div 
-                      className="p-8 sm:p-10 lg:p-12 bg-gradient-to-r from-gammalex-purple/10 to-gammalex-orange/10"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-4 h-4 rounded-full bg-green-500 animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Solution</h3>
-                      </div>
-                      <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter mb-6">
-                    Fixing prior authorization means more than efficiency — it means <span className="text-gammalex-orange font-medium">restoring access to care</span>, <span className="text-gammalex-orange font-medium">reducing denied coverage</span>, and <span className="text-gammalex-orange font-medium">protecting patients and providers from legal and medical risk</span>.
-                  </p>
-                      <div className="flex items-center gap-2 text-sm sm:text-base text-white/60">
-                        <span>Source:</span>
-                        <a href="https://www.ama-assn.org/practice-management/prior-authorization/fixing-prior-auth-nearly-40-prior-authorizations-week-way" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">AMA 2024 Prior Authorization Physician Survey</a>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Anchor: How We Do It */}
           <div id="how-we-do-it" className="absolute -top-32" aria-hidden="true" />
-          {/* Why We Win Subsection */}
-          <div className="mb-24">
-            <div className="flex flex-col lg:flex-row items-start justify-between mb-16 pb-8 border-b border-white/20">
-              <div className="lg:w-1/3 mb-8 lg:mb-0">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight">
-                  Why We Win
-                </h2>
-              </div>
-              <div className="lg:w-2/3 lg:pl-16">
-                {/* Interactive Scrollable Experience */}
-                <div className="glass rounded-2xl border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 overflow-hidden">
-                  <div className="max-h-[700px] sm:max-h-[800px] overflow-y-auto custom-scrollbar">
-                    {/* Mission Statement */}
-                    <motion.div 
-                      className="p-8 sm:p-10 lg:p-12 border-b border-white/10"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Mission</h3>
-                      </div>
-                      <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter mb-6">
-                        To defend care—before it's questioned, delayed, or denied.
-                  </p>
-                      <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter">
-                        GammaLex is the first vertical AI built to unite clinical precision with legal rigor. We bring real-time, source-backed intelligence to every frontline decision—eliminating pre-auth bottlenecks, guiding ethically sound care, and protecting providers with policy-aligned, defensible logic.
-                  </p>
-                    </motion.div>
-
-                    {/* Core Capabilities */}
-                    <div className="p-8 sm:p-10 lg:p-12 border-b border-white/10">
-                      <div className="flex items-center gap-4 mb-8">
-                        <div className="w-4 h-4 rounded-full bg-gammalex-orange animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">Core Capabilities</h3>
-                </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-                        {[
-                          { 
-                            title: "Instant Policy Intelligence", 
-                            desc: "Real-time answers to complex clinical and legal questions, precisely matched to payer rules and coverage policies—with transparent, source-backed accuracy.",
-                            icon: <Brain size={32} />
-                          },
-                          { 
-                            title: "Proactive Denial & Risk Defense", 
-                            desc: "Automated risk scoring and legal foresight flag denial, compliance, and litigation risks before they affect patient care or finances—empowering smarter, faster decisions.",
-                            icon: <Shield size={32} />
-                          },
-                          { 
-                            title: "Frictionless Compliance & Ethics", 
-                            desc: "Embedded compliance checks and ethical standards ensure documentation is bulletproof and every recommendation prioritizes both regulatory and ethical care for patients.",
-                            icon: <Scale size={32} />
-                          },
-                          { 
-                            title: "Enterprise-Grade Security & Vulnerability Monitoring", 
-                            desc: "SOC 2 and HIPAA compliance with advanced, continuous vulnerability checks—protecting sensitive data, detecting system risks in real time, and ensuring ironclad trust at scale.",
-                            icon: <Lock size={32} />
-                          }
-                        ].map((capability, index) => (
-                          <motion.div
-                            key={index}
-                            className="group cursor-pointer"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ scale: 1.02 }}
-                          >
-                            <div className="bg-white/5 rounded-xl p-6 sm:p-8 border border-white/10 group-hover:border-gammalex-orange/30 transition-all duration-300 min-h-[140px] sm:min-h-[160px] flex flex-col justify-center">
-                              <div className="text-gammalex-orange mb-3 group-hover:text-gammalex-orange-light transition-colors">
-                                {capability.icon}
-                              </div>
-                              <div className="text-lg sm:text-xl font-bold text-gammalex-orange mb-2">{capability.title}</div>
-                              <div className="text-sm sm:text-base text-white/70 leading-relaxed">{capability.desc}</div>
-                            </div>
-                          </motion.div>
-                        ))}
-              </div>
-            </div>
-
-                    {/* Three Pillars */}
-                    <div className="p-8 sm:p-10 lg:p-12 border-b border-white/10">
-                      <div className="flex items-center gap-4 mb-8">
-                        <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Three Pillars</h3>
-                  </div>
-                      <div className="space-y-6">
-                        {[
-                          { pillar: "Medicine", desc: "Clinical expertise and medical knowledge" },
-                          { pillar: "Law", desc: "Legal compliance and regulatory understanding" },
-                          { pillar: "Policy", desc: "Payer policies and coverage requirements" }
-                        ].map((item, index) => (
-                          <motion.div
-                            key={index}
-                            className="flex items-start gap-4 group cursor-pointer"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ x: 5 }}
-                          >
-                            <div className="w-3 h-3 rounded-full bg-gammalex-purple mt-3 group-hover:bg-gammalex-orange transition-colors flex-shrink-0"></div>
-                            <div className="flex-1">
-                              <div className="text-lg sm:text-xl font-bold text-gammalex-orange mb-1">{item.pillar}</div>
-                              <div className="text-base sm:text-lg text-white/80 group-hover:text-white transition-colors font-inter leading-relaxed">{item.desc}</div>
-                  </div>
-                          </motion.div>
-                        ))}
-                  </div>
-                  </div>
-
-                    {/* Value Proposition */}
-                    <motion.div 
-                      className="p-8 sm:p-10 lg:p-12 bg-gradient-to-r from-gammalex-purple/10 to-gammalex-orange/10"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="w-4 h-4 rounded-full bg-green-500 animate-pulse"></div>
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-white font-inter">The Promise</h3>
-                  </div>
-                      <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter">
-                        By bridging <span className="text-gammalex-orange font-medium">medicine, law, and policy</span>, GammaLex protects all three sides of the care equation — ensuring care is delivered, not denied.
-                      </p>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            {/* What Makes Us Different Section */}
-            <div className="my-20">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight mb-4">
-                  What Makes Us <span className="gradient-text">Different</span>
-                </h3>
-                <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-[1.5] sm:leading-[1.6] px-4 sm:px-0">
-                  Built on transparency, policy-aware precision, and open innovation.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <motion.div 
-                  className="group glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/50 hover:shadow-lg hover-glow transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
-                      <Eye className="w-6 h-6 text-gammalex-purple" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Transparent Policy Intelligence</h4>
-                  </div>
-                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">Users can see which payer policies, coverage rules, and medical guidelines inform GammaLex's predictions — ensuring explainable AI, regulatory alignment, and stakeholder trust.</p>
-                </motion.div>
-
-                <motion.div 
-                  className="group glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/50 hover:shadow-lg hover-glow transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
-                      <Target className="w-6 h-6 text-gammalex-purple" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Payer-Specific Coverage Prediction</h4>
-                  </div>
-                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">GammaLex is fine-tuned on real-world, payer-specific coverage criteria (e.g., Aetna, Cigna, Medicare LCDs), enabling accurate, policy-aligned denial prediction and actionable insights for coverage justification and litigation avoidance.</p>
-                </motion.div>
-
-                <motion.div 
-                  className="group glass rounded-2xl p-8 border border-white/10 hover:border-gammalex-purple/50 hover:shadow-lg hover-glow transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gammalex-purple/20 to-gammalex-purple/10 flex items-center justify-center group-hover:from-gammalex-purple/30 group-hover:to-gammalex-purple/20 transition-all">
-                      <Code2 className="w-6 h-6 text-gammalex-purple" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-bold font-inter group-hover:text-gammalex-purple-light transition-colors">Open-Source Ethos</h4>
-                  </div>
-                  <p className="text-base sm:text-lg md:text-xl font-inter text-white/80 leading-relaxed">GammaLex champions open models and open data — combining public medical datasets, legal sources, and transparent logic chains to stand apart from black-box systems that obscure the basis for coverage decisions.</p>
-                </motion.div>
-              </div>
-            </div>
 
           {/* Core Values Row */}
           <section id="core-values" className="w-full py-20 px-4 sm:px-8 bg-gradient-to-br from-[#1a102a] via-[#2d1850] to-[#1a102a] rounded-3xl shadow-2xl border border-gammalex-purple/40 mb-16 relative overflow-hidden font-inter">
@@ -787,9 +672,6 @@ export default function GammaLexPage() {
         </div>
       </section>
 
-      {/* The Problem Stat Strips Section */}
-      <SystemicRiskStats />
-
       <div className="w-full bg-sage-50 border-b border-sage-100">
         <ProductFeaturesDemo />
       </div>
@@ -930,27 +812,37 @@ function Navigation() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   // Separate dropdown state for each nav item
+  const [isWhyGammalexDropdownOpen, setIsWhyGammalexDropdownOpen] = useState(false);
   const [isWhatWereSolvingDropdownOpen, setIsWhatWereSolvingDropdownOpen] = useState(false);
   const [isWhyWeWinDropdownOpen, setWhyWeWinDropdownOpen] = useState(false);
 
   const navItems = [
-    { id: "why-gammalex", label: "WHY GAMMALEX" },
+    { id: "why-gammalex", label: "WHY GAMMALEX", hasDropdown: true },
     { id: "problems-we-solve", label: "WHAT WE'RE SOLVING", hasDropdown: true },
     { id: "how-we-do-it", label: "WHY WE WIN", hasDropdown: true },
-    { id: "product", label: "SOLUTION" },
+    { id: "product", label: "THE GAMMALEX METHOD", hasDropdown: true },
     { id: "about", label: "ABOUT" },
     { id: "join", label: "PARTNER WITH US" },
   ];
 
+  const whyGammalexDropdown = [
+    { id: "the-mission", label: "The Mission", description: "Defending care before it's questioned or denied" },
+  ];
+
   const whatWereSolvingDropdown = [
-    { id: "crisis-numbers", label: "Why Prior Authorization is a Crisis" },
-    { id: "systemic-risk-stats", label: "Denials are a financial crisis" },
-    { id: "legal-heat-index", label: "When denials become lawsuits" },
+    { id: "crisis-numbers", label: "The Hidden Crisis in Care", description: "Why prior authorization breaks the system" },
+    { id: "systemic-risk-stats", label: "Proof of a Broken System", description: "Financial impact of accelerating denials" },
+    { id: "legal-heat-index", label: "From Denial to Courtroom", description: "How denials turn into lawsuits" },
+  ];
+
+  const gammalexMethodDropdown = [
+    { id: "product", label: "End-to-End AI in Action", description: "How GammaLex unifies clinical, legal, and compliance intelligence" },
+    { id: "purpose-built-ai", label: "Inside the GammaLex Engine", description: "Source-grounded models for real-world care and coverage" },
   ];
 
   const dropdownItems = [
     { id: "core-values", label: "What We Stand For", description: "Transparency, accuracy, and open innovation" },
-    { id: "automation-alignment", label: "Our Edge", description: "Beyond automation. Beyond compliance." },
+    { id: "automation-alignment", label: "Built Different", description: "Beyond automation. Beyond compliance." },
     { id: "predict-protect", label: "Protect What Matters", description: "Defending care before it's questioned or denied" },
     { id: "forge-ai-frontier", label: "Our Vertical AI", description: "Vertical AI pioneer at the intersection of clinical and legal" },
   ];
@@ -1018,12 +910,16 @@ function Navigation() {
                       <div
                         className="relative"
                         onMouseEnter={() => {
+                          if (item.id === 'why-gammalex') setIsWhyGammalexDropdownOpen(true);
                           if (item.id === 'problems-we-solve') setIsWhatWereSolvingDropdownOpen(true);
                           if (item.id === 'how-we-do-it') setWhyWeWinDropdownOpen(true);
+                          if (item.id === 'product') setDropdownOpen(true);
                         }}
                         onMouseLeave={() => {
+                          if (item.id === 'why-gammalex') setIsWhyGammalexDropdownOpen(false);
                           if (item.id === 'problems-we-solve') setIsWhatWereSolvingDropdownOpen(false);
                           if (item.id === 'how-we-do-it') setWhyWeWinDropdownOpen(false);
+                          if (item.id === 'product') setDropdownOpen(false);
                         }}
                       >
                   <motion.button
@@ -1033,7 +929,7 @@ function Navigation() {
                         >
                           {item.label}
                           <motion.div
-                            animate={{ rotate: (item.id === 'problems-we-solve' ? isWhatWereSolvingDropdownOpen : isWhyWeWinDropdownOpen) ? 180 : 0 }}
+                            animate={{ rotate: (item.id === 'why-gammalex' ? isWhyGammalexDropdownOpen : item.id === 'problems-we-solve' ? isWhatWereSolvingDropdownOpen : isWhyWeWinDropdownOpen) ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
                           >
                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -1059,11 +955,63 @@ function Navigation() {
                                       scrollToSection(dropdownItem.id)
                                       setIsWhatWereSolvingDropdownOpen(false)
                                     }}
-                                    className="w-full flex items-center justify-between text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                                    className="w-full text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                                     whileHover={{ x: 4 }}
                                   >
-                                    <span className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">{dropdownItem.label}</span>
-                                    <span className="text-white/40 group-hover:text-gammalex-orange transition-colors">▶</span>
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex-1">
+                                        <div className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">
+                                          {dropdownItem.label}
+                                        </div>
+                                        <div className="text-white/60 text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                          {dropdownItem.description}
+                                        </div>
+                                      </div>
+                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                          <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </motion.button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                          {item.id === 'why-gammalex' && isWhyGammalexDropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                            >
+                              <div className="p-4 space-y-2">
+                                {whyGammalexDropdown.map((dropdownItem) => (
+                                  <motion.button
+                                    key={dropdownItem.id}
+                                    onClick={() => {
+                                      scrollToSection(dropdownItem.id)
+                                      setIsWhyGammalexDropdownOpen(false)
+                                    }}
+                                    className="w-full text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                                    whileHover={{ x: 4 }}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex-1">
+                                        <div className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">
+                                          {dropdownItem.label}
+                                        </div>
+                                        <div className="text-white/60 text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                          {dropdownItem.description}
+                                        </div>
+                                      </div>
+                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                          <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </motion.button>
                                 ))}
                               </div>
@@ -1084,6 +1032,45 @@ function Navigation() {
                                     onClick={() => {
                                       scrollToSection(dropdownItem.id)
                                       setWhyWeWinDropdownOpen(false)
+                                    }}
+                                    className="w-full text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                                    whileHover={{ x: 4 }}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex-1">
+                                        <div className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">
+                                          {dropdownItem.label}
+                                        </div>
+                                        <div className="text-white/60 text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                          {dropdownItem.description}
+                                        </div>
+                                      </div>
+                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                          <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </motion.button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                          {item.id === 'product' && dropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                            >
+                              <div className="p-4 space-y-2">
+                                {gammalexMethodDropdown.map((dropdownItem) => (
+                                  <motion.button
+                                    key={dropdownItem.id}
+                                    onClick={() => {
+                                      scrollToSection(dropdownItem.id)
+                                      setDropdownOpen(false)
                                     }}
                                     className="w-full text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                                     whileHover={{ x: 4 }}
