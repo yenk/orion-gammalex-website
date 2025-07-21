@@ -341,7 +341,7 @@ export default function GammaLexPage() {
                   </div>
           </motion.div>
 
-          {/* The Promise - Floating Statement */}
+          {/* What GammaLex Delivers - Floating Statement */}
                     <motion.div 
             className="text-center"
             initial={{ opacity: 0, y: 40 }}
@@ -350,7 +350,7 @@ export default function GammaLexPage() {
                       viewport={{ once: true }}
                     >
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-inter font-normal text-white text-center mb-8">
-              The <span className="gradient-text">Promise</span>
+              What <span className="gradient-text">GammaLex Delivers</span>
             </h3>
             <motion.div 
               className="glass rounded-3xl p-8 sm:p-12 border border-white/10 max-w-4xl mx-auto relative overflow-hidden"
@@ -1218,7 +1218,7 @@ function AboutSection() {
         {
           icon: <Heart className="w-8 h-8 text-gammalex-orange" />,
           title: "Dedicated to Impact",
-          description: "Dedicated to impact: Our north star is restoring billions in lost revenue and, more importantly, patient access to life-changing care."
+          description: "Our north star is restoring billions in lost revenue and, more importantly, patient access to life-changing care."
         }
       ]
     }
