@@ -118,7 +118,7 @@ export default function GammaLexPage() {
               From <span className="gradient-text">legal risk</span> to <span className="gradient-text">legal foresight</span>
             </h2>
             <AnimatedText
-              text="Lawsuits show the pattern: denials become liability when clinical evidence or policy coverage is ignored. GammaLex anticipates legal and policy risk before it escalates."
+              text="Denials become liability when evidence is ignored. GammaLex anticipates risk before it escalates."
               className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-white/90 text-center max-w-5xl mx-auto leading-tight px-2"
             />
             <div className="flex justify-center my-8">
@@ -138,7 +138,7 @@ export default function GammaLexPage() {
                 <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
                 <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Pattern Recognition</span>
                     </div>
-              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">AI analyzes thousands of denial patterns to identify legal vulnerabilities before they become lawsuits—from unqualified reviewers to templated rejections.</div>
+              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Identifies legal vulnerabilities before they become lawsuits.</div>
                 </motion.div>
                 <motion.div 
               className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
@@ -152,7 +152,7 @@ export default function GammaLexPage() {
                 <Scale className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
                 <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Legal Compliance</span>
                     </div>
-              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Ensures every pre-auth submission meets both clinical standards and legal requirements, preventing the compliance gaps that lead to successful appeals.</div>
+              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Prevents compliance gaps that lead to successful appeals.</div>
                 </motion.div>
                 <motion.div 
               className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
@@ -166,7 +166,7 @@ export default function GammaLexPage() {
                 <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
                 <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Risk Mitigation</span>
                     </div>
-              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Flags potential legal issues in real-time, allowing teams to strengthen justifications before submission rather than defending them in court later.</div>
+              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Strengthens justifications before submission, not in court.</div>
                 </motion.div>
               </div>
           <div className="text-center">
@@ -732,7 +732,7 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="text-lg font-semibold text-white mb-2">Real-time Policy Decoding</h5>
-                          <p className="text-base text-white/80">Decodes evolving policy language instantly</p>
+                          <p className="text-lg text-white/80">Decodes evolving policy language instantly</p>
                         </div>
                       </div>
                       
@@ -740,7 +740,7 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="text-lg font-semibold text-white mb-2">Adaptive Rule Engine</h5>
-                          <p className="text-base text-white/80">Prevents denials as payer rules change</p>
+                          <p className="text-lg text-white/80">Prevents denials as payer rules change</p>
                         </div>
                       </div>
                       
@@ -748,7 +748,7 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="text-lg font-semibold text-white mb-2">Clinical-Legal Bridge</h5>
-                          <p className="text-base text-white/80">Medical expertise meets legal precision</p>
+                          <p className="text-lg text-white/80">Medical expertise meets legal precision</p>
                         </div>
                       </div>
                     </div>
@@ -778,7 +778,7 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="text-lg font-semibold text-white mb-2">Gray Area Navigation</h5>
-                          <p className="text-base text-white/80">Interprets complex requirements bots miss</p>
+                          <p className="text-lg text-white/80">Interprets complex requirements bots miss</p>
                         </div>
                       </div>
                       
@@ -786,7 +786,7 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="text-lg font-semibold text-white mb-2">Risk Detection</h5>
-                          <p className="text-base text-white/80">Flags issues before they become problems</p>
+                          <p className="text-lg text-white/80">Flags issues before they become problems</p>
                         </div>
                       </div>
                       
@@ -794,7 +794,7 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="text-lg font-semibold text-white mb-2">Legal-Clinical Bridge</h5>
-                          <p className="text-base text-white/80">Full clinical and legal context</p>
+                          <p className="text-lg text-white/80">Full clinical and legal context</p>
                         </div>
                       </div>
                     </div>
@@ -824,7 +824,7 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="text-lg font-semibold text-white mb-2">Expert Judgment</h5>
-                          <p className="text-base text-white/80">Enhances human expertise, never replaces</p>
+                          <p className="text-lg text-white/80">Enhances human expertise, never replaces</p>
                         </div>
                       </div>
                       
@@ -937,7 +937,7 @@ export default function GammaLexPage() {
       {/* About Section */}
       <AboutSection />
 
-    {/* Forge the AI Frontier Section */}
+    {/* Vertical AI Platform Section */}
     <section id="forge-ai-frontier" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 font-inter relative">
         {/* Futuristic background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-purple-900/10 to-black/30 pointer-events-none" />
@@ -945,13 +945,13 @@ export default function GammaLexPage() {
       
       <div className="max-w-6xl mx-auto flex flex-col items-center relative z-10">
         <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter font-normal text-center leading-tight mb-12 sm:mb-16 px-2">
-          Forge the <span className="multi-gradient-text">AI frontier.</span><br />
-          Trained on care. Tuned for coverage. Built for defense.
+          The <span className="multi-gradient-text">Vertical AI Platform</span><br />
+          Purpose-built for clinical-legal intelligence
         </h2>
 
-        {/* Creative Flow Layout - No Grid */}
-        <div className="w-full space-y-16">
-          {/* Row 1: Hero Feature */}
+        {/* Technical Narrative Flow */}
+        <div className="w-full space-y-20">
+          {/* Core AI Architecture */}
           <motion.div 
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
             initial={{ opacity: 0, y: 30 }}
@@ -959,40 +959,60 @@ export default function GammaLexPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex-1 text-center lg:text-left">
+            <div className="flex-1">
               <div className="inline-flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-orange to-gammalex-purple flex items-center justify-center shadow-2xl">
                   <BrainCircuit className="text-white" size={40} />
                 </div>
-                <h3 className="text-3xl sm:text-4xl font-bold text-white">Top-Tier LLMs for Healthcare</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white">Clinical-Legal Foundation Models</h3>
               </div>
-              <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-2xl lg:max-w-none">
-                GammaLex leverages the latest large language models, fine-tuned for medical and legal data, ensuring accuracy and compliance for every payer and policy.
+              <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-6">
+                The first AI that understands medicine, law, and healthcare economics.
               </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-xl text-white/80">Multi-modal understanding of medical records, legal documents, and policy language</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-xl text-white/80">Real-time policy decoding with context-aware interpretation</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-xl text-white/80">Continuous learning from new regulations and case law</p>
+                </div>
+              </div>
             </div>
             <div className="flex-1 flex flex-col gap-8">
               <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-2xl p-8 border border-gammalex-purple/30">
                 <div className="flex items-center gap-4 mb-4">
                   <Zap className="text-gammalex-orange" size={32} />
-                  <h4 className="text-2xl font-bold text-white">Accelerated Pre-Auth Decisions</h4>
+                  <h4 className="text-2xl font-bold text-white">Intelligent Pre-Auth Engine</h4>
                 </div>
-                <p className="text-lg text-white/80">
-                  AI-powered justifications and instant policy matching reduce delays, denials, and manual work for clinicians and legal teams.
+                <p className="text-xl text-white/80 mb-4">
+                  AI-powered justifications reduce approval times by 80% while maintaining compliance.
                 </p>
+                <div className="text-sm text-white/60">
+                  <span className="font-semibold">Technical Stack:</span> Fine-tuned LLMs, RAG architecture, real-time policy databases
+                </div>
               </div>
               <div className="bg-gradient-to-r from-gammalex-orange/20 to-transparent rounded-2xl p-8 border border-gammalex-orange/30">
                 <div className="flex items-center gap-4 mb-4">
                   <Shield className="text-gammalex-purple" size={32} />
-                  <h4 className="text-2xl font-bold text-white">Built for Real-World Risk</h4>
+                  <h4 className="text-2xl font-bold text-white">Risk Intelligence System</h4>
                 </div>
-                <p className="text-lg text-white/80">
-                  GammaLex flags legal and clinical vulnerabilities before they become denials or liability, supporting faster, stronger appeals.
+                <p className="text-xl text-white/80 mb-4">
+                  Proactive vulnerability detection using pattern recognition across thousands of denial cases and legal precedents.
                 </p>
+                <div className="text-sm text-white/60">
+                  <span className="font-semibold">Technical Stack:</span> Anomaly detection, legal corpus analysis, predictive modeling
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Row 2: Alternating Layout */}
+          {/* Platform Architecture */}
           <motion.div 
             className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-16"
             initial={{ opacity: 0, y: 30 }}
@@ -1000,35 +1020,94 @@ export default function GammaLexPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="flex-1 text-center lg:text-left">
+            <div className="flex-1">
               <div className="inline-flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-orange flex items-center justify-center shadow-2xl">
                   <UserRound className="text-white" size={40} />
                 </div>
-                <h3 className="text-3xl sm:text-4xl font-bold text-white">Expert-Built, Always Evolving</h3>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white">Enterprise-Grade Platform</h3>
               </div>
-              <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-2xl lg:max-w-none">
-                Our platform is built by AI researchers—constantly learning from new payer rules and real-world outcomes.
+              <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-6">
+                Enterprise-grade platform supporting solo practices to multi-state networks.
               </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-xl text-white/80">SOC 2 Type II compliance with end-to-end encryption</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-xl text-white/80">99.9% uptime with automatic failover and disaster recovery</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-xl text-white/80">API-first architecture with seamless EHR integration</p>
+                </div>
+              </div>
             </div>
             <div className="flex-1 flex flex-col gap-8">
               <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-2xl p-8 border border-gammalex-purple/30">
                 <div className="flex items-center gap-4 mb-4">
                   <BarChart3 className="text-gammalex-orange" size={32} />
-                  <h4 className="text-2xl font-bold text-white">Highly Scalable & Reliable</h4>
+                  <h4 className="text-2xl font-bold text-white">Scalable Infrastructure</h4>
                 </div>
-                <p className="text-lg text-white/80">
-                  From solo practices to health systems, GammaLex scales securely with 99.9% uptime and enterprise-grade compliance.
+                <p className="text-xl text-white/80 mb-4">
+                  Cloud-native architecture scales from solo practices to enterprise systems.
                 </p>
+                <div className="text-sm text-white/60">
+                  <span className="font-semibold">Technical Stack:</span> Kubernetes, microservices, auto-scaling, load balancing
+                </div>
               </div>
               <div className="bg-gradient-to-r from-gammalex-orange/20 to-transparent rounded-2xl p-8 border border-gammalex-orange/30">
                 <div className="flex items-center gap-4 mb-4">
                   <Scale className="text-gammalex-purple" size={32} />
-                  <h4 className="text-2xl font-bold text-white">Uniquely GammaLex</h4>
+                  <h4 className="text-2xl font-bold text-white">Regulatory Intelligence</h4>
                 </div>
-                <p className="text-lg text-white/80">
-                  Purpose-built for the intersection of medicine, law, and policy—no other platform brings together clinical, legal, and payer expertise like GammaLex.
+                <p className="text-xl text-white/80 mb-4">
+                  Automatic model updates maintain compliance across all jurisdictions.
                 </p>
+                <div className="text-sm text-white/60">
+                  <span className="font-semibold">Technical Stack:</span> Regulatory APIs, automated compliance testing, audit trails
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Technical Differentiation */}
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">What Makes GammaLex Unique</h3>
+              <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-8">
+                Unlike horizontal AI platforms, GammaLex thinks like a healthcare attorney—understanding medical necessity, legal precedent, and payer behavior.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-gammalex-orange/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Brain className="text-gammalex-orange" size={24} />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Domain Expertise</h4>
+                  <p className="text-lg text-white/80">Trained on clinical-legal corpus, not generic data</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-gammalex-purple/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Target className="text-gammalex-purple" size={24} />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Risk-Aware AI</h4>
+                  <p className="text-lg text-white/80">Built for the high-stakes world of healthcare law</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-gammalex-orange/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="text-gammalex-orange" size={24} />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Continuous Evolution</h4>
+                  <p className="text-lg text-white/80">Models that learn from every interaction and outcome</p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -1113,8 +1192,8 @@ function Navigation() {
   ];
 
   const whyGammaLexDropdown = [
-    { id: "the-mission", label: "Our Mission", description: "Our purpose and vision for healthcare transformation" },
-    { id: "what-sets-apart", label: "Vertical By Design", description: "Purpose-built for clinical-legal intelligence" },
+    { id: "the-mission", label: "Our Three Pillars", description: "Our purpose and vision for healthcare transformation" },
+    { id: "what-sets-apart", label: "Holistic By Design", description: "Comprehensive clinical-legal intelligence" },
   ];
 
   const whatWereSolvingDropdown = [
@@ -1124,15 +1203,15 @@ function Navigation() {
   ];
 
   const gammalexMethodDropdown = [
+    { id: "forge-ai-frontier", label: "Our Vertical AI", description: "Vertical AI pioneer at the intersection of clinical and legal" },
     { id: "product", label: "End-to-End AI in Action", description: "How GammaLex unifies clinical, legal, and compliance intelligence" },
     { id: "gammalex-engine", label: "Inside the GammaLex Engine", description: "Source-grounded models for real-world care and coverage" },
   ];
 
   const dropdownItems = [
     { id: "core-values", label: "What We Stand For", description: "Transparency, accuracy, and open innovation" },
-    { id: "automation-alignment", label: "Built Different", description: "Beyond automation. Beyond compliance." },
     { id: "predict-protect", label: "Protect What Matters", description: "Defending care before it's questioned or denied" },
-    { id: "forge-ai-frontier", label: "Our Vertical AI", description: "Vertical AI pioneer at the intersection of clinical and legal" },
+    { id: "automation-alignment", label: "Built Different", description: "Beyond automation. Beyond compliance." },
   ];
 
   useEffect(() => {
@@ -1515,48 +1594,48 @@ function AboutSection() {
     origin: {
       title: "Born from the Front Lines",
       subtitle: "Why should revenue and patient care hinge on a system no one can fully decode?",
-      description: "As physicians, attorneys, and technologists, we spent years fighting for approvals, watching innovation stall at the intersection of opaque payer algorithms and clinical intent. So, we built the engine we always wished existed. GammaLex fuses policy-aware AI with deep clinical and legal expertise to make reimbursement as precise—and defensible—as medicine itself.",
+      description: "We spent years fighting for approvals, watching innovation stall. So we built the engine we always wished existed. GammaLex fuses AI with clinical and legal expertise to make reimbursement as precise as medicine itself.",
       highlight: "We built the engine we always wished existed."
     },
     "what-we-do": {
-      title: "What We Do",
+      title: "",
       subtitle: "Three core capabilities that transform healthcare delivery",
       items: [
         {
           icon: <FileText className="w-8 h-8 text-gammalex-purple" />,
           title: "Translate & Automate",
-          description: "Translate fragmented medical records, payer criteria, and legal standards into actionable, machine-interpreted data—automating the creation of bulletproof, source-backed documentation at pre-auth and appeal."
+          description: "Translates medical records and legal standards into bulletproof documentation."
         },
         {
           icon: <Shield className="w-8 h-8 text-gammalex-orange" />,
           title: "Predict & Protect",
-          description: "Deliver real-time denial risk prediction and compliance surveillance, cutting waste and unlocking revenue otherwise lost to administrative deadlock."
+          description: "Predicts denial risk and cuts waste to unlock revenue."
         },
         {
           icon: <Brain className="w-8 h-8 text-gammalex-purple" />,
           title: "Learn & Adapt",
-          description: "Continuously update our intelligence stack with the latest rules and legal guidance, ensuring health systems are never caught off-guard."
+          description: "Updates intelligence with latest rules to keep systems ahead."
         }
       ]
     },
     "what-sets-us-apart": {
-      title: "What Sets Us Apart",
+      title: "",
       subtitle: "The GammaLex difference",
       items: [
         {
           icon: <Users className="w-8 h-8 text-gammalex-orange" />,
           title: "Founder-Led Team",
-          description: "Founder-led team with a bias for truth, transparency, and solving problems others ignore."
+          description: "Founder-led team solving problems others ignore."
         },
         {
           icon: <Eye className="w-8 h-8 text-gammalex-purple" />,
           title: "Relentless Pursuit",
-          description: "Relentless pursuit of market leverage—leveraging open, auditable models that regulators, payers, and providers trust."
+          description: "Open, auditable models that regulators and providers trust."
         },
         {
           icon: <Heart className="w-8 h-8 text-gammalex-orange" />,
           title: "Dedicated to Impact",
-          description: "Our north star is restoring billions in lost revenue and, more importantly, patient access to life-changing care."
+          description: "Restoring billions in lost revenue and patient access to care."
         }
       ]
     }
@@ -1577,7 +1656,7 @@ function AboutSection() {
             <span className="multi-gradient-text">Defensible care</span>, by design.
           </h2>
           <p className="text-2xl sm:text-3xl lg:text-4xl text-white/90 font-inter mb-8 max-w-5xl mx-auto leading-relaxed">
-            We're building GammaLex not just for operational efficiency, but to reset the rules of the game—one where technological clarity and legal defensibility are the default, not the exception.
+            We're building GammaLex to reset the rules—where clarity and defensibility are the default.
           </p>
         </motion.div>
 
