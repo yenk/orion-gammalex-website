@@ -1178,6 +1178,9 @@ function Navigation() {
   const [isWhatWereSolvingDropdownOpen, setIsWhatWereSolvingDropdownOpen] = useState(false);
   const [isWhyWeWinDropdownOpen, setWhyWeWinDropdownOpen] = useState(false);
   const [isWhyGammaLexDropdownOpen, setIsWhyGammaLexDropdownOpen] = useState(false);
+  
+  // Mobile dropdown states
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
 
   const navItems = [
     { id: "the-mission", label: "WHY GAMMALEX", hasDropdown: true },
@@ -1225,6 +1228,7 @@ function Navigation() {
       element.scrollIntoView({ behavior: "smooth" })
     }
     setIsOpen(false)
+    setMobileDropdownOpen(null)
   }
 
   const handleNavClick = (item: any) => {
@@ -1234,6 +1238,25 @@ function Navigation() {
       scrollToSection(item.id)
     }
     setIsOpen(false)
+  }
+
+  const toggleMobileDropdown = (itemId: string) => {
+    setMobileDropdownOpen(mobileDropdownOpen === itemId ? null : itemId)
+  }
+
+  const getDropdownItems = (itemId: string) => {
+    switch (itemId) {
+      case 'the-mission':
+        return whyGammaLexDropdown
+      case 'crisis-numbers':
+        return whatWereSolvingDropdown
+      case 'how-we-do-it':
+        return dropdownItems
+      case 'product':
+        return gammalexMethodDropdown
+      default:
+        return []
+    }
   }
 
   return (
@@ -1249,7 +1272,7 @@ function Navigation() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-none px-8 lg:px-16">
+        <div className="max-w-none px-4 sm:px-8 lg:px-16">
           <div className="flex items-center h-16 sm:h-20 justify-between">
             {/* Logo */}
             <motion.div
@@ -1261,13 +1284,13 @@ function Navigation() {
                 src="/gammalexlogo-transparent.png"
                 alt="GammaLex Logo"
                 style={{ filter: 'brightness(0) invert(1)' }}
-                className={`transition-all duration-300 h-24 sm:h-32 max-w-none`}
+                className={`transition-all duration-300 h-20 sm:h-24 lg:h-32 max-w-none`}
               />
             </motion.div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center flex-1">
-              <div className="flex items-center space-x-32">
+              <div className="flex items-center space-x-8 xl:space-x-16 2xl:space-x-32">
                 {navItems.map((item) => (
                   <div key={item.id} className="relative">
                     {item.hasDropdown ? (
@@ -1288,7 +1311,7 @@ function Navigation() {
                       >
                   <motion.button
                           onClick={() => scrollToSection(item.id)}
-                          className="text-2xl font-medium text-white font-inter transition-colors flex items-center gap-2"
+                          className="text-lg xl:text-xl 2xl:text-2xl font-medium text-white font-inter transition-colors flex items-center gap-2"
                           whileHover={{ y: -2 }}
                         >
                           {item.label}
@@ -1309,7 +1332,7 @@ function Navigation() {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: -10, scale: 0.95 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                              className="absolute top-full left-0 mt-2 w-72 xl:w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
                             >
                               <div className="p-4 space-y-2">
                                 {whatWereSolvingDropdown.map((dropdownItem) => (
@@ -1324,10 +1347,10 @@ function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
                                           {dropdownItem.label}
                                         </div>
-                                        <div className="text-white/60 text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
                                           {dropdownItem.description}
                                         </div>
                                       </div>
@@ -1348,7 +1371,7 @@ function Navigation() {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: -10, scale: 0.95 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                              className="absolute top-full left-0 mt-2 w-72 xl:w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
                             >
                               <div className="p-4 space-y-2">
                                 {dropdownItems.map((dropdownItem) => (
@@ -1363,10 +1386,10 @@ function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
                                           {dropdownItem.label}
                                         </div>
-                                        <div className="text-white/60 text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
                                           {dropdownItem.description}
                                         </div>
                                       </div>
@@ -1387,7 +1410,7 @@ function Navigation() {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: -10, scale: 0.95 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                              className="absolute top-full left-0 mt-2 w-72 xl:w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
                             >
                               <div className="p-4 space-y-2">
                                 {gammalexMethodDropdown.map((dropdownItem) => (
@@ -1402,10 +1425,10 @@ function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
                                           {dropdownItem.label}
                                         </div>
-                                        <div className="text-white/60 text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
                                           {dropdownItem.description}
                                         </div>
                                       </div>
@@ -1426,7 +1449,7 @@ function Navigation() {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: -10, scale: 0.95 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                              className="absolute top-full left-0 mt-2 w-72 xl:w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
                             >
                               <div className="p-4 space-y-2">
                                 {whyGammaLexDropdown.map((dropdownItem) => (
@@ -1441,10 +1464,10 @@ function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
                                           {dropdownItem.label}
                                         </div>
-                                        <div className="text-white/60 text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
                                           {dropdownItem.description}
                                         </div>
                                       </div>
@@ -1464,7 +1487,7 @@ function Navigation() {
                     ) : (
                       <motion.button
                     onClick={() => handleNavClick(item)}
-                    className="text-2xl font-medium text-white font-inter transition-colors"
+                    className="text-lg xl:text-xl 2xl:text-2xl font-medium text-white font-inter transition-colors"
                     whileHover={{ y: -2 }}
                   >
                     {item.label}
@@ -1489,23 +1512,69 @@ function Navigation() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
             >
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNavClick(item)}
-                    className="block w-full text-left text-xl font-medium text-white font-inter py-2 transition-colors"
-                  >
-                    {item.label}
-                  </button>
+                  <div key={item.id}>
+                    {item.hasDropdown ? (
+                      <div>
+                        <button
+                          onClick={() => toggleMobileDropdown(item.id)}
+                          className="block w-full text-left text-lg font-medium text-white font-inter py-3 px-4 transition-colors flex items-center justify-between"
+                        >
+                          {item.label}
+                          <motion.div
+                            animate={{ rotate: mobileDropdownOpen === item.id ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                              <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </motion.div>
+                        </button>
+                        <AnimatePresence>
+                          {mobileDropdownOpen === item.id && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="ml-4 border-l border-white/20"
+                            >
+                              <div className="space-y-1 py-2">
+                                {getDropdownItems(item.id).map((dropdownItem) => (
+                                  <button
+                                    key={`mobile-${item.id}-${dropdownItem.id}`}
+                                    onClick={() => scrollToSection(dropdownItem.id)}
+                                    className="block w-full text-left text-base font-medium text-white/80 font-inter py-2 px-4 transition-colors hover:text-white"
+                                  >
+                                    <div className="text-sm">{dropdownItem.label}</div>
+                                    <div className="text-xs text-white/60 mt-1">{dropdownItem.description}</div>
+                                  </button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => handleNavClick(item)}
+                        className="block w-full text-left text-lg font-medium text-white font-inter py-3 px-4 transition-colors"
+                      >
+                        {item.label}
+                      </button>
+                    )}
+                  </div>
                 ))}
-                <JoinWaitlistModal
-                  trigger={
-                    <Button className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white font-bold w-full py-4 text-lg rounded-xl mt-4 hover-glow transition-all">
-                      Request a Demo
-                    </Button>
-                  }
-                />
+                <div className="pt-4 border-t border-white/20 mt-4">
+                  <JoinWaitlistModal
+                    trigger={
+                      <Button className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white font-bold w-full py-4 text-lg rounded-xl hover-glow transition-all">
+                        Request a Demo
+                      </Button>
+                    }
+                  />
+                </div>
               </div>
             </motion.div>
           )}
