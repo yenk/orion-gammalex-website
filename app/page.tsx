@@ -77,9 +77,20 @@ export default function GammaLexPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const isFooterVisible = useInView(ctaRef, { once: false, margin: "0px 0px -40% 0px" })
+  const [showScrollTop, setShowScrollTop] = useState(false)
 
   useEffect(() => {
     // (Removed scroll snap setup for smoother scrolling)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      setShowScrollTop(scrollY > 300) // Show button after scrolling 300px
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
@@ -95,7 +106,7 @@ export default function GammaLexPage() {
       {/* Crisis & Numbers Section */}
       <section id="crisis-numbers" className="w-full flex flex-col items-center justify-center py-20 px-4 sm:px-8 font-inter">
         <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter font-normal text-center leading-tight mb-10 multi-gradient-text">
-          Why Prior Authorization is a Crisis
+          Pre-Authorizations Are a Clinical Crisis
         </h2>
         <AccordionCrisis />
       </section>
@@ -1164,6 +1175,29 @@ export default function GammaLexPage() {
 
       {/* Always show footer for testing */}
       <FooterGV />
+      
+      {/* Mobile Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            className="fixed bottom-6 right-6 z-50 lg:hidden bg-gammalex-purple hover:bg-gammalex-purple-light text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 neon-glow"
+            onClick={() => {
+              const nav = document.querySelector('nav')
+              if (nav) {
+                nav.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronUp className="w-6 h-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
