@@ -311,89 +311,136 @@ export function ProductFeaturesDemo() {
         Faster care. Fewer denials. No black boxes. <span className="gradient-text">GammaLex</span> delivers source-backed AI you can trust.
       </p>
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full items-start py-8">
-        {/* Inference Card */}
-        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-8 md:p-10 border border-white/10 min-h-[400px] md:min-h-[450px] w-full max-w-xl md:max-w-2xl mx-auto overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-          <div className="flex items-center gap-4 mb-4">
-            <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple neon-text animate-pulse-glow" />
-            <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Inference</span>
+      <div className="max-w-7xl mx-auto space-y-16">
+        {/* Inference - Hero Section */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-6 mb-8">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-orange flex items-center justify-center shadow-2xl">
+                <Zap className="text-white" size={48} />
+              </div>
+              <h3 className="text-4xl sm:text-5xl font-bold text-white">Inference</h3>
+            </div>
+            <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed mb-8">
+              Real-time clinical-legal intelligence for every pre-auth and denial
+            </p>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Policy Lookup</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Instantly match clinical scenarios to payer rules and coverage policies with source verification.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Risk Scoring</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Quantify denial and compliance risk before care is delayed or denied.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Compliance Checks</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Ensure documentation meets both clinical and legal standards to prevent successful appeals.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Real-time clinical-legal intelligence for every pre-auth and denial</div>
-          <div className="flex-1 w-full overflow-hidden">
-            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80 max-h-64 md:max-h-80 overflow-y-auto scrollbar scrollbar-thumb-gammalex-purple/70 scrollbar-track-black/30 scrollbar-w-2 pr-2">
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Policy Lookup:</strong> Instantly match clinical scenarios to payer rules and coverage policies with source verification.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Risk Scoring:</strong> Quantify denial and compliance risk before care is delayed or denied, helping prevent denials and legal issues.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Compliance Checks:</strong> Ensure documentation meets both clinical and legal standards to prevent successful appeals.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Enterprise Security:</strong> SOC 2, HIPAA compliance with full audit trails for defensibility.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        {/* Fine-Tuning Card */}
-        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-8 md:p-10 border border-white/10 min-h-[400px] md:min-h-[450px] w-full max-w-xl md:max-w-2xl mx-auto overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-          <div className="flex items-center gap-4 mb-4">
-            <Settings className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple-light neon-text animate-pulse-glow" />
-            <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Fine-Tuning</span>
-          </div>
-          <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Custom AI for your clinical and legal workflows</div>
-          <div className="flex-1 w-full overflow-hidden">
-            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80 max-h-64 md:max-h-80 overflow-y-auto scrollbar scrollbar-thumb-gammalex-purple/70 scrollbar-track-black/30 scrollbar-w-2 pr-2">
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Legal Pattern Learning:</strong> Adapt models to recognize denial patterns from real lawsuits and case law.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Payer-Specific Training:</strong> Fine-tune for each insurer's unique denial patterns and legal vulnerabilities.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Compliance Documentation:</strong> Generate bulletproof justifications that withstand legal scrutiny and appeals.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Transparent AI:</strong> Full audit trails and explainable decisions for legal defensibility in court.</span>
-              </li>
-            </ul>
+          <div className="flex-1">
+            <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-3xl p-8 border border-gammalex-purple/30">
+              <h4 className="text-2xl font-bold text-gammalex-orange mb-4">Enterprise Security</h4>
+              <p className="text-xl text-white/90">SOC 2, HIPAA compliance with full audit trails for defensibility.</p>
+            </div>
           </div>
         </div>
-        {/* AI Copilot Card */}
-        <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-8 md:p-10 border border-white/10 min-h-[400px] md:min-h-[450px] w-full max-w-xl md:max-w-2xl mx-auto overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-          <div className="flex items-center gap-4 mb-4">
-            <Bot className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple neon-text animate-pulse-glow" />
-            <span className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">AI Copilot</span>
+
+        {/* Fine-Tuning - Alternating Layout */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-6 mb-8">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gammalex-orange to-gammalex-purple flex items-center justify-center shadow-2xl">
+                <Settings className="text-white" size={48} />
+              </div>
+              <h3 className="text-4xl sm:text-5xl font-bold text-white">Fine-Tuning</h3>
+            </div>
+            <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed mb-8">
+              Custom AI for your clinical and legal workflows
+            </p>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Legal Pattern Learning</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Adapt models to recognize denial patterns from real lawsuits and case law.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Payer-Specific Training</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Fine-tune for each insurer's unique denial patterns and legal vulnerabilities.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Compliance Documentation</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Generate bulletproof justifications that withstand legal scrutiny and appeals.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text-base sm:text-lg md:text-xl mb-4 text-white font-inter">Your always-on assistant for Copilot teams</div>
-          <div className="flex-1 w-full overflow-hidden">
-            <ul className="space-y-3 text-base sm:text-lg md:text-xl text-white/80 max-h-64 md:max-h-80 overflow-y-auto scrollbar scrollbar-thumb-gammalex-purple/70 scrollbar-track-black/30 scrollbar-w-2 pr-2">
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Legal Risk Surfacing:</strong> Flag vulnerabilities from real lawsuits before they become denials or liability.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Policy Intelligence:</strong> Answer complex clinical and legal questions with source-backed accuracy.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Team Empowerment:</strong> Reduce burnout by automating research and compliance checks.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1 animate-pulse">✓</span>
-                <span><strong>Clinical Integration:</strong> Seamlessly connect to EHR and care systems to automate workflows—while layering in legal intelligence to flag risks, prevent denials, and reduce lawsuit exposure.</span>
-              </li>
-            </ul>
+          <div className="flex-1">
+            <div className="bg-gradient-to-r from-gammalex-orange/20 to-transparent rounded-3xl p-8 border border-gammalex-orange/30">
+              <h4 className="text-2xl font-bold text-gammalex-purple mb-4">Transparent AI</h4>
+              <p className="text-xl text-white/90">Full audit trails and explainable decisions for legal defensibility in court.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* AI Copilot - Hero Section */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-6 mb-8">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-orange flex items-center justify-center shadow-2xl">
+                <Bot className="text-white" size={48} />
+              </div>
+              <h3 className="text-4xl sm:text-5xl font-bold text-white">AI Copilot</h3>
+            </div>
+            <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed mb-8">
+              Your always-on assistant for Copilot teams
+            </p>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Legal Risk Surfacing</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Flag vulnerabilities from real lawsuits before they become denials or liability.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Policy Intelligence</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Answer complex clinical and legal questions with source-backed accuracy.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Team Empowerment</h4>
+                  <p className="text-lg sm:text-xl text-white/80">Reduce burnout by automating research and compliance checks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-3xl p-8 border border-gammalex-purple/30">
+              <h4 className="text-2xl font-bold text-gammalex-orange mb-4">Clinical Integration</h4>
+              <p className="text-xl text-white/90">Seamlessly connect to EHR and care systems to automate workflows—while layering in legal intelligence to flag risks, prevent denials, and reduce lawsuit exposure.</p>
+            </div>
           </div>
         </div>
       </div>
