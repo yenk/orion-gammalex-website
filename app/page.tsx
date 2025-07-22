@@ -449,7 +449,7 @@ export default function GammaLexPage() {
             {/* Main Content Grid - Matching Reference Image */}
           <div className="text-center mb-12">
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal gradient-text leading-tight mb-4">
-              Built with transparency
+              Built on transparency and open innovation
             </h3>
           </div>
             <div className="space-y-0">
