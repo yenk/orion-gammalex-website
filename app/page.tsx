@@ -448,7 +448,7 @@ export default function GammaLexPage() {
 
             {/* Main Content Grid - Matching Reference Image */}
           <div className="text-center mb-12">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal gradient-text leading-tight mb-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-inter font-normal gradient-text leading-tight mb-4 px-4">
               Built on transparency and open innovation
             </h3>
           </div>
@@ -456,8 +456,8 @@ export default function GammaLexPage() {
             
             {/* Row 1: Open Source Data Foundation */}
             <div className="flex flex-col lg:flex-row border-b border-white/20">
-              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-white/20 glass-dark">
-                <div className="text-sm uppercase tracking-wider text-white font-medium mb-4">
+              <div className="lg:w-1/3 p-4 sm:p-6 lg:p-8 border-r border-white/20 glass-dark">
+                <div className="text-xs sm:text-sm uppercase tracking-wider text-white font-medium mb-4 text-left">
                   POWERED BY OPEN SOURCE<br />DATA FOUNDATION
                 </div>
                 <div className="flex items-center gap-2">
@@ -466,26 +466,26 @@ export default function GammaLexPage() {
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                 </div>
               </div>
-              <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
-                <div>
-                  <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Open Source Data Foundation: </span>
-                  <span className="text-white text-lg sm:text-xl">Fine-tuned LLMs on diverse </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">datasets</span>
-                  <span className="text-white text-lg sm:text-xl">—insurance, legal, clinical.</span>
+              <div className="lg:w-2/3 p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
+                <div className="text-left">
+                  <span className="text-base sm:text-lg lg:text-xl font-medium text-gammalex-orange">Open Source Data Foundation: </span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">Fine-tuned LLMs on diverse </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">datasets</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">—insurance, legal, clinical.</span>
                 </div>
-                <div>
-                  <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Transparent Data Lineage: </span>
-                  <span className="text-white text-lg sm:text-xl">Complete </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">audit trails</span>
-                  <span className="text-white text-lg sm:text-xl"> and documentation.</span>
+                <div className="text-left">
+                  <span className="text-base sm:text-lg lg:text-xl font-medium text-gammalex-orange">Transparent Data Lineage: </span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">Complete </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">audit trails</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl"> and documentation.</span>
                 </div>
               </div>
             </div>
 
             {/* Row 2: Multi-Domain Integration */}
             <div className="flex flex-col lg:flex-row border-b border-white/20">
-              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-white/20 glass-dark">
-                <div className="text-sm uppercase tracking-wider text-white font-medium mb-4">
+              <div className="lg:w-1/3 p-4 sm:p-6 lg:p-8 border-r border-white/20 glass-dark">
+                <div className="text-xs sm:text-sm uppercase tracking-wider text-white font-medium mb-4 text-left">
                   CLINICAL-LEGAL-PAYER<br />INTELLIGENCE INTEGRATION
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
@@ -496,32 +496,32 @@ export default function GammaLexPage() {
                   <div className="w-3 h-3 rounded-full bg-white/30"></div>
                 </div>
               </div>
-              <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
-                <div>
-                  <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Multi-Domain Integration: </span>
-                  <span className="text-white text-lg sm:text-xl">Unified </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">clinical</span>
-                  <span className="text-white text-lg sm:text-xl">, </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">legal</span>
-                  <span className="text-white text-lg sm:text-xl">, and </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">insurance</span>
-                  <span className="text-white text-lg sm:text-xl"> for holistic decisions.</span>
+              <div className="lg:w-2/3 p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
+                <div className="text-left">
+                  <span className="text-base sm:text-lg lg:text-xl font-medium text-gammalex-orange">Multi-Domain Integration: </span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">Unified </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">clinical</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">, </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">legal</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">, and </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">insurance</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl"> for holistic decisions.</span>
                 </div>
-                <div>
-                  <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Continuous Model Updating: </span>
-                  <span className="text-white text-lg sm:text-xl">Real-time </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">datasets</span>
-                  <span className="text-white text-lg sm:text-xl"> and </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">policy updates</span>
-                  <span className="text-white text-lg sm:text-xl">.</span>
+                <div className="text-left">
+                  <span className="text-base sm:text-lg lg:text-xl font-medium text-gammalex-orange">Continuous Model Updating: </span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">Real-time </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">datasets</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl"> and </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">policy updates</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">.</span>
                 </div>
               </div>
             </div>
 
             {/* Row 3: Payer-Specific Adaptation */}
             <div className="flex flex-col lg:flex-row">
-              <div className="lg:w-1/3 p-6 lg:p-8 border-r border-white/20 glass-dark">
-                <div className="text-sm uppercase tracking-wider text-white font-medium mb-4">
+              <div className="lg:w-1/3 p-4 sm:p-6 lg:p-8 border-r border-white/20 glass-dark">
+                <div className="text-xs sm:text-sm uppercase tracking-wider text-white font-medium mb-4 text-left">
                   ENTERPRISE-GRADE PAYER<br />POLICY ADAPTATION
                 </div>
                 <div className="grid grid-cols-5 gap-1">
@@ -549,14 +549,14 @@ export default function GammaLexPage() {
                   <div className="w-3 h-3 rounded-full bg-gammalex-purple animate-pulse-glow"></div>
                 </div>
               </div>
-              <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
-                <div>
-                  <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Payer-Specific Policy Adaptation: </span>
-                  <span className="text-white text-lg sm:text-xl">Models trained on </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">major policies</span>
-                  <span className="text-white text-lg sm:text-xl"> (Aetna, UnitedHealthcare) for </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">aligned recommendations</span>
-                  <span className="text-white text-lg sm:text-xl">.</span>
+              <div className="lg:w-2/3 p-4 sm:p-6 lg:p-8 space-y-3 sm:space-y-4">
+                <div className="text-left">
+                  <span className="text-base sm:text-lg lg:text-xl font-medium text-gammalex-orange">Payer-Specific Policy Adaptation: </span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">Models trained on </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">major policies</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl"> (Aetna, UnitedHealthcare) for </span>
+                  <span className="text-white font-medium underline text-base sm:text-lg lg:text-xl">aligned recommendations</span>
+                  <span className="text-white text-base sm:text-lg lg:text-xl">.</span>
                 </div>
               </div>
             </div>
@@ -1762,23 +1762,23 @@ function AboutSection() {
         >
           {activeTab === 0 && (
             <motion.div 
-              className="text-center max-w-4xl mx-auto"
+              className="text-center max-w-4xl mx-auto px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
                 {content.origin.title}
               </h3>
-              <p className="text-2xl sm:text-3xl text-gammalex-orange font-semibold mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gammalex-orange font-semibold mb-6 sm:mb-8">
                 {content.origin.subtitle}
               </p>
-              <div className="glass rounded-3xl p-8 border border-white/10 mb-8">
-                <p className="text-xl sm:text-2xl text-white/90 leading-relaxed mb-6">
+              <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 mb-6 sm:mb-8">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-4 sm:mb-6">
                   {content.origin.description}
                 </p>
-                <div className="bg-gradient-to-r from-gammalex-purple/20 to-gammalex-orange/20 rounded-2xl p-6 border border-gammalex-purple/30">
-                  <p className="text-2xl sm:text-3xl font-bold text-gammalex-orange">
+                <div className="bg-gradient-to-r from-gammalex-purple/20 to-gammalex-orange/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gammalex-purple/30">
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gammalex-orange">
                     "{content.origin.highlight}"
                   </p>
                 </div>
@@ -1791,34 +1791,33 @@ function AboutSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
+              className="px-4"
             >
-              <div className="text-center mb-12">
-                <h3 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              <div className="text-center mb-8 sm:mb-12">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                   {content["what-we-do"].title}
                 </h3>
-                <p className="text-2xl sm:text-3xl text-white/80 max-w-4xl mx-auto">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 max-w-4xl mx-auto">
                   {content["what-we-do"].subtitle}
                 </p>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-                {(content["what-we-do"]?.items || []).map((item, index) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {content["what-we-do"].items.map((item, index) => (
                   <motion.div
-                    key={`what-we-do-${index}`}
-                    className="glass rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group min-h-[280px] lg:min-h-[320px]"
+                    key={index}
+                    className="glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ y: -4 }}
                   >
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="p-4 lg:p-5 rounded-xl bg-white/5 group-hover:bg-gammalex-purple/10 transition-colors">
-                        {item.icon}
-                      </div>
-                      <h4 className="text-2xl lg:text-3xl font-bold text-gammalex-purple group-hover:text-gammalex-orange transition-colors">
+                    <div className="flex items-center gap-4 mb-4 sm:mb-6">
+                      {item.icon}
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-gammalex-orange transition-colors">
                         {item.title}
                       </h4>
                     </div>
-                    <p className="text-xl lg:text-2xl text-white/80 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -1832,34 +1831,33 @@ function AboutSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
+              className="px-4"
             >
-              <div className="text-center mb-12">
-                <h3 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              <div className="text-center mb-8 sm:mb-12">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                   {content["what-sets-us-apart"].title}
                 </h3>
-                <p className="text-2xl sm:text-3xl text-white/80 max-w-4xl mx-auto">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/80 max-w-4xl mx-auto">
                   {content["what-sets-us-apart"].subtitle}
                 </p>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-                {(content["what-sets-us-apart"]?.items || []).map((item, index) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                {content["what-sets-us-apart"].items.map((item, index) => (
                   <motion.div
-                    key={`what-sets-apart-${index}`}
-                    className="glass rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group min-h-[280px] lg:min-h-[320px]"
+                    key={index}
+                    className="glass rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-gammalex-purple/30 transition-all duration-300 group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ y: -4 }}
                   >
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="p-4 lg:p-5 rounded-xl bg-white/5 group-hover:bg-gammalex-purple/10 transition-colors">
-                        {item.icon}
-                      </div>
-                      <h4 className="text-2xl lg:text-3xl font-bold text-gammalex-purple group-hover:text-gammalex-orange transition-colors">
+                    <div className="flex items-center gap-4 mb-4 sm:mb-6">
+                      {item.icon}
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-gammalex-orange transition-colors">
                         {item.title}
                       </h4>
                     </div>
-                    <p className="text-xl lg:text-2xl text-white/80 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
