@@ -2336,11 +2336,20 @@ function AccordionCrisis() {
     {
       id: 'solution',
       icon: <ShieldCheck className="w-6 h-6 text-gammalex-orange" />, color: 'green-500',
-      heading: 'The Solution',
+      heading: 'Why It Breaks Down',
       content: (
-        <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed font-inter max-w-2xl mx-auto mt-2">
-          We're not just streamlining workflows—we're solving for the broken logic layer at the heart of the system: where medicine meets policy, accountability, and AI.
-        </p>
+        <div className="text-white/90 font-inter max-w-2xl mx-auto mt-2">
+          <ul className="mb-6 text-base sm:text-lg lg:text-xl list-disc pl-6">
+            <li>Clinical systems weren't designed to reason about policy.</li>
+            <li>Legal teams weren't built to interpret medical data.</li>
+            <li>AI tools today weren't built for either.</li>
+          </ul>
+          <div className="font-bold text-lg sm:text-xl lg:text-2xl text-gammalex-orange mb-3">This Is Why GammaLex Exists</div>
+          <div className="text-lg sm:text-xl lg:text-2xl leading-relaxed">
+            We're not solving workflows.<br/>
+            We're building infrastructure that understands the law behind every denial, the logic within every policy, and the care at stake in every claim.
+          </div>
+        </div>
       )
     },
   ];
