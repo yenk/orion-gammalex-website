@@ -448,12 +448,9 @@ export default function GammaLexPage() {
 
             {/* Main Content Grid - Matching Reference Image */}
           <div className="text-center mb-12">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight mb-4">
-              Openly Sourced. <span className="gradient-text">Clinically Aligned.</span> Legally Defensible.
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal gradient-text leading-tight mb-4">
+              Built with transparency
             </h3>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 max-w-3xl mx-auto leading-[1.4] sm:leading-[1.5] px-4 sm:px-0">
-              Built on transparency, policy-aware precision, and open innovation.
-            </p>
           </div>
             <div className="space-y-0">
             
@@ -472,15 +469,15 @@ export default function GammaLexPage() {
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Open Source Data Foundation: </span>
-                  <span className="text-white text-lg sm:text-xl">Builds and fine-tunes LLMs using a diverse set of </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">open source datasets</span>
-                  <span className="text-white text-lg sm:text-xl">, including insurance, legal, and clinical corpora.</span>
+                  <span className="text-white text-lg sm:text-xl">Fine-tuned LLMs on diverse </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">datasets</span>
+                  <span className="text-white text-lg sm:text-xl">—insurance, legal, clinical.</span>
                 </div>
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Transparent Data Lineage: </span>
-                  <span className="text-white text-lg sm:text-xl">Provides clear documentation and traceability of all source datasets used for model training with advances such as </span>
+                  <span className="text-white text-lg sm:text-xl">Complete </span>
                   <span className="text-white font-medium underline text-lg sm:text-xl">audit trails</span>
-                  <span className="text-white text-lg sm:text-xl">.</span>
+                  <span className="text-white text-lg sm:text-xl"> and documentation.</span>
                 </div>
               </div>
             </div>
@@ -502,21 +499,21 @@ export default function GammaLexPage() {
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Multi-Domain Integration: </span>
-                  <span className="text-white text-lg sm:text-xl">Combines open source </span>
+                  <span className="text-white text-lg sm:text-xl">Unified </span>
                   <span className="text-white font-medium underline text-lg sm:text-xl">clinical</span>
                   <span className="text-white text-lg sm:text-xl">, </span>
                   <span className="text-white font-medium underline text-lg sm:text-xl">legal</span>
                   <span className="text-white text-lg sm:text-xl">, and </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">insurance data</span>
-                  <span className="text-white text-lg sm:text-xl"> for holistic decision support.</span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">insurance</span>
+                  <span className="text-white text-lg sm:text-xl"> for holistic decisions.</span>
                 </div>
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Continuous Model Updating: </span>
-                  <span className="text-white text-lg sm:text-xl">Regularly incorporates new </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">open datasets</span>
+                  <span className="text-white text-lg sm:text-xl">Real-time </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">datasets</span>
                   <span className="text-white text-lg sm:text-xl"> and </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">payer policy updates</span>
-                  <span className="text-white text-lg sm:text-xl"> to stay current with industry changes.</span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">policy updates</span>
+                  <span className="text-white text-lg sm:text-xl">.</span>
                 </div>
               </div>
             </div>
@@ -555,10 +552,10 @@ export default function GammaLexPage() {
               <div className="lg:w-2/3 p-6 lg:p-8 space-y-4">
                 <div>
                   <span className="text-lg sm:text-xl font-medium text-gammalex-orange">Payer-Specific Policy Adaptation: </span>
-                  <span className="text-white text-lg sm:text-xl">Fine-tunes models on datasets relevant to </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">major payer policies</span>
-                  <span className="text-white text-lg sm:text-xl"> (e.g., Aetna, UnitedHealthcare), ensuring up-to-date, </span>
-                  <span className="text-white font-medium underline text-lg sm:text-xl">payer-aligned recommendations</span>
+                  <span className="text-white text-lg sm:text-xl">Models trained on </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">major policies</span>
+                  <span className="text-white text-lg sm:text-xl"> (Aetna, UnitedHealthcare) for </span>
+                  <span className="text-white font-medium underline text-lg sm:text-xl">aligned recommendations</span>
                   <span className="text-white text-lg sm:text-xl">.</span>
                 </div>
               </div>
@@ -1599,7 +1596,7 @@ function AboutSection() {
     },
     "what-we-do": {
       title: "",
-      subtitle: "Three core capabilities that transform healthcare delivery",
+      subtitle: "",
       items: [
         {
           icon: <FileText className="w-8 h-8 text-gammalex-purple" />,
@@ -1620,7 +1617,7 @@ function AboutSection() {
     },
     "what-sets-us-apart": {
       title: "",
-      subtitle: "The GammaLex difference",
+      subtitle: "",
       items: [
         {
           icon: <Users className="w-8 h-8 text-gammalex-orange" />,
@@ -1900,7 +1897,7 @@ function SystemicRiskStats() {
   // Animation variants
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
   }
 
   // Group stats by category (for rows)
