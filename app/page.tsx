@@ -105,7 +105,7 @@ export default function GammaLexPage() {
 
       {/* Crisis & Numbers Section */}
       <section id="crisis-numbers" className="w-full flex flex-col items-center justify-center py-20 px-4 sm:px-8 font-inter">
-        <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-inter font-normal text-center leading-tight mb-10 multi-gradient-text">
+        <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-10 multi-gradient-text">
           Pre-Authorizations Are a Clinical Crisis
         </h2>
         <AccordionCrisis />
@@ -122,7 +122,6 @@ export default function GammaLexPage() {
         {/* Futuristic background elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-purple-900/15 to-black/40 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.12),transparent_50%)] pointer-events-none" />
-        
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-6 sm:mb-8 px-2">
@@ -136,50 +135,72 @@ export default function GammaLexPage() {
               <FlaggingOverlay />
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
-                <motion.div 
-              className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                >
-              <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
-                <Zap className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
-                <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Pattern Recognition</span>
-                    </div>
-              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Identifies legal vulnerabilities before they become lawsuits.</div>
-                </motion.div>
-                <motion.div 
-              className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                >
-              <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
-                <Scale className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
-                <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Legal Compliance</span>
-                    </div>
-              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Prevents compliance gaps that lead to successful appeals.</div>
-                </motion.div>
-                <motion.div 
-              className="glass rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col items-start hover:border-gammalex-purple/30 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
-                >
-              <div className="flex items-center gap-3 sm:gap-5 mb-4 sm:mb-6">
-                <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors" />
-                <span className="text-lg sm:text-xl md:text-2xl font-bold font-inter text-gammalex-purple group-hover:text-gammalex-purple-light transition-colors">Risk Mitigation</span>
-                    </div>
-              <div className="text-base sm:text-lg md:text-xl font-inter text-white/90 leading-relaxed">Strengthens justifications before submission, not in court.</div>
-                </motion.div>
+          {/* Creative horizontal flow for the 3 concepts */}
+          <div className="relative flex flex-col items-center mb-12">
+            <div className="hidden lg:block absolute left-0 right-0 top-1/2 h-2 z-0">
+              {/* Animated connector line */}
+              <motion.div
+                className="w-full h-full bg-gradient-to-r from-gammalex-purple via-gammalex-orange to-gammalex-purple rounded-full blur-md opacity-60"
+                animate={{ opacity: [0.4, 0.7, 0.4] }}
+                transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse' }}
+              />
+            </div>
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0 w-full relative z-10">
+              {/* Pattern Recognition */}
+              <motion.div
+                className="flex flex-col items-center text-center px-4 lg:w-1/3 relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative mb-4">
+                  <div className="absolute -inset-2 bg-gammalex-purple/20 rounded-full blur-lg animate-pulse" />
+                  <Zap className="w-14 h-14 text-gammalex-purple neon-text" />
+                </div>
+                <div className="text-xl md:text-2xl font-bold font-inter text-gammalex-purple mb-2">Pattern Recognition</div>
+                <div className="text-base md:text-lg font-inter text-white/90 leading-relaxed">Identifies legal vulnerabilities before they become lawsuits.</div>
+              </motion.div>
+              {/* Connector Dot */}
+              <div className="hidden lg:flex flex-col items-center justify-center h-full">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-gammalex-orange to-gammalex-purple shadow-lg border-4 border-white/10 animate-pulse" />
               </div>
+              {/* Legal Compliance */}
+              <motion.div
+                className="flex flex-col items-center text-center px-4 lg:w-1/3 relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative mb-4">
+                  <div className="absolute -inset-2 bg-gammalex-purple/20 rounded-full blur-lg animate-pulse" />
+                  <Scale className="w-14 h-14 text-gammalex-purple neon-text" />
+                </div>
+                <div className="text-xl md:text-2xl font-bold font-inter text-gammalex-purple mb-2">Legal Compliance</div>
+                <div className="text-base md:text-lg font-inter text-white/90 leading-relaxed">Prevents compliance gaps that lead to successful appeals.</div>
+              </motion.div>
+              {/* Connector Dot */}
+              <div className="hidden lg:flex flex-col items-center justify-center h-full">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-gammalex-orange to-gammalex-purple shadow-lg border-4 border-white/10 animate-pulse" />
+              </div>
+              {/* Risk Mitigation */}
+              <motion.div
+                className="flex flex-col items-center text-center px-4 lg:w-1/3 relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="relative mb-4">
+                  <div className="absolute -inset-2 bg-gammalex-purple/20 rounded-full blur-lg animate-pulse" />
+                  <Shield className="w-14 h-14 text-gammalex-purple neon-text" />
+                </div>
+                <div className="text-xl md:text-2xl font-bold font-inter text-gammalex-purple mb-2">Risk Mitigation</div>
+                <div className="text-base md:text-lg font-inter text-white/90 leading-relaxed">Strengthens justifications before submission, not in court.</div>
+              </motion.div>
+            </div>
+          </div>
           <div className="text-center">
             <motion.p
               initial={{ opacity: 0, y: 24 }}
@@ -190,7 +211,7 @@ export default function GammaLexPage() {
             >
               The best defense is foresight. GammaLex doesn't just respond to denials—it flags risk early, so you can avoid them altogether.
             </motion.p>
-            </div>
+          </div>
         </div>
       </section>
 
@@ -684,230 +705,311 @@ export default function GammaLexPage() {
               </p>
             </div>
 
-            {/* Horizontal Scrollable Cards */}
+            {/* Interactive Feature Flow */}
             <div className="relative max-w-7xl mx-auto px-4 sm:px-8">
-              {/* Navigation Arrows */}
-              <button 
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-14 h-14 rounded-full bg-gammalex-purple/20 border border-gammalex-purple/30 text-white hover:bg-gammalex-purple/30 hover:border-gammalex-purple/50 transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
-                onClick={() => {
-                  const container = document.getElementById('scrollable-cards');
-                  if (container) {
-                    container.scrollBy({ left: -500, behavior: 'smooth' });
-                  }
-                }}
-              >
-                <ChevronLeft className="w-7 h-7" />
-              </button>
-              
-              <button 
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-14 h-14 rounded-full bg-gammalex-purple/20 border border-gammalex-purple/30 text-white hover:bg-gammalex-purple/30 hover:border-gammalex-purple/50 transition-all duration-300 flex items-center justify-center backdrop-blur-sm"
-                onClick={() => {
-                  const container = document.getElementById('scrollable-cards');
-                  if (container) {
-                    container.scrollBy({ left: 500, behavior: 'smooth' });
-                  }
-                }}
-              >
-                <ChevronRight className="w-7 h-7" />
-              </button>
-
-              {/* Scrollable Container */}
-              <div 
-                id="scrollable-cards"
-                className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-8"
-                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-              >
-                {/* Dynamic Policy Intelligence Card */}
-                <motion.div 
-                  className="flex-shrink-0 w-96 md:w-[500px] snap-start"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-10 md:p-12 border border-white/10 min-h-[500px] w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-                    <div className="flex items-center gap-6 mb-8">
-                      <div className="p-4 bg-gammalex-purple/20 rounded-2xl border border-gammalex-purple/30">
-                        <Brain className="w-12 h-12 md:w-16 md:h-16 text-gammalex-purple neon-text animate-pulse-glow" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Dynamic Policy Intelligence</h4>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-5 flex-1">
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Real-time Policy Decoding</h5>
-                          <p className="text-lg text-white/80">Decodes evolving policy language instantly</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Adaptive Rule Engine</h5>
-                          <p className="text-lg text-white/80">Prevents denials as payer rules change</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Clinical-Legal Bridge</h5>
-                          <p className="text-lg text-white/80">Medical expertise meets legal precision</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Nuanced Interpretation Card */}
-                <motion.div 
-                  className="flex-shrink-0 w-96 md:w-[500px] snap-start"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-10 md:p-12 border border-white/10 min-h-[500px] w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-                    <div className="flex items-center gap-6 mb-8">
-                      <div className="p-4 bg-gammalex-purple/20 rounded-2xl border border-gammalex-purple/30">
-                        <Scale className="w-12 h-12 md:w-16 md:h-16 text-gammalex-purple-light neon-text animate-pulse-glow" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Contextual Interpretation</h4>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-5 flex-1">
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Gray Area Navigation</h5>
-                          <p className="text-lg text-white/80">Interprets complex requirements bots miss</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Risk Detection</h5>
-                          <p className="text-lg text-white/80">Flags issues before they become problems</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Legal-Clinical Bridge</h5>
-                          <p className="text-lg text-white/80">Full clinical and legal context</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Human Expertise Enhanced Card */}
-                <motion.div 
-                  className="flex-shrink-0 w-96 md:w-[500px] snap-start"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-10 md:p-12 border border-white/10 min-h-[500px] w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-                    <div className="flex items-center gap-6 mb-8">
-                      <div className="p-4 bg-gammalex-purple/20 rounded-2xl border border-gammalex-purple/30">
-                        <UserCheck className="w-12 h-12 md:w-16 md:h-16 text-gammalex-purple neon-text animate-pulse-glow" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Human Expertise, Enhanced</h4>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-5 flex-1">
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Expert Judgment</h5>
-                          <p className="text-lg text-white/80">Enhances human expertise, never replaces</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Data-Driven Insights</h5>
-                          <p className="text-base text-white/80">Comprehensive data empowers decisions</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Accelerated Workflow</h5>
-                          <p className="text-base text-white/80">Human oversight with faster processes</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Holistic Decision Support Card */}
-                <motion.div 
-                  className="flex-shrink-0 w-96 md:w-[500px] snap-start"
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex flex-col items-start glass-dark rounded-3xl neon-glow shadow-2xl p-10 md:p-12 border border-white/10 min-h-[500px] w-full overflow-hidden hover:border-gammalex-purple/40 hover:shadow-lg hover-glow transition-all duration-300">
-                    <div className="flex items-center gap-6 mb-8">
-                      <div className="p-4 bg-gammalex-purple/20 rounded-2xl border border-gammalex-purple/30">
-                        <Target className="w-12 h-12 md:w-16 md:h-16 text-gammalex-purple-light neon-text animate-pulse-glow" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg sm:text-xl md:text-2xl font-inter gradient-text">Holistic Decision Support</h4>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-5 flex-1">
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Triple Integration</h5>
-                          <p className="text-base text-white/80">Compliance, clinical, and legal at point of care</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Real-time Support</h5>
-                          <p className="text-base text-white/80">Intelligent decisions where they matter</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <h5 className="text-lg font-semibold text-white mb-2">Seamless Integration</h5>
-                          <p className="text-base text-white/80">Clinical workflows without disruption</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
+              {/* Floating Elements Background */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <motion.div
+                  className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-gammalex-purple/20 to-transparent rounded-full blur-xl"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-gammalex-orange/20 to-transparent rounded-full blur-lg"
+                  animate={{ 
+                    scale: [1, 1.3, 1],
+                    opacity: [0.2, 0.5, 0.2]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+                />
+                <motion.div
+                  className="absolute bottom-20 left-1/4 w-40 h-40 bg-gradient-to-br from-gammalex-purple-light/15 to-transparent rounded-full blur-2xl"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.2, 0.4, 0.2]
+                  }}
+                  transition={{ duration: 6, repeat: Infinity, delay: 2 }}
+                />
               </div>
 
-              {/* Scroll Indicator */}
-              <div className="flex justify-center mt-8 space-x-3">
-                <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
-                <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
-                <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
-                <div className="w-4 h-4 rounded-full bg-gammalex-purple animate-pulse"></div>
+              {/* Main Interactive Grid */}
+              <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 py-12">
+                
+                {/* Dynamic Policy Intelligence - Organic Shape */}
+                <motion.div 
+                  className="relative group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative overflow-hidden">
+                    {/* Organic Background Shape */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gammalex-purple/10 via-gammalex-purple/5 to-transparent rounded-[3rem] blur-sm group-hover:blur-0 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-gammalex-purple/5 to-transparent rounded-[3rem] group-hover:from-gammalex-purple/15 transition-all duration-500" />
+                    
+                    {/* Content Container */}
+                    <div className="relative p-8 lg:p-10 rounded-[3rem] border border-white/10 backdrop-blur-sm group-hover:border-gammalex-purple/30 transition-all duration-500">
+                      <div className="flex items-start gap-6 mb-6">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-gammalex-purple/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500" />
+                          <div className="relative p-4 bg-gammalex-purple/10 rounded-2xl border border-gammalex-purple/30 group-hover:bg-gammalex-purple/20 transition-all duration-500">
+                            <Brain className="w-12 h-12 lg:w-16 lg:h-16 text-gammalex-purple neon-text group-hover:scale-110 transition-transform duration-300" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl lg:text-2xl font-inter gradient-text mb-2">Dynamic Policy Intelligence</h4>
+                          <div className="w-16 h-1 bg-gradient-to-r from-gammalex-purple to-transparent rounded-full" />
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple transition-colors duration-300">Real-time Policy Decoding</h5>
+                            <p className="text-white/80">Decodes evolving policy language instantly</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple transition-colors duration-300">Adaptive Rule Engine</h5>
+                            <p className="text-white/80">Prevents denials as payer rules change</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.2 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple transition-colors duration-300">Clinical-Legal Bridge</h5>
+                            <p className="text-white/80">Medical expertise meets legal precision</p>
+                          </div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Contextual Interpretation - Flowing Design */}
+                <motion.div 
+                  className="relative group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative overflow-hidden">
+                    {/* Flowing Background */}
+                    <div className="absolute inset-0 bg-gradient-to-bl from-gammalex-purple-light/10 via-gammalex-purple/5 to-transparent rounded-[3rem] blur-sm group-hover:blur-0 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-bl from-gammalex-purple/5 to-transparent rounded-[3rem] group-hover:from-gammalex-purple/15 transition-all duration-500" />
+                    
+                    <div className="relative p-8 lg:p-10 rounded-[3rem] border border-white/10 backdrop-blur-sm group-hover:border-gammalex-purple-light/30 transition-all duration-500">
+                      <div className="flex items-start gap-6 mb-6">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-gammalex-purple-light/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500" />
+                          <div className="relative p-4 bg-gammalex-purple-light/10 rounded-2xl border border-gammalex-purple-light/30 group-hover:bg-gammalex-purple-light/20 transition-all duration-500">
+                            <Scale className="w-12 h-12 lg:w-16 lg:h-16 text-gammalex-purple-light neon-text group-hover:scale-110 transition-transform duration-300" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl lg:text-2xl font-inter gradient-text mb-2">Contextual Interpretation</h4>
+                          <div className="w-16 h-1 bg-gradient-to-r from-gammalex-purple-light to-transparent rounded-full" />
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple-light rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple-light transition-colors duration-300">Gray Area Navigation</h5>
+                            <p className="text-white/80">Interprets complex requirements bots miss</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple-light rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple-light transition-colors duration-300">Risk Detection</h5>
+                            <p className="text-white/80">Flags issues before they become problems</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.2 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple-light rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple-light transition-colors duration-300">Legal-Clinical Bridge</h5>
+                            <p className="text-white/80">Full clinical and legal context</p>
+                          </div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Human Expertise Enhanced - Wave Design */}
+                <motion.div 
+                  className="relative group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative overflow-hidden">
+                    {/* Wave Background */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-gammalex-purple/10 via-gammalex-purple/5 to-transparent rounded-[3rem] blur-sm group-hover:blur-0 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-gammalex-purple/5 to-transparent rounded-[3rem] group-hover:from-gammalex-purple/15 transition-all duration-500" />
+                    
+                    <div className="relative p-8 lg:p-10 rounded-[3rem] border border-white/10 backdrop-blur-sm group-hover:border-gammalex-purple/30 transition-all duration-500">
+                      <div className="flex items-start gap-6 mb-6">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-gammalex-purple/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500" />
+                          <div className="relative p-4 bg-gammalex-purple/10 rounded-2xl border border-gammalex-purple/30 group-hover:bg-gammalex-purple/20 transition-all duration-500">
+                            <UserCheck className="w-12 h-12 lg:w-16 lg:h-16 text-gammalex-purple neon-text group-hover:scale-110 transition-transform duration-300" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl lg:text-2xl font-inter gradient-text mb-2">Human Expertise, Enhanced</h4>
+                          <div className="w-16 h-1 bg-gradient-to-r from-gammalex-purple to-transparent rounded-full" />
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple transition-colors duration-300">Expert Judgment</h5>
+                            <p className="text-white/80">Enhances human expertise, never replaces</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple transition-colors duration-300">Data-Driven Insights</h5>
+                            <p className="text-white/80">Comprehensive data empowers decisions</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.2 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple transition-colors duration-300">Accelerated Workflow</h5>
+                            <p className="text-white/80">Human oversight with faster processes</p>
+                          </div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Holistic Decision Support - Radial Design */}
+                <motion.div 
+                  className="relative group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative overflow-hidden">
+                    {/* Radial Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gammalex-purple-light/10 via-gammalex-purple/5 to-transparent rounded-[3rem] blur-sm group-hover:blur-0 transition-all duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-gammalex-purple/5 to-transparent rounded-[3rem] group-hover:from-gammalex-purple/15 transition-all duration-500" />
+                    
+                    <div className="relative p-8 lg:p-10 rounded-[3rem] border border-white/10 backdrop-blur-sm group-hover:border-gammalex-purple-light/30 transition-all duration-500">
+                      <div className="flex items-start gap-6 mb-6">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-gammalex-purple-light/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500" />
+                          <div className="relative p-4 bg-gammalex-purple-light/10 rounded-2xl border border-gammalex-purple-light/30 group-hover:bg-gammalex-purple-light/20 transition-all duration-500">
+                            <Target className="w-12 h-12 lg:w-16 lg:h-16 text-gammalex-purple-light neon-text group-hover:scale-110 transition-transform duration-300" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-xl lg:text-2xl font-inter gradient-text mb-2">Holistic Decision Support</h4>
+                          <div className="w-16 h-1 bg-gradient-to-r from-gammalex-purple-light to-transparent rounded-full" />
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple-light rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple-light transition-colors duration-300">Triple Integration</h5>
+                            <p className="text-white/80">Compliance, clinical, and legal at point of care</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple-light rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple-light transition-colors duration-300">Real-time Support</h5>
+                            <p className="text-white/80">Intelligent decisions where they matter</p>
+                          </div>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="flex items-start gap-4 group/item"
+                          whileHover={{ x: 8 }}
+                          transition={{ duration: 0.3, delay: 0.2 }}
+                        >
+                          <div className="w-2 h-2 bg-gammalex-purple-light rounded-full mt-3 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                          <div>
+                            <h5 className="text-lg font-semibold text-white mb-1 group-hover/item:text-gammalex-purple-light transition-colors duration-300">Seamless Integration</h5>
+                            <p className="text-white/80">Clinical workflows without disruption</p>
+                          </div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
