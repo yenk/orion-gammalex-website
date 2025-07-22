@@ -237,25 +237,25 @@ export default function GammaLexPage() {
                         {[
                           { 
                             title: "Instant Policy Intelligence", 
-                    description: "Real-time answers to complex clinical and legal questions, precisely matched to payer rules and coverage policies—with transparent, source-backed accuracy.",
+                    description: "Real-time answers to clinical and legal questions with source-backed accuracy.",
                     icon: <Zap className="w-8 h-8 lg:w-10 lg:h-10 text-white" />,
                     delay: 0.6
                           },
                           { 
                             title: "Proactive Denial & Risk Defense", 
-                    description: "Automated risk scoring and legal foresight flag denial, compliance, and litigation risks before they affect patient care or finances—empowering smarter, faster decisions.",
+                    description: "Surface denial and malpractice risk before they jeopardize treatment or trigger financial exposure.",
                     icon: <Shield className="w-8 h-8 lg:w-10 lg:h-10 text-white" />,
                     delay: 0.8
                           },
                           { 
                             title: "Frictionless Compliance & Ethics", 
-                    description: "Embedded compliance checks and ethical standards ensure documentation is bulletproof and every recommendation prioritizes both regulatory and ethical care for patients.",
+                    description: "Embedded compliance checks ensure bulletproof documentation and ethical care.",
                     icon: <Scale className="w-8 h-8 lg:w-10 lg:h-10 text-white" />,
                     delay: 1.0
                           },
                           { 
                             title: "Enterprise-Grade Security & Vulnerability Monitoring", 
-                    description: "SOC 2 and HIPAA compliance with advanced, continuous vulnerability checks—protecting sensitive data, detecting system risks in real time, and ensuring ironclad trust at scale.",
+                    description: "SOC 2 and HIPAA compliance with continuous vulnerability checks for ironclad trust.",
                     icon: <Lock className="w-8 h-8 lg:w-10 lg:h-10 text-white" />,
                     delay: 1.2
                           }
@@ -574,9 +574,7 @@ export default function GammaLexPage() {
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white leading-tight mb-4">
                 Beyond automation. <span className="gradient-text">Beyond compliance.</span>
                 </h3>
-              <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 max-w-3xl mx-auto leading-[1.4] sm:leading-[1.5] px-4 sm:px-0">
-                While others focus on efficiency, <span className="gradient-text">GammaLex protects lives</span> — preventing care denials that lead to tragedy and legal action.
-              </p>
+
             </div>
             
             <div className="relative overflow-hidden rounded-2xl border border-white/20 glass neon-glow">
@@ -919,12 +917,10 @@ export default function GammaLexPage() {
                   <blockquote className="text-xl lg:text-2xl text-white/90 font-inter leading-relaxed mb-6 italic">
                     "The majority of the proposed AI solutions for health policy aim to improve decision-making rather than replace experts."
                   </blockquote>
-                  <p className="text-lg lg:text-xl text-white font-inter mb-6">
-                    This approach aligns with GammaLex's core: bridging the gap between automated throughput and expert-driven, defensible outcomes as policy and payer expectations evolve.
-                  </p>
+
                   <div className="pt-6 border-t border-gammalex-purple/30">
                     <p className="text-2xl lg:text-3xl font-bold text-white font-inter">
-                      In short, GammaLex goes far beyond automation—delivering adaptive, expert-grade support in a complex, high-stakes environment that generic rule-based bots simply cannot match.
+                      GammaLex goes beyond automation—delivering expert-grade support that generic bots cannot match.
                     </p>
                   </div>
                 </div>

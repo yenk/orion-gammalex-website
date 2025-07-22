@@ -238,10 +238,10 @@ function FlaggingOverlay() {
               <div className="p-8 glass-dark rounded-3xl">
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="text-3xl sm:text-4xl font-normal text-slate-900 mb-2 font-inter">
+                    <h3 className="text-4xl sm:text-5xl font-bold text-white mb-3 font-inter">
                       🚩 GammaLex Risk Detection
                     </h3>
-                    <p className="text-lg text-slate-600 font-inter">
+                    <p className="text-xl text-white/80 font-inter">
                       How AI identifies legal vulnerabilities in denial letters
                     </p>
                   </div>
@@ -255,25 +255,25 @@ function FlaggingOverlay() {
                   </Button>
                 </div>
                 <div className="mb-8">
-                  <h4 className="text-xl font-normal text-slate-900 mb-4 font-inter">📄 Sample Denial Letter</h4>
-                  <pre className="bg-slate-100 rounded-xl p-6 text-base sm:text-lg font-mono text-slate-800 whitespace-pre-wrap border border-slate-200">
+                  <h4 className="text-2xl font-bold text-white mb-4 font-inter">📄 Sample Denial Letter</h4>
+                  <pre className="bg-slate-100 rounded-xl p-6 text-lg sm:text-xl font-mono text-slate-800 whitespace-pre-wrap border border-slate-200">
 {`We regret to inform you that your request has been denied. The treatment is considered investigational and not medically necessary based on our guidelines.`}
                   </pre>
                 </div>
                 <div>
-                  <h4 className="text-xl font-normal text-slate-900 mb-4 font-inter">🚩 Legal Risk Flags Detected</h4>
+                  <h4 className="text-2xl font-bold text-white mb-4 font-inter">🚩 Legal Risk Flags Detected</h4>
                   <ul className="space-y-4">
                     {riskFlags.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-200">
-                        <span className="mt-1 text-red-500 text-xl">•</span>
+                        <span className="mt-1 text-red-500 text-2xl">•</span>
                         <div>
-                          <span className="text-slate-900">"{item.flag}"</span>
-                          <span className="block text-sm text-slate-600 mt-1">from <span className="font-medium">{item.source}</span></span>
+                          <span className="text-lg font-semibold text-slate-900">"{item.flag}"</span>
+                          <span className="block text-base text-slate-700 mt-2">from <span className="font-bold">{item.source}</span></span>
                           <a
                             href={item.sourceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm text-gammalex-orange hover:text-gammalex-orange/80 font-medium inline-flex items-center gap-1 mt-1"
+                            className="text-base text-gammalex-orange hover:text-gammalex-orange/80 font-bold inline-flex items-center gap-1 mt-2"
                           >
                             Source ↗
                           </a>
