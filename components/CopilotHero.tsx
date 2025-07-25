@@ -305,7 +305,7 @@ export function CopilotHero() {
       <div className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 z-10 py-2 sm:py-4 md:py-6 lg:py-8">
         {/* Main Hero Heading */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-0">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-0">
             {headingLines.map((line, i) => (
               <div
                 key={i}

@@ -6,7 +6,7 @@ export default function ContactPage() {
     <main className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden font-inter">
       <LegalBackgroundPattern />
       <div className="relative z-10 w-full max-w-2xl mx-auto px-4 py-20 sm:py-32 flex flex-col items-center">
-        <h1 className="text-4xl xs:text-5xl sm:text-6xl font-black mb-4 text-white leading-tight tracking-tight text-center font-inter">
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl font-black mb-4 text-white leading-tight tracking-tight text-center font-inter">
           Get in Touch <span className="text-terracotta-400">with GammaLex</span>
         </h1>
         <p className="text-lg sm:text-xl text-gray-300 mb-10 text-center max-w-2xl font-inter">

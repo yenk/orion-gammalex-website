@@ -27,8 +27,15 @@ function useCountUp(targetNumber: number, duration = 1500) {
 
 export default function WaitlistGrowth() {
   const [targetCount, setTargetCount] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     async function fetchCount() {
       const { count, error } = await supabase
         .from('gammalex_waitlist')
@@ -52,9 +59,14 @@ export default function WaitlistGrowth() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [mounted]);
 
   const count = useCountUp(targetCount ?? 0);
+
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return null;
+  }
 
   if (targetCount === null) return null; // Don't show loading state
 

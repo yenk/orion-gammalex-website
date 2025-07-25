@@ -119,7 +119,7 @@ export default function GammaLexInteractiveStepper() {
 
   return (
     <section className="w-full flex flex-col items-center py-10 sm:py-16 md:py-24 px-2 sm:px-8 bg-gradient-to-b from-gammalex-purple-dark/80 via-black/90 to-black/95">
-      <h2 className="whitespace-normal break-words overflow-visible text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-inter text-center gradient-text neon-text mb-10 sm:mb-14 md:mb-20 max-w-full mx-auto px-2 sm:px-4 leading-[1.2] pb-2">
+      <h2 className="whitespace-normal break-words overflow-visible text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-inter text-center gradient-text neon-text mb-10 sm:mb-14 md:mb-20 max-w-full mx-auto px-2 sm:px-4 leading-[1.2] pb-2">
         Inside the GammaLex Engine
       </h2>
       
@@ -131,7 +131,7 @@ export default function GammaLexInteractiveStepper() {
               <button
                 key={step.id}
                 onClick={() => goToStep(step.id)}
-                className={`flex-1 flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl transition-all duration-200 min-w-0 flex-shrink-0 text-lg sm:text-xl md:text-2xl font-inter font-semibold ${
+                className={`flex-1 flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl transition-all duration-200 min-w-0 flex-shrink-0 text-base sm:text-lg md:text-xl font-inter font-semibold ${
                   currentStep === step.id
                     ? 'bg-gammalex-purple/30 text-white neon-text shadow-lg'
                     : 'text-gammalex-neon hover:text-white hover:bg-gammalex-purple/10'
@@ -191,17 +191,17 @@ export default function GammaLexInteractiveStepper() {
               {/* Right: Content - Larger */}
               <div className="flex-1 text-center md:text-left min-w-0 break-words">
                 <div className="mb-6 sm:mb-8 md:mb-10">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl gradient-text neon-text mb-4 break-words whitespace-normal">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl gradient-text neon-text mb-4 break-words whitespace-normal">
                     {currentStepData?.title}
                   </h3>
-                  <p className="text-lg sm:text-xl md:text-2xl text-gammalex-neon mb-4 sm:mb-6 md:mb-8 break-words whitespace-normal">
+                  <p className="text-base sm:text-lg md:text-xl text-gammalex-neon mb-4 sm:mb-6 md:mb-8 break-words whitespace-normal">
                     {currentStepData?.subtitle}
                   </p>
-                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed break-words whitespace-normal">
+                  <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed break-words whitespace-normal">
                     {currentStepData?.description}
                   </p>
                 </div>
-                <ul className="list-disc pl-8 space-y-4 text-white/80 text-lg sm:text-xl md:text-2xl break-words whitespace-normal">
+                <ul className="list-disc pl-8 space-y-4 text-white/80 text-base sm:text-lg md:text-xl break-words whitespace-normal">
                   {currentStepData?.features.map((feature, idx) => (
                     <li key={idx} className="gradient-text break-words whitespace-normal">
                       {feature}
@@ -216,8 +216,8 @@ export default function GammaLexInteractiveStepper() {
         {/* Progress Bar - Larger & Responsive */}
         <div className="mt-8 sm:mt-10 md:mt-14 glass-dark rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl border border-gammalex-purple/30">
           <div className="flex justify-between items-center mb-4 sm:mb-6 md:mb-8">
-            <span className="text-lg sm:text-xl md:text-2xl font-medium text-white/90">Progress</span>
-            <span className="text-lg sm:text-xl md:text-2xl text-white/60">{currentStep} of {steps.length}</span>
+            <span className="text-base sm:text-lg md:text-xl font-medium text-white/90">Progress</span>
+            <span className="text-base sm:text-lg md:text-xl text-white/60">{currentStep} of {steps.length}</span>
           </div>
           <div className="w-full bg-[#23232b] rounded-full h-0.5 sm:h-1 md:h-1.5">
             <motion.div

@@ -238,7 +238,7 @@ function FlaggingOverlay() {
               <div className="p-8 glass-dark rounded-3xl">
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="text-4xl sm:text-5xl font-bold text-white mb-3 font-inter">
+                    <h3 className="text-3xl sm:text-4xl font-bold text-white mb-3 font-inter">
                       🚩 GammaLex Risk Detection
                     </h3>
                     <p className="text-xl text-white/80 font-inter">
@@ -255,17 +255,17 @@ function FlaggingOverlay() {
                   </Button>
                 </div>
                 <div className="mb-8">
-                  <h4 className="text-2xl font-bold text-white mb-4 font-inter">📄 Sample Denial Letter</h4>
+                  <h4 className="text-xl font-bold text-white mb-4 font-inter">📄 Sample Denial Letter</h4>
                   <pre className="bg-slate-100 rounded-xl p-6 text-lg sm:text-xl font-mono text-slate-800 whitespace-pre-wrap border border-slate-200">
 {`We regret to inform you that your request has been denied. The treatment is considered investigational and not medically necessary based on our guidelines.`}
                   </pre>
                 </div>
                 <div>
-                  <h4 className="text-2xl font-bold text-white mb-4 font-inter">🚩 Legal Risk Flags Detected</h4>
+                  <h4 className="text-xl font-bold text-white mb-4 font-inter">🚩 Legal Risk Flags Detected</h4>
                   <ul className="space-y-4">
                     {riskFlags.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-200">
-                        <span className="mt-1 text-red-500 text-2xl">•</span>
+                        <span className="mt-1 text-red-500 text-xl">•</span>
                         <div>
                           <span className="text-lg font-semibold text-slate-900">"{item.flag}"</span>
                           <span className="block text-base text-slate-700 mt-2">from <span className="font-bold">{item.source}</span></span>
@@ -303,11 +303,11 @@ export function ProductFeaturesDemo() {
   return (
     <section id="product" className="w-full py-16 sm:py-24 md:py-36 px-4 sm:px-8 lg:px-12 bg-gradient-to-br from-black via-[#1a102a] to-black">
       {/* Headline with neon/gradient emphasis */}
-      <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center mb-6 sm:mb-8 leading-tight px-2">
+      <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white text-center mb-6 sm:mb-8 leading-tight px-2">
         End-to-end clinical-legal AI for pre-auth, <br />
         denial risk, and <span className="gradient-text">compliance</span>
       </h2>
-      <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-inter font-normal text-center mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto text-white leading-tight px-2">
+      <p className="text-base xs:text-lg sm:text-xl md:text-2xl font-inter font-normal text-center mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto text-white leading-tight px-2">
         Faster care. Fewer denials. No black boxes. <span className="gradient-text">GammaLex</span> delivers source-backed AI you can trust.
       </p>
       
@@ -319,30 +319,30 @@ export function ProductFeaturesDemo() {
               <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-orange flex items-center justify-center shadow-2xl">
                 <Zap className="text-white" size={48} />
               </div>
-              <h3 className="text-4xl sm:text-5xl font-bold text-white">Inference</h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white">Inference</h3>
             </div>
-            <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed mb-8">
+            <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-8">
               Real-time clinical-legal intelligence for every pre-auth and denial
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Policy Lookup</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Policy Lookup</h4>
                   <p className="text-lg sm:text-xl text-white/80">Instantly match clinical scenarios to payer rules and coverage policies with source verification.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Risk Scoring</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Risk Scoring</h4>
                   <p className="text-lg sm:text-xl text-white/80">Quantify denial and compliance risk before care is delayed or denied.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Compliance Checks</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Compliance Checks</h4>
                   <p className="text-lg sm:text-xl text-white/80">Ensure documentation meets both clinical and legal standards to prevent successful appeals.</p>
                 </div>
               </div>
@@ -350,7 +350,7 @@ export function ProductFeaturesDemo() {
           </div>
           <div className="flex-1">
             <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-3xl p-8 border border-gammalex-purple/30">
-              <h4 className="text-2xl font-bold text-gammalex-orange mb-4">Enterprise Security</h4>
+              <h4 className="text-xl font-bold text-gammalex-orange mb-4">Enterprise Security</h4>
               <p className="text-xl text-white/90">SOC 2, HIPAA compliance with full audit trails for defensibility.</p>
             </div>
           </div>
@@ -363,30 +363,30 @@ export function ProductFeaturesDemo() {
               <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gammalex-orange to-gammalex-purple flex items-center justify-center shadow-2xl">
                 <Settings className="text-white" size={48} />
               </div>
-              <h3 className="text-4xl sm:text-5xl font-bold text-white">Fine-Tuning</h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white">Fine-Tuning</h3>
             </div>
-            <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed mb-8">
+            <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-8">
               Custom AI for your clinical and legal workflows
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Legal Pattern Learning</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Legal Pattern Learning</h4>
                   <p className="text-lg sm:text-xl text-white/80">Adapt models to recognize denial patterns from real lawsuits and case law.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Payer-Specific Training</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Payer-Specific Training</h4>
                   <p className="text-lg sm:text-xl text-white/80">Fine-tune for each insurer's unique denial patterns and legal vulnerabilities.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Compliance Documentation</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Compliance Documentation</h4>
                   <p className="text-lg sm:text-xl text-white/80">Generate bulletproof justifications that withstand legal scrutiny and appeals.</p>
                 </div>
               </div>
@@ -394,7 +394,7 @@ export function ProductFeaturesDemo() {
           </div>
           <div className="flex-1">
             <div className="bg-gradient-to-r from-gammalex-orange/20 to-transparent rounded-3xl p-8 border border-gammalex-orange/30">
-              <h4 className="text-2xl font-bold text-gammalex-purple mb-4">Transparent AI</h4>
+              <h4 className="text-xl font-bold text-gammalex-purple mb-4">Transparent AI</h4>
               <p className="text-xl text-white/90">Full audit trails and explainable decisions for legal defensibility in court.</p>
             </div>
           </div>
@@ -407,30 +407,30 @@ export function ProductFeaturesDemo() {
               <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-orange flex items-center justify-center shadow-2xl">
                 <Bot className="text-white" size={48} />
               </div>
-              <h3 className="text-4xl sm:text-5xl font-bold text-white">AI Copilot</h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white">AI Copilot</h3>
             </div>
-            <p className="text-2xl sm:text-3xl text-white/90 leading-relaxed mb-8">
+            <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-8">
               Your always-on assistant for Copilot teams
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Legal Risk Surfacing</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Legal Risk Surfacing</h4>
                   <p className="text-lg sm:text-xl text-white/80">Flag vulnerabilities from real lawsuits before they become denials or liability.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Policy Intelligence</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Policy Intelligence</h4>
                   <p className="text-lg sm:text-xl text-white/80">Answer complex clinical and legal questions with source-backed accuracy.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
                 <div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2">Team Empowerment</h4>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white mb-2">Team Empowerment</h4>
                   <p className="text-lg sm:text-xl text-white/80">Reduce burnout by automating research and compliance checks.</p>
                 </div>
               </div>
@@ -438,7 +438,7 @@ export function ProductFeaturesDemo() {
           </div>
           <div className="flex-1">
             <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-3xl p-8 border border-gammalex-purple/30">
-              <h4 className="text-2xl font-bold text-gammalex-orange mb-4">Clinical Integration</h4>
+              <h4 className="text-xl font-bold text-gammalex-orange mb-4">Clinical Integration</h4>
               <p className="text-xl text-white/90">Seamlessly connect to EHR and care systems to automate workflows—while layering in legal intelligence to flag risks, prevent denials, and reduce lawsuit exposure.</p>
             </div>
           </div>

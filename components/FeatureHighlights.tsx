@@ -88,7 +88,7 @@ export function FeatureHighlights() {
                     {/* Text Content */}
                     <div className="space-y-3">
                       <motion.h3 
-                        className="text-2xl font-bold text-white font-inter neon-text"
+                        className="text-xl font-bold text-white font-inter neon-text"
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
                       >

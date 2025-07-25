@@ -30,8 +30,15 @@ function useCountUp(target: number, duration = 1200) {
 
 export default function WaitlistLiveCount() {
   const [targetCount, setTargetCount] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     let channel: any;
 
     async function fetchCount() {
@@ -56,9 +63,20 @@ export default function WaitlistLiveCount() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [mounted]);
 
   const count = useCountUp(targetCount ?? 0);
+
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="w-full flex flex-col items-center mt-6">
+        <div className="animate-pulse text-5xl font-extrabold text-center text-gray-400 select-none">
+          ...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full flex flex-col items-center mt-6">
