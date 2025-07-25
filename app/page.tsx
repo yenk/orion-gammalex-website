@@ -1548,7 +1548,7 @@ function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center justify-center flex-1">
-              <div className="flex items-center space-x-6 xl:space-x-8 2xl:space-x-12">
+              <div className="flex items-center space-x-4 lg:space-x-6 xl:space-x-8 2xl:space-x-10">
                 {navItems.map((item) => (
                   <div key={item.id} className="relative">
                     {item.hasDropdown ? (
@@ -1569,7 +1569,7 @@ function Navigation() {
                       >
                   <motion.button
                           onClick={() => scrollToSection(item.id)}
-                          className="text-sm xl:text-base 2xl:text-lg font-medium text-white font-inter transition-colors flex items-center gap-1 whitespace-nowrap"
+                          className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-medium text-white font-inter transition-colors flex items-center gap-1 whitespace-nowrap"
                           whileHover={{ y: -2 }}
                         >
                           {item.label}
@@ -1577,8 +1577,8 @@ function Navigation() {
                             animate={{ rotate: (item.id === 'the-mission' ? isWhyGammaLexDropdownOpen : item.id === 'crisis-numbers' ? isWhatWereSolvingDropdownOpen : isWhyWeWinDropdownOpen) ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
                           >
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                              <path d="M2.5 3.5L5 6L7.5 3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <svg width="6" height="6" className="lg:w-8 lg:h-8" viewBox="0 0 6 6" fill="none">
+                              <path d="M1.5 2L3 3.5L4.5 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
                           </motion.div>
                         </motion.button>
@@ -1745,7 +1745,7 @@ function Navigation() {
                     ) : (
                       <motion.button
                     onClick={() => handleNavClick(item)}
-                    className="text-sm xl:text-base 2xl:text-lg font-medium text-white font-inter transition-colors whitespace-nowrap"
+                    className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-medium text-white font-inter transition-colors whitespace-nowrap"
                     whileHover={{ y: -2 }}
                   >
                     {item.label}
