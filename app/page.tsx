@@ -1650,6 +1650,210 @@ export default function GammaLexPage() {
             </div>
           </motion.div>
 
+          {/* Real-Time Payer Policy Landscape Mockup */}
+          <motion.div
+            className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-orange flex items-center justify-center shadow-2xl">
+                  <Globe className="text-white" size={40} />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white">Real-Time Payer Policy Landscape</h3>
+              </div>
+              <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-6">
+                Continuously monitors and adapts to evolving payer policies across all major insurance networks, ensuring your claims stay compliant and approved.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-lg text-white/80">Real-time policy updates from CMS, commercial payers, and specialty guidelines.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-lg text-white/80">Predictive analytics for policy changes and their impact on claim approval rates.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-gammalex-purple rounded-full mt-3 flex-shrink-0"></div>
+                  <p className="text-lg text-white/80">Automated compliance monitoring across multiple payer networks and specialties.</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex-1">
+              {/* Real-Time Payer Policy Landscape Mockup */}
+              <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="/gammalexlogo-transparent.png"
+                      alt="GammaLex Logo"
+                      style={{ filter: 'brightness(0) invert(1)' }}
+                      className="h-10 w-auto"
+                    />
+                    <h4 className="text-xl font-bold text-white">Real-Time Policy Intelligence</h4>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-white/60">Live</span>
+                  </div>
+                </div>
+                
+                {/* Policy Landscape Panel */}
+                <div className="space-y-4">
+                  {/* Active Payer Networks */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/80 mb-2">Active Payer Networks</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="bg-gammalex-orange/20 border border-gammalex-orange/30 rounded p-2">
+                        <span className="text-gammalex-orange text-xs font-semibold">Medicare</span>
+                        <div className="text-white text-sm">Updated 2 min ago</div>
+                      </div>
+                      <div className="bg-blue-500/20 border border-blue-500/30 rounded p-2">
+                        <span className="text-blue-400 text-xs font-semibold">Blue Cross</span>
+                        <div className="text-white text-sm">Updated 5 min ago</div>
+                      </div>
+                      <div className="bg-green-500/20 border border-green-500/30 rounded p-2">
+                        <span className="text-green-400 text-xs font-semibold">Aetna</span>
+                        <div className="text-white text-sm">Updated 8 min ago</div>
+                      </div>
+                      <div className="bg-purple-500/20 border border-purple-500/30 rounded p-2">
+                        <span className="text-purple-400 text-xs font-semibold">UnitedHealth</span>
+                        <div className="text-white text-sm">Updated 12 min ago</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Policy Change Alerts */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/80 mb-2">Recent Policy Changes</label>
+                    <div className="space-y-2">
+                      <div className="bg-yellow-500/20 border border-yellow-500/30 rounded p-3">
+                        <div className="flex items-center gap-2 mb-1">
+                          <AlertTriangle className="text-yellow-400" size={14} />
+                          <span className="text-yellow-400 text-xs font-medium">CMS Update</span>
+                        </div>
+                        <p className="text-white text-sm">Medicare LCD L34876 updated - New medical necessity criteria for CT chest</p>
+                      </div>
+                      <div className="bg-blue-500/20 border border-blue-500/30 rounded p-3">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Info className="text-blue-400" size={14} />
+                          <span className="text-blue-400 text-xs font-medium">ACR Guidelines</span>
+                        </div>
+                        <p className="text-white text-sm">Updated appropriateness criteria for radiology imaging procedures</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Coverage Predictions */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/80 mb-2">Coverage Predictions</label>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="bg-green-500/20 border border-green-500/30 rounded p-2 text-center">
+                        <span className="text-green-400 text-xs font-medium">High Approval</span>
+                        <div className="text-white text-lg font-bold">92%</div>
+                      </div>
+                      <div className="bg-yellow-500/20 border border-yellow-500/30 rounded p-2 text-center">
+                        <span className="text-yellow-400 text-xs font-medium">Medium Risk</span>
+                        <div className="text-white text-lg font-bold">68%</div>
+                      </div>
+                      <div className="bg-red-500/20 border border-red-500/30 rounded p-2 text-center">
+                        <span className="text-red-400 text-xs font-medium">High Risk</span>
+                        <div className="text-white text-lg font-bold">23%</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Specialty Policy Status */}
+                  <div>
+                    <label className="block text-sm font-medium text-white/80 mb-2">Specialty Policy Status</label>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">Radiology</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <span className="text-green-400 text-xs">Compliant</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">Oncology</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                          <span className="text-yellow-400 text-xs">Review Required</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">Cardiology</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                          <span className="text-green-400 text-xs">Compliant</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">Transplant</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <span className="text-blue-400 text-xs">Monitoring</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Policy Sources */}
+                  <div className="border-t border-white/20 pt-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-medium text-white/80">Policy Sources</span>
+                      <button className="text-xs text-gammalex-orange hover:text-gammalex-orange-light">View All</button>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded p-3 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-gammalex-orange rounded-full"></div>
+                        <span className="text-gammalex-orange font-semibold text-sm">CMS Manual System §100-02</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span className="text-white text-sm">Medicare Claims Processing Manual</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span className="text-white text-sm">ACR Appropriateness Criteria® 2023</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span className="text-white text-sm">Commercial Payer Policy Database</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Real-Time Updates */}
+                  <div className="border-t border-white/20 pt-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-medium text-white/80">Real-Time Updates</span>
+                      <button className="text-xs text-gammalex-orange hover:text-gammalex-orange-light">View All</button>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded p-3 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span className="text-white text-sm">CMS policy update processed - 2 min ago</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span className="text-white text-sm">Blue Cross guidelines synced - 5 min ago</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span className="text-white text-sm">ACR criteria updated - 15 min ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Technical Differentiation */}
                 <motion.div
             className="text-center"
