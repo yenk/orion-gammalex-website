@@ -2185,86 +2185,70 @@ function StatBlock({ stat, i, fadeUp }: { stat: { value: string, label: string, 
 function LegalHeatIndex() {
   const cases = [
     {
+      headline: "Mental Health Denied, Justice Delivered",
       caseName: "Dwyer v. UnitedHealthcare",
       year: "2023",
-      jurisdiction: "5th U.S. Circuit Court of Appeals",
-      summary: "Denial of mental health care overturned. Court found denial \"unsupported by medical evidence\" and \"contradicted by the record.\"",
-      tag: "Mental Health",
+      summary: "Denial overturned. Court found denial \"unsupported by medical evidence.\"",
       source: "https://www.propublica.org/article/mental-health-insurance-denials-unitedhealthcare-cigna-doctors"
     },
     {
-      caseName: "Cunningham v. Aetna",
+      headline: "Cancer Patient Dies After $92K Denial",
+      caseName: "Cunningham v. Aetna", 
       year: "2023",
-      jurisdiction: "Oklahoma",
-      summary: "$92K cancer treatment denied. Patient died. Court exposed rushed reviews and unqualified reviewers.",
-      tag: "Oncology, Malpractice",
+      summary: "$92K treatment denied. Patient died. Court exposed unqualified reviewers.",
       source: "https://www.propublica.org/article/malpractice-settlements-doctors-working-for-insurance-companies"
     },
     {
-      caseName: "Class Action: Algorithmic Denials by UnitedHealthcare",
+      headline: "AI Auto-Denials Spark National Class Action",
+      caseName: "UnitedHealthcare Class Action",
       year: "2024–2025",
-      jurisdiction: "National Class Action",
-      summary: "AI-driven auto-denials triggered a national class-action lawsuit and federal scrutiny. Patients denied without human review.",
-      tag: "AI Denial",
+      summary: "AI-driven denials triggered federal scrutiny. Patients denied without human review.",
       source: "https://www.nbcnews.com/health/health-care/prior-authorization-insurance-denials-patients-treatment-rcna212068"
     }
-  ];
-
-  const caseHeadlines = [
-    "Mental Health Denied, Justice Delivered",
-    "Cancer Patient Dies After $92K Denial",
-    "AI Auto-Denials Spark National Class Action",
   ];
 
   return (
     <section id="legal-heat-index" className="w-full py-24 px-4 font-inter bg-gradient-to-br from-black via-gammalex-purple/20 to-black">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white text-center mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white text-center mb-6">
             When denials become <span className="gradient-text">lawsuits</span>
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl font-inter font-normal text-white text-center mb-8 leading-tight">
+          <p className="text-lg sm:text-xl md:text-2xl font-inter font-normal text-white/90 text-center leading-tight">
             The warning signs GammaLex is built to catch—before it's too late.
           </p>
         </div>
-        <div className="relative flex flex-col gap-20 pl-8 sm:pl-12">
-          {/* Vertical timeline line */}
-          <div className="absolute left-3 sm:left-5 top-0 bottom-0 w-1 bg-gradient-to-b from-gammalex-purple/40 via-gammalex-purple/60 to-gammalex-orange/40 rounded-full z-0" />
+        
+        <div className="space-y-12">
           {cases.map((c, idx) => (
-            <div key={c.caseName} className="relative flex items-start gap-6">
-              {/* Timeline dot */}
-              <div className="flex flex-col items-center z-10">
-                <span className={`w-5 h-5 rounded-full border-4 border-white ${idx === 0 ? 'bg-gammalex-orange' : 'bg-gammalex-purple'}`}></span>
-                {idx < cases.length - 1 && (
-                  <span className="flex-1 w-px bg-gradient-to-b from-gammalex-purple/60 to-gammalex-orange/30" />
-                )}
-              </div>
-              {/* Event content */}
-              <div className="flex-1 pb-2">
-                <div className="mb-2">
-                  <span className="block text-2xl sm:text-3xl md:text-4xl font-bold font-inter text-white mb-1">
-                    {caseHeadlines[idx]}
-                  </span>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="text-lg sm:text-xl font-semibold font-inter text-white/80 mr-2">
-                      {c.caseName}
-                    </span>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full bg-gammalex-purple/30 text-gammalex-purple uppercase tracking-wide">
-                      {c.tag}
-                    </span>
+            <motion.div 
+              key={c.caseName}
+              className="relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-start gap-6">
+                <div className="w-3 h-3 bg-gammalex-orange rounded-full mt-3 flex-shrink-0" />
+                <div className="flex-1">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 font-inter">
+                    {c.headline}
+                  </h3>
+                  <div className="text-lg sm:text-xl text-white/80 mb-4 font-inter">
+                    {c.summary}
                   </div>
-                  <div className="text-sm text-white/60 font-inter mt-1">
-                    {c.year}, {c.jurisdiction}
+                  <div className="flex items-center gap-4 text-sm text-white/60 font-inter">
+                    <span>{c.caseName}</span>
+                    <span>•</span>
+                    <span>{c.year}</span>
+                    <a href={c.source} target="_blank" rel="noopener noreferrer" className="text-gammalex-purple hover:text-gammalex-orange transition-colors underline">
+                      Read Source ↗
+                    </a>
                   </div>
                 </div>
-                <div className="text-lg sm:text-xl font-inter text-white/90 mb-2 mt-2">
-                  {c.summary}
-                </div>
-                <a href={c.source} target="_blank" rel="noopener noreferrer" className="text-gammalex-purple underline underline-offset-2 text-base font-inter hover:text-gammalex-orange transition-colors">
-                  Read Source ↗
-                </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -2333,14 +2317,14 @@ function SectionBlock({ heading, highlight, content, renderHeading }: { heading:
 function UnifiedCrisisSection() {
   return (
     <div className="w-full max-w-6xl mx-auto">
-      {/* Interactive Crisis Timeline */}
+      {/* High-Stakes Specialty Impact */}
       <div className="relative mb-20">
         {/* Timeline Line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gammalex-orange via-gammalex-purple to-gammalex-orange transform -translate-x-1/2 hidden lg:block" />
         
-        {/* Clinical Impact Nodes */}
+        {/* Oncology Impact */}
         <div className="space-y-16 lg:space-y-24">
-          {/* 92% Care Delays */}
+          {/* 92% Radiation Oncologists */}
           <motion.div 
             className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
             initial={{ opacity: 0, x: -50 }}
@@ -2353,19 +2337,19 @@ function UnifiedCrisisSection() {
                 <AnimatedCounter value="92%" inView={true} />
               </div>
               <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
-                of care delays are tied to prior authorization problems
+                of radiation oncologists report prior authorization delays
               </div>
             </div>
             <div className="hidden lg:block w-8 h-8 bg-gammalex-orange rounded-full border-4 border-white shadow-lg z-10" />
             <div className="lg:w-1/2 text-left">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
-                <div className="text-sm text-gammalex-orange font-semibold mb-2">IMPACT</div>
-                <div className="text-white/80">Every 9 out of 10 care delays stem from bureaucratic barriers, not medical necessity.</div>
+                <div className="text-sm text-gammalex-orange font-semibold mb-2">ONCOLOGY IMPACT</div>
+                <div className="text-white/80">30% result in ER visits, hospitalization, or permanent disability. 7% result in patient death.</div>
               </div>
             </div>
           </motion.div>
 
-          {/* 15 Hours Per Week */}
+          {/* 22% Cancer Patients */}
           <motion.div 
             className="relative flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16"
             initial={{ opacity: 0, x: 50 }}
@@ -2375,22 +2359,22 @@ function UnifiedCrisisSection() {
           >
             <div className="lg:w-1/2 text-left">
               <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-4">
-                <AnimatedCounter value="15" inView={true} />
+                <AnimatedCounter value="22%" inView={true} />
               </div>
               <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
-                hours per week on prior auth requests
+                of cancer patients don't receive physician-recommended care
               </div>
             </div>
             <div className="hidden lg:block w-8 h-8 bg-gammalex-orange rounded-full border-4 border-white shadow-lg z-10" />
             <div className="lg:w-1/2 text-right">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
-                <div className="text-sm text-gammalex-orange font-semibold mb-2">TIME DRAIN</div>
-                <div className="text-white/80">Nearly 2 full workdays lost to paperwork instead of patient care.</div>
+                <div className="text-sm text-gammalex-orange font-semibold mb-2">CARE DELAYS</div>
+                <div className="text-white/80">Due to authorization delays or denials, putting lives at risk.</div>
               </div>
             </div>
           </motion.div>
 
-          {/* 78% Patient Abandonment */}
+          {/* 93% Cardiology PA Rate */}
           <motion.div 
             className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
             initial={{ opacity: 0, x: -50 }}
@@ -2400,17 +2384,17 @@ function UnifiedCrisisSection() {
           >
             <div className="lg:w-1/2 text-right">
               <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-4">
-                <AnimatedCounter value="78%" inView={true} />
+                <AnimatedCounter value="93%" inView={true} />
               </div>
               <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
-                of patients abandon treatment due to PA barriers
+                PA rate for cardiologists - second-highest among specialties
               </div>
             </div>
             <div className="hidden lg:block w-8 h-8 bg-gammalex-orange rounded-full border-4 border-white shadow-lg z-10" />
             <div className="lg:w-1/2 text-left">
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
-                <div className="text-sm text-gammalex-orange font-semibold mb-2">PATIENT IMPACT</div>
-                <div className="text-white/80">Nearly 8 in 10 patients give up on treatment when faced with authorization delays.</div>
+                <div className="text-sm text-gammalex-orange font-semibold mb-2">CARDIOLOGY RISK</div>
+                <div className="text-white/80">Complex coding and strict payer criteria create elevated denial risk.</div>
               </div>
             </div>
           </motion.div>
@@ -2485,7 +2469,7 @@ function UnifiedCrisisSection() {
 
       {/* Source attribution */}
       <div className="text-sm sm:text-base text-white/60 text-center mt-8">
-        Sources: <a href="https://www.ama-assn.org/system/files/prior-authorization-survey.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">AMA 2024 Prior Authorization Physician Survey</a> | <a href="https://www.kff.org/private-insurance/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">KFF Claims Denials and Appeals in ACA Marketplace Plans 2023</a> | <a href="https://blog.healthjobsnationwide.com/healthcare-denials-are-skyrocketing-in-2025-hidden-reasons-revealed/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Healthcare Denials Skyrocketing in 2025</a> | <a href="https://www.os-healthcare.com/news-and-blog/denial-rates-are-climbing-what-healthcare-revenue-cycle-leaders-should-be-watching-in-2025" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">OS Healthcare Denial Rates Climbing 2025</a>
+        Sources: <a href="https://www.ama-assn.org/system/files/prior-authorization-survey.pdf" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">AMA 2024 Prior Authorization Physician Survey</a> | <a href="https://www.astro.org/news-and-publications/news-and-media-center/news-releases/2024/new-astro-survey-finds-that-prior-authorization-delays-lead-to-serious-harm-for-people-with-cancer" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">ASTRO Survey: Prior Authorization Delays Lead to Serious Harm for Cancer Patients</a> | <a href="https://www.beckershospitalreview.com/oncology/how-insurance-denials-disrupt-cancer-care-5-investigation-notes" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Becker's Hospital Review: How Insurance Denials Disrupt Cancer Care</a> | <a href="https://www.kff.org/private-insurance/issue-brief/claims-denials-and-appeals-in-aca-marketplace-plans-in-2023/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">KFF Claims Denials and Appeals in ACA Marketplace Plans 2023</a> | <a href="https://blog.healthjobsnationwide.com/healthcare-denials-are-skyrocketing-in-2025-hidden-reasons-revealed/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Healthcare Denials Skyrocketing in 2025</a> | <a href="https://www.os-healthcare.com/news-and-blog/denial-rates-are-climbing-what-healthcare-revenue-cycle-leaders-should-be-watching-in-2025" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">OS Healthcare Denial Rates Climbing 2025</a>
       </div>
     </div>
   );
