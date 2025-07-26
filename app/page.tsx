@@ -2331,63 +2331,155 @@ function SectionBlock({ heading, highlight, content, renderHeading }: { heading:
 }
 
 function UnifiedCrisisSection() {
-  // Clinical burden metrics
-  const clinicalMetrics = [
-    { value: '92%', label: 'of care delays', desc: 'are tied to prior authorization problems' },
-    { value: '15', label: 'hours per week', desc: 'physicians spend on prior auth requests' },
-    { value: '78%', label: 'of patients', desc: 'abandon treatment due to PA barriers' },
-  ];
-
-  // Financial impact metrics from image
-  const financialMetrics = [
-    { value: '19%', label: 'In-network claims denied', desc: 'Denials are accelerating in 2025' },
-    { value: '37%', label: 'Out-of-network claims denied', desc: 'Even higher denial rates' },
-    { value: '197', label: 'Hospitals lose annually', desc: 'Fighting denials across major payers' },
-    { value: '22%', label: 'Providers lose over $500K/year', desc: 'To denial-related write-offs' },
-  ];
-
   return (
     <div className="w-full max-w-6xl mx-auto">
-      {/* Clinical Burden Section */}
-      <div className="mb-16">
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-white text-center mb-8">
-          Clinical Burden
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {clinicalMetrics.map((item, idx) => (
-            <div key={`clinical-${idx}`} className="bg-white/5 rounded-2xl p-8 border border-gammalex-orange/30 flex flex-col justify-center min-h-[170px] group transition-all duration-200 hover:border-gammalex-orange hover:shadow-lg">
-              <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gammalex-orange mb-3">
-                <AnimatedCounter value={item.value} inView={true} />
+      {/* Interactive Crisis Timeline */}
+      <div className="relative mb-20">
+        {/* Timeline Line */}
+        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gammalex-orange via-gammalex-purple to-gammalex-orange transform -translate-x-1/2 hidden lg:block" />
+        
+        {/* Clinical Impact Nodes */}
+        <div className="space-y-16 lg:space-y-24">
+          {/* 92% Care Delays */}
+          <motion.div 
+            className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="lg:w-1/2 text-right">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-4">
+                <AnimatedCounter value="92%" inView={true} />
               </div>
-              <div className="text-lg sm:text-xl lg:text-2xl font-semibold text-white/80 mb-2">{item.label}</div>
-              <div className="text-base sm:text-lg lg:text-xl text-white/60">{item.desc}</div>
+              <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
+                of care delays are tied to prior authorization problems
+              </div>
             </div>
-          ))}
+            <div className="hidden lg:block w-8 h-8 bg-gammalex-orange rounded-full border-4 border-white shadow-lg z-10" />
+            <div className="lg:w-1/2 text-left">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
+                <div className="text-sm text-gammalex-orange font-semibold mb-2">IMPACT</div>
+                <div className="text-white/80">Every 9 out of 10 care delays stem from bureaucratic barriers, not medical necessity.</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 15 Hours Per Week */}
+          <motion.div 
+            className="relative flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="lg:w-1/2 text-left">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-4">
+                <AnimatedCounter value="15" inView={true} />
+              </div>
+              <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
+                hours per week on prior auth requests
+              </div>
+            </div>
+            <div className="hidden lg:block w-8 h-8 bg-gammalex-orange rounded-full border-4 border-white shadow-lg z-10" />
+            <div className="lg:w-1/2 text-right">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
+                <div className="text-sm text-gammalex-orange font-semibold mb-2">TIME DRAIN</div>
+                <div className="text-white/80">Nearly 2 full workdays lost to paperwork instead of patient care.</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 78% Patient Abandonment */}
+          <motion.div 
+            className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="lg:w-1/2 text-right">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-4">
+                <AnimatedCounter value="78%" inView={true} />
+              </div>
+              <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
+                of patients abandon treatment due to PA barriers
+              </div>
+            </div>
+            <div className="hidden lg:block w-8 h-8 bg-gammalex-orange rounded-full border-4 border-white shadow-lg z-10" />
+            <div className="lg:w-1/2 text-left">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
+                <div className="text-sm text-gammalex-orange font-semibold mb-2">PATIENT IMPACT</div>
+                <div className="text-white/80">Nearly 8 in 10 patients give up on treatment when faced with authorization delays.</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Bridging Narrative */}
-      <div className="text-center mb-16">
-        <p className="text-lg sm:text-xl md:text-2xl font-inter font-normal text-white/90 text-center max-w-4xl mx-auto leading-relaxed">
-          Clinical delays become financial losses. When <span className="text-gammalex-orange font-semibold">92% of care delays are tied to prior authorization problems</span>, the massive financial impact on healthcare providers is inevitable.
-        </p>
-      </div>
+      {/* Financial Impact Cascade */}
+      <div className="relative mb-20">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-3xl sm:text-4xl lg:text-5xl font-inter text-white/90 mb-4">
+            Clinical delays become financial losses
+          </div>
+        </motion.div>
 
-      {/* Financial Impact Section */}
-      <div className="mb-8">
-        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-white text-center mb-8">
-          Financial Impact
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {financialMetrics.map((item, idx) => (
-            <div key={`financial-${idx}`} className="bg-white/5 rounded-2xl p-8 border border-gammalex-purple/30 flex flex-col justify-center min-h-[170px] group transition-all duration-200 hover:border-gammalex-purple hover:shadow-lg">
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-purple mb-3">
-                <AnimatedCounter value={item.value} inView={true} />
+        {/* Financial Impact Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div 
+            className="relative group"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gradient-to-br from-gammalex-purple/10 to-gammalex-purple/5 rounded-2xl p-8 border border-gammalex-purple/20 hover:border-gammalex-purple/40 transition-all duration-300">
+              <div className="text-5xl sm:text-6xl font-bold text-gammalex-purple mb-4">
+                <AnimatedCounter value="19%" inView={true} />
               </div>
-              <div className="text-base sm:text-lg lg:text-xl font-semibold text-white/80 mb-2">{item.label}</div>
-              <div className="text-sm sm:text-base lg:text-lg text-white/60">{item.desc}</div>
+              <div className="text-xl sm:text-2xl text-white/90 font-inter mb-4">in-network claims denied</div>
+              <div className="text-lg text-gammalex-purple font-semibold">+37% out-of-network</div>
             </div>
-          ))}
+          </motion.div>
+
+          <motion.div 
+            className="relative group"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gradient-to-br from-gammalex-purple/10 to-gammalex-purple/5 rounded-2xl p-8 border border-gammalex-purple/20 hover:border-gammalex-purple/40 transition-all duration-300">
+              <div className="text-5xl sm:text-6xl font-bold text-gammalex-purple mb-4">
+                <AnimatedCounter value="197" inView={true} />
+              </div>
+              <div className="text-xl sm:text-2xl text-white/90 font-inter mb-4">hospitals fighting denials</div>
+              <div className="text-lg text-gammalex-purple font-semibold">across major payers</div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            className="relative group md:col-span-2"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-gradient-to-br from-gammalex-purple/10 to-gammalex-purple/5 rounded-2xl p-8 border border-gammalex-purple/20 hover:border-gammalex-purple/40 transition-all duration-300">
+              <div className="text-5xl sm:text-6xl font-bold text-gammalex-purple mb-4">
+                <AnimatedCounter value="22%" inView={true} />
+              </div>
+              <div className="text-xl sm:text-2xl text-white/90 font-inter mb-4">of providers lose over $500K annually</div>
+              <div className="text-lg text-gammalex-purple font-semibold">to denial write-offs</div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
