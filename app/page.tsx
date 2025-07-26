@@ -2348,22 +2348,6 @@ function LegalHeatIndex() {
       source: "https://www.propublica.org/article/malpractice-settlements-doctors-working-for-insurance-companies"
     },
     {
-      caseName: "Salim v. Blue Cross and Blue Shield",
-      year: "2023",
-      jurisdiction: "Federal Court",
-      summary: "Proton therapy for cancer denied. Attorney-patient sued BCBS; spotlight on insurer bias against advanced treatment.",
-      tag: "Advanced Care",
-      source: "https://www.propublica.org/article/blue-cross-proton-therapy-cancer-lawyer-denial"
-    },
-    {
-      caseName: "UnitedHealthcare & Cigna",
-      year: "2022–2024",
-      jurisdiction: "Multiple Federal Courts",
-      summary: "Dozens of cases found wrongful mental health denials using \"dishonest\" reviews. Courts ruled this violated federal parity law.",
-      tag: "Mental Health Parity",
-      source: "https://news.wttw.com/2025/01/03/insurers-continue-rely-doctors-whose-judgments-have-been-criticized-courts"
-    },
-    {
       caseName: "Class Action: Algorithmic Denials by UnitedHealthcare",
       year: "2024–2025",
       jurisdiction: "National Class Action",
@@ -2376,8 +2360,6 @@ function LegalHeatIndex() {
   const caseHeadlines = [
     "Mental Health Denied, Justice Delivered",
     "Cancer Patient Dies After $92K Denial",
-    "Advanced Care Blocked, Lawsuit Follows",
-    "Dozens of Mental Health Denials Ruled Dishonest",
     "AI Auto-Denials Spark National Class Action",
   ];
 
