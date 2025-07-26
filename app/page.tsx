@@ -1326,7 +1326,7 @@ export default function GammaLexPage() {
             </div>
           </motion.div>
 
-          {/* Unified AI Workflow - Step 2: Real-Time Payer & Policy Updates */}
+          {/* Unified AI Workflow - Step 2: Real-Time Payer Policy Updates & Risk Scoring */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0, y: 30 }}
@@ -1335,7 +1335,7 @@ export default function GammaLexPage() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-12">
-              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">Step 2: Real-Time Payer & Policy Updates</h3>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">Step 2: Real-Time Payer Policy Updates & Risk Scoring</h3>
               <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
                 Stay ahead with real-time updates from payers and AI-powered denial risk scoring. GammaLex highlights potential problems before claims are submitted, enabling proactive corrections that reduce costly denials and speed reimbursements.
               </p>
@@ -2017,6 +2017,189 @@ export default function GammaLexPage() {
                         <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
                         <span className="text-white text-sm">ACR criteria updated - 15 min ago</span>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Unified AI Workflow - Step 5: Automated Claims Scrubbing & Authorization */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-12">
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">Step 5: Automated Claims Scrubbing & Authorization</h3>
+              <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
+                Automate claims scrubbing and authorization checks to ensure claims comply with payer rules. GammaLex flags errors and guides teams through prior authorizations, reducing manual work and preventing costly payment delays.
+              </p>
+            </div>
+            
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+              <div className="flex-1">
+                <div className="inline-flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-orange to-gammalex-purple flex items-center justify-center shadow-2xl">
+                    <FileText className="text-white" size={40} />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white">Claims Processing Automation</h3>
+                </div>
+                <p className="text-lg sm:text-xl text-white/90 leading-relaxed mb-6">
+                  Automated claims scrubbing with intelligent error detection and authorization guidance for radiology procedures.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-white/80">Batch claim upload with automated error detection and validation</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-white/80">Intelligent authorization checklists for radiology procedures</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-gammalex-orange rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-white/80">Automated fixes and guided workflows to prevent payment delays</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1">
+                {/* Automated Claims Scrubbing Mockup */}
+                <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-2xl">
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-4">
+                      <img
+                        src="/gammalexlogo-transparent.png"
+                        alt="GammaLex Logo"
+                        style={{ filter: 'brightness(0) invert(1)' }}
+                        className="h-12 w-auto"
+                      />
+                      <h4 className="text-2xl font-bold text-white">Claims Scrubbing & Authorization</h4>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm text-white/60">Processing</span>
+                    </div>
+                  </div>
+                  
+                  {/* Batch Upload Status */}
+                  <div className="mb-6">
+                    <label className="block text-lg font-medium text-white/80 mb-3">Batch Upload Status</label>
+                    <div className="bg-white/10 border border-white/20 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-white text-sm">Radiology Claims Batch #2024-001</span>
+                        <span className="text-green-400 text-sm font-medium">Processing</span>
+                      </div>
+                      <div className="w-full bg-white/20 rounded-full h-3 mb-2">
+                        <div className="bg-green-500 h-3 rounded-full" style={{width: '75%'}}></div>
+                      </div>
+                      <div className="flex justify-between text-xs text-white/60">
+                        <span>47 of 63 claims processed</span>
+                        <span>75% complete</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Error Detection & Fixes */}
+                  <div className="mb-6">
+                    <label className="block text-lg font-medium text-white/80 mb-3">Error Detection & Suggested Fixes</label>
+                    <div className="space-y-3">
+                      <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <AlertTriangle className="text-red-400" size={16} />
+                          <span className="text-red-400 text-sm font-medium">Claim #12345 - Missing Authorization</span>
+                        </div>
+                        <p className="text-white text-sm mb-3">CT Chest with contrast requires prior authorization for Medicare patients.</p>
+                        <div className="flex gap-2">
+                          <button className="text-xs bg-red-500 text-white px-3 py-1 rounded">Request Auth</button>
+                          <button className="text-xs bg-white/10 text-white px-3 py-1 rounded">View Details</button>
+                        </div>
+                      </div>
+                      <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Info className="text-yellow-400" size={16} />
+                          <span className="text-yellow-400 text-sm font-medium">Claim #12346 - Documentation Issue</span>
+                        </div>
+                        <p className="text-white text-sm mb-3">Missing clinical indication for MRI brain without contrast.</p>
+                        <div className="flex gap-2">
+                          <button className="text-xs bg-yellow-500 text-white px-3 py-1 rounded">Add Indication</button>
+                          <button className="text-xs bg-white/10 text-white px-3 py-1 rounded">View Details</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Authorization Checklist */}
+                  <div className="mb-6">
+                    <label className="block text-lg font-medium text-white/80 mb-3">Authorization Checklist - Radiology</label>
+                    <div className="bg-white/5 border border-white/10 rounded-lg p-4 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">CT Chest with Contrast</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                          <span className="text-red-400 text-xs">Required</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">MRI Brain without Contrast</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                          <span className="text-yellow-400 text-xs">Conditional</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">X-Ray Chest 2 Views</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                          <span className="text-green-400 text-xs">Not Required</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-white text-sm">CT Abdomen with Contrast</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                          <span className="text-red-400 text-xs">Required</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Processing Summary */}
+                  <div className="border-t border-white/20 pt-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-lg font-medium text-white/80">Processing Summary</span>
+                      <button className="text-sm text-gammalex-orange hover:text-gammalex-orange-light">View Report</button>
+                    </div>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-3 text-center">
+                        <span className="text-green-400 text-xs font-medium">Clean Claims</span>
+                        <div className="text-white text-lg font-bold">41</div>
+                      </div>
+                      <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-3 text-center">
+                        <span className="text-yellow-400 text-xs font-medium">Needs Fix</span>
+                        <div className="text-white text-lg font-bold">12</div>
+                      </div>
+                      <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-center">
+                        <span className="text-red-400 text-xs font-medium">Auth Required</span>
+                        <div className="text-white text-lg font-bold">10</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quick Actions */}
+                  <div className="border-t border-white/20 pt-4">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-lg font-medium text-white/80">Quick Actions</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <button className="bg-gammalex-orange/20 border border-gammalex-orange/30 rounded-lg p-3 text-gammalex-orange text-sm font-medium hover:bg-gammalex-orange/30 transition-colors">
+                        Request All Authorizations
+                      </button>
+                      <button className="bg-white/10 border border-white/20 rounded-lg p-3 text-white text-sm font-medium hover:bg-white/20 transition-colors">
+                        Apply Suggested Fixes
+                      </button>
                     </div>
                   </div>
                 </div>
