@@ -302,14 +302,7 @@ function FlaggingOverlay() {
 export function ProductFeaturesDemo() {
   return (
     <section id="product" className="w-full py-16 sm:py-24 md:py-36 px-4 sm:px-8 lg:px-12 bg-gradient-to-br from-black via-[#1a102a] to-black">
-      {/* Headline with neon/gradient emphasis */}
-      <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white text-center mb-6 sm:mb-8 leading-tight px-2">
-        End-to-end clinical-legal AI for pre-auth, <br />
-        denial risk, and <span className="gradient-text">compliance</span>
-      </h2>
-      <p className="text-base xs:text-lg sm:text-xl md:text-2xl font-inter font-normal text-center mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto text-white leading-tight px-2">
-        Faster care. Fewer denials. No black boxes. <span className="gradient-text">GammaLex</span> delivers source-backed AI you can trust.
-      </p>
+
       
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Inference - Hero Section */}
