@@ -14,28 +14,15 @@ import HeroDataSources from './HeroDataSources'
 
 const headingLines = [
   [
-    { word: "The", orange: false },
-    { word: "First", orange: true },
-    { word: "AI", orange: true },
     { word: "Built", orange: false },
     { word: "to", orange: false },
     { word: "Defend", orange: true },
-    { word: "Care,", orange: false },
-  ],
-  [
-    { word: "Prevent", orange: true },
-    { word: "Denials,", orange: false },
-    { word: "and", orange: false },
-    { word: "Protect", orange: true },
-    { word: "Lives", orange: true },
+    { word: "What", orange: false },
+    { word: "Matters", orange: true },
   ],
 ];
 
-const subheadingLines = [
-  ["Trained", "on", "real", "policy."],
-  ["Powered", "by", "open", "source."],
-  ["Built", "to", "deliver", "care", "without", "legal", "risk."]
-];
+
 
 export function CopilotHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -305,48 +292,33 @@ export function CopilotHero() {
       <div className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 z-10 py-2 sm:py-4 md:py-6 lg:py-8">
         {/* Main Hero Heading */}
         <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-0">
-            {headingLines.map((line, i) => (
-              <div
-                key={i}
-                className="mb-2 sm:mb-4 md:mb-5 last:mb-0 flex flex-wrap justify-center"
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-0 whitespace-nowrap">
+            {headingLines[0].map((item, j) => (
+              <span
+                key={j}
+                className={`inline-block ${j !== headingLines[0].length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'gradient-text' : 'text-white'}`}
               >
-                {line.map((item, j) => (
-                  <span
-                    key={`${i}-${j}`}
-                    className={`inline-block ${j !== line.length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'gradient-text' : 'text-white'}`}
-                  >
-                    {item.word}
-                  </span>
-                ))}
-              </div>
+                {item.word}
+              </span>
             ))}
           </h1>
         </div>
 
         {/* Subhero Heading */}
         <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-2 sm:px-0">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-2 sm:px-0">
             <div className="mb-1 sm:mb-2 md:mb-3">
-              <span className="inline-block mr-1 sm:mr-2">Trained</span>
-              <span className="inline-block mr-1 sm:mr-2">on</span>
-              <span className="inline-block mr-1 sm:mr-2">real</span>
-              <span className="inline-block mr-1 sm:mr-2">policy.</span>
-            </div>
-            <div className="mb-1 sm:mb-2 md:mb-3">
-              <span className="inline-block mr-1 sm:mr-2">Powered</span>
-              <span className="inline-block mr-1 sm:mr-2">by</span>
-              <span className="inline-block mr-1 sm:mr-2">open</span>
-              <span className="inline-block mr-1 sm:mr-2">source.</span>
-            </div>
-            <div className="mb-1 sm:mb-2 md:mb-3">
-              <span className="inline-block mr-1 sm:mr-2">Built</span>
-              <span className="inline-block mr-1 sm:mr-2">to</span>
-              <span className="inline-block mr-1 sm:mr-2">deliver</span>
-              <span className="inline-block mr-1 sm:mr-2">care</span>
-              <span className="inline-block mr-1 sm:mr-2">without</span>
-              <span className="inline-block mr-1 sm:mr-2">legal</span>
-              <span className="inline-block mr-1 sm:mr-2">risk.</span>
+              <span className="inline-block mr-1 sm:mr-2">Reimagining</span>
+              <span className="inline-block mr-1 sm:mr-2">how</span>
+              <span className="inline-block mr-1 sm:mr-2">healthcare</span>
+              <span className="inline-block mr-1 sm:mr-2">is</span>
+              <span className="inline-block mr-1 sm:mr-2">protected</span>
+              <span className="inline-block mr-1 sm:mr-2">—</span>
+              <span className="inline-block mr-1 sm:mr-2">one</span>
+              <span className="inline-block mr-1 sm:mr-2">denial</span>
+              <span className="inline-block mr-1 sm:mr-2">at</span>
+              <span className="inline-block mr-1 sm:mr-2">a</span>
+              <span className="inline-block mr-1 sm:mr-2">time.</span>
             </div>
           </h2>
         </div>
