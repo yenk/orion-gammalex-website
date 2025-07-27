@@ -18,9 +18,9 @@ export default function ProblemsDetailed() {
     {
       title: "AI to maintain up-to-date coverage policies",
       paragraphs: [
-        "92% of radiation oncologists report prior authorization delays.",
-        "30% result in ER visits, hospitalization, or permanent disability. 7% result in patient death.",
-        "GammaLex's AI captures policy updates from the moment they're published and automatically updates coverage requirements as they evolve."
+        "92% of radiation oncologists report prior authorization delays, with 30% resulting in ER visits, hospitalization, or permanent disability.",
+        "GammaLex's AI captures policy updates from the moment they're published and automatically updates coverage requirements as they evolve.",
+        "This real-time intelligence ensures providers stay compliant and avoid costly denials."
       ],
       highlight: "GammaLex detects changes in coverage policies and automatically updates authorization requirements."
     },
@@ -53,8 +53,8 @@ export default function ProblemsDetailed() {
     {
       title: "AI to prevent billions in financial losses",
       paragraphs: [
-        "Clinical delays aren't just medical issues—they're financial crises. When 92% of radiation oncologists report authorization delays, the cost cascades through the entire system, creating a crisis that impacts both patient care and hospital budgets.",
-        "Hospitals spent $19.7B fighting denials in 2022, and the problem escalated to $25.7B in 2023—a 23% year-over-year spike showing the denial crisis is accelerating, not improving. Meanwhile, $10.6B was wasted on claims that were overturned through appeals—pure administrative waste.",
+        "Clinical delays aren't just medical issues—they're financial crises. When 92% of radiation oncologists report authorization delays, the cost cascades through the entire system.",
+        "Hospitals spent $19.7B fighting denials in 2022, escalating to $25.7B in 2023—a 23% year-over-year spike. Meanwhile, $10.6B was wasted on claims that were overturned through appeals.",
         "GammaLex's Vertical AI prevents these losses by predicting denials before they happen, reducing administrative burden, and ensuring proper authorization from the start."
       ],
       highlight: "GammaLex prevents $25.7B in denial costs and $10.6B in administrative waste through predictive AI."

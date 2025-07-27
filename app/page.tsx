@@ -65,7 +65,7 @@ import { ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma, F
 import LegalHeatIndex from "@/components/LegalHeatIndex"
 import AboutSection from "@/components/AboutSection"
 import FooterGV from "@/components/FooterGV"
-import UnifiedCrisisSection from "@/components/UnifiedCrisisSection"
+
 import GammaLexIllustration from "@/components/GammaLexIllustration"
 import { ProblemsHero, ProblemsComplexCare, ProblemsGrid, ProblemsCTA } from "@/components/problemswesolve"
 import { HowWeDoItHero, HowWeDoItMethodology, HowWeDoItCapabilities, HowWeDoItCTA } from "@/components/howwedoit"
@@ -112,13 +112,7 @@ export default function GammaLexPage() {
       {/* Hero Section */}
       <CopilotHero />
 
-      {/* Unified Healthcare Crisis Section */}
-      <section id="healthcare-crisis" className="w-full flex flex-col items-center justify-center py-20 px-4 sm:px-8 font-inter">
-        <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-center leading-tight mb-10 multi-gradient-text">
-          When red tape becomes a risk factor<br />
-        </h2>
-        <UnifiedCrisisSection />
-      </section>
+
 
       {/* Legal Heat Index Section (When denials become lawsuits) */}
       <LegalHeatIndex />
@@ -2051,5 +2045,5 @@ function SectionBlock({ heading, highlight, content, renderHeading }: { heading:
   );
 }
 
-// UnifiedCrisisSection component extracted to components/UnifiedCrisisSection.tsx
+
 

@@ -30,10 +30,10 @@ function AnimatedCounter({ value, inView }: { value: string, inView: boolean }) 
   return <span>{displayValue}</span>
 }
 
-export default function UnifiedCrisisSection() {
+export default function ProblemsMetrics() {
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      {/* High-Stakes Specialty Impact - Horizontal Scroll */}
+    <div className="w-full max-w-6xl mx-auto" data-testid="problems-metrics">
+      {/* Clinical Impact Section */}
       <div className="mb-20">
         <motion.div 
           className="max-w-6xl mx-auto"
@@ -42,6 +42,12 @@ export default function UnifiedCrisisSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter text-white/90 mb-4">
+              When red tape becomes a risk factor
+            </h2>
+          </div>
+
           {/* Horizontal Scroll Container */}
           <div className="relative">
             <div className="flex gap-12 overflow-x-auto pb-8 scrollbar-hide">
@@ -99,7 +105,7 @@ export default function UnifiedCrisisSection() {
                   <AnimatedCounter value="93%" inView={true} />
                 </div>
                 <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter leading-tight mb-6">
-                  PA rate for cardiologists<br />
+                  PA rate for cardiology<br />
                   <span className="text-gammalex-orange font-semibold">second-highest among specialties</span>
                 </div>
                 <div className="text-base text-white/80 font-inter leading-relaxed">
