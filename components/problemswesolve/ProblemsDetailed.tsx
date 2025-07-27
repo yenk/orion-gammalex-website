@@ -40,13 +40,13 @@ export default function ProblemsDetailed() {
       highlight: "GammaLex's technology assesses authorization risk so clinical teams have maximum impact on patient care."
     },
     {
-      title: "AI to maximize the value of clinical networks",
+      title: "AI to deliver sustainable competitive advantage",
       paragraphs: [
-        "Manual authorization processes, repetitive documentation, and traditional workflows are all declining in efficiency. Meanwhile a whopping 80+% of successful authorizations start with proper documentation and those that do are more than 65% of approved cases.",
-        "AI can't replace the power of human clinical judgment.",
-        "Our AI guides surfaces Clinical Connectors™, the specialists who understand the nuances of each specialty and drive successful authorizations, when and with whom will have the most impact. Gone are hours of work spent finding the right clinical documentation and policy references. AI will find you your best clinical pathway in an instant."
+        "Unlike generic automation vendors, GammaLex's proprietary algorithms are continuously trained on specialty-specific billing, payer, and compliance data, creating robust barriers to entry and sustainable competitive advantage.",
+        "Our AI-driven denial prediction slashes preventable denials, accelerates payment cycles, and unlocks substantial recurring revenue improvements for providers, directly impacting the bottom line and highlighting clear scalability across multiple specialties.",
+        "The platform's architecture is designed for rapid adaptation to new specialties and evolving payer requirements, widening total addressable market and supporting future expansion."
       ],
-      highlight: "Find optimal authorization pathways, clinical documentation, and connections and help others do the same."
+      highlight: "GammaLex's proprietary algorithms create sustainable competitive advantage across multiple high-stake specialties."
     },
     {
       title: "AI to prevent billions in financial losses",
