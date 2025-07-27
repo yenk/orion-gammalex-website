@@ -44,7 +44,6 @@ export default function Navigation() {
 
   const whyGammaLexDropdown: DropdownItem[] = [
     { id: "the-mission", label: "Our Mission", description: "Our purpose and vision for healthcare transformation" },
-    { id: "what-sets-apart", label: "Holistic By Design", description: "Comprehensive clinical-legal intelligence" },
   ];
 
   const whatWereSolvingDropdown: DropdownItem[] = [

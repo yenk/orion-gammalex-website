@@ -70,30 +70,7 @@ export default function LegalHeatIndex() {
     }
   ]
 
-  const cardiologyCases: LegalCase[] = [
-    {
-      headline: "St. Joseph Medical Center – Unnecessary Stenting",
-      caseName: "St. Joseph Medical Center Settlement",
-      year: "2010-2012",
-      impact: "$22-37M settlement",
-      summary: "Dr. Mark Midei performed unnecessary drug-eluting stents based on falsified artery blockages. Federal settlement of $22M under False Claims Act, plus ~$37M in separate malpractice settlements.",
-      specialty: "Cardiology",
-      details: {
-        federalSettlement: {
-          amount: "$22 Million",
-          type: "False Claims Act",
-          description: "St. Joseph Medical Center agreed to pay $22 million to resolve allegations under the False Claims Act, including reimbursement for medically unnecessary stents allegedly implanted by Dr. Mark Midei between January 2008 and May 2009.",
-          source: "https://www.justice.gov/archives/opa/pr/st-joseph-medical-center-maryland-pay-us-22-million-resolve-false-claims-act-allegations"
-        },
-        malpracticeSettlement: {
-          amount: "~$37 Million",
-          type: "Patient Lawsuits",
-          description: "A separate set of lawsuits filed by patients led to a reported $37 million settlement, resolving claims of unnecessary stent placements by Dr. Midei at St. Joseph.",
-          source: "https://www.cbsnews.com/baltimore/news/37-million-settlement-reached-in-former-towson-doctors-stent-case/"
-        }
-      }
-    }
-  ]
+  const cardiologyCases: LegalCase[] = []
 
   const allCases = [...oncologyCases, ...cardiologyCases]
 
