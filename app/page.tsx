@@ -67,6 +67,9 @@ import AboutSection from "@/components/AboutSection"
 import FooterGV from "@/components/FooterGV"
 import UnifiedCrisisSection from "@/components/UnifiedCrisisSection"
 import GammaLexIllustration from "@/components/GammaLexIllustration"
+import { ProblemsHero, ProblemsGrid, ProblemsCTA } from "@/components/problemswesolve"
+import { HowWeDoItHero, HowWeDoItMethodology, HowWeDoItCapabilities, HowWeDoItCTA } from "@/components/howwedoit"
+import { ImpactHero, ImpactStats, ImpactStories, ImpactCTA } from "@/components/impact"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import AnimatedText from "@/components/ui/AnimatedText"
 import { Progress } from '@/components/ui/progress'
@@ -159,10 +162,14 @@ export default function GammaLexPage() {
                 AI to predict and prevent claim denials
               </h3>
               <p className="text-lg text-white/90 leading-relaxed mb-4">
-                For decades, hospitals have struggled with claim denials and coverage uncertainty. The lack of real-time policy intelligence inhibits revenue operations from making data-driven decisions.
+                For years, hospitals have faced significant challenges navigating claim denials and complex payer policies. Traditional systems often struggle to keep pace with evolving medical policies, creating barriers that impact revenue flow, operational efficiency, and timely patient care.
               </p>
               <p className="text-lg text-white/90 leading-relaxed">
-                GammaLex solves this massive challenge with vertical AI that understands medical necessity, aligns with policy in real time, and scales with the complexity of modern care.
+                At GammaLex, we're taking a different path. We've built Vertical AI that deeply understands each specialty's clinical reality and payer landscape. Our platform delivers real-time intelligence at the point of decision—predicting denials before they derail revenue, surfacing actionable risk, and bridging the gaps between medicine, law, and policy.
+              </p>
+              <br />
+              <p className="text-lg text-white/90 leading-relaxed">
+                This is healthcare revenue, re-engineered. This is GammaLex.
               </p>
             </motion.div>
 
@@ -178,7 +185,10 @@ export default function GammaLexPage() {
                 The ROI?
               </h3>
               <p className="text-lg text-white/90 leading-relaxed mb-6">
-                Significant reduction in preventable denials and faster payment cycles, translating to substantial cost savings while improving patient care outcomes.
+                Recent studies show AI integration in radiology workflows can deliver 451% ROI over five years. Key drivers include time savings (78 days in triage, 41 days in reporting), faster diagnoses, and increased revenue from earlier detection enabling additional treatments.
+              </p>
+              <p className="text-xs text-white/50 leading-relaxed mb-4">
+                Sources: <a href="https://www.diagnosticimaging.com/view/ai-radiology-roi-calculator-study-projects-451-percent-roi-over-five-years" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Diagnostic Imaging</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/38499053/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">PubMed</a>
               </p>
               <div className="flex items-center gap-4">
                 <JoinWaitlistModal
@@ -369,12 +379,6 @@ export default function GammaLexPage() {
           {/* Anchor: What We Do */}
           <div id="what-we-do" className="absolute -top-32" aria-hidden="true" />
 
-          {/* Anchor: Problems We Solve */}
-          <div id="problems-we-solve" className="absolute -top-32" aria-hidden="true" />
-
-          {/* Anchor: How We Do It */}
-          <div id="how-we-do-it" className="absolute -top-32" aria-hidden="true" />
-
           {/* Core Values Row */}
           <section id="core-values" className="w-full py-20 px-4 sm:px-8 bg-gradient-to-br from-[#1a102a] via-[#2d1850] to-[#1a102a] rounded-3xl shadow-2xl border border-gammalex-purple/40 mb-32 relative overflow-hidden font-inter">
             <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[60vw] h-32 bg-gradient-to-r from-gammalex-purple/40 via-transparent to-gammalex-orange/30 blur-2xl opacity-40 pointer-events-none" />
@@ -495,9 +499,6 @@ export default function GammaLexPage() {
 
           </div>
 
-          {/* Anchor: Impact */}
-          <div id="impact" className="absolute -top-32" aria-hidden="true" />
-          
           {/* Technical Innovation Section */}
           <section id="technical-innovation" className="mt-32 mb-16">
             <motion.div 
@@ -829,6 +830,23 @@ export default function GammaLexPage() {
 
       {/* About Section */}
       <AboutSection />
+
+      {/* Problems We Solve Section */}
+      <ProblemsHero />
+      <ProblemsGrid />
+      <ProblemsCTA />
+
+      {/* How We Do It Section */}
+      <HowWeDoItHero />
+      <HowWeDoItMethodology />
+      <HowWeDoItCapabilities />
+      <HowWeDoItCTA />
+
+      {/* Impact Section */}
+      <ImpactHero />
+      <ImpactStats />
+      <ImpactStories />
+      <ImpactCTA />
 
     {/* Vertical AI Platform Section */}
     <section id="forge-ai-frontier" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 font-inter relative">

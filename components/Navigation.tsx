@@ -28,6 +28,7 @@ export default function Navigation() {
   const [isWhatWereSolvingDropdownOpen, setIsWhatWereSolvingDropdownOpen] = useState(false);
   const [isWhyWeWinDropdownOpen, setWhyWeWinDropdownOpen] = useState(false);
   const [isWhyGammaLexDropdownOpen, setIsWhyGammaLexDropdownOpen] = useState(false);
+  const [isIntegrityDropdownOpen, setIsIntegrityDropdownOpen] = useState(false);
   
   // Mobile dropdown states
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
@@ -37,6 +38,7 @@ export default function Navigation() {
     { id: "crisis-numbers", label: "WHAT WE'RE SOLVING", hasDropdown: true },
     { id: "how-we-do-it", label: "WHY WE WIN", hasDropdown: true },
     { id: "product", label: "HOW GAMMALEX WORKS", hasDropdown: true },
+    { id: "integrity", label: "INTEGRITY", hasDropdown: true },
     { id: "who-we-empower", label: "WHO WE EMPOWER", hasDropdown: false },
     { id: "about", label: "ABOUT" },
     { id: "join", label: "PARTNER WITH US" },
@@ -44,6 +46,9 @@ export default function Navigation() {
 
   const whyGammaLexDropdown: DropdownItem[] = [
     { id: "the-mission", label: "Our Mission", description: "Our purpose and vision for healthcare transformation" },
+    { id: "problems-we-solve", label: "Problems We Solve", description: "The challenges we address in healthcare" },
+    { id: "how-we-do-it", label: "How We Do It", description: "Our methodology and approach" },
+    { id: "impact", label: "Impact", description: "Our results and success stories" },
   ];
 
   const whatWereSolvingDropdown: DropdownItem[] = [
@@ -61,6 +66,11 @@ export default function Navigation() {
     { id: "technical-innovation", label: "Technical Innovation", description: "Delivering strategic value through AI innovation" },
   ];
 
+  const integrityDropdown: DropdownItem[] = [
+    { id: "responsible-ai", label: "Responsible AI", description: "Our commitment to ethical AI development and deployment" },
+    { id: "trust-compliance", label: "Trust & Compliance", description: "Security, privacy, and regulatory compliance standards" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
@@ -70,9 +80,47 @@ export default function Navigation() {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
+    console.log('scrollToSection called with:', sectionId)
+    
+    // Handle special cases for external pages
+    if (sectionId === 'impact') {
+      window.location.href = '/impact'
+      return
+    }
+    
+    if (sectionId === 'problems-we-solve') {
+      window.location.href = '/problemswesolve'
+      return
+    }
+    
+    if (sectionId === 'how-we-do-it') {
+      window.location.href = '/howwedoit'
+      return
+    }
+    
+    if (sectionId === 'responsible-ai') {
+      window.location.href = '/responsible-ai'
+      return
+    }
+    
+    if (sectionId === 'trust-compliance') {
+      window.location.href = '/trust-compliance'
+      return
+    }
+    
     const element = document.getElementById(sectionId)
+    console.log('Found element:', element)
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      // Account for fixed navigation header height
+      const headerHeight = 80 // Approximate header height
+      const elementPosition = element.offsetTop - headerHeight
+      console.log('Scrolling to position:', elementPosition)
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth"
+      })
+    } else {
+      console.log('Element not found for section:', sectionId)
     }
     setIsOpen(false)
     setMobileDropdownOpen(null)
@@ -101,6 +149,8 @@ export default function Navigation() {
         return dropdownItems
       case 'product':
         return gammalexMethodDropdown
+      case 'integrity':
+        return integrityDropdown
       default:
         return []
     }
@@ -148,12 +198,14 @@ export default function Navigation() {
                           if (item.id === 'crisis-numbers') setIsWhatWereSolvingDropdownOpen(true);
                           if (item.id === 'how-we-do-it') setWhyWeWinDropdownOpen(true);
                           if (item.id === 'product') setDropdownOpen(true);
+                          if (item.id === 'integrity') setIsIntegrityDropdownOpen(true);
                         }}
                         onMouseLeave={() => {
                           if (item.id === 'the-mission') setIsWhyGammaLexDropdownOpen(false);
                           if (item.id === 'crisis-numbers') setIsWhatWereSolvingDropdownOpen(false);
                           if (item.id === 'how-we-do-it') setWhyWeWinDropdownOpen(false);
                           if (item.id === 'product') setDropdownOpen(false);
+                          if (item.id === 'integrity') setIsIntegrityDropdownOpen(false);
                         }}
                       >
                         <motion.button
@@ -163,7 +215,7 @@ export default function Navigation() {
                         >
                           {item.label}
                           <motion.div
-                            animate={{ rotate: (item.id === 'the-mission' ? isWhyGammaLexDropdownOpen : item.id === 'crisis-numbers' ? isWhatWereSolvingDropdownOpen : isWhyWeWinDropdownOpen) ? 180 : 0 }}
+                            animate={{ rotate: (item.id === 'the-mission' ? isWhyGammaLexDropdownOpen : item.id === 'crisis-numbers' ? isWhatWereSolvingDropdownOpen : item.id === 'how-we-do-it' ? isWhyWeWinDropdownOpen : item.id === 'integrity' ? isIntegrityDropdownOpen : false) ? 180 : 0 }}
                             transition={{ duration: 0.2 }}
                           >
                             <svg width="6" height="6" className="lg:w-8 lg:h-8" viewBox="0 0 6 6" fill="none">
@@ -264,6 +316,7 @@ export default function Navigation() {
                                   <motion.button
                                     key={`why-gammalex-${dropdownItem.id}`}
                                     onClick={() => {
+                                      console.log('Clicked dropdown item:', dropdownItem.id)
                                       scrollToSection(dropdownItem.id)
                                       setIsWhyGammaLexDropdownOpen(false)
                                     }}
@@ -305,6 +358,45 @@ export default function Navigation() {
                                     onClick={() => {
                                       scrollToSection(dropdownItem.id)
                                       setDropdownOpen(false)
+                                    }}
+                                    className="w-full text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                                    whileHover={{ x: 4 }}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex-1">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
+                                          {dropdownItem.label}
+                                        </div>
+                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                          {dropdownItem.description}
+                                        </div>
+                                      </div>
+                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                          <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </motion.button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                          {item.id === 'integrity' && isIntegrityDropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 mt-2 w-72 xl:w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                            >
+                              <div className="p-4 space-y-2">
+                                {integrityDropdown.map((dropdownItem) => (
+                                  <motion.button
+                                    key={`integrity-${dropdownItem.id}`}
+                                    onClick={() => {
+                                      scrollToSection(dropdownItem.id)
+                                      setIsIntegrityDropdownOpen(false)
                                     }}
                                     className="w-full text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
                                     whileHover={{ x: 4 }}
