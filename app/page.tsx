@@ -62,7 +62,7 @@ import Link from 'next/link'
 import { CopilotHero } from "@/components/CopilotHero"
 import { FeatureHighlights } from "@/components/FeatureHighlights"
 import { ViabilityScoring, PreAuthWriter, ComplyDraft, PolicyLookup, AskGamma, FlaggingOverlay } from "@/components/ProductFeaturesDemo"
-import LegalHeatIndex from "@/components/LegalHeatIndex"
+
 import AboutSection from "@/components/AboutSection"
 import FooterGV from "@/components/FooterGV"
 
@@ -114,8 +114,7 @@ export default function GammaLexPage() {
 
 
 
-      {/* Legal Heat Index Section (When denials become lawsuits) */}
-      <LegalHeatIndex />
+
 
 
 
@@ -2017,7 +2016,7 @@ function StatBlock({ stat, i, fadeUp }: { stat: { value: string, label: string, 
 
 
 
-// LegalHeatIndex component has been extracted to components/LegalHeatIndex.tsx
+
 
 // FooterGV component extracted to components/FooterGV.tsx
 
