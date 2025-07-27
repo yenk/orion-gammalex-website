@@ -47,33 +47,6 @@ export default function ProblemsHero() {
           >
             Authorization, forecasting, policies, risk assessment, collaboration, compliance, productivity, revenue
           </motion.p>
-          
-          {/* CTA Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <JoinWaitlistModal
-              trigger={
-                <Button 
-                  size="lg"
-                  className="h-14 px-8 text-lg font-semibold bg-gammalex-orange hover:bg-gammalex-orange/90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px]"
-                >
-                  Join Waitlist
-                </Button>
-              }
-            />
-            
-            <Button 
-              variant="outline"
-              size="lg"
-              className="h-14 px-8 text-lg font-semibold border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300 min-w-[200px]"
-            >
-              Learn More
-            </Button>
-          </motion.div>
         </motion.div>
       </div>
     </section>
