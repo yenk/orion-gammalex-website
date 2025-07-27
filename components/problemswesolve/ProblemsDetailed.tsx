@@ -2,8 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { JoinWaitlistModal } from '@/components/JoinWaitlistModal'
 
 export default function ProblemsDetailed() {
   const problems = [
@@ -52,16 +50,16 @@ export default function ProblemsDetailed() {
   ];
 
   return (
-    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter relative">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-purple-900/15 to-black/40 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.08),transparent_50%)] pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="space-y-32">
-          {problems.map((problem, index) => (
+    <div className="w-full font-inter relative">
+      {problems.map((problem, index) => (
+        <section 
+          key={index}
+          className={`w-full py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative ${
+            index % 2 === 0 ? 'bg-[#1a1a2e]' : 'bg-[#0f4c75]'
+          }`}
+        >
+          <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
-              key={index}
               className="relative"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -70,46 +68,36 @@ export default function ProblemsDetailed() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
                 {/* Left Column - Detailed Text */}
-                <div className="space-y-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+                <div className="space-y-8">
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
                     {problem.title}
                   </h3>
                   
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     {problem.paragraphs.map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-lg text-white/90 leading-relaxed">
+                      <p key={pIndex} className="text-xl sm:text-2xl text-white/95 leading-relaxed drop-shadow-md">
                         {paragraph}
                       </p>
                     ))}
                   </div>
                 </div>
 
-                {/* Right Column - Highlight Statement & Button */}
-                <div className="space-y-6">
+                {/* Right Column - Highlight Statement */}
+                <div className="space-y-8">
                   {index === 0 && (
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gammalex-orange mb-4">
+                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gammalex-orange mb-6 drop-shadow-lg">
                       The ROI?
                     </h3>
                   )}
-                  <p className="text-lg text-white/90 leading-relaxed mb-6">
+                  <p className="text-xl sm:text-2xl text-white/95 leading-relaxed mb-8 drop-shadow-md">
                     {problem.highlight}
                   </p>
-                  
-                  <div className="flex items-center">
-                    <JoinWaitlistModal
-                      trigger={
-                        <Button className="bg-gammalex-orange hover:bg-gammalex-orange/90 text-white">
-                          Learn more
-                        </Button>
-                      }
-                    />
-                  </div>
                 </div>
               </div>
             </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
+        </section>
+      ))}
+    </div>
   )
 } 
