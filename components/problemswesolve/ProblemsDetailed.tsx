@@ -25,19 +25,21 @@ export default function ProblemsDetailed() {
       highlight: "GammaLex detects changes in coverage policies and automatically updates authorization requirements."
     },
     {
-      title: "AI driven authorization forecasting",
+      title: "AI to optimize specialty-specific forecasting",
       paragraphs: [
-        "GammaLex's Intelligent Authorization™ makes 'Denial Mondays' a remnant of the past. Instead of losing valuable clinical time to producing weekly authorization predictions, GammaLex's Intelligent Authorization is fully automated and updated daily. Traditional authorization processes rely on manual review and historical patterns. Our model instead analyzes clinical data, payer history, policy patterns and changing regulatory conditions to make predictions that are reliable even in volatile healthcare environments."
+        "Each medical specialty, from radiology to oncology and cardiology, presents unique challenges in authorization and denial prevention. Generic solutions often fail to account for the distinct workflows, complex policies, and evolving risk profiles inherent to each field, leading to significant delays and 'Denial Mondays'.",
+        "GammaLex's AI is specifically optimized for these nuances. By adapting to the unique data, payer histories, and regulatory conditions of each high-stake specialty, our system provides fully automated, daily authorization forecasts and precise denial predictions, ensuring reliability even in volatile healthcare environments."
       ],
-      highlight: "GammaLex provides a fully automated daily authorization forecast that is on average 96%+ reliable."
+      highlight: "GammaLex's specialty-optimized AI delivers highly reliable daily authorization forecasts and denial predictions, transforming 'Denial Mondays' into predictable, efficient operations."
     },
     {
-      title: "AI to assess authorization risk",
+      title: "AI to deliver real-time policy intelligence",
       paragraphs: [
-        "The complexity of specialty procedures has grown exponentially. Traditional systems only capture a portion of the clinical interactions with patients. The activities of specialists, case managers, and other non-billing users who are key to successful authorizations remain invisible.",
-        "Simply connect your EHR and clinical systems to GammaLex to enable our AI to assess the risk of each and every authorization request."
+        "Payer policies are constantly evolving, making it challenging for healthcare providers to stay compliant and avoid costly claim denials. Traditional systems often miss these critical updates, leading to unexpected rejections.",
+        "GammaLex provides real-time policy updates from all major payers, ensuring you're always aware of the latest requirements. Our AI instantly assesses the denial risk for every claim, highlighting potential problems before submission.",
+        "This enables proactive corrections, significantly reducing denials and accelerating reimbursements. With GammaLex, you gain continuous visibility into policy changes and actionable insights to optimize your authorization workflow."
       ],
-      highlight: "GammaLex's technology assesses authorization risk so clinical teams have maximum impact on patient care."
+      highlight: "GammaLex's AI-powered platform delivers real-time policy updates and instant denial risk assessment, enabling proactive corrections before claims are submitted."
     },
     {
       title: "AI to deliver sustainable competitive advantage",
