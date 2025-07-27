@@ -46,7 +46,6 @@ export default function Navigation() {
 
   const whyGammaLexDropdown: DropdownItem[] = [
     { id: "what-we-do", label: "What We Do", description: "Our AI platform and capabilities" },
-    { id: "the-mission", label: "Our Mission", description: "Our purpose and vision for healthcare transformation" },
     { id: "problems-we-solve", label: "Problems We Solve", description: "The challenges we address in healthcare" },
     { id: "how-we-do-it", label: "How We Do It", description: "Our methodology and approach" },
     { id: "impact", label: "Impact", description: "Our results and success stories" },
