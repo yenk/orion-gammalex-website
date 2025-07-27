@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Button } from '@/components/ui/button'
 
 export default function ProblemsDetailed() {
   const problems = [
@@ -12,7 +13,7 @@ export default function ProblemsDetailed() {
         "At GammaLex, we're taking a different path. We've built Vertical AI that deeply understands each specialty's clinical reality and payer landscape. Our platform delivers real-time intelligence at the point of decision—predicting denials before they derail revenue, surfacing actionable risk, and bridging the gaps between medicine, law, and policy.",
         "This is healthcare revenue, re-engineered. This is GammaLex."
       ],
-      highlight: "Recent studies show AI integration in radiology workflows can deliver 451% ROI over five years. Key drivers include time savings (78 days in triage, 41 days in reporting), faster diagnoses, and increased revenue from earlier detection enabling additional treatments according to Journal of the American College of Radiology, 2024 and AI Radiology ROI Calculator Study, Diagnostic Imaging, Mar 2024."
+      highlight: "AI integration in radiology workflows delivers 451% ROI over five years with 78 days saved in triage and 41 days in reporting according to Journal of the American College of Radiology, 2024."
     },
     {
       title: "AI to maintain up-to-date coverage policies",
@@ -21,7 +22,7 @@ export default function ProblemsDetailed() {
         "Most of these changes won't be reflected in existing systems.",
         "GammaLex's AI captures policy updates from the moment they're published and automatically updates coverage requirements as they evolve."
       ],
-      highlight: "Our AI detects changes in coverage policies and automatically updates authorization requirements."
+      highlight: "GammaLex detects changes in coverage policies and automatically updates authorization requirements."
     },
     {
       title: "AI driven authorization forecasting",
@@ -66,32 +67,46 @@ export default function ProblemsDetailed() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-                {/* Left Column - Detailed Text */}
-                <div className="space-y-8">
-                  <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 drop-shadow-lg">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start h-full">
+                {/* Left Column - Title and Detailed Text */}
+                <div className="space-y-8 text-left">
+                  <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 drop-shadow-lg text-left font-normal">
                     {problem.title}
                   </h3>
                   
                   <div className="space-y-6">
                     {problem.paragraphs.map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-2xl sm:text-3xl md:text-4xl text-white/95 leading-relaxed drop-shadow-md">
+                      <p key={pIndex} className="text-lg sm:text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-md text-left font-normal">
                         {paragraph}
                       </p>
                     ))}
                   </div>
                 </div>
 
-                {/* Right Column - Highlight Statement */}
-                <div className="space-y-8">
-                  {index === 0 && (
-                    <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gammalex-orange mb-6 drop-shadow-lg">
+                {/* Right Column - Highlight Statement & Button */}
+                <div className="flex flex-col justify-start h-full text-left space-y-6 pt-0">
+                 {index === 0 && (
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gammalex-orange mb-6 drop-shadow-lg text-left font-normal">
                       The ROI?
                     </h3>
                   )}
-                  <p className="text-2xl sm:text-3xl md:text-4xl text-white/95 leading-relaxed mb-8 drop-shadow-md">
-                    {problem.highlight}
-                  </p>
+                  
+                    <div className={`leading-relaxed drop-shadow-md text-left font-normal ${
+                      index === 1 || index === 2 || index === 3 || index === 4
+                        ? 'text-gammalex-orange text-2xl sm:text-3xl md:text-4xl mb-6 mt-0' 
+                        : 'text-white/95 text-2xl sm:text-3xl md:text-4xl mb-6'
+                    }`}>
+                      {problem.highlight}
+                    </div>
+                    
+                    <div className="pt-4">
+                      <Button 
+                        className="text-lg px-8 py-4 font-semibold bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        Learn more
+                      </Button>
+                    </div>
+                  
                 </div>
               </div>
             </motion.div>
