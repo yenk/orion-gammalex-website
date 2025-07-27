@@ -69,13 +69,13 @@ export default function ProblemsDetailed() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
                 {/* Left Column - Detailed Text */}
                 <div className="space-y-8">
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
+                  <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 drop-shadow-lg">
                     {problem.title}
                   </h3>
                   
                   <div className="space-y-6">
                     {problem.paragraphs.map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-xl sm:text-2xl text-white/95 leading-relaxed drop-shadow-md">
+                      <p key={pIndex} className="text-2xl sm:text-3xl md:text-4xl text-white/95 leading-relaxed drop-shadow-md">
                         {paragraph}
                       </p>
                     ))}
@@ -85,11 +85,11 @@ export default function ProblemsDetailed() {
                 {/* Right Column - Highlight Statement */}
                 <div className="space-y-8">
                   {index === 0 && (
-                    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gammalex-orange mb-6 drop-shadow-lg">
+                    <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gammalex-orange mb-6 drop-shadow-lg">
                       The ROI?
                     </h3>
                   )}
-                  <p className="text-xl sm:text-2xl text-white/95 leading-relaxed mb-8 drop-shadow-md">
+                  <p className="text-2xl sm:text-3xl md:text-4xl text-white/95 leading-relaxed mb-8 drop-shadow-md">
                     {problem.highlight}
                   </p>
                 </div>
