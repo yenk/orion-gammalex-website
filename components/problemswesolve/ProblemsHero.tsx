@@ -19,21 +19,11 @@ export default function ProblemsHero() {
           viewport={{ once: true }}
         >
           <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center leading-tight mb-8">
-            Problems We <span className="gradient-text">Solve</span>
+            Unlocking Access Where <span className="gradient-text">Care Is Most Complex</span>
           </h1>
-          <div className="max-w-5xl mx-auto">
-            <motion.div 
-              className="glass rounded-3xl p-8 sm:p-12 mb-8 border border-white/10"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-lg sm:text-xl md:text-2xl font-inter text-white/90 leading-relaxed text-center">
-                Healthcare's most complex specialties face a perfect storm of challenges that traditional systems can't solve.
-              </p>
-            </motion.div>
-          </div>
+          <p className="text-lg sm:text-xl md:text-2xl font-inter text-white/90 leading-relaxed text-center max-w-5xl mx-auto">
+            Authorization, forecasting, policies, risk assessment, collaboration, compliance, productivity, revenue
+          </p>
         </motion.div>
       </div>
     </section>
