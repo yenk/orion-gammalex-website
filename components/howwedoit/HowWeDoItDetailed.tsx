@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 export default function HowWeDoItDetailed() {
   const workflows = [
     {
-      title: "Step 1: Data Ingestion & Processing",
+      title: "01. Data Ingestion & Processing",
       paragraphs: [
         "Our workflow begins with comprehensive data ingestion from multiple sources. We process clinical records, medical policies, legal precedents, and regulatory documents to build a foundation of healthcare knowledge.",
         "GammaLex's AI ingests millions of clinical cases and legal documents, creating a deep understanding of the relationships between diagnosis, treatment, and coverage requirements.",
@@ -16,7 +16,7 @@ export default function HowWeDoItDetailed() {
       highlight: "GammaLex processes 10M+ clinical cases and 50K+ legal precedents to build our knowledge foundation."
     },
     {
-      title: "Step 2: Real-Time Policy Monitoring",
+      title: "02. Real-Time Policy Monitoring",
       paragraphs: [
         "Continuous monitoring of payer policies and regulatory changes is critical to maintaining accuracy. Our system tracks updates from all major payers, CMS, and specialty guidelines in real-time.",
         "When policy changes are detected, our AI instantly updates its recommendations to reflect the latest requirements, ensuring providers stay compliant and avoid costly denials.",
@@ -25,7 +25,7 @@ export default function HowWeDoItDetailed() {
       highlight: "GammaLex monitors 100+ payer policies and updates recommendations within minutes of policy changes."
     },
     {
-      title: "Step 3: Predictive Risk Analysis",
+      title: "03. Predictive Risk Analysis",
       paragraphs: [
         "Before any claim is submitted, our AI performs comprehensive risk analysis. We evaluate each claim against current policies, historical patterns, and clinical documentation quality.",
         "This predictive analysis identifies potential denial risks and provides specific recommendations for corrections before submission.",
@@ -34,7 +34,7 @@ export default function HowWeDoItDetailed() {
       highlight: "GammaLex's predictive analysis reduces preventable denials by 67% and accelerates payment cycles by 3.2x."
     },
     {
-      title: "Step 4: Specialty-Specific Optimization",
+      title: "04. Specialty-Specific Optimization",
       paragraphs: [
         "Each medical specialty requires specialized knowledge and workflows. Our AI adapts to the unique challenges of radiology, oncology, cardiology, and other high-stakes specialties.",
         "We optimize our recommendations based on specialty-specific data, payer histories, and regulatory conditions to ensure maximum accuracy and relevance.",
@@ -43,7 +43,7 @@ export default function HowWeDoItDetailed() {
       highlight: "GammaLex's specialty-optimized AI delivers 98% accuracy in authorization predictions across multiple specialties."
     },
     {
-      title: "Step 5: Compliance & Risk Management",
+      title: "05. Compliance & Risk Management",
       paragraphs: [
         "Legal and compliance risks are continuously monitored throughout the workflow. Our AI identifies potential legal exposure patterns, compliance gaps, and regulatory violations.",
         "This proactive risk management protects providers from legal exposure while ensuring patient care remains the priority.",
@@ -52,7 +52,7 @@ export default function HowWeDoItDetailed() {
       highlight: "GammaLex's legal intelligence identifies compliance risks with 94% accuracy, protecting providers from legal exposure."
     },
     {
-      title: "Step 6: Intelligence Delivery & Integration",
+      title: "06. Intelligence Delivery & Integration",
       paragraphs: [
         "The final step delivers actionable intelligence directly to providers through our platform. Whether through our AI Assistant, APIs, or proprietary applications, we ensure insights are accessible when needed.",
         "This democratization makes enterprise-grade clinical-legal expertise available to providers of all sizes, leveling the playing field for quality care.",
@@ -67,9 +67,9 @@ export default function HowWeDoItDetailed() {
       {workflows.map((workflow, index) => (
         <section 
           key={index}
-          className={`w-full py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative ${
-            index % 2 === 0 ? 'bg-black' : 'bg-white'
-          }`}
+                      className={`w-full py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative ${
+              index % 2 === 0 ? 'bg-gray-900' : 'bg-gray-50'
+            }`}
         >
           <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
@@ -83,7 +83,7 @@ export default function HowWeDoItDetailed() {
                 {/* Left Column - Title and Detailed Text */}
                 <div className="space-y-8 text-left">
                   <h3 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 drop-shadow-lg text-left font-normal ${
-                    index % 2 === 0 ? 'text-white' : 'text-black'
+                    index % 2 === 0 ? 'text-white' : 'text-gray-900'
                   }`}>
                     {workflow.title}
                   </h3>
@@ -91,7 +91,7 @@ export default function HowWeDoItDetailed() {
                   <div className="space-y-6">
                     {workflow.paragraphs.map((paragraph, pIndex) => (
                       <p key={pIndex} className={`text-lg sm:text-xl md:text-2xl leading-relaxed drop-shadow-md text-left font-normal ${
-                        index % 2 === 0 ? 'text-white/95' : 'text-black/90'
+                        index % 2 === 0 ? 'text-white/95' : 'text-gray-700'
                       }`}>
                         {paragraph}
                       </p>
@@ -110,7 +110,7 @@ export default function HowWeDoItDetailed() {
                     <div className={`leading-relaxed drop-shadow-md text-left font-normal text-2xl sm:text-3xl md:text-4xl mb-6 ${
                       index === 1 || index === 2 || index === 3 || index === 4 || index === 5
                         ? 'text-gammalex-orange mt-0' 
-                        : index % 2 === 0 ? 'text-white/95' : 'text-black/90'
+                        : index % 2 === 0 ? 'text-white/95' : 'text-gray-700'
                     }`}>
                       {workflow.highlight}
                     </div>

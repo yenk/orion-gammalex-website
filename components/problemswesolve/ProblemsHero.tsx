@@ -11,9 +11,9 @@ export default function ProblemsHero() {
       {/* Background Image with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/images/impact/icons/main6.png)',
-        }}
+                    style={{
+              backgroundImage: 'url(/images/impact/icons/flowers1.png)',
+            }}
       />
       
       {/* Overlay for better text readability */}
