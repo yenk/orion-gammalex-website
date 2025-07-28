@@ -27,19 +27,19 @@ export default function TrustComplianceHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-tight tracking-tight max-w-6xl mx-auto">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-relaxed tracking-tight max-w-7xl mx-auto">
             Enterprise Security & Privacy, <span className="text-gammalex-orange">Built for Scale</span>
           </h1>
         </motion.div>
 
         {/* Introductory Paragraph */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-32 pt-8 pb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white/90 leading-relaxed max-w-5xl mx-auto">
+          <p className="text-xl sm:text-2xl md:text-3xl font-light text-white/90 leading-loose max-w-4xl mx-auto">
             At GammaLex, data protection is foundational and we're continuously building and strengthening our multi-layered security framework. From day one, our focus has been on ensuring confidentiality, integrity, and availability to give you full confidence in safeguarding your most critical information.
           </p>
         </motion.div>
