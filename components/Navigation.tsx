@@ -39,7 +39,6 @@ export default function Navigation() {
     { id: "how-we-do-it", label: "WHY WE WIN", hasDropdown: true },
     { id: "product", label: "HOW GAMMALEX WORKS", hasDropdown: true },
     { id: "integrity", label: "INTEGRITY", hasDropdown: true },
-    { id: "who-we-empower", label: "WHO WE EMPOWER", hasDropdown: false },
     { id: "about", label: "ABOUT" },
     { id: "join", label: "PARTNER WITH US" },
   ];
@@ -51,11 +50,7 @@ export default function Navigation() {
     { id: "impact", label: "Impact", description: "Our results and success stories" },
   ];
 
-  const whatWereSolvingDropdown: DropdownItem[] = [
-    { id: "healthcare-crisis", label: "The Crisis Numbers", description: "High-stakes specialty impact and denial patterns" },
-    { id: "legal-heat-index", label: "The Legal Heat", description: "How denials turn into lawsuits" },
-    { id: "what-we-are-solving", label: "Our Breakthrough", description: "The denial crisis and our breakthrough solution" },
-  ];
+
 
   const gammalexMethodDropdown: DropdownItem[] = [
     { id: "forge-ai-frontier", label: "Our Vertical AI", description: "Vertical AI pioneer at the intersection of clinical and legal" },

@@ -67,9 +67,9 @@ import AboutSection from "@/components/AboutSection"
 import FooterGV from "@/components/FooterGV"
 
 import GammaLexIllustration from "@/components/GammaLexIllustration"
-import { ProblemsCTA } from "@/components/problemswesolve"
 
-import { ImpactStats, ImpactStories, ImpactCTA } from "@/components/impact"
+
+
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import AnimatedText from "@/components/ui/AnimatedText"
 import { Progress } from '@/components/ui/progress'
@@ -398,199 +398,17 @@ export default function GammaLexPage() {
 
 
 
-      {/* Who We Empower Section */}
-      <section id="who-we-empower" className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter relative">
-        {/* Futuristic background elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-purple-900/15 to-black/40 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.12),transparent_50%)] pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Hero Section */}
-          <motion.div 
-            className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center leading-tight mb-8">
-              Who We <span className="gradient-text">Empower</span>
-            </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 text-center max-w-4xl mx-auto leading-relaxed">
-              GammaLex's vertical intelligence model serves frontline legal and healthcare professionals—transforming how care is defended, denials are overturned, and compliance is achieved.
-            </p>
-          </motion.div>
 
-          {/* Audience Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
-            {/* Plaintiff-side malpractice attorneys */}
-            <motion.div 
-              className="group relative"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 backdrop-blur-sm p-8 lg:p-10 hover:border-gammalex-purple/30 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-gammalex-purple/5 to-transparent rounded-3xl group-hover:from-gammalex-purple/15 transition-all duration-500" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-purple-light flex items-center justify-center shadow-xl">
-                      <Scale className="text-white" size={32} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">Plaintiff-Side Malpractice Attorneys</h3>
-                  </div>
-                  <p className="text-lg text-white/80 mb-6 leading-relaxed">
-                    <span className="text-gammalex-orange font-semibold">The Challenge:</span> Proving medical necessity and standard of care violations requires deep clinical-legal expertise that's expensive and time-consuming to develop.
-                  </p>
-                  <p className="text-lg text-white/90 leading-relaxed">
-                    <span className="text-gammalex-purple font-semibold">GammaLex Solution:</span> Instant access to clinical-legal intelligence that identifies viable cases, strengthens arguments, and predicts outcomes with source-backed accuracy.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
 
-            {/* Hospital legal, compliance, and revenue cycle teams */}
-            <motion.div 
-              className="group relative"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 backdrop-blur-sm p-8 lg:p-10 hover:border-gammalex-orange/30 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-gammalex-orange/5 to-transparent rounded-3xl group-hover:from-gammalex-orange/15 transition-all duration-500" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-orange to-gammalex-orange-light flex items-center justify-center shadow-xl">
-                      <Building2 className="text-white" size={32} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">Hospital Legal & Revenue Teams</h3>
-                  </div>
-                  <p className="text-lg text-white/80 mb-6 leading-relaxed">
-                    <span className="text-gammalex-orange font-semibold">The Challenge:</span> Balancing patient care with financial viability while navigating complex payer policies and avoiding compliance violations.
-                  </p>
-                  <p className="text-lg text-white/90 leading-relaxed">
-                    <span className="text-gammalex-purple font-semibold">GammaLex Solution:</span> Proactive risk detection and bulletproof documentation that prevents denials before they happen, protecting both care and revenue.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Independent clinicians and small practices */}
-            <motion.div 
-              className="group relative"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 backdrop-blur-sm p-8 lg:p-10 hover:border-gammalex-purple/30 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-gammalex-purple/5 to-transparent rounded-3xl group-hover:from-gammalex-purple/15 transition-all duration-500" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-purple-light flex items-center justify-center shadow-xl">
-                      <User className="text-white" size={32} />
-          </div>
-                    <h3 className="text-2xl font-bold text-white">Independent Clinicians</h3>
-        </div>
-                  <p className="text-lg text-white/80 mb-6 leading-relaxed">
-                    <span className="text-gammalex-orange font-semibold">The Challenge:</span> Limited resources to fight denials while maintaining quality care, often forced to accept coverage decisions that impact patient outcomes.
-                  </p>
-                  <p className="text-lg text-white/90 leading-relaxed">
-                    <span className="text-gammalex-purple font-semibold">GammaLex Solution:</span> Enterprise-grade clinical-legal intelligence that levels the playing field, ensuring small practices can defend care as effectively as large systems.
-                  </p>
-      </div>
-              </div>
-            </motion.div>
-
-            {/* Healthcare payers and TPAs */}
-            <motion.div 
-              className="group relative"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 backdrop-blur-sm p-8 lg:p-10 hover:border-gammalex-orange/30 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-gammalex-orange/5 to-transparent rounded-3xl group-hover:from-gammalex-orange/15 transition-all duration-500" />
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-orange to-gammalex-orange-light flex items-center justify-center shadow-xl">
-                      <Shield className="text-white" size={32} />
-            </div>
-                    <h3 className="text-2xl font-bold text-white">Healthcare Payers & TPAs</h3>
-                  </div>
-                  <p className="text-lg text-white/80 mb-6 leading-relaxed">
-                    <span className="text-gammalex-orange font-semibold">The Challenge:</span> Balancing cost containment with quality care while maintaining compliance and avoiding legal exposure from improper denials.
-                  </p>
-                  <p className="text-lg text-white/90 leading-relaxed">
-                    <span className="text-gammalex-purple font-semibold">GammaLex Solution:</span> AI-powered policy interpretation that ensures consistent, defensible coverage decisions while reducing administrative burden and legal risk.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Public interest legal organizations */}
-                <motion.div
-            className="group relative mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-                  viewport={{ once: true }}
-          >
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 backdrop-blur-sm p-8 lg:p-12 hover:border-gammalex-purple/30 transition-all duration-500">
-              <div className="absolute inset-0 bg-gradient-to-br from-gammalex-purple/5 to-transparent rounded-3xl group-hover:from-gammalex-purple/15 transition-all duration-500" />
-                  <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gammalex-purple to-gammalex-purple-light flex items-center justify-center shadow-xl">
-                    <HeartHandshake className="text-white" size={32} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white">Public Interest Legal Organizations</h3>
-                </div>
-                <p className="text-lg text-white/80 mb-6 leading-relaxed">
-                  <span className="text-gammalex-orange font-semibold">The Challenge:</span> Limited resources to fight systemic healthcare access issues while ensuring vulnerable populations receive the care they need and deserve.
-                </p>
-                <p className="text-lg text-white/90 leading-relaxed">
-                  <span className="text-gammalex-purple font-semibold">GammaLex Solution:</span> Access to clinical-legal intelligence that amplifies advocacy efforts, strengthens cases, and ensures equitable access to care for all populations.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Unifying Mission Statement */}
-                      <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="max-w-5xl mx-auto p-8 lg:p-12 rounded-3xl border border-gammalex-purple/30 bg-gradient-to-br from-gammalex-purple/10 to-gammalex-purple/20 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gammalex-purple to-gammalex-orange"></div>
-              <div className="relative">
-                <p className="text-xl lg:text-2xl text-white/90 font-inter leading-relaxed mb-6">
-                  Unlike horizontal GenAI that treats healthcare like any other domain, GammaLex understands <span className="text-gammalex-orange font-semibold">medical necessity, precedent, and payer behavior</span> in tandem—delivering insights that generic AI cannot match.
-                </p>
-              </div>
-            </div>
-                      </motion.div>
-        </div>
-      </section>
 
       {/* About Section */}
       <AboutSection />
 
-      {/* Problems We Solve Section */}
-      <ProblemsCTA />
 
 
 
-      {/* Impact Section */}
-      <ImpactStats />
-      <ImpactStories />
-      <ImpactCTA />
+
+
 
     {/* Vertical AI Platform Section */}
     <section id="forge-ai-frontier" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 font-inter relative">

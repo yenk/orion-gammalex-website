@@ -68,7 +68,7 @@ export default function HowWeDoItDetailed() {
         <section 
           key={index}
           className={`w-full py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative ${
-            index % 2 === 0 ? 'bg-[#1a1a2e]' : 'bg-[#0f4c75]'
+            index % 2 === 0 ? 'bg-black' : 'bg-white'
           }`}
         >
           <div className="max-w-7xl mx-auto relative z-10">
@@ -82,13 +82,17 @@ export default function HowWeDoItDetailed() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start h-full">
                 {/* Left Column - Title and Detailed Text */}
                 <div className="space-y-8 text-left">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 drop-shadow-lg text-left font-normal">
+                  <h3 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 drop-shadow-lg text-left font-normal ${
+                    index % 2 === 0 ? 'text-white' : 'text-black'
+                  }`}>
                     {workflow.title}
                   </h3>
                   
                   <div className="space-y-6">
                     {workflow.paragraphs.map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-lg sm:text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-md text-left font-normal">
+                      <p key={pIndex} className={`text-lg sm:text-xl md:text-2xl leading-relaxed drop-shadow-md text-left font-normal ${
+                        index % 2 === 0 ? 'text-white/95' : 'text-black/90'
+                      }`}>
                         {paragraph}
                       </p>
                     ))}
@@ -103,10 +107,10 @@ export default function HowWeDoItDetailed() {
                     </h3>
                   )}
                   
-                    <div className={`leading-relaxed drop-shadow-md text-left font-normal ${
+                    <div className={`leading-relaxed drop-shadow-md text-left font-normal text-2xl sm:text-3xl md:text-4xl mb-6 ${
                       index === 1 || index === 2 || index === 3 || index === 4 || index === 5
-                        ? 'text-gammalex-orange text-2xl sm:text-3xl md:text-4xl mb-6 mt-0' 
-                        : 'text-white/95 text-2xl sm:text-3xl md:text-4xl mb-6'
+                        ? 'text-gammalex-orange mt-0' 
+                        : index % 2 === 0 ? 'text-white/95' : 'text-black/90'
                     }`}>
                       {workflow.highlight}
                     </div>
