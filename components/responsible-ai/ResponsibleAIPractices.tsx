@@ -117,59 +117,59 @@ export default function ResponsibleAIPractices() {
             <div className="max-w-4xl mx-auto">
               {[
                 {
-                  category: "Security",
+                  category: "Healthcare Data Security",
                   riskLevel: 3,
-                  description: "Data protection and system security measures"
+                  description: "HIPAA-compliant data protection and clinical system security"
                 },
                 {
-                  category: "Data Privacy - Individual rights",
-                  riskLevel: 2,
-                  description: "Respect for individual data control and autonomy"
-                },
-                {
-                  category: "Data Privacy - Data Minimization",
-                  riskLevel: 2,
-                  description: "Collection of only necessary data"
-                },
-                {
-                  category: "Inequality Effects",
+                  category: "Patient Privacy Rights",
                   riskLevel: 3,
-                  description: "Addressing bias and ensuring equitable access"
+                  description: "Individual patient data control and healthcare autonomy"
                 },
                 {
-                  category: "Inequality Effects - Upskilling",
-                  riskLevel: 2,
-                  description: "Ensuring workforce development and training"
-                },
-                {
-                  category: "Mitigation of Market Inefficiencies",
-                  riskLevel: 1,
-                  description: "Streamlining processes and reducing waste"
-                },
-                {
-                  category: "Systematic Risk",
+                  category: "Clinical Data Minimization",
                   riskLevel: 3,
-                  description: "Managing large-scale system impacts"
+                  description: "Collection of only necessary clinical and payer data"
                 },
                 {
-                  category: "Model Brittleness",
-                  riskLevel: 2,
-                  description: "Ensuring model reliability and robustness"
-                },
-                {
-                  category: "Anticompetitive Behavior",
-                  riskLevel: 1,
-                  description: "Promoting fair competition in AI markets"
-                },
-                {
-                  category: "Interoperability and Compatibility",
-                  riskLevel: 1,
-                  description: "Seamless integration with existing systems"
-                },
-                {
-                  category: "Evolving and Unanticipated Risks",
+                  category: "Healthcare Access Equity",
                   riskLevel: 3,
-                  description: "Adapting to new challenges and regulations"
+                  description: "Addressing bias and ensuring equitable healthcare access"
+                },
+                {
+                  category: "Provider Training & Upskilling",
+                  riskLevel: 2,
+                  description: "Ensuring healthcare workforce development and AI training"
+                },
+                {
+                  category: "Payer Policy Optimization",
+                  riskLevel: 2,
+                  description: "Streamlining authorization processes and reducing waste"
+                },
+                {
+                  category: "Healthcare System Risk",
+                  riskLevel: 3,
+                  description: "Managing large-scale healthcare system impacts"
+                },
+                {
+                  category: "Clinical Model Reliability",
+                  riskLevel: 3,
+                  description: "Ensuring clinical AI model reliability and robustness"
+                },
+                {
+                  category: "Healthcare Market Fairness",
+                  riskLevel: 2,
+                  description: "Promoting fair competition in healthcare AI markets"
+                },
+                {
+                  category: "EHR Integration & Compatibility",
+                  riskLevel: 2,
+                  description: "Seamless integration with existing healthcare systems"
+                },
+                {
+                  category: "Evolving Healthcare Regulations",
+                  riskLevel: 3,
+                  description: "Adapting to new healthcare challenges and regulations"
                 }
               ].map((item, index) => (
                 <motion.div
