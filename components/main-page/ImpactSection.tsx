@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function ImpactSection() {
   return (
-    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter bg-gammalex-card-bg">
+    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter bg-gray-900">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-20"
