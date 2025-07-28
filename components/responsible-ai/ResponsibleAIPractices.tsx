@@ -5,32 +5,39 @@ import { motion } from 'framer-motion'
 import { Brain, Lock, Users, CheckCircle, Shield, Target } from 'lucide-react'
 
 export default function ResponsibleAIPractices() {
-  const riskCategories = [
-    "Security",
-    "Data Privacy - Individual rights", 
-    "Data Privacy - Data Minimization",
-    "Inequality Effects",
-    "Inequality Effects - Upskilling",
-    "Mitigation of Market Inefficiencies",
-    "Systematic Risk",
-    "Model Brittleness",
-    "Anticompetitive Behavior",
-    "Interoperability and Compatibility",
-    "Evolving and Unanticipated Risks"
+  const riskManagement = [
+    {
+      icon: <Target className="w-6 h-6 text-white" />,
+      title: "POWERED BY OPEN SOURCE DATA FOUNDATION",
+      description: "Built on open, community-driven data and models. Transparency, reproducibility, and collective progress are core values."
+    },
+    {
+      icon: <Shield className="w-6 h-6 text-white" />,
+      title: "CLINICAL-LEGAL-PAYER INTELLIGENCE INTEGRATION",
+      description: "We integrate open clinical, legal, and insurance data, fostering a shared ecosystem for better, more holistic decision-making."
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6 text-white" />,
+      title: "ENTERPRISE-GRADE PAYER POLICY ADAPTATION",
+      description: "GammaLex adapts to payer policies using open source data and extensible frameworks—leveraging transparency and interoperability. Every recommendation are explainable with clear links to policy sources."
+    }
   ];
 
-  const governanceStages = [
+  const governance = [
     {
-      title: "Assess & Monitor",
-      items: ["Risk identification", "Governance Reviews", "Compliance checks", "Ongoing Monitoring"]
+      icon: <Brain className="w-6 h-6 text-white" />,
+      title: "Structured Oversight",
+      description: "We combine structured oversight with continuous monitoring to ensure AI development remains ethical, secure, and adaptable."
     },
     {
-      title: "Test & Validate", 
-      items: ["Red Teaming", "Safety Evaluations", "Scorecards & Mitigations", "AI Testing Protocols"]
+      icon: <Lock className="w-6 h-6 text-white" />,
+      title: "Security & Trust",
+      description: "Our governance framework ensures that AI development remains ethical, secure, and aligned with healthcare standards."
     },
     {
-      title: "Refine & Improve",
-      items: ["User Feedback", "Model Updates", "Policy Adjustments", "Risk Forecasting"]
+      icon: <Users className="w-6 h-6 text-white" />,
+      title: "Human-Centered Design",
+      description: "AI should empower, not replace, human decision-making. Our teams oversee development to maintain ethical use."
     }
   ];
 
@@ -47,97 +54,74 @@ export default function ResponsibleAIPractices() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 mb-8">
-              Strengthening AI Through Smart Risk Management
+              Built on open source and committed to transparency
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-16">
-              We assess AI risks early, applying targeted safeguards to prevent escalation. By prioritizing interventions and leveraging expert evaluations, we ensure AI remains adaptive, efficient, and aligned with societal benefits.
+              Our foundation is built on community-driven data, transparent processes, and open innovation.
             </p>
             
-            {/* Risk Categories List */}
-            <div className="max-w-4xl mx-auto">
-              {riskCategories.map((category, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {riskManagement.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center justify-between py-4 border-b border-gray-200 last:border-b-0"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 + index * 0.05 }}
+                  className="group relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
                   viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
                 >
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-900 font-medium">{category}</span>
-                  </div>
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div
-                        key={i}
-                        className={`w-4 h-4 rounded-sm ${
-                          i < 3 ? 'bg-blue-400' : 'bg-blue-700'
-                        }`}
-                      />
-                    ))}
+                  <div className="relative overflow-hidden rounded-xl border border-gray-200 p-6 bg-gray-50 group-hover:bg-gray-100 transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center flex-shrink-0">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3">{item.title}</h4>
+                        <p className="text-gray-700 leading-relaxed text-sm">{item.description}</p>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
-            
-            {/* Risk Level Legend */}
-            <div className="flex justify-center gap-4 mt-8">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-4 bg-blue-200 rounded-sm"></div>
-                <span className="text-sm text-gray-600">Low</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-4 bg-blue-400 rounded-sm"></div>
-                <span className="text-sm text-gray-600">Medium</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-4 bg-blue-600 rounded-sm"></div>
-                <span className="text-sm text-gray-600">High</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-4 bg-blue-800 rounded-sm"></div>
-                <span className="text-sm text-gray-600">Critical</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Mitigating Risks Section - White Background */}
-      <div className="bg-white py-24 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
+      {/* Mitigating Risks Section */}
+      <motion.div
+        className="mb-20"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.6 }}
+        viewport={{ once: true }}
+      >
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-white text-center mb-8">
+            Mitigating risks, maximizing trust in AI
+          </h2>
+          <p className="text-xl text-white/80 leading-relaxed text-center max-w-4xl mx-auto">
+            Our Scorecard is a core part of our Responsible AI Framework. It continuously tracks risks before and after mitigation, helping us assess AI safety across key categories. By refining our approach as challenges arise, we ensure AI remains reliable and aligned with safety thresholds.
+          </p>
+        </div>
+        
+        <div className="text-center">
+          <motion.button
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
+            transition={{ duration: 0.6, delay: 1.8 }}
             viewport={{ once: true }}
+            whileHover={{ scale: 1.05 }}
           >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 mb-8">
-              Mitigating risks, maximizing trust in AI
-            </h2>
-            <p className="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-12">
-              Our Scorecard is a core part of our Responsible AI Framework. It continuously tracks risks before and after mitigation, helping us assess AI safety across key categories. By refining our approach as challenges arise, we ensure AI remains reliable and aligned with safety thresholds.
-            </p>
-            
-            <motion.button
-              className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.8 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-            >
-              Discover how our AI risk mitigation strategy ensures security and trust
-            </motion.button>
-          </motion.div>
+            Discover how our AI risk mitigation strategy ensures security and trust
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Governance Section - Dark Gray Background */}
-      <div className="bg-gray-900 py-24">
+      {/* Governance Section - Dark Blue Background */}
+      <div className="bg-blue-900 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -154,71 +138,31 @@ export default function ResponsibleAIPractices() {
             </p>
           </motion.div>
           
-          {/* Interconnected Circles Diagram */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
-              {governanceStages.map((stage, index) => (
-                <motion.div
-                  key={index}
-                  className="relative"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.4 + index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  {/* Main Circle */}
-                  <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-blue-700 border-2 border-blue-400 flex items-center justify-center">
-                    <h3 className="text-xl font-semibold text-white text-center">{stage.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {governance.map((item, index) => (
+              <motion.div
+                key={index}
+                className="group relative"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.2 + index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4 }}
+              >
+                <div className="relative overflow-hidden rounded-xl border border-white/20 p-6 bg-white/5 backdrop-blur-sm group-hover:bg-white/10 transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gammalex-purple to-gammalex-orange flex items-center justify-center flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-3">{item.title}</h4>
+                      <p className="text-white/70 leading-relaxed text-sm">{item.description}</p>
+                    </div>
                   </div>
-                  
-                  {/* Surrounding Items */}
-                  <div className="grid grid-cols-2 gap-4">
-                    {stage.items.map((item, itemIndex) => (
-                      <div
-                        key={itemIndex}
-                        className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-3 text-center"
-                      >
-                        <span className="text-sm text-white/90">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            
-            {/* Connection Lines */}
-            <div className="hidden lg:block absolute inset-0 pointer-events-none">
-              <svg className="w-full h-full" style={{ position: 'absolute', top: 0, left: 0 }}>
-                <defs>
-                  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="white" />
-                  </marker>
-                </defs>
-                <path
-                  d="M 50% 25% L 50% 75%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  fill="none"
-                  markerEnd="url(#arrowhead)"
-                />
-                <path
-                  d="M 25% 50% L 75% 50%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="5,5"
-                  fill="none"
-                  markerEnd="url(#arrowhead)"
-                />
-              </svg>
-            </div>
-          </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

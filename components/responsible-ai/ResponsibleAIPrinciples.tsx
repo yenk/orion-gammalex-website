@@ -53,15 +53,14 @@ export default function ResponsibleAIPrinciples() {
             {/* Left side - Headline */}
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 leading-tight">
-                Shaping AI for a<br />
-                <span className="text-blue-600">Prosperous & Transparent Future</span>
+                Designing AI with <span className="text-gammalex-orange">Purpose</span>, <span className="text-gammalex-orange">Prosperity</span>, and <span className="text-gammalex-orange">Transparency</span> in Mind
               </h2>
             </div>
             
             {/* Right side - Description */}
             <div className="lg:w-1/2">
               <p className="text-xl text-gray-700 leading-relaxed">
-                At Gammalex, we believe AI has the power to reshape healthcare—providing deeper insights, creating opportunities, and driving progress. But with this potential comes a critical responsibility: ensuring AI serves the greater good, minimizes harm, and prevents misuse.
+                At GammaLex, we believe AI is a force for progress—one that can illuminate complexity, expand access, and transform healthcare for the better. With that power comes a responsibility we embrace: to build with integrity, innovate boldly, and ensure our technology consistently serves people, purpose, and the public good.
               </p>
             </div>
           </motion.div>
@@ -93,7 +92,7 @@ export default function ResponsibleAIPrinciples() {
                   viewport={{ once: true }}
                   whileHover={{ y: -4 }}
                 >
-                  <div className="relative overflow-hidden rounded-xl border border-white/20 p-8 bg-blue-800/50 backdrop-blur-sm group-hover:bg-blue-800/70 transition-all duration-300">
+                  <div className="relative overflow-hidden rounded-xl border border-white/20 p-8 bg-gray-800/50 backdrop-blur-sm group-hover:bg-gray-800/70 transition-all duration-300">
                     <div className="flex flex-col items-center text-center">
                       <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mb-6 shadow-lg">
                         {principle.icon}
