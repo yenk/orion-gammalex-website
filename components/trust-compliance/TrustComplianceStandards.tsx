@@ -16,10 +16,10 @@ export default function TrustComplianceStandards() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 mb-8">
-            Our Foundational AI Principles
+            Compliance & Standards
           </h2>
           <p className="text-xl text-gray-800 leading-relaxed max-w-4xl mx-auto">
-            Building healthcare AI that earns trust through transparency and responsible design
+            Building toward enterprise-grade compliance and regulatory standards
           </p>
         </motion.div>
 
@@ -30,62 +30,12 @@ export default function TrustComplianceStandards() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-
-
-          {/* Data minimization philosophy */}
+          {/* Compliance roadmap */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900">
-              Data minimization philosophy
-            </h3>
-            <p className="text-lg text-gray-800 leading-relaxed">
-              Unlike many AI companies that collect everything, we believe in collecting only what's necessary. Our vertical AI approach means we focus on specific healthcare use cases, requiring minimal data to deliver maximum impact. We're building systems that respect data boundaries while delivering powerful insights.
-            </p>
-          </motion.div>
-
-          {/* Security foundation */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900">
-              Security foundation
-            </h3>
-            <p className="text-lg text-gray-800 leading-relaxed">
-              We're building with enterprise-grade security principles from day one. While we're in beta, our architecture is designed for the security requirements of healthcare organizations. We're implementing robust encryption, secure API access, and comprehensive audit trails—laying the groundwork for future compliance certifications.
-            </p>
-          </motion.div>
-
-          {/* Privacy by design */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900">
-              Privacy by design
-            </h3>
-            <p className="text-lg text-gray-800 leading-relaxed">
-              Privacy isn't an afterthought—it's built into every layer of our system. We're designing for HIPAA compliance, GDPR readiness, and healthcare-specific privacy requirements. Our approach ensures that patient data protection is foundational, not retrofitted.
-            </p>
-          </motion.div>
-
-          {/* Compliance roadmap */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-semibold text-gray-900">
@@ -96,60 +46,12 @@ export default function TrustComplianceStandards() {
             </p>
           </motion.div>
 
-          {/* Building trust through transparency */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900">
-              Building trust through transparency
-            </h3>
-            <p className="text-lg text-gray-800 leading-relaxed">
-              Trust in healthcare AI requires more than certifications—it requires transparency. We're committed to showing our work, explaining our decisions, and being open about our processes. This transparency builds the foundation for long-term trust with healthcare providers.
-            </p>
-          </motion.div>
-
-          {/* Cloud infrastructure */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900">
-              Cloud-native infrastructure
-            </h3>
-            <p className="text-lg text-gray-800 leading-relaxed">
-              We're building on distributed cloud infrastructure, which enables speed and security through highly-rated third-party vendors like AWS, GCP, and Azure. We plan to use these cloud-native platforms based on client requirements and needs, helping customers stay secured, resilient, and scalable through good engineering practices.
-            </p>
-          </motion.div>
-
-          {/* Robust data encryption */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900">
-              Robust data encryption
-            </h3>
-            <p className="text-lg text-gray-800 leading-relaxed">
-              We encrypt your healthcare data using AES-256-bit data-at-rest encryption and TLS 1.3 SHA-256 data-in-transit protection. The keys for these systems are frequently rotated to comply with industry standard KMS practices and are secured by KMS protections. We implement the latest encryption standards to ensure optimal security and efficiency.
-            </p>
-          </motion.div>
-
           {/* GDPR and CCPA compliance */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.7 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-semibold text-gray-900">
@@ -160,7 +62,6 @@ export default function TrustComplianceStandards() {
             </p>
           </motion.div>
         </motion.div>
-
       </div>
     </section>
   )
