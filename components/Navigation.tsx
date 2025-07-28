@@ -194,7 +194,7 @@ export default function Navigation() {
             {/* Logo */}
             <motion.div
               className="flex items-center cursor-pointer"
-              onClick={() => scrollToSection("hero")}
+              onClick={() => window.location.href = '/'}
               whileHover={{ scale: 1.02 }}
             >
               <img

@@ -3,27 +3,50 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { JoinWaitlistModal } from '@/components/JoinWaitlistModal'
 
 export default function ApplicationHero() {
   return (
-    <section className="relative w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter">
-      {/* Abstract Background with gradient waves */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-orange-600">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.15),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,165,0,0.15),transparent_50%)]" />
-      </div>
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/impact/icons/light8.png)',
+        }}
+      />
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40" />
       
       {/* Content Container */}
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
         <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-center space-y-8 sm:space-y-10 lg:space-y-12"
         >
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white leading-tight tracking-tight mb-8">
-            Applications
-          </h1>
+          {/* Headline */}
+          <motion.h1 
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-tight tracking-tight max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Vertical AI Platform for{' '}
+            <span className="text-gammalex-orange">Healthcare Revenue</span>
+          </motion.h1>
+          
+          {/* Subheadline */}
+          <motion.p 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white/90 leading-relaxed max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Real-time authorization intelligence, denial prediction, policy compliance, and automated claims processing
+          </motion.p>
         </motion.div>
       </div>
     </section>
