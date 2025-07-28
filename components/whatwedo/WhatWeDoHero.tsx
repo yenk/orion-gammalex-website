@@ -10,7 +10,7 @@ export default function WhatWeDoHero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/what-we-do/icons/what-we-do.png)',
+          backgroundImage: 'url(/images/impact/icons/impact27.png)',
         }}
       />
       

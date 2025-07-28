@@ -23,7 +23,6 @@ const headingLines = [
 ];
 
 
-
 export function CopilotHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -191,11 +190,21 @@ export function CopilotHero() {
         paddingTop: 'max(4vh, 2rem)', 
         paddingBottom: 'max(4vh, 2rem)',
         minHeight: 'calc(100vh - 5rem)', // Account for potential header/footer
-        background: 'linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 10% 8%) 50%, hsl(263 20% 15%) 100%)'
       }}
     >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/impact/icons/main10.png)',
+        }}
+      />
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40" />
+      
       {/* Futuristic background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-purple-900/20 to-black/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-purple-900/30 to-black/60 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(139,92,246,0.15),transparent_70%)] pointer-events-none" />
       {/* Animated circle absolutely centered in the hero section, not constraining heading width */}
       {hasMounted && (

@@ -67,9 +67,9 @@ import AboutSection from "@/components/AboutSection"
 import FooterGV from "@/components/FooterGV"
 
 import GammaLexIllustration from "@/components/GammaLexIllustration"
-import { ProblemsHero, ProblemsComplexCare, ProblemsGrid, ProblemsCTA } from "@/components/problemswesolve"
-import { HowWeDoItHero, HowWeDoItMethodology, HowWeDoItCapabilities, HowWeDoItCTA } from "@/components/howwedoit"
-import { ImpactHero, ImpactStats, ImpactStories, ImpactCTA } from "@/components/impact"
+import { ProblemsCTA } from "@/components/problemswesolve"
+import { HowWeDoItMethodology, HowWeDoItCapabilities, HowWeDoItCTA } from "@/components/howwedoit"
+import { ImpactStats, ImpactStories, ImpactCTA } from "@/components/impact"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import AnimatedText from "@/components/ui/AnimatedText"
 import { Progress } from '@/components/ui/progress'
@@ -583,19 +583,14 @@ export default function GammaLexPage() {
       <AboutSection />
 
       {/* Problems We Solve Section */}
-      <ProblemsHero />
-      <ProblemsComplexCare />
-      <ProblemsGrid />
       <ProblemsCTA />
 
       {/* How We Do It Section */}
-      <HowWeDoItHero />
       <HowWeDoItMethodology />
       <HowWeDoItCapabilities />
       <HowWeDoItCTA />
 
       {/* Impact Section */}
-      <ImpactHero />
       <ImpactStats />
       <ImpactStories />
       <ImpactCTA />
