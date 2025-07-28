@@ -5,35 +5,45 @@ import { motion } from 'framer-motion'
 
 export default function HowWeDoItHero() {
   return (
-    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter relative">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-purple-900/20 to-black/50 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(139,92,246,0.1),transparent_50%)] pointer-events-none" />
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/image2.png)',
+        }}
+      />
       
-      <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div 
-          className="text-center mb-20 sm:mb-24"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40" />
+      
+      {/* Content Container */}
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          className="text-center space-y-8 sm:space-y-10 lg:space-y-12"
         >
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center leading-tight mb-8">
-            How We <span className="gradient-text">Do It</span>
-          </h1>
-          <div className="max-w-5xl mx-auto">
-            <motion.div 
-              className="glass rounded-3xl p-8 sm:p-12 mb-8 border border-white/10"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-lg sm:text-xl md:text-2xl font-inter text-white/90 leading-relaxed text-center">
-                Vertical AI that understands the intersection of clinical reality, legal requirements, and payer policies.
-              </p>
-            </motion.div>
-          </div>
+          {/* Headline */}
+          <motion.h1 
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-tight tracking-tight max-w-6xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            How We <span className="text-gammalex-orange">Do It</span>
+          </motion.h1>
+          
+          {/* Subheadline */}
+          <motion.p 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white/90 leading-relaxed max-w-5xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Vertical AI that understands the intersection of clinical reality, legal requirements, and payer policies.
+          </motion.p>
         </motion.div>
       </div>
     </section>

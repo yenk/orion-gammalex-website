@@ -1,14 +1,14 @@
 "use client"
 
-import { HowWeDoItHero, HowWeDoItMethodology, HowWeDoItCapabilities, HowWeDoItCTA } from '@/components/howwedoit';
+import { HowWeDoItHero, HowWeDoItDetailed } from '@/components/howwedoit';
+import FooterGV from '@/components/FooterGV';
 
 export default function HowWeDoItPage() {
   return (
     <main className="bg-black text-white font-inter">
       <HowWeDoItHero />
-      <HowWeDoItMethodology />
-      <HowWeDoItCapabilities />
-      <HowWeDoItCTA />
+      <HowWeDoItDetailed />
+      <FooterGV />
     </main>
   );
 } 

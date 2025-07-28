@@ -68,7 +68,7 @@ import FooterGV from "@/components/FooterGV"
 
 import GammaLexIllustration from "@/components/GammaLexIllustration"
 import { ProblemsCTA } from "@/components/problemswesolve"
-import { HowWeDoItMethodology, HowWeDoItCapabilities, HowWeDoItCTA } from "@/components/howwedoit"
+
 import { ImpactStats, ImpactStories, ImpactCTA } from "@/components/impact"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import AnimatedText from "@/components/ui/AnimatedText"
@@ -585,10 +585,7 @@ export default function GammaLexPage() {
       {/* Problems We Solve Section */}
       <ProblemsCTA />
 
-      {/* How We Do It Section */}
-      <HowWeDoItMethodology />
-      <HowWeDoItCapabilities />
-      <HowWeDoItCTA />
+
 
       {/* Impact Section */}
       <ImpactStats />
