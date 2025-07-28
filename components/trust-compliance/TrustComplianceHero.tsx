@@ -27,7 +27,7 @@ export default function TrustComplianceHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal text-white leading-tight tracking-tight max-w-4xl mx-auto">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-tight tracking-tight max-w-6xl mx-auto">
             Enterprise Security & Privacy, <span className="text-gammalex-orange">Built for Scale</span>
           </h1>
         </motion.div>
@@ -39,7 +39,7 @@ export default function TrustComplianceHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white/90 leading-relaxed max-w-5xl mx-auto">
             At GammaLex, data protection is foundational and we're continuously building and strengthening our multi-layered security framework. From day one, our focus has been on ensuring confidentiality, integrity, and availability to give you full confidence in safeguarding your most critical information.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export default function TrustComplianceHero() {
               <li>Availability</li>
             </ul>
             <p className="text-base text-white/90 leading-relaxed">
-              Our security program is aligned with SOC 2 Type II and ISO 27000 standards. While we're in progress toward full certification, we maintain industry-leading, multilayered administrative, physical, and technical safeguards to protect healthcare client data. We constantly monitor and improve our vertical AI application, systems, and processes to meet the growing demands and challenges of an ever-evolving security landscape, with transparency as our core model and commitment.
+              Our security program is aligned with SOC 2 Type II and ISO 27000 standards. While we are still working toward full certification, we maintain industry leading administrative, physical, and technical safeguards to protect healthcare client data. We continuously monitor and strengthen our vertical AI application, systems, and processes to meet the demands of a constantly evolving security landscape, with transparency and trust at the core of our approach.
             </p>
           </motion.div>
         </motion.div>
