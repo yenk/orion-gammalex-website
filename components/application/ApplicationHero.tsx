@@ -34,8 +34,8 @@ export default function ApplicationHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Vertical AI Platform for{' '}
-            <span className="text-gammalex-orange">Healthcare Revenue</span>
+            GammaLex Vertical AI{' '}
+            <span className="text-gammalex-orange">Intelligence</span>
           </motion.h1>
           
           {/* Subheadline */}
@@ -45,7 +45,7 @@ export default function ApplicationHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Real-time authorization intelligence, denial prediction, policy compliance, and automated claims processing
+            Real-time authorization intelligence, denial prediction, and policy compliance
           </motion.p>
         </motion.div>
       </div>

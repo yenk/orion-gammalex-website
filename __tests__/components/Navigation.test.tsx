@@ -35,10 +35,8 @@ describe('Navigation Component', () => {
     render(<Navigation />)
     
     expect(screen.getByText('WHY GAMMALEX')).toBeInTheDocument()
-    expect(screen.getByText('WHAT WE\'RE SOLVING')).toBeInTheDocument()
-    expect(screen.getByText('WHY WE WIN')).toBeInTheDocument()
-    expect(screen.getByText('HOW GAMMALEX WORKS')).toBeInTheDocument()
-    expect(screen.getByText('WHO WE EMPOWER')).toBeInTheDocument()
+    expect(screen.getByText('PRODUCT')).toBeInTheDocument()
+    expect(screen.getByText('INTEGRITY')).toBeInTheDocument()
     expect(screen.getByText('ABOUT')).toBeInTheDocument()
     expect(screen.getByText('PARTNER WITH US')).toBeInTheDocument()
   })
@@ -66,13 +64,14 @@ describe('Navigation Component', () => {
     expect(mobileButton.closest('div')).toHaveClass('lg:hidden')
   })
 
-  it('handles logo click to scroll to hero section', () => {
+  it('handles logo click to navigate to home page', () => {
     render(<Navigation />)
     
     const logo = screen.getByAltText('GammaLex Logo')
     fireEvent.click(logo)
     
-    expect(document.getElementById).toHaveBeenCalledWith('hero')
+    // Should navigate to home page, not scroll to hero
+    expect(window.location.href).toBe('/')
   })
 
   it('handles navigation item clicks', () => {
@@ -84,31 +83,7 @@ describe('Navigation Component', () => {
     expect(document.getElementById).toHaveBeenCalledWith('about')
   })
 
-  it('shows dropdown menus on hover', async () => {
-    render(<Navigation />)
-    
-    const crisisNumbersButton = screen.getByText('WHAT WE\'RE SOLVING')
-    fireEvent.mouseEnter(crisisNumbersButton)
-    
-    await waitFor(() => {
-      expect(screen.getByText('The Crisis Numbers')).toBeInTheDocument()
-      expect(screen.getByText('The Legal Heat')).toBeInTheDocument()
-      expect(screen.getByText('Our Breakthrough')).toBeInTheDocument()
-    })
-  })
 
-  it('handles dropdown item clicks', async () => {
-    render(<Navigation />)
-    
-    const crisisNumbersButton = screen.getByText('WHAT WE\'RE SOLVING')
-    fireEvent.mouseEnter(crisisNumbersButton)
-    
-    await waitFor(() => {
-      const crisisNumbersItem = screen.getByText('The Crisis Numbers')
-      fireEvent.click(crisisNumbersItem)
-      expect(document.getElementById).toHaveBeenCalledWith('healthcare-crisis')
-    })
-  })
 
   it('includes join waitlist modal', () => {
     render(<Navigation />)
@@ -150,14 +125,7 @@ describe('Navigation Mobile Functionality', () => {
     const mobileButton = screen.getByRole('button', { name: /toggle mobile menu/i })
     fireEvent.click(mobileButton)
     
-    // Get the mobile version of the button (second instance)
-    const crisisNumbersButtons = screen.getAllByText('WHAT WE\'RE SOLVING')
-    const mobileCrisisButton = crisisNumbersButtons[1] // Mobile version
-    fireEvent.click(mobileCrisisButton)
-    
-    await waitFor(() => {
-      expect(screen.getByText('The Crisis Numbers')).toBeInTheDocument()
-    })
+
   })
 })
 
@@ -205,4 +173,8 @@ describe('Navigation Accessibility', () => {
     const mobileButton = screen.getByRole('button', { name: /toggle mobile menu/i })
     expect(mobileButton).toBeInTheDocument()
   })
-}) 
+})
+
+
+
+ 
