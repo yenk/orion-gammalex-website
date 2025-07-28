@@ -34,8 +34,8 @@ export default function ResponsibleAIPrinciples() {
 
   return (
     <section className="w-full font-inter">
-      {/* Dark background section - matching How We Do design */}
-      <div className="bg-gray-900 py-24">
+      {/* Dark background section */}
+      <div className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="flex flex-col lg:flex-row lg:items-start lg:gap-16"
@@ -46,14 +46,14 @@ export default function ResponsibleAIPrinciples() {
           >
             {/* Left side - Headline */}
             <div className="lg:w-1/2 mb-8 lg:mb-0">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white leading-tight">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 leading-tight">
                 Designing AI with <span className="text-gammalex-orange">Purpose</span>, <span className="text-gammalex-orange">Prosperity</span>, and <span className="text-gammalex-orange">Transparency</span> in Mind
               </h2>
             </div>
             
             {/* Right side - Description */}
             <div className="lg:w-1/2">
-              <p className="text-xl text-white/80 leading-relaxed">
+              <p className="text-xl text-gray-700 leading-relaxed">
                 At GammaLex, we believe AI is a force for progress—one that can illuminate complexity, expand access, and transform healthcare for the better. With that power comes a responsibility we embrace: to build with integrity, innovate boldly, and ensure our technology consistently serves people, purpose, and the public good.
               </p>
             </div>
@@ -61,8 +61,8 @@ export default function ResponsibleAIPrinciples() {
         </div>
       </div>
 
-      {/* Light background section - alternating pattern */}
-      <div className="bg-gray-50 py-24">
+      {/* Bright blue background section */}
+      <div className="py-24 text-white font-inter relative" style={{ backgroundColor: '#1a365d' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -71,7 +71,7 @@ export default function ResponsibleAIPrinciples() {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 mb-16">
+            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-16">
               Our Guiding Principles
             </h3>
             
@@ -86,10 +86,10 @@ export default function ResponsibleAIPrinciples() {
                   viewport={{ once: true }}
                   whileHover={{ y: -4 }}
                 >
-                  <div className="relative overflow-hidden rounded-2xl border border-gray-200 p-8 bg-white backdrop-blur-sm group-hover:bg-gray-50 transition-all duration-300 h-full shadow-sm hover:shadow-lg">
+                  <div className="relative overflow-hidden rounded-2xl border border-white/20 p-8 bg-white/10 backdrop-blur-sm group-hover:bg-white/20 transition-all duration-300 h-full shadow-sm hover:shadow-lg">
                     <div className="flex flex-col h-full">
-                      <h4 className="text-2xl font-semibold text-gray-900 mb-4">{principle.title}</h4>
-                      <p className="text-gray-700 leading-relaxed text-lg flex-1">{principle.description}</p>
+                      <h4 className="text-2xl font-semibold text-white mb-4">{principle.title}</h4>
+                      <p className="text-white/90 leading-relaxed text-lg flex-1">{principle.description}</p>
                     </div>
                   </div>
                 </motion.div>

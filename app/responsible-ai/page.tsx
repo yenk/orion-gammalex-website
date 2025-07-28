@@ -1,4 +1,4 @@
-import { ResponsibleAIHero, ResponsibleAIPrinciples, ResponsibleAIPractices, ResponsibleAICTA } from '@/components/responsible-ai';
+import { ResponsibleAIHero, ResponsibleAIPrinciples, ResponsibleAIPractices } from '@/components/responsible-ai';
 import Navigation from '@/components/Navigation';
 import FooterGV from '@/components/FooterGV';
 
@@ -9,7 +9,6 @@ export default function ResponsibleAIPage() {
       <ResponsibleAIHero />
       <ResponsibleAIPrinciples />
       <ResponsibleAIPractices />
-      <ResponsibleAICTA />
       <FooterGV />
     </main>
   );

@@ -38,7 +38,7 @@ export default function ResponsibleAIPractices() {
   return (
     <section className="w-full font-inter">
       {/* Risk Management Section - Modern Simple Design */}
-      <div className="bg-gray-900 py-32">
+      <div className="bg-[#1a1a2e] py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-20"
@@ -51,7 +51,7 @@ export default function ResponsibleAIPractices() {
               Built on open source and committed to transparency
             </h2>
             
-            <p className="text-xl text-white/80 leading-relaxed max-w-4xl mx-auto mb-16">
+            <p className="text-xl text-white/95 leading-relaxed max-w-4xl mx-auto mb-16">
               Our foundation is built on community-driven data, transparent processes, and open innovation.
             </p>
           </motion.div>
@@ -68,7 +68,7 @@ export default function ResponsibleAIPractices() {
                 whileHover={{ y: -8 }}
               >
                 {/* Modern Simple Card */}
-                <div className="relative overflow-hidden rounded-2xl bg-gray-800/50 border border-gray-600/30 p-8 h-full shadow-sm hover:shadow-xl transition-all duration-500 group-hover:bg-gray-800/70">
+                <div className="relative overflow-hidden rounded-2xl bg-white/10 border border-white/20 p-8 h-full shadow-sm hover:shadow-xl transition-all duration-500 group-hover:bg-white/20 backdrop-blur-sm">
                   {/* Content */}
                   <div className="h-full flex flex-col">
                     {/* Title */}
@@ -77,7 +77,7 @@ export default function ResponsibleAIPractices() {
                     </h4>
                     
                     {/* Description */}
-                    <p className="text-white/80 leading-relaxed text-lg flex-1 group-hover:text-white/90 transition-colors duration-300">
+                    <p className="text-white/90 leading-relaxed text-lg flex-1 group-hover:text-white/80 transition-colors duration-300">
                       {item.description}
                     </p>
                   </div>
@@ -90,17 +90,17 @@ export default function ResponsibleAIPractices() {
 
       {/* Mitigating Risks Section */}
       <motion.div
-        className="bg-gray-50 py-32"
+        className="bg-[#0f4c75] py-32"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.6 }}
         viewport={{ once: true }}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 text-center mb-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center mb-8">
             Empowering AI by Designing for Trust and Foresight
           </h2>
-                      <p className="text-xl text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
+                      <p className="text-xl text-white/95 leading-relaxed text-center max-w-4xl mx-auto">
               We assess AI risks early, applying targeted safeguards to prevent and avoid escalation completely. By prioritizing smart interventions and expert insight, we ensure our AI stays adaptive, efficient, and firmly aligned with real-world healthcare impact.
             </p>
         </div>
@@ -185,8 +185,8 @@ export default function ResponsibleAIPractices() {
                       <span className="text-white text-lg font-bold">✓</span>
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{item.category}</h4>
-                      <p className="text-gray-600 text-base leading-relaxed">{item.description}</p>
+                      <h4 className="text-xl font-semibold text-white mb-2">{item.category}</h4>
+                      <p className="text-white/90 text-base leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                   <div className="flex gap-2">
@@ -210,7 +210,7 @@ export default function ResponsibleAIPractices() {
             
             {/* Risk Level Legend */}
             <motion.div
-              className="flex justify-center gap-6 mt-16 pt-10 border-t border-gray-200"
+              className="flex justify-center gap-6 mt-16 pt-10 border-t border-white/20"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 2.6 }}
@@ -218,19 +218,19 @@ export default function ResponsibleAIPractices() {
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-blue-200 rounded-sm"></div>
-                <span className="text-base font-medium text-gray-600">Low</span>
+                <span className="text-base font-medium text-white">Low</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-blue-400 rounded-sm"></div>
-                <span className="text-base font-medium text-gray-600">Medium</span>
+                <span className="text-base font-medium text-white">Medium</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-blue-600 rounded-sm"></div>
-                <span className="text-base font-medium text-gray-600">High</span>
+                <span className="text-base font-medium text-white">High</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-blue-800 rounded-sm"></div>
-                <span className="text-base font-medium text-gray-600">Critical</span>
+                <span className="text-base font-medium text-white">Critical</span>
               </div>
             </motion.div>
           </motion.div>
@@ -250,8 +250,8 @@ export default function ResponsibleAIPractices() {
         </div>
       </motion.div>
 
-      {/* Governance Section - Dark Background for Proper Separation */}
-      <div className="bg-gray-900 py-24">
+      {/* Governance Section - Dark Background for Proper Alternation */}
+      <div className="py-24 text-white font-inter relative" style={{ backgroundColor: '#1a1a2e' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -261,9 +261,9 @@ export default function ResponsibleAIPractices() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8">
-              Ensuring <span className="text-blue-300">Responsible AI Governance</span>
+              Ensuring <span className="text-gammalex-orange">Responsible AI Governance</span>
             </h2>
-            <p className="text-xl text-white/80 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl text-white/95 leading-relaxed max-w-4xl mx-auto">
               To build and deploy AI responsibly, we combine structured oversight with continuous monitoring. Our governance framework ensures that AI development remains ethical, secure, and adaptable.
             </p>
           </motion.div>
@@ -288,7 +288,7 @@ export default function ResponsibleAIPractices() {
                   viewport={{ once: true }}
                 >
                   {/* Main Circle */}
-                  <div className="w-56 h-56 rounded-full bg-blue-700 border-2 border-blue-400 flex items-center justify-center shadow-lg">
+                  <div className="w-56 h-56 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-sm">
                     <h3 className="text-3xl font-semibold text-white text-center">{stage.title}</h3>
                   </div>
                 </motion.div>
@@ -300,116 +300,141 @@ export default function ResponsibleAIPractices() {
               <div className="grid grid-cols-6 gap-10 max-w-7xl">
                 {/* First Row */}
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 2.6 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Clinical Risk Assessment</span>
+                  <span className="text-base font-medium text-white">Clinical Risk Assessment</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 2.7 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Payer Policy Reviews</span>
+                  <span className="text-base font-medium text-white">Payer Policy Reviews</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 2.8 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Red Teaming</span>
+                  <span className="text-base font-medium text-white">Red Teaming</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 2.9 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Clinical Safety Evaluations</span>
+                  <span className="text-base font-medium text-white">Clinical Safety Evaluations</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.0 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Provider Feedback</span>
+                  <span className="text-base font-medium text-white">Provider Feedback</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.1 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Model Updates</span>
+                  <span className="text-base font-medium text-white">Model Updates</span>
                 </motion.div>
                 
                 {/* Second Row */}
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.2 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">HIPAA Compliance Checks</span>
+                  <span className="text-base font-medium text-white">HIPAA Compliance Checks</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.3 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Real-time Monitoring</span>
+                  <span className="text-base font-medium text-white">Real-time Monitoring</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.4 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Policy Scorecards</span>
+                  <span className="text-base font-medium text-white">Policy Scorecards</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.5 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">AI Testing Protocols</span>
+                  <span className="text-base font-medium text-white">AI Testing Protocols</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.6 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Policy Adjustments</span>
+                  <span className="text-base font-medium text-white">Policy Adjustments</span>
                 </motion.div>
                 <motion.div
-                  className="bg-blue-800/50 border border-blue-400/30 rounded-lg p-6 text-center h-28 flex items-center justify-center"
+                  className="bg-white/10 border border-white/20 rounded-lg p-6 text-center h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 3.7 }}
                   viewport={{ once: true }}
                 >
-                  <span className="text-base font-medium text-white/90">Risk Forecasting</span>
+                  <span className="text-base font-medium text-white">Risk Forecasting</span>
                 </motion.div>
               </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* CTA Section - Dark Background for Clear Separation */}
+      <div className="py-24 text-white font-inter relative" style={{ backgroundColor: '#1a365d' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 3.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white text-center mb-8">
+              Shaping AI responsibly from the ground up
+            </h2>
+            <div className="max-w-4xl mx-auto mb-12">
+              <p className="text-xl text-white/95 leading-relaxed mb-6">
+                The responsible use of deep learning AI requires careful attention to issues such as bias in training data, limited interpretability, privacy, transparency, and meaningful social impact.
+              </p>
+              <p className="text-xl text-white/95 leading-relaxed">
+                With intention and accountability, we can help ensure that AI is developed and applied in ways that benefit both our communities and society at large. #ResponsibleAI #DeepLearningAI
+              </p>
             </div>
           </motion.div>
         </div>
