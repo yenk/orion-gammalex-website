@@ -68,8 +68,8 @@ export default function ResponsibleAIPrinciples() {
         </div>
       </div>
 
-      {/* Dark blue background section - matching Collective[i] design */}
-      <div className="bg-blue-900 py-24">
+      {/* Dark gray background section - matching How We Do It page */}
+      <div className="bg-gray-900 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"

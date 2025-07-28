@@ -136,8 +136,8 @@ export default function ResponsibleAIPractices() {
         </div>
       </div>
 
-      {/* Governance Section - Dark Blue Background */}
-      <div className="bg-blue-900 py-24">
+      {/* Governance Section - Dark Gray Background */}
+      <div className="bg-gray-900 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
