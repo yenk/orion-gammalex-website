@@ -1,4 +1,4 @@
-import { TrustComplianceHero, TrustComplianceStandards, TrustComplianceSecurity, TrustComplianceCTA } from '@/components/trust-compliance';
+import { TrustComplianceHero, TrustComplianceStandards, TrustComplianceSecurity, TrustComplianceCertifications, TrustComplianceCTA } from '@/components/trust-compliance';
 import Navigation from '@/components/Navigation';
 
 export default function TrustCompliancePage() {
@@ -8,6 +8,7 @@ export default function TrustCompliancePage() {
       <TrustComplianceHero />
       <TrustComplianceStandards />
       <TrustComplianceSecurity />
+      <TrustComplianceCertifications />
       <TrustComplianceCTA />
     </main>
   );

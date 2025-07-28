@@ -2,10 +2,11 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { FileText, ExternalLink } from 'lucide-react'
 
 export default function TrustComplianceHero() {
   return (
-    <section className="relative w-full py-24 sm:py-32 lg:py-40 overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -18,33 +19,62 @@ export default function TrustComplianceHero() {
       <div className="absolute inset-0 bg-black/40" />
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
+        {/* Hero Heading */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-tight tracking-tight max-w-6xl mx-auto">
+            Enterprise Security & Privacy, <span className="text-gammalex-orange">Built for Scale</span>
+          </h1>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-8 sm:space-y-10 lg:space-y-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
         >
-          {/* Headline */}
-          <motion.h1 
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-tight tracking-tight max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-          >
-            Enterprise-level security & privacy
-          </motion.h1>
-          
-          {/* Subheadline */}
-          <motion.p 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white/90 leading-relaxed max-w-5xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          {/* Left Section: Our privacy philosophy */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            At Gammalex®, our first priority is keeping your healthcare data private and secure. We recognize the importance of balancing confidentiality, integrity, and the availability of business information. From its inception, our application was designed with a multi-layered approach to securing key information. Our security and privacy program is designed to provide our healthcare clients with the utmost confidence in our protection of their data.
-          </motion.p>
+            <h2 className="text-2xl font-inter font-normal text-white">
+              Our privacy philosophy: Data minimization and client control of data
+            </h2>
+            <p className="text-base text-white/90 leading-relaxed">
+              The two core philosophies of data minimization and client control consistently inform how our team — from engineering to client success — builds our vertical AI for healthcare and handles client data. Unlike many other AI/ML companies, we aim to collect the minimum data required to provide our services (and nothing more). Additionally, we always provide our healthcare clients transparency around and control over their data. They choose which healthcare systems and data sources to provide via secure API access, and can turn off API access to any data source at any time. For more information on our privacy program, please see our <span className="underline cursor-pointer">Privacy Policy</span>.
+            </p>
+          </motion.div>
+
+          {/* Right Section: Our security philosophy */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <h3 className="text-lg font-semibold text-white">
+              Our security philosophy:
+            </h3>
+            <ul className="list-disc list-inside text-white/90 space-y-1 mb-6">
+              <li>Confidentiality</li>
+              <li>Integrity</li>
+              <li>Availability</li>
+            </ul>
+            <p className="text-base text-white/90 leading-relaxed">
+              Our security program is SOC 2 Type II compliant and aligned to ISO 27000 standards. In addition to maintaining industry-leading, multilayered administrative, physical, and technical safeguards to protect healthcare client data, we constantly monitor and improve our vertical AI application, systems, and processes to meet the growing demands and challenges of an ever-evolving security landscape.
+            </p>
+          </motion.div>
         </motion.div>
+
+
       </div>
     </section>
   )

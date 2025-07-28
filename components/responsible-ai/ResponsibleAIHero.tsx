@@ -10,7 +10,7 @@ export default function ResponsibleAIHero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/impact/icons/flowers7.png)',
+          backgroundImage: 'url(/images/impact/icons/responsible-ai.png)',
         }}
       />
       

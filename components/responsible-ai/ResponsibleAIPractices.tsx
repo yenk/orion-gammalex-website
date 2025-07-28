@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Brain, Lock, Users, CheckCircle, Shield, Target, Eye, FileText, AlertTriangle, RefreshCw } from 'lucide-react'
+import { Brain, Lock, Users, Eye, FileText, AlertTriangle, RefreshCw } from 'lucide-react'
 
 export default function ResponsibleAIPractices() {
   const riskManagement = [
@@ -68,11 +68,11 @@ export default function ResponsibleAIPractices() {
                 whileHover={{ y: -8 }}
               >
                 {/* Modern Simple Card */}
-                <div className="relative overflow-hidden rounded-3xl bg-gray-800/50 border border-gray-600/30 p-12 h-full shadow-sm hover:shadow-xl transition-all duration-500 group-hover:bg-gray-800/70">
+                <div className="relative overflow-hidden rounded-2xl bg-gray-800/50 border border-gray-600/30 p-8 h-full shadow-sm hover:shadow-xl transition-all duration-500 group-hover:bg-gray-800/70">
                   {/* Content */}
                   <div className="h-full flex flex-col">
                     {/* Title */}
-                    <h4 className="text-2xl font-bold text-white mb-8 leading-tight group-hover:text-white/90 transition-colors duration-300">
+                    <h4 className="text-2xl font-bold text-white mb-6 leading-tight group-hover:text-white/90 transition-colors duration-300">
                       {item.title}
                     </h4>
                     
