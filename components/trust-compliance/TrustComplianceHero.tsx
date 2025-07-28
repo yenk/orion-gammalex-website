@@ -19,28 +19,41 @@ export default function TrustComplianceHero() {
       <div className="absolute inset-0 bg-black/40" />
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
-        {/* Hero Heading */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-20 sm:py-24 lg:py-32">
+        {/* Main Heading */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-tight tracking-tight max-w-6xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal text-white leading-tight tracking-tight max-w-4xl mx-auto">
             Enterprise Security & Privacy, <span className="text-gammalex-orange">Built for Scale</span>
           </h1>
         </motion.div>
 
+        {/* Introductory Paragraph */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto">
+            At GammaLex, data protection is foundational and we're continuously building and strengthening our multi-layered security framework. From day one, our focus has been on ensuring confidentiality, integrity, and availability to give you full confidence in safeguarding your most critical information.
+          </p>
+        </motion.div>
+
+        {/* Two Column Section */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-20"
         >
           {/* Left Section: Our privacy philosophy */}
           <motion.div
-            className="space-y-6"
+            className="space-y-8"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -55,7 +68,7 @@ export default function TrustComplianceHero() {
 
           {/* Right Section: Our security philosophy */}
           <motion.div
-            className="space-y-6"
+            className="space-y-8"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -63,13 +76,13 @@ export default function TrustComplianceHero() {
             <h3 className="text-lg font-semibold text-white">
               Our security philosophy:
             </h3>
-            <ul className="list-disc list-inside text-white/90 space-y-1 mb-6">
+            <ul className="list-disc list-inside text-white/90 space-y-2 mb-8">
               <li>Confidentiality</li>
               <li>Integrity</li>
               <li>Availability</li>
             </ul>
             <p className="text-base text-white/90 leading-relaxed">
-              Our security program is SOC 2 Type II compliant and aligned to ISO 27000 standards. In addition to maintaining industry-leading, multilayered administrative, physical, and technical safeguards to protect healthcare client data, we constantly monitor and improve our vertical AI application, systems, and processes to meet the growing demands and challenges of an ever-evolving security landscape.
+              Our security program is aligned with SOC 2 Type II and ISO 27000 standards. While we're in progress toward full certification, we maintain industry-leading, multilayered administrative, physical, and technical safeguards to protect healthcare client data. We constantly monitor and improve our vertical AI application, systems, and processes to meet the growing demands and challenges of an ever-evolving security landscape, with transparency as our core model and commitment.
             </p>
           </motion.div>
         </motion.div>
