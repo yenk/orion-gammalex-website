@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function TrustComplianceCTA() {
   return (
-    <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter bg-gray-50">
+    <section className="w-full py-16 sm:py-20 px-4 sm:px-6 lg:px-8 font-inter bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center"
@@ -18,7 +18,7 @@ export default function TrustComplianceCTA() {
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Building trust in healthcare AI
             </h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-800 leading-relaxed">
               We're building the foundation for trusted healthcare AI. While we're in beta, we're transparent about our approach, our roadmap, and our commitment to the security and privacy standards that healthcare requires.
             </p>
           </div>
