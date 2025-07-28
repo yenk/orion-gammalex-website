@@ -1,9 +1,11 @@
 import ContactForm from "../../components/ContactForm";
 import { LegalBackgroundPattern } from "@/components/background-elements";
+import Navigation from '@/components/Navigation';
 
 export default function ContactPage() {
   return (
     <main className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden font-inter">
+      <Navigation />
       <LegalBackgroundPattern />
       <div className="relative z-10 w-full max-w-2xl mx-auto px-4 py-20 sm:py-32 flex flex-col items-center">
         <h1 className="text-3xl xs:text-4xl sm:text-5xl font-black mb-4 text-white leading-tight tracking-tight text-center font-inter">

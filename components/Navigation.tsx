@@ -107,6 +107,16 @@ export default function Navigation() {
       return
     }
     
+    if (sectionId === 'about') {
+      window.location.href = '/'
+      return
+    }
+    
+    if (sectionId === 'join') {
+      window.location.href = '/contact'
+      return
+    }
+    
     const element = document.getElementById(sectionId)
     console.log('Found element:', element)
     if (element) {
