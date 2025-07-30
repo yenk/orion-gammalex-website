@@ -39,11 +39,11 @@ export default function ImpactStats() {
             
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
-                <div className="text-xl font-bold text-gammalex-orange mb-1">67%</div>
+                <div className="text-xl font-bold text-gammalex-purple mb-1">67%</div>
                 <div className="text-xs text-gray-400">Denial Reduction</div>
               </div>
               <div className="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
-                <div className="text-xl font-bold text-gammalex-orange mb-1">3.2x</div>
+                <div className="text-xl font-bold text-gammalex-purple mb-1">3.2x</div>
                 <div className="text-xs text-gray-400">Faster Approval</div>
               </div>
             </div>
@@ -157,21 +157,21 @@ export default function ImpactStats() {
                 <div className="text-gray-400 text-sm">CARE ENABLEMENT</div>
               </div>
             </div>
-            <div className="text-2xl font-bold text-gammalex-orange">24/7</div>
+            <div className="text-2xl font-bold text-gammalex-purple">24/7</div>
           </div>
           
           <div className="flex-1 space-y-3">
             <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
               <div className="flex items-center justify-between">
                 <span className="text-gray-300 text-sm">Accuracy Rate</span>
-                <span className="text-lg font-bold text-gammalex-orange">98%</span>
+                <span className="text-lg font-bold text-gammalex-purple">98%</span>
               </div>
             </div>
             
             <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
               <div className="flex items-center justify-between">
                 <span className="text-gray-300 text-sm">Policy Updates</span>
-                <span className="text-lg font-bold text-gammalex-orange">2.1M</span>
+                <span className="text-lg font-bold text-gammalex-purple">2.1M</span>
               </div>
             </div>
             
@@ -185,7 +185,7 @@ export default function ImpactStats() {
             <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
               <div className="flex items-center justify-between">
                 <span className="text-gray-300 text-sm">Care Quality</span>
-                <span className="text-lg font-bold text-gammalex-orange">Enhanced</span>
+                <span className="text-lg font-bold text-gammalex-purple">Enhanced</span>
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ export function FeatureHighlights() {
       desc: "AI-powered insights to identify potential coverage issues before submission"
     },
     {
-      icon: <Zap className="h-10 w-10 text-gammalex-orange neon-text" />,
+      icon: <Zap className="h-10 w-10 text-gammalex-purple neon-text" />,
       gradient: "from-gammalex-orange/20 via-gammalex-orange/10 to-transparent",
       border: "border-gammalex-orange/30",
       title: "Faster Approvals",

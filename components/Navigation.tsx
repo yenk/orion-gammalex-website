@@ -254,7 +254,7 @@ export default function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-purple transition-colors">
                                           {dropdownItem.label}
                                         </div>
                                         {dropdownItem.description && (
@@ -263,7 +263,7 @@ export default function Navigation() {
                                           </div>
                                         )}
                                       </div>
-                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                      <div className="text-white/40 group-hover:text-gammalex-purple transition-colors">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                           <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
@@ -295,7 +295,7 @@ export default function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-purple transition-colors">
                                           {dropdownItem.label}
                                         </div>
                                         {dropdownItem.description && (
@@ -304,7 +304,7 @@ export default function Navigation() {
                                           </div>
                                         )}
                                       </div>
-                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                      <div className="text-white/40 group-hover:text-gammalex-purple transition-colors">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                           <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
@@ -337,7 +337,7 @@ export default function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-purple transition-colors">
                                           {dropdownItem.label}
                                         </div>
                                         {dropdownItem.description && (
@@ -346,7 +346,7 @@ export default function Navigation() {
                                           </div>
                                         )}
                                       </div>
-                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                      <div className="text-white/40 group-hover:text-gammalex-purple transition-colors">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                           <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
@@ -379,7 +379,7 @@ export default function Navigation() {
                                   >
                                     <div className="flex items-center justify-between">
                                       <div className="flex-1">
-                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-purple transition-colors">
                                           {dropdownItem.label}
                                         </div>
                                         {dropdownItem.description && (
@@ -388,7 +388,7 @@ export default function Navigation() {
                                           </div>
                                         )}
                                       </div>
-                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                      <div className="text-white/40 group-hover:text-gammalex-purple transition-colors">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                           <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>

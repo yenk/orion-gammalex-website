@@ -82,7 +82,7 @@ describe('ProblemsMetrics Component', () => {
     })
 
     it('has elements with proper color classes', () => {
-      const orangeElements = document.querySelectorAll('.text-gammalex-orange')
+      const orangeElements = document.querySelectorAll('.text-gammalex-purple')
       const purpleElements = document.querySelectorAll('.text-gammalex-purple')
       expect(orangeElements.length).toBeGreaterThan(0)
       expect(purpleElements.length).toBeGreaterThan(0)
@@ -142,7 +142,7 @@ describe('ProblemsMetrics Component', () => {
 
     it('has proper contrast classes', () => {
       const whiteElements = document.querySelectorAll('.text-white')
-      const orangeElements = document.querySelectorAll('.text-gammalex-orange')
+      const orangeElements = document.querySelectorAll('.text-gammalex-purple')
       const purpleElements = document.querySelectorAll('.text-gammalex-purple')
       expect(whiteElements.length + orangeElements.length + purpleElements.length).toBeGreaterThan(0)
     })

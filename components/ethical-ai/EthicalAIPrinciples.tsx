@@ -47,7 +47,7 @@ export default function EthicalAIPrinciples() {
             {/* Left side - Headline */}
             <div className="lg:w-1/2 mb-8 lg:mb-0">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-gray-900 leading-tight">
-                Designing AI with <span className="text-gammalex-orange">Purpose</span>, <span className="text-gammalex-orange">Prosperity</span>, and <span className="text-gammalex-orange">Transparency</span> in Mind
+                Designing AI with <span className="text-gammalex-purple">Purpose</span>, <span className="text-gammalex-purple">Prosperity</span>, and <span className="text-gammalex-purple">Transparency</span> in Mind
               </h2>
             </div>
             

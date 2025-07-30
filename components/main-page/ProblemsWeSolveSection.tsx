@@ -15,7 +15,7 @@ export default function ProblemsWeSolveSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8">
-            The <span className="text-gammalex-orange">pre-authorization crisis</span> affects everyone
+            The <span className="text-gammalex-purple">pre-authorization crisis</span> affects everyone
           </h2>
           <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto">
             Prior authorization delays and denials create a cascade of problems across healthcare—from patient harm to provider burnout to increased costs.

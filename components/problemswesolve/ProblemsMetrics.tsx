@@ -60,16 +60,16 @@ export default function ProblemsMetrics() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gammalex-orange mb-4">
+                <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gammalex-purple mb-4">
                   <AnimatedCounter value="92%" inView={true} />
                 </div>
                 <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter leading-tight mb-6">
                   of radiation oncologists report<br />
-                  <span className="text-gammalex-orange font-semibold">prior authorization delays</span>
+                  <span className="text-gammalex-purple font-semibold">prior authorization delays</span>
                 </div>
                 <div className="text-base text-white/80 font-inter leading-relaxed">
-                  <span className="text-gammalex-orange font-semibold">30%</span> result in ER visits, hospitalization, or permanent disability. 
-                  <span className="text-gammalex-orange font-semibold"> 7%</span> result in patient death.
+                  <span className="text-gammalex-purple font-semibold">30%</span> result in ER visits, hospitalization, or permanent disability. 
+                  <span className="text-gammalex-purple font-semibold"> 7%</span> result in patient death.
                 </div>
               </motion.div>
 
@@ -101,15 +101,15 @@ export default function ProblemsMetrics() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gammalex-orange mb-4">
+                <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gammalex-purple mb-4">
                   <AnimatedCounter value="93%" inView={true} />
                 </div>
                 <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter leading-tight mb-6">
                   PA rate for cardiology<br />
-                  <span className="text-gammalex-orange font-semibold">second-highest among specialties</span>
+                  <span className="text-gammalex-purple font-semibold">second-highest among specialties</span>
                 </div>
                 <div className="text-base text-white/80 font-inter leading-relaxed">
-                  Complex coding and strict payer criteria create <span className="text-gammalex-orange font-semibold">elevated denial risk</span>
+                  Complex coding and strict payer criteria create <span className="text-gammalex-purple font-semibold">elevated denial risk</span>
                 </div>
               </motion.div>
 
@@ -183,7 +183,7 @@ export default function ProblemsMetrics() {
                   viewport={{ once: true }}
                 >
                   <div className="lg:w-1/2 text-center lg:text-left">
-                    <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-orange mb-4">
+                    <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gammalex-purple mb-4">
                       $25.7B
                     </div>
                     <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
@@ -193,7 +193,7 @@ export default function ProblemsMetrics() {
                   <div className="hidden lg:block w-8 h-8 bg-gammalex-orange rounded-full border-4 border-white shadow-lg z-10" />
                   <div className="lg:w-1/2 text-center lg:text-right">
                     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
-                      <div className="text-sm text-gammalex-orange font-semibold mb-2">23% INCREASE</div>
+                      <div className="text-sm text-gammalex-purple font-semibold mb-2">23% INCREASE</div>
                       <div className="text-white/80">A 23% year-over-year spike shows the denial crisis is accelerating, not improving.</div>
                     </div>
                   </div>
@@ -231,7 +231,7 @@ export default function ProblemsMetrics() {
 
       {/* Source attribution */}
       <div className="text-sm sm:text-base text-white/60 text-center mt-8">
-        Sources: <a href="https://www.astro.org/news-and-publications/news-and-media-center/news-releases/2024/new-astro-survey-finds-that-prior-authorization-delays-lead-to-serious-harm-for-people-with-cancer" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">ASTRO Survey: Prior Authorization Delays Lead to Serious Harm for Cancer Patients</a> | <a href="https://www.beckershospitalreview.com/oncology/how-insurance-denials-disrupt-cancer-care-5-investigation-notes" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Becker's Hospital Review: How Insurance Denials Disrupt Cancer Care</a> | <a href="https://blog.healthjobsnationwide.com/healthcare-denials-are-skyrocketing-in-2025-hidden-reasons-revealed/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Healthcare Denials Skyrocketing in 2025</a> | <a href="https://www.os-healthcare.com/news-and-blog/denial-rates-are-climbing-what-healthcare-revenue-cycle-leaders-should-be-watching-in-2025" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">OS Healthcare Denial Rates Climbing 2025</a> | <a href="https://www.fiercehealthcare.com/providers/providers-potentially-wasted-almost-18b-2023-overturning-claims-denials-premier-estimates" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Fierce Healthcare: Providers Potentially Wasted Almost $18B in 2023</a> | <a href="https://www.beckershospitalreview.com/finance/claims-denials-are-costing-hospitals-nearly-20b-per-year" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Becker's Hospital Review: Claims Denials Costing Hospitals Nearly $20B Per Year</a> | <a href="https://www.fiercehealthcare.com/providers/providers-wasted-106b-2022-overturning-claims-denials-survey-finds" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-orange transition-colors">Fierce Healthcare: Providers Wasted $10.6B in 2022 Overturning Claims Denials</a>
+        Sources: <a href="https://www.astro.org/news-and-publications/news-and-media-center/news-releases/2024/new-astro-survey-finds-that-prior-authorization-delays-lead-to-serious-harm-for-people-with-cancer" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">ASTRO Survey: Prior Authorization Delays Lead to Serious Harm for Cancer Patients</a> | <a href="https://www.beckershospitalreview.com/oncology/how-insurance-denials-disrupt-cancer-care-5-investigation-notes" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Becker's Hospital Review: How Insurance Denials Disrupt Cancer Care</a> | <a href="https://blog.healthjobsnationwide.com/healthcare-denials-are-skyrocketing-in-2025-hidden-reasons-revealed/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Healthcare Denials Skyrocketing in 2025</a> | <a href="https://www.os-healthcare.com/news-and-blog/denial-rates-are-climbing-what-healthcare-revenue-cycle-leaders-should-be-watching-in-2025" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">OS Healthcare Denial Rates Climbing 2025</a> | <a href="https://www.fiercehealthcare.com/providers/providers-potentially-wasted-almost-18b-2023-overturning-claims-denials-premier-estimates" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Fierce Healthcare: Providers Potentially Wasted Almost $18B in 2023</a> | <a href="https://www.beckershospitalreview.com/finance/claims-denials-are-costing-hospitals-nearly-20b-per-year" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Becker's Hospital Review: Claims Denials Costing Hospitals Nearly $20B Per Year</a> | <a href="https://www.fiercehealthcare.com/providers/providers-wasted-106b-2022-overturning-claims-denials-survey-finds" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Fierce Healthcare: Providers Wasted $10.6B in 2022 Overturning Claims Denials</a>
       </div>
     </div>
   )

@@ -15,7 +15,7 @@ export default function HowGammaLexWorksSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8">
-            How GammaLex <span className="text-gammalex-orange">works</span>
+            How GammaLex <span className="text-gammalex-purple">works</span>
           </h2>
           <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto">
             Our AI platform combines clinical expertise, legal foresight, and policy awareness to automate pre-authorization processes and prevent denials.

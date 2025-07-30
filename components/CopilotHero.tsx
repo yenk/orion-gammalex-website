@@ -305,7 +305,7 @@ export function CopilotHero() {
             {headingLines[0].map((item, j) => (
               <span
                 key={j}
-                className={`inline-block ${j !== headingLines[0].length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'text-gammalex-orange' : 'text-white'}`}
+                className={`inline-block ${j !== headingLines[0].length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'text-gammalex-purple' : 'text-white'}`}
               >
                 {item.word}
               </span>

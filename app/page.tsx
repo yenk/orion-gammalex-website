@@ -9,7 +9,7 @@ import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 import Navigation from '@/components/Navigation'
 import { CopilotHero } from "@/components/CopilotHero"
 import FooterGV from "@/components/FooterGV"
-import { ImpactSection, RevenueOptimizationSection, AIApplicationsSection } from "@/components/main-page"
+import { RevenueOptimizationSection, AIApplicationsSection, EnterpriseSecurityPrivacySection } from "@/components/main-page"
 import React from 'react'
 
 /**
@@ -43,12 +43,12 @@ export default function GammaLexPage() {
 
 
       {/* AI Applications Section */}
-      <AIApplicationsSection />
+              <AIApplicationsSection />
 
-      {/* Impact Section */}
-      <ImpactSection />
+        {/* Enterprise Security & Privacy Section */}
+        <EnterpriseSecurityPrivacySection />
 
-      {/* Join Section (Partner With Us) */}
+        {/* Join Section (Partner With Us) */}
       <div ref={ctaRef} className="mt-0">
         <section id="join" className="min-h-screen flex items-center bg-sage-100 text-black">
           <div className="max-w-none w-full px-8 lg:px-16 py-8">
@@ -62,7 +62,7 @@ export default function GammaLexPage() {
               <div className="bg-white rounded-3xl shadow-lg border border-terracotta-300 p-6 sm:p-14 w-full flex flex-col items-center font-inter">
                 <JoinWaitlistModal
                   trigger={
-                    <button className="text-2xl sm:text-4xl text-gammalex-orange text-center w-full font-inter focus:outline-none">
+                    <button className="text-2xl sm:text-4xl text-gammalex-purple text-center w-full font-inter focus:outline-none">
                       Join as an Early Partner
                     </button>
                   }

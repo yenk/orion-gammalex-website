@@ -171,7 +171,7 @@ function AnimatedMilestoneFlow() {
         {/* Milestone columns */}
         {labels.map((label, i) => (
           <div key={label} className="flex flex-col items-center flex-1 z-10">
-            <span className={`text-lg sm:text-xl font-medium font-inter mb-2 transition-colors duration-200 ${active === i ? "text-gammalex-orange" : "text-slate-900"}`}>{label}</span>
+            <span className={`text-lg sm:text-xl font-medium font-inter mb-2 transition-colors duration-200 ${active === i ? "text-gammalex-purple" : "text-slate-900"}`}>{label}</span>
             <span className={`w-4 h-4 rounded-full border-2 border-white shadow transition-colors duration-200 ${active === i ? "bg-gammalex-orange" : "bg-slate-300"}`} style={{ position: 'relative', top: 0 }} />
           </div>
         ))}
@@ -273,7 +273,7 @@ function FlaggingOverlay() {
                             href={item.sourceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-base text-gammalex-orange hover:text-gammalex-orange/80 font-bold inline-flex items-center gap-1 mt-2"
+                            className="text-base text-gammalex-purple hover:text-gammalex-purple/80 font-bold inline-flex items-center gap-1 mt-2"
                           >
                             Source ↗
                           </a>
@@ -343,7 +343,7 @@ export function ProductFeaturesDemo() {
           </div>
           <div className="flex-1">
             <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-3xl p-8 border border-gammalex-purple/30">
-              <h4 className="text-xl font-bold text-gammalex-orange mb-4">Enterprise Security</h4>
+              <h4 className="text-xl font-bold text-gammalex-purple mb-4">Enterprise Security</h4>
               <p className="text-xl text-white/90">SOC 2, HIPAA compliance with full audit trails for defensibility.</p>
             </div>
           </div>
@@ -431,7 +431,7 @@ export function ProductFeaturesDemo() {
           </div>
           <div className="flex-1">
             <div className="bg-gradient-to-r from-gammalex-purple/20 to-transparent rounded-3xl p-8 border border-gammalex-purple/30">
-              <h4 className="text-xl font-bold text-gammalex-orange mb-4">Clinical Integration</h4>
+              <h4 className="text-xl font-bold text-gammalex-purple mb-4">Clinical Integration</h4>
               <p className="text-xl text-white/90">Seamlessly connect to EHR and care systems to automate workflows—while layering in legal intelligence to flag risks, prevent denials, and reduce lawsuit exposure.</p>
             </div>
           </div>

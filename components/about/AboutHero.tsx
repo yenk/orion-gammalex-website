@@ -1,7 +1,6 @@
 "use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
 
 export default function AboutHero() {
   return (
@@ -33,7 +32,7 @@ export default function AboutHero() {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             About{' '}
-            <span className="text-gammalex-orange">Us</span>
+            <span className="text-gammalex-purple">Us</span>
           </motion.h1>
           
           {/* Subheadline */}
@@ -45,7 +44,7 @@ export default function AboutHero() {
           >
             Vertical AI trained on high-stakes, specialty domains built to expand access, reduce friction, and optimize revenue 
             <br />
-           across healthcare.
+            across healthcare.
           </motion.p>
         </motion.div>
       </div>

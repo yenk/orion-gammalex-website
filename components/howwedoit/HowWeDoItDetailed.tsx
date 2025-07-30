@@ -102,14 +102,14 @@ export default function HowWeDoItDetailed() {
                 {/* Right Column - Highlight Statement & Button */}
                 <div className="flex flex-col justify-start h-full text-left space-y-6 pt-0">
                  {index === 0 && (
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gammalex-orange mb-6 drop-shadow-lg text-left font-normal">
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gammalex-purple mb-6 drop-shadow-lg text-left font-normal">
                       The Process?
                     </h3>
                   )}
                   
                     <div className={`leading-relaxed drop-shadow-md text-left font-normal text-2xl sm:text-3xl md:text-4xl mb-6 ${
                       index === 1 || index === 2 || index === 3 || index === 4 || index === 5
-                        ? 'text-gammalex-orange mt-0' 
+                        ? 'text-gammalex-purple mt-0' 
                         : index % 2 === 0 ? 'text-white/95' : 'text-gray-700'
                     }`}>
                       {workflow.highlight}

@@ -54,14 +54,14 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  For decades, healthcare organizations have struggled with clinical data quality. Capturing this data has come at tremendous cost in productivity.
+                  Real-time, source-backed guidance to help clinicians and legal teams create defensible documentation, reduce denials, remain compliant, and stay audit-ready as payer rules evolve.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  The lack of good clinical data inhibits healthcare operations from making data-driven decisions. The poor quality of medical documentation hampers pre-authorization success.
+                  Our intelligent clinical-legal insights adapt to different clinical specialties and workflows, supporting expert decision-making at scale.
                 </p>
               </div>
             </div>
@@ -97,14 +97,14 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  GammaLex provides a fully automated pre-authorization forecast that delivers reliable predictions.
+                  Prevents revenue leakage by reducing claim denials, de-risking workflows, and accelerating reimbursement through transparent, compliant claim generation and policy adaptation.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Our authorization forecasting leverages vertical AI to automate the traditional authorization process with the added benefit of adjusting predictions to reflect changing payer policies and coverage rules.
+                  Our revenue transformation capabilities integrate with EHRs and stay aligned with fast-changing payer rules to optimize financial outcomes.
                 </p>
               </div>
             </div>
@@ -140,14 +140,14 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  GammaLex's model and applications produce insights that guide clinicians to optimal outcomes.
+                  Minimizes administrative delays, supports equitable access to care, and enables faster decisions—all while improving documentation quality and reducing care fragmentation.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Whether it's surfacing timely authorization requirements, compliance risks, clinical connections and more, we help teams meet the needs of complex and demanding healthcare scenarios.
+                  Our patient-centric care enablement ensures that healthcare providers can focus on delivering quality care while our AI handles the complex administrative and compliance requirements.
                 </p>
               </div>
             </div>

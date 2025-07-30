@@ -21,7 +21,7 @@ describe('WhatWeDoHero', () => {
     
     const gammaLexSpan = screen.getByText('GammaLex');
     expect(gammaLexSpan).toBeInTheDocument();
-    expect(gammaLexSpan).toHaveClass('text-gammalex-orange');
+    expect(gammaLexSpan).toHaveClass('text-gammalex-purple');
   });
 
   it('renders the subheading with vertical AI description', () => {

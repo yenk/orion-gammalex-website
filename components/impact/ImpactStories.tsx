@@ -68,7 +68,7 @@ export default function ImpactStories() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {story.title}
                 </h3>
-                <p className="text-gammalex-orange font-semibold">
+                <p className="text-gammalex-purple font-semibold">
                   {story.subtitle}
                 </p>
               </div>
@@ -87,7 +87,7 @@ export default function ImpactStories() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-gray-100">
-                <button className="flex items-center gap-2 text-gammalex-orange font-semibold hover:gap-3 transition-all">
+                <button className="flex items-center gap-2 text-gammalex-purple font-semibold hover:gap-3 transition-all">
                   Read Full Case Study
                   <div className="w-4 h-4 border-r-2 border-t-2 border-gammalex-orange transform rotate-45"></div>
                 </button>

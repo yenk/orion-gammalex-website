@@ -64,7 +64,7 @@ export default function AboutSection() {
           description: "Translates medical records and legal standards into bulletproof documentation."
         },
         {
-          icon: <Shield className="w-8 h-8 text-gammalex-orange" />,
+          icon: <Shield className="w-8 h-8 text-gammalex-purple" />,
           title: "Predict & Protect",
           description: "Predicts denial risk and cuts waste to unlock revenue."
         },
@@ -80,7 +80,7 @@ export default function AboutSection() {
       subtitle: "",
       items: [
         {
-          icon: <Users className="w-8 h-8 text-gammalex-orange" />,
+          icon: <Users className="w-8 h-8 text-gammalex-purple" />,
           title: "Founder-Led Team",
           description: "Founder-led team solving problems others ignore."
         },
@@ -90,7 +90,7 @@ export default function AboutSection() {
           description: "Open, auditable models that regulators and providers trust."
         },
         {
-          icon: <Heart className="w-8 h-8 text-gammalex-orange" />,
+          icon: <Heart className="w-8 h-8 text-gammalex-purple" />,
           title: "Dedicated to Impact",
           description: "Restoring billions in lost revenue and patient access to care."
         }
@@ -112,7 +112,7 @@ export default function AboutSection() {
           <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-center leading-tight mb-8 px-2">
             <span className="multi-gradient-text">Defensible care</span>, by design.
           </h2>
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gammalex-orange font-semibold mb-6 sm:mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gammalex-purple font-semibold mb-6 sm:mb-8">
             We're building GammaLex to reset the rules—where clarity and defensibility are the default.
           </p>
         </motion.div>
@@ -132,7 +132,7 @@ export default function AboutSection() {
                 onClick={() => setActiveTab(index)}
                 className={`flex items-center gap-4 px-8 py-4 rounded-xl font-inter font-medium text-lg sm:text-xl transition-all duration-300 ${
                   activeTab === index 
-                    ? 'bg-gammalex-purple/20 text-gammalex-orange border border-gammalex-purple/30' 
+                    ? 'bg-gammalex-purple/20 text-gammalex-purple border border-gammalex-purple/30' 
                     : 'text-white/70 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -161,7 +161,7 @@ export default function AboutSection() {
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
                 {content.origin.title}
               </h3>
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gammalex-orange font-semibold mb-6 sm:mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gammalex-purple font-semibold mb-6 sm:mb-8">
                 {content.origin.subtitle}
               </p>
               <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 mb-6 sm:mb-8">
@@ -169,7 +169,7 @@ export default function AboutSection() {
                   {content.origin.description}
                 </p>
                 <div className="bg-gradient-to-r from-gammalex-purple/20 to-gammalex-orange/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gammalex-purple/30">
-                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gammalex-orange">
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gammalex-purple">
                     "{content.origin.highlight}"
                   </p>
                 </div>
@@ -204,7 +204,7 @@ export default function AboutSection() {
                   >
                     <div className="flex items-center gap-4 mb-4 sm:mb-6">
                       {item.icon}
-                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-gammalex-orange transition-colors">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-gammalex-purple transition-colors">
                         {item.title}
                       </h4>
                     </div>
@@ -244,7 +244,7 @@ export default function AboutSection() {
                   >
                     <div className="flex items-center gap-4 mb-4 sm:mb-6">
                       {item.icon}
-                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-gammalex-orange transition-colors">
+                      <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-gammalex-purple transition-colors">
                         {item.title}
                       </h4>
                     </div>

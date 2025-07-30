@@ -32,7 +32,7 @@ export default function HowWeDoItHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            How We <span className="text-gammalex-orange">Do It</span>
+            How We <span className="text-gammalex-purple">Do It</span>
           </motion.h1>
           
           {/* Subheadline */}

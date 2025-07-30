@@ -7,51 +7,28 @@ import { Button } from '@/components/ui/button'
 export default function ApplicationDetailed() {
   const productFeatures = [
     {
-      title: "Real-Time Authorization Intelligence",
+      title: "Authorization & Claims Intelligence",
       paragraphs: [
-        "GammaLex's Vertical AI continuously monitors and analyzes authorization requirements across all major payers, providing instant insights into coverage policies, documentation requirements, and approval likelihood.",
-        "Our platform automatically updates policy changes as they're published, ensuring your team always has the most current information to make informed authorization decisions.",
-        "Get real-time alerts on policy updates, coverage changes, and emerging denial risks before they impact your revenue cycle."
+        "GammaLex's AI engine continuously analyzes payer policies and clinical data to streamline both prior authorization and claims submission. It auto-updates policy changes, validates documentation against requirements, and delivers real-time recommendations to avoid errors and accelerate approvals—all within your existing EHR and billing workflows."
       ]
     },
     {
       title: "Predictive Denial Prevention",
       paragraphs: [
-        "Our Vertical AI analyzes historical claim data, payer patterns, and clinical documentation to predict denial risks before claims are submitted.",
-        "GammaLex identifies potential issues in real-time, providing specific recommendations to improve approval rates and reduce administrative burden.",
-        "Machine learning algorithms continuously improve prediction accuracy based on your organization's unique payer mix and specialty focus."
+        "Proactively flags high-risk claims before submission using your historical data, payer mix, and specialty focus. GammaLex provides precise, actionable feedback to minimize denials—reducing administrative burden and downstream appeals while increasing first-pass approval rates."
+      ]
+    },
+
+    {
+      title: "Specialty-Adaptive AI",
+      paragraphs: [
+        "Our modeling is trained on specialty-specific medical-legal knowledge, including CPT/ICD nuances, clinical documentation standards, and payer-specific rules. GammaLex adapts to specialty workflows—radiology, oncology, cardiology, and more—to ensure relevance, accuracy, and optimized throughput across diverse care environments."
       ]
     },
     {
-      title: "Automated Claims Processing",
+      title: "Compliance, Audit & Integration Framework",
       paragraphs: [
-        "Streamline your revenue cycle with intelligent automation that processes claims, validates documentation, and ensures compliance before submission.",
-        "Our platform integrates seamlessly with existing EHR and billing systems, automatically populating required fields and validating against payer requirements.",
-        "Reduce manual data entry while improving accuracy and accelerating payment cycles."
-      ]
-    },
-    {
-      title: "Specialty-Specific Optimization",
-      paragraphs: [
-        "Unlike generic solutions, GammaLex's Vertical AI is trained specifically on clinical-legal data for each medical specialty, understanding the unique workflows and requirements of radiology, oncology, cardiology, and more.",
-        "Each specialty module includes specialized knowledge of relevant CPT codes, diagnosis requirements, and payer-specific policies that impact authorization success.",
-        "Custom algorithms adapt to your organization's specific payer mix, historical patterns, and clinical workflows."
-      ]
-    },
-    {
-      title: "Compliance & Audit Management",
-      paragraphs: [
-        "Maintain full compliance with HIPAA, GDPR, and healthcare regulations through built-in security controls and audit trails.",
-        "Our platform provides comprehensive documentation for all authorization decisions, policy interpretations, and compliance activities.",
-        "Automated audit reports and compliance dashboards help you maintain regulatory standards while reducing administrative overhead."
-      ]
-    },
-    {
-      title: "Enterprise Integration & APIs",
-      paragraphs: [
-        "Seamlessly integrate GammaLex's intelligence into your existing workflows through our comprehensive API suite and pre-built connectors.",
-        "Connect to major EHR systems, practice management software, and billing platforms without disrupting current operations.",
-        "Custom integration options available for enterprise clients with specific workflow requirements and security needs."
+        "Supports full regulatory readiness (HIPAA, GDPR, CMS) with built-in audit trails, security protocols, and automated compliance reporting. GammaLex integrates seamlessly into enterprise systems via API, enabling secure, bi-directional data exchange and scalable deployment across complex organizations."
       ]
     }
   ];

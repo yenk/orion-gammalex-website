@@ -33,7 +33,7 @@ export default function WhatWeDoHero() {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             What is{' '}
-            <span className="text-gammalex-orange">GammaLex</span>?
+                            <span className="text-gammalex-purple">GammaLex</span>?
           </motion.h1>
           
           {/* Subheadline */}

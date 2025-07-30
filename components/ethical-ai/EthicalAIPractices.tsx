@@ -262,7 +262,7 @@ export default function EthicalAIPractices() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-inter font-normal text-white mb-6 sm:mb-8">
-              Ensuring <span className="text-gammalex-orange">Responsible AI Governance</span>
+              Ensuring <span className="text-gammalex-purple">Responsible AI Governance</span>
             </h2>
             <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-4xl mx-auto">
               To build and deploy AI responsibly, we combine structured oversight with continuous monitoring. Our governance framework ensures that AI development remains ethical, secure, and adaptable.
