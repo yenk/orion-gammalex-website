@@ -16,7 +16,7 @@ export default function RevenueOptimizationSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-slate-900 mb-8">
-            Pre-authorization optimization starts with clinical-legal intelligence. A strong foundation of data, reliable forecasting, and productive teams win, even in volatile healthcare markets.
+            Vertical AI built to understand healthcare's most complex, high-stakes decisions.
           </h2>
         </motion.div>
 
@@ -97,14 +97,14 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  GammaLex provides a fully automated pre-authorization forecast that is on average 96%+ reliable.
+                  GammaLex provides a fully automated pre-authorization forecast that delivers reliable predictions.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Our Intelligent Authorization Forecast™ leverages AI to automate the traditional authorization process with the added benefit of adjusting probabilistic predictions to reflect changing payer policies and coverage rules.
+                  Our authorization forecasting leverages vertical AI to automate the traditional authorization process with the added benefit of adjusting predictions to reflect changing payer policies and coverage rules.
                 </p>
               </div>
             </div>

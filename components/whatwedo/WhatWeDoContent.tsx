@@ -58,18 +58,8 @@ export default function WhatWeDoContent() {
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Speak with a GammaLex Expert
+              Partner with Us
             </motion.h2>
-            
-            <motion.p 
-              className="text-lg text-white/95 max-w-3xl mx-auto drop-shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Submit your email to get connected with a healthcare AI specialist from our team.
-            </motion.p>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -29,6 +29,7 @@ export default function Navigation() {
   const [isWhyGammaLexDropdownOpen, setIsWhyGammaLexDropdownOpen] = useState(false);
   const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
   const [isIntegrityDropdownOpen, setIsIntegrityDropdownOpen] = useState(false);
+  const [isCompanyDropdownOpen, setIsCompanyDropdownOpen] = useState(false);
   
   // Mobile dropdown states
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null);
@@ -37,21 +38,21 @@ export default function Navigation() {
     { id: "the-mission", label: "WHY GAMMALEX", hasDropdown: true },
     { id: "product", label: "PRODUCT", hasDropdown: true },
     { id: "integrity", label: "INTEGRITY", hasDropdown: true },
-    { id: "about", label: "ABOUT" },
+    { id: "company", label: "COMPANY", hasDropdown: true },
     { id: "join", label: "PARTNER WITH US" },
   ];
 
   const whyGammaLexDropdown: DropdownItem[] = [
-    { id: "what-we-do", label: "What We Do", description: "Our AI platform and capabilities" },
-    { id: "problems-we-solve", label: "Problems We Solve", description: "The challenges we address in healthcare" },
-    { id: "how-we-do-it", label: "How We Do It", description: "Our methodology and approach" },
-    { id: "impact", label: "Impact", description: "Our results and success stories" },
+    { id: "what-we-do", label: "What We Do", description: "" },
+    { id: "problems-we-solve", label: "Problems We Solve", description: "" },
+    { id: "how-we-do-it", label: "How We Do It", description: "" },
+    { id: "impact", label: "Impact", description: "" },
   ];
 
 
 
   const productDropdown: DropdownItem[] = [
-    { id: "application", label: "Vertical AI Suite", description: "Our AI platform and capabilities" },
+    { id: "application", label: "Vertical AI Suite", description: "" },
   ];
 
 
@@ -59,8 +60,12 @@ export default function Navigation() {
 
 
   const integrityDropdown: DropdownItem[] = [
-    { id: "responsible-ai", label: "Responsible AI", description: "Our commitment to ethical AI development and deployment" },
-    { id: "trust-compliance", label: "Trust & Compliance", description: "Security, privacy, and regulatory compliance standards" },
+    { id: "responsible-ai", label: "Ethical AI", description: "" },
+    { id: "trust-compliance", label: "Trust & Compliance", description: "" },
+  ];
+
+  const companyDropdown: DropdownItem[] = [
+    { id: "about", label: "About", description: "" },
   ];
 
   useEffect(() => {
@@ -96,7 +101,7 @@ export default function Navigation() {
     }
     
     if (sectionId === 'responsible-ai') {
-      window.location.href = '/responsible-ai'
+      window.location.href = '/ethical-ai'
       return
     }
     
@@ -106,7 +111,7 @@ export default function Navigation() {
     }
     
     if (sectionId === 'about') {
-      window.location.href = '/'
+      window.location.href = '/about'
       return
     }
     
@@ -159,6 +164,8 @@ export default function Navigation() {
         return productDropdown
       case 'integrity':
         return integrityDropdown
+      case 'company':
+        return companyDropdown
       default:
         return []
     }
@@ -205,27 +212,21 @@ export default function Navigation() {
                                                           if (item.id === 'the-mission') setIsWhyGammaLexDropdownOpen(true);
                             if (item.id === 'product') setIsProductDropdownOpen(true);
                             if (item.id === 'integrity') setIsIntegrityDropdownOpen(true);
+                            if (item.id === 'company') setIsCompanyDropdownOpen(true);
                         }}
                         onMouseLeave={() => {
                                                           if (item.id === 'the-mission') setIsWhyGammaLexDropdownOpen(false);
                             if (item.id === 'product') setIsProductDropdownOpen(false);
                             if (item.id === 'integrity') setIsIntegrityDropdownOpen(false);
+                            if (item.id === 'company') setIsCompanyDropdownOpen(false);
                         }}
                       >
                         <motion.button
                           onClick={() => scrollToSection(item.id)}
-                          className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-medium text-white font-inter transition-colors flex items-center gap-1 whitespace-nowrap"
+                          className="text-xs lg:text-sm xl:text-base 2xl:text-lg font-medium text-white font-inter transition-colors whitespace-nowrap"
                           whileHover={{ y: -2 }}
                         >
                           {item.label}
-                          <motion.div
-                            animate={{ rotate: (item.id === 'the-mission' ? isWhyGammaLexDropdownOpen : item.id === 'product' ? isProductDropdownOpen : item.id === 'integrity' ? isIntegrityDropdownOpen : false) ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <svg width="6" height="6" className="lg:w-8 lg:h-8" viewBox="0 0 6 6" fill="none">
-                              <path d="M1.5 2L3 3.5L4.5 2" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                          </motion.div>
                         </motion.button>
                         {/* Dropdown Menu */}
                         <AnimatePresence key={`dropdown-${item.id}`}>
@@ -256,9 +257,11 @@ export default function Navigation() {
                                         <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
                                           {dropdownItem.label}
                                         </div>
-                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
-                                          {dropdownItem.description}
-                                        </div>
+                                        {dropdownItem.description && (
+                                          <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                            {dropdownItem.description}
+                                          </div>
+                                        )}
                                       </div>
                                       <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -295,9 +298,11 @@ export default function Navigation() {
                                         <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
                                           {dropdownItem.label}
                                         </div>
-                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
-                                          {dropdownItem.description}
-                                        </div>
+                                        {dropdownItem.description && (
+                                          <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                            {dropdownItem.description}
+                                          </div>
+                                        )}
                                       </div>
                                       <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -335,9 +340,53 @@ export default function Navigation() {
                                         <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
                                           {dropdownItem.label}
                                         </div>
-                                        <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
-                                          {dropdownItem.description}
+                                        {dropdownItem.description && (
+                                          <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                            {dropdownItem.description}
+                                          </div>
+                                        )}
+                                      </div>
+                                      <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                          <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </motion.button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+
+                          {item.id === 'company' && isCompanyDropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                              transition={{ duration: 0.2 }}
+                              className="absolute top-full left-0 mt-2 w-72 xl:w-80 bg-black/90 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl z-50"
+                            >
+                              <div className="p-4 space-y-2">
+                                {companyDropdown.map((dropdownItem) => (
+                                  <motion.button
+                                    key={`company-${dropdownItem.id}`}
+                                    onClick={() => {
+                                      scrollToSection(dropdownItem.id)
+                                      setIsCompanyDropdownOpen(false)
+                                    }}
+                                    className="w-full text-left p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group"
+                                    whileHover={{ x: 4 }}
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <div className="flex-1">
+                                        <div className="text-white font-medium text-base xl:text-lg group-hover:text-gammalex-orange transition-colors">
+                                          {dropdownItem.label}
                                         </div>
+                                        {dropdownItem.description && (
+                                          <div className="text-white/60 text-xs xl:text-sm mt-1 group-hover:text-white/80 transition-colors">
+                                            {dropdownItem.description}
+                                          </div>
+                                        )}
                                       </div>
                                       <div className="text-white/40 group-hover:text-gammalex-orange transition-colors">
                                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -398,17 +447,9 @@ export default function Navigation() {
                         <div>
                           <button
                             onClick={() => toggleMobileDropdown(item.id)}
-                            className="block w-full text-left text-lg font-medium text-white font-inter py-3 px-4 transition-colors flex items-center justify-between"
+                            className="block w-full text-left text-lg font-medium text-white font-inter py-3 px-4 transition-colors"
                           >
                             {item.label}
-                            <motion.div
-                              animate={{ rotate: mobileDropdownOpen === item.id ? 180 : 0 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                            </motion.div>
                           </button>
                           <AnimatePresence>
                             {mobileDropdownOpen === item.id && (

@@ -3,14 +3,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export default function ResponsibleAIHero() {
+export default function AboutHero() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/impact/icons/responsible-ai.png)',
+          backgroundImage: 'url(/images/impact/icons/main13.png)',
         }}
       />
       
@@ -32,8 +32,8 @@ export default function ResponsibleAIHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Expanding healthcare opportunity,{' '}
-            <span className="text-gammalex-orange">safely and responsibly</span>
+            About{' '}
+            <span className="text-gammalex-orange">Us</span>
           </motion.h1>
           
           {/* Subheadline */}
@@ -43,7 +43,9 @@ export default function ResponsibleAIHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            AI built for transparency, inclusion, and real-world impact in healthcare
+            Vertical AI trained on high-stakes, specialty domains built to expand access, reduce friction, and optimize revenue 
+            <br />
+           across healthcare.
           </motion.p>
         </motion.div>
       </div>

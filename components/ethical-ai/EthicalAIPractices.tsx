@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Brain, Lock, Users, Eye, FileText, AlertTriangle, RefreshCw } from 'lucide-react'
 
-export default function ResponsibleAIPractices() {
+export default function EthicalAIPractices() {
   const riskManagement = [
     {
       title: "POWERED BY OPEN SOURCE DATA FOUNDATION",

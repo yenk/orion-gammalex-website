@@ -25,9 +25,9 @@ export default function AIApplicationsSection() {
           </h2>
         </motion.div>
 
-        {/* Three Columns */}
+        {/* 2x2 Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -57,8 +57,8 @@ export default function AIApplicationsSection() {
           {/* Column 2: AI to Provide Insights */}
           <motion.div
             className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
@@ -78,7 +78,7 @@ export default function AIApplicationsSection() {
           {/* Column 3: AI to Surface Connections */}
           <motion.div
             className="text-center"
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
@@ -89,6 +89,27 @@ export default function AIApplicationsSection() {
             
             <p className="text-lg text-white/80 leading-relaxed mb-8">
               Our AI suite provides fully automated pre-authorization forecasting with 96%+ reliability, leveraging machine learning to predict approval outcomes and identify potential denials before they happen. The system adjusts probabilistic predictions to reflect changing payer policies and coverage rules, helping healthcare teams make data-driven authorization decisions.
+            </p>
+            
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+              Learn more
+            </button>
+          </motion.div>
+
+          {/* Column 4: Placeholder for future AI suite component */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-normal text-white mb-6">
+              AI to Optimize Outcomes: Risk Assessment
+            </h3>
+            
+            <p className="text-lg text-white/80 leading-relaxed mb-8">
+              Our AI suite evaluates clinical risk factors and compliance requirements to provide comprehensive risk assessment for pre-authorization requests. The system identifies potential compliance issues, clinical justification gaps, and payer-specific requirements to maximize approval success rates and minimize administrative burden.
             </p>
             
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
