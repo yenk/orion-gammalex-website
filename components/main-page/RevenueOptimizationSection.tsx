@@ -16,7 +16,7 @@ export default function RevenueOptimizationSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-slate-900 mb-8">
-            Vertical AI built to understand healthcare's most complex, high-stakes decisions.
+            Healthcare optimization aligns clinical decisions, payer policies, and revenue goals. GammaLex's vertical AI reduces friction, predicts risks, and improves access across the care continuum.
           </h2>
         </motion.div>
 

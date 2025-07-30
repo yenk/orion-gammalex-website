@@ -9,7 +9,7 @@ import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 import Navigation from '@/components/Navigation'
 import { CopilotHero } from "@/components/CopilotHero"
 import FooterGV from "@/components/FooterGV"
-import { WhyGammaLexSection, ImpactSection, RevenueOptimizationSection, AIApplicationsSection } from "@/components/main-page"
+import { ImpactSection, RevenueOptimizationSection, AIApplicationsSection } from "@/components/main-page"
 import React from 'react'
 
 /**
@@ -35,8 +35,7 @@ export default function GammaLexPage() {
       {/* Hero Section */}
       <CopilotHero />
 
-      {/* Why GammaLex Section */}
-      <WhyGammaLexSection />
+
 
       {/* Revenue Optimization Section */}
       <RevenueOptimizationSection />

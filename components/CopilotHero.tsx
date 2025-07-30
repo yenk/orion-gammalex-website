@@ -305,7 +305,7 @@ export function CopilotHero() {
             {headingLines[0].map((item, j) => (
               <span
                 key={j}
-                className={`inline-block ${j !== headingLines[0].length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'gradient-text' : 'text-white'}`}
+                className={`inline-block ${j !== headingLines[0].length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'text-gammalex-orange' : 'text-white'}`}
               >
                 {item.word}
               </span>
@@ -337,7 +337,7 @@ export function CopilotHero() {
           <HeroDataSources />
         </div>
         
-        <div className="flex flex-col gap-4 items-center px-4 sm:px-0">
+        <div className="flex flex-col gap-4 items-center px-4 sm:px-0 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <a
             href="https://cal.com/yenkha"
             target="_blank"
@@ -347,6 +347,68 @@ export function CopilotHero() {
           >
             See it in Action
           </a>
+        </div>
+
+        {/* Three Column Section */}
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
+            {/* Column 1: Vertical AI transformation */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+                Vertical AI transformation starting with denial prediction
+              </h3>
+              <a
+                href="/problemswesolve"
+                className="text-blue-400 underline hover:text-blue-300 transition-colors text-sm"
+              >
+                AI for denials
+              </a>
+            </motion.div>
+
+            {/* Column 2: Ethical and compliant transformation */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+                Ethical and compliant transformation.
+              </h3>
+              <a
+                href="/ethical-ai"
+                className="text-blue-400 underline hover:text-blue-300 transition-colors text-sm"
+              >
+                How we keep everything secured
+              </a>
+            </motion.div>
+
+            {/* Column 3: Working together */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+                Working together to succeed.
+              </h3>
+              <a
+                href="/application"
+                className="text-blue-400 underline hover:text-blue-300 transition-colors text-sm"
+              >
+                Join our community
+              </a>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
