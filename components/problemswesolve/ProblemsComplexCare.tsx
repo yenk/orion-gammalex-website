@@ -22,7 +22,7 @@ export default function ProblemsComplexCare() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white leading-tight mb-8">
-            Unlocking Access Where <span className="gradient-text">Care Is Most Complex</span>
+            Unlocking Access Where Care Is Most Complex
           </h2>
           <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-4xl mx-auto">
             In high-stakes specialties like radiology, oncology, cardiology, transplant medicine, and neurosurgery where approvals aren't just paperwork — they're lifelines.

@@ -34,8 +34,7 @@ export default function ProblemsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Unlocking Access Where{' '}
-                            <span className="text-gammalex-purple">Care Is Most Complex</span>
+            Unlocking Access Where Care Is Most Complex
           </motion.h1>
           
           {/* Subheadline */}

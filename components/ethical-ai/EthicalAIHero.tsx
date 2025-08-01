@@ -32,8 +32,7 @@ export default function EthicalAIHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Expanding healthcare opportunity,{' '}
-            <span className="text-gammalex-purple">safely and ethically</span>
+            Expanding healthcare opportunity, safely and ethically
           </motion.h1>
           
           {/* Subheadline */}
