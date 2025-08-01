@@ -17,7 +17,7 @@ export default function HowWeDoItDetailed() {
         "Track diagnostic codes from WHO ICD-11 classifications (17,000+ codes)",
         "Build comprehensive AI knowledge foundation from 8 major data sources"
       ],
-      highlight: "GammaLex builds the world's largest healthcare AI knowledge base, processing 8 major data sources to create comprehensive clinical-legal intelligence."
+      highlight: "GammaLex builds the world's largest healthcare AI knowledge base, processing 8 major data sources to create comprehensive Clinical-Compliance intelligence."
     },
     {
       title: "Real-Time Policy Monitoring",
@@ -87,7 +87,7 @@ export default function HowWeDoItDetailed() {
         "Improve authorization success rates across all provider types",
         "Reduce denials and accelerate patient care outcomes"
       ],
-      highlight: "GammaLex democratizes enterprise-grade healthcare intelligence, making advanced clinical-legal expertise available to providers of all sizes."
+      highlight: "GammaLex democratizes enterprise-grade healthcare intelligence, making advanced Clinical-Compliance expertise available to providers of all sizes."
     }
   ];
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { EthicalAIHero, EthicalAIPractices, EthicalAIPrinciples } from '@/components/ethical-ai';
+import { EthicalAIHero, EthicalAIPractices, EthicalAIPrinciples, OpenSourceSection } from '@/components/ethical-ai';
 import FooterGV from '@/components/FooterGV';
 import Navigation from '@/components/Navigation';
 
@@ -10,6 +10,7 @@ export default function EthicalAIPage() {
       <Navigation />
       <EthicalAIHero />
       <EthicalAIPrinciples />
+      <OpenSourceSection />
       <EthicalAIPractices />
       <FooterGV />
     </main>

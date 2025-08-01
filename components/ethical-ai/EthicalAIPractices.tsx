@@ -5,20 +5,6 @@ import { motion } from 'framer-motion'
 import { Brain, Lock, Users, Eye, FileText, AlertTriangle, RefreshCw } from 'lucide-react'
 
 export default function EthicalAIPractices() {
-  const riskManagement = [
-    {
-      title: "POWERED BY OPEN SOURCE DATA FOUNDATION",
-      description: "Built on open, community-driven data and models. Transparency, reproducibility, and collective progress are core values."
-    },
-    {
-      title: "CLINICAL-LEGAL-PAYER INTELLIGENCE INTEGRATION",
-      description: "We integrate open clinical, legal, and insurance data, fostering a shared ecosystem for better, more holistic decision-making."
-    },
-    {
-      title: "ENTERPRISE-GRADE PAYER POLICY ADAPTATION",
-      description: "GammaLex adapts to payer policies using open source data and extensible frameworks—leveraging transparency and interoperability. Every recommendation are explainable with clear links to policy sources."
-    }
-  ];
 
   const governanceStages = [
     {
@@ -37,56 +23,6 @@ export default function EthicalAIPractices() {
 
   return (
     <section className="w-full font-inter">
-      {/* Risk Management Section - Modern Simple Design */}
-      <div className="bg-[#1a1a2e] py-16 sm:py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-12 sm:mb-16 lg:mb-20"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-normal text-white mb-6 sm:mb-8 leading-tight">
-              Built on open source and committed to transparency
-            </h2>
-            
-            <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-4xl mx-auto mb-12 sm:mb-16">
-              Our foundation is built on community-driven data, transparent processes, and open innovation.
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
-            {riskManagement.map((item, index) => (
-              <motion.div
-                key={index}
-                className="group relative"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.4 + index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                {/* Modern Simple Card */}
-                <div className="relative overflow-hidden rounded-2xl bg-white/10 border border-white/20 p-6 sm:p-8 h-full shadow-sm hover:shadow-xl transition-all duration-500 group-hover:bg-white/20 backdrop-blur-sm">
-                  {/* Content */}
-                  <div className="h-full flex flex-col">
-                    {/* Title */}
-                    <h4 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-6 leading-tight group-hover:text-white/90 transition-colors duration-300">
-                      {item.title}
-                    </h4>
-                    
-                    {/* Description */}
-                    <p className="text-white/90 leading-relaxed text-base sm:text-lg flex-1 group-hover:text-white/80 transition-colors duration-300">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Mitigating Risks Section */}
       <motion.div
