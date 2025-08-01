@@ -187,8 +187,8 @@ export default function EthicalAIPractices() {
         </div>
       </motion.div>
 
-      {/* Governance Section - Dark Background for Proper Alternation */}
-      <div className="py-16 sm:py-20 lg:py-24 text-white font-inter relative" style={{ backgroundColor: '#1a1a2e' }}>
+      {/* Governance Section - White Background */}
+      <div className="py-16 sm:py-20 lg:py-24 text-gray-900 font-inter relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -197,157 +197,87 @@ export default function EthicalAIPractices() {
             transition={{ duration: 0.8, delay: 2.0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-inter font-normal text-white mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-inter font-normal text-gray-900 mb-6 sm:mb-8">
               Ensuring <span className="text-gammalex-purple">Responsible AI Governance</span>
             </h2>
-            <p className="text-lg sm:text-xl text-white/95 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
               To build and deploy AI responsibly, we combine structured oversight with continuous monitoring. Our governance framework ensures that AI development remains ethical, secure, and adaptable.
             </p>
           </motion.div>
           
-          {/* Neural Network Flowchart */}
+          {/* Clean Governance Flow */}
           <motion.div
-            className="relative"
+            className="relative max-w-6xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.2 }}
             viewport={{ once: true }}
           >
-            {/* Main Circles - Horizontal Layout */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 lg:gap-20 mb-16 sm:mb-20 lg:mb-24">
+            {/* Top Section - Simple Workflow */}
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 mb-16">
               {governanceStages.map((stage, index) => (
                 <motion.div
                   key={index}
-                  className="relative"
+                  className="relative flex flex-col items-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 2.4 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {/* Main Circle */}
-                  <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-sm">
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white text-center px-4">{stage.title}</h3>
+                  {/* Stage Number */}
+                  <div className="w-12 h-12 rounded-full bg-gammalex-purple flex items-center justify-center mb-4 shadow-lg">
+                    <span className="text-white font-bold text-lg">{index + 1}</span>
                   </div>
+                  
+                  {/* Main Stage Circle */}
+                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full bg-gray-100 border-2 border-gammalex-purple/50 flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <h3 className="text-xl lg:text-2xl font-semibold text-gray-900 text-center px-4 leading-tight">{stage.title}</h3>
+                  </div>
+                  
+                  {/* Connecting Arrow (except for last item) */}
+                  {index < governanceStages.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2">
+                      <div className="w-16 h-0.5 bg-gammalex-purple/50"></div>
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-l-gammalex-purple/50 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>
             
-            {/* Two Rows of Cards - Properly Aligned and Spaced */}
-            <div className="flex justify-center">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-10 max-w-7xl">
-                {/* First Row */}
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.6 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Clinical Risk Assessment</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.7 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Payer Policy Reviews</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.8 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Red Teaming</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.9 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Clinical Safety Evaluations</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.0 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Provider Feedback</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.1 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Model Updates</span>
-                </motion.div>
-                
-                {/* Second Row */}
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.2 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">HIPAA Compliance Checks</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.3 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Real-time Monitoring</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.4 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Policy Scorecards</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.5 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">AI Testing Protocols</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.6 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Policy Adjustments</span>
-                </motion.div>
-                <motion.div
-                  className="bg-white/10 border border-white/20 rounded-lg p-4 sm:p-6 text-center h-20 sm:h-28 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 3.7 }}
-                  viewport={{ once: true }}
-                >
-                  <span className="text-xs sm:text-sm lg:text-base font-medium text-white leading-tight">Risk Forecasting</span>
-                </motion.div>
-              </div>
+            {/* Bottom Section - Action Cards Only */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {governanceStages.flatMap((stage, stageIndex) =>
+                stage.items.map((item, itemIndex) => (
+                  <motion.div
+                    key={`${stageIndex}-${itemIndex}`}
+                    className="bg-gray-100 border border-gray-200 rounded-lg p-4 text-center h-20 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 2.8 + (stageIndex * 4 + itemIndex) * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="text-sm font-medium text-gray-700 leading-tight">
+                      {item}
+                    </span>
+                  </motion.div>
+                ))
+              )}
             </div>
+            
+            {/* Continuous Cycle Indicator */}
+            <motion.div
+              className="text-center mt-12"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 3.0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-3 text-gray-600">
+                <RefreshCw className="w-5 h-5 animate-spin" />
+                <span className="text-sm font-medium">Continuous Governance Cycle</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

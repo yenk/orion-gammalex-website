@@ -66,6 +66,7 @@ export default function Navigation() {
 
   const companyDropdown: DropdownItem[] = [
     { id: "about", label: "About", description: "" },
+    { id: "advisory-council", label: "Advisory Council", description: "" },
   ];
 
   useEffect(() => {
@@ -112,6 +113,11 @@ export default function Navigation() {
     
     if (sectionId === 'about') {
       window.location.href = '/about'
+      return
+    }
+    
+    if (sectionId === 'advisory-council') {
+      window.location.href = '/advisory-council'
       return
     }
     

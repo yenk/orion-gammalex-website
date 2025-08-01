@@ -67,14 +67,8 @@ export default function OpenSourceSection() {
                 
                 {/* Right Section - Body Text */}
                 <div className="text-left">
-                  <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-6">
-                    Every GammaLex recommendation is explainable with clear links to policy sources, data origins, and decision pathways. We believe in open innovation that benefits the entire healthcare ecosystem.
-                  </p>
-                  <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-6">
-                    Our clinical-compliance AI operates within strict regulatory frameworks, ensuring every decision is traceable to authoritative healthcare policies and legal precedents. This transparency is critical for maintaining compliance across federal and state healthcare regulations.
-                  </p>
                   <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                    Our foundation is built on community-driven data, transparent processes, and open innovation from authoritative healthcare and legal sources.
+                    Every GammaLex recommendation is explainable—backed by clear links to policy sources, data origins, and decision pathways. Built on transparent, community-driven data and aligned with trusted clinical and legal standards, our AI ensures compliance and accountability across the healthcare ecosystem.
                   </p>
                 </div>
               </div>

@@ -7,28 +7,28 @@ import { motion } from 'framer-motion'
 export default function EthicalAIPrinciples() {
   const principles = [
     {
-      title: "Transparency & Accountability",
-      description: "Every AI recommendation comes with clear policy sources and explainable reasoning. We don't hide behind black boxes—we build trust through radical transparency in clinical-legal-payer intelligence."
+      title: "Transparency",
+      description: "Every recommendation comes with clear policy sources and explainable reasoning. We build trust through radical transparency in clinical-legal intelligence."
     },
     {
-      title: "Fairness & Anti-Bias",
-      description: "We combat healthcare disparities by auditing our models against diverse patient populations and payer policies. Every recommendation is tested for bias before deployment."
+      title: "Fairness",
+      description: "We combat healthcare disparities by auditing our models against diverse patient populations. Every recommendation is tested for bias before deployment."
     },
     {
       title: "Social Benefit",
-      description: "Our vertical AI doesn't just process data—it transforms healthcare delivery. We expand access, reduce administrative burden, and empower providers to focus on what matters: patient care."
+      description: "Our AI transforms healthcare delivery by expanding access and reducing administrative burden. We empower providers to focus on what matters: patient care."
     },
     {
-      title: "Privacy & Security",
-      description: "HIPAA compliance is our baseline, not our ceiling. We implement enterprise-grade security that healthcare organizations can trust with their most sensitive patient data."
+      title: "Privacy",
+      description: "HIPAA compliance is our baseline. We implement enterprise-grade security that healthcare organizations can trust with their most sensitive patient data."
     },
     {
       title: "Human Oversight",
-      description: "AI augments human expertise, never replaces it. Our vertical AI serves as a trusted advisor, providing insights that enhance clinical and administrative decision-making."
+      description: "AI augments human expertise, never replaces it. Our AI serves as a trusted advisor, providing insights that enhance clinical and administrative decisions."
     },
     {
-      title: "Interoperability & Compatibility",
-      description: "We integrate seamlessly with existing healthcare systems, payer networks, and clinical workflows. No rip-and-replace—just intelligent augmentation of your current infrastructure."
+      title: "Interoperability",
+      description: "We integrate seamlessly with existing healthcare systems, payer networks, and clinical workflows. No rip-and-replace—just intelligent augmentation."
     }
   ];
 
@@ -75,23 +75,18 @@ export default function EthicalAIPrinciples() {
               Our Guiding Principles
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
               {principles.map((principle, index) => (
                 <motion.div
                   key={index}
-                  className="group relative"
+                  className="text-left"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4 }}
                 >
-                  <div className="relative overflow-hidden rounded-2xl border border-white/20 p-8 bg-white/10 backdrop-blur-sm group-hover:bg-white/20 transition-all duration-300 h-full shadow-sm hover:shadow-lg">
-                    <div className="flex flex-col h-full">
-                      <h4 className="text-2xl font-semibold text-white mb-4">{principle.title}</h4>
-                      <p className="text-white/90 leading-relaxed text-lg flex-1">{principle.description}</p>
-                    </div>
-                  </div>
+                  <h4 className="text-xl font-semibold text-white mb-3">{principle.title}</h4>
+                  <p className="text-white/80 leading-relaxed text-base">{principle.description}</p>
                 </motion.div>
               ))}
             </div>
