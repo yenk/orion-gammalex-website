@@ -1,10 +1,69 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function AboutContent() {
   return (
     <>
+      {/* Yen Kha Profile Section */}
+      <section className="py-16 bg-gray-50 text-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center space-y-8"
+          >
+            <motion.h2 
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              Meet the Founder
+            </motion.h2>
+            
+            <motion.div
+              className="flex flex-col items-center space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-32 h-32 rounded-full overflow-hidden">
+                <Image
+                  src="/images/impact/icons/yen.png"
+                  alt="Yen Kha"
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Yen Kha
+                </h3>
+                <p className="text-lg text-gray-700">
+                  Founder & CEO, GammaLex
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/yenkha/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors duration-200"
+                >
+                  Connect on LinkedIn →
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-16 bg-white text-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -24,16 +83,10 @@ export default function AboutContent() {
                 viewport={{ once: true }}
               >
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  GammaLex is founded by Yen Kha, a seasoned data and software engineering leader with 15+ years of experience scaling systems and teams from the ground up across early-stage startups to Fortune 500 giants.
+                  GammaLex was founded by Yen Kha, a veteran engineering leader with 15+ years scaling systems and teams from startups to Fortune 500s. She's built cloud infrastructure, automated data pipelines, and architected platforms for 90,000+ users—turning constraints into catalysts.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Yen has built foundational cloud infrastructure where none existed, led full-cycle automation of data pipelines, and architected enterprise BI platforms that supported over 90,000 employees. She's scaled systems and teams from zero to one at Fortune 500 companies and startups alike, always with minimal resources and maximal impact.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Her forte is building under constraint: creating robust, scalable, and intelligent platforms in environments that lack clarity, tooling, or automation. With deep fluency in distributed systems, machine learning, and applied statistics, she saw the same pattern repeated across industries especially in healthcare: fragmented systems, costly compliance bottlenecks, and an overreliance on human bandwidth for decisions that should be accelerated, not stalled.
-                </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  GammaLex was born from that insight: Vertical AI built not just to process data, but to understand the intersection of care, law, and revenue. It's designed to reduce friction, unlock insight, and make complex decisions more human, not less.
+                  With deep roots in distributed systems and ML, Yen saw the same pattern everywhere—especially in healthcare: fragmented systems, compliance gridlock, and decision-making stuck in the past. GammaLex is her answer. Vertical AI that connects care, law, and revenue—reducing friction, unlocking insight, and making complex decisions more human.
                 </p>
               </motion.div>
               
@@ -44,7 +97,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                The company is advised by leaders with deep experience across ethical AI, enterprise systems, and healthcare economics. With backgrounds spanning public interest technology, global-scale infrastructure, and regulated industry transformation, the advisory team brings a systems-level perspective to GammaLex's mission. Their guidance helps ensure that GammaLex delivers trustworthy, scalable AI that supports operational efficiency, revenue integrity, and equitable patient outcomes.
+                The company is advised by leaders with deep experience across ethical AI, enterprise systems, and healthcare economics. Their guidance helps ensure that GammaLex delivers trustworthy, scalable AI that supports operational efficiency, revenue integrity, and equitable patient outcomes.
               </motion.p>
             </div>
           </motion.div>

@@ -28,7 +28,7 @@ export default function TrustComplianceHero() {
           transition={{ duration: 0.8, delay: 0.1 }}
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-relaxed tracking-tight max-w-7xl mx-auto">
-            Enterprise Security & Privacy, <span className="text-gammalex-purple">Built for Scale</span>
+            Enterprise Security & Privacy, Built for Scale
           </h1>
         </motion.div>
 

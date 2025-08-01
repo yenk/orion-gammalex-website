@@ -31,8 +31,7 @@ export default function AboutHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            About{' '}
-            <span className="text-gammalex-purple">Us</span>
+            About Us
           </motion.h1>
           
           {/* Subheadline */}

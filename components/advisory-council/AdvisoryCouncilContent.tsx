@@ -74,11 +74,11 @@ export default function AdvisoryCouncilContent() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-inter font-normal text-gray-900 mb-8">
-            Our <span className="text-gammalex-purple">Council</span>
+            Our Council
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
           {advisors.map((advisor, index) => (
                                           <motion.div
                   key={index}
@@ -113,9 +113,9 @@ export default function AdvisoryCouncilContent() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
                     {advisor.name}
                   </h3>
-                  <p className="text-gammalex-purple font-medium mb-2">
-                    {advisor.title}
-                  </p>
+                                        <p className="text-gray-900 font-medium mb-2">
+                        {advisor.title}
+                      </p>
                   <p className="text-sm text-gray-600 mb-4 font-medium">
                     {advisor.expertise}
                   </p>
@@ -127,7 +127,7 @@ export default function AdvisoryCouncilContent() {
                       href={advisor.name === "Bruce Cahan" ? "https://www.linkedin.com/in/brucecahan/" : "https://www.linkedin.com/in/sjmawer/"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-gammalex-purple hover:text-gammalex-purple/80 text-sm font-medium transition-colors duration-200"
+                                                className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors duration-200"
                     >
                       Learn More →
                     </a>
@@ -157,7 +157,7 @@ export default function AdvisoryCouncilContent() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Our advisory council ensures GammaLex maintains the highest ethical standards while delivering transformative healthcare solutions through strategic guidance on clinical compliance, regulatory requirements, and responsible AI development.
+            Our advisory council ensures GammaLex maintains the highest ethical standards while delivering transformative healthcare solutions.
           </motion.h2>
         </motion.div>
       </div>

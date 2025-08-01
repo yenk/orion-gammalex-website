@@ -34,8 +34,7 @@ export default function ApplicationHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            GammaLex Vertical AI{' '}
-                            <span className="text-gammalex-purple">Intelligence</span>
+            GammaLex Vertical AI Intelligence
           </motion.h1>
           
           {/* Subheadline */}
