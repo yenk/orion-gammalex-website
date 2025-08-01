@@ -86,7 +86,7 @@ export default function AboutContent() {
                   GammaLex was founded by Yen Kha, a veteran engineering leader with 15+ years scaling systems and teams from startups to Fortune 500s. She's built cloud infrastructure, automated data pipelines, and architected platforms for 90,000+ users—turning constraints into catalysts.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  With deep roots in distributed systems and ML, Yen saw the same pattern everywhere—especially in healthcare: fragmented systems, compliance gridlock, and decision-making stuck in the past. GammaLex is her answer. Vertical AI that connects care, law, and revenue—reducing friction, unlocking insight, and making complex decisions more human.
+                  With deep roots in distributed systems and ML, Yen saw the same pattern across industries—especially in healthcare: fragmented systems, compliance gridlock, and decision-making constrained by outdated processes. GammaLex is her answer. Vertical AI that connects care, law, and revenue—reducing friction, unlocking insight, and making complex decisions more human.
                 </p>
               </motion.div>
               
