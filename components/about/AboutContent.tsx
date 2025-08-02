@@ -76,27 +76,40 @@ export default function AboutContent() {
                       With deep roots in distributed systems and ML, Yen saw the same pattern across industries—especially in healthcare: fragmented systems, compliance gridlock, and decision-making constrained by outdated processes. GammaLex is her answer. Vertical AI that connects care, law, and revenue—reducing friction, unlocking insight, and making complex decisions more human.
                     </p>
                   </div>
+
+                  {/* Key Impact */}
+                  <motion.div
+                    className="space-y-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      Key Impact
+                    </h3>
+                    <ul className="space-y-3 text-lg text-gray-700">
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-3">•</span>
+                        <span>Pioneered vertical AI for healthcare, connecting care delivery, legal compliance, and revenue optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-3">•</span>
+                        <span>Recognized critical need for AI solutions in healthcare's complex regulatory landscape</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-3">•</span>
+                        <span>Built scalable platforms serving 90,000+ users with expertise in cloud infrastructure and data pipelines</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-3">•</span>
+                        <span>Transformed technical constraints into innovative solutions that drive business transformation</span>
+                      </li>
+                    </ul>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
-
-            {/* Advisory Context */}
-            <motion.div
-              className="bg-gray-50 rounded-2xl p-8 md:p-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Expert Guidance
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  The company is advised by leaders with deep experience across ethical AI, enterprise systems, and healthcare economics. Their guidance helps ensure that GammaLex delivers trustworthy, scalable AI that supports operational efficiency, revenue integrity, and equitable patient outcomes.
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>

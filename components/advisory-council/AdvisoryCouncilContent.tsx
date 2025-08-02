@@ -10,14 +10,14 @@ export default function AdvisoryCouncilContent() {
       name: "Bruce Cahan",
       title: "Co-Founder/CEO, Urban Logic",
       expertise: "Business Transformation, Financial Technology & Emergency Response",
-      bio: "Business Transformation Innovator, Data Scientist and Financial Technologist with 38 years' experience in banking, corporate finance, and municipal law. Pioneer in financing the space economy, spatial intelligence infrastructures, and urban sustainability. Emergency responder supporting NYC Mayor's Office of Emergency Management's Command Center after 9/11 attacks, providing liaison for City agencies to efficiently mine and align federal, state and private spatial information resources. Merchant banker with international experience in multicultural finance and team building, specializing in making organizations more responsive & resilient in the face of 'all-risk' hazards.",
+      bio: "Co-Founder and CEO of Urban Logic, a business transformation innovator, data scientist and financial technologist with 38 years' experience in banking, corporate finance, and municipal law. Pioneer in financing the space economy, spatial intelligence infrastructures, and urban sustainability. Emergency responder supporting NYC Mayor's Office of Emergency Management's Command Center after 9/11 attacks, providing liaison for City agencies to efficiently mine and align federal, state and private spatial information resources. Merchant banker with international experience in multicultural finance and team building, specializing in making organizations more responsive & resilient in the face of 'all-risk' hazards.",
       image: "/images/impact/icons/bruce.png"
     },
     {
       name: "Simon J. Mawer",
       title: "Healthcare Strategist, Keck Medicine of USC",
       expertise: "Risk Management, Innovation & Human-Centered Design",
-      bio: "Healthcare strategist focused on risk, innovation, and human-centered system design. Works at the intersection of complexity, ethics, and execution—helping institutions navigate uncertainty, resolve harm, and design for resilience. Currently serves in a leadership role at Keck Medicine of USC, shaping responses to adverse healthcare events. Has helped launch healthtech products, scale innovation programs, and rethink approaches to safety and complexity across Stanford Medicine, Plug and Play, Alio, and Blue Wren Advisors. Also teaches business design at the Rotman School of Management and co-authored Discovery Design, with Healthcare by Design coming in 2025.",
+      bio: "Healthcare strategist at Keck Medicine of USC, focused on risk, innovation, and human-centered system design. Works at the intersection of complexity, ethics, and execution—helping institutions navigate uncertainty, resolve harm, and design for resilience. Currently serves as a director at Keck Medicine of USC, shaping responses to adverse healthcare events. Has helped launch healthtech products, scale innovation programs, and rethink approaches to safety and complexity across Stanford Medicine, Plug and Play, Alio, and Blue Wren Advisors. Also teaches business design at the Rotman School of Management and co-authored Discovery Design, with Healthcare by Design coming in 2025.",
       image: "/images/impact/icons/simon.png"
     }
   ];
