@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function AboutContent() {
   return (
     <>
-      {/* Integrated Story Section */}
+      {/* Founder Story Section */}
       <section className="py-20 bg-white text-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -16,7 +16,7 @@ export default function AboutContent() {
             viewport={{ once: true }}
             className="space-y-16"
           >
-            {/* Main Story with Integrated Founder Profile */}
+            {/* Main Story with Founder Profile */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
               {/* Founder Profile - Left Column */}
               <motion.div
@@ -41,16 +41,30 @@ export default function AboutContent() {
                     Yen Kha
                   </h3>
                   <p className="text-lg text-gray-700">
-                    Founder & CEO, GammaLex
+                    Founder & CEO, GammaLex AI Inc.
                   </p>
-                  <a
-                    href="https://www.linkedin.com/in/yenkha/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
-                  >
-                    Connect on LinkedIn →
-                  </a>
+                  <p className="text-lg text-gray-700">
+                    Co-Founder & CTO, J4All
+                  </p>
+                  <div className="space-y-2">
+                    <a
+                      href="https://www.linkedin.com/in/yenkha/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
+                    >
+                      Learn More →
+                    </a>
+                    <br />
+                    <a
+                      href="https://j4all.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
+                    >
+                      Visit J4All →
+                    </a>
+                  </div>
                 </div>
               </motion.div>
 
@@ -64,49 +78,108 @@ export default function AboutContent() {
               >
                 <div className="space-y-6">
                   <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
-                    Building the Future of Healthcare AI
+                    The Vision Behind Vertical AI
                   </h2>
                   
                   <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                     <p>
-                      GammaLex was founded by Yen Kha, a veteran engineering leader with 15+ years scaling systems and teams from startups to Fortune 500s. She's built cloud infrastructure, automated data pipelines, and architected platforms for 90,000+ users—turning constraints into catalysts.
+                      As a technical founder and AI systems architect, Yen Kha is focused on transforming legal and medical workflows with real-world intelligence. A 2025 LiFT Scholar at The Linux Foundation, she has been recognized for advancing open-source innovation in high-impact, underserved domains.
                     </p>
                     
                     <p>
-                      With deep roots in distributed systems and ML, Yen saw the same pattern across industries—especially in healthcare: fragmented systems, compliance gridlock, and decision-making constrained by outdated processes. GammaLex is her answer. Vertical AI that connects care, law, and revenue—reducing friction, unlocking insight, and making complex decisions more human.
+                      At GammaLex, she is building vertical AI for the intersection of law, medicine, and policy—developing LLM-powered tools that accelerate medical pre-authorization and streamline clinical-compliance workflows. Her work turns regulatory and procedural complexity into real-time, transparent decisions that support care delivery, uphold legal standards, and enable ethical automation.
+                    </p>
+                    
+                    <p>
+                      She is also the Co-Founder and CTO of J4All, a nonprofit startup dedicated to expanding access to justice through responsible AI. There, she leads the development of intelligent legal support systems designed to promote equity, clarity, and dignity in high-stakes decisions.
+                    </p>
+                    
+                    <p>
+                      Across both ventures, she leads the design of end-to-end AI systems—merging cloud-native infrastructure with specialized LLM pipelines engineered for legal and clinical reasoning. Her architecture leverages agentic frameworks, high-fidelity retrieval, and context-aware model alignment to deliver intelligent, auditable decisions at scale—shaping a future where complex workflows are not just automated, but deeply understood.
                     </p>
                   </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-                  {/* Key Impact */}
-                  <motion.div
-                    className="space-y-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    viewport={{ once: true }}
-                  >
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      Key Impact
-                    </h3>
-                    <ul className="space-y-3 text-lg text-gray-700">
-                      <li className="flex items-start">
-                        <span className="text-purple-600 mr-3">•</span>
-                        <span>Pioneered vertical AI for healthcare, connecting care delivery, legal compliance, and revenue optimization</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-purple-600 mr-3">•</span>
-                        <span>Recognized critical need for AI solutions in healthcare's complex regulatory landscape</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-purple-600 mr-3">•</span>
-                        <span>Built scalable platforms serving 90,000+ users with expertise in cloud infrastructure and data pipelines</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-purple-600 mr-3">•</span>
-                        <span>Transformed technical constraints into innovative solutions that drive business transformation</span>
-                      </li>
-                    </ul>
-                  </motion.div>
+      {/* Building AI Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-16"
+          >
+            {/* Section Header */}
+            <motion.div
+              className="text-center space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+                Building AI That Matters
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Strategic vision meets engineering excellence to create vertical AI that transforms healthcare decision-making.
+              </p>
+            </motion.div>
+
+            {/* Two Column Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Strategic Vision */}
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                  <h3 className="text-2xl font-semibold text-gray-900">
+                    Strategic Vision
+                  </h3>
+                  <p>
+                    Healthcare demands clinical compliance intelligence—AI that understands medical decision-making, regulatory requirements, and workflow optimization.
+                  </p>
+                  <p>
+                    GammaLex's vertical approach means our AI thinks like a healthcare professional, understands clinical protocols, and optimizes like a business strategist.
+                  </p>
+                  <p>
+                    This isn't about replacing human expertise—it's about amplifying it. Making complex clinical decisions more accessible, more accurate, and more aligned with patient outcomes and compliance realities.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Engineering Leadership */}
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                  <h3 className="text-2xl font-semibold text-gray-900">
+                    Engineering Leadership
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li>
+                      <span className="font-semibold">Technical Vision:</span> Leading the architecture of end-to-end AI systems that merge cloud-native infrastructure with specialized LLM pipelines for clinical reasoning.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Innovation Focus:</span> Pioneering agentic frameworks, high-fidelity retrieval, and context-aware model alignment to deliver intelligent, auditable decisions at scale.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Human-Centered Design:</span> Engineering AI that healthcare professionals trust—creating systems that amplify expertise rather than replace it, with a focus on clinical workflow integration.
+                    </li>
+                  </ul>
                 </div>
               </motion.div>
             </div>
