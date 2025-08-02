@@ -186,7 +186,7 @@ export default function ApplicationDetailed() {
       {/* Authorization & Claims Intelligence Section */}
       <section className="w-full py-32 bg-[#1a1a2e]">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
             {/* Left Side: Mockup */}
             <motion.div
@@ -213,7 +213,7 @@ export default function ApplicationDetailed() {
                     </div>
                     <div className="flex-1">
                       <div className="text-sm font-medium text-blue-900">Policy Analysis</div>
-                      <div className="text-sm text-blue-700">Scanning 2,847 payer policies...</div>
+                      <div className="text-sm text-blue-700">Scanning 2,847 payer policies from 47 states</div>
                     </div>
                     <div className="text-sm text-blue-600">✓</div>
                   </div>
@@ -224,7 +224,7 @@ export default function ApplicationDetailed() {
                     </div>
                     <div className="flex-1">
                       <div className="text-sm font-medium text-green-900">Documentation Match</div>
-                      <div className="text-sm text-green-700">ICD-10: I25.10 ✓ Validated</div>
+                      <div className="text-sm text-green-700">ICD-10: I25.10 ✓ Validated against Aetna requirements</div>
                     </div>
                     <div className="text-sm text-green-600">✓</div>
                   </div>
@@ -235,7 +235,7 @@ export default function ApplicationDetailed() {
                     </div>
                     <div className="flex-1">
                       <div className="text-sm font-medium text-purple-900">Authorization Ready</div>
-                      <div className="text-sm text-purple-700">All requirements met for submission</div>
+                      <div className="text-sm text-purple-700">Pre-auth required: CPT 92928, 30-day approval</div>
                     </div>
                     <div className="text-sm text-purple-600">→</div>
                   </div>
@@ -254,6 +254,16 @@ export default function ApplicationDetailed() {
                     <div className="text-center">
                       <div className="font-semibold text-blue-600">2,847</div>
                       <div className="text-gray-600">Active Policies</div>
+                    </div>
+                  </div>
+                  
+                  {/* Recent Policy Updates */}
+                  <div className="mt-4 pt-3 border-t border-gray-200">
+                    <div className="text-sm font-medium text-gray-700 mb-2">Recent Updates</div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-600">• CMS-2024-001: Cardiology documentation requirements</div>
+                      <div className="text-xs text-gray-600">• Aetna: Updated pre-auth codes for radiology</div>
+                      <div className="text-xs text-gray-600">• UnitedHealth: New oncology coverage policies</div>
                     </div>
                   </div>
                 </div>
@@ -285,7 +295,7 @@ export default function ApplicationDetailed() {
       {/* Predictive Denial Prevention Section */}
       <section className="w-full py-32 bg-[#0f4c75]">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
             {/* Left Side: Mockup */}
             <motion.div
@@ -354,6 +364,16 @@ export default function ApplicationDetailed() {
                   <div className="text-sm text-gray-600 text-center">
                     <span className="font-medium">Recommendation:</span> Add pre-authorization documentation before submission
                   </div>
+                  
+                  {/* Historical Data Analysis */}
+                  <div className="mt-4 pt-3 border-t border-gray-200">
+                    <div className="text-sm font-medium text-gray-700 mb-2">Historical Analysis</div>
+                    <div className="space-y-1">
+                      <div className="text-xs text-gray-600">• 1,247 similar claims analyzed</div>
+                      <div className="text-xs text-gray-600">• 89% denial rate for missing pre-auth</div>
+                      <div className="text-xs text-gray-600">• Average appeal time: 45 days</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -383,7 +403,7 @@ export default function ApplicationDetailed() {
       {/* Specialty-Adaptive AI Section */}
       <section className="w-full py-32 bg-[#1a1a2e]">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
             {/* Left Side: Mockup */}
             <motion.div
@@ -443,15 +463,25 @@ export default function ApplicationDetailed() {
                     </div>
                   </div>
                   
-                  {/* Active Learning */}
-                  <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-3 rounded-lg">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-xs font-medium text-gray-700">Active Learning: Adapting to new protocols</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                     {/* Active Learning */}
+                   <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-3 rounded-lg">
+                     <div className="flex items-center space-x-2">
+                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                       <span className="text-xs font-medium text-gray-700">Active Learning: Adapting to new protocols</span>
+                     </div>
+                   </div>
+                   
+                   {/* Specialty-Specific Training */}
+                   <div className="mt-4 pt-3 border-t border-gray-200">
+                     <div className="text-sm font-medium text-gray-700 mb-2">Training Sources</div>
+                     <div className="space-y-1">
+                       <div className="text-xs text-gray-600">• Radiology: 15K+ imaging reports, CPT codes 70010-79999</div>
+                       <div className="text-xs text-gray-600">• Cardiology: 8K+ cardiac procedures, ICD-10 I20-I25</div>
+                       <div className="text-xs text-gray-600">• Oncology: 12K+ treatment protocols, NCI guidelines</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
             </motion.div>
 
             {/* Right Side: Content */}
@@ -479,7 +509,7 @@ export default function ApplicationDetailed() {
       {/* Compliance, Audit & Integration Framework Section */}
       <section className="w-full py-32 bg-[#0f4c75]">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
             {/* Left Side: Mockup */}
             <motion.div
@@ -491,66 +521,84 @@ export default function ApplicationDetailed() {
             >
               <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-semibold text-gray-900">Compliance & Security Center</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Security & Compliance Monitor</h3>
                   <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-indigo-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-indigo-600">Secure</span>
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-green-600">Protected</span>
                   </div>
                 </div>
                 
-                {/* Compliance Standards & Security */}
+                {/* Security Status Dashboard */}
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-4 p-3 bg-indigo-50 rounded-lg">
-                    <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
-                      <span className="text-sm font-bold text-indigo-600">🔒</span>
+                  {/* Security Status Indicators */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-green-50 p-3 rounded-lg text-center border border-green-200">
+                      <div className="text-lg font-bold text-green-600">✓</div>
+                      <div className="text-xs text-green-700">HIPAA</div>
                     </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-medium text-indigo-900">HIPAA Compliance</div>
-                      <div className="text-sm text-indigo-700">PHI protection & audit trails</div>
+                    <div className="bg-blue-50 p-3 rounded-lg text-center border border-blue-200">
+                      <div className="text-lg font-bold text-blue-600">✓</div>
+                      <div className="text-xs text-blue-700">GDPR</div>
                     </div>
-                    <div className="text-sm text-indigo-600">✓</div>
+                    <div className="bg-purple-50 p-3 rounded-lg text-center border border-purple-200">
+                      <div className="text-lg font-bold text-purple-600">✓</div>
+                      <div className="text-xs text-purple-700">CMS</div>
+                    </div>
+                    <div className="bg-orange-50 p-3 rounded-lg text-center border border-orange-200">
+                      <div className="text-lg font-bold text-orange-600">✓</div>
+                      <div className="text-xs text-orange-700">SOC2</div>
+                    </div>
                   </div>
                   
-                  <div className="flex items-center space-x-4 p-3 bg-green-50 rounded-lg">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-sm font-bold text-green-600">🛡️</span>
+                  {/* Audit Trail */}
+                  <div className="bg-gray-50 p-3 rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-gray-700">Recent Audit Events</span>
+                      <span className="text-xs text-gray-500">Last 24h</span>
                     </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-medium text-green-900">GDPR Ready</div>
-                      <div className="text-sm text-green-700">Data privacy & consent management</div>
+                    <div className="space-y-2">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span className="text-xs text-gray-600">Data access logged</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <span className="text-xs text-gray-600">API call authenticated</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span className="text-xs text-gray-600">Compliance check passed</span>
+                      </div>
                     </div>
-                    <div className="text-sm text-green-600">✓</div>
                   </div>
                   
-                  <div className="flex items-center space-x-4 p-3 bg-blue-50 rounded-lg">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                      <span className="text-sm font-bold text-blue-600">🔗</span>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-sm font-medium text-blue-900">API Integration</div>
-                      <div className="text-sm text-blue-700">EHR, billing & custom workflows</div>
-                    </div>
-                    <div className="text-sm text-blue-600">→</div>
-                  </div>
-                </div>
-                
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <div className="grid grid-cols-3 gap-4 text-sm">
-                    <div className="text-center">
-                      <div className="font-semibold text-gray-900">99.9%</div>
-                      <div className="text-gray-600">Uptime</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="font-semibold text-indigo-600">256-bit</div>
-                      <div className="text-gray-600">Encryption</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="font-semibold text-blue-600">24/7</div>
-                      <div className="text-gray-600">Monitoring</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                     {/* Security Metrics */}
+                   <div className="grid grid-cols-3 gap-2 text-xs">
+                     <div className="text-center">
+                       <div className="font-semibold text-gray-900">99.9%</div>
+                       <div className="text-gray-600">Uptime</div>
+                     </div>
+                     <div className="text-center">
+                       <div className="font-semibold text-green-600">256-bit</div>
+                       <div className="text-gray-600">Encryption</div>
+                     </div>
+                     <div className="text-center">
+                       <div className="font-semibold text-blue-600">24/7</div>
+                       <div className="text-gray-600">Monitoring</div>
+                     </div>
+                   </div>
+                   
+                   {/* Compliance Certifications */}
+                   <div className="mt-4 pt-3 border-t border-gray-200">
+                     <div className="text-sm font-medium text-gray-700 mb-2">Certifications</div>
+                     <div className="space-y-1">
+                       <div className="text-xs text-gray-600">• HIPAA: HITECH Act compliance verified</div>
+                       <div className="text-xs text-gray-600">• GDPR: EU data protection standards</div>
+                       <div className="text-xs text-gray-600">• SOC2 Type II: Security controls audited</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
             </motion.div>
 
             {/* Right Side: Content */}
