@@ -36,13 +36,6 @@ export default function RevenueOptimizationSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {/* Circular Abstract Image Placeholder */}
-            <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-pink-400 via-red-400 to-blue-300 flex items-center justify-center">
-              <div className="w-24 h-24 rounded-full bg-black flex items-center justify-center">
-                <div className="text-white text-xs font-medium">CI</div>
-              </div>
-            </div>
-            
             <h3 className="text-2xl font-normal text-slate-900 mb-4">
               Clinical Compliant Intelligence
             </h3>
@@ -75,13 +68,6 @@ export default function RevenueOptimizationSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* Circular Abstract Image Placeholder */}
-            <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-400 via-purple-400 to-orange-400 flex items-center justify-center">
-              <div className="w-24 h-24 rounded-full bg-black flex items-center justify-center">
-                <div className="text-white text-xs font-medium">AF</div>
-              </div>
-            </div>
-            
             <h3 className="text-2xl font-normal text-slate-900 mb-4">
               Vertical AI-Powered Prior Authorization Forecasting
             </h3>
@@ -114,13 +100,6 @@ export default function RevenueOptimizationSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Circular Abstract Image Placeholder */}
-            <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-400 via-orange-400 to-pink-400 flex items-center justify-center">
-              <div className="w-24 h-24 rounded-full bg-black flex items-center justify-center">
-                <div className="text-white text-xs font-medium">CE</div>
-              </div>
-            </div>
-            
             <h3 className="text-2xl font-normal text-slate-900 mb-4">
               Real-Time Compliance Execution
             </h3>

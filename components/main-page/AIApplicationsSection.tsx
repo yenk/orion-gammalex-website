@@ -8,7 +8,7 @@ export default function AIApplicationsSection() {
     <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden">
       {/* Background Image - Used exactly as is */}
       <div className="absolute inset-0">
-        <img src="/images/ai-applications-background-new.png" alt="" className="w-full h-full object-cover" />
+        <img src="/images/intelligence-moves/intelligence-that-moves-background.png" alt="" className="w-full h-full object-cover" />
       </div>
 
       {/* Dark overlay for better text readability */}
