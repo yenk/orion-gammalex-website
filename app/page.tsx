@@ -48,7 +48,30 @@ export default function GammaLexPage() {
         {/* Enterprise Security & Privacy Section */}
         <EnterpriseSecurityPrivacySection />
 
-
+        {/* CTA Section */}
+        <div ref={ctaRef} className="mt-0">
+          <section id="cta" className="py-24 sm:py-32 bg-slate-50 text-black">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col items-center max-w-4xl mx-auto text-center">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-inter break-words tracking-tight mb-6">
+                  Shape responsible AI for healthcare.
+                </span>
+                <span className="text-lg sm:text-xl lg:text-2xl font-inter break-words tracking-tight mb-8 text-slate-700">
+                  Join us in building AI that prioritizes patient outcomes, clinical accuracy, and ethical compliance.
+                </span>
+                <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8 w-full max-w-md">
+                  <JoinWaitlistModal
+                    trigger={
+                      <button className="text-lg sm:text-xl text-blue-900 text-center w-full font-inter focus:outline-none hover:text-blue-700 transition-colors duration-300">
+                        Partner with GammaLex
+                      </button>
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
 
       {/* Always show footer for testing */}
       <FooterGV />

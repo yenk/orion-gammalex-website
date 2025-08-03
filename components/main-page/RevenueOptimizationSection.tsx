@@ -15,20 +15,20 @@ export default function RevenueOptimizationSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-slate-900 mb-8">
-            GammaLex aligns clinical care with policy and performance—reducing friction, predicting risk, and improving access.
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-inter font-normal text-slate-900 mb-8 leading-tight">
+            How GammaLex prevents denials and protects revenue through intelligent AI
           </h2>
         </motion.div>
 
         {/* Three Columns */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {/* Column 1: Clinical Intelligence */}
+          {/* Column 1: Predict Denials */}
           <motion.div
             className="text-center"
             initial={{ opacity: 0, x: -20 }}
@@ -36,8 +36,8 @@ export default function RevenueOptimizationSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-normal text-slate-900 mb-4">
-              Clinical Compliant Intelligence
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
+              Predict Denials Before They Happen
             </h3>
             
             {/* Separator */}
@@ -47,20 +47,20 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Real-time, source-backed guidance to help clinicians and legal teams create defensible documentation, reduce denials, remain compliant, and stay audit-ready as payer rules evolve.
+                  Real-time AI analyzes clinical documentation and predicts denial risk before claims are submitted, giving you time to fix issues proactively.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Our intelligent clinical-compliant insights adapt to different clinical specialties and workflows, supporting expert decision-making at scale.
+                  Our intelligent system adapts to different clinical specialties and payer rules, providing accurate predictions that improve over time.
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Column 2: Authorization Forecasting */}
+          {/* Column 2: Protect Revenue */}
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -68,8 +68,8 @@ export default function RevenueOptimizationSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-normal text-slate-900 mb-4">
-              Authorization Forecasting
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
+              Protect Revenue and Patient Access
             </h3>
             
             {/* Separator */}
@@ -79,20 +79,20 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Prevents revenue leakage by reducing claim denials, de-risking workflows, and accelerating reimbursement through transparent, compliant claim generation and policy adaptation.
+                  Prevent revenue leakage by reducing claim denials and accelerating reimbursement through transparent, compliant claim generation.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Our revenue transformation capabilities integrate with EHRs and stay aligned with fast-changing payer rules to optimize financial outcomes.
+                  Our AI de-risks workflows and ensures patients get the care they need while healthcare organizations maintain financial stability.
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* Column 3: Compliance Execution */}
+          {/* Column 3: Stay Compliant */}
           <motion.div
             className="text-center"
             initial={{ opacity: 0, x: 20 }}
@@ -100,8 +100,8 @@ export default function RevenueOptimizationSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-normal text-slate-900 mb-4">
-              Real-Time Compliance Execution
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
+              Stay Compliant as Rules Evolve
             </h3>
             
             {/* Separator */}
@@ -111,14 +111,14 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Minimizes administrative delays, supports equitable access to care, and enables faster decisions—all while improving documentation quality and reducing care fragmentation.
+                  Our AI stays aligned with fast-changing payer rules and policy updates, ensuring your documentation remains audit-ready and compliant.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Our patient-centric care enablement ensures that healthcare providers can focus on delivering quality care while our AI handles the complex administrative and compliance requirements.
+                  Minimize administrative delays and support equitable access to care while maintaining the highest standards of accuracy and compliance.
                 </p>
               </div>
             </div>

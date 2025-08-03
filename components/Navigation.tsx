@@ -122,7 +122,7 @@ export default function Navigation() {
     }
     
     if (sectionId === 'join') {
-      window.location.href = '/contact'
+      window.location.href = 'https://cal.com/yenkha'
       return
     }
     

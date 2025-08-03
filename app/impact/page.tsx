@@ -2,6 +2,7 @@
 
 import { ImpactHero, ImpactStats, ImpactCTA } from '@/components/impact';
 import Navigation from '@/components/Navigation';
+import FooterGV from '@/components/FooterGV';
 
 export default function ImpactPage() {
   return (
@@ -10,6 +11,7 @@ export default function ImpactPage() {
       <ImpactHero />
       <ImpactStats />
       <ImpactCTA />
+      <FooterGV />
     </main>
   );
 } 
