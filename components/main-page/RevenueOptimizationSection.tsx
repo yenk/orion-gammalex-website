@@ -45,14 +45,14 @@ export default function RevenueOptimizationSection() {
             
             <div className="text-left space-y-4 mb-8">
               <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
                   Real-time, source-backed guidance to help clinicians and legal teams create defensible documentation, reduce denials, remain compliant, and stay audit-ready as payer rules evolve.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
                   Our intelligent clinical-compliant insights adapt to different clinical specialties and workflows, supporting expert decision-making at scale.
                 </p>
@@ -69,7 +69,7 @@ export default function RevenueOptimizationSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-normal text-slate-900 mb-4">
-              Vertical AI-Powered Prior Authorization Forecasting
+              Authorization Forecasting
             </h3>
             
             {/* Separator */}
@@ -77,14 +77,14 @@ export default function RevenueOptimizationSection() {
             
             <div className="text-left space-y-4 mb-8">
               <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
                   Prevents revenue leakage by reducing claim denials, de-risking workflows, and accelerating reimbursement through transparent, compliant claim generation and policy adaptation.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
                   Our revenue transformation capabilities integrate with EHRs and stay aligned with fast-changing payer rules to optimize financial outcomes.
                 </p>
@@ -109,14 +109,14 @@ export default function RevenueOptimizationSection() {
             
             <div className="text-left space-y-4 mb-8">
               <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
                   Minimizes administrative delays, supports equitable access to care, and enables faster decisions—all while improving documentation quality and reducing care fragmentation.
                 </p>
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
                   Our patient-centric care enablement ensures that healthcare providers can focus on delivering quality care while our AI handles the complex administrative and compliance requirements.
                 </p>
