@@ -16,7 +16,7 @@ export default function RevenueOptimizationSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-slate-900 mb-8">
-            GammaLex aligns clinical care with policy and performance—reducing friction, predicting risk, and improving access.
+            Healthcare optimization aligns clinical decisions, payer policies, and revenue goals.
           </h2>
         </motion.div>
 
@@ -44,7 +44,7 @@ export default function RevenueOptimizationSection() {
             </div>
             
             <h3 className="text-2xl font-normal text-slate-900 mb-4">
-              Clinical Intelligence
+              Clinical Compliant Intelligence
             </h3>
             
             {/* Separator */}

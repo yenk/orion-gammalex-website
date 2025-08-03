@@ -340,7 +340,7 @@ export function CopilotHero() {
         
 
         
-        <div className="flex flex-col gap-4 items-center px-4 sm:px-0 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+        <div className="flex flex-col gap-4 items-center px-4 sm:px-0 mb-16 sm:mb-20 md:mb-24 lg:mb-32">
           <a
             href="https://cal.com/yenkha"
             target="_blank"
@@ -357,13 +357,13 @@ export function CopilotHero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
             {/* Column 1: Vertical AI transformation */}
             <motion.div
-              className="text-center"
+              className="text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+              <h3 className="text-sm sm:text-base md:text-lg font-normal text-white mb-4">
                 Vertical AI transformation starting with denial prediction
               </h3>
               <a
@@ -376,13 +376,13 @@ export function CopilotHero() {
 
             {/* Column 2: Ethical and compliant transformation */}
             <motion.div
-              className="text-center"
+              className="text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+              <h3 className="text-sm sm:text-base md:text-lg font-normal text-white mb-4">
                 Ethical and compliant transformation.
               </h3>
               <a
@@ -395,13 +395,13 @@ export function CopilotHero() {
 
             {/* Column 3: Working together */}
             <motion.div
-              className="text-center"
+              className="text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+              <h3 className="text-sm sm:text-base md:text-lg font-normal text-white mb-4">
                 Working together to succeed.
               </h3>
               <a
