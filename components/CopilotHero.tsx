@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { JoinWaitlistModal } from "@/components/JoinWaitlistModal"
 import { useEffect, useRef, useState } from "react"
 import React from "react"
-import HeroDataSources from './HeroDataSources'
 
 /**
  * CopilotHero - Homepage hero section for GammaLex AI Copilot for Medical Pre-Auth and Denial Risk.
@@ -16,9 +15,9 @@ const headingLines = [
   [
     { word: "Built", orange: false },
     { word: "to", orange: false },
-    { word: "Defend", orange: true },
+    { word: "Defend", orange: false },
     { word: "What", orange: false },
-    { word: "Matters", orange: true },
+    { word: "Matters", orange: false },
   ],
 ];
 
@@ -196,7 +195,7 @@ export function CopilotHero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/impact/icons/main11.png)',
+          backgroundImage: 'url(/images/hero-background.png)',
         }}
       />
       
@@ -303,12 +302,19 @@ export function CopilotHero() {
         <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-0 whitespace-nowrap">
             {headingLines[0].map((item, j) => (
-              <span
+              <motion.span
                 key={j}
                 className={`inline-block ${j !== headingLines[0].length - 1 ? 'mr-2 sm:mr-3 md:mr-4' : ''} ${item.orange ? 'text-gammalex-purple' : 'text-white'}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: j * 0.2, // Stagger each word by 0.2 seconds
+                  ease: "easeOut"
+                }}
               >
                 {item.word}
-              </span>
+              </motion.span>
             ))}
           </h1>
         </div>
@@ -332,12 +338,9 @@ export function CopilotHero() {
           </h2>
         </div>
         
-        {/* Hero Data Sources and CTA */}
-        <div className="w-full mb-4 sm:mb-6 md:mb-8 lg:mb-12">
-          <HeroDataSources />
-        </div>
+
         
-        <div className="flex flex-col gap-4 items-center px-4 sm:px-0 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+        <div className="flex flex-col gap-4 items-center px-4 sm:px-0 mb-16 sm:mb-20 md:mb-24 lg:mb-32">
           <a
             href="https://cal.com/yenkha"
             target="_blank"
@@ -354,13 +357,13 @@ export function CopilotHero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
             {/* Column 1: Vertical AI transformation */}
             <motion.div
-              className="text-center"
+              className="text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+              <h3 className="text-sm sm:text-base md:text-lg font-normal text-white mb-4">
                 Vertical AI transformation starting with denial prediction
               </h3>
               <a
@@ -373,13 +376,13 @@ export function CopilotHero() {
 
             {/* Column 2: Ethical and compliant transformation */}
             <motion.div
-              className="text-center"
+              className="text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+              <h3 className="text-sm sm:text-base md:text-lg font-normal text-white mb-4">
                 Ethical and compliant transformation.
               </h3>
               <a
@@ -392,13 +395,13 @@ export function CopilotHero() {
 
             {/* Column 3: Working together */}
             <motion.div
-              className="text-center"
+              className="text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg sm:text-xl md:text-2xl font-normal text-white mb-4">
+              <h3 className="text-sm sm:text-base md:text-lg font-normal text-white mb-4">
                 Working together to succeed.
               </h3>
               <a

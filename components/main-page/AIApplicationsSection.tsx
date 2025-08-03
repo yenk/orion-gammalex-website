@@ -8,19 +8,22 @@ export default function AIApplicationsSection() {
     <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden">
       {/* Background Image - Used exactly as is */}
       <div className="absolute inset-0">
-        <img src="/images/impact/icons/light4.png" alt="" className="w-full h-full object-cover" />
+        <img src="/images/ai-applications-background.png" alt="" className="w-full h-full object-cover" />
       </div>
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Heading */}
         <motion.div
-          className="text-center mb-20"
+          className="text-left mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-bold text-white mb-8 drop-shadow-lg">
             Our vertical AI suite
           </h2>
         </motion.div>
@@ -35,86 +38,86 @@ export default function AIApplicationsSection() {
         >
           {/* Column 1: AI to Improve Data */}
           <motion.div
-            className="text-center"
+            className="text-left"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-normal text-white mb-6">
-              AI to Improve Data: Intelligent PreAuth
+            <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
+              Authorization & Claims Intelligence
             </h3>
             
-            <p className="text-lg text-white/80 leading-relaxed mb-8">
-              Intelligent PreAuth cleanses clinical data and automates pre-authorization request generation and maintenance, eliminating the need for manual documentation and updates. Our AI suite processes medical records, billing codes, and clinical documentation to extract key information needed for pre-authorization requests, ensuring data quality and compliance with payer requirements.
+            <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
+              Real-time policy analysis and automated claims processing. Streamlines authorization workflows with instant validation and error prevention.
             </p>
             
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
               Learn more
-            </button>
+            </a>
           </motion.div>
 
           {/* Column 2: AI to Provide Insights */}
           <motion.div
-            className="text-center"
+            className="text-left"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-normal text-white mb-6">
-              AI to Provide Insights: Clinical-Legal Intelligence
+            <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
+              Predictive Denial Prevention
             </h3>
             
-            <p className="text-lg text-white/80 leading-relaxed mb-8">
-              GammaLex's AI platform combines clinical expertise, legal foresight, and policy awareness to automate pre-authorization processes and prevent denials. Our vertical AI suite provides real-time insights and predictive analytics, helping healthcare organizations navigate the complex intersection of medicine, policy, and law where pre-authorization decisions determine patient care and provider liability.
+            <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
+              Predicts and prevents denials before they happen. Uses historical data to flag high-risk claims and boost approval rates.
             </p>
             
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
               Learn more
-            </button>
+            </a>
           </motion.div>
 
           {/* Column 3: AI to Surface Connections */}
           <motion.div
-            className="text-center"
+            className="text-left"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-normal text-white mb-6">
-              AI to Surface Connections: Authorization Forecasting
+            <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
+              Specialty-Adaptive AI
             </h3>
             
-            <p className="text-lg text-white/80 leading-relaxed mb-8">
-              Our AI suite provides fully automated pre-authorization forecasting with 96%+ reliability, leveraging machine learning to predict approval outcomes and identify potential denials before they happen. The system adjusts probabilistic predictions to reflect changing payer policies and coverage rules, helping healthcare teams make data-driven authorization decisions.
+            <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
+              AI trained on specialty-specific knowledge. Adapts to radiology, oncology, cardiology workflows for precise, relevant results.
             </p>
             
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
               Learn more
-            </button>
+            </a>
           </motion.div>
 
           {/* Column 4: Placeholder for future AI suite component */}
           <motion.div
-            className="text-center"
+            className="text-left"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-normal text-white mb-6">
-              AI to Optimize Outcomes: Risk Assessment
+            <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
+              Compliance, Audit & Integration Framework
             </h3>
             
-            <p className="text-lg text-white/80 leading-relaxed mb-8">
-              Our AI suite evaluates clinical risk factors and compliance requirements to provide comprehensive risk assessment for pre-authorization requests. The system identifies potential compliance issues, clinical justification gaps, and payer-specific requirements to maximize approval success rates and minimize administrative burden.
+            <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
+              Enterprise-grade security with HIPAA/GDPR compliance. Seamless API integration for scalable deployment across complex organizations.
             </p>
             
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
               Learn more
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </div>
