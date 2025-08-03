@@ -495,7 +495,7 @@ export default function Navigation() {
                   <div className="pt-4 border-t border-white/20 mt-4">
                     <JoinWaitlistModal
                       trigger={
-                        <Button className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white font-bold w-full py-4 text-lg rounded-xl hover-glow transition-all">
+                        <Button className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white font-normal w-full py-4 text-lg rounded-xl hover-glow transition-all">
                           Request a Demo
                         </Button>
                       }

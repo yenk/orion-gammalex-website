@@ -93,8 +93,8 @@ export default function ProblemsDetailed() {
       {problems.map((problem, index) => (
         <section 
           key={index}
-          className={`w-full py-20 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative ${
-            index % 2 === 0 ? 'bg-[#1a1a2e]' : 'bg-[#0f4c75]'
+          className={`w-full py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative ${
+            index === 0 || index === 2 || index === 4 || index === 6 || index === 8 ? 'bg-white' : index % 2 === 0 ? 'bg-[#1a2a2e]' : 'bg-[#0f4c75]'
           }`}
         >
           <div className="max-w-7xl mx-auto relative z-10">
@@ -105,16 +105,20 @@ export default function ProblemsDetailed() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start h-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start h-full">
                 {/* Left Column - Title and Detailed Text */}
-                <div className="space-y-8 text-left">
-                  <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8 drop-shadow-lg text-left font-normal">
+                <div className="space-y-6 sm:space-y-8 text-left">
+                  <h3 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 sm:mb-8 drop-shadow-lg text-left font-normal ${
+                    index === 0 || index === 2 || index === 4 || index === 6 || index === 8 ? 'text-black' : 'text-white'
+                  }`}>
                     {problem.title}
                   </h3>
                   
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     {problem.paragraphs.map((paragraph, pIndex) => (
-                      <p key={pIndex} className="text-lg sm:text-xl md:text-2xl text-white/95 leading-relaxed drop-shadow-md text-left font-normal">
+                      <p key={pIndex} className={`text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed drop-shadow-md text-left font-normal ${
+                        index === 0 || index === 2 || index === 4 || index === 6 || index === 8 ? 'text-black/95' : 'text-white/95'
+                      }`}>
                         {paragraph}
                       </p>
                     ))}
@@ -122,20 +126,22 @@ export default function ProblemsDetailed() {
                 </div>
 
                 {/* Right Column - Highlight Statement & Button */}
-                <div className="flex flex-col justify-start h-full text-left space-y-6 pt-0">
+                <div className="flex flex-col justify-start h-full text-left space-y-4 sm:space-y-6 pt-0">
                  {index === 0 && (
-                    <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gammalex-purple mb-6 drop-shadow-lg text-left font-normal">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gammalex-purple mb-4 sm:mb-6 drop-shadow-lg text-left font-normal">
                       The ROI?
                     </h3>
                   )}
                   
-                    <div className="leading-relaxed drop-shadow-md text-left font-normal text-white/95 text-2xl sm:text-3xl md:text-4xl mb-6">
+                    <div className={`leading-relaxed drop-shadow-md text-left font-normal text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-4 sm:mb-6 ${
+                      index === 0 || index === 2 || index === 4 || index === 6 || index === 8 ? 'text-black/95' : 'text-white/95'
+                    }`}>
                       {problem.highlight}
                     </div>
                     
-                    <div className="pt-4">
+                    <div className="pt-2 sm:pt-4">
                       <Button 
-                        className="text-lg px-8 py-4 font-semibold bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 sm:py-4 font-normal bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
                       >
                         Learn more
                       </Button>

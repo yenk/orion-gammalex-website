@@ -13,13 +13,14 @@ import React from "react"
 
 const headingLines = [
   [
+    { word: "Vertical", orange: false },
     { word: "AI", orange: false },
-    { word: "that", orange: false },
-    { word: "prevents", orange: false },
-    { word: "denials", orange: false },
-    { word: "before", orange: false },
-    { word: "they", orange: false },
-    { word: "happen.", orange: false },
+    { word: "to", orange: false },
+    { word: "align", orange: false },
+    { word: "care,", orange: false },
+    { word: "policy,", orange: false },
+    { word: "and", orange: false },
+    { word: "compliance", orange: false },
   ],
 ];
 
@@ -34,7 +35,7 @@ export function CopilotHero() {
       className="relative w-full overflow-hidden min-h-screen flex flex-col items-center justify-center"
       style={{ 
         minHeight: '100vh',
-        paddingTop: '5rem', // Account for fixed navigation
+        paddingTop: '4rem',
         paddingBottom: '2rem',
       }}
     >
@@ -56,8 +57,8 @@ export function CopilotHero() {
       {/* Hero section main container */}
       <div className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 z-10 h-full">
         {/* Main Hero Heading */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-normal font-inter leading-[1.1] text-white max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
             {headingLines[0].map((item, j) => (
               <motion.span
                 key={j}
@@ -77,36 +78,32 @@ export function CopilotHero() {
         </div>
 
         {/* Subhero Heading */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+        <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+          <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             <div className="mb-2 sm:mb-3 md:mb-4">
-              <span className="inline-block mr-1 sm:mr-2">GammaLex</span>
-              <span className="inline-block mr-1 sm:mr-2">uses</span>
-              <span className="inline-block mr-1 sm:mr-2">real-time</span>
-              <span className="inline-block mr-1 sm:mr-2">AI</span>
-              <span className="inline-block mr-1 sm:mr-2">to</span>
-              <span className="inline-block mr-1 sm:mr-2">predict</span>
+              <span className="inline-block mr-1 sm:mr-2">Predict</span>
+              <span className="inline-block mr-1 sm:mr-2">risks,</span>
+              <span className="inline-block mr-1 sm:mr-2">validate</span>
+              <span className="inline-block mr-1 sm:mr-2">care,</span>
+              <span className="inline-block mr-1 sm:mr-2">ensure</span>
+              <span className="inline-block mr-1 sm:mr-2">audit</span>
+              <span className="inline-block mr-1 sm:mr-2">readiness,</span>
               <span className="inline-block mr-1 sm:mr-2">and</span>
-              <span className="inline-block mr-1 sm:mr-2">prevent</span>
-              <span className="inline-block mr-1 sm:mr-2">claim</span>
-              <span className="inline-block mr-1 sm:mr-2">denials,</span>
-              <span className="inline-block mr-1 sm:mr-2">protecting</span>
+              <span className="inline-block mr-1 sm:mr-2">optimize</span>
               <span className="inline-block mr-1 sm:mr-2">revenue</span>
-              <span className="inline-block mr-1 sm:mr-2">and</span>
-              <span className="inline-block mr-1 sm:mr-2">patient</span>
-              <span className="inline-block mr-1 sm:mr-2">access.</span>
+              <span className="inline-block mr-1 sm:mr-2">growth</span>
             </div>
           </h2>
         </div>
         
 
         
-        <div className="flex flex-col gap-4 items-center px-4 sm:px-6 md:px-8 lg:px-12 mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28">
+        <div className="flex flex-col gap-4 items-center px-4 sm:px-6 md:px-8 lg:px-12 mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
           <a
             href="https://cal.com/yenkha"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg lg:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 neon-glow hover:neon-glow"
+            className="bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 neon-glow hover:neon-glow"
             style={{ textDecoration: 'none', display: 'inline-block' }}
           >
             See it in Action
@@ -114,62 +111,62 @@ export function CopilotHero() {
         </div>
 
         {/* Three Column Section */}
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 md:gap-16 lg:gap-20">
-            {/* Column 1: Predict Denials */}
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
+            {/* Column 1: Smart Prevention */}
             <motion.div
-              className="text-left"
+              className="text-center md:text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white mb-4">
-                Predict denials before they happen
+              <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
+                Stop denials before they start
               </h3>
               <a
                 href="/problemswesolve"
-                className="text-blue-400 underline hover:text-blue-300 transition-colors text-sm"
+                className="text-blue-400 underline hover:text-blue-300 transition-colors text-xs sm:text-sm"
               >
-                How it works
+                Learn how
               </a>
             </motion.div>
 
-            {/* Column 2: Protect Revenue */}
+            {/* Column 2: Revenue Protection */}
             <motion.div
-              className="text-left"
+              className="text-center md:text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white mb-4">
-                Protect revenue and patient access
+              <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
+                Secure margins and patient care
               </h3>
               <a
                 href="/impact"
-                className="text-blue-400 underline hover:text-blue-300 transition-colors text-sm"
+                className="text-blue-400 underline hover:text-blue-300 transition-colors text-xs sm:text-sm"
               >
-                See the impact
+                View results
               </a>
             </motion.div>
 
-            {/* Column 3: Stay Compliant */}
+            {/* Column 3: Adaptive Compliance */}
             <motion.div
-              className="text-left"
+              className="text-center md:text-left"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white mb-4">
-                Stay compliant as rules evolve
+              <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
+                Adapt to changing regulations
               </h3>
               <a
                 href="/ethical-ai"
-                className="text-blue-400 underline hover:text-blue-300 transition-colors text-sm"
+                className="text-blue-400 underline hover:text-blue-300 transition-colors text-xs sm:text-sm"
               >
-                Our approach
+                Discover our method
               </a>
             </motion.div>
           </div>
