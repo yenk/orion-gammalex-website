@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function ImpactStats() {
   const impactSections = [
     {
-      title: "Intelligent Clinical-Legal Insights",
+              title: "Intelligent Clinical-Compliant Insights",
       subtitle: "Real-time, source-backed guidance to help clinicians and legal teams create defensible documentation, reduce denials, remain compliant, and stay audit-ready as payer rules evolve.",
       description: "",
       mockup: (
@@ -16,7 +16,7 @@ export default function ImpactStats() {
                 CL
               </div>
               <div>
-                <div className="text-white font-bold text-lg">Clinical-Legal Dashboard</div>
+                <div className="text-white font-bold text-lg">Clinical-Compliant Dashboard</div>
                 <div className="text-gray-400 text-sm">GAMMALEX CORPORATION</div>
               </div>
             </div>

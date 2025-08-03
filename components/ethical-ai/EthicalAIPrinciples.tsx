@@ -8,7 +8,7 @@ export default function EthicalAIPrinciples() {
   const principles = [
     {
       title: "Transparency",
-      description: "Every recommendation comes with clear policy sources and explainable reasoning. We build trust through radical transparency in clinical-legal intelligence."
+      description: "Every recommendation comes with clear policy sources and explainable reasoning. We build trust through radical transparency in clinical-compliant intelligence."
     },
     {
       title: "Fairness",

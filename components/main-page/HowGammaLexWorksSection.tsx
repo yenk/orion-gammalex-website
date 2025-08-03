@@ -98,7 +98,7 @@ export default function HowGammaLexWorksSection() {
             <div className="lg:w-2/3">
               <div className="bg-gray-900 border border-gray-700 p-8 rounded-lg">
                 <p className="text-lg text-white/90 leading-relaxed">
-                  Using clinical-legal intelligence, GammaLex creates detailed justifications that include medical necessity, clinical evidence, and compliance with payer policies. The system flags potential issues and suggests alternative approaches when needed.
+                  Using clinical-compliant intelligence, GammaLex creates detailed justifications that include medical necessity, clinical evidence, and compliance with payer policies. The system flags potential issues and suggests alternative approaches when needed.
                 </p>
               </div>
             </div>

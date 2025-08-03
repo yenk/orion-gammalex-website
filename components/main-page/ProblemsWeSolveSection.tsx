@@ -79,7 +79,7 @@ export default function ProblemsWeSolveSection() {
             GammaLex transforms this crisis into opportunity
           </h3>
           <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
-            By automating pre-authorization processes with clinical-legal intelligence, we enable faster access to care, reduced administrative burden, and fewer denials and legal risks.
+            By automating pre-authorization processes with clinical-compliant intelligence, we enable faster access to care, reduced administrative burden, and fewer denials and legal risks.
           </p>
         </motion.div>
       </div>

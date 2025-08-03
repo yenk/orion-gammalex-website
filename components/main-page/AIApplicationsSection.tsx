@@ -23,8 +23,8 @@ export default function AIApplicationsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-bold text-white mb-8 drop-shadow-lg">
-            Our vertical AI suite
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8 drop-shadow-lg">
+            Intelligence That Moves With Healthcare
           </h2>
         </motion.div>
 
@@ -45,11 +45,11 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Authorization & Claims Intelligence
+              Smart Policy Engine
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Real-time policy analysis and automated claims processing. Streamlines authorization workflows with instant validation and error prevention.
+              Real-time policy monitoring across 8 major data sources. Validates claims against CMS, WHO ICD-11, and legal precedents.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
@@ -66,11 +66,11 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Predictive Denial Prevention
+              Risk Prediction AI
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Predicts and prevents denials before they happen. Uses historical data to flag high-risk claims and boost approval rates.
+              Machine learning identifies denial patterns. 94% approval rate with predictive risk analysis.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
@@ -87,11 +87,11 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Specialty-Adaptive AI
+              Specialty Intelligence
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              AI trained on specialty-specific knowledge. Adapts to radiology, oncology, cardiology workflows for precise, relevant results.
+              Domain-specific AI for radiology, oncology, cardiology. Trained on 50K+ specialty cases for precision.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
@@ -108,11 +108,11 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Compliance, Audit & Integration Framework
+              Enterprise Security
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Enterprise-grade security with HIPAA/GDPR compliance. Seamless API integration for scalable deployment across complex organizations.
+              SOC2 Type II certified with 99.9% uptime. HIPAA/GDPR compliant enterprise integration.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">

@@ -57,7 +57,7 @@ export default function ImpactSection() {
               Reduced Denials
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Clinical-legal intelligence identifies potential issues before submission, significantly reducing denial rates and appeal costs.
+              Clinical-compliant intelligence identifies potential issues before submission, significantly reducing denial rates and appeal costs.
             </p>
           </motion.div>
 

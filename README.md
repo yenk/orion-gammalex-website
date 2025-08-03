@@ -1,12 +1,12 @@
 # GammaLex Platform
 
-A Next.js-based web application for GammaLex, a clinical-legal AI platform designed to help healthcare providers navigate prior authorization, denial risk management, and compliance challenges.
+A Next.js-based web application for GammaLex, a clinical-compliant AI platform designed to help healthcare providers navigate prior authorization, denial risk management, and compliance challenges.
 
 ## Project Overview
 
-GammaLex is the first clinical-legal AI built to defend care before it's denied—using source-backed intelligence to stop pre-auth delays and denials at the root. The platform provides:
+GammaLex is the first clinical-compliant AI built to defend care before it's denied—using source-backed intelligence to stop pre-auth delays and denials at the root. The platform provides:
 
-- **Clinical-Legal Intelligence**: AI-powered analysis of medical billing codes, coverage rules, and physician notes
+- **Clinical-Compliant Intelligence**: AI-powered analysis of medical billing codes, coverage rules, and physician notes
 - **Denial Risk Management**: Proactive identification of legal vulnerabilities before they become liability
 - **Compliance Tools**: Built-in regulatory compliance features for healthcare providers
 - **Data Source Transparency**: Clear visibility into the open datasets that inform AI models
@@ -91,7 +91,7 @@ GammaLex is the first clinical-legal AI built to defend care before it's denied�
    - Contact forms
 
 2. **Pre-Auth Forms** (`app/preauth/page.tsx`)
-   - Clinical-legal assessment tools
+   - Clinical-compliant assessment tools
    - Risk scoring and analysis
    - Compliance checking
 

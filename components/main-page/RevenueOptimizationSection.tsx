@@ -16,7 +16,7 @@ export default function RevenueOptimizationSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-slate-900 mb-8">
-            Healthcare optimization aligns clinical decisions, payer policies, and revenue goals. GammaLex's vertical AI reduces friction, predicts risks, and improves access across the care continuum.
+            GammaLex aligns clinical care with policy and performance—reducing friction, predicting risk, and improving access.
           </h2>
         </motion.div>
 
@@ -61,7 +61,7 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Our intelligent clinical-legal insights adapt to different clinical specialties and workflows, supporting expert decision-making at scale.
+                  Our intelligent clinical-compliant insights adapt to different clinical specialties and workflows, supporting expert decision-making at scale.
                 </p>
               </div>
             </div>

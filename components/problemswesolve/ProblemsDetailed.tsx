@@ -16,6 +16,33 @@ export default function ProblemsDetailed() {
       highlight: "AI integration in radiology workflows delivers 451% ROI over five years with 78 days saved in triage and 41 days in reporting according to Journal of the American College of Radiology, 2024."
     },
     {
+      title: "AI to deliver clinical intelligence",
+      paragraphs: [
+        "Clinicians and legal teams struggle with defensible documentation, compliance gaps, and audit readiness as payer rules constantly evolve. Traditional approaches lack real-time guidance and fail to adapt to different clinical specialties.",
+        "GammaLex provides real-time, source-backed guidance that helps teams create defensible documentation, reduce denials, remain compliant, and stay audit-ready. Our intelligent clinical-compliant insights adapt to different clinical specialties and workflows, supporting expert decision-making at scale.",
+        "This is clinical intelligence, reimagined. This is GammaLex."
+      ],
+      highlight: "Real-time clinical intelligence adapts to specialty workflows, supporting expert decision-making at scale."
+    },
+    {
+      title: "AI to forecast authorization success",
+      paragraphs: [
+        "Revenue leakage from claim denials, de-risking workflows, and delayed reimbursement cripples healthcare organizations. Traditional systems fail to provide transparent, compliant claim generation and policy adaptation.",
+        "GammaLex prevents revenue leakage by reducing claim denials, de-risking workflows, and accelerating reimbursement through transparent, compliant claim generation and policy adaptation. Our revenue transformation capabilities integrate with EHRs and stay aligned with fast-changing payer rules to optimize financial outcomes.",
+        "This is authorization forecasting, redefined. This is GammaLex."
+      ],
+      highlight: "Prevents revenue leakage through transparent, compliant claim generation and policy adaptation."
+    },
+    {
+      title: "AI to execute compliance seamlessly",
+      paragraphs: [
+        "Administrative delays, care fragmentation, and complex compliance requirements prevent healthcare providers from focusing on quality care delivery. Traditional systems create barriers to equitable access and faster decisions.",
+        "GammaLex minimizes administrative delays, supports equitable access to care, and enables faster decisions—all while improving documentation quality and reducing care fragmentation. Our patient-centric care enablement ensures that healthcare providers can focus on delivering quality care while our AI handles the complex administrative and compliance requirements.",
+        "This is compliance execution, revolutionized. This is GammaLex."
+      ],
+      highlight: "Minimizes administrative delays while improving documentation quality and reducing care fragmentation."
+    },
+    {
       title: "AI to maintain up-to-date coverage policies",
       paragraphs: [
         "92% of radiation oncologists report prior authorization delays, with 30% resulting in ER visits, hospitalization, or permanent disability.",
