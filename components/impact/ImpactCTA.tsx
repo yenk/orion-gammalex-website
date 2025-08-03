@@ -21,7 +21,7 @@ export default function ImpactCTA() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Ready to Transform Your Healthcare Impact?
+            Ready to Transform Your Healthcare's Success?
           </motion.h2>
 
           <motion.p
@@ -31,7 +31,7 @@ export default function ImpactCTA() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Join healthcare organizations that are already achieving measurable results with GammaLex. Start your journey toward better authorization success and reduced denials.
+
           </motion.p>
 
           <motion.div

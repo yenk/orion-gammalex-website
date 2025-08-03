@@ -6,35 +6,31 @@ import Link from "next/link"
 export default function ImpactStats() {
   const impactSections = [
     {
-      title: "Intelligent Clinical-Compliant Insights",
-      subtitle: "Real-time, source-backed guidance",
-      description: "AI provides unbiased insights for improved decision-making around clinical authorization and compliance.",
+      title: "Clinical Intelligence & Compliance",
+      subtitle: "Real-time insights for defensible documentation and audit readiness",
+      description: "92% of radiation oncologists report prior authorization delays. GammaLex provides unbiased insights for improved decision-making around clinical authorization and compliance.",
       metric: "92%",
-      metricLabel: "of radiation oncologists report prior authorization delays",
       isDark: true
     },
     {
-      title: "Revenue & Risk Transformation", 
-      subtitle: "Prevents revenue leakage",
-      description: "Reduces claim denials and accelerates reimbursement through transparent, compliant claim generation.",
+      title: "Revenue & Risk Optimization", 
+      subtitle: "Prevents denials, protects margins, and accelerates reimbursement",
+      description: "$25.7B was spent fighting denials in 2023. GammaLex reduces claim denials and accelerates reimbursement through transparent, compliant claim generation.",
       metric: "$25.7B",
-      metricLabel: "spent fighting denials in 2023",
       isDark: false
     },
     {
-      title: "Specialty-Aware, Scalable Intelligence",
-      subtitle: "Adapts to clinical specialties",
-      description: "Integrates with EHRs and stays aligned with fast-changing payer rules—supporting expert decision-making at scale.",
+      title: "Specialty-Aware AI Platform",
+      subtitle: "Adapts to clinical workflows and evolving payer rules",
+      description: "93% PA rate for cardiology - second-highest among specialties. Our platform integrates with EHRs and stays aligned with fast-changing payer rules—supporting expert decision-making at scale.",
       metric: "93%",
-      metricLabel: "PA rate for cardiology - second-highest among specialties",
       isDark: true
     },
     {
-      title: "Patient-Centric Care Enablement",
-      subtitle: "Minimizes administrative delays", 
-      description: "Supports equitable access to care and enables faster decisions while improving documentation quality.",
+      title: "Patient Access & Care Enablement",
+      subtitle: "Minimizes delays and supports equitable care delivery",
+      description: "22% of cancer patients don't receive physician-recommended care. Our solution supports equitable access to care and enables faster decisions while improving documentation quality.",
       metric: "22%",
-      metricLabel: "of cancer patients don't receive physician-recommended care",
       isDark: false
     }
   ]
@@ -114,17 +110,6 @@ export default function ImpactStats() {
                     >
                       {section.metric}
                     </motion.div>
-                    <motion.p
-                      className={`text-base sm:text-lg leading-relaxed ${
-                        section.isDark ? "text-white/80" : "text-slate-600"
-                      }`}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1.2, delay: 1.6 }}
-                      viewport={{ once: true }}
-                    >
-                      {section.metricLabel}
-                    </motion.p>
                   </motion.div>
                   
                   <motion.p 
@@ -133,7 +118,7 @@ export default function ImpactStats() {
                     }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 1.8 }}
+                    transition={{ duration: 1.2, delay: 1.6 }}
                     viewport={{ once: true }}
                   >
                     {section.description}
@@ -143,7 +128,7 @@ export default function ImpactStats() {
                     className="pt-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 2.0 }}
+                    transition={{ duration: 1.2, delay: 1.8 }}
                     viewport={{ once: true }}
                   >
                     <Link href="/application">
