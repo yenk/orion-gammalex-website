@@ -9,7 +9,7 @@ export default function ImpactHero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/impact/icons/impact.png)',
+          backgroundImage: 'url(/images/impact-page/hero-background.png)',
         }}
       />
 

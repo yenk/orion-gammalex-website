@@ -129,11 +129,7 @@ export default function ProblemsDetailed() {
                     </h3>
                   )}
                   
-                    <div className={`leading-relaxed drop-shadow-md text-left font-normal ${
-                      index === 1 || index === 2 || index === 3 || index === 4 || index === 5
-                        ? 'text-gammalex-purple text-2xl sm:text-3xl md:text-4xl mb-6 mt-0' 
-                        : 'text-white/95 text-2xl sm:text-3xl md:text-4xl mb-6'
-                    }`}>
+                    <div className="leading-relaxed drop-shadow-md text-left font-normal text-white/95 text-2xl sm:text-3xl md:text-4xl mb-6">
                       {problem.highlight}
                     </div>
                     

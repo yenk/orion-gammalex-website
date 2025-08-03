@@ -12,7 +12,7 @@ export default function ApplicationHero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/impact/icons/light8.png)',
+          backgroundImage: 'url(/images/vertical-ai/hero-background.png)',
         }}
       />
       

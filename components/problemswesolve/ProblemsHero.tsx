@@ -12,7 +12,7 @@ export default function ProblemsHero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
-              backgroundImage: 'url(/images/impact/icons/flowers1.png)',
+              backgroundImage: 'url(/images/problems-we-solve/hero-background.png)',
             }}
       />
       

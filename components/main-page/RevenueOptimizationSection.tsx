@@ -16,7 +16,7 @@ export default function RevenueOptimizationSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter font-normal text-slate-900 mb-8">
-            Healthcare optimization aligns clinical decisions, payer policies, and revenue goals.
+            GammaLex aligns clinical care with policy and performance—reducing friction, predicting risk, and improving access.
           </h2>
         </motion.div>
 
@@ -65,10 +65,6 @@ export default function RevenueOptimizationSection() {
                 </p>
               </div>
             </div>
-            
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              Learn more
-            </button>
           </motion.div>
 
           {/* Column 2: Authorization Forecasting */}
@@ -87,7 +83,7 @@ export default function RevenueOptimizationSection() {
             </div>
             
             <h3 className="text-2xl font-normal text-slate-900 mb-4">
-              Authorization Forecasting
+              Vertical AI-Powered Prior Authorization Forecasting
             </h3>
             
             {/* Separator */}
@@ -108,10 +104,6 @@ export default function RevenueOptimizationSection() {
                 </p>
               </div>
             </div>
-            
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              Learn more
-            </button>
           </motion.div>
 
           {/* Column 3: Compliance Execution */}
@@ -130,7 +122,7 @@ export default function RevenueOptimizationSection() {
             </div>
             
             <h3 className="text-2xl font-normal text-slate-900 mb-4">
-              Compliance Execution
+              Real-Time Compliance Execution
             </h3>
             
             {/* Separator */}
@@ -151,10 +143,6 @@ export default function RevenueOptimizationSection() {
                 </p>
               </div>
             </div>
-            
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-              Learn more
-            </button>
           </motion.div>
         </motion.div>
       </div>

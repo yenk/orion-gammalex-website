@@ -9,7 +9,7 @@ export default function AboutHero() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/impact/icons/light6.png)',
+          backgroundImage: 'url(/images/about/hero-background.png)',
         }}
       />
       
