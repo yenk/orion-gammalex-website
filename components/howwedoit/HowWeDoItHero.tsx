@@ -42,7 +42,7 @@ export default function HowWeDoItHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Vertical AI that understands the intersection of clinical reality, legal requirements, and payer policies.
+            Vertical AI that understands the intersection of clinical reality, legal requirements, and evolving payer policies.
           </motion.p>
         </motion.div>
       </div>
