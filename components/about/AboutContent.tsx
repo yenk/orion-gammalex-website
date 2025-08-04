@@ -124,10 +124,10 @@ export default function AboutContent() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-                Building AI That Matters
+                Vertical AI for a Healthier System
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Strategic vision meets engineering excellence to create vertical AI that transforms healthcare decision-making.
+                We build for impact. AI designed to streamline care delivery, ensure compliance, and optimize financial performance.
               </p>
             </motion.div>
 
@@ -146,13 +146,13 @@ export default function AboutContent() {
                     Strategic Vision
                   </h3>
                   <p>
-                    Healthcare demands clinical compliance intelligence—AI that understands medical decision-making, regulatory requirements, and workflow optimization.
+                    Healthcare runs on clinical precision and regulatory clarity.
                   </p>
                   <p>
-                    GammaLex's vertical approach means our AI thinks like a healthcare professional, understands clinical protocols, and optimizes like a business strategist.
+                    At GammaLex, we build AI that's deeply vertical—trained to think like a clinician, operate like a compliance expert, and scale like a strategist.
                   </p>
                   <p>
-                    This isn't about replacing human expertise—it's about amplifying it. Making complex clinical decisions more accessible, more accurate, and more aligned with patient outcomes and compliance realities.
+                    We don't replace expertise—we expand it. Our AI brings sharper decisions, faster workflows, and seamless alignment with outcomes and compliance.
                   </p>
                 </div>
               </motion.div>
@@ -171,13 +171,13 @@ export default function AboutContent() {
                   </h3>
                   <ul className="list-disc pl-5 space-y-2">
                     <li>
-                      <span className="font-semibold">Technical Vision:</span> Leading the architecture of end-to-end AI systems that merge cloud-native infrastructure with specialized LLM pipelines for clinical reasoning.
+                      <span className="font-semibold">Scalable by Design:</span> We build cloud-native AI systems aligned to real-world clinical workflows, specialty logic, and compliance standards.
                     </li>
                     <li>
-                      <span className="font-semibold">Innovation Focus:</span> Pioneering agentic frameworks, high-fidelity retrieval, and context-aware model alignment to deliver intelligent, auditable decisions at scale.
+                      <span className="font-semibold">Differentiated by Infrastructure:</span> Our agentic frameworks and custom retrieval pipelines power explainable, auditable outputs that improve with every use.
                     </li>
                     <li>
-                      <span className="font-semibold">Human-Centered Design:</span> Engineering AI that healthcare professionals trust—creating systems that amplify expertise rather than replace it, with a focus on clinical workflow integration.
+                      <span className="font-semibold">Vertical from Day One:</span> GammaLex goes where generic models can't—engineering intelligent infrastructure purpose-built for healthcare delivery.
                     </li>
                   </ul>
                 </div>

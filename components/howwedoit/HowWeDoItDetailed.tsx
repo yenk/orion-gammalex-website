@@ -15,8 +15,7 @@ export default function HowWeDoItDetailed() {
         "Process clinical encounters from MIMIC-IV database (Core, Hosp, ICU, ED, Note modules)",
         "Analyze legal documents from Harvard's CaseLaw Access Project (16M+ opinions tested)",
         "Monitor policy changes from CMS Medicare Coverage Database (MCD)",
-        "Track diagnostic codes from WHO ICD-11 classifications (17,000+ codes)",
-        "Build comprehensive AI knowledge foundation from 8 major data sources"
+        "Track diagnostic codes from WHO ICD-11 classifications (17,000+ codes)"
       ],
       highlight: "GammaLex builds the world's largest healthcare AI knowledge base, processing 8 major data sources to create comprehensive Clinical-Compliance intelligence."
     },
@@ -27,9 +26,7 @@ export default function HowWeDoItDetailed() {
         "Monitor payer policies across all major insurance providers",
         "Track CMS regulatory updates in real-time",
         "Update AI recommendations when policy changes are detected",
-        "Analyze specialty-specific guidelines for medical specialties",
-        "Process regulatory documents from federal and state agencies",
-        "Maintain compliance with HIPAA, Stark Law, and Anti-Kickback regulations",
+        "Analyze specialty-specific guidelines for medical specialties"
       ],
       highlight: "GammaLex provides real-time regulatory intelligence, ensuring providers stay ahead of policy changes that could impact authorization success."
     },
@@ -40,10 +37,7 @@ export default function HowWeDoItDetailed() {
         "Analyze claim patterns against historical encounters (MIMIC-IV)",
         "Evaluate denial risks using legal precedent cases (Harvard CAP)",
         "Process claims against diagnostic codes (WHO ICD-11)",
-        "Identify documentation gaps before claim submission",
-        "Predict authorization success rates and denial risks",
-        "Reduce preventable denials through early detection",
-        "Accelerate payment cycles through proactive risk management",
+        "Predict authorization success rates and denial risks"
       ],
       highlight: "GammaLex's predictive AI transforms authorization success rates, dramatically reducing denials while accelerating revenue cycles."
     },
@@ -51,12 +45,10 @@ export default function HowWeDoItDetailed() {
       title: "Specialty-Specific Optimization",
       icon: Target,
       bulletPoints: [
-        "Optimize for specialty-specific payer policies and coverage rules",
-        "Provide real-time specialty-specific compliance and risk guidance",
         "RADIOLOGY: Adapt to imaging modality requirements and American College of Radiology (ACR) guidelines",
-        "ONCOLOGY: Optimize for National Comprehensive Cancer Network (NCCN) treatment protocols and specialty drug coverage",
-        "CARDIOLOGY: Process American College of Cardiology (ACC) coding standards and interventional procedure requirements",
-        "TRANSPLANT: Adapt to United Network for Organ Sharing (UNOS) allocation protocols and center certification standards"
+        "ONCOLOGY: Optimize for National Comprehensive Cancer Network (NCCN) treatment protocols",
+        "CARDIOLOGY: Process American College of Cardiology (ACC) coding standards",
+        "Optimize for specialty-specific payer policies and coverage rules"
       ],
       highlight: "GammaLex's specialty-optimized AI delivers domain expertise for high-stakes medical specialties, ensuring precise authorization predictions."
     },
@@ -67,11 +59,7 @@ export default function HowWeDoItDetailed() {
         "Monitor legal exposure patterns from legal documents (Harvard CAP)",
         "Analyze court cases for legal precedent patterns (CourtListener)",
         "Track regulatory violations across federal and state levels",
-        "Identify compliance risks and potential legal exposure",
-        "Protect providers from legal exposure and penalties",
-        "Ensure patient care remains the priority",
-        "Surface risks early to prevent costly legal issues",
-        "Maintain compliance with evolving healthcare regulations"
+        "Identify compliance risks and potential legal exposure"
       ],
       highlight: "GammaLex's legal intelligence protects providers from compliance risks and regulatory exposure through proactive risk management."
     },
@@ -81,9 +69,7 @@ export default function HowWeDoItDetailed() {
       bulletPoints: [
         "Deliver insights through AI Assistant, APIs, and proprietary apps",
         "Make enterprise-grade expertise available to providers of all sizes",
-        "Integrate with existing EHR systems seamlessly",
-        "Improve authorization success rates across all provider types",
-        "Reduce denials and accelerate patient care outcomes"
+        "Integrate with existing EHR systems seamlessly"
       ],
       highlight: "GammaLex democratizes enterprise-grade healthcare intelligence, making advanced Clinical-Compliance expertise available to providers of all sizes."
     }
