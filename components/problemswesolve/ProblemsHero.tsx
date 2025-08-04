@@ -20,7 +20,7 @@ export default function ProblemsHero() {
       <div className="absolute inset-0 bg-black/40" />
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export default function ProblemsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            Unlocking Access Where Care Is Most Complex
+            With Vertical AI, We Unlock Access Where Care Is Most Complex
           </motion.h1>
           
           {/* Subheadline */}
@@ -44,7 +44,7 @@ export default function ProblemsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Authorization, forecasting, policies, risk assessment, collaboration, compliance, productivity, revenue
+            Authorization, forecasting, policies, risk assessment, compliance, revenue
           </motion.p>
         </motion.div>
       </div>
