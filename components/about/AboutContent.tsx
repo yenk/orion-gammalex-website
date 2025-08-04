@@ -20,7 +20,7 @@ export default function AboutContent() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
               {/* Founder Profile - Left Column */}
               <motion.div
-                className="lg:col-span-1 flex flex-col items-center lg:items-start space-y-6"
+                className="lg:col-span-1 flex flex-col items-center lg:items-start space-y-4"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -36,17 +36,17 @@ export default function AboutContent() {
                   />
                 </div>
                 
-                <div className="text-center lg:text-left space-y-3">
+                <div className="text-center lg:text-left space-y-2">
                   <h3 className="text-2xl font-semibold text-gray-900">
                     Yen Kha
                   </h3>
-                  <p className="text-lg text-gray-700">
-                    Founder & CEO, GammaLex AI Inc.
-                  </p>
-                  <p className="text-lg text-gray-700">
-                    Co-Founder & CTO, J4All
-                  </p>
-                  <div className="space-y-2">
+                                     <p className="text-base text-gray-700">
+                     Founder, GammaLex AI Inc.
+                   </p>
+                   <p className="text-base text-gray-700">
+                     Co-Founder, J4All
+                   </p>
+                  <div className="flex flex-col space-y-1 pt-2">
                     <a
                       href="https://www.linkedin.com/in/yenkha/"
                       target="_blank"
@@ -55,7 +55,6 @@ export default function AboutContent() {
                     >
                       Learn More →
                     </a>
-                    <br />
                     <a
                       href="https://j4all.org/"
                       target="_blank"
@@ -78,24 +77,16 @@ export default function AboutContent() {
               >
                 <div className="space-y-6">
                   <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
-                    The Vision Behind Vertical AI
+                    The Vision Behind GammaLex Vertical AI
                   </h2>
                   
-                  <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                  <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
                     <p>
-                      As a technical founder and AI systems architect, Yen Kha is focused on transforming legal and medical workflows with real-world intelligence. A 2025 LiFT Scholar at The Linux Foundation, she has been recognized for advancing open-source innovation in high-impact, underserved domains.
+                      Yen Kha, a 2025 LiFT Scholar recognized for advancing open source AI, builds real-world intelligence for complex healthcare and legal workflows. At GammaLex, she leads the design of vertical AI systems that merge cloud-native infrastructure with domain-specific reasoning models to deliver transparent, compliant guidance aligned with specialty workflows and shifting payer rules. This transforms complex pre-authorizations and compliance into clear, actionable, and auditable decisions that professionals trust.
                     </p>
                     
                     <p>
-                      At GammaLex, she is building vertical AI for the intersection of law, medicine, and policy—developing LLM-powered tools that accelerate medical pre-authorization and streamline clinical-compliance workflows. Her work turns regulatory and procedural complexity into real-time, transparent decisions that support care delivery, uphold legal standards, and enable ethical automation.
-                    </p>
-                    
-                    <p>
-                      She is also the Co-Founder and CTO of J4All, a nonprofit startup dedicated to expanding access to justice through responsible AI. There, she leads the development of intelligent legal support systems designed to promote equity, clarity, and dignity in high-stakes decisions.
-                    </p>
-                    
-                    <p>
-                      Across both ventures, she leads the design of end-to-end AI systems—merging cloud-native infrastructure with specialized LLM pipelines engineered for legal and clinical reasoning. Her architecture leverages agentic frameworks, high-fidelity retrieval, and context-aware model alignment to deliver intelligent, auditable decisions at scale—shaping a future where complex workflows are not just automated, but deeply understood.
+                      She is also a Co-Founder of J4All, a nonprofit expanding access to justice through responsible AI that promotes equity and clarity in high-stakes legal decisions. Across both ventures, Yen builds vertical AI not as a feature, but as a foundational intelligence designed to amplify human expertise where medicine, law, and policy converge.
                     </p>
                   </div>
                 </div>
@@ -141,20 +132,14 @@ export default function AboutContent() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Strategic Vision
-                  </h3>
-                  <p>
-                    Healthcare runs on clinical precision and regulatory clarity.
-                  </p>
-                  <p>
-                    At GammaLex, we build AI that's deeply vertical—trained to think like a clinician, operate like a compliance expert, and scale like a strategist.
-                  </p>
-                  <p>
-                    We don't replace expertise—we expand it. Our AI brings sharper decisions, faster workflows, and seamless alignment with outcomes and compliance.
-                  </p>
-                </div>
+                                 <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                   <h3 className="text-2xl font-semibold text-gray-900">
+                     Strategic Vision
+                   </h3>
+                   <p>
+                     We build for impact. AI that's vertically trained with clinical precisions, regulatory clarity, and optimize financial performance across the care ecosystem.
+                   </p>
+                 </div>
               </motion.div>
 
               {/* Engineering Leadership */}
