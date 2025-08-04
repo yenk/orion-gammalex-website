@@ -103,10 +103,10 @@ export default function HowWeDoItDetailed() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-slate-900 font-normal mb-6">
-            How GammaLex Works
+            Analyze & Forecast
           </h2>
           <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
-            A seamless workflow that transforms healthcare data into actionable intelligence
+            Our AI models assess denial risk, forecast authorization outcomes, and adapt to the nuances of your specialty and payers.
           </p>
         </motion.div>
 
@@ -137,7 +137,7 @@ export default function HowWeDoItDetailed() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <span className="text-2xl font-bold text-white">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-2xl font-normal text-white">{String(index + 1).padStart(2, '0')}</span>
                   </motion.div>
                 </div>
 
@@ -160,18 +160,18 @@ export default function HowWeDoItDetailed() {
                        </h3>
                      </div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-1">
                       {workflow.bulletPoints.map((point, pIndex) => (
                         <motion.div 
                           key={pIndex} 
-                          className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/50 transition-all duration-300"
+                          className="flex items-start space-x-2 py-1"
                           whileHover={{ x: 5 }}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: pIndex * 0.1 }}
                         >
-                          <div className="w-3 h-3 bg-blue-600 rounded-full mt-3 flex-shrink-0 shadow-sm"></div>
-                          <p className="text-lg text-slate-700 leading-relaxed">
+                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-1.5 flex-shrink-0"></div>
+                          <p className="text-sm text-slate-700 leading-tight">
                             {point}
                           </p>
                         </motion.div>
@@ -186,13 +186,13 @@ export default function HowWeDoItDetailed() {
                        whileHover={{ scale: 1.02, y: -5 }}
                        transition={{ duration: 0.3 }}
                      >
-                       <h4 className="text-xl font-semibold text-slate-900">Key Impact</h4>
-                       <p className="text-lg sm:text-xl text-slate-900 font-medium leading-relaxed">
+                       <h4 className="text-xl font-normal text-slate-900">Key Impact</h4>
+                                                <p className="text-lg sm:text-xl text-slate-900 font-normal leading-relaxed">
                          {workflow.highlight}
                        </p>
                        <div className="pt-4">
                          <Button 
-                           className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                           className="bg-blue-600 hover:bg-blue-700 text-white font-normal py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                          >
                            Learn more
                          </Button>
@@ -244,7 +244,7 @@ export default function HowWeDoItDetailed() {
                Experience the power of AI-driven healthcare intelligence
              </p>
              <Button 
-               className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+               className="bg-blue-600 hover:bg-blue-700 text-white font-normal py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
              >
                Get Started
              </Button>
