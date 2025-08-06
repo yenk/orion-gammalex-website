@@ -35,115 +35,110 @@ export default function ApplicationDetailed() {
 
   return (
     <div className="w-full font-inter relative">
-      {/* Vertical AI Suite Flowchart Section */}
+      {/* GammaLex Vertical AI Platform Flowchart */}
       <section className="w-full py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">GammaLex Vertical AI Platform</h2>
-          <p className="text-lg text-gray-600 mb-12">How our AI transforms clinical data into optimized healthcare decisions</p>
+          <p className="text-lg text-gray-600 mb-16">How our AI transforms clinical data into optimized healthcare decisions</p>
           
-          {/* Clean Process Flow */}
-          <div className="flex justify-center">
-            <div className="w-full max-w-5xl">
-              <div className="space-y-8">
-                
-                {/* Main Flow */}
-                <div className="flex items-center justify-between">
-                  
-                  {/* Clinical Intake */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                  >
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Clinical Intake</h3>
-                    <p className="text-sm text-gray-600">Patient encounter data & documentation</p>
-                  </motion.div>
-
-                  {/* Arrow */}
-                  <div className="flex-1 h-px bg-gray-300 mx-8 relative">
-                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-3 border-b-3 border-l-gray-900 border-t-transparent border-b-transparent"></div>
-                  </div>
-
-                  {/* Specialty-Adaptive AI */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                  >
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Specialty-Adaptive AI</h3>
-                    <p className="text-sm text-gray-600">Domain-specific modeling & workflows</p>
-                  </motion.div>
-
-                  {/* Arrow */}
-                  <div className="flex-1 h-px bg-gray-300 mx-8 relative">
-                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-3 border-b-3 border-l-gray-900 border-t-transparent border-b-transparent"></div>
-                  </div>
-
-                  {/* Authorization & Claims Intelligence */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                  >
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Authorization & Claims Intelligence</h3>
-                    <p className="text-sm text-gray-600">Real-time policy analysis & validation</p>
-                  </motion.div>
-
-                  {/* Arrow */}
-                  <div className="flex-1 h-px bg-gray-300 mx-8 relative">
-                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-3 border-b-3 border-l-gray-900 border-t-transparent border-b-transparent"></div>
-                  </div>
-
-                  {/* Predictive Denial Prevention */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                  >
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Predictive Denial Prevention</h3>
-                    <p className="text-sm text-gray-600">Historical analysis & risk flags</p>
-                  </motion.div>
-
-                  {/* Arrow */}
-                  <div className="flex-1 h-px bg-gray-300 mx-8 relative">
-                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-3 border-b-3 border-l-gray-900 border-t-transparent border-b-transparent"></div>
-                  </div>
-
-                  {/* Optimized Healthcare Outcomes */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                  >
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">Optimized Healthcare Outcomes</h3>
-                    <p className="text-sm text-gray-600">94% approval rate • 451% ROI</p>
-                  </motion.div>
+          {/* Clean Horizontal Flow */}
+          <div className="relative">
+            {/* Main Flow Line */}
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 transform -translate-y-1/2"></div>
+            
+            {/* Flow Steps */}
+            <div className="relative flex justify-between items-center">
+              
+              {/* Step 1: Clinical Intake */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center space-y-3"
+              >
+                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
+                <div className="text-center max-w-32">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Clinical Intake</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Patient encounter data & documentation</p>
                 </div>
+              </motion.div>
 
-                {/* Foundation */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  viewport={{ once: true }}
-                  className="text-center pt-8 border-t border-gray-200"
-                >
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Compliance, Audit & Integration Framework</h4>
-                  <p className="text-sm text-gray-600">HIPAA/GDPR/CMS • Enterprise API • SOC2 Type II • 99.9% uptime</p>
-                </motion.div>
-              </div>
+              {/* Step 2: Specialty-Adaptive AI */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center space-y-3"
+              >
+                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
+                <div className="text-center max-w-32">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Specialty-Adaptive AI</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Domain-specific modeling & workflows</p>
+                </div>
+              </motion.div>
+
+              {/* Step 3: Authorization & Claims Intelligence */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center space-y-3"
+              >
+                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
+                <div className="text-center max-w-32">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Authorization & Claims Intelligence</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Real-time policy analysis & validation</p>
+                </div>
+              </motion.div>
+
+              {/* Step 4: Predictive Denial Prevention */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center space-y-3"
+              >
+                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
+                <div className="text-center max-w-32">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Predictive Denial Prevention</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Historical analysis & risk flags</p>
+                </div>
+              </motion.div>
+
+              {/* Step 5: Optimized Healthcare Outcomes */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center space-y-3"
+              >
+                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
+                <div className="text-center max-w-32">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Optimized Healthcare Outcomes</h3>
+                  <p className="text-sm text-gray-600 leading-tight">94% approval rate • 451% ROI</p>
+                </div>
+              </motion.div>
             </div>
           </div>
+
+          {/* Foundation Framework */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="mt-16 pt-8 border-t border-gray-200"
+          >
+            <div className="max-w-2xl mx-auto">
+              <h4 className="text-xl font-semibold text-gray-900 mb-3">Compliance, Audit & Integration Framework</h4>
+              <p className="text-sm text-gray-600">HIPAA/GDPR/CMS • Enterprise API • SOC2 Type II • 99.9% uptime</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
