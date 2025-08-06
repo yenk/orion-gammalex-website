@@ -58,7 +58,7 @@ export function CopilotHero() {
       <div className="relative w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 z-10 h-full">
         {/* Main Hero Heading */}
         <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
             {headingLines[0].map((item, j) => (
               <motion.span
                 key={j}

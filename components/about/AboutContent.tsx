@@ -37,7 +37,7 @@ export default function AboutContent() {
                 </div>
                 
                 <div className="text-center lg:text-left space-y-2">
-                  <h3 className="text-2xl font-semibold text-gray-900">
+                  <h3 className="text-2xl text-gray-900">
                     Yen Kha
                   </h3>
                                      <p className="text-base text-gray-700">
@@ -51,7 +51,7 @@ export default function AboutContent() {
                       href="https://www.linkedin.com/in/yenkha/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
+                      className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
                     >
                       Learn More →
                     </a>
@@ -59,7 +59,7 @@ export default function AboutContent() {
                       href="https://j4all.org/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-medium transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
+                      className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
                     >
                       Visit J4All →
                     </a>
@@ -76,8 +76,8 @@ export default function AboutContent() {
                 viewport={{ once: true }}
               >
                 <div className="space-y-6">
-                  <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
-                    The Vision Behind GammaLex Vertical AI
+                  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-gray-900 leading-tight">
+                    The Vision Behind <span className="text-gammalex-purple">GammaLex Vertical AI</span>
                   </h2>
                   
                   <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
@@ -97,8 +97,19 @@ export default function AboutContent() {
       </section>
 
       {/* Building AI Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/images/about/vertical.png)',
+          }}
+        />
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60" />
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -114,12 +125,9 @@ export default function AboutContent() {
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white">
                 Vertical AI for a Healthier System
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We build for impact. AI designed to streamline care delivery, ensure compliance, and optimize financial performance.
-              </p>
             </motion.div>
 
             {/* Two Column Layout */}
@@ -132,8 +140,8 @@ export default function AboutContent() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                                 <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                   <h3 className="text-2xl font-semibold text-gray-900">
+                                 <div className="space-y-4 text-lg text-white/90 leading-relaxed">
+                   <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
                      Strategic Vision
                    </h3>
                    <p>
@@ -150,19 +158,19 @@ export default function AboutContent() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                  <h3 className="text-2xl font-semibold text-gray-900">
+                <div className="space-y-4 text-lg text-white/90 leading-relaxed">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
                     Engineering Leadership
                   </h3>
-                  <ul className="list-disc pl-5 space-y-2">
+                  <ul className="list-disc pl-5 space-y-2 text-white/90">
                     <li>
-                      <span className="font-semibold">Scalable by Design:</span> We build cloud-native AI systems aligned to real-world clinical workflows, specialty logic, and compliance standards.
+                      <span className="text-white">Scalable by Design:</span> We build cloud-native AI systems aligned to real-world clinical workflows, specialty logic, and compliance standards.
                     </li>
                     <li>
-                      <span className="font-semibold">Differentiated by Infrastructure:</span> Our agentic frameworks and custom retrieval pipelines power explainable, auditable outputs that improve with every use.
+                      <span className="text-white">Differentiated by Infrastructure:</span> Our agentic frameworks and custom retrieval pipelines power explainable, auditable outputs that improve with every use.
                     </li>
                     <li>
-                      <span className="font-semibold">Vertical from Day One:</span> GammaLex goes where generic models can't—engineering intelligent infrastructure purpose-built for healthcare delivery.
+                      <span className="text-white">Vertical from Day One:</span> GammaLex goes where generic models can't—engineering intelligent infrastructure purpose-built for healthcare delivery.
                     </li>
                   </ul>
                 </div>
@@ -183,7 +191,7 @@ export default function AboutContent() {
             className="text-center space-y-6"
           >
             <motion.h2 
-              className="text-3xl md:text-4xl font-semibold text-white drop-shadow-lg"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white drop-shadow-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}

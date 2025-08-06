@@ -65,7 +65,7 @@ export default function Navigation() {
   ];
 
   const companyDropdown: DropdownItem[] = [
-    { id: "about", label: "About", description: "" },
+    { id: "about", label: "About Us", description: "" },
     { id: "advisory-council", label: "Advisory Council", description: "" },
   ];
 

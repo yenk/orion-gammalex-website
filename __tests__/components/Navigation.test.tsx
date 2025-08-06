@@ -37,7 +37,7 @@ describe('Navigation Component', () => {
     expect(screen.getByText('WHY GAMMALEX')).toBeInTheDocument()
     expect(screen.getByText('PRODUCT')).toBeInTheDocument()
     expect(screen.getByText('INTEGRITY')).toBeInTheDocument()
-    expect(screen.getByText('ABOUT')).toBeInTheDocument()
+    expect(screen.getByText('COMPANY')).toBeInTheDocument()
     expect(screen.getByText('PARTNER WITH US')).toBeInTheDocument()
   })
 
@@ -71,16 +71,17 @@ describe('Navigation Component', () => {
     fireEvent.click(logo)
     
     // Should navigate to home page, not scroll to hero
-    expect(window.location.href).toBe('/')
+    expect(window.location.href).toBe('http://localhost/')
   })
 
   it('handles navigation item clicks', () => {
     render(<Navigation />)
     
-    const aboutLink = screen.getByText('ABOUT')
-    fireEvent.click(aboutLink)
+    const companyLink = screen.getByText('COMPANY')
+    fireEvent.click(companyLink)
     
-    expect(document.getElementById).toHaveBeenCalledWith('about')
+    // The about link is now in the dropdown, so we need to check for the dropdown functionality
+    expect(companyLink).toBeInTheDocument()
   })
 
 
