@@ -62,7 +62,10 @@ export function CopilotHero() {
             {headingLines[0].map((item, j) => (
               <motion.span
                 key={j}
-                className={`inline-block ${j !== headingLines[0].length - 1 ? 'mr-1 sm:mr-2 md:mr-3 lg:mr-4' : ''} text-white`}
+                className={`inline-block text-white 
+                  ${j !== headingLines[0].length - 1 ? 'mr-1 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-6 2xl:mr-8' : ''}
+                  tracking-tight sm:tracking-normal md:tracking-wide lg:tracking-wider xl:tracking-widest
+                `}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
