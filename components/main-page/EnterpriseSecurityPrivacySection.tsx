@@ -88,7 +88,7 @@ export default function EnterpriseSecurityPrivacySection() {
         >
           <a
             href="/trust-compliance"
-            className="inline-block bg-blue-900 hover:bg-blue-950 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200"
+            className="inline-block bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple transition-all duration-300 transform hover:scale-105"
           >
             Learn more
           </a>
@@ -96,4 +96,4 @@ export default function EnterpriseSecurityPrivacySection() {
       </div>
     </section>
   )
-} 
+}
