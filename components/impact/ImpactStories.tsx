@@ -87,9 +87,9 @@ export default function ImpactStories() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-gray-100">
-                <button className="flex items-center gap-2 text-gammalex-purple font-semibold hover:gap-3 transition-all">
+                <button className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white font-semibold px-5 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple">
                   Read Full Case Study
-                  <div className="w-4 h-4 border-r-2 border-t-2 border-gammalex-orange transform rotate-45"></div>
+                  <span className="w-4 h-4 border-r-2 border-t-2 border-white transform rotate-45 transition-transform duration-300 group-hover:translate-x-1"></span>
                 </button>
               </div>
             </motion.div>
@@ -98,4 +98,4 @@ export default function ImpactStories() {
       </div>
     </section>
   )
-} 
+}

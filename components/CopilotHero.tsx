@@ -59,24 +59,23 @@ export function CopilotHero() {
         {/* Main Hero Heading */}
         <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal font-inter leading-[1.1] text-white max-w-6xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-            {headingLines[0].map((item, j) => (
-              <motion.span
-                key={j}
-                className={`inline-block text-white 
-                  ${j !== headingLines[0].length - 1 ? 'mr-1 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-6 2xl:mr-8' : ''}
-                  tracking-tight sm:tracking-normal md:tracking-wide lg:tracking-wider xl:tracking-widest
-                `}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: j * 0.2, // Stagger each word by 0.2 seconds
-                  ease: "easeOut"
-                }}
-              >
-                {item.word}
-              </motion.span>
-            ))}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6">
+              {headingLines[0].map((item, j) => (
+                <motion.span
+                  key={j}
+                  className="inline-block text-white tracking-tight sm:tracking-normal md:tracking-wide lg:tracking-wider xl:tracking-widest"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: j * 0.2,
+                    ease: 'easeOut'
+                  }}
+                >
+                  {item.word}
+                </motion.span>
+              ))}
+            </div>
           </h1>
         </div>
 
@@ -177,4 +176,4 @@ export function CopilotHero() {
       </div>
     </section>
   )
-} 
+}

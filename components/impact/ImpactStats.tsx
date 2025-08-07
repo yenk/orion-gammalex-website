@@ -133,11 +133,7 @@ export default function ImpactStats() {
                   >
                     <Link href="/application">
                       <motion.button 
-                        className={`px-8 py-4 font-normal rounded-lg transition-all duration-300 text-lg ${
-                          section.isDark 
-                            ? "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20"
-                            : "bg-slate-900 text-white hover:bg-slate-800"
-                        }`}
+                        className="px-6 sm:px-8 py-3 sm:py-4 font-bold rounded-xl transition-all duration-300 text-sm sm:text-base lg:text-lg bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white shadow-lg hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple transform hover:scale-105"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -153,4 +149,4 @@ export default function ImpactStats() {
       ))}
     </section>
   )
-} 
+}
