@@ -198,12 +198,54 @@ export default function Navigation() {
               onClick={() => window.location.href = '/'}
               whileHover={{ scale: 1.02 }}
             >
-              <img
-                src="/gammalexlogo-transparent.png"
-                alt="GammaLex Logo"
-                style={{ filter: 'brightness(0) invert(1)' }}
-                className={`transition-all duration-300 h-20 sm:h-24 lg:h-32 max-w-none`}
-              />
+              <div className="flex items-center gap-4">
+                <img
+                  src="/gammalexlogo-brain-transparent.png"
+                  alt="GammaLex Logo"
+                  className="h-16 w-16 transition-all duration-300"
+                />
+                <span className="text-white font-normal text-2xl tracking-tight overflow-hidden">
+                  <motion.span
+                    initial={{ opacity: 0, scale: 0.5, rotateX: 90 }}
+                    animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+                    transition={{ 
+                      duration: 1.2, 
+                      ease: "easeOut",
+                      delay: 0.5
+                    }}
+                    className="inline-block"
+                    whileHover={{ 
+                      scale: 1.05,
+                      textShadow: "0 0 20px rgba(255,255,255,0.8)"
+                    }}
+                  >
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.8, delay: 1.7 }}
+                      className="inline-block"
+                    >
+                      Gamma
+                    </motion.span>
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.8, delay: 1.9 }}
+                      className="inline-block"
+                    >
+                      Lex
+                    </motion.span>
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.8, delay: 2.1 }}
+                      className="inline-block ml-2"
+                    >
+                      AI
+                    </motion.span>
+                  </motion.span>
+                </span>
+              </div>
             </motion.div>
 
             {/* Desktop Navigation */}

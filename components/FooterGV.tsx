@@ -12,11 +12,11 @@ export default function FooterGV() {
         <div className="w-fit -mt-4">
           <Link href="/">
             <Image
-              src="/gammalexlogo-transparent.png"
+              src="/gammalexlogo-brain-transparent.png"
               alt="GammaLex"
-              width={96}
-              height={96}
-              className="h-24 relative z-10"
+              width={64}
+              height={64}
+              className="h-16 w-16 relative z-10"
               priority
             />
           </Link>

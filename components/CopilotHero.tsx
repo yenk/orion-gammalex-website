@@ -63,12 +63,12 @@ export function CopilotHero() {
               {headingLines[0].map((item, j) => (
                 <motion.span
                   key={j}
-                  className="inline-block text-white tracking-tight sm:tracking-normal md:tracking-wide lg:tracking-wider xl:tracking-widest"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  className="inline-block text-white tracking-tight sm:tracking-normal md:tracking-wide lg:tracking-wider xl:tracking-widest overflow-hidden"
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                   transition={{
-                    duration: 0.8,
-                    delay: j * 0.2,
+                    duration: 1.2,
+                    delay: j * 0.15,
                     ease: 'easeOut'
                   }}
                 >
@@ -83,17 +83,24 @@ export function CopilotHero() {
         <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
           <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             <div className="mb-2 sm:mb-3 md:mb-4">
-              <span className="inline-block mr-1 sm:mr-2">Predict</span>
-              <span className="inline-block mr-1 sm:mr-2">risks,</span>
-              <span className="inline-block mr-1 sm:mr-2">validate</span>
-              <span className="inline-block mr-1 sm:mr-2">care,</span>
-              <span className="inline-block mr-1 sm:mr-2">ensure</span>
-              <span className="inline-block mr-1 sm:mr-2">audit</span>
-              <span className="inline-block mr-1 sm:mr-2">readiness,</span>
-              <span className="inline-block mr-1 sm:mr-2">and</span>
-              <span className="inline-block mr-1 sm:mr-2">optimize</span>
-              <span className="inline-block mr-1 sm:mr-2">revenue</span>
-              <span className="inline-block mr-1 sm:mr-2">growth</span>
+              {[
+                "Predict", "risks,", "validate", "care,", "ensure", "audit", 
+                "readiness,", "and", "optimize", "revenue", "growth"
+              ].map((word, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block mr-1 sm:mr-2 overflow-hidden"
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    delay: 1.5 + (index * 0.1),
+                    ease: "easeOut"
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
             </div>
           </h2>
         </div>
