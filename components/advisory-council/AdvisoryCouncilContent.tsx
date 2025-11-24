@@ -200,15 +200,31 @@ export default function AdvisoryCouncilContent() {
 
                       {/* Back of Card - Bio */}
                       <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180">
-                        <div className="w-full h-full bg-stone-50 rounded-lg p-6 overflow-y-auto">
-                          {/* Bio Text Only */}
-                          <div className="text-sm text-gray-900 leading-relaxed font-normal text-left">
-                            {advisor.bio.split(/(?<=\.)\s+(?=[A-Z])/).map((paragraph, idx) => (
-                              <p key={idx} className="mb-4 last:mb-0">
-                                {paragraph.trim()}
-                              </p>
-                            ))}
+                        <div className="w-full h-full bg-stone-50 rounded-lg p-6 overflow-y-auto flex flex-col">
+                          {/* Bio Text */}
+                          <div className="flex-1 mb-6">
+                            <div className="text-sm text-gray-900 leading-relaxed font-normal text-left">
+                              {advisor.bio.split(/(?<=\.)\s+(?=[A-Z])/).map((paragraph, idx) => (
+                                <p key={idx} className="mb-4 last:mb-0">
+                                  {paragraph.trim()}
+                                </p>
+                              ))}
+                            </div>
                           </div>
+                          
+                          {/* LinkedIn Link */}
+                          {advisor.linkedin && (
+                            <div className="mt-auto">
+                              <a
+                                href={advisor.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-gray-900 hover:text-gray-700 text-sm font-normal transition-colors duration-200 border-b border-gray-300 hover:border-gray-600"
+                              >
+                                Learn More →
+                              </a>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
