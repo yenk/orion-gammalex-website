@@ -8,21 +8,21 @@ export default function ImpactStats() {
     {
       title: "Clinical Intelligence & Compliance",
       subtitle: "Real-time insights for defensible documentation and audit readiness",
-      description: "92% of radiation oncologists report prior authorization delays. GammaLex provides unbiased insights for improved decision-making around clinical authorization and compliance.",
+      description: "Radiology imaging authorization delays affect 92% of imaging centers. GammaLex's approval intelligence provides real-time insights for improved decision-making around imaging authorization and compliance.",
       metric: "92%",
       isDark: true
     },
     {
       title: "Revenue & Risk Optimization", 
       subtitle: "Prevents denials, protects margins, and accelerates reimbursement",
-      description: "$25.7B was spent fighting denials in 2023. GammaLex reduces claim denials and accelerates reimbursement through transparent, compliant claim generation.",
+      description: "$25.7B was spent fighting denials in 2023. GammaLex's approval intelligence reduces imaging authorization denials and accelerates reimbursement through transparent, compliant authorization generation.",
       metric: "$25.7B",
       isDark: false
     },
     {
       title: "Specialty-Aware AI Platform",
-      subtitle: "Adapts to clinical workflows and evolving payer rules",
-      description: "93% PA rate for cardiology - second-highest among specialties. Our platform integrates with EHRs and stays aligned with fast-changing payer rules—supporting expert decision-making at scale.",
+      subtitle: "Adapts to radiology workflows and evolving payer rules",
+      description: "Built for radiology imaging workflows, our platform integrates with RIS and EHRs, staying aligned with fast-changing payer rules and ACR guidelines. Expanding to oncology, cardiology, and other specialties.",
       metric: "93%",
       isDark: true
     },

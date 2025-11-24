@@ -47,7 +47,7 @@ export default function RevenueOptimizationSection() {
               <div className="flex items-start space-x-3">
                 <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
                 <p className="text-base text-slate-700 leading-relaxed">
-                  Real-time AI analyzes clinical documentation and predicts denial risk before claims are submitted, giving you time to fix issues proactively.
+                  Real-time AI analyzes radiology imaging requests and clinical documentation, predicting denial risk before authorization submission, giving you time to fix issues proactively.
                 </p>
               </div>
               

@@ -42,7 +42,7 @@ export default function WhatWeDoHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            GammaLex is vertical AI for healthcare—specialty-trained to predict denial risk and coverage alignment, empowering faster approvals in high-stakes care.
+            GammaLex is approval intelligence for radiology imaging—built to predict authorization outcomes and prevent denials, empowering faster approvals for diagnostic imaging. Expanding to oncology, cardiology, and other high-stakes specialties.
           </motion.p>
         </motion.div>
       </div>

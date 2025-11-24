@@ -41,10 +41,10 @@ export default function ProblemsWeSolveSection() {
               Patient Harm & Delays
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Care delays caused by pre-authorization issues lead to worse health outcomes, treatment abandonment, and in some cases, serious adverse events or hospitalizations.
+              Radiology imaging delays caused by authorization issues lead to delayed diagnoses, treatment abandonment, and in some cases, serious adverse events or hospitalizations.
             </p>
             <p className="text-lg text-white/90 leading-relaxed">
-              Patients often abandon treatment when faced with lengthy authorization processes, resulting in preventable complications and increased healthcare costs.
+              Patients often abandon treatment when faced with lengthy imaging authorization processes, resulting in preventable complications and increased healthcare costs.
             </p>
           </motion.div>
 
@@ -78,8 +78,8 @@ export default function ProblemsWeSolveSection() {
           <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-6">
             GammaLex transforms this crisis into opportunity
           </h3>
-          <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
-            By automating pre-authorization processes with clinical-compliant intelligence, we enable faster access to care, reduced administrative burden, and fewer denials and legal risks.
+            <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
+            By automating radiology imaging authorization with approval intelligence, we enable faster access to diagnostic imaging, reduced administrative burden, and fewer denials and legal risks.
           </p>
         </motion.div>
       </div>

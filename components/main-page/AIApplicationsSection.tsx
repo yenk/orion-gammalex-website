@@ -91,7 +91,7 @@ export default function AIApplicationsSection() {
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Domain-specific AI for radiology, oncology, cardiology. Trained on 50K+ specialty cases for precision.
+              Domain-specific AI built for radiology imaging workflows, trained on 50K+ radiology cases. Expanding to oncology, cardiology, and other specialties.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">

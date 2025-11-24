@@ -24,7 +24,7 @@ export default function WhatWeDoContent() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Most people view AI as chatbots or image generators—valuable tools, but only a small fraction of what today's deep learning and neural networks can accomplish. GammaLex takes a different approach. We're not a general-purpose platform; we're built for depth and precision, training our models specifically on the language of medicine, payer policies, and clinical documentation to address challenges that traditional systems overlook. At its core, GammaLex is vertical AI for healthcare designed to interpret evolving medical policies, predict denial risks, and guide care teams toward coverage-aligned decisions.
+                Built specifically for radiology imaging workflows, GammaLex's approval intelligence predicts authorization outcomes, validates imaging requests against payer policies in real-time, and prevents denials before they impact patient care or revenue. We're not a general-purpose platform; we're built for depth and precision, training our models on radiology imaging data, ACR guidelines, and payer authorization rules to address challenges that traditional systems overlook. As we expand to oncology, cardiology, and other specialties, our AI adapts to each domain's unique requirements.
               </motion.p>
               
               <motion.p 
@@ -34,7 +34,7 @@ export default function WhatWeDoContent() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                GammaLex AI's mission is to help providers, payers, and patients not only automate but excel by improving authorization success rates, reducing claim denials and delays, enhancing patient coordination, optimizing revenue pathways, and promoting fair, transparent coverage decisions across the care continuum. The GammaLex platform delivers intelligence at scale—equivalent to thousands of clinical, legal, and administrative experts working seamlessly together by helping all stakeholders adapt in real time to policy shifts, payer behavior, and regulatory changes, ensuring care progresses smoothly and efficiently for everyone involved.
+                GammaLex's approval intelligence helps radiology teams, imaging centers, and hospitals excel by improving imaging authorization success rates, reducing denials and delays, and accelerating patient access to diagnostic imaging. Our platform delivers real-time policy validation and risk prediction at scale—helping radiology staff adapt instantly to payer policy shifts, ACR guideline updates, and authorization rule changes. As we expand to other specialties, GammaLex brings the same precision and intelligence to oncology, cardiology, and beyond.
               </motion.p>
             </div>
           </motion.div>

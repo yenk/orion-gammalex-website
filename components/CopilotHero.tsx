@@ -13,14 +13,11 @@ import React from "react"
 
 const headingLines = [
   [
-    { word: "Vertical", orange: false },
-    { word: "AI", orange: false },
-    { word: "to", orange: false },
-    { word: "align", orange: false },
-    { word: "care,", orange: false },
-    { word: "policy,", orange: false },
-    { word: "and", orange: false },
-    { word: "compliance", orange: false },
+    { word: "Approval", orange: false },
+    { word: "intelligence", orange: false },
+    { word: "for", orange: false },
+    { word: "radiology", orange: false },
+    { word: "imaging", orange: false },
   ],
 ];
 
@@ -84,8 +81,8 @@ export function CopilotHero() {
           <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             <div className="mb-2 sm:mb-3 md:mb-4">
               {[
-                "Predict", "risks,", "validate", "care,", "ensure", "audit", 
-                "readiness,", "and", "optimize", "revenue", "growth"
+                "Predict", "authorization", "outcomes,", "prevent", "denials,", 
+                "and", "accelerate", "imaging", "approvals"
               ].map((word, index) => (
                 <motion.span
                   key={index}

@@ -45,12 +45,12 @@ export default function HowWeDoItDetailed() {
       title: "Specialty-Specific Optimization",
       icon: Target,
       bulletPoints: [
-        "RADIOLOGY: Adapt to imaging modality requirements and American College of Radiology (ACR) guidelines",
-        "ONCOLOGY: Optimize for National Comprehensive Cancer Network (NCCN) treatment protocols",
-        "CARDIOLOGY: Process American College of Cardiology (ACC) coding standards",
+        "RADIOLOGY: Built for imaging authorization workflows, ACR guidelines, and modality-specific requirements (CT, MRI, diagnostic imaging)",
+        "Expanding to ONCOLOGY: Optimize for National Comprehensive Cancer Network (NCCN) treatment protocols",
+        "Expanding to CARDIOLOGY: Process American College of Cardiology (ACC) coding standards",
         "Optimize for specialty-specific payer policies and coverage rules"
       ],
-      highlight: "GammaLex's specialty-optimized AI delivers domain expertise for high-stakes medical specialties, ensuring precise authorization predictions."
+      highlight: "GammaLex's radiology-optimized approval intelligence delivers domain expertise for imaging workflows, ensuring precise authorization predictions. Expanding to oncology, cardiology, and other high-stakes specialties."
     },
     {
       title: "Compliance & Risk Management",

@@ -56,14 +56,6 @@ export default function AdvisoryCouncilContent() {
       bio: "Jim has spent two decades helping healthcare organizations grow by turning data into action. As Chief Strategy Officer at Aspirion, he focuses on improving financial performance and patient outcomes across complex revenue cycle environments—exactly the kind of challenge GammaLex's AI solutions are designed to address.",
       image: "/images/advisory/jim.png",
       linkedin: "https://www.linkedin.com/in/jimbohnsack/",
-    },
-    {
-      name: "Daniela Steinsapir",
-      title: "Senior Manager, Experience Architecture, Autodesk",
-      expertise: "Experience Design, Product Strategy & User-Centered Innovation",
-      bio: "Daniela's work leading Experience Architecture at Autodesk and Experience Design at Verily centers on one principle: complex technology should feel simple. Her expertise in scaling digital ecosystems and creating intuitive interfaces ensures GammaLex's AI solutions are accessible to healthcare professionals who need clarity, not complexity.",
-      image: "/images/advisory/daniela.png",
-      linkedin: "https://www.linkedin.com/in/daniela-steinsapir-b5b9258/",
     }
   ];
 

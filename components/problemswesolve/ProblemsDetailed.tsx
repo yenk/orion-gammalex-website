@@ -30,9 +30,9 @@ export default function ProblemsDetailed() {
     {
       title: "We solve high-stake specialty denials before they start",
       paragraphs: [
-        "We’re starting with radiology, where denial risk is highest and complexity is greatest. Every specialty faces unique authorization and denial challenges. GammaLex’s AI adapts to each specialty’s data and payer history, providing daily forecasts and precise denial predictions ßeven in volatile environments."
+        "We're built for radiology imaging, where denial risk is highest and authorization complexity is greatest. Our approval intelligence predicts authorization outcomes for CT, MRI, and diagnostic imaging studies, providing daily forecasts and precise denial predictions even in volatile environments. As we expand to oncology, cardiology, and other high-stakes specialties, GammaLex's AI adapts to each domain's unique data and payer history."
       ],
-      highlight: "Specialty-optimized AI: daily forecasts, precise denial predictions, and reliability in volatile healthcare environments."
+      highlight: "Radiology-optimized approval intelligence with daily forecasts and precise denial predictions. Expanding to oncology, cardiology, and other high-stakes specialties."
     },
     {
       title: "We deliver sustainable competitive advantage",

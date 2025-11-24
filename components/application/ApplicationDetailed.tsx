@@ -22,7 +22,7 @@ export default function ApplicationDetailed() {
     {
       title: "Specialty-Adaptive AI",
       paragraphs: [
-        "Our modeling is trained on specialty-specific medical-legal knowledge, including CPT/ICD nuances, clinical documentation standards, and payer-specific rules. GammaLex adapts to specialty workflows—radiology, oncology, cardiology, and more—to ensure relevance, accuracy, and optimized throughput across diverse care environments."
+        "Our AI is trained on radiology imaging workflows, CPT/ICD nuances for imaging studies, and payer-specific authorization rules. Built specifically for radiology imaging authorization, GammaLex's approval intelligence validates imaging requests against ACR guidelines and payer policies in real-time. As we expand to oncology, cardiology, and other specialties, GammaLex adapts to each domain's clinical documentation standards and workflow requirements."
       ]
     },
     {
