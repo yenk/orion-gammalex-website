@@ -451,57 +451,46 @@ export default function HowWeDoItDetailed() {
           </motion.p>
         </div>
 
-        {/* Focus Areas - Split Up Side-by-Side */}
-        <div className="space-y-32">
+        {/* Focus Areas - Horizontal Scroll */}
+        <div className="flex overflow-x-auto pb-12 gap-8 px-4 snap-x snap-mandatory no-scrollbar">
           {focusAreas.map((area, index) => (
             <motion.div 
               key={area.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="min-w-[90vw] md:min-w-[900px] snap-center bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col lg:flex-row"
             >
-              {/* Text Side - Card Style */}
-              <div className="flex-1 w-full relative p-10 bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden min-h-[400px] flex flex-col justify-center">
-                {/* Big Number Background */}
-                <div className="absolute top-0 left-8 text-[160px] font-bold text-emerald-50/80 leading-none select-none pointer-events-none -translate-y-10 z-0">
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-                
-                <div className="relative z-10 pt-12">
-                    <h3 className="text-3xl font-medium text-slate-900 mb-4 tracking-tight">
-                      {area.title}
-                    </h3>
-                    
-                    {/* Divider Line */}
-                    <div className="w-16 h-1 bg-emerald-400 mb-8 rounded-full"></div>
-
-                    <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">
-                      {area.summary}
-                    </p>
-                    
-                    <ul className="space-y-4">
-                      {area.points.map((point) => (
-                        <li key={point} className="flex items-start gap-3 text-slate-500">
-                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                          <span className="leading-relaxed">{point}</span>
+              {/* Text Section (Left) */}
+              <div className="flex-1 p-10 relative flex flex-col justify-center min-h-[400px]">
+                 {/* Big Number */}
+                 <div className="absolute top-0 left-6 text-[140px] font-bold text-emerald-50/80 leading-none select-none pointer-events-none -translate-y-8 z-0">
+                    {String(index + 1).padStart(2, '0')}
+                 </div>
+                 
+                 <div className="relative z-10 mt-8">
+                    <h3 className="text-3xl font-medium text-slate-900 mb-4 tracking-tight">{area.title}</h3>
+                    <div className="w-16 h-1 bg-emerald-400 mb-6 rounded-full" />
+                    <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">{area.summary}</p>
+                    <ul className="space-y-3">
+                      {area.points.map(p => (
+                        <li key={p} className="flex items-start gap-3 text-sm text-slate-500">
+                          <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                          <span className="leading-relaxed">{p}</span>
                         </li>
                       ))}
                     </ul>
-                </div>
+                 </div>
               </div>
 
-              {/* Visual Side */}
-              <div className="flex-1 w-full">
-                <div className="relative">
-                   {/* Decorative blobs */}
-                   <div className={`absolute -inset-4 rounded-full blur-3xl opacity-20 ${index % 2 === 0 ? 'bg-gammalex-purple' : 'bg-blue-400'}`} />
-                   
+              {/* Visual Section (Right) */}
+              <div className="flex-1 bg-slate-50 p-8 flex items-center justify-center border-l border-slate-100">
+                 <div className="w-full max-w-[500px] shadow-2xl rounded-xl">
                    <MockWindow title={`GammaLex - ${area.title}`}>
-                      {getMockComponent(area.id)}
+                     {getMockComponent(area.id)}
                    </MockWindow>
-                </div>
+                 </div>
               </div>
             </motion.div>
           ))}
