@@ -326,7 +326,7 @@ const MockVoice = () => (
             <div 
               key={i} 
               className="w-1 bg-slate-900/20 rounded-full transition-all duration-75" 
-              style={{ height: `${Math.max(20, Math.random() * 100)}%` }}
+              style={{ height: `${30 + (i * 13) % 60}%` }}
             />
           ))}
        </div>
@@ -426,7 +426,7 @@ const getMockComponent = (id: string) => {
 
 export default function HowWeDoItDetailed() {
   return (
-    <section className="w-full font-inter relative bg-slate-50 py-24">
+    <section id="workflow" className="w-full font-inter relative bg-slate-50 py-24">
       <div className="mx-auto max-w-7xl space-y-24 px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

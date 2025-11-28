@@ -7,141 +7,34 @@ import { Button } from '@/components/ui/button'
 export default function ApplicationDetailed() {
   const productFeatures = [
     {
-      title: "Authorization & Claims Intelligence",
+      title: "AI Detection & Insight Intelligence",
       paragraphs: [
-        "GammaLex's AI engine continuously analyzes payer policies and clinical data to streamline both prior authorization and claims submission. It auto-updates policy changes, validates documentation against requirements, and delivers real-time recommendations to avoid errors and accelerate approvals—all within your existing EHR and billing workflows."
+        "GammaLex's AI engine continuously analyzes imaging data, clinical context, and longitudinal records to surface early breast cancer signals and deliver actionable recommendations directly inside radiologist workflows."
       ]
     },
     {
-      title: "Predictive Denial Prevention",
+      title: "Predictive Case Prioritization",
       paragraphs: [
-        "Proactively flags high-risk claims before submission using your historical data, payer mix, and specialty focus. GammaLex provides precise, actionable feedback to minimize denials—reducing administrative burden and downstream appeals while increasing first-pass approval rates."
+        "Model-driven scoring spots the highest-probability cases, balances sensitivity with precision, and keeps reads focused on patients who benefit most from timely intervention."
       ]
     },
 
     {
       title: "Specialty-Adaptive AI",
       paragraphs: [
-        "Our AI is trained on radiology imaging workflows, CPT/ICD nuances for imaging studies, and payer-specific authorization rules. Built specifically for radiology imaging authorization, GammaLex's approval intelligence validates imaging requests against ACR guidelines and payer policies in real-time. As we expand to oncology, cardiology, and other specialties, GammaLex adapts to each domain's clinical documentation standards and workflow requirements."
+        "Our models are trained on radiology imaging workflows, CPT/ICD nuances for imaging studies, and clinical guidelines. Built specifically for breast imaging, GammaLex validates findings against ACR standards and adapts to each specialty's documentation practices."
       ]
     },
     {
       title: "Compliance, Audit & Integration Framework",
       paragraphs: [
-        "Supports full regulatory readiness (HIPAA, GDPR, CMS) with built-in audit trails, security protocols, and automated compliance reporting. GammaLex integrates seamlessly into enterprise systems via API, enabling secure, bi-directional data exchange and scalable deployment across complex organizations."
+        "Supports full regulatory readiness (HIPAA, GDPR, CMS) with built-in audit trails, security protocols, and automated compliance reporting. GammaLex integrates with PACS/RIS/EHR via API, enabling secure, bi-directional data exchange and scalable deployment across complex organizations."
       ]
     }
   ];
 
   return (
-    <div className="w-full font-inter relative">
-      {/* GammaLex Vertical AI Platform Flowchart */}
-      <section className="w-full py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">GammaLex Breast Imaging Platform</h2>
-          <p className="text-lg text-gray-600 mb-16">How AI detection, AR overlays, and voice reporting converge to make breast imaging more accurate and explainable</p>
-          
-          {/* Clean Horizontal Flow */}
-          <div className="relative">
-            {/* Main Flow Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 transform -translate-y-1/2"></div>
-            
-            {/* Flow Steps */}
-            <div className="relative flex justify-between items-center">
-              
-              {/* Step 1: Clinical Intake */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
-                <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Patient Imaging Intake</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Mammography, ultrasound, and biopsy metadata</p>
-                </div>
-              </motion.div>
-
-              {/* Step 2: Specialty-Adaptive AI */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
-                <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">AI Detection & Triage</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Deep learning prioritizes findings and models risk</p>
-                </div>
-              </motion.div>
-
-              {/* Step 3: Authorization & Claims Intelligence */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
-                <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">AR Visualization</h3>
-                  <p className="text-sm text-gray-600 leading-tight">3D overlays that map AI findings to anatomy</p>
-                </div>
-              </motion.div>
-
-              {/* Step 4: Predictive Denial Prevention */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
-                <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Voice Reporting</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Structured narration synced to AI and AR</p>
-                </div>
-              </motion.div>
-
-              {/* Step 5: Optimized Healthcare Outcomes */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                viewport={{ once: true }}
-                className="flex flex-col items-center space-y-3"
-              >
-                <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
-                <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Integrated Outcomes</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Detection, authorization, and documentation aligned</p>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Foundation Framework */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-16 pt-8 border-t border-gray-200"
-          >
-            <div className="max-w-2xl mx-auto">
-              <h4 className="text-xl font-semibold text-gray-900 mb-3">Compliance, Audit & Integration Framework</h4>
-              <p className="text-sm text-gray-600">HIPAA/GDPR/CMS • Enterprise API • SOC2 Type II • 99.9% uptime</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
+    <div id="intelligence" className="w-full font-inter relative">
       {/* Authorization & Claims Intelligence Section */}
       <section className="w-full py-32 bg-[#1a1a2e]">
         <div className="max-w-7xl mx-auto px-8">
@@ -172,7 +65,7 @@ export default function ApplicationDetailed() {
                     </div>
                     <div className="flex-1">
                       <div className="text-sm font-medium text-gray-900">Policy Analysis</div>
-                      <div className="text-sm text-gray-600">Scanning 2,847 payer policies from 47 states</div>
+                      <div className="text-sm text-gray-600">Scanning 2,847 clinical protocols from 47 states</div>
                     </div>
                     <div className="text-sm text-gray-900">✓</div>
                   </div>
@@ -220,9 +113,9 @@ export default function ApplicationDetailed() {
                   <div className="mt-4 pt-3 border-t border-gray-200">
                     <div className="text-sm font-medium text-gray-700 mb-2">Recent Updates</div>
                     <div className="space-y-1">
-                      <div className="text-xs text-gray-600">• CMS-2024-001: Cardiology documentation requirements</div>
-                      <div className="text-xs text-gray-600">• Aetna: Updated pre-auth codes for radiology</div>
-                      <div className="text-xs text-gray-600">• UnitedHealth: New oncology coverage policies</div>
+                      <div className="text-xs text-gray-600">• CMS-2024-001: Focused mammography segmentation guidance</div>
+                      <div className="text-xs text-gray-600">• Aetna: Breast imaging quality metrics refresh</div>
+                      <div className="text-xs text-gray-600">• UnitedHealth: Enhanced confirmatory imaging protocols</div>
                     </div>
                   </div>
                 </div>
@@ -238,12 +131,12 @@ export default function ApplicationDetailed() {
               className="space-y-6"
             >
               <h2 className="text-3xl md:text-4xl font-semibold text-white">
-                Authorization & Claims Intelligence
+                Explainable Evidence & Documentation
               </h2>
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  Detection results, AR context, and voice reporting feed directly into authorization-ready packets so payers see the imaging evidence, AI rationale, and compliance checkboxes in one view.
+                  Detection results, AR context, and voice reporting feed into a unified evidence pack so care teams see imaging evidence, AI rationale, and clinical reasoning side by side.
                 </p>
               </div>
             </motion.div>
@@ -266,7 +159,7 @@ export default function ApplicationDetailed() {
             >
               <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-semibold text-gray-900">Predictive Risk Engine</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Predictive Readiness Engine</h3>
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
                     <span className="text-sm text-orange-600">Analyzing</span>
@@ -294,26 +187,26 @@ export default function ApplicationDetailed() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-gray-50 p-3 rounded-lg text-center border border-gray-100">
                       <div className="text-xl font-bold text-gray-900">67%</div>
-                      <div className="text-sm text-gray-600">Denials Reduced</div>
+                      <div className="text-sm text-gray-600">False positives reduced</div>
                     </div>
                     <div className="bg-gray-50 p-3 rounded-lg text-center border border-gray-100">
                       <div className="text-xl font-bold text-gray-900">94%</div>
-                      <div className="text-sm text-gray-600">First-Pass Rate</div>
+                      <div className="text-sm text-gray-600">Case confidence rate</div>
                     </div>
                   </div>
                   
                   {/* Risk Factors */}
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">Missing Pre-Auth</span>
+                      <span className="text-gray-600">Low signal-to-noise ratio</span>
                       <span className="text-gray-900 font-medium">High Impact</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">Incomplete Documentation</span>
+                      <span className="text-gray-600">Incomplete imaging context</span>
                       <span className="text-gray-700 font-medium">Medium Impact</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">Payer Policy Match</span>
+                      <span className="text-gray-600">Clinical guideline alignment</span>
                       <span className="text-gray-900 font-medium">✓ Valid</span>
                     </div>
                   </div>
@@ -321,16 +214,16 @@ export default function ApplicationDetailed() {
                 
                 <div className="mt-6 pt-4 border-t border-gray-200">
                   <div className="text-sm text-gray-600 text-center">
-                    <span className="font-medium">Recommendation:</span> Add pre-authorization documentation before submission
+                    <span className="font-medium">Recommendation:</span> Add AI-backed evidence summaries before sign-off
                   </div>
                   
                   {/* Historical Data Analysis */}
                   <div className="mt-4 pt-3 border-t border-gray-200">
                     <div className="text-sm font-medium text-gray-700 mb-2">Historical Analysis</div>
                     <div className="space-y-1">
-                      <div className="text-xs text-gray-600">• 1,247 similar claims analyzed</div>
-                      <div className="text-xs text-gray-600">• 89% denial rate for missing pre-auth</div>
-                      <div className="text-xs text-gray-600">• Average appeal time: 45 days</div>
+                      <div className="text-xs text-gray-600">• 1,247 similar lesion presentations analyzed</div>
+                      <div className="text-xs text-gray-600">• 89% of missed reads linked to low contrast</div>
+                      <div className="text-xs text-gray-600">• Average review time: 12 minutes</div>
                     </div>
                   </div>
                 </div>
@@ -346,12 +239,12 @@ export default function ApplicationDetailed() {
               className="space-y-6"
             >
               <h2 className="text-3xl md:text-4xl font-semibold text-white">
-                Predictive Denial Prevention
+                Predictive Case Readiness
               </h2>
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  AI triage spots the highest-probability cancers, accelerates review of suspicious cases, and cuts false positives—all while prepping the authorization narrative so approvals stay explainable.
+                  AI triage spots the highest-probability cancers, accelerates review of suspicious cases, and cuts false positives—all while crafting a structured narrative that keeps findings explainable for care teams.
                 </p>
               </div>
             </motion.div>
@@ -457,7 +350,7 @@ export default function ApplicationDetailed() {
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  Every model considers modality-specific imaging cues, breast density, and payer policy so recommendations stay aligned with the modality, the clinician, and the authorization requirements.
+                  Every model considers modality-specific imaging cues, breast density, and clinical guidelines so recommendations stay aligned with the modality, the clinician, and the patient story.
                 </p>
               </div>
             </motion.div>
@@ -574,7 +467,7 @@ export default function ApplicationDetailed() {
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  Authorization, imaging, and voice logs stay encrypted and versioned so every decision ties back to compliant evidence. APIs keep data flowing between hospitals, imaging centers, and payer pathways.
+                  Imaging, AI, and voice logs stay encrypted and versioned so every decision ties back to explainable evidence. APIs keep data flowing between hospitals, imaging centers, and downstream clinical systems.
                 </p>
               </div>
             </motion.div>
@@ -601,7 +494,7 @@ export default function ApplicationDetailed() {
                 </div>
                 
                 <div className="mt-12 pt-8 border-t border-white/20">
-                  <p className="text-lg text-white/90 leading-relaxed max-w-4xl mx-auto">This intelligence stack keeps breast imaging, authorization, and documentation aligned so every cancer detected is confidently reported and ready for the care continuum.</p>
+                  <p className="text-lg text-white/90 leading-relaxed max-w-4xl mx-auto">This intelligence stack keeps breast imaging, documentation, and clinical clarity aligned so every cancer detected is confidently reported and ready for the care continuum.</p>
                 </div>
               </div>
             </motion.div>

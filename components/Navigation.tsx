@@ -97,7 +97,7 @@ export default function Navigation() {
     }
     
     if (sectionId === 'how-we-do-it') {
-      window.location.href = '/howwedoit'
+      window.location.href = '/products#workflow'
       return
     }
     
@@ -127,7 +127,7 @@ export default function Navigation() {
     }
     
     if (sectionId === 'application') {
-      window.location.href = '/application'
+      window.location.href = '/products#intelligence'
       return
     }
     
