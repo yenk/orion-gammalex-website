@@ -462,25 +462,34 @@ export default function HowWeDoItDetailed() {
               viewport={{ once: true, margin: "-100px" }}
               className={`flex flex-col lg:flex-row gap-12 lg:gap-24 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
-              {/* Text Side */}
-              <div className="flex-1 space-y-6 w-full">
-                <div className="text-gammalex-purple font-mono text-sm tracking-widest uppercase">
-                   Step {String(index + 1).padStart(2, '0')}
+              {/* Text Side - Card Style */}
+              <div className="flex-1 w-full relative p-10 bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden min-h-[400px] flex flex-col justify-center">
+                {/* Big Number Background */}
+                <div className="absolute top-0 left-8 text-[160px] font-bold text-emerald-50/80 leading-none select-none pointer-events-none -translate-y-10 z-0">
+                  {String(index + 1).padStart(2, '0')}
                 </div>
-                <h3 className="text-3xl sm:text-4xl font-semibold text-slate-900 leading-tight">
-                  {area.title}
-                </h3>
-                <p className="text-lg text-slate-600 leading-relaxed">
-                  {area.summary}
-                </p>
-                <ul className="space-y-4 pt-4">
-                  {area.points.map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-slate-700">
-                      <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gammalex-purple" />
-                      <span className="leading-relaxed">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                
+                <div className="relative z-10 pt-12">
+                    <h3 className="text-3xl font-medium text-slate-900 mb-4 tracking-tight">
+                      {area.title}
+                    </h3>
+                    
+                    {/* Divider Line */}
+                    <div className="w-16 h-1 bg-emerald-400 mb-8 rounded-full"></div>
+
+                    <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">
+                      {area.summary}
+                    </p>
+                    
+                    <ul className="space-y-4">
+                      {area.points.map((point) => (
+                        <li key={point} className="flex items-start gap-3 text-slate-500">
+                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
+                          <span className="leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                </div>
               </div>
 
               {/* Visual Side */}
