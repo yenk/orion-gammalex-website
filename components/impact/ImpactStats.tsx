@@ -6,31 +6,31 @@ import Link from "next/link"
 export default function ImpactStats() {
   const impactSections = [
     {
-      title: "Clinical Intelligence & Compliance",
-      subtitle: "Real-time insights for defensible documentation and audit readiness",
-      description: "Radiology imaging authorization delays affect 92% of imaging centers. GammaLex's approval intelligence provides real-time insights for improved decision-making around imaging authorization and compliance.",
-      metric: "92%",
+      title: "Detection sensitivity",
+      subtitle: "AI + radiologist combinations raise sensitivity above the mid-80s average readers",
+      description: "Meta-analyses show AI-assisted reading matches or exceeds radiologist performance, cutting missed cancers and stabilizing inter-reader variability.",
+      metric: "90%",
       isDark: true
     },
     {
-      title: "Revenue & Risk Optimization", 
-      subtitle: "Prevents denials, protects margins, and accelerates reimbursement",
-      description: "$25.7B was spent fighting denials in 2023. GammaLex's approval intelligence reduces imaging authorization denials and accelerates reimbursement through transparent, compliant authorization generation.",
-      metric: "$25.7B",
+      title: "False positives & biopsy burden", 
+      subtitle: "Systems trained on breast ultrasound reduced false positives by over a third",
+      description: "In a large clinical study, AI cut false positives by 37% and recommended 27.8% fewer biopsies while preserving sensitivity.",
+      metric: "37% fewer",
       isDark: false
     },
     {
-      title: "Specialty-Aware AI Platform",
-      subtitle: "Adapts to radiology workflows and evolving payer rules",
-      description: "Built for radiology imaging workflows, our platform integrates with RIS and EHRs, staying aligned with fast-changing payer rules and ACR guidelines. Expanding to oncology, cardiology, and other specialties.",
-      metric: "93%",
+      title: "AR localization confidence",
+      subtitle: "Augmented reality overlays connect AI findings to real anatomy",
+      description: "AR projections shorten procedure time, reduce targeting errors, and help radiologists and surgeons align imaging with live anatomy for breast biopsies.",
+      metric: "3D clarity",
       isDark: true
     },
     {
-      title: "Patient Access & Care Enablement",
-      subtitle: "Minimizes delays and supports equitable care delivery",
-      description: "22% of cancer patients don't receive physician-recommended care. Our solution supports equitable access to care and enables faster decisions while improving documentation quality.",
-      metric: "22%",
+      title: "Voice-driven workflows",
+      subtitle: "Structured reporting lowers transcription errors and turnaround time",
+      description: "Voice recognition tied directly to AI summaries keeps reports consistent and frees radiologists to stay focused on the next case.",
+      metric: "Faster reads",
       isDark: false
     }
   ]

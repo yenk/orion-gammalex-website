@@ -15,10 +15,10 @@ export default function ProblemsWeSolveSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8">
-            The <span className="text-gammalex-purple">pre-authorization crisis</span> affects everyone
+            Breast imaging accuracy still varies by reader and drives risk
           </h2>
           <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto">
-            Prior authorization delays and denials create a cascade of problems across healthcare—from patient harm to provider burnout to increased costs.
+            Sensitivity averages in the mid-80s, so cancers slip by on the first read while callbacks and biopsies spike under avoidable false positives. GammaLex brings AI + AR + voice to stabilize readings and deliver early detection at scale.
           </p>
         </motion.div>
 
@@ -29,7 +29,6 @@ export default function ProblemsWeSolveSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {/* Patient Impact */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: -20 }}
@@ -38,17 +37,16 @@ export default function ProblemsWeSolveSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-semibold text-white">
-              Patient Harm & Delays
+              Inter-reader variability
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Radiology imaging delays caused by authorization issues lead to delayed diagnoses, treatment abandonment, and in some cases, serious adverse events or hospitalizations.
+              Individual radiologists show a wide range of abnormal interpretation and biopsy-positive predictive values, exposing patients to missed cancers or unnecessary procedures.
             </p>
             <p className="text-lg text-white/90 leading-relaxed">
-              Patients often abandon treatment when faced with lengthy imaging authorization processes, resulting in preventable complications and increased healthcare costs.
+              GammaLex applies AI consensus to standardize accuracy and highlight early-stage findings that otherwise hide in plain sight.
             </p>
           </motion.div>
 
-          {/* Provider Burden */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, x: 20 }}
@@ -57,13 +55,13 @@ export default function ProblemsWeSolveSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-semibold text-white">
-              Provider Burnout & Costs
+              False positives & workflow friction
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Physicians and staff spend up to 15 hours per week on prior authorization requests, with many practices dedicating full-time employees solely to managing these tasks.
+              AI + voice reduces the noise of open-ended dictation, while AR overlays lower targeting errors and keep the team in sync on next steps.
             </p>
             <p className="text-lg text-white/90 leading-relaxed">
-              The administrative burden fuels frustration, increases operational costs, and contributes to provider burnout and staff turnover.
+              The result is fewer callbacks, shorter reading sessions, and more confident breast imaging interpretations.
             </p>
           </motion.div>
         </motion.div>
@@ -76,10 +74,10 @@ export default function ProblemsWeSolveSection() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-6">
-            GammaLex transforms this crisis into opportunity
+            AI, AR, and voice make breast imaging more consistent
           </h3>
             <p className="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
-            By automating radiology imaging authorization with approval intelligence, we enable faster access to diagnostic imaging, reduced administrative burden, and fewer denials and legal risks.
+            We standardize decision support, overlay findings onto anatomy, and capture structured voice reports so every mammogram or biopsy review stays explainable and error-proof.
           </p>
         </motion.div>
       </div>

@@ -42,7 +42,7 @@ export default function WhatWeDoHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            GammaLex is approval intelligence for radiology imaging—built to predict authorization outcomes and prevent denials, empowering faster approvals for diagnostic imaging. Expanding to oncology, cardiology, and other high-stakes specialties.
+            GammaLex is an AI-powered breast imaging platform that pairs detection algorithms with AR overlays and voice reporting to deliver dependable diagnostics and explainable authorizations.
           </motion.p>
         </motion.div>
       </div>

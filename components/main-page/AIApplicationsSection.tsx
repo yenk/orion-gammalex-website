@@ -23,8 +23,8 @@ export default function AIApplicationsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8 drop-shadow-lg">
-            Intelligence That Moves With Healthcare
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8 drop-shadow-lg">
+            Intelligence That Moves With Breast Imaging
           </h2>
         </motion.div>
 
@@ -36,7 +36,7 @@ export default function AIApplicationsSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {/* Column 1: AI to Improve Data */}
+          {/* Column 1: AI Algorithms for Detection */}
           <motion.div
             className="text-left"
             initial={{ opacity: 0, x: -20 }}
@@ -45,19 +45,19 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Smart Policy Engine
+              AI Algorithms for Breast Cancer Detection
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Real-time policy monitoring across 8 major data sources. Validates claims against CMS, WHO ICD-11, and legal precedents.
+              Deep learning complements radiologists with higher sensitivity and specificity, reducing false positives while surfacing subtle lesions across mammography and ultrasound.
             </p>
             
-            <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
-              Learn more
+            <a href="/impact" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
+              Explore detection impact
             </a>
           </motion.div>
 
-          {/* Column 2: AI to Provide Insights */}
+          {/* Column 2: AR Visualization */}
           <motion.div
             className="text-left"
             initial={{ opacity: 0, x: 20 }}
@@ -66,19 +66,19 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Risk Prediction AI
+              Augmented Reality Imaging Tools
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Machine learning identifies denial patterns. 94% approval rate with predictive risk analysis.
+              AR overlays project AI findings into 3D space so radiologists and surgeons can localize lesions, align biopsies, and interpret imaging with spatial clarity.
             </p>
             
-            <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
-              Learn more
+            <a href="/howwedoit" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
+              See AR workflows
             </a>
           </motion.div>
 
-          {/* Column 3: AI to Surface Connections */}
+          {/* Column 3: Voice Syntax */}
           <motion.div
             className="text-left"
             initial={{ opacity: 0, x: -20 }}
@@ -87,19 +87,19 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Specialty Intelligence
+              Voice-Enabled Reporting & Navigation
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Domain-specific AI built for radiology imaging workflows, trained on 50K+ radiology cases. Expanding to oncology, cardiology, and other specialties.
+              Structured voice notes tied directly to AI findings keep reports consistent, reduce transcription errors, and let radiologists stay hands-free during complex reads.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
-              Learn more
+              Hear the difference
             </a>
           </motion.div>
 
-          {/* Column 4: Placeholder for future AI suite component */}
+          {/* Column 4: Integration with Imaging Centers */}
           <motion.div
             className="text-left"
             initial={{ opacity: 0, x: 20 }}
@@ -108,15 +108,15 @@ export default function AIApplicationsSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-md">
-              Enterprise Security
+              Integration with Imaging Centers & Hospitals
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              SOC2 Type II certified with 99.9% uptime. HIPAA/GDPR compliant enterprise integration.
+              Seamless PACS/RIS/EHR connections keep AI insights in the clinician’s workflow and sync every action with downstream authorization and documentation systems.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">
-              Learn more
+              Discover integrations
             </a>
           </motion.div>
         </motion.div>

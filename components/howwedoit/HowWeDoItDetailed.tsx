@@ -9,69 +9,70 @@ import { JoinWaitlistModal } from '@/components/JoinWaitlistModal'
 export default function HowWeDoItDetailed() {
   const workflows = [
     {
-      title: "Data Ingestion & Processing",
+      title: "Breast imaging data orchestration",
       icon: Database,
       bulletPoints: [
-        "Process clinical encounters from MIMIC-IV database (Core, Hosp, ICU, ED, Note modules)",
-        "Analyze legal documents from Harvard's CaseLaw Access Project (16M+ opinions tested)",
-        "Monitor policy changes from CMS Medicare Coverage Database (MCD)",
-        "Track diagnostic codes from WHO ICD-11 classifications (17,000+ codes)"
+        "Ingest mammography, breast MRI, and ultrasound studies with PACS/RIS context",
+        "Map key findings to structured pathology, biomarker, and annotation data",
+        "Train on large, diverse lesion libraries to sharpen early cancer detection",
+        "Align every input with ACR guidelines and payer coverage rules"
       ],
-      highlight: "GammaLex builds the world's largest healthcare AI knowledge base, processing 8 major data sources to create comprehensive Clinical-Compliance intelligence."
+      highlight: "GammaLex harmonizes imaging, pathology, and policy data so detection models stay grounded in clinical reality."
     },
     {
-      title: "Real-Time Policy Monitoring",
+      title: "AI detection & decision support",
       icon: Monitor,
       bulletPoints: [
-        "Monitor payer policies across all major insurance providers",
-        "Track CMS regulatory updates in real-time",
-        "Update AI recommendations when policy changes are detected",
-        "Analyze specialty-specific guidelines for medical specialties"
+        "Apply deep learning ensembles to screen for subtle masses and calcifications",
+        "Prioritize findings by probability, so radiologists see the right cases first",
+        "Quantify risk stratification and triage for recall vs biopsy decisions",
+        "Blend AI + radiologist consensus to cut missed cancers and false positives"
       ],
-      highlight: "GammaLex provides real-time regulatory intelligence, ensuring providers stay ahead of policy changes that could impact authorization success."
+      highlight: "AI standardizes sensitivity, elevating every reader above the mid-80s benchmark without sacrificing specificity."
     },
     {
-      title: "Predictive Risk Analysis",
+      title: "AR visualization & localization",
       icon: Shield,
       bulletPoints: [
-        "Analyze claim patterns against historical encounters (MIMIC-IV)",
-        "Evaluate denial risks using legal precedent cases (Harvard CAP)",
-        "Process claims against diagnostic codes (WHO ICD-11)",
-        "Predict authorization success rates and denial risks"
+        "Project AI annotations into augmented reality overlays for precise lesion placement",
+        "Support biopsy and surgical planning with 3D references tied to imaging planes",
+        "Sync AR scenes with PACS zoom/pan so findings stay context-rich",
+        "Share the same augmented view with downstream care teams"
       ],
-      highlight: "GammaLex's predictive AI transforms authorization success rates, dramatically reducing denials while accelerating revenue cycles."
+      highlight: "AR brings clarity to complex breast anatomy, reducing targeting errors and improving procedural confidence."
     },
     {
-      title: "Specialty-Specific Optimization",
+      title: "Voice-guided reporting",
       icon: Target,
       bulletPoints: [
-        "RADIOLOGY: Built for imaging authorization workflows, ACR guidelines, and modality-specific requirements (CT, MRI, diagnostic imaging)",
-        "Expanding to ONCOLOGY: Optimize for National Comprehensive Cancer Network (NCCN) treatment protocols",
-        "Expanding to CARDIOLOGY: Process American College of Cardiology (ACC) coding standards",
-        "Optimize for specialty-specific payer policies and coverage rules"
+        "Capture structured narrations keyed to AI findings and AR locations",
+        "Use macros to enforce terminology while giving radiologists flexibility",
+        "Track dictation quality and reduce transcription errors in real time",
+        "Surface immediate feedback on missing contextual data before sign-off"
       ],
-      highlight: "GammaLex's radiology-optimized approval intelligence delivers domain expertise for imaging workflows, ensuring precise authorization predictions. Expanding to oncology, cardiology, and other high-stakes specialties."
+      highlight: "Voice workflows keep radiologists hands-free while ensuring every report matches AI-supported insights."
     },
     {
-      title: "Compliance & Risk Management",
+      title: "Integration with PACS, RIS, and authorization",
       icon: CheckCircle,
       bulletPoints: [
-        "Monitor legal exposure patterns from legal documents (Harvard CAP)",
-        "Analyze court cases for legal precedent patterns (CourtListener)",
-        "Track regulatory violations across federal and state levels",
-        "Identify compliance risks and potential legal exposure"
+        "Bidirectionally sync findings with PACS/RIS viewers and EHR charts",
+        "Push structured data into prior authorization packets and coverage rules",
+        "Keep audit trails that tie every decision back to imaging, AR, and voice inputs",
+        "Enable secure data exchange across hospitals and imaging centers"
       ],
-      highlight: "GammaLex's legal intelligence protects providers from compliance risks and regulatory exposure through proactive risk management."
+      highlight: "Seamless integration means AI recommendations are always available where care teams work."
     },
     {
-      title: "Intelligence Delivery & Integration",
+      title: "Explainability & compliance automation",
       icon: Zap,
       bulletPoints: [
-        "Deliver insights through AI Assistant, APIs, and proprietary apps",
-        "Make enterprise-grade expertise available to providers of all sizes",
-        "Integrate with existing EHR systems seamlessly"
+        "Log every AI insight with source images, AR overlays, and voice traces",
+        "Match findings to payer policies, ICD/CPT codes, and regulatory requirements",
+        "Highlight the evidence pack when submitting authorizations or appeals",
+        "Deliver performance analytics so teams can track gains and gaps"
       ],
-      highlight: "GammaLex democratizes enterprise-grade healthcare intelligence, making advanced Clinical-Compliance expertise available to providers of all sizes."
+      highlight: "Transparent AI and automated compliance keep authorizations defensible and audit-ready."
     }
   ];
 
@@ -87,10 +88,10 @@ export default function HowWeDoItDetailed() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-slate-900 font-normal mb-6">
-            Analyze & Forecast
+            AI, AR, and voice orchestrate breast imaging interpretation
           </h2>
           <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
-            Our AI models assess denial risk, forecast authorization outcomes, and adapt to the nuances of your specialty and payers.
+            Detection algorithms, augmented visualization, and structured narration keep every read precise, explainable, and ready for payer review.
           </p>
         </motion.div>
 
@@ -255,12 +256,12 @@ export default function HowWeDoItDetailed() {
              whileHover={{ scale: 1.02, y: -5 }}
              transition={{ duration: 0.3 }}
            >
-             <h3 className="text-2xl sm:text-3xl text-slate-900 font-normal mb-6">
-               Ready to transform your workflow?
-             </h3>
-             <p className="text-lg text-slate-600 mb-8">
-               Experience the power of AI-driven healthcare intelligence
-             </p>
+            <h3 className="text-2xl sm:text-3xl text-slate-900 font-normal mb-6">
+              Ready to see AI-powered breast imaging?
+            </h3>
+            <p className="text-lg text-slate-600 mb-8">
+              Book a demo to experience AR localization, voice reporting, and detection that amplifies every read.
+            </p>
              <JoinWaitlistModal
                trigger={
                  <Button 

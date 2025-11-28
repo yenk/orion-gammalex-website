@@ -13,11 +13,12 @@ import React from "react"
 
 const headingLines = [
   [
-    { word: "Approval", orange: false },
-    { word: "intelligence", orange: false },
-    { word: "for", orange: false },
-    { word: "radiology", orange: false },
+    { word: "AI-powered", orange: false },
+    { word: "breast", orange: false },
     { word: "imaging", orange: false },
+    { word: "diagnosis", orange: false },
+    { word: "and", orange: false },
+    { word: "detection", orange: false },
   ],
 ];
 
@@ -81,8 +82,8 @@ export function CopilotHero() {
           <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-inter font-light text-white leading-[1.4] sm:leading-[1.5] md:leading-[1.6] tracking-wide max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             <div className="mb-2 sm:mb-3 md:mb-4">
               {[
-                "Predict", "authorization", "outcomes,", "prevent", "denials,", 
-                "and", "accelerate", "imaging", "approvals"
+                "AI", "reduces", "inter-reader", "variability", "and", "catches", "early", "cancers", 
+                "while", "AR", "visualization", "and", "voice", "reporting", "keep", "radiologists", "focused"
               ].map((word, index) => (
                 <motion.span
                   key={index}
@@ -105,15 +106,15 @@ export function CopilotHero() {
 
         
         <div className="flex flex-col gap-4 items-center px-4 sm:px-6 md:px-8 lg:px-12 mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
-          <a
-            href="https://cal.com/yenkha"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 neon-glow hover:neon-glow"
-            style={{ textDecoration: 'none', display: 'inline-block' }}
-          >
-            See it in Action
-          </a>
+            <a
+              href="https://cal.com/yenkha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-gammalex-purple to-gammalex-purple-light text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold rounded-xl w-fit focus:outline-none focus-visible:ring-2 focus-visible:ring-gammalex-purple shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 neon-glow hover:neon-glow"
+              style={{ textDecoration: 'none', display: 'inline-block' }}
+            >
+              Book a Demo
+            </a>
         </div>
 
         {/* Three Column Section */}
@@ -128,13 +129,13 @@ export function CopilotHero() {
               viewport={{ once: true }}
             >
               <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
-                Stop denials before they start
+                AI-powered early detection
               </h3>
               <a
-                href="/problemswesolve"
+                href="/impact"
                 className="text-blue-400 underline hover:text-blue-300 transition-colors text-xs sm:text-sm"
               >
-                Learn how
+                See accuracy gains
               </a>
             </motion.div>
 
@@ -147,13 +148,13 @@ export function CopilotHero() {
               viewport={{ once: true }}
             >
               <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
-                Secure margins and patient care
+                Decision support for radiologists
               </h3>
               <a
-                href="/impact"
+                href="/howwedoit"
                 className="text-blue-400 underline hover:text-blue-300 transition-colors text-xs sm:text-sm"
               >
-                View results
+                Explore AR & AI
               </a>
             </motion.div>
 
@@ -166,13 +167,13 @@ export function CopilotHero() {
               viewport={{ once: true }}
             >
               <h3 className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-normal text-white mb-2 sm:mb-3 md:mb-4">
-                Adapt to changing regulations
+                Voice-enabled workflows
               </h3>
               <a
-                href="/ethical-ai"
+                href="/application"
                 className="text-blue-400 underline hover:text-blue-300 transition-colors text-xs sm:text-sm"
               >
-                Discover our method
+                Hear it in action
               </a>
             </motion.div>
           </div>

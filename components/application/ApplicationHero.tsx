@@ -34,7 +34,7 @@ export default function ApplicationHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            GammaLex Vertical AI Intelligence
+            GammaLex AI Breast Imaging Platform
           </motion.h1>
           
           {/* Subheadline */}
@@ -44,7 +44,7 @@ export default function ApplicationHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Real-time authorization intelligence, denial prediction, and policy compliance
+            AI detection, AR visualization, and voice workflows keep breast imaging reads precise, explainable, and ready for action.
           </motion.p>
         </motion.div>
       </div>

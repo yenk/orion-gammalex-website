@@ -24,7 +24,7 @@ export default function WhatWeDoContent() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                Built specifically for radiology imaging workflows, GammaLex's approval intelligence predicts authorization outcomes, validates imaging requests against payer policies in real-time, and prevents denials before they impact patient care or revenue. We're not a general-purpose platform; we're built for depth and precision, training our models on radiology imaging data, ACR guidelines, and payer authorization rules to address challenges that traditional systems overlook. As we expand to oncology, cardiology, and other specialties, our AI adapts to each domain's unique requirements.
+                GammaLex applies AI trained on mammography, breast ultrasound, and pathology data to surface cancers earlier, quantify risk, and align every interpretation with ACR guidelines and payer policies. Risk stratification, lesion characterization, and triage happen inside the reader workflow so teams see the right findings at the right time without leaving the PACS or RIS.
               </motion.p>
               
               <motion.p 
@@ -34,7 +34,7 @@ export default function WhatWeDoContent() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                GammaLex's approval intelligence helps radiology teams, imaging centers, and hospitals excel by improving imaging authorization success rates, reducing denials and delays, and accelerating patient access to diagnostic imaging. Our platform delivers real-time policy validation and risk prediction at scale—helping radiology staff adapt instantly to payer policy shifts, ACR guideline updates, and authorization rule changes. As we expand to other specialties, GammaLex brings the same precision and intelligence to oncology, cardiology, and beyond.
+                AR overlays project AI findings into 3D space for lesion localization and biopsy planning, while voice-enabled reporting narrates results and locks them directly to AI insights. Every output stays linked to the authorization workflow so requests, compliance checks, and documentation are explainable and ready for payers.
               </motion.p>
             </div>
           </motion.div>
@@ -58,7 +58,7 @@ export default function WhatWeDoContent() {
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Partner with Us
+              Request a Demo
             </motion.h2>
             
             <motion.div
@@ -70,17 +70,17 @@ export default function WhatWeDoContent() {
             >
               <JoinWaitlistModal
                 trigger={
-                  <button 
-                    className="px-8 py-4 font-semibold rounded-lg transition-colors duration-200"
-                    style={{
-                      backgroundColor: '#EBD4BE',
-                      color: '#1a365d',
-                      border: '2px solid #EBD4BE',
-                      boxShadow: '0 8px 16px rgba(26, 54, 93, 0.4)'
-                    }}
-                  >
-                    Learn more
-                  </button>
+                    <button 
+                      className="px-8 py-4 font-semibold rounded-lg transition-colors duration-200"
+                      style={{
+                        backgroundColor: '#EBD4BE',
+                        color: '#1a365d',
+                        border: '2px solid #EBD4BE',
+                        boxShadow: '0 8px 16px rgba(26, 54, 93, 0.4)'
+                      }}
+                    >
+                      Book a Demo
+                    </button>
                 }
               />
             </motion.div>

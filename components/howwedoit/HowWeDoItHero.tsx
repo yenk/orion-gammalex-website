@@ -42,7 +42,7 @@ export default function HowWeDoItHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Vertical AI that understands the intersection of clinical reality, legal requirements, and evolving payer policies.
+            AI algorithms, AR overlays, and voice reporting engineered for breast imaging—delivering detection, localization, and hands-free reporting across your workflow.
           </motion.p>
         </motion.div>
       </div>

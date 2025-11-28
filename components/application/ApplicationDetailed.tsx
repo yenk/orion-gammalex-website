@@ -38,8 +38,8 @@ export default function ApplicationDetailed() {
       {/* GammaLex Vertical AI Platform Flowchart */}
       <section className="w-full py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">GammaLex Vertical AI Platform</h2>
-          <p className="text-lg text-gray-600 mb-16">How our AI transforms clinical data into optimized healthcare decisions</p>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-900">GammaLex Breast Imaging Platform</h2>
+          <p className="text-lg text-gray-600 mb-16">How AI detection, AR overlays, and voice reporting converge to make breast imaging more accurate and explainable</p>
           
           {/* Clean Horizontal Flow */}
           <div className="relative">
@@ -59,8 +59,8 @@ export default function ApplicationDetailed() {
               >
                 <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
                 <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Clinical Intake</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Patient encounter data & documentation</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Patient Imaging Intake</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Mammography, ultrasound, and biopsy metadata</p>
                 </div>
               </motion.div>
 
@@ -74,8 +74,8 @@ export default function ApplicationDetailed() {
               >
                 <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
                 <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Specialty-Adaptive AI</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Domain-specific modeling & workflows</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">AI Detection & Triage</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Deep learning prioritizes findings and models risk</p>
                 </div>
               </motion.div>
 
@@ -89,8 +89,8 @@ export default function ApplicationDetailed() {
               >
                 <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
                 <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Authorization & Claims Intelligence</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Real-time policy analysis & validation</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">AR Visualization</h3>
+                  <p className="text-sm text-gray-600 leading-tight">3D overlays that map AI findings to anatomy</p>
                 </div>
               </motion.div>
 
@@ -104,8 +104,8 @@ export default function ApplicationDetailed() {
               >
                 <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
                 <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Predictive Denial Prevention</h3>
-                  <p className="text-sm text-gray-600 leading-tight">Historical analysis & risk flags</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Voice Reporting</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Structured narration synced to AI and AR</p>
                 </div>
               </motion.div>
 
@@ -119,8 +119,8 @@ export default function ApplicationDetailed() {
               >
                 <div className="w-4 h-4 bg-gray-900 rounded-full"></div>
                 <div className="text-center max-w-32">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Optimized Healthcare Outcomes</h3>
-                  <p className="text-sm text-gray-600 leading-tight">94% approval rate • 451% ROI</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Integrated Outcomes</h3>
+                  <p className="text-sm text-gray-600 leading-tight">Detection, authorization, and documentation aligned</p>
                 </div>
               </motion.div>
             </div>
@@ -243,7 +243,7 @@ export default function ApplicationDetailed() {
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  GammaLex's AI engine continuously analyzes payer policies and clinical data to streamline both prior authorization and claims submission. It auto-updates policy changes, validates documentation against requirements, and delivers real-time recommendations to avoid errors and accelerate approvals—all within your existing EHR and billing workflows.
+                  Detection results, AR context, and voice reporting feed directly into authorization-ready packets so payers see the imaging evidence, AI rationale, and compliance checkboxes in one view.
                 </p>
               </div>
             </motion.div>
@@ -351,7 +351,7 @@ export default function ApplicationDetailed() {
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  Proactively flags high-risk claims before submission using your historical data, payer mix, and specialty focus. GammaLex provides precise, actionable feedback to minimize denials—reducing administrative burden and downstream appeals while increasing first-pass approval rates.
+                  AI triage spots the highest-probability cancers, accelerates review of suspicious cases, and cuts false positives—all while prepping the authorization narrative so approvals stay explainable.
                 </p>
               </div>
             </motion.div>
@@ -457,7 +457,7 @@ export default function ApplicationDetailed() {
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  Our modeling is trained on specialty-specific medical-legal knowledge, including CPT/ICD nuances, clinical documentation standards, and payer-specific rules. GammaLex adapts to specialty workflows—radiology, oncology, cardiology, and more—to ensure relevance, accuracy, and optimized throughput across diverse care environments.
+                  Every model considers modality-specific imaging cues, breast density, and payer policy so recommendations stay aligned with the modality, the clinician, and the authorization requirements.
                 </p>
               </div>
             </motion.div>
@@ -574,7 +574,7 @@ export default function ApplicationDetailed() {
               
               <div className="space-y-4 text-lg text-white/95 leading-relaxed">
                 <p>
-                  Supports full regulatory readiness (HIPAA, GDPR, CMS) with built-in audit trails, security protocols, and automated compliance reporting. GammaLex integrates seamlessly into enterprise systems via API, enabling secure, bi-directional data exchange and scalable deployment across complex organizations.
+                  Authorization, imaging, and voice logs stay encrypted and versioned so every decision ties back to compliant evidence. APIs keep data flowing between hospitals, imaging centers, and payer pathways.
                 </p>
               </div>
             </motion.div>
@@ -601,7 +601,7 @@ export default function ApplicationDetailed() {
                 </div>
                 
                 <div className="mt-12 pt-8 border-t border-white/20">
-                  <p className="text-lg text-white/90 leading-relaxed max-w-4xl mx-auto">This real-time intelligence framework empowers your teams, safeguards your operations, and positions your organization for long-term resilience in an ever-shifting healthcare landscape.</p>
+                  <p className="text-lg text-white/90 leading-relaxed max-w-4xl mx-auto">This intelligence stack keeps breast imaging, authorization, and documentation aligned so every cancer detected is confidently reported and ready for the care continuum.</p>
                 </div>
               </div>
             </motion.div>

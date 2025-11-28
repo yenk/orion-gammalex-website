@@ -41,7 +41,7 @@ export default function ImpactHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            GammaLex is an artificial intelligence company developing advanced AI models focused on ethical, responsible outcomes that foster collaboration, reduce disparities, and democratize access to healthcare decisions, coverage, and equitable care delivery.
+            GammaLex builds AI, AR, and voice systems that boost breast imaging detection while keeping explanations transparent and clinically defensible.
           </motion.p>
 
           <motion.p
@@ -50,7 +50,7 @@ export default function ImpactHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Our focus is to unlock insights that have the potential to increase authorization success rates and reduce claim denials for healthcare providers and patients.
+            We measure success through improved detection sensitivity, fewer false positives, shorter reads, and clearer documentation tied directly to authorization outcomes.
           </motion.p>
         </motion.div>
       </div>

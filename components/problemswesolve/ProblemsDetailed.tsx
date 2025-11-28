@@ -7,48 +7,36 @@ import { Button } from '@/components/ui/button'
 export default function ProblemsDetailed() {
   const problems = [
     {
-      title: "We predict and prevent claim denials",
+      title: "Breast imaging accuracy still depends on the reader",
       paragraphs: [
-        "Hospitals face mounting claim denials and shifting payer rules. GammaLex’s Vertical AI delivers real-time intelligence at the point of decision—anticipating denials before they impact revenue and bridging gaps between medicine, law, and policy."
+        "Interpretive performance varies widely—two radiologists working the same study can record very different abnormal interpretation rates and positive predictive values.",
+        "GammaLex brings AI consensus, standardizing sensitivity so more early cancers are flagged on the first read."
       ],
-      highlight: "AI integration in radiology workflows delivers 451% ROI over five years, with 78 days saved in triage and 41 days in reporting (Journal of the American College of Radiology, 2024)."
+      highlight: "Inter-reader variability produces missed cancers and unnecessary biopsies; consistent AI lifts the baseline sensitivity above the mid-80s."
     },
     {
-      title: "We deliver clinical intelligence and real-time compliance",
+      title: "False positives and avoidable callbacks drain confidence",
       paragraphs: [
-        "Clinicians and legal teams need defensible documentation and audit readiness as payer rules evolve. GammaLex provides real-time, source-backed guidance and instant risk assessment for every claim, keeping teams compliant and audit-ready."
+        "When AI and radiologists disagree, it can trigger extra imaging, callbacks, and biopsies that stress patients and teams.",
+        "Our platform reduces false positives by 37% and cuts recommended biopsies by 27.8%, keeping clinicians focused on meaningful findings."
       ],
-      highlight: "Real-time risk assessment and compliance guidance at the point of care."
+      highlight: "Higher cancer detection with fewer downstream procedures—AI reduces noise without sacrificing vigilance."
     },
     {
-      title: "We forecast authorizations and optimize revenue",
+      title: "Workflows are fragmented by inefficiency",
       paragraphs: [
-        "Complex billing and opaque workflows limit care access and disrupt revenue flow. GammaLex forecasts authorizations in real time, adapts to payer changes, and turns complex billing into predictable, optimized revenue."
+        "Radiologists toggle between PACS, RIS, authorization tools, and manual dictation, which slows reads and invites transcription errors.",
+        "AI annotations, AR overlays, and voice-guided reporting unify those steps so every read is faster, traceable, and ready for payer review."
       ],
-      highlight: "Predictable, policy-aligned revenue—no more billing guesswork."
+      highlight: "Voice-structured reporting and AR localization shorten turnaround, keep documentation consistent, and feed authorization workflows."
     },
     {
-      title: "We solve high-stake specialty denials before they start",
+      title: "Explainable decision support must align with authorization",
       paragraphs: [
-        "We're built for radiology imaging, where denial risk is highest and authorization complexity is greatest. Our approval intelligence predicts authorization outcomes for CT, MRI, and diagnostic imaging studies, providing daily forecasts and precise denial predictions even in volatile environments. As we expand to oncology, cardiology, and other high-stakes specialties, GammaLex's AI adapts to each domain's unique data and payer history."
+        "Authorization teams need documentation that ties findings to coverage logic and payer rules.",
+        "GammaLex surfaces explainable AI outputs that trace back to imaging, AR context, and policy, keeping every authorization defensible."
       ],
-      highlight: "Radiology-optimized approval intelligence with daily forecasts and precise denial predictions. Expanding to oncology, cardiology, and other high-stakes specialties."
-    },
-    {
-      title: "We deliver sustainable competitive advantage",
-      paragraphs: [
-        "GammaLex’s proprietary AI, trained on specialty-specific data, creates strong barriers to entry and lasting differentiation. Built for rapid adaptation, the platform scales seamlessly with evolving payer rules and expanding markets."
-      ],
-      highlight: "Rapid adaptation to new specialties and payer rules—scalable across markets."
-    },
-    {
-      title: "We prevent billions in financial losses",
-      paragraphs: [
-        "Clinical delays aren’t just medical—they’re financial crises. 92% of radiation oncologists report authorization delays, sending costs rippling through the system.",
-        "In 2022, hospitals spent $19.7B fighting denials—rising 23% to $25.7B in 2023. Another $10.6B was lost to overturned claims.",
-        "GammaLex’s Vertical AI prevents these losses by anticipating denials, reducing admin burden, and ensuring proper authorization from the start."
-      ],
-      highlight: "$25.7B in denial costs and $10.6B in administrative waste prevented through predictive AI."
+      highlight: "AI, AR, and voice keep diagnosis, documentation, and authorization aligned and auditable."
     }
   ];
 

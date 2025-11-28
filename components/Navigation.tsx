@@ -43,16 +43,16 @@ export default function Navigation() {
   ];
 
   const whyGammaLexDropdown: DropdownItem[] = [
-    { id: "what-we-do", label: "What We Do", description: "" },
-    { id: "problems-we-solve", label: "Problems We Solve", description: "" },
-    { id: "how-we-do-it", label: "How We Do It", description: "" },
-    { id: "impact", label: "Impact", description: "" },
+    { id: "what-we-do", label: "What We Do", description: "Frame GammaLex as the AI breast imaging platform for detection, AR, and voice" },
+    { id: "problems-we-solve", label: "Problems We Solve", description: "Explain variability, false positives, and workflow gaps in breast imaging" },
+    { id: "how-we-do-it", label: "How We Do It", description: "Highlight AI algorithms, AR overlays, and voice reporting that power readings" },
+    { id: "impact", label: "Impact", description: "Measure detection accuracy gains, false positive reductions, and faster reads" },
   ];
 
 
 
   const productDropdown: DropdownItem[] = [
-    { id: "application", label: "Vertical AI Suite", description: "" },
+    { id: "application", label: "Vertical AI Suite", description: "AI Breast Imaging Platform with PACS/RIS and voice integrations" },
   ];
 
 
@@ -60,13 +60,13 @@ export default function Navigation() {
 
 
   const integrityDropdown: DropdownItem[] = [
-    { id: "responsible-ai", label: "Ethical AI", description: "" },
-    { id: "trust-compliance", label: "Trust & Compliance", description: "" },
+    { id: "responsible-ai", label: "Ethical AI", description: "Breast imaging AI that prioritizes explainability and clinical accuracy" },
+    { id: "trust-compliance", label: "Trust & Compliance", description: "Documentation and audit readiness tied to breast imaging evidence" },
   ];
 
   const companyDropdown: DropdownItem[] = [
-    { id: "about", label: "About Us", description: "" },
-    { id: "advisory-council", label: "Advisory Council", description: "" },
+    { id: "about", label: "About Us", description: "Learn how the GammaLex team builds breast imaging AI" },
+    { id: "advisory-council", label: "Advisory Council", description: "Clinical and regulatory leaders ensuring confidence" },
   ];
 
   useEffect(() => {

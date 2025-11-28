@@ -34,7 +34,7 @@ export default function ProblemsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            With Vertical AI, We Unlock Access Where Care Is Most Complex
+            Breast imaging accuracy, confidence, and workflow consistency today feel like a moving target
           </motion.h1>
           
           {/* Subheadline */}
@@ -44,7 +44,7 @@ export default function ProblemsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Authorization, forecasting, policies, risk assessment, compliance, revenue
+            Early detection, false positives, and diagnostic throughput demand AI, AR, and voice systems that keep radiologists faster and focused.
           </motion.p>
         </motion.div>
       </div>

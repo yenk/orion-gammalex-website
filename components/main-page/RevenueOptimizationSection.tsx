@@ -16,7 +16,7 @@ export default function RevenueOptimizationSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-inter font-normal text-slate-900 mb-8 leading-tight">
-            How GammaLex prevents denials and protects revenue through intelligent AI
+            AI breast imaging outcomes: higher detection, fewer false positives
           </h2>
         </motion.div>
 
@@ -29,100 +29,97 @@ export default function RevenueOptimizationSection() {
           viewport={{ once: true }}
         >
           {/* Column 1: Predict Denials */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
-              Predict Denials Before They Happen
-            </h3>
-            
-            {/* Separator */}
-            <div className="w-1/2 h-px bg-gray-300 mx-auto mb-8"></div>
-            
-            <div className="text-left space-y-4 mb-8">
-              <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
-                <p className="text-base text-slate-700 leading-relaxed">
-                  Real-time AI analyzes radiology imaging requests and clinical documentation, predicting denial risk before authorization submission, giving you time to fix issues proactively.
-                </p>
-              </div>
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
+                Detection accuracy & sensitivity
+              </h3>
               
-              <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
-                <p className="text-base text-slate-700 leading-relaxed">
-                  Our intelligent system adapts to different clinical specialties and payer rules, providing accurate predictions that improve over time.
-                </p>
+              <div className="w-1/2 h-px bg-gray-300 mx-auto mb-8"></div>
+              
+              <div className="text-left space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    AI-powered models identify subtle cancers and rare findings that often slip past single readers, lifting average sensitivity beyond the mid-80s.
+                  </p>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    Consistent AI outputs reduce inter-reader variability, so every breast imaging report meets a high bar of accuracy from the start.
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
           {/* Column 2: Protect Revenue */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
-              Protect Revenue and Patient Access
-            </h3>
-            
-            {/* Separator */}
-            <div className="w-1/2 h-px bg-gray-300 mx-auto mb-8"></div>
-            
-            <div className="text-left space-y-4 mb-8">
-              <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
-                <p className="text-base text-slate-700 leading-relaxed">
-                  Prevent revenue leakage by reducing claim denials and accelerating reimbursement through transparent, compliant claim generation.
-                </p>
-              </div>
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
+                Risk stratification & triage
+              </h3>
               
-              <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
-                <p className="text-base text-slate-700 leading-relaxed">
-                  Our AI de-risks workflows and ensures patients get the care they need while healthcare organizations maintain financial stability.
-                </p>
+              <div className="w-1/2 h-px bg-gray-300 mx-auto mb-8"></div>
+              
+              <div className="text-left space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    AI ranks findings so radiologists focus on the highest-risk cases, cutting false positives without compromising sensitivity.
+                  </p>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    Integrated AR overlays lock insights to precise anatomy, supporting confident triage decisions and biopsy planning.
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
           {/* Column 3: Stay Compliant */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
-              Stay Compliant as Rules Evolve
-            </h3>
-            
-            {/* Separator */}
-            <div className="w-1/2 h-px bg-gray-300 mx-auto mb-8"></div>
-            
-            <div className="text-left space-y-4 mb-8">
-              <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
-                <p className="text-base text-slate-700 leading-relaxed">
-                  Our AI stays aligned with fast-changing payer rules and policy updates, ensuring your documentation remains audit-ready and compliant.
-                </p>
-              </div>
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-normal text-slate-900 mb-6 leading-tight">
+                Workflow optimization for breast imaging
+              </h3>
               
-              <div className="flex items-start space-x-3">
-                <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
-                <p className="text-base text-slate-700 leading-relaxed">
-                  Minimize administrative delays and support equitable access to care while maintaining the highest standards of accuracy and compliance.
-                </p>
+              <div className="w-1/2 h-px bg-gray-300 mx-auto mb-8"></div>
+              
+              <div className="text-left space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    Voice-guided reporting captures AI findings directly, removing transcription errors and keeping radiologists hands-free.
+                  </p>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-1 flex-shrink-0"></div>
+                  <p className="text-base text-slate-700 leading-relaxed">
+                    Combined AI + AR + voice makes every breast imaging workflow more consistent, efficient, and explainable.
+                  </p>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
         </motion.div>
       </div>
     </section>
