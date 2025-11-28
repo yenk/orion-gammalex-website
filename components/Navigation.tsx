@@ -45,7 +45,6 @@ export default function Navigation() {
   const whyGammaLexDropdown: DropdownItem[] = [
     { id: "what-we-do", label: "What We Do", description: "Frame GammaLex as the AI breast imaging platform for detection, AR, and voice" },
     { id: "problems-we-solve", label: "Problems We Solve", description: "Explain variability, false positives, and workflow gaps in breast imaging" },
-    { id: "how-we-do-it", label: "How We Do It", description: "Highlight AI algorithms, AR overlays, and voice reporting that power readings" },
     { id: "impact", label: "Impact", description: "Measure detection accuracy gains, false positive reductions, and faster reads" },
   ];
 
@@ -96,10 +95,10 @@ export default function Navigation() {
       return
     }
     
-    if (sectionId === 'how-we-do-it') {
-      window.location.href = '/products#workflow'
-      return
-    }
+    // if (sectionId === 'how-we-do-it') {
+    //   window.location.href = '/products#workflow'
+    //   return
+    // }
     
     if (sectionId === 'responsible-ai') {
       window.location.href = '/ethical-ai'
