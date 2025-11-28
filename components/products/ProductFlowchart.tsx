@@ -11,26 +11,29 @@ import ReactFlow, {
 } from 'reactflow'
 import 'reactflow/dist/style.css'
 
-// Custom Node Components
-const StepNode = ({ data }: { data: { label: string, color: string } }) => (
+const StepNode = ({ data }: { data: { label: string, color: string, isActive?: boolean } }) => (
   <div 
-    className={`px-6 py-4 rounded-xl shadow-lg border-2 min-w-[240px] text-center font-semibold text-white transition-all hover:scale-105`}
-    style={{ 
-      backgroundColor: data.color,
-      borderColor: 'rgba(255,255,255,0.2)',
-      boxShadow: `0 10px 30px -10px ${data.color}`
-    }}
+    className="relative group"
   >
-    <Handle type="target" position={Position.Top} className="!bg-white !w-3 !h-3 !-top-1.5" />
-    {data.label}
-    <Handle type="source" position={Position.Bottom} className="!bg-white !w-3 !h-3 !-bottom-1.5" />
+    {/* Glowing effect */}
+    <div 
+      className="absolute -inset-0.5 bg-gradient-to-r from-gammalex-purple to-blue-500 rounded-2xl opacity-30 group-hover:opacity-100 transition duration-500 blur"
+      style={{ background: `linear-gradient(to right, ${data.color}, #8b5cf6)` }}
+    ></div>
+    
+    <div 
+      className="relative px-8 py-6 rounded-xl bg-white border border-slate-100 shadow-xl flex items-center justify-center min-w-[280px] min-h-[80px] transition-transform duration-300 group-hover:-translate-y-1"
+    >
+      <Handle type="target" position={Position.Top} className="!bg-slate-300 !w-2 !h-2 !-top-3 !border-0" />
+      <span className="font-bold text-slate-800 text-lg tracking-tight">{data.label}</span>
+      <Handle type="source" position={Position.Bottom} className="!bg-slate-300 !w-2 !h-2 !-bottom-3 !border-0" />
+    </div>
   </div>
 )
 
 const NoteNode = ({ data }: { data: { label: string } }) => (
-  <div className="px-4 py-2 bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm rounded-lg shadow-sm max-w-[200px] relative">
-    {/* Tail pointing left */}
-    <div className="absolute top-1/2 -left-1.5 w-3 h-3 bg-yellow-50 border-l border-b border-yellow-200 transform rotate-45 -translate-y-1/2"></div>
+  <div className="flex items-center gap-3 px-5 py-3 bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-600 text-sm font-medium rounded-full shadow-sm hover:shadow-md transition-all">
+    <div className="w-2 h-2 rounded-full bg-gammalex-purple animate-pulse"></div>
     {data.label}
   </div>
 )
@@ -94,18 +97,18 @@ const nodes = [
 
 const edges = [
   // Main Flow Edges
-  { id: 'e1-2', source: '1', target: '2', type: 'smoothstep', markerEnd: { type: MarkerType.ArrowClosed }, style: { stroke: '#94a3b8', strokeWidth: 2 } },
-  { id: 'e2-3', source: '2', target: '3', type: 'smoothstep', markerEnd: { type: MarkerType.ArrowClosed }, style: { stroke: '#94a3b8', strokeWidth: 2 } },
-  { id: 'e3-4', source: '3', target: '4', type: 'smoothstep', markerEnd: { type: MarkerType.ArrowClosed }, style: { stroke: '#94a3b8', strokeWidth: 2 } },
-  { id: 'e4-5', source: '4', target: '5', type: 'smoothstep', markerEnd: { type: MarkerType.ArrowClosed }, style: { stroke: '#94a3b8', strokeWidth: 2 } },
-  { id: 'e5-6', source: '5', target: '6', type: 'smoothstep', markerEnd: { type: MarkerType.ArrowClosed }, style: { stroke: '#94a3b8', strokeWidth: 2 } },
-  { id: 'e6-7', source: '6', target: '7', type: 'smoothstep', markerEnd: { type: MarkerType.ArrowClosed }, style: { stroke: '#94a3b8', strokeWidth: 2 } },
+  { id: 'e1-2', source: '1', target: '2', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
+  { id: 'e2-3', source: '2', target: '3', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
+  { id: 'e3-4', source: '3', target: '4', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
+  { id: 'e4-5', source: '4', target: '5', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
+  { id: 'e5-6', source: '5', target: '6', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
+  { id: 'e6-7', source: '6', target: '7', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
 
-  // Note Connectors (Dotted Lines)
-  { id: 'en1', source: '1', target: 'n1', type: 'straight', style: { stroke: '#e2e8f0', strokeWidth: 1, strokeDasharray: '5,5' }, sourceHandle: 'right', targetHandle: 'left' },
-  { id: 'en2', source: '2', target: 'n2', type: 'straight', style: { stroke: '#e2e8f0', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'en4', source: '4', target: 'n4', type: 'straight', style: { stroke: '#e2e8f0', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'en6', source: '6', target: 'n6', type: 'straight', style: { stroke: '#e2e8f0', strokeWidth: 1, strokeDasharray: '5,5' } },
+  // Note Connectors (Subtle Curves)
+  { id: 'en1', source: '1', target: 'n1', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 }, sourceHandle: 'right', targetHandle: 'left' },
+  { id: 'en2', source: '2', target: 'n2', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 } },
+  { id: 'en4', source: '4', target: 'n4', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 } },
+  { id: 'en6', source: '6', target: 'n6', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 } },
 ]
 
 export default function ProductFlowchart() {
