@@ -25,7 +25,7 @@ describe('ProblemsMetrics Component', () => {
   describe('ProblemsMetrics Clinical Impact Section', () => {
     it('displays the radiation oncologists metric', () => {
       expect(screen.getAllByText(/of radiation oncologists report/i).length).toBeGreaterThan(0)
-      expect(screen.getAllByText(/prior authorization delays/i).length).toBeGreaterThan(0)
+      expect(screen.getAllByText(/workflow interruptions/i).length).toBeGreaterThan(0)
     })
 
     it('displays the clinical impact details', () => {
@@ -47,7 +47,7 @@ describe('ProblemsMetrics Component', () => {
   describe('ProblemsMetrics Financial Impact Section', () => {
     it('displays the $19.7B metric', () => {
       expect(screen.getByText('$19.7B')).toBeInTheDocument()
-      expect(screen.getByText(/Hospitals spent fighting denials in 2022/i)).toBeInTheDocument()
+      expect(screen.getByText(/Hospitals spent fighting administrative delays in 2022/i)).toBeInTheDocument()
     })
 
     it('displays the $25.7B metric', () => {
@@ -66,7 +66,7 @@ describe('ProblemsMetrics Component', () => {
 
     it('displays the cost of inaction explanation', () => {
       expect(screen.getByText(/THE COST OF INACTION/i)).toBeInTheDocument()
-      expect(screen.getByText(/Based on a 15% average denial rate/i)).toBeInTheDocument()
+      expect(screen.getByText(/Based on a 15% average workflow delay/i)).toBeInTheDocument()
     })
 
     it('displays the systemic waste explanation', () => {

@@ -82,7 +82,7 @@ export default function AboutContent() {
                   
                   <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
                     <p>
-                      Yen Kha, a 2025 LiFT Scholar recognized for advancing open source AI, builds real-world intelligence for complex healthcare and legal workflows. At GammaLex, she leads the design of vertical AI systems that merge cloud-native infrastructure with domain-specific reasoning models to deliver transparent, compliant guidance aligned with specialty workflows and shifting payer rules. This transforms complex pre-authorizations and compliance into clear, actionable, and auditable decisions that professionals trust.
+                      Yen Kha, a 2025 LiFT Scholar recognized for advancing open source AI, builds real-world intelligence for complex healthcare and legal workflows. At GammaLex, she leads the design of vertical AI systems that merge cloud-native infrastructure with domain-specific reasoning models to deliver transparent, compliant guidance aligned with specialty workflows and modern imaging standards. This transforms breast imaging operations and compliance into clear, actionable, and auditable decisions that professionals trust.
                     </p>
                     
                     <p>

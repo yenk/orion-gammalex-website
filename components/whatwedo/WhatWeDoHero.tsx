@@ -42,7 +42,7 @@ export default function WhatWeDoHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            GammaLex is an AI-powered breast imaging platform that pairs detection algorithms with AR overlays and voice reporting to deliver dependable diagnostics and explainable authorizations.
+            GammaLex is an AI-powered breast imaging platform that pairs detection algorithms with AR overlays and voice reporting to deliver dependable diagnostics and explainable clarity.
           </motion.p>
         </motion.div>
       </div>

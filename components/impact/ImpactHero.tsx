@@ -50,7 +50,7 @@ export default function ImpactHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            We measure success through improved detection sensitivity, fewer false positives, shorter reads, and clearer documentation tied directly to authorization outcomes.
+            We measure success through improved detection sensitivity, fewer false positives, shorter reads, and clearer documentation tied directly to clinical impact.
           </motion.p>
         </motion.div>
       </div>

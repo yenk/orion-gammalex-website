@@ -25,18 +25,18 @@ export default function ProblemsDetailed() {
     {
       title: "Workflows are fragmented by inefficiency",
       paragraphs: [
-        "Radiologists toggle between PACS, RIS, authorization tools, and manual dictation, which slows reads and invites transcription errors.",
-        "AI annotations, AR overlays, and voice-guided reporting unify those steps so every read is faster, traceable, and ready for payer review."
+        "Radiologists toggle between PACS, RIS, manual dictation, and scattered notes, which slows reads and invites transcription errors.",
+        "AI annotations, AR overlays, and voice-guided reporting unify those steps so every read is faster, traceable, and ready for action."
       ],
-      highlight: "Voice-structured reporting and AR localization shorten turnaround, keep documentation consistent, and feed authorization workflows."
+      highlight: "Voice-structured reporting and AR localization shorten turnaround, keep documentation consistent, and keep clinical narratives aligned."
     },
     {
-      title: "Explainable decision support must align with authorization",
+      title: "Explainable decision support must align with clinical confidence",
       paragraphs: [
-        "Authorization teams need documentation that ties findings to coverage logic and payer rules.",
-        "GammaLex surfaces explainable AI outputs that trace back to imaging, AR context, and policy, keeping every authorization defensible."
+        "Care teams need documentation that ties findings to clinical logic and radiology standards.",
+        "GammaLex surfaces explainable AI outputs that trace back to imaging, AR context, and guidelines, keeping every decision defensible."
       ],
-      highlight: "AI, AR, and voice keep diagnosis, documentation, and authorization aligned and auditable."
+      highlight: "AI, AR, and voice keep diagnosis, documentation, and treatment plans aligned and auditable."
     }
   ];
 

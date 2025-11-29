@@ -78,9 +78,9 @@ export default function EthicalAIPractices() {
                   description: "Ensuring healthcare workforce development and AI training"
                 },
                 {
-                  category: "Payer Policy Optimization",
+                  category: "Workflow Optimization",
                   riskLevel: 2,
-                  description: "Streamlining authorization processes and reducing waste"
+                  description: "Streamlining clinical workflows and reducing waste"
                 },
                 {
                   category: "Healthcare System Risk",

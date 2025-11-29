@@ -15,10 +15,10 @@ export default function ImpactSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-inter font-normal text-white mb-8">
-            Transform <span className="text-gammalex-purple">pre-authorization</span> outcomes
+            Transform breast imaging outcomes
           </h2>
           <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto">
-            GammaLex delivers measurable improvements in approval rates, processing times, and provider satisfaction.
+            GammaLex delivers measurable improvements in detection accuracy, clinical velocity, and provider satisfaction.
           </p>
         </motion.div>
 
@@ -38,10 +38,10 @@ export default function ImpactSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-semibold text-white">
-              Faster Approvals
+              Faster Reads
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Automated pre-authorization processing reduces approval times from days to hours, enabling faster access to care for patients.
+              Accelerated detection signal processing reduces time to insight so patients move from screening to action faster.
             </p>
           </motion.div>
 
@@ -54,10 +54,10 @@ export default function ImpactSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-semibold text-white">
-              Reduced Denials
+              Consistent Confidence
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Clinical-compliant intelligence identifies potential issues before submission, significantly reducing denial rates and appeal costs.
+              Clinical-compliant intelligence catches missing context before sign-off, keeping reports consistent and trustworthy.
             </p>
           </motion.div>
 
@@ -89,7 +89,7 @@ export default function ImpactSection() {
               Compliance Confidence
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Built-in legal foresight and policy awareness ensure compliance with payer requirements and reduce liability risks.
+              Built-in legal foresight and policy awareness ensure documentation matches clinical guidelines and reduces liability risks.
             </p>
           </motion.div>
 
@@ -105,7 +105,7 @@ export default function ImpactSection() {
               Cost Savings
             </h3>
             <p className="text-lg text-white/90 leading-relaxed">
-              Reduced administrative overhead, fewer denials, and faster approvals translate to significant cost savings for healthcare organizations.
+              Reduced administrative overhead, fewer repeat scans, and faster clinical handoffs translate to significant cost savings for healthcare organizations.
             </p>
           </motion.div>
 

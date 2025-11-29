@@ -112,7 +112,7 @@ export default function AIApplicationsSection() {
             </h3>
             
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow-sm font-medium">
-              Seamless PACS/RIS/EHR connections keep AI insights in the clinician’s workflow and sync every action with downstream authorization and documentation systems.
+              Seamless PACS/RIS/EHR connections keep AI insights in the clinician’s workflow and sync every action with downstream documentation and care plan systems.
             </p>
             
             <a href="/application" className="bg-gammalex-purple hover:bg-gammalex-purple-light text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 inline-block">

@@ -1,126 +1,110 @@
 "use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import ReactFlow, { 
-  Background, 
-  Controls, 
-  Handle, 
-  Position, 
-  MarkerType 
-} from 'reactflow'
-import 'reactflow/dist/style.css'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { 
+  UploadCloud, 
+  Cpu, 
+  ScanEye, 
+  Glasses, 
+  Mic, 
+  FileText, 
+  UserCheck,
+  ArrowRight
+} from 'lucide-react'
 
-const StepNode = ({ data }: { data: { label: string, color: string, isActive?: boolean } }) => (
-  <div 
-    className="relative group"
-  >
-    {/* Glowing effect */}
-    <div 
-      className="absolute -inset-0.5 bg-gradient-to-r from-gammalex-purple to-blue-500 rounded-2xl opacity-30 group-hover:opacity-100 transition duration-500 blur"
-      style={{ background: `linear-gradient(to right, ${data.color}, #8b5cf6)` }}
-    ></div>
-    
-    <div 
-      className="relative px-8 py-6 rounded-xl bg-white border border-slate-100 shadow-xl flex items-center justify-center min-w-[280px] min-h-[80px] transition-transform duration-300 group-hover:-translate-y-1"
-    >
-      <Handle type="target" position={Position.Top} className="!bg-slate-300 !w-2 !h-2 !-top-3 !border-0" />
-      <span className="font-bold text-slate-800 text-lg tracking-tight">{data.label}</span>
-      <Handle type="source" position={Position.Bottom} className="!bg-slate-300 !w-2 !h-2 !-bottom-3 !border-0" />
-    </div>
-  </div>
-)
-
-const NoteNode = ({ data }: { data: { label: string } }) => (
-  <div className="flex items-center gap-3 px-5 py-3 bg-white/80 backdrop-blur-sm border border-slate-200 text-slate-600 text-sm font-medium rounded-full shadow-sm hover:shadow-md transition-all">
-    <div className="w-2 h-2 rounded-full bg-gammalex-purple animate-pulse"></div>
-    {data.label}
-  </div>
-)
-
-const nodeTypes = {
-  step: StepNode,
-  note: NoteNode
-}
-
-const nodes = [
-  // Main Flow Nodes
+const steps = [
   { 
-    id: '1', 
-    type: 'step', 
-    position: { x: 250, y: 0 }, 
-    data: { label: 'Patient Uploads Imaging', color: '#10b981' } // emerald-500
+    id: '1',
+    label: 'Patient Uploads Imaging', 
+    description: 'Fast, seamless upload of DICOM files via secure portal.',
+    tag: 'Fast, seamless upload',
+    color: 'bg-emerald-500', 
+    lightColor: 'bg-emerald-50',
+    borderColor: 'border-emerald-200',
+    textColor: 'text-emerald-700',
+    icon: UploadCloud
   },
   { 
     id: '2', 
-    type: 'step', 
-    position: { x: 250, y: 120 }, 
-    data: { label: 'AI Analysis Runs Automatically', color: '#3b82f6' } // blue-500
+    label: 'AI Analysis Runs Automatically', 
+    description: 'Deep learning algorithms process imaging data instantly upon ingestion.',
+    tag: 'Instant predictive insights',
+    color: 'bg-blue-500', 
+    lightColor: 'bg-blue-50',
+    borderColor: 'border-blue-200',
+    textColor: 'text-blue-700',
+    icon: Cpu
   },
   { 
     id: '3', 
-    type: 'step', 
-    position: { x: 250, y: 240 }, 
-    data: { label: 'AI Highlights Suspicious Areas', color: '#3b82f6' } // blue-500
+    label: 'AI Highlights Suspicious Areas', 
+    description: 'Automated detection of potential lesions with high sensitivity.',
+    color: 'bg-blue-600', 
+    lightColor: 'bg-blue-50',
+    borderColor: 'border-blue-200',
+    textColor: 'text-blue-800',
+    icon: ScanEye
   },
   { 
     id: '4', 
-    type: 'step', 
-    position: { x: 250, y: 360 }, 
-    data: { label: 'AR 3D Visualization Panel', color: '#10b981' } // emerald-500
+    label: 'AR 3D Visualization Panel', 
+    description: '3D reconstruction projected for precise anatomical localization.',
+    tag: 'Interactive, clinician-friendly',
+    color: 'bg-emerald-600', 
+    lightColor: 'bg-emerald-50',
+    borderColor: 'border-emerald-200',
+    textColor: 'text-emerald-800',
+    icon: Glasses
   },
   { 
     id: '5', 
-    type: 'step', 
-    position: { x: 250, y: 480 }, 
-    data: { label: 'Voice Commands for Navigation', color: '#8b5cf6' } // violet-500
+    label: 'Voice Commands for Navigation', 
+    description: 'Hands-free control of the viewing environment.',
+    color: 'bg-violet-500', 
+    lightColor: 'bg-violet-50',
+    borderColor: 'border-violet-200',
+    textColor: 'text-violet-700',
+    icon: Mic
   },
   { 
     id: '6', 
-    type: 'step', 
-    position: { x: 250, y: 600 }, 
-    data: { label: 'Results & Recommendations Panel', color: '#f59e0b' } // amber-500
+    label: 'Results & Recommendations', 
+    description: 'Synthesized findings presented in an actionable format.',
+    tag: 'Actionable summary',
+    color: 'bg-amber-500', 
+    lightColor: 'bg-amber-50',
+    borderColor: 'border-amber-200',
+    textColor: 'text-amber-700',
+    icon: FileText
   },
   { 
     id: '7', 
-    type: 'step', 
-    position: { x: 250, y: 720 }, 
-    data: { label: 'Radiologist / Clinician Decision', color: '#4b5563' } // gray-600
-  },
-
-  // Note Nodes (Right Side)
-  { id: 'n1', type: 'note', position: { x: 550, y: 10 }, data: { label: 'Fast, seamless upload' } },
-  { id: 'n2', type: 'note', position: { x: 550, y: 130 }, data: { label: 'Instant predictive insights' } },
-  { id: 'n4', type: 'note', position: { x: 550, y: 370 }, data: { label: 'Interactive, clinician-friendly' } },
-  { id: 'n6', type: 'note', position: { x: 550, y: 610 }, data: { label: 'Actionable summary' } },
-]
-
-const edges = [
-  // Main Flow Edges
-  { id: 'e1-2', source: '1', target: '2', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
-  { id: 'e2-3', source: '2', target: '3', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
-  { id: 'e3-4', source: '3', target: '4', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
-  { id: 'e4-5', source: '4', target: '5', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
-  { id: 'e5-6', source: '5', target: '6', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
-  { id: 'e6-7', source: '6', target: '7', type: 'smoothstep', animated: true, style: { stroke: '#64748b', strokeWidth: 2 } },
-
-  // Note Connectors (Subtle Curves)
-  { id: 'en1', source: '1', target: 'n1', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 }, sourceHandle: 'right', targetHandle: 'left' },
-  { id: 'en2', source: '2', target: 'n2', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 } },
-  { id: 'en4', source: '4', target: 'n4', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 } },
-  { id: 'en6', source: '6', target: 'n6', type: 'default', style: { stroke: '#cbd5e1', strokeWidth: 1.5 } },
+    label: 'Clinician Decision', 
+    description: 'Final expert review accelerated by intelligent support.',
+    color: 'bg-slate-600', 
+    lightColor: 'bg-slate-50',
+    borderColor: 'border-slate-200',
+    textColor: 'text-slate-700',
+    icon: UserCheck
+  }
 ]
 
 export default function ProductFlowchart() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollXProgress } = useScroll({ container: containerRef })
+
   return (
-    <section className="w-full bg-slate-50 py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+    <section className="w-full bg-slate-50 py-24 overflow-hidden font-inter">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        {/* Header */}
+        <div className="text-center space-y-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+            className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight"
           >
             How We Do It
           </motion.h2>
@@ -129,37 +113,89 @@ export default function ProductFlowchart() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-lg text-slate-600 max-w-2xl mx-auto"
+            className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
           >
             From seamless upload to actionable decision support, experience the complete intelligent imaging journey.
           </motion.p>
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="h-[800px] w-full bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden relative"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50 pointer-events-none"></div>
-          
-          <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            nodeTypes={nodeTypes}
-            fitView
-            fitViewOptions={{ padding: 0.2 }}
-            proOptions={{ hideAttribution: true }}
-            panOnScroll={false}
-            zoomOnScroll={false}
-            nodesDraggable={false}
-            className="bg-transparent"
+        {/* Horizontal Scroll Container */}
+        <div className="relative group">
+          {/* Scroll Progress Bar */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-slate-200 rounded-full overflow-hidden mb-8 max-w-xs mx-auto hidden sm:block">
+            <motion.div 
+              className="h-full bg-gammalex-purple"
+              style={{ scaleX: scrollXProgress, transformOrigin: "0%" }}
+            />
+          </div>
+
+          <div 
+            ref={containerRef}
+            className="flex overflow-x-auto gap-6 pb-12 pt-8 px-4 snap-x snap-mandatory no-scrollbar scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {/* <Background color="#94a3b8" gap={16} size={1} className="opacity-10" /> */}
-            {/* <Controls className="bg-white shadow-lg border border-slate-200 rounded-lg" /> */}
-          </ReactFlow>
-        </motion.div>
+            {steps.map((step, index) => (
+              <motion.div 
+                key={step.id}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="min-w-[85vw] md:min-w-[600px] snap-center"
+              >
+                <div className="relative h-full flex flex-col">
+                   {/* Connector Line */}
+                   {index !== steps.length - 1 && (
+                     <div className="hidden md:block absolute top-1/2 -translate-y-1/2 -right-8 w-8 h-0.5 bg-slate-200 z-0">
+                        <ArrowRight className="absolute -right-2 -top-2.5 text-slate-300" size={20} />
+                     </div>
+                   )}
+
+                   {/* Card */}
+                   <div className={`relative z-10 h-full bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col group-hover:shadow-2xl transition-shadow duration-300`}>
+                      
+                      {/* Content */}
+                      <div className="relative p-8 md:p-10 flex flex-col justify-center h-full">
+                        {/* Big Number Background */}
+                        <div className={`absolute top-0 right-4 md:right-8 text-[120px] md:text-[160px] font-bold leading-none select-none pointer-events-none -translate-y-4 z-0 opacity-5 ${step.textColor}`}>
+                          0{index + 1}
+                        </div>
+
+                        <div className="relative z-10">
+                           <div className={`mb-6 inline-flex p-3 rounded-2xl ${step.lightColor} ${step.textColor} w-fit`}>
+                              <step.icon size={32} strokeWidth={1.5} />
+                           </div>
+                           
+                           <h3 className="text-2xl md:text-3xl font-medium text-slate-900 mb-4 tracking-tight leading-tight pr-12">
+                             {step.label}
+                           </h3>
+                           
+                           <div className={`w-16 h-1.5 ${step.color} mb-6 rounded-full opacity-80`} />
+
+                           <p className="text-base md:text-lg text-slate-600 leading-relaxed font-light">
+                             {step.description}
+                           </p>
+
+                           {step.tag && (
+                             <div className="mt-6 flex items-center gap-2">
+                                <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${step.lightColor} ${step.textColor} border ${step.borderColor}`}>
+                                  {step.tag}
+                                </span>
+                             </div>
+                           )}
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* Fade edges */}
+          <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-slate-50 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none" />
+        </div>
+
       </div>
     </section>
   )

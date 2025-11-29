@@ -18,7 +18,7 @@ export default function HowGammaLexWorksSection() {
             How GammaLex <span className="text-gammalex-purple">works</span>
           </h2>
           <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto">
-            Our AI platform combines clinical expertise, legal foresight, and policy awareness to automate pre-authorization processes and prevent denials.
+            Our AI platform combines clinical expertise, imaging physics, and voice workflows to accelerate breast imaging detection and reporting.
           </p>
         </motion.div>
 
@@ -42,13 +42,13 @@ export default function HowGammaLexWorksSection() {
                 Data Analysis
               </h3>
               <p className="text-lg text-white/90 leading-relaxed">
-                Our AI analyzes medical records, billing codes, and clinical documentation to understand the treatment request and identify relevant payer policies.
+                Our AI analyzes medical records, imaging metadata, and clinical documentation to understand the study context and highlight suspicious regions.
               </p>
             </div>
             <div className="lg:w-2/3">
               <div className="bg-gray-900 border border-gray-700 p-8 rounded-lg">
                 <p className="text-lg text-white/90 leading-relaxed">
-                  GammaLex processes clinical data, medical terminology, and billing codes to extract key information needed for pre-authorization requests. The system identifies relevant diagnostic codes, procedure codes, and clinical justifications that align with payer requirements.
+                  GammaLex processes clinical data, imaging metadata, and terminology to extract key findings that anchor structured reports. The system surfaces suspicious regions, references prior exams, and highlights clinical justifications aligned with radiology standards.
                 </p>
               </div>
             </div>
@@ -64,16 +64,16 @@ export default function HowGammaLexWorksSection() {
           >
             <div className="lg:w-1/3">
               <h3 className="text-3xl font-semibold text-white mb-4">
-                Policy Matching
+                Contextual Matching
               </h3>
               <p className="text-lg text-white/90 leading-relaxed">
-                The platform matches treatment requests with current payer policies, coverage rules, and authorization requirements to ensure compliance.
+                The platform aligns findings with clinical guidelines, historical cohorts, and modality expectations to keep interpretations consistent.
               </p>
             </div>
             <div className="lg:w-2/3">
               <div className="bg-gray-900 border border-gray-700 p-8 rounded-lg">
                 <p className="text-lg text-white/90 leading-relaxed">
-                  Our continuously updated database of payer policies and coverage rules enables precise matching between treatment requests and authorization requirements. The system identifies specific criteria, documentation needs, and approval pathways for each payer.
+                  Our continuously updated knowledge graph connects findings to radiology standards and documented patterns, identifying relevant imaging cues, clinical justification, and next steps for each modality.
                 </p>
               </div>
             </div>
@@ -89,16 +89,16 @@ export default function HowGammaLexWorksSection() {
           >
             <div className="lg:w-1/3">
               <h3 className="text-3xl font-semibold text-white mb-4">
-                Justification Generation
+                Narrative Generation
               </h3>
               <p className="text-lg text-white/90 leading-relaxed">
-                AI generates comprehensive, evidence-based justifications that address payer requirements and maximize approval likelihood.
+                AI generates evidence-based narratives that explain imaging decisions and support follow-up planning.
               </p>
             </div>
             <div className="lg:w-2/3">
               <div className="bg-gray-900 border border-gray-700 p-8 rounded-lg">
                 <p className="text-lg text-white/90 leading-relaxed">
-                  Using clinical-compliant intelligence, GammaLex creates detailed justifications that include medical necessity, clinical evidence, and compliance with payer policies. The system flags potential issues and suggests alternative approaches when needed.
+                  Using clinical-compliant intelligence, GammaLex builds reports that combine imaging, AR annotations, and voice notes while flagging missing context and suggesting next steps.
                 </p>
               </div>
             </div>
@@ -117,13 +117,13 @@ export default function HowGammaLexWorksSection() {
                 Risk Assessment
               </h3>
               <p className="text-lg text-white/90 leading-relaxed">
-                Legal foresight identifies potential compliance issues and liability risks before they become denials or legal problems.
+                Clinical foresight identifies uncertain findings and workflow bottlenecks before they impact care delivery.
               </p>
             </div>
             <div className="lg:w-2/3">
               <div className="bg-gray-900 border border-gray-700 p-8 rounded-lg">
                 <p className="text-lg text-white/90 leading-relaxed">
-                  The platform assesses legal and compliance risks, identifying potential issues with documentation, policy compliance, or regulatory requirements. This proactive approach helps prevent denials and reduces liability exposure.
+                  The platform assesses model reliability, documentation completeness, and regulatory expectations to reduce re-scans and keep care teams confident.
                 </p>
               </div>
             </div>

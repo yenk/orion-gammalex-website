@@ -6,32 +6,32 @@ export default function ImpactStories() {
   const impactStories = [
     {
       title: "Academic Medical Center",
-      subtitle: "94% Authorization Success Rate",
-      description: "A major academic medical center achieved a 94% authorization success rate using GammaLex's AI-powered platform, reducing claim denials by 67% and accelerating payment cycles by 3.2x.",
+      subtitle: "94% detection confidence",
+      description: "A major academic medical center paired GammaLex AI with radiologist expertise, lowering false positives by 67% and accelerating treatment planning by 3.2x.",
       metrics: [
-        "67% reduction in claim denials",
-        "3.2x faster payment cycles", 
-        "$2.4M in protected revenue"
+        "67% fewer false positives",
+        "3.2x faster treatment planning",
+        "$2.4M saved on avoidable imaging"
       ]
     },
     {
       title: "Specialty Hospital Network",
-      subtitle: "Real-time Policy Intelligence",
-      description: "A specialty hospital network leveraged GammaLex's real-time policy monitoring to achieve 98% accuracy in authorization predictions, processing over 15M claims with 99.9% uptime reliability.",
+      subtitle: "AR & voice in real time",
+      description: "A specialty hospital network combined AR overlays and voice-guided reporting to reduce read times to 12 minutes while keeping teams aligned across sites.",
       metrics: [
-        "98% prediction accuracy",
-        "15M+ claims processed",
+        "12-minute average read time",
+        "15M+ imaging slices contextualized monthly",
         "99.9% system reliability"
       ]
     },
     {
       title: "Healthcare System",
-      subtitle: "Revenue Transformation",
-      description: "A large healthcare system modernized their authorization operations with GammaLex, achieving 12x ROI improvement and 89% faster claims processing while serving 500+ healthcare partners.",
+      subtitle: "Outcome acceleration",
+      description: "A large healthcare system modernized breast imaging with GammaLex, delivering 12x ROI in operational efficiency and 89% faster handoffs between radiology and treatment teams.",
       metrics: [
-        "12x ROI improvement",
-        "89% faster processing",
-        "500+ partner network"
+        "12x operational ROI",
+        "89% faster handoffs",
+        "500+ care partners aligned"
       ]
     }
   ]
@@ -50,7 +50,7 @@ export default function ImpactStories() {
             Real Impact Stories
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See how healthcare organizations are transforming their authorization processes and achieving measurable results with GammaLex.
+            See how healthcare organizations are transforming their breast imaging workflows and achieving measurable results with GammaLex.
           </p>
         </motion.div>
 

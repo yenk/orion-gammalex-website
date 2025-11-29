@@ -17,7 +17,7 @@ export default function ProblemsGrid() {
     {
       icon: <Clock className="text-white" size={24} />,
       title: "Revenue Cycle Delays",
-      description: "Lengthy pre-authorization processes and payment delays impact cash flow and operational efficiency.",
+      description: "Lengthy manual reviews and follow-ups impact cash flow and operational efficiency.",
       gradient: "from-orange-500/10 to-orange-600/5",
       iconGradient: "from-orange-500 to-orange-600",
       hoverGradient: "from-orange-500/20"

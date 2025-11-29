@@ -24,7 +24,7 @@ export default function WhatWeDoContent() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                GammaLex applies AI trained on mammography, breast ultrasound, and pathology data to surface cancers earlier, quantify risk, and align every interpretation with ACR guidelines and payer policies. Risk stratification, lesion characterization, and triage happen inside the reader workflow so teams see the right findings at the right time without leaving the PACS or RIS.
+                GammaLex applies AI trained on mammography, breast ultrasound, and pathology data to surface cancers earlier, quantify risk, and align every interpretation with ACR guidelines and clinical pathways. Risk stratification, lesion characterization, and triage happen inside the reader workflow so teams see the right findings at the right time without leaving the PACS or RIS.
               </motion.p>
               
               <motion.p 
@@ -34,7 +34,7 @@ export default function WhatWeDoContent() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                AR overlays project AI findings into 3D space for lesion localization and biopsy planning, while voice-enabled reporting narrates results and locks them directly to AI insights. Every output stays linked to the authorization workflow so requests, compliance checks, and documentation are explainable and ready for payers.
+                AR overlays project AI findings into 3D space for lesion localization and biopsy planning, while voice-enabled reporting narrates results and locks them directly to AI insights. Every output stays linked to breast imaging workflows so requests, compliance checks, and documentation are explainable and ready for clinicians.
               </motion.p>
             </div>
           </motion.div>

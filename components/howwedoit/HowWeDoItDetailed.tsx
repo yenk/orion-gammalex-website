@@ -17,7 +17,8 @@ import {
   CheckCircle,
   UploadCloud,
   Settings,
-  Volume2
+  Volume2,
+  ArrowRight
 } from 'lucide-react'
 
 const focusAreas = [
@@ -53,12 +54,12 @@ const focusAreas = [
   },
   {
     id: "voice",
-    title: "Voice-guided review",
-    summary: "Radiologists narrate findings while AI structures the report in real time.",
+    title: "Voice Command & Reporting",
+    summary: "Navigate the platform, manipulate images, and dictate findings—all hands-free.",
     points: [
-      "Dictate with macros tied to AI findings and AR annotations",
-      "Receive instant feedback when measurements or context are missing",
-      "Send structured drafts to downstream teams without manual rewrites"
+      "Control zoom, window/level, and layout with simple voice commands",
+      "Dictate findings naturally while AI structures the report in real-time",
+      "Reduce repetitive clicks and keep focus entirely on the imaging"
     ]
   },
   {
@@ -97,319 +98,296 @@ const MockWindow = ({ children, title }: { children: React.ReactNode, title: str
 )
 
 const MockIntake = () => (
-  <div className="flex h-full flex-col bg-slate-50">
-    <div className="px-6 py-4 border-b border-slate-200 bg-white">
-       <h3 className="font-semibold text-slate-900">Patient Panel</h3>
+  <div className="relative bg-slate-950 p-4 overflow-hidden h-[450px] flex flex-col rounded-xl border border-slate-800 shadow-2xl">
+    {/* Header */}
+    <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+       <div className="flex items-center gap-2">
+          <div className="h-3 w-3 rounded-full bg-red-500/20" />
+          <span className="text-xs font-bold text-slate-400 tracking-wider">GAMMALEX INTAKE</span>
+       </div>
+       <div className="flex gap-2">
+          <div className="px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-mono">CONNECTED: PACS</div>
+          <div className="px-2 py-1 rounded bg-blue-500/10 text-blue-400 text-[10px] font-mono">SYNC: RIS</div>
+       </div>
     </div>
-    <div className="flex-1 p-6 grid gap-4">
-      {/* Patient Info Card */}
-      <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-3">
-         <div className="flex items-start justify-between">
-            <div className="flex gap-3">
-               <div className="h-12 w-12 rounded-full bg-gammalex-purple/10 flex items-center justify-center text-gammalex-purple font-semibold">MJ</div>
-               <div>
-                  <div className="font-semibold text-slate-900">Maria Johnson</div>
-                  <div className="text-xs text-slate-500 font-mono mt-0.5">ID: PT-2024-0847</div>
-               </div>
-            </div>
-            <div className="bg-red-50 text-red-600 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide border border-red-100">
-               Elevated Risk
-            </div>
-         </div>
-         <div className="grid grid-cols-2 gap-2 text-xs text-slate-600 pt-2 border-t border-slate-50">
-            <div>
-               <div className="text-slate-400 mb-0.5">Age</div>
-               <div className="font-medium">52 years</div>
-            </div>
-            <div>
-               <div className="text-slate-400 mb-0.5">Last Exam</div>
-               <div className="font-medium">2024-10-28</div>
-            </div>
-         </div>
-      </div>
-      
-      {/* Consent Status */}
-      <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm flex items-center justify-between">
-         <div className="flex items-center gap-3">
-            <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-               <CheckCircle size={16} />
-            </div>
-            <div>
-               <div className="text-sm font-medium text-slate-900">Consent Verified</div>
-               <div className="text-[10px] text-slate-500">Patient consents to AI analysis</div>
-            </div>
-         </div>
-         <button className="text-xs text-gammalex-purple font-medium hover:underline">View Form</button>
-      </div>
 
-      {/* Upload Area */}
-      <div className="flex-1 bg-slate-100 rounded-xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-4 text-center hover:bg-slate-200/50 transition-colors cursor-pointer">
-         <UploadCloud className="text-slate-400 mb-2" size={32} />
-         <div className="text-sm font-medium text-slate-700">Upload Imaging Data</div>
-         <div className="text-xs text-slate-500 mt-1">Drag & drop DICOM files or Browse</div>
-      </div>
+    {/* Main Content */}
+    <div className="flex-1 flex gap-4">
+       {/* Patient List */}
+       <div className="w-1/3 border-r border-slate-800 pr-4 space-y-3">
+          <div className="text-[10px] text-slate-500 font-mono mb-2">INCOMING STUDIES</div>
+          {[
+             { name: "Smith, J.", id: "PT-892", status: "Processing", time: "Just now" },
+             { name: "Doe, A.", id: "PT-891", status: "Ready", time: "2m ago" },
+             { name: "Chen, L.", id: "PT-890", status: "Ready", time: "5m ago" },
+          ].map((pt, i) => (
+             <div key={pt.id} className={`p-3 rounded-lg border ${i === 0 ? 'bg-slate-900 border-gammalex-purple/50' : 'bg-slate-900/50 border-slate-800'} flex flex-col gap-1`}>
+                <div className="flex justify-between items-center">
+                   <span className="text-sm font-medium text-slate-200">{pt.name}</span>
+                   <span className="text-[10px] text-slate-500">{pt.time}</span>
+                </div>
+                <div className="flex justify-between items-center mt-1">
+                   <span className="text-[10px] font-mono text-slate-400">{pt.id}</span>
+                   <span className={`text-[10px] px-1.5 py-0.5 rounded ${i === 0 ? 'bg-blue-500/20 text-blue-400 animate-pulse' : 'bg-emerald-500/20 text-emerald-400'}`}>
+                      {pt.status}
+                   </span>
+                </div>
+             </div>
+          ))}
+       </div>
+
+       {/* Processing View */}
+       <div className="flex-1 flex flex-col">
+          <div className="flex-1 bg-slate-900/50 rounded-lg border border-slate-800 p-6 flex flex-col items-center justify-center relative overflow-hidden">
+             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gammalex-purple/5 via-transparent to-transparent" />
+             
+             {/* Progress Circle */}
+             <div className="relative w-32 h-32 flex items-center justify-center mb-6">
+                <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+                   <circle cx="50" cy="50" r="45" fill="none" stroke="#1e293b" strokeWidth="8" />
+                   <circle cx="50" cy="50" r="45" fill="none" stroke="#8b5cf6" strokeWidth="8" strokeDasharray="283" strokeDashoffset="70" className="animate-[dash_1.5s_ease-in-out_infinite]" />
+                </svg>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                   <UploadCloud className="text-gammalex-purple mb-1" size={24} />
+                   <span className="text-2xl font-bold text-white">75%</span>
+                </div>
+             </div>
+
+             <div className="text-center space-y-2 z-10">
+                <h4 className="text-slate-200 font-medium">Normalizing Dicom Data</h4>
+                <div className="text-xs text-slate-500 font-mono flex flex-col gap-1">
+                   <span className="text-emerald-400">✓ Header Anonymization</span>
+                   <span className="text-emerald-400">✓ Pixel Spacing Check</span>
+                   <span className="text-blue-400">➜ Contrast Analysis...</span>
+                </div>
+             </div>
+          </div>
+       </div>
     </div>
   </div>
 )
 
 const MockDetection = () => (
-  <div className="flex h-[450px] flex-col sm:flex-row overflow-hidden bg-slate-950">
-    {/* Viewer Side */}
-    <div className="flex-1 relative overflow-hidden group bg-black flex flex-col">
-      {/* Viewer Toolbar */}
-      <div className="absolute top-0 inset-x-0 bg-black/50 backdrop-blur-sm p-2 flex justify-between items-center z-10 border-b border-white/10">
-         <div className="flex gap-1">
-            {['Axial', 'Coronal', 'Sagittal', '3D'].map((view, i) => (
-               <button key={view} className={`px-3 py-1 rounded text-[10px] font-medium transition-colors ${i === 1 ? 'bg-gammalex-purple text-white' : 'text-slate-400 hover:text-white hover:bg-white/10'}`}>
-                  {view}
-               </button>
-            ))}
-         </div>
-         <div className="flex gap-2">
-            <div className="flex items-center gap-1 px-2 py-1 bg-white/10 rounded text-[10px] text-white cursor-pointer hover:bg-white/20">
-               <Activity size={10} /> Density
-            </div>
-            <div className="flex items-center gap-1 px-2 py-1 bg-white/10 rounded text-[10px] text-white cursor-pointer hover:bg-white/20">
-               <AlertTriangle size={10} /> Suspicious
-            </div>
-         </div>
-      </div>
-
-      {/* Simulated Mammogram Content */}
-      <div className="flex-1 relative">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-black opacity-60" />
-        <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
-        <div className="absolute top-[10%] bottom-[10%] left-[10%] right-[20%] bg-gradient-to-r from-slate-800 to-transparent rounded-l-[40%] opacity-30 blur-3xl" />
-        
-        {/* Finding Overlay */}
-        <div className="absolute top-[35%] left-[45%] w-24 h-24 group-hover:scale-105 transition-transform duration-500">
-           <div className="absolute inset-0 border-2 border-red-500/80 rounded-full animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.3)]" />
-           <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg whitespace-nowrap flex items-center gap-1">
-             <AlertTriangle size={8} /> Mass 87%
-           </div>
-        </div>
-
-        {/* Ruler / Scale */}
-        <div className="absolute bottom-8 left-4 w-24 h-1 bg-white/20 flex justify-between">
-           <div className="w-px h-2 bg-white/40 mt-[-4px]" />
-           <div className="w-px h-2 bg-white/40 mt-[-4px]" />
-           <div className="absolute top-2 left-0 text-[8px] text-white/40">5cm</div>
-        </div>
-      </div>
+  <div className="relative bg-black p-0 overflow-hidden h-[450px] flex flex-col rounded-xl border border-slate-800 shadow-2xl">
+    {/* Toolbar */}
+    <div className="h-12 bg-slate-900/80 border-b border-slate-800 flex items-center justify-between px-4">
+       <div className="flex gap-1 bg-black/50 p-1 rounded-lg">
+          {['Axial', 'Coronal', 'Sagittal', '3D'].map((view, i) => (
+             <button key={view} className={`px-3 py-1 rounded-md text-[10px] font-medium transition-colors ${i === 3 ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white'}`}>
+                {view}
+             </button>
+          ))}
+       </div>
+       <div className="flex gap-4 text-slate-400">
+          <Scan size={16} />
+          <Activity size={16} />
+          <Settings size={16} />
+       </div>
     </div>
 
-    {/* Sidebar Side - Results & Actions */}
-    <div className="w-full sm:w-72 bg-white border-l border-slate-200 flex flex-col">
-      <div className="px-4 py-3 border-b border-slate-100 bg-slate-50">
-         <h4 className="font-semibold text-slate-900 text-sm">Diagnostic Summary</h4>
-      </div>
-      <div className="p-4 space-y-6 overflow-y-auto">
-        
-        {/* BI-RADS Score */}
-        <div className="flex items-center justify-between bg-red-50 border border-red-100 rounded-lg p-3">
-           <div>
-              <div className="text-xs text-red-600 font-medium uppercase tracking-wide">BI-RADS Category</div>
-              <div className="text-2xl font-bold text-red-700">4A</div>
-           </div>
-           <div className="text-right">
-              <div className="text-xs text-red-500">Suspicious</div>
-              <div className="text-[10px] text-red-400">Overall Risk: Mod</div>
-           </div>
-        </div>
+    {/* Main MLO View */}
+    <div className="flex-1 relative overflow-hidden bg-black flex items-center justify-center">
+       {/* Realistic MLO Breast Gradient */}
+       <div className="absolute top-0 bottom-0 right-[15%] w-[60%] bg-gradient-to-l from-slate-800 via-slate-700 to-transparent rounded-l-[100%] opacity-60 blur-sm" />
+       <div className="absolute top-[10%] bottom-[10%] right-[15%] w-[40%] bg-gradient-to-l from-slate-500 via-slate-600 to-transparent rounded-l-[100%] opacity-30 blur-md" />
+       
+       {/* Dense Tissue Texture Overlay */}
+       <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
 
-        {/* Findings List */}
-        <div>
-           <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Findings & Confidence</div>
-           <div className="space-y-3">
-              <div className="space-y-1">
-                 <div className="flex justify-between text-sm">
-                    <span className="font-medium text-slate-700">Mass (R)</span>
-                    <span className="font-bold text-red-600">87%</span>
-                 </div>
-                 <div className="text-[10px] text-slate-500">Upper outer quadrant</div>
-                 <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-red-500 w-[87%]" />
-                 </div>
-              </div>
-              <div className="space-y-1">
-                 <div className="flex justify-between text-sm">
-                    <span className="font-medium text-slate-700">Calcifications (L)</span>
-                    <span className="font-bold text-amber-600">72%</span>
-                 </div>
-                 <div className="text-[10px] text-slate-500">Retroareolar</div>
-                 <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-amber-500 w-[72%]" />
-                 </div>
-              </div>
-           </div>
-        </div>
-      </div>
-      
-      <div className="p-4 border-t border-slate-100 bg-slate-50">
-         <button className="w-full py-2.5 bg-gammalex-purple text-white text-xs font-bold uppercase tracking-wide rounded-lg hover:bg-gammalex-purple-dark transition shadow-lg shadow-gammalex-purple/20">
-           Confirm & Next
-         </button>
-      </div>
+       {/* Suspicious Finding Circle (Yellow Style) */}
+       <div className="absolute top-[35%] right-[35%] z-10 group cursor-pointer">
+          <div className="relative">
+             <div className="w-24 h-24 border-2 border-amber-400/80 rounded-full shadow-[0_0_20px_rgba(251,191,36,0.2)] animate-pulse" />
+             <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-amber-400 text-black text-[10px] font-bold px-3 py-1 rounded-full shadow-lg whitespace-nowrap">
+               Suspicious
+             </div>
+             {/* Hover Detail */}
+             <div className="absolute left-full ml-4 top-0 bg-slate-900 border border-slate-700 p-3 rounded-lg w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                <div className="text-xs text-slate-200 font-bold mb-1">Mass</div>
+                <div className="text-[10px] text-slate-400">Irregular shape, spiculated margins. High probability of malignancy.</div>
+             </div>
+          </div>
+       </div>
+
+       {/* Labels */}
+       <div className="absolute top-4 left-4 text-slate-500 text-xs font-mono">L MLO</div>
+       <div className="absolute bottom-4 right-4 text-slate-500 text-xs font-mono">IMG: 24/80</div>
     </div>
   </div>
 )
 
 const MockAR = () => (
-  <div className="relative bg-slate-950 p-4 overflow-hidden h-[450px] flex flex-col">
-    {/* 3D Environment Simulation */}
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,_var(--tw-gradient-stops))] from-indigo-950 via-slate-950 to-black" />
-    
-    {/* Grid Floor */}
-    <div className="absolute inset-0 perspective-[1000px]">
-      <div className="absolute inset-0 transform rotate-x-60 scale-150 opacity-20 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+  <div className="relative bg-slate-950 p-0 overflow-hidden h-[450px] flex flex-col rounded-xl border border-slate-800 shadow-2xl">
+    {/* Header Bar */}
+    <div className="h-10 bg-[#1e1e2e] flex items-center justify-between px-4 border-b border-slate-800">
+       <span className="text-gammalex-purple font-bold text-sm tracking-wider">GammaLex View</span>
+       <div className="flex gap-3 text-slate-400">
+          <Layout size={14} />
+          <Activity size={14} />
+       </div>
     </div>
 
-    {/* Simulated Anatomy Mesh (Abstract) */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64">
-       <div className="absolute inset-0 border border-indigo-500/20 rounded-full animate-[spin_10s_linear_infinite]" />
-       <div className="absolute inset-4 border border-indigo-400/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-600/5 rounded-full blur-2xl" />
+    {/* Side-by-Side View (CC) */}
+    <div className="flex-1 flex relative">
+       {/* Divider */}
+       <div className="absolute inset-y-0 left-1/2 w-px bg-slate-800 z-10" />
+
+       {/* Right Breast (Shown on Left in Radiology) - R CC */}
+       <div className="flex-1 bg-black relative overflow-hidden flex items-center justify-center">
+          <div className="absolute top-4 left-4 text-[10px] text-slate-400 font-mono">R CC</div>
+          <div className="w-[80%] h-[70%] bg-gradient-to-r from-slate-800 via-slate-600 to-transparent rounded-r-[100%] opacity-50 blur-sm ml-[-20%]" />
+          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+       </div>
+
+       {/* Left Breast (Shown on Right in Radiology) - L CC */}
+       <div className="flex-1 bg-black relative overflow-hidden flex items-center justify-center">
+          <div className="absolute top-4 right-4 text-[10px] text-slate-400 font-mono">L CC</div>
+          <div className="w-[80%] h-[70%] bg-gradient-to-l from-slate-800 via-slate-600 to-transparent rounded-l-[100%] opacity-50 blur-sm mr-[-20%]" />
+          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+
+          {/* Red Bounding Box Detection */}
+          <div className="absolute top-[30%] right-[25%] z-20">
+             <div className="relative w-20 h-20">
+                {/* Corners */}
+                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-red-500" />
+                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-red-500" />
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-red-500" />
+                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-red-500" />
+                
+                {/* Content */}
+                <div className="absolute inset-0 bg-red-500/10 animate-pulse" />
+             </div>
+             {/* Tag */}
+             <div className="absolute -right-24 top-0 bg-slate-900/90 border border-red-500/30 px-2 py-1 rounded text-[9px] text-red-400 font-mono flex flex-col gap-0.5">
+                <span>Mass 14mm</span>
+                <span className="text-slate-500">Loc: 3:00</span>
+             </div>
+          </div>
+       </div>
     </div>
 
-    {/* Target Marker */}
-    <div className="absolute top-[42%] left-[58%] z-10">
-      <div className="relative">
-        <div className="w-16 h-16 border border-emerald-400 rounded-full animate-ping opacity-20 absolute inset-0" />
-        <div className="w-16 h-16 border border-emerald-400/50 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(52,211,153,0.3)]">
-           <div className="w-1 h-1 bg-emerald-400 rounded-full box-shadow-[0_0_10px_#34d399]" />
-        </div>
-        {/* Label Line */}
-        <div className="absolute left-full top-1/2 w-12 h-[1px] bg-emerald-400/50" />
-        <div className="absolute left-[calc(100%+3rem)] top-1/2 -translate-y-1/2 bg-black/80 text-emerald-400 text-[10px] font-mono px-3 py-1.5 rounded border border-emerald-400/30 backdrop-blur whitespace-nowrap">
-          Loc: 12mm Depth
-        </div>
-      </div>
-    </div>
-    
-    {/* HUD Overlay */}
-    <div className="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none">
-      <div className="flex justify-between text-emerald-400 font-mono text-xs tracking-widest opacity-80">
-        <div className="flex gap-4">
-           <span>AR: ACTIVE</span>
-           <span>FOV: 42°</span>
-        </div>
-        <span>SYNC: ON</span>
-      </div>
-      
-      <div className="flex justify-between items-end">
-         <div className="w-32 h-32 border-l border-b border-slate-700/50 rounded-bl-2xl" />
-         <div className="w-32 h-32 border-r border-b border-slate-700/50 rounded-br-2xl" />
-      </div>
+    {/* Footer Controls */}
+    <div className="h-12 bg-[#1e1e2e] border-t border-slate-800 flex items-center justify-between px-4">
+       <div className="flex gap-4">
+          <div className="flex flex-col">
+             <span className="text-[9px] text-slate-500">NAME</span>
+             <span className="text-[10px] text-slate-300">ERIKA MUSTERMANN</span>
+          </div>
+          <div className="flex flex-col">
+             <span className="text-[9px] text-slate-500">DOB</span>
+             <span className="text-[10px] text-slate-300">12.04.1960</span>
+          </div>
+       </div>
+       <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-[10px] text-emerald-500 font-medium">AI SYNCED</span>
+       </div>
     </div>
   </div>
 )
 
-const MockVoice = () => (
-  <div className="flex flex-col bg-slate-50 h-[450px]">
-    <div className="flex-1 p-6 flex flex-col items-center justify-center text-center space-y-8">
-       
-       {/* Listening State */}
-       <div className="relative">
-          <div className="absolute inset-0 bg-gammalex-purple/20 rounded-full animate-ping" />
-          <div className="relative h-20 w-20 bg-gammalex-purple text-white rounded-full flex items-center justify-center shadow-xl">
-             <Mic size={32} />
-          </div>
-          <div className="mt-6 space-y-1">
-             <div className="text-lg font-semibold text-slate-900">Listening...</div>
-             <div className="text-sm text-slate-500">Say a command or dictate findings</div>
-          </div>
-       </div>
+const MockGenAI = () => (
+  <div className="relative bg-slate-950 p-4 overflow-hidden h-[450px] flex flex-col rounded-xl border border-slate-800 shadow-2xl font-mono">
+     {/* Voice Interface Header */}
+     <div className="flex items-center justify-center py-6 border-b border-slate-800 relative bg-gradient-to-b from-slate-900/50 to-transparent">
+        <div className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-3">
+           <div className="w-8 h-8 rounded-full bg-gammalex-purple flex items-center justify-center shadow-lg shadow-gammalex-purple/30">
+              <Mic size={16} className="text-white" />
+           </div>
+           <div className="flex gap-0.5 items-end h-4">
+              {[...Array(5)].map((_, i) => (
+                 <div key={i} className="w-1 bg-gammalex-purple rounded-full animate-[pulse_1s_ease-in-out_infinite]" style={{ height: `${40 + (i * 15) % 60}%`, animationDelay: `${i * 0.1}s` }} />
+              ))}
+           </div>
+        </div>
+        <span className="text-xs text-slate-400 tracking-widest uppercase font-medium">Listening...</span>
+     </div>
 
-       {/* Visualizer */}
-       <div className="h-12 flex items-center gap-1">
-          {[...Array(20)].map((_, i) => (
-            <div 
-              key={i} 
-              className="w-1 bg-slate-900/20 rounded-full transition-all duration-75" 
-              style={{ height: `${30 + (i * 13) % 60}%` }}
-            />
-          ))}
-       </div>
+     {/* Action & Report Area */}
+     <div className="flex-1 flex flex-col gap-4 pt-4 overflow-hidden">
+        
+        {/* Command Log */}
+        <div className="flex-1 space-y-3 overflow-y-auto px-2">
+           {/* System Action */}
+           <div className="flex justify-start">
+              <div className="bg-slate-900 border border-slate-800 rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]">
+                 <div className="text-[10px] text-emerald-500 mb-1 flex items-center gap-1">
+                    <CheckCircle size={10} /> SYSTEM ACTION
+                 </div>
+                 <p className="text-xs text-slate-300">Zoomed to right breast, upper outer quadrant.</p>
+              </div>
+           </div>
 
-       {/* Command Pills */}
-       <div className="flex flex-wrap justify-center gap-3 max-w-sm">
-          {['"Show Coronal View"', '"Highlight Lesion"', '"Next Patient"', '"Toggle Density"'].map((cmd) => (
-             <div key={cmd} className="px-3 py-1.5 bg-white border border-slate-200 rounded-full text-xs text-slate-600 shadow-sm">
-                {cmd}
-             </div>
-          ))}
-       </div>
-    </div>
-    
-    <div className="bg-white border-t border-slate-200 p-4">
-       <div className="flex items-center gap-3 bg-slate-50 rounded-lg p-3 border border-slate-100">
-          <div className="h-8 w-8 bg-slate-200 rounded-full flex items-center justify-center text-slate-500">
-             <Volume2 size={14} />
-          </div>
-          <div className="flex-1 text-xs text-slate-600 font-mono">
-             "Mass in upper outer quadrant..."
-          </div>
-       </div>
-    </div>
+           {/* User Command */}
+           <div className="flex justify-end">
+              <div className="bg-gammalex-purple/10 border border-gammalex-purple/30 rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] text-right">
+                 <div className="text-[10px] text-gammalex-purple mb-1">VOICE COMMAND</div>
+                 <p className="text-sm text-white">"Measure the mass and compare with prior."</p>
+              </div>
+           </div>
+
+           {/* System Response */}
+           <div className="flex justify-start">
+              <div className="bg-slate-900 border border-slate-800 rounded-lg rounded-tl-none px-3 py-2 max-w-[80%]">
+                 <div className="text-[10px] text-blue-400 mb-1 flex items-center gap-1">
+                    <Activity size={10} /> ANALYSIS
+                 </div>
+                 <p className="text-xs text-slate-300">Mass measured at 14mm. Compared to 2023 exam: New finding.</p>
+              </div>
+           </div>
+           
+           {/* Live Dictation */}
+           <div className="flex justify-end opacity-70">
+              <div className="bg-slate-800/50 border border-slate-700 rounded-lg rounded-tr-none px-3 py-2 max-w-[80%] text-right">
+                 <div className="text-[10px] text-slate-400 mb-1">DICTATING...</div>
+                 <p className="text-sm text-slate-200">"Impression: BI-RADS 4 suspicious abnormality..."</p>
+              </div>
+           </div>
+        </div>
+
+        {/* Context Bar */}
+        <div className="h-10 bg-slate-900 rounded-lg border border-slate-800 flex items-center px-3 justify-between">
+           <span className="text-[10px] text-slate-500">CONTEXT: 3D SCREENING</span>
+           <div className="flex gap-2">
+              <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Mic: On</span>
+              <span className="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Auto-Nav: Active</span>
+           </div>
+        </div>
+     </div>
   </div>
 )
 
 const MockFeedback = () => (
-  <div className="p-6 flex flex-col gap-6 h-[450px] bg-slate-50">
-    <div className="flex items-center justify-between mb-2">
-       <h4 className="text-sm font-semibold text-slate-900">Performance Analytics</h4>
-       <div className="flex gap-2 text-xs">
-          <span className="px-2 py-1 bg-white border border-slate-200 rounded text-slate-600">This Week</span>
-          <span className="px-2 py-1 bg-white border border-slate-200 rounded text-slate-600">All Modalities</span>
-       </div>
-    </div>
+  <div className="relative bg-slate-950 p-4 overflow-hidden h-[450px] flex flex-col rounded-xl border border-slate-800 shadow-2xl">
+     <div className="flex items-center justify-between mb-6">
+        <h4 className="text-sm font-bold text-slate-200 tracking-wide">PRACTICE ANALYTICS</h4>
+        <div className="flex gap-2">
+           <span className="text-[10px] bg-slate-800 text-slate-400 px-2 py-1 rounded border border-slate-700">Last 30 Days</span>
+        </div>
+     </div>
 
-    <div className="grid grid-cols-2 gap-4">
-      <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-2 opacity-10 text-violet-600"><Activity size={40} /></div>
-        <div className="text-xs text-slate-500 mb-1 font-medium uppercase tracking-wide">Diagnostic Accuracy</div>
-        <div className="text-3xl font-bold text-slate-900 tracking-tight">98.2%</div>
-        <div className="text-[10px] font-medium flex items-center gap-1 mt-2">
-          <span className="text-green-600 bg-green-50 px-1.5 py-0.5 rounded">+2.4%</span> 
-          <span className="text-slate-400">vs benchmark</span>
+     <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-800">
+           <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Recall Rate</div>
+           <div className="text-2xl font-bold text-white">8.4%</div>
+           <div className="text-[10px] text-emerald-400 mt-1">↓ 1.2% vs regional avg</div>
         </div>
-      </div>
-      <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 p-2 opacity-10 text-blue-600"><Layout size={40} /></div>
-        <div className="text-xs text-slate-500 mb-1 font-medium uppercase tracking-wide">Avg Read Time</div>
-        <div className="text-3xl font-bold text-slate-900 tracking-tight">1.8m</div>
-        <div className="text-[10px] font-medium flex items-center gap-1 mt-2">
-          <span className="text-green-600 bg-green-50 px-1.5 py-0.5 rounded">-45s</span> 
-          <span className="text-slate-400">efficiency gain</span>
+        <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-800">
+           <div className="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Cancer Detection Rate</div>
+           <div className="text-2xl font-bold text-white">5.1<span className="text-sm text-slate-500 font-normal">/1k</span></div>
+           <div className="text-[10px] text-emerald-400 mt-1">↑ 0.8% improvement</div>
         </div>
-      </div>
-    </div>
-    
-    <div className="flex-1 bg-white rounded-xl border border-slate-200 p-5 flex flex-col shadow-sm">
-      <div className="flex items-center justify-between mb-4">
-         <span className="text-xs font-semibold text-slate-700">Cases Processed vs AI Usage</span>
-      </div>
-      <div className="flex-1 flex items-end gap-3">
-        {[40, 65, 45, 80, 55, 90, 70, 85, 60, 75].map((h, i) => (
-          <div key={i} className="flex-1 flex flex-col justify-end h-full group gap-1">
-            <div className="relative w-full bg-gammalex-purple/10 rounded-t transition-all duration-300 group-hover:bg-gammalex-purple/20" style={{ height: `${h}%` }}>
-               <div className="absolute bottom-0 inset-x-0 bg-gammalex-purple/80 rounded-t transition-all duration-300 group-hover:bg-gammalex-purple" style={{ height: `${h * 0.7}%` }} />
-               
-               <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
-                {h * 12} cases
-               </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="border-t border-slate-100 mt-2 pt-2 flex justify-between text-[10px] text-slate-400 font-mono">
-         <span>Mon</span>
-         <span>Tue</span>
-         <span>Wed</span>
-         <span>Thu</span>
-         <span>Fri</span>
-      </div>
-    </div>
+     </div>
+
+     <div className="flex-1 bg-slate-900/30 rounded-lg border border-slate-800 p-4 flex flex-col justify-end">
+        <div className="text-[10px] text-slate-500 mb-4">Detection Accuracy Trend</div>
+        <div className="flex items-end justify-between gap-2 h-32">
+           {[40, 45, 42, 55, 58, 65, 70, 72, 75, 82].map((h, i) => (
+              <div key={i} className="flex-1 bg-gradient-to-t from-gammalex-purple/20 to-gammalex-purple/80 rounded-t hover:to-emerald-400 transition-all duration-300" style={{ height: `${h}%` }} />
+           ))}
+        </div>
+        <div className="h-px bg-slate-800 w-full mt-px" />
+     </div>
   </div>
 )
 
@@ -418,7 +396,7 @@ const getMockComponent = (id: string) => {
     case 'intake': return <MockIntake />
     case 'detection': return <MockDetection />
     case 'ar': return <MockAR />
-    case 'voice': return <MockVoice />
+    case 'voice': return <MockGenAI />
     case 'feedback': return <MockFeedback />
     default: return <MockIntake />
   }
@@ -438,7 +416,8 @@ export default function HowWeDoItDetailed() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl lg:text-6xl font-normal text-slate-900 tracking-tight"
           >
-            Imaging diagnosis, made digestible
+            Designed for the future, <br className="hidden sm:block" />
+            solving today's burnout
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -447,60 +426,72 @@ export default function HowWeDoItDetailed() {
             viewport={{ once: true }}
             className="mx-auto max-w-3xl text-lg sm:text-xl text-slate-600 leading-relaxed"
           >
-            GammaLex condenses AI, AR, and voice into a single interactive experience focused on sharper breast imaging detection.
+            Enhance focus and efficiency with Generative AI. GammaLex allows radiologists to keep their eyes on the images—dictating up to 2x faster with 90% fewer words—by fusing AI, AR, and voice into one seamless workflow.
           </motion.p>
         </div>
 
-        {/* Focus Areas - Horizontal Scroll */}
-        <div className="flex overflow-x-auto pb-12 gap-8 px-4 snap-x snap-mandatory no-scrollbar">
+        {/* Focus Areas - Side by Side Sections */}
+        <div className="space-y-32">
           {focusAreas.map((area, index) => (
             <motion.div 
               key={area.id}
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="min-w-[90vw] md:min-w-[900px] snap-center bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col lg:flex-row"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+              className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
-              {/* Text Side - Card Style */}
-              <div className="flex-1 w-full relative p-10 flex flex-col justify-center border-r border-slate-50">
-                {/* Big Number Background */}
-                <div className="absolute top-0 left-8 text-[160px] font-bold text-emerald-50/80 leading-none select-none pointer-events-none -translate-y-10 z-0">
-                  {String(index + 1).padStart(2, '0')}
-                </div>
-                
-                <div className="relative z-10 pt-12">
-                    <h3 className="text-3xl font-medium text-slate-900 mb-4 tracking-tight">
-                      {area.title}
-                    </h3>
-                    
-                    {/* Divider Line */}
-                    <div className="w-16 h-1 bg-emerald-400 mb-8 rounded-full"></div>
-
-                    <p className="text-lg text-slate-600 leading-relaxed mb-8 font-light">
-                      {area.summary}
-                    </p>
-                    
-                    <ul className="space-y-4">
-                      {area.points.map((point) => (
-                        <li key={point} className="flex items-start gap-3 text-slate-500">
-                          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                          <span className="leading-relaxed">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+              {/* Visual Side */}
+              <div className="flex-1 w-full">
+                <div className="relative group">
+                   <div className={`absolute -inset-4 rounded-[2rem] blur-3xl opacity-20 transition-opacity duration-500 group-hover:opacity-30 ${index % 2 === 0 ? 'bg-gammalex-purple' : 'bg-blue-400'}`} />
+                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-100 bg-white transition-transform duration-500 hover:scale-[1.02]">
+                      <div className="h-8 bg-slate-50 border-b border-slate-100 flex items-center gap-2 px-4">
+                        <div className="flex gap-1.5">
+                          <div className="w-2.5 h-2.5 rounded-full bg-red-400/20" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-amber-400/20" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/20" />
+                        </div>
+                        <div className="text-[10px] font-mono text-slate-400 ml-2">GammaLex AI • {area.title}</div>
+                      </div>
+                      <div className="bg-slate-50/50 p-2 min-h-[300px]">
+                        {getMockComponent(area.id)}
+                      </div>
+                   </div>
                 </div>
               </div>
 
-              {/* Visual Side */}
-              <div className="flex-1 w-full bg-slate-50 p-8 flex items-center justify-center">
-                <div className="relative w-full max-w-[500px]">
-                   {/* Decorative blobs */}
-                   <div className={`absolute -inset-4 rounded-full blur-3xl opacity-20 ${index % 2 === 0 ? 'bg-gammalex-purple' : 'bg-blue-400'}`} />
-                   
-                   <MockWindow title={`GammaLex - ${area.title}`}>
-                      {getMockComponent(area.id)}
-                   </MockWindow>
+              {/* Text Side */}
+              <div className="flex-1 w-full space-y-8">
+                <div className="relative">
+                  <div className="text-sm font-bold uppercase tracking-wider text-emerald-500 mb-3 flex items-center gap-2">
+                    <span className="w-8 h-[2px] bg-emerald-500" />
+                    Step {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+                    {area.title}
+                  </h3>
+                </div>
+                
+                <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-light">
+                  {area.summary}
+                </p>
+                
+                <ul className="space-y-4 pt-4 border-t border-slate-100">
+                  {area.points.map((point) => (
+                    <li key={point} className="flex items-start gap-4 group">
+                      <div className="mt-1.5 h-5 w-5 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-100 transition-colors">
+                         <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      </div>
+                      <span className="text-slate-600 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="pt-4">
+                   <Button variant="ghost" className="text-gammalex-purple hover:text-gammalex-purple-dark hover:bg-gammalex-purple/5 pl-0 gap-2">
+                      Learn more about {area.title.split(' ')[0]} <ArrowRight className="w-4 h-4" />
+                   </Button>
                 </div>
               </div>
             </motion.div>

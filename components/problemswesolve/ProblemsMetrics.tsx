@@ -65,7 +65,7 @@ export default function ProblemsMetrics() {
                 </div>
                 <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter leading-tight mb-6">
                   of radiation oncologists report<br />
-                  <span className="text-gammalex-purple font-semibold">prior authorization delays</span>
+                  <span className="text-gammalex-purple font-semibold">workflow interruptions</span>
                 </div>
                 <div className="text-base text-white/80 font-inter leading-relaxed">
                   <span className="text-gammalex-purple font-semibold">30%</span> result in ER visits, hospitalization, or permanent disability. 
@@ -89,7 +89,7 @@ export default function ProblemsMetrics() {
                   <span className="text-gammalex-purple font-semibold">physician-recommended care</span>
                 </div>
                 <div className="text-base text-white/80 font-inter leading-relaxed">
-                  Due to authorization delays or denials, <span className="text-gammalex-purple font-semibold">putting lives at risk</span>
+                  Due to workflow delays or manual handoffs, <span className="text-gammalex-purple font-semibold">putting lives at risk</span>
                 </div>
               </motion.div>
 
@@ -105,11 +105,11 @@ export default function ProblemsMetrics() {
                   <AnimatedCounter value="93%" inView={true} />
                 </div>
                 <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter leading-tight mb-6">
-                  PA rate for cardiology<br />
+                  Manual review rate for cardiology<br />
                   <span className="text-gammalex-purple font-semibold">second-highest among specialties</span>
                 </div>
                 <div className="text-base text-white/80 font-inter leading-relaxed">
-                  Complex coding and strict payer criteria create <span className="text-gammalex-purple font-semibold">elevated denial risk</span>
+                  Complex coding and limited imaging context create <span className="text-gammalex-purple font-semibold">elevated delay risk</span>
                 </div>
               </motion.div>
 
@@ -131,7 +131,7 @@ export default function ProblemsMetrics() {
             Clinical delays become financial losses
           </div>
           <div className="text-lg text-white/80 font-inter max-w-4xl mx-auto leading-relaxed">
-            These delays aren't just clinical—they're financial. When 92% of radiation oncologists report authorization delays, the cost cascades through the entire system, creating a crisis that impacts both patient care and hospital budgets.
+            These delays aren't just clinical—they're financial. When 92% of radiation oncologists report workflow interruptions, the cost cascades through the entire system, creating a crisis that impacts both patient care and hospital budgets.
           </div>
         </motion.div>
 
@@ -162,14 +162,14 @@ export default function ProblemsMetrics() {
                       $19.7B
                     </div>
                     <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
-                      Hospitals spent fighting denials in 2022
+                      Hospitals spent fighting administrative delays in 2022
                     </div>
                   </div>
                   <div className="hidden lg:block w-8 h-8 bg-gammalex-purple rounded-full border-4 border-white shadow-lg z-10" />
                   <div className="lg:w-1/2 text-center lg:text-left">
                     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-purple/20">
                       <div className="text-sm text-gammalex-purple font-semibold mb-2">THE COST OF INACTION</div>
-                      <div className="text-white/80">Based on a 15% average denial rate, healthcare systems were forced to spend billions just to get paid for care they had already delivered.</div>
+                      <div className="text-white/80">Based on a 15% average workflow delay, healthcare systems were forced to spend billions just to catch up on care they had already delivered.</div>
                     </div>
                   </div>
                 </motion.div>
@@ -194,7 +194,7 @@ export default function ProblemsMetrics() {
                   <div className="lg:w-1/2 text-center lg:text-right">
                     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-orange/20">
                       <div className="text-sm text-gammalex-purple font-semibold mb-2">23% INCREASE</div>
-                      <div className="text-white/80">A 23% year-over-year spike shows the denial crisis is accelerating, not improving.</div>
+                      <div className="text-white/80">A 23% year-over-year spike shows workflow backlogs are accelerating, not improving.</div>
                     </div>
                   </div>
                 </motion.div>
@@ -212,14 +212,14 @@ export default function ProblemsMetrics() {
                       $10.6B
                     </div>
                     <div className="text-lg sm:text-xl lg:text-2xl text-white/90 font-inter">
-                      Wasted on claims that were overturned
+                      Wasted on repeat imaging and handoffs
                     </div>
                   </div>
                   <div className="hidden lg:block w-8 h-8 bg-gammalex-purple rounded-full border-4 border-white shadow-lg z-10" />
                   <div className="lg:w-1/2 text-center lg:text-left">
                     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-gammalex-purple/20">
                       <div className="text-sm text-gammalex-purple font-semibold mb-2">SYSTEMIC WASTE</div>
-                      <div className="text-white/80">Claims that should have been paid at the outset, then overturned through appeals—representing pure administrative waste.</div>
+                      <div className="text-white/80">Repeat imaging and manual handoffs—representing pure administrative waste.</div>
                     </div>
                   </div>
                 </motion.div>
@@ -230,8 +230,78 @@ export default function ProblemsMetrics() {
       </div>
 
       {/* Source attribution */}
-      <div className="text-sm sm:text-base text-white/60 text-center mt-8">
-        Sources: <a href="https://www.astro.org/news-and-publications/news-and-media-center/news-releases/2024/new-astro-survey-finds-that-prior-authorization-delays-lead-to-serious-harm-for-people-with-cancer" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">ASTRO Survey: Prior Authorization Delays Lead to Serious Harm for Cancer Patients</a> | <a href="https://www.beckershospitalreview.com/oncology/how-insurance-denials-disrupt-cancer-care-5-investigation-notes" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Becker's Hospital Review: How Insurance Denials Disrupt Cancer Care</a> | <a href="https://blog.healthjobsnationwide.com/healthcare-denials-are-skyrocketing-in-2025-hidden-reasons-revealed/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Healthcare Denials Skyrocketing in 2025</a> | <a href="https://www.os-healthcare.com/news-and-blog/denial-rates-are-climbing-what-healthcare-revenue-cycle-leaders-should-be-watching-in-2025" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">OS Healthcare Denial Rates Climbing 2025</a> | <a href="https://www.fiercehealthcare.com/providers/providers-potentially-wasted-almost-18b-2023-overturning-claims-denials-premier-estimates" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Fierce Healthcare: Providers Potentially Wasted Almost $18B in 2023</a> | <a href="https://www.beckershospitalreview.com/finance/claims-denials-are-costing-hospitals-nearly-20b-per-year" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Becker's Hospital Review: Claims Denials Costing Hospitals Nearly $20B Per Year</a> | <a href="https://www.fiercehealthcare.com/providers/providers-wasted-106b-2022-overturning-claims-denials-survey-finds" target="_blank" rel="noopener noreferrer" className="underline hover:text-gammalex-purple transition-colors">Fierce Healthcare: Providers Wasted $10.6B in 2022 Overturning Claims Denials</a>
+      <div className="text-sm sm:text-base text-white/60 text-center mt-8 space-y-1">
+        Sources:
+        <div>
+          <a
+            href="https://www.astro.org/news-and-publications/news-and-media-center/news-releases/2024/new-astro-survey-finds-that-prior-authorization-delays-lead-to-serious-harm-for-people-with-cancer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gammalex-purple transition-colors"
+          >
+            ASTRO Survey: Delays in breast imaging care lead to serious harm
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.beckershospitalreview.com/oncology/how-insurance-denials-disrupt-cancer-care-5-investigation-notes"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gammalex-purple transition-colors"
+          >
+            Becker's Hospital Review: Insurance disruptions challenge cancer care
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://blog.healthjobsnationwide.com/healthcare-denials-are-skyrocketing-in-2025-hidden-reasons-revealed/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gammalex-purple transition-colors"
+          >
+            Healthcare insights 2025: Rising administrative pressure
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.os-healthcare.com/news-and-blog/denial-rates-are-climbing-what-healthcare-revenue-cycle-leaders-should-be-watching-in-2025"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gammalex-purple transition-colors"
+          >
+            OS Healthcare: Administrative backlogs climbing in 2025
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.fiercehealthcare.com/providers/providers-potentially-wasted-almost-18b-2023-overturning-claims-denials-premier-estimates"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gammalex-purple transition-colors"
+          >
+            Fierce Healthcare: Providers potentially wasted almost $18B on admin rework
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.beckershospitalreview.com/finance/claims-denials-are-costing-hospitals-nearly-20b-per-year"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gammalex-purple transition-colors"
+          >
+            Becker's Hospital Review: Claims costs burden hospitals annually
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.fiercehealthcare.com/providers/providers-wasted-106b-2022-overturning-claims-denials-survey-finds"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-gammalex-purple transition-colors"
+          >
+            Fierce Healthcare: Providers wasted $10.6B on administrative appeals in 2022
+          </a>
+        </div>
       </div>
     </div>
   )

@@ -33,7 +33,6 @@ Revamp all content and messaging across the GammaLex website to position it as a
 2. **Decision Support for Radiologists**: AI assistance for mammography interpretation and triage
 3. **Augmented Reality Tools**: AR overlays for imaging views and 3D interpretation
 4. **Voice-Enabled Workflows**: Hands-free reporting, navigation, and querying
-5. **Radiology Authorization Integration**: Maintain connection to existing authorization/pre-auth value proposition
 
 ## Page-by-Page Content Updates
 
@@ -93,7 +92,7 @@ Revamp all content and messaging across the GammaLex website to position it as a
 - Image analysis, risk stratification, diagnostic support
 - AR tools for 3D interpretation
 - Voice-enabled features for hands-free workflows
-- Connection to radiology authorization workflows
+- Integration with breast imaging workflows so AI insights stay inside the reader experience
 
 ### 3. Problems We Solve Page (`app/problemswesolve/page.tsx`)
 
@@ -125,8 +124,7 @@ Revamp all content and messaging across the GammaLex website to position it as a
 - Machine learning models trained on mammography datasets
 - AR overlay technology for findings visualization
 - Voice-enabled reporting and navigation
-- Integration with PACS/RIS systems
-- Maintain connection to authorization workflows
+- Integration with PACS/RIS systems and reporting workflows
 
 ### 5. Application/Product Page (`app/application/page.tsx`)
 
@@ -170,7 +168,7 @@ Revamp all content and messaging across the GammaLex website to position it as a
 
 **Other Pages** (About, Ethical AI, Trust & Compliance):
 
-- Update only where content references radiology authorization to also mention breast imaging AI capabilities
+- Update only where content references legacy operational workflows to highlight breast imaging AI capabilities
 - Keep all hero backgrounds unchanged
 
 ## New Content Themes to Introduce
@@ -210,7 +208,7 @@ Revamp all content and messaging across the GammaLex website to position it as a
 
 - Reference real AI capabilities (image analysis, pattern recognition)
 - Mention integration with existing radiology workflows
-- Connect to authorization/pre-auth value proposition
+- Connect to clinical decision support value proposition
 - Maintain regulatory compliance messaging
 
 ### CTA Updates:
@@ -261,6 +259,5 @@ After implementation, verify:
 - [ ] All content updated to breast imaging focus
 - [ ] AR, Voice, and AI algorithm features described
 - [ ] CTAs updated to demo/integration focus
-- [ ] Connection to authorization workflows maintained
 - [ ] No design system violations
 - [ ] All pages build successfully
