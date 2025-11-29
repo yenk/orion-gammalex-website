@@ -1,92 +1,40 @@
 "use client"
 
 import React, { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { 
-  UploadCloud, 
-  Cpu, 
-  ScanEye, 
-  Glasses, 
-  Mic, 
-  FileText, 
-  UserCheck,
-  ArrowRight
-} from 'lucide-react'
+import { motion, useScroll } from 'framer-motion'
 
 const steps = [
   { 
     id: '1',
-    label: 'Patient Uploads Imaging', 
-    description: 'Fast, seamless upload of DICOM files via secure portal.',
-    tag: 'Fast, seamless upload',
-    color: 'bg-emerald-500', 
-    lightColor: 'bg-emerald-50',
-    borderColor: 'border-emerald-200',
-    textColor: 'text-emerald-700',
-    icon: UploadCloud
+    label: 'AI Detection', 
+    description: 'Deep learning algorithms instantly process imaging data to detect, classify, and rank potential findings.',
+    textColor: 'text-gammalex-purple',
+    borderColor: 'border-gammalex-purple/20',
+    bgGradient: 'group-hover:to-gammalex-purple/5'
   },
   { 
     id: '2', 
-    label: 'AI Analysis Runs Automatically', 
-    description: 'Deep learning algorithms process imaging data instantly upon ingestion.',
-    tag: 'Instant predictive insights',
-    color: 'bg-blue-500', 
-    lightColor: 'bg-blue-50',
-    borderColor: 'border-blue-200',
-    textColor: 'text-blue-700',
-    icon: Cpu
+    label: 'AR Visualization', 
+    description: '3D overlays translate AI signals into precise visual cues, improving spatial orientation and reducing oversight and diagnostic errors.',
+    textColor: 'text-emerald-500',
+    borderColor: 'border-emerald-500/20',
+    bgGradient: 'group-hover:to-emerald-500/5'
   },
   { 
     id: '3', 
-    label: 'AI Highlights Suspicious Areas', 
-    description: 'Automated detection of potential lesions with high sensitivity.',
-    color: 'bg-blue-600', 
-    lightColor: 'bg-blue-50',
-    borderColor: 'border-blue-200',
-    textColor: 'text-blue-800',
-    icon: ScanEye
+    label: 'Voice Assistant', 
+    description: 'Hands-free interface control with context-aware commands for interactive imaging review and reporting.',
+    textColor: 'text-gammalex-orange',
+    borderColor: 'border-gammalex-orange/20',
+    bgGradient: 'group-hover:to-gammalex-orange/5'
   },
   { 
     id: '4', 
-    label: 'AR 3D Visualization Panel', 
-    description: '3D reconstruction projected for precise anatomical localization.',
-    tag: 'Interactive, clinician-friendly',
-    color: 'bg-emerald-600', 
-    lightColor: 'bg-emerald-50',
-    borderColor: 'border-emerald-200',
-    textColor: 'text-emerald-800',
-    icon: Glasses
-  },
-  { 
-    id: '5', 
-    label: 'Voice Commands for Navigation', 
-    description: 'Hands-free control of the viewing environment.',
-    color: 'bg-violet-500', 
-    lightColor: 'bg-violet-50',
-    borderColor: 'border-violet-200',
-    textColor: 'text-violet-700',
-    icon: Mic
-  },
-  { 
-    id: '6', 
-    label: 'Results & Recommendations', 
-    description: 'Synthesized findings presented in an actionable format.',
-    tag: 'Actionable summary',
-    color: 'bg-amber-500', 
-    lightColor: 'bg-amber-50',
-    borderColor: 'border-amber-200',
-    textColor: 'text-amber-700',
-    icon: FileText
-  },
-  { 
-    id: '7', 
-    label: 'Clinician Decision', 
-    description: 'Final expert review accelerated by intelligent support.',
-    color: 'bg-slate-600', 
-    lightColor: 'bg-slate-50',
-    borderColor: 'border-slate-200',
-    textColor: 'text-slate-700',
-    icon: UserCheck
+    label: 'Adaptive Diagnostic Intelligence', 
+    description: 'Synthesized insights and risk assessments that guide confident, data-driven clinical decisions.',
+    textColor: 'text-blue-500',
+    borderColor: 'border-blue-500/20',
+    bgGradient: 'group-hover:to-blue-500/5'
   }
 ]
 
@@ -104,7 +52,7 @@ export default function ProductFlowchart() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-normal text-slate-900 tracking-tight"
           >
             How We Do It
           </motion.h2>
@@ -115,7 +63,6 @@ export default function ProductFlowchart() {
             viewport={{ once: true }}
             className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
           >
-            From seamless upload to actionable decision support, experience the complete intelligent imaging journey.
           </motion.p>
         </div>
 
@@ -137,52 +84,34 @@ export default function ProductFlowchart() {
             {steps.map((step, index) => (
               <motion.div 
                 key={step.id}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="min-w-[85vw] md:min-w-[600px] snap-center"
+                className="min-w-[85vw] md:min-w-[460px] snap-center"
               >
                 <div className="relative h-full flex flex-col">
-                   {/* Connector Line */}
-                   {index !== steps.length - 1 && (
-                     <div className="hidden md:block absolute top-1/2 -translate-y-1/2 -right-8 w-8 h-0.5 bg-slate-200 z-0">
-                        <ArrowRight className="absolute -right-2 -top-2.5 text-slate-300" size={20} />
-                     </div>
-                   )}
-
                    {/* Card */}
-                   <div className={`relative z-10 h-full bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col group-hover:shadow-2xl transition-shadow duration-300`}>
+                   <div className={`relative z-10 h-full bg-white rounded-[3rem] shadow-2xl border ${step.borderColor} overflow-hidden flex flex-col hover:scale-[1.02] transition-transform duration-300 group`}>
                       
+                      {/* Hover Gradient Background */}
+                      <div className={`absolute inset-0 bg-gradient-to-br from-transparent ${step.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
                       {/* Content */}
-                      <div className="relative p-8 md:p-10 flex flex-col justify-center h-full">
+                      <div className="relative p-12 md:p-14 flex flex-col justify-center h-full min-h-[500px]">
                         {/* Big Number Background */}
-                        <div className={`absolute top-0 right-4 md:right-8 text-[120px] md:text-[160px] font-bold leading-none select-none pointer-events-none -translate-y-4 z-0 opacity-5 ${step.textColor}`}>
+                        <div className={`absolute -top-8 right-8 text-[220px] font-black leading-none select-none pointer-events-none z-0 opacity-[0.07] ${step.textColor}`}>
                           0{index + 1}
                         </div>
 
-                        <div className="relative z-10">
-                           <div className={`mb-6 inline-flex p-3 rounded-2xl ${step.lightColor} ${step.textColor} w-fit`}>
-                              <step.icon size={32} strokeWidth={1.5} />
-                           </div>
-                           
-                           <h3 className="text-2xl md:text-3xl font-medium text-slate-900 mb-4 tracking-tight leading-tight pr-12">
+                        <div className="relative z-10 space-y-8">
+                           <h3 className={`text-4xl md:text-5xl font-normal text-slate-900 tracking-tight leading-[1.05]`}>
                              {step.label}
                            </h3>
                            
-                           <div className={`w-16 h-1.5 ${step.color} mb-6 rounded-full opacity-80`} />
-
-                           <p className="text-base md:text-lg text-slate-600 leading-relaxed font-light">
+                           <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium max-w-prose">
                              {step.description}
                            </p>
-
-                           {step.tag && (
-                             <div className="mt-6 flex items-center gap-2">
-                                <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${step.lightColor} ${step.textColor} border ${step.borderColor}`}>
-                                  {step.tag}
-                                </span>
-                             </div>
-                           )}
                         </div>
                       </div>
                    </div>
@@ -200,4 +129,3 @@ export default function ProductFlowchart() {
     </section>
   )
 }
-
