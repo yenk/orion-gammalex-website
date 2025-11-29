@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
 import { Resend } from 'resend';
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
@@ -24,39 +24,31 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: 'Invalid user type.' }, { status: 400 });
     }
 
-    const { error } = await supabase.from('gammalex_waitlist').insert([
-      { 
-        name: name.trim(),
-        email: email.trim(), 
-        phone: phone.trim(),
-        company: company.trim(),
-        user_type: user_type?.trim() || null,
-        message: message?.trim() || null,
-      }
-    ]);
+    const adminHtml = `<p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Company:</strong> ${company}</p>
+      <p><strong>User type:</strong> ${user_type || 'N/A'}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message || 'N/A'}</p>`;
 
-    if (error) {
-      console.error('Error storing waitlist entry:', JSON.stringify(error, null, 2));
-      if (error.code === '23505') {
-        // Duplicate email error, return 409
-        return NextResponse.json(
-          { success: false, message: 'This email is already on the waitlist.' },
-          { status: 409 }
-        );
-      }
-      return NextResponse.json(
-        { success: false, message: 'Failed to add to waitlist.' },
-        { status: 500 }
-      );
+    try {
+      await resend.emails.send({
+        from: 'no-reply@gammalex.com',
+        to: 'gammalex@gammalex.com',
+        subject: 'New Waitlist Submission',
+        html: adminHtml,
+      });
+    } catch (emailError) {
+      console.error('Admin notification error:', emailError);
     }
 
-    // Send confirmation email via Resend
     try {
       await resend.emails.send({
         from: 'no-reply@gammalex.com',
         to: email,
         subject: 'Thanks for Joining the GammaLex Waitlist',
-        html: `<p>Hi there,</p>
+        html: `<p>Hi ${name},</p>
                <p>Thanks for joining the <strong>GammaLex</strong> waitlist. We'll keep you updated as we roll out early access.</p>`,
       });
     } catch (emailError) {

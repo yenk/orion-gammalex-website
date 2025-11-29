@@ -25,8 +25,8 @@ GammaLex is the first clinical-compliant AI built to defend care before it's den
 - **Lucide React** - Icon library
 - **Phosphor React** - Additional icon set
 
-### Backend & Database
-- **Supabase** - Backend-as-a-Service (database, auth, real-time)
+### Backend & Email
+- **Next.js API routes** - Serverless handlers for contact/waitlist flows
 - **Resend** - Email service for notifications and auto-replies
 
 ### Development Tools
@@ -59,13 +59,9 @@ GammaLex is the first clinical-compliant AI built to defend care before it's den
 3. **Set up environment variables**
    Create a `.env.local` file in the root directory:
    ```env
-   # Supabase Configuration
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   
    # Email Service (Resend)
    RESEND_API_KEY=your_resend_api_key
-   
+
    # Google Analytics (optional)
    NEXT_PUBLIC_GA_ID=G-CGVXZJM6M0
    ```
@@ -96,7 +92,7 @@ GammaLex is the first clinical-compliant AI built to defend care before it's den
    - Compliance checking
 
 3. **Contact System** (`app/contact/page.tsx`)
-   - Contact form with Supabase storage
+   - Contact form handler via Next.js API routes
    - Email notifications via Resend
    - Auto-reply system for legal/privacy inquiries
 
@@ -111,8 +107,6 @@ GammaLex is the first clinical-compliant AI built to defend care before it's den
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | Yes |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anonymous key | Yes |
 | `RESEND_API_KEY` | Resend email service API key | Yes |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics ID | No |
 
@@ -139,7 +133,6 @@ gammalex-platform/
 │   ├── JoinWaitlistModal.tsx     # Waitlist modal
 │   └── ProductFeaturesDemo.tsx   # Feature demos
 ├── lib/                          # Utility libraries
-│   ├── supabase.ts               # Supabase client
 │   └── utils.ts                  # Helper functions
 ├── hooks/                        # Custom React hooks
 ├── public/                       # Static assets
@@ -152,7 +145,6 @@ gammalex-platform/
 
 - **`components/HeroDataSources.tsx`** - Animated data source display with medical/legal datasets
 - **`app/page.tsx`** - Main homepage with comprehensive feature showcase
-- **`lib/supabase.ts`** - Database connection and queries
 - **`tailwind.config.ts`** - Custom design system with GammaLex brand colors
 
 ## Deployment
@@ -169,8 +161,6 @@ gammalex-platform/
    ```
 
 2. **Set environment variables in Vercel dashboard**
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `RESEND_API_KEY`
 
 3. **Build and deploy**
@@ -193,7 +183,6 @@ gammalex-platform/
 ### Deployment Checklist
 
 - [ ] Environment variables configured
-- [ ] Supabase database connected
 - [ ] Email service (Resend) configured
 - [ ] Google Analytics tracking active
 - [ ] SSL certificate installed
@@ -205,7 +194,6 @@ gammalex-platform/
 ### Core Dependencies
 - `next@15.2.4` - React framework
 - `react@^19` - UI library
-- `@supabase/supabase-js@^2.49.8` - Database client
 - `resend@^4.5.1` - Email service
 - `framer-motion@latest` - Animations
 - `tailwindcss@^3.4.17` - Styling
@@ -263,12 +251,6 @@ gammalex-platform/
    pnpm dev
    ```
 
-### Database Schema
-
-The application uses Supabase with the following tables:
-- `gammalex_waitlist` - Waitlist signups
-- `gammalex_contact` - Contact form submissions
-
 ### Performance Optimization
 
 - Images are optimized with Next.js Image component
@@ -293,7 +275,6 @@ For technical questions or deployment issues, contact the development team throu
 - [ ] Environment variables configured
 - [ ] Dependencies installed (`pnpm install`)
 - [ ] Development server running (`pnpm dev`)
-- [ ] Supabase project access granted
 - [ ] Resend API key provided
 - [ ] Code editor configured (VS Code recommended)
 - [ ] TypeScript and ESLint extensions installed
